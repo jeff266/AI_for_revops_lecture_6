@@ -85,7 +85,7 @@ Output ONLY valid JSON with no additional text."""
 
     # Call Kimi K3 via Fireworks
     response = client.chat.completions.create(
-        model="accounts/fireworks/models/kimi-k3-f1",
+        model="accounts/moonshot/models/kimi-k3",
         max_tokens=2000,
         messages=[
             {"role": "system", "content": system_prompt},

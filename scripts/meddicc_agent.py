@@ -204,7 +204,7 @@ def evaluate(
 Evaluate this analysis against the rubric and return a JSON object with your assessment."""
 
     response = fireworks_client.chat.completions.create(
-        model="accounts/fireworks/models/kimi-k3-f1",
+        model="accounts/moonshot/models/kimi-k3",
         max_tokens=2000,
         messages=[
             {"role": "system", "content": rubric},
@@ -317,7 +317,7 @@ def run_agent(
         'passed': evaluation['pass'] if evaluation else False,
         'model_used': {
             'generator': 'claude-sonnet-4-5-20250929',
-            'evaluator': 'kimi-k3-f1 (Fireworks AI)'
+            'evaluator': 'kimi-k3 (Fireworks AI)'
         }
     }
 
