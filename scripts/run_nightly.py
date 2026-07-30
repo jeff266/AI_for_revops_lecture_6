@@ -105,10 +105,41 @@ def main():
                 except:
                     print(f"   ⚠️  Invalid last_analysis_date format, fetching all calls")
 
-            # Get calls from both sources (filtered by date if available)
-            print(f"   Searching for calls: {company_name}")
+            # Get contact emails for better matching
+            contact_emails = [
+                c.get('properties', {}).get('email', '')
+                for c in contacts
+                if c.get('properties', {}).get('email')
+            ]
 
-            fireflies_calls = fireflies.search_by_company(company_name, max_results=50, since_date=since_date)
+            # HYBRID MATCHING APPROACH:
+            # 1. Fireflies: Match by email (more reliable)
+            # 2. Fireflies fallback: Match by company name (catches calls without contact)
+            # 3. Apollo: Match by company name only (no reliable email data)
+
+            print(f"   Searching for calls: {company_name}")
+            if contact_emails:
+                print(f"     Matching by {len(contact_emails)} contact email(s)")
+
+            # Fireflies: Email-based matching (primary)
+            fireflies_calls = []
+            if contact_emails:
+                fireflies_calls = fireflies.search_by_contact_emails(contact_emails, max_results=50, since_date=since_date)
+
+            # Fireflies: Company name fallback (catches calls without tracked contacts)
+            fireflies_calls_by_name = fireflies.search_by_company(company_name, max_results=50, since_date=since_date)
+
+            # Deduplicate Fireflies calls (combine email + name matches)
+            seen_fireflies_ids = set()
+            for call in fireflies_calls:
+                seen_fireflies_ids.add(call.get('id'))
+
+            for call in fireflies_calls_by_name:
+                if call.get('id') not in seen_fireflies_ids:
+                    fireflies_calls.append(call)
+                    seen_fireflies_ids.add(call.get('id'))
+
+            # Apollo: Company name matching only (no email data available)
             apollo_calls = apollo.search_conversations_by_company(company_name, since_date=since_date)
 
             total_calls = len(fireflies_calls) + len(apollo_calls)

@@ -59,6 +59,78 @@ class FirefliesClient:
         result = self._query(query, {"limit": limit, "skip": skip})
         return result.get("data", {}).get("transcripts") or []
 
+    def search_by_contact_emails(self, contact_emails: List[str], max_results: int = 100, since_date: Optional[datetime] = None) -> List[dict]:
+        """
+        Search transcripts by matching participant emails to deal contacts.
+
+        Args:
+            contact_emails: List of email addresses from HubSpot deal contacts
+            max_results: Maximum number of results to return
+            since_date: Optional datetime to filter calls after this date
+
+        Returns summaries only (not full transcripts) sorted by date ascending.
+        """
+        all_matches = []
+        skip = 0
+        limit = 50  # Fireflies max reliable limit
+
+        # Normalize emails to lowercase for matching
+        contact_emails_lower = [email.lower() for email in contact_emails if email]
+
+        if not contact_emails_lower:
+            return []
+
+        while len(all_matches) < max_results:
+            batch = self.get_transcripts(limit=limit, skip=skip)
+
+            if not batch:
+                break
+
+            # Filter by participant email match
+            for t in batch:
+                organizer = (t.get('organizer_email') or '').lower()
+                participants = t.get('participants') or []
+
+                # Collect all participant emails
+                participant_emails = []
+                if organizer:
+                    participant_emails.append(organizer)
+
+                # Participants might be emails or names with emails
+                for p in participants:
+                    if isinstance(p, str):
+                        # Extract email if format is "Name <email@domain.com>"
+                        if '<' in p and '>' in p:
+                            email = p.split('<')[1].split('>')[0].lower()
+                            participant_emails.append(email)
+                        elif '@' in p:
+                            participant_emails.append(p.lower())
+
+                # Match if ANY participant email matches ANY contact email
+                if any(email in contact_emails_lower for email in participant_emails):
+                    # Apply date filter if specified
+                    if since_date:
+                        call_date = t.get('date', 0)
+                        if isinstance(call_date, (int, float)):
+                            since_timestamp = since_date.timestamp() * 1000
+                            if call_date < since_timestamp:
+                                continue  # Skip calls before since_date
+
+                    all_matches.append(t)
+
+                    if len(all_matches) >= max_results:
+                        break
+
+            # Pagination
+            if len(batch) < limit:
+                break
+            skip += limit
+
+        # Sort by date ascending (oldest first) for cumulative context building
+        all_matches.sort(key=lambda x: x.get('date', 0) if isinstance(x.get('date'), (int, float)) else 0)
+
+        return all_matches[:max_results]
+
     def search_by_company(self, company_name: str, max_results: int = 100, since_date: Optional[datetime] = None) -> List[dict]:
         """
         Search transcripts by company name in title or participants.
