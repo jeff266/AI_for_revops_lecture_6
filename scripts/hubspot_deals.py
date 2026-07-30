@@ -77,7 +77,8 @@ class HubSpotDealsClient:
                 'amount',
                 'hubspot_owner_id',
                 'dealtype',
-                'createdate'
+                'createdate',
+                'last_meddicc_analysis_date'
             ],
             'limit': 100
         }
@@ -217,11 +218,24 @@ class HubSpotDealsClient:
 
         return self._patch(endpoint, data)
 
+    def update_deal_property(self, deal_id: str, property_name: str, value: str) -> dict:
+        """Update a single deal property."""
+        endpoint = f"/crm/v3/objects/deals/{deal_id}"
+
+        data = {
+            'properties': {
+                property_name: value
+            }
+        }
+
+        return self._patch(endpoint, data)
+
     def upsert_meddicc_note(self, deal_id: str, analysis_content: str, calls_count: int = 0) -> dict:
         """
         Create or update MEDDICC analysis note on a deal.
 
         Replaces existing MEDDICC note if found, otherwise creates new one.
+        Also updates last_meddicc_analysis_date property.
         """
         # Format note with header
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M UTC')
@@ -240,9 +254,15 @@ class HubSpotDealsClient:
 
         if existing_note:
             note_id = existing_note.get('id')
-            return self.update_deal_note(note_id, formatted_note)
+            result = self.update_deal_note(note_id, formatted_note)
         else:
-            return self.create_deal_note(deal_id, formatted_note)
+            result = self.create_deal_note(deal_id, formatted_note)
+
+        # Update last analysis date property
+        today = datetime.now().strftime('%Y-%m-%d')
+        self.update_deal_property(deal_id, 'last_meddicc_analysis_date', today)
+
+        return result
 
     def get_deal_context(self, deal_id: str) -> dict:
         """

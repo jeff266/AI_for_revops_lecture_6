@@ -79,9 +79,13 @@ class ApolloClient:
 
         return all_convos
 
-    def search_conversations_by_company(self, company_name: str) -> List[dict]:
+    def search_conversations_by_company(self, company_name: str, since_date: Optional[datetime] = None) -> List[dict]:
         """
         Search conversations by company name in topic/title.
+
+        Args:
+            company_name: Company name to search for
+            since_date: Optional datetime to filter conversations after this date
 
         Returns conversations sorted by date ascending (oldest first).
         Only includes completed/insights_generated states.
@@ -97,6 +101,17 @@ class ApolloClient:
 
             topic = (c.get('topic') or '').lower()
             if company_lower in topic:
+                # Apply date filter if specified
+                if since_date:
+                    start_time_str = c.get('start_time', '')
+                    if start_time_str:
+                        try:
+                            start_time = datetime.fromisoformat(start_time_str.replace('Z', '+00:00'))
+                            if start_time < since_date:
+                                continue  # Skip conversations before since_date
+                        except:
+                            pass  # If can't parse date, include the conversation
+
                 matches.append(c)
 
         # Sort by start_time ascending

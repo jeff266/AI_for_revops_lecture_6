@@ -94,16 +94,30 @@ def main():
                 skipped += 1
                 continue
 
-            # Get calls from both sources
+            # Check last analysis date to filter for new calls only
+            last_analysis_date_str = deal.get('properties', {}).get('last_meddicc_analysis_date')
+            since_date = None
+
+            if last_analysis_date_str:
+                try:
+                    since_date = datetime.fromisoformat(last_analysis_date_str)
+                    print(f"   Last analyzed: {last_analysis_date_str} - checking for new calls only")
+                except:
+                    print(f"   ⚠️  Invalid last_analysis_date format, fetching all calls")
+
+            # Get calls from both sources (filtered by date if available)
             print(f"   Searching for calls: {company_name}")
 
-            fireflies_calls = fireflies.search_by_company(company_name, max_results=50)
-            apollo_calls = apollo.search_conversations_by_company(company_name)
+            fireflies_calls = fireflies.search_by_company(company_name, max_results=50, since_date=since_date)
+            apollo_calls = apollo.search_conversations_by_company(company_name, since_date=since_date)
 
             total_calls = len(fireflies_calls) + len(apollo_calls)
 
             if total_calls < 1:
-                print(f"   ⚠️  No recorded calls found, skipping")
+                if since_date:
+                    print(f"   ⚠️  No new calls since {last_analysis_date_str}, skipping")
+                else:
+                    print(f"   ⚠️  No recorded calls found, skipping")
                 skipped += 1
                 continue
 

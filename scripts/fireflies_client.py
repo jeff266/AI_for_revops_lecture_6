@@ -59,9 +59,14 @@ class FirefliesClient:
         result = self._query(query, {"limit": limit, "skip": skip})
         return result.get("data", {}).get("transcripts") or []
 
-    def search_by_company(self, company_name: str, max_results: int = 100) -> List[dict]:
+    def search_by_company(self, company_name: str, max_results: int = 100, since_date: Optional[datetime] = None) -> List[dict]:
         """
         Search transcripts by company name in title or participants.
+
+        Args:
+            company_name: Company name to search for
+            max_results: Maximum number of results to return
+            since_date: Optional datetime to filter calls after this date
 
         Returns summaries only (not full transcripts) sorted by date ascending.
         """
@@ -70,6 +75,7 @@ class FirefliesClient:
         limit = 50  # Fireflies max reliable limit
 
         company_lower = company_name.lower()
+        since_timestamp = since_date.timestamp() * 1000 if since_date else None
 
         while len(all_matches) < max_results:
             batch = self.get_transcripts(limit=limit, skip=skip)
@@ -77,7 +83,7 @@ class FirefliesClient:
             if not batch:
                 break
 
-            # Filter by company name
+            # Filter by company name and date
             for t in batch:
                 title = (t.get('title') or '').lower()
                 participants = t.get('participants') or []
@@ -90,6 +96,12 @@ class FirefliesClient:
 
                 # Match company name in title or participants
                 if company_lower in title or company_lower in participants_str:
+                    # Apply date filter if specified
+                    if since_timestamp:
+                        call_date = t.get('date', 0)
+                        if isinstance(call_date, (int, float)) and call_date < since_timestamp:
+                            continue  # Skip calls before since_date
+
                     all_matches.append(t)
 
                     if len(all_matches) >= max_results:
