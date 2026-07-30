@@ -83,10 +83,21 @@ Analyze the following {len(call_summaries)} call summaries and extract the cumul
 
 CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, markdown formatting, or commentary. Start your response with {{ and end with }}."""
 
+    # Calculate dynamic token limit based on number of calls
+    # Formula: base (2000) + per-call allocation (500) with max cap (16000)
+    base_tokens = 2000
+    tokens_per_call = 500  # Allow ~500 tokens per call for evidence extraction
+    max_tokens_cap = 16000  # Kimi K3 model limit
+
+    calculated_tokens = base_tokens + (len(call_summaries) * tokens_per_call)
+    max_tokens = min(calculated_tokens, max_tokens_cap)
+
+    print(f"   Context builder tokens: {max_tokens} ({len(call_summaries)} calls × {tokens_per_call} + {base_tokens} base)")
+
     # Call Kimi K3 via Fireworks (same as Frontera contract extraction)
     response = client.chat.completions.create(
         model="accounts/fireworks/models/kimi-k3",
-        max_tokens=8000,  # Increased to handle full MEDDICC analysis with evidence from multiple calls
+        max_tokens=max_tokens,
         temperature=0,
         messages=[
             {"role": "system", "content": system_prompt + "\n\nIMPORTANT: Return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object."},
