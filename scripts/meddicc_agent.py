@@ -267,6 +267,102 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
         }
 
 
+def reflect(
+    evaluation: dict,
+    iterations: int,
+    passed: bool
+) -> dict:
+    """
+    Reflection gate: decide if this execution should generate a learning.
+
+    Most runs should return no_learning. That is the correct default.
+
+    Returns reflection result with outcome and root_cause.
+    """
+    # Use Fireworks AI with Kimi K3 for reflection
+    fireworks_client = OpenAI(
+        api_key=os.getenv("FIREWORKS_API_KEY"),
+        base_url="https://api.fireworks.ai/inference/v1"
+    )
+
+    system_prompt = """You are a reflection gate for a MEDDICC analysis agent.
+Decide whether this execution should generate a learning entry.
+
+Rules:
+- If the agent passed on the first iteration with no issues: outcome = no_learning
+- If failure was caused by missing data, bad transcript, customer anomaly,
+  or model limitation: outcome = no_learning
+- If failure was likely caused by an instruction gap in CLAUDE.md that a
+  better instruction could have prevented: outcome = observation or candidate
+- candidate requires clear, specific evidence the instruction would generalize
+- observation means worth tracking but needs more evidence across multiple companies
+- Code or API errors: outcome = bug
+- CLAUDE.md format/structure issues: outcome = prompt_issue
+
+Return ONLY valid JSON, no other text:
+{
+  "outcome": "no_learning | observation | candidate | bug | prompt_issue",
+  "root_cause": "instruction_gap | missing_data | customer_anomaly | model_limitation | edge_case | no_failure",
+  "claude_md_would_help": true | false,
+  "reasoning": "one sentence max"
+}"""
+
+    reflection_input = {
+        "evaluation": evaluation,
+        "iterations": iterations,
+        "passed": passed
+    }
+
+    user_message = f"""Execution summary:
+{json.dumps(reflection_input, indent=2)}
+
+Should this generate a learning entry? Return ONLY valid JSON."""
+
+    try:
+        response = fireworks_client.chat.completions.create(
+            model="accounts/fireworks/models/kimi-k3",
+            max_tokens=500,
+            temperature=0,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_message}
+            ]
+        )
+
+        content = response.choices[0].message.content
+
+        # Extract JSON
+        if "```json" in content:
+            content = content.split("```json")[1].split("```")[0].strip()
+        elif "```" in content:
+            content = content.split("```")[1].split("```")[0].strip()
+
+        if '{' in content and '}' in content:
+            start = content.find('{')
+            end = content.rfind('}') + 1
+            content = content[start:end]
+
+        reflection = json.loads(content)
+
+        # Validate required keys
+        required = ['outcome', 'root_cause', 'claude_md_would_help', 'reasoning']
+        for key in required:
+            if key not in reflection:
+                raise ValueError(f"Missing required key: {key}")
+
+        return reflection
+
+    except Exception as e:
+        print(f"⚠️  Reflection parse failed: {e}")
+        # Default to no_learning on parse error
+        return {
+            "outcome": "no_learning",
+            "root_cause": "parse_error",
+            "claude_md_would_help": False,
+            "reasoning": "Reflection parse failed"
+        }
+
+
 def run_agent(
     call_summary: str,
     cumulative_state: dict,
@@ -325,15 +421,22 @@ def run_agent(
         previous_feedback = evaluation.get('required_changes')
         print(f"  ✗ Failed iteration {iteration}: {len(evaluation.get('iteration_failures', []))} issues")
 
-    # Return final result
+    # Run reflection gate to decide if this should generate a learning
+    passed = evaluation['pass'] if evaluation else False
+    reflection = reflect(evaluation, iteration, passed)
+
+    # Return final result with reflection
     return {
         'draft': draft,
         'evaluation': evaluation,
         'iterations': iteration,
-        'passed': evaluation['pass'] if evaluation else False,
+        'passed': passed,
+        'outcome': reflection['outcome'],
+        'root_cause': reflection['root_cause'],
         'model_used': {
             'generator': 'claude-sonnet-4-5-20250929',
-            'evaluator': 'kimi-k3 (Fireworks AI)'
+            'evaluator': 'kimi-k3 (Fireworks AI)',
+            'reflector': 'kimi-k3 (Fireworks AI)'
         }
     }
 

@@ -211,8 +211,11 @@ def main():
             evaluation = result['evaluation']
             iterations = result['iterations']
             passed = result['passed']
+            outcome = result['outcome']
+            root_cause = result['root_cause']
 
             print(f"   {'✓' if passed else '✗'} Analysis {'passed' if passed else 'failed'} after {iterations} iteration(s)")
+            print(f"   Reflection: outcome={outcome}, root_cause={root_cause}")
 
             # Save analysis to file
             print(f"   Saving analysis to file...")
@@ -246,10 +249,13 @@ def main():
             except Exception as hub_error:
                 print(f"   ⚠️  HubSpot note failed (analysis saved to file): {hub_error}")
 
-            # Save learning entry
+            # Build learning entry with reflection outcome
             learning = {
                 "company": company_name,
                 "deal_id": deal_id,
+                "outcome": outcome,
+                "root_cause": root_cause,
+                "confidence": 0.8 if outcome == "candidate" else 0.5 if outcome == "observation" else 0.0,
                 "loop_performance": {
                     "iterations_to_pass": iterations,
                     "passed": passed,
@@ -264,8 +270,17 @@ def main():
                 "proposed_instruction": evaluation.get('proposed_instruction', '')
             }
 
-            learnings.append(learning)
-            memory.save_learning(learning)
+            # Conditional save based on outcome
+            if outcome in ["observation", "candidate"]:
+                learnings.append(learning)
+                memory.save_learning(learning)
+                print(f"   ✓ Learning saved (outcome={outcome})")
+            elif outcome in ["bug", "prompt_issue"]:
+                memory.save_issue(learning)
+                print(f"   ✓ Issue saved (outcome={outcome})")
+            else:
+                # no_learning - skip save entirely
+                print(f"   ✓ No learning generated (outcome={outcome})")
 
             print(f"   ✓ Complete")
 
@@ -322,17 +337,64 @@ def create_incremental_pr(memory: any, learnings: List[dict]) -> None:
     # Get current CLAUDE.md
     current_claude_md = memory.get_current_claude_md()
 
-    # Collect proposed instructions
-    proposed_instructions = []
+    # Evidence diversity gate configuration
+    MIN_EVIDENCE_COMPANIES = 2  # Threshold for instruction inclusion
+
+    # Collect proposed instructions from today's learnings (observation/candidate only)
+    candidate_instructions = []
     for learning in learnings:
+        # Only consider observation and candidate outcomes
+        if learning.get('outcome') not in ['observation', 'candidate']:
+            continue
+
         instruction = learning.get('proposed_instruction', '').strip()
-        if instruction and instruction not in proposed_instructions:
-            # Check if already in CLAUDE.md
-            if instruction not in current_claude_md:
-                proposed_instructions.append(instruction)
+        if not instruction:
+            continue
+
+        # Check if already in CLAUDE.md
+        if instruction in current_claude_md:
+            continue
+
+        # Store with metadata for diversity check
+        candidate_instructions.append({
+            'instruction': instruction,
+            'components_weak': learning.get('components_weak', []),
+            'company': learning.get('company', '')
+        })
+
+    if not candidate_instructions:
+        print("   No candidate instructions from today's learnings")
+        return
+
+    # Load historical learnings from past 30 days for diversity check
+    historical_learnings = memory.get_recent_learnings(days=30)
+
+    # Evidence diversity gate: count unique companies per instruction
+    proposed_instructions = []
+    for candidate in candidate_instructions:
+        instruction = candidate['instruction']
+        weak_components = set(candidate['components_weak'])
+
+        # Count unique companies in historical learnings with overlapping weak components
+        unique_companies = {candidate['company']}  # Start with today's company
+
+        for hist_learning in historical_learnings:
+            hist_weak = set(hist_learning.get('components_weak', []))
+            hist_company = hist_learning.get('company', '')
+
+            # If historical learning shares at least one weak component, count it
+            if weak_components & hist_weak:
+                unique_companies.add(hist_company)
+
+        # Only include if meets minimum evidence threshold
+        if len(unique_companies) >= MIN_EVIDENCE_COMPANIES:
+            proposed_instructions.append(instruction)
+            print(f"   ✓ Instruction approved: {len(unique_companies)} companies show evidence")
+        else:
+            print(f"   ⚠️  Instruction deferred: only {len(unique_companies)} companies (need {MIN_EVIDENCE_COMPANIES})")
 
     if not proposed_instructions:
-        print("   No new learnings to add")
+        print("   No instructions met evidence diversity threshold")
         return
 
     # Append to CLAUDE.md

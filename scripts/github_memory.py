@@ -31,12 +31,14 @@ class GitHubMemory:
         self.learnings_dir = self.memory_dir / "learnings"
         self.versions_dir = self.memory_dir / "versions"
         self.diffs_dir = self.memory_dir / "diffs"
+        self.issues_dir = self.memory_dir / "issues"
         self.meta_dir = self.memory_dir / "meta"
 
         # Ensure directories exist (both local and GitHub Actions)
         self.learnings_dir.mkdir(parents=True, exist_ok=True)
         self.versions_dir.mkdir(parents=True, exist_ok=True)
         self.diffs_dir.mkdir(parents=True, exist_ok=True)
+        self.issues_dir.mkdir(parents=True, exist_ok=True)
         self.meta_dir.mkdir(parents=True, exist_ok=True)
 
     # ─────────────────────────────────────────────────────────────────
@@ -108,6 +110,24 @@ class GitHubMemory:
             json.dump(learning, f, indent=2)
 
         return learning_path
+
+    def save_issue(self, issue: dict) -> Path:
+        """Save an issue entry (bugs, prompt_issue outcomes)."""
+        # Generate ID (same format as learning entries)
+        today = datetime.now().strftime('%Y-%m-%d')
+        counter = self.get_counter()
+        run_num = counter["runs_since_rewrite"] + 1
+        issue_id = f"{today}_{run_num:03d}"
+
+        issue["id"] = issue_id
+        issue["timestamp"] = datetime.now().isoformat()
+
+        # Write file to issues directory
+        issue_path = self.issues_dir / f"{issue_id}.json"
+        with open(issue_path, 'w') as f:
+            json.dump(issue, f, indent=2)
+
+        return issue_path
 
     def get_todays_learnings(self) -> List[dict]:
         """Get all learning entries from today."""
