@@ -371,6 +371,8 @@ def create_incremental_pr(memory: any, learnings: List[dict]) -> None:
 
     # Evidence diversity gate: count unique companies per instruction
     proposed_instructions = []
+    deferred_instructions = []
+
     for candidate in candidate_instructions:
         instruction = candidate['instruction']
         weak_components = set(candidate['components_weak'])
@@ -391,20 +393,21 @@ def create_incremental_pr(memory: any, learnings: List[dict]) -> None:
             proposed_instructions.append(instruction)
             print(f"   ✓ Instruction approved: {len(unique_companies)} companies show evidence")
         else:
+            deferred_instructions.append({
+                'instruction': instruction,
+                'company_count': len(unique_companies)
+            })
             print(f"   ⚠️  Instruction deferred: only {len(unique_companies)} companies (need {MIN_EVIDENCE_COMPANIES})")
 
-    if not proposed_instructions:
-        print("   No instructions met evidence diversity threshold")
-        return
+    # Generate diff explanation (always, regardless of whether instructions were promoted)
+    instructions_section = "None — all candidates deferred pending evidence across more companies." if not proposed_instructions else chr(10).join(f'{i+1}. {inst}' for i, inst in enumerate(proposed_instructions))
 
-    # Append to CLAUDE.md
-    learnings_section = "\n\n### Learnings from " + today + "\n\n"
-    for instruction in proposed_instructions:
-        learnings_section += f"- {instruction}\n"
+    deferred_section = ""
+    if deferred_instructions:
+        deferred_section = "\n\n## Deferred Candidates\n\nThe following instructions were considered but did not meet the evidence diversity threshold (need " + str(MIN_EVIDENCE_COMPANIES) + "+ companies):\n\n"
+        for item in deferred_instructions:
+            deferred_section += f"- ({item['company_count']} companies) {item['instruction']}\n"
 
-    updated_claude_md = current_claude_md + learnings_section
-
-    # Generate diff explanation
     diff_content = f"""# Daily MEDDICC Agent Learnings - {today}
 
 ## Summary
@@ -417,7 +420,8 @@ Processed {len(learnings)} deals with the following outcomes:
 
 ## New Instructions Added
 
-{chr(10).join(f'{i+1}. {inst}' for i, inst in enumerate(proposed_instructions))}
+{instructions_section}
+{deferred_section}
 
 ## Components Analysis
 
@@ -433,11 +437,21 @@ Common reasons for iteration failures:
 {get_common_failures(learnings)}
 """
 
-    # Save diff
+    # Save diff and version unconditionally (audit trail)
     memory.save_diff(diff_content)
-
-    # Save version snapshot
     memory.save_version(current_claude_md)
+
+    # Only update CLAUDE.md and create PR if we have promoted instructions
+    if not proposed_instructions:
+        print("   No instructions met evidence diversity threshold — diff saved for audit trail")
+        return
+
+    # Append to CLAUDE.md
+    learnings_section = "\n\n### Learnings from " + today + "\n\n"
+    for instruction in proposed_instructions:
+        learnings_section += f"- {instruction}\n"
+
+    updated_claude_md = current_claude_md + learnings_section
 
     # Create PR (if in GitHub Actions)
     branch_name = f"agent/learnings-{today}"
