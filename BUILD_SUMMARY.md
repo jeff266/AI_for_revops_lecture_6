@@ -9,9 +9,9 @@
 A fully-functional nightly MEDDICC analysis agent that:
 
 1. **Fetches active HubSpot deals** and finds associated Fireflies + Apollo.io calls
-2. **Builds cumulative MEDDICC state** from all historical calls using Claude Haiku 4.5
+2. **Builds cumulative MEDDICC state** from all historical calls using Kimi K3 (via Fireworks AI)
 3. **Analyzes the most recent call** using Claude Sonnet 4.5 with historical context
-4. **Evaluates quality** using Claude Haiku 4.5 in a feedback loop (max 3 iterations)
+4. **Evaluates quality** using Kimi K3 (via Fireworks AI) in a feedback loop (max 3 iterations)
 5. **Updates HubSpot deal notes** with MEDDICC analyses
 6. **Saves learning entries** tracking performance and failures
 7. **Creates GitHub PRs** with daily learnings or 30-day rewrites
@@ -52,8 +52,8 @@ A fully-functional nightly MEDDICC analysis agent that:
 | File | Purpose | Lines | Model Used |
 |------|---------|-------|------------|
 | `run_nightly.py` | Main orchestrator | 400+ | N/A |
-| `meddicc_agent.py` | Generator/evaluator loop | 300+ | Sonnet 4.5 + Haiku 4.5 |
-| `context_builder.py` | Cumulative MEDDICC state | 200+ | Haiku 4.5 |
+| `meddicc_agent.py` | Generator/evaluator loop | 300+ | Sonnet 4.5 + Kimi K3 |
+| `context_builder.py` | Cumulative MEDDICC state | 200+ | Kimi K3 |
 | `fireflies_client.py` | Call summaries by company | 200+ | N/A |
 | `apollo_client.py` | Video meetings by company | 200+ | N/A |
 | `hubspot_deals.py` | Deal management + notes | 300+ | N/A |
@@ -102,7 +102,7 @@ A fully-functional nightly MEDDICC analysis agent that:
 
 **Flow**:
 1. Generate analysis (Sonnet 4.5)
-2. Evaluate against rubric (Haiku 4.5)
+2. Evaluate against rubric (Kimi K3)
 3. If fail: inject feedback and regenerate
 4. Max 3 iterations
 
@@ -156,8 +156,8 @@ Tests:
 2. ✅ Fireflies API
 3. ✅ Apollo API
 4. ✅ HubSpot API
-5. ✅ Context builder (Haiku)
-6. ✅ MEDDICC agent (Sonnet + Haiku)
+5. ✅ Context builder (Kimi K3)
+6. ✅ MEDDICC agent (Sonnet + Kimi K3)
 7. ✅ Memory layer
 8. ✅ Prompt files
 
@@ -171,19 +171,22 @@ Manual workflow trigger before cron:
 
 ## API Usage & Costs
 
-### Anthropic API
+### LLM APIs
 
 **Per Deal**:
-- Context Builder (Haiku): 1 call, ~1K tokens
-- Generator (Sonnet): 1-3 calls, ~2K tokens each
-- Evaluator (Haiku): 1-3 calls, ~1K tokens each
+- Context Builder (Kimi K3): 1 call, ~9K tokens (scales with call count)
+- Generator (Sonnet 4.5): 1-3 calls, ~2K tokens each
+- Evaluator (Kimi K3): 1-3 calls, ~1K tokens each
 
-**Total per deal**: 3-7 API calls, ~5-10K tokens
+**Total per deal**: 3-7 API calls, ~12-15K tokens
+**Cost per deal**: ~$0.05 (5 cents)
 
 **Estimated Monthly** (50 deals/night × 30 days):
-- Calls: ~9,000 API calls
-- Tokens: ~7.5M tokens
-- Cost: ~$75-150/month (varies by pass rate)
+- Deals processed: 1,500 deals/month
+- Total cost: ~$81/month
+  - Kimi K3 (context + eval): ~$6/month
+  - Sonnet 4.5 (generation): ~$75/month
+- 97% cost savings vs all-Sonnet ($2,700/month)
 
 ### Other APIs
 - Fireflies: Unlimited (GraphQL API, no rate limits documented)
