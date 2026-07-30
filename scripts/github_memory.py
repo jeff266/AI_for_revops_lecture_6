@@ -33,12 +33,11 @@ class GitHubMemory:
         self.diffs_dir = self.memory_dir / "diffs"
         self.meta_dir = self.memory_dir / "meta"
 
-        # Ensure directories exist (local mode)
-        if not IS_GITHUB_ACTIONS:
-            self.learnings_dir.mkdir(parents=True, exist_ok=True)
-            self.versions_dir.mkdir(parents=True, exist_ok=True)
-            self.diffs_dir.mkdir(parents=True, exist_ok=True)
-            self.meta_dir.mkdir(parents=True, exist_ok=True)
+        # Ensure directories exist (both local and GitHub Actions)
+        self.learnings_dir.mkdir(parents=True, exist_ok=True)
+        self.versions_dir.mkdir(parents=True, exist_ok=True)
+        self.diffs_dir.mkdir(parents=True, exist_ok=True)
+        self.meta_dir.mkdir(parents=True, exist_ok=True)
 
     # ─────────────────────────────────────────────────────────────────
     # Counter Management
