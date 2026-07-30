@@ -1,7 +1,7 @@
 """
 Context Builder for MEDDICC Agent
 
-Builds cumulative MEDDICC state from historical call summaries using DeepSeek V3 via Fireworks.
+Builds cumulative MEDDICC state from historical call summaries using Kimi K3 via Fireworks.
 """
 import os
 import json
@@ -20,7 +20,7 @@ def build_cumulative_meddicc(call_summaries: List[str], company: str) -> dict:
     Returns:
         Structured MEDDICC state object with status, evidence, and scores
     """
-    # Use Fireworks AI with DeepSeek V3 for cost optimization
+    # Use Fireworks AI with Kimi K3 for cost optimization (proven in Frontera)
     client = OpenAI(
         api_key=os.getenv("FIREWORKS_API_KEY"),
         base_url="https://api.fireworks.ai/inference/v1"
@@ -83,9 +83,9 @@ Analyze the following {len(call_summaries)} call summaries and extract the cumul
 
 Output ONLY valid JSON with no additional text."""
 
-    # Call DeepSeek V3 via Fireworks
+    # Call Kimi K3 via Fireworks (same as Frontera contract extraction)
     response = client.chat.completions.create(
-        model="accounts/fireworks/models/deepseek-v3",
+        model="accounts/fireworks/models/kimi-k3",
         max_tokens=2000,
         messages=[
             {"role": "system", "content": system_prompt},
