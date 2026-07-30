@@ -81,7 +81,7 @@ Output ONLY valid JSON with no additional text."""
 
     # Call Haiku
     response = client.messages.create(
-        model="claude-haiku-4-5-20250513",
+        model="claude-haiku-4-20250514",
         max_tokens=2000,
         system=system_prompt,
         messages=[{

@@ -197,7 +197,7 @@ def evaluate(
 Evaluate this analysis against the rubric and return a JSON object with your assessment."""
 
     response = client.messages.create(
-        model='claude-haiku-4-5-20250513',
+        model='claude-haiku-4-20250514',
         system=rubric,
         messages=[{"role": "user", "content": evaluation_prompt}],
         max_tokens=2000
@@ -308,7 +308,7 @@ def run_agent(
         'passed': evaluation['pass'] if evaluation else False,
         'model_used': {
             'generator': 'claude-sonnet-4-5-20250929',
-            'evaluator': 'claude-haiku-4-5-20250513'
+            'evaluator': 'claude-haiku-4-20250514'
         }
     }
 
