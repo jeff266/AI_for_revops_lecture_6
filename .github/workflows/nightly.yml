@@ -26,6 +26,7 @@ jobs:
   run-meddicc-agent:
     runs-on: ubuntu-latest
     timeout-minutes: 120  # 2 hour timeout
+    environment: Agent  # Use Agent environment for secrets
 
     steps:
       - name: Checkout repository
