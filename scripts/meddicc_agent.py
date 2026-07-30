@@ -2,7 +2,7 @@
 MEDDICC Agent - Generator/Evaluator Loop
 
 Generates MEDDICC analyses using Claude Sonnet 4.5 with iterative refinement
-via Kimi K3 evaluator (Fireworks AI).
+via DeepSeek V3 evaluator (Fireworks AI).
 """
 import os
 import json
@@ -169,11 +169,11 @@ def evaluate(
     client: Anthropic
 ) -> dict:
     """
-    Evaluate MEDDICC analysis using Kimi K3 via Fireworks AI.
+    Evaluate MEDDICC analysis using DeepSeek V3 via Fireworks AI.
 
     Returns evaluation result with pass/fail and feedback.
     """
-    # Use Fireworks AI with Kimi K3 for cost-effective evaluation
+    # Use Fireworks AI with DeepSeek V3 for cost-effective evaluation
     fireworks_client = OpenAI(
         api_key=os.getenv("FIREWORKS_API_KEY"),
         base_url="https://api.fireworks.ai/inference/v1"
@@ -204,7 +204,7 @@ def evaluate(
 Evaluate this analysis against the rubric and return a JSON object with your assessment."""
 
     response = fireworks_client.chat.completions.create(
-        model="accounts/moonshot/models/kimi-k3",
+        model="accounts/fireworks/models/deepseek-v3",
         max_tokens=2000,
         messages=[
             {"role": "system", "content": rubric},
@@ -317,7 +317,7 @@ def run_agent(
         'passed': evaluation['pass'] if evaluation else False,
         'model_used': {
             'generator': 'claude-sonnet-4-5-20250929',
-            'evaluator': 'kimi-k3 (Fireworks AI)'
+            'evaluator': 'deepseek-v3 (Fireworks AI)'
         }
     }
 
