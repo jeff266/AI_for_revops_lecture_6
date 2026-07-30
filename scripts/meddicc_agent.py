@@ -46,9 +46,16 @@ def build_initial_messages(
     company_props = deal_context.get('company', {}).get('properties', {}) if deal_context.get('company') else {}
     contacts = deal_context.get('contacts', [])
 
+    # Safe ARR formatting (handle string values from HubSpot)
+    arr_value = deal_props.get('incremental_arr', deal_props.get('amount', 0))
+    try:
+        arr_formatted = f"{float(arr_value):,.0f}"
+    except (ValueError, TypeError):
+        arr_formatted = str(arr_value)
+
     deal_info = f"""**Company**: {company_props.get('name', 'Unknown')}
 **Stage**: {deal_props.get('dealstage', 'Unknown')}
-**ARR**: ${deal_props.get('incremental_arr', deal_props.get('amount', 0)):,}
+**ARR**: ${arr_formatted}
 **Close Date**: {deal_props.get('closedate', 'Unknown')}
 **Contacts**: {len(contacts)} contacts associated"""
 
