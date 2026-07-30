@@ -80,6 +80,9 @@ class HubSpotDealsClient:
                 'createdate',
                 'last_meddicc_analysis_date'
             ],
+            'sorts': [
+                {'propertyName': 'closedate', 'direction': 'ASCENDING'}  # Earliest close date first
+            ],
             'limit': 100
         }
 

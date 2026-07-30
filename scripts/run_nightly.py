@@ -36,7 +36,11 @@ def main():
 
     # Check for test mode
     test_mode = os.getenv('TEST_MODE', 'false').lower() == 'true'
-    if test_mode:
+    test_deal_id = os.getenv('TEST_DEAL_ID', '').strip()  # Optional specific deal ID
+
+    if test_mode and test_deal_id:
+        print(f"\n⚠️  TEST MODE ENABLED - Will process only deal ID: {test_deal_id}")
+    elif test_mode:
         print("\n⚠️  TEST MODE ENABLED - Will limit to 5 deals")
 
     # Initialize clients
@@ -59,8 +63,15 @@ def main():
     print("\n3. Fetching active deals from HubSpot...")
     deals = hubspot.get_active_deals()
 
-    # Limit deals in test mode
-    if test_mode:
+    # Filter/limit deals in test mode
+    if test_mode and test_deal_id:
+        # Filter for specific deal ID
+        deals = [d for d in deals if d.get('id') == test_deal_id]
+        if not deals:
+            print(f"   ⚠️  Deal ID {test_deal_id} not found in active deals")
+            return
+    elif test_mode:
+        # Limit to first 5 deals
         deals = deals[:5]
 
     print(f"   Found {len(deals)} active deals")

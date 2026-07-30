@@ -11,6 +11,10 @@ on:
         description: 'Test mode (limits to 5 deals)'
         required: false
         default: 'false'
+      test_deal_id:
+        description: 'Specific deal ID to test (optional, e.g. 55660576681)'
+        required: false
+        default: ''
 
 env:
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -21,6 +25,7 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_REPO: ${{ github.repository }}
   TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
+  TEST_DEAL_ID: ${{ github.event.inputs.test_deal_id || '' }}
 
 jobs:
   run-meddicc-agent:
