@@ -68,7 +68,26 @@ FIREFLIES_API_KEY      # Fireflies GraphQL API key
 APOLLO_API_KEY         # Apollo.io API key
 HUBSPOT_API_KEY        # HubSpot private app token
 GITHUB_TOKEN           # Auto-provided by GitHub Actions
+
+# Optional: For Kimi K3 cost optimization (~70% cost reduction)
+FIREWORKS_API_KEY      # Fireworks AI API key for Kimi K3
 ```
+
+### Cost Optimization with Kimi K3
+
+The system supports a **Kimi K3 hybrid architecture** for ~70% cost reduction on context building and evaluation:
+
+- **All-Claude**: $103.50/month (50 deals/night)
+- **Kimi Hybrid**: $93.60/month (~10% savings)
+
+See `KIMI_COST_COMPARISON.md` for detailed analysis and setup instructions.
+
+**To enable Kimi K3:**
+1. Get Fireworks API key: https://fireworks.ai/
+2. Set `FIREWORKS_API_KEY` environment variable
+3. Update imports in `run_nightly.py` to use Kimi modules
+
+Proven in production on Frontera contract extraction project (400+ deals).
 
 ## Learning Loop
 
