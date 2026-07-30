@@ -12,9 +12,6 @@ import requests
 from typing import List, Dict, Optional
 from datetime import datetime
 
-# Add parent revops-metrics to path
-sys.path.insert(0, '/Users/jeffignacio/GrowthBook/revops-metrics')
-
 
 class ApolloClient:
     """Client for Apollo.io REST API (video meetings, NOT sales intelligence)."""
@@ -23,7 +20,9 @@ class ApolloClient:
 
     def __init__(self, api_key: str = None):
         """Initialize with API key."""
-        self.api_key = api_key or os.getenv("APOLLO_API_KEY") or os.getenv("GROWTHBOOK_APOLLO_API_KEY", "G6LzXb3KP1kL576G5WXOXA")
+        self.api_key = api_key or os.getenv("APOLLO_API_KEY")
+        if not self.api_key:
+            raise ValueError("Apollo API key not found. Set APOLLO_API_KEY environment variable.")
         self.session = requests.Session()
         self.session.headers.update({
             "Content-Type": "application/json",

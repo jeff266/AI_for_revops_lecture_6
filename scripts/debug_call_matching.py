@@ -3,8 +3,6 @@
 Debug script to check which HubSpot deals have matching Fireflies/Apollo calls.
 """
 import sys
-sys.path.insert(0, '/Users/jeffignacio/GrowthBook/revops-metrics')
-
 from fireflies_client import get_fireflies_client
 from apollo_client import get_apollo_client
 from hubspot_deals import get_hubspot_deals_client

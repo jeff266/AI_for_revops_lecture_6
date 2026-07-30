@@ -135,23 +135,21 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
         return meddicc_state
 
     except json.JSONDecodeError as e:
-        print(f"Failed to parse JSON response: {e}")
-        print(f"Response content: {content}")
+        print(f"⚠️  Context builder parse error — running without cumulative context: {e}")
+        print(f"Response content (first 500 chars): {content[:500]}")
 
-        # Return empty state on parse failure
+        # Return minimal state that treats recent call in isolation
+        # Empty evidence allows generator to analyze recent call independently
+        # rather than treating "Parse error" as confirmed unknown status
         return {
             "company": company,
-            "calls_reviewed": len(call_summaries),
+            "calls_reviewed": 0,  # Signal no cumulative context available
             "meddicc_state": {
-                "metrics": {"status": "unknown", "evidence": "Parse error", "score": 0},
-                "economic_buyer": {"status": "unknown", "evidence": "Parse error", "score": 0},
-                "decision_criteria": {"status": "unknown", "evidence": "Parse error", "score": 0},
-                "decision_process": {"status": "unknown", "evidence": "Parse error", "score": 0},
-                "identified_pain": {"status": "unknown", "evidence": "Parse error", "score": 0},
-                "champion": {"status": "unknown", "evidence": "Parse error", "score": 0},
-                "competition": {"status": "unknown", "evidence": "Parse error", "score": 0}
+                k: {"status": "unknown", "evidence": "", "score": 0}
+                for k in ["metrics", "economic_buyer", "decision_criteria",
+                         "decision_process", "identified_pain", "champion", "competition"]
             },
-            "key_context": "Error parsing cumulative state",
+            "key_context": "Cumulative context unavailable — analyze recent call independently.",
             "error": str(e)
         }
 
