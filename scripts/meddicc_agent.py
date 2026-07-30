@@ -214,7 +214,7 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
 
     response = fireworks_client.chat.completions.create(
         model="accounts/fireworks/models/kimi-k3",
-        max_tokens=2000,
+        max_tokens=4000,  # Increased to handle full evaluation response with all required fields
         temperature=0,
         messages=[
             {"role": "system", "content": rubric + "\n\nIMPORTANT: You must return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object."},

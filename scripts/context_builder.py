@@ -86,7 +86,7 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
     # Call Kimi K3 via Fireworks (same as Frontera contract extraction)
     response = client.chat.completions.create(
         model="accounts/fireworks/models/kimi-k3",
-        max_tokens=2000,
+        max_tokens=8000,  # Increased to handle full MEDDICC analysis with evidence from multiple calls
         temperature=0,
         messages=[
             {"role": "system", "content": system_prompt + "\n\nIMPORTANT: Return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object."},
