@@ -133,23 +133,28 @@ def main():
             if contact_emails:
                 print(f"     Matching by {len(contact_emails)} contact email(s)")
 
-            # Fireflies: Email-based matching (primary)
+            # Fireflies: Email-based matching (primary) - with error handling
             fireflies_calls = []
-            if contact_emails:
-                fireflies_calls = fireflies.search_by_contact_emails(contact_emails, max_results=50, since_date=since_date)
+            try:
+                if contact_emails:
+                    fireflies_calls = fireflies.search_by_contact_emails(contact_emails, max_results=50, since_date=since_date)
 
-            # Fireflies: Company name fallback (catches calls without tracked contacts)
-            fireflies_calls_by_name = fireflies.search_by_company(company_name, max_results=50, since_date=since_date)
+                # Fireflies: Company name fallback (catches calls without tracked contacts)
+                fireflies_calls_by_name = fireflies.search_by_company(company_name, max_results=50, since_date=since_date)
 
-            # Deduplicate Fireflies calls (combine email + name matches)
-            seen_fireflies_ids = set()
-            for call in fireflies_calls:
-                seen_fireflies_ids.add(call.get('id'))
-
-            for call in fireflies_calls_by_name:
-                if call.get('id') not in seen_fireflies_ids:
-                    fireflies_calls.append(call)
+                # Deduplicate Fireflies calls (combine email + name matches)
+                seen_fireflies_ids = set()
+                for call in fireflies_calls:
                     seen_fireflies_ids.add(call.get('id'))
+
+                for call in fireflies_calls_by_name:
+                    if call.get('id') not in seen_fireflies_ids:
+                        fireflies_calls.append(call)
+                        seen_fireflies_ids.add(call.get('id'))
+
+            except Exception as e:
+                print(f"   ⚠️  Fireflies API error (skipping Fireflies): {e}")
+                fireflies_calls = []
 
             # Apollo: Company name matching only (no email data available)
             apollo_calls = apollo.search_conversations_by_company(company_name, since_date=since_date)
