@@ -27,6 +27,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120  # 2 hour timeout
     environment: Agent  # Use Agent environment for secrets
+    permissions:
+      contents: write  # Allow pushing commits
+      pull-requests: write  # Allow creating PRs
+      issues: write  # Allow creating issues on failure
 
     steps:
       - name: Checkout repository
