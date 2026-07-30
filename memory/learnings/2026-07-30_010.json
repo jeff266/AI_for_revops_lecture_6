@@ -1,0 +1,26 @@
+{
+  "company": "Skyscanner",
+  "deal_id": "55660576681",
+  "loop_performance": {
+    "iterations_to_pass": 1,
+    "passed": true,
+    "budget_exhausted": false
+  },
+  "cumulative_calls_context": 14,
+  "iteration_1_failures": [],
+  "components_weak": [
+    "metrics",
+    "economic_buyer",
+    "decision_criteria",
+    "decision_process",
+    "identified_pain",
+    "champion",
+    "competition"
+  ],
+  "components_strong": [],
+  "required_changes_injected": null,
+  "resolution": "Passed",
+  "proposed_instruction": "...",
+  "id": "2026-07-30_010",
+  "timestamp": "2026-07-30T21:34:41.753543"
+}
