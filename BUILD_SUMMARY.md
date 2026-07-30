@@ -30,15 +30,19 @@ A fully-functional nightly MEDDICC analysis agent that:
 │  ├─ Get active deals (HubSpot)                               │
 │  ├─ Find calls by company (Fireflies + Apollo)               │
 │  ├─ Build cumulative state (context_builder.py)              │
-│  ├─ Generate analysis (meddicc_agent.py)                     │
+│  ├─ Generate + Evaluate + Reflect (meddicc_agent.py)         │
 │  ├─ Update HubSpot notes                                     │
-│  ├─ Save learnings (github_memory.py)                        │
-│  └─ Create PR with learnings                                 │
+│  ├─ Conditional save based on outcome:                       │
+│  │   • observation/candidate → learnings/                    │
+│  │   • bug/prompt_issue → issues/                            │
+│  │   • no_learning → skip save (default)                     │
+│  └─ Create PR with evidence diversity gate                   │
 └──────────────────────────────────────────────────────────────┘
                             ↓
 ┌──────────────────────────────────────────────────────────────┐
 │  Memory Layer (Git-tracked)                                  │
-│  ├─ memory/learnings/    - Performance data                  │
+│  ├─ memory/learnings/    - High-confidence learnings         │
+│  ├─ memory/issues/       - Bugs & prompt issues              │
 │  ├─ memory/versions/     - CLAUDE.md snapshots               │
 │  ├─ memory/diffs/        - Daily changelogs                  │
 │  └─ memory/meta/         - Run counter                       │
@@ -131,9 +135,52 @@ A fully-functional nightly MEDDICC analysis agent that:
 ### 5. Memory Layer ✅
 All state persisted in git:
 - Learning entries (JSON)
+- Issues tracking (JSON)
 - Prompt versions (MD snapshots)
 - Daily diffs (Changelogs)
 - Run counter (Rewrite schedule)
+
+### 6. Reflection Gate ✅
+**Problem Solved**: Most execution failures shouldn't pollute the learning layer.
+**Solution**: Post-evaluation reflection gate to filter signal from noise.
+
+**Reflection Outcomes**:
+- `no_learning` - Default outcome (most runs). Passed on iteration 1, missing data, customer anomaly, or model limitation
+- `observation` - Worth tracking but needs more evidence across companies
+- `candidate` - Clear instruction gap with generalizable evidence
+- `bug` - Code or API errors (saved to issues/)
+- `prompt_issue` - CLAUDE.md structure problems (saved to issues/)
+
+**Model**: Kimi K3 via Fireworks AI
+**Default behavior**: Most runs produce no learning entry — this is intentional and correct.
+
+### 7. Evidence Diversity Gate ✅
+**Problem Solved**: Single-company observations promoted too aggressively.
+**Solution**: Multi-company evidence requirement before instruction promotion.
+
+**Flow**:
+1. Collect proposed instructions from today's learnings (observation/candidate only)
+2. Load past 30 days of historical learnings
+3. Count unique companies sharing similar weak components
+4. Only promote instructions with >= 2 unique companies
+5. Deferred instructions accumulate evidence across future runs
+
+**Threshold**: `MIN_EVIDENCE_COMPANIES = 2` (configurable)
+**Similarity proxy**: Overlapping components_weak between learnings
+
+### 8. Outcome-Based Learning Schema ✅
+**Problem Solved**: All learnings treated equally regardless of confidence.
+**Solution**: Structured schema with outcome, root_cause, and confidence scoring.
+
+**Schema Fields**:
+- `outcome` - Reflection gate decision (no_learning | observation | candidate | bug | prompt_issue)
+- `root_cause` - Failure categorization (instruction_gap | missing_data | customer_anomaly | model_limitation | edge_case | no_failure)
+- `confidence` - 0.8 for candidate, 0.5 for observation, 0.0 otherwise
+
+**Save Logic**:
+- observation/candidate → save to memory/learnings/
+- bug/prompt_issue → save to memory/issues/
+- no_learning → skip save entirely
 
 ## Testing Strategy
 
