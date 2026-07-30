@@ -106,6 +106,7 @@ def main():
                     print(f"   ⚠️  Invalid last_analysis_date format, fetching all calls")
 
             # Get contact emails for better matching
+            contacts = deal_context.get('contacts', [])
             contact_emails = [
                 c.get('properties', {}).get('email', '')
                 for c in contacts
