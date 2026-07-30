@@ -1,7 +1,7 @@
 anthropic>=0.40.0
+openai>=1.0.0
 requests>=2.31.0
 PyGithub>=2.1.1
 
-# Optional: For Kimi K3 cost optimization
-# Kimi K3 uses Fireworks AI API (same requests library)
+# Kimi K3 uses Fireworks AI via OpenAI SDK
 # Set FIREWORKS_API_KEY to enable Kimi hybrid mode

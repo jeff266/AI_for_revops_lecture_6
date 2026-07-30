@@ -9,9 +9,6 @@ import requests
 from typing import List, Dict, Optional
 from datetime import datetime
 
-# Add parent revops-metrics to path
-sys.path.insert(0, '/Users/jeffignacio/GrowthBook/revops-metrics')
-
 
 class FirefliesClient:
     """Client for Fireflies GraphQL API with company search."""
