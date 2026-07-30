@@ -208,13 +208,16 @@ def evaluate(
 
 ---
 
-Evaluate this analysis against the rubric and return a JSON object with your assessment."""
+Evaluate this analysis against the rubric.
+
+CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, markdown formatting, or commentary. Start your response with {{ and end with }}. The JSON must be valid and parseable."""
 
     response = fireworks_client.chat.completions.create(
         model="accounts/fireworks/models/kimi-k3",
         max_tokens=2000,
+        temperature=0,
         messages=[
-            {"role": "system", "content": rubric},
+            {"role": "system", "content": rubric + "\n\nIMPORTANT: You must return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object."},
             {"role": "user", "content": evaluation_prompt}
         ]
     )
@@ -228,6 +231,12 @@ Evaluate this analysis against the rubric and return a JSON object with your ass
             content = content.split("```json")[1].split("```")[0].strip()
         elif "```" in content:
             content = content.split("```")[1].split("```")[0].strip()
+
+        # Find JSON object boundaries (handle text before/after JSON)
+        if '{' in content and '}' in content:
+            start = content.find('{')
+            end = content.rfind('}') + 1
+            content = content[start:end]
 
         evaluation = json.loads(content)
 

@@ -81,14 +81,15 @@ Analyze the following {len(call_summaries)} call summaries and extract the cumul
 
 {combined_summaries}
 
-Output ONLY valid JSON with no additional text."""
+CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, markdown formatting, or commentary. Start your response with {{ and end with }}."""
 
     # Call Kimi K3 via Fireworks (same as Frontera contract extraction)
     response = client.chat.completions.create(
         model="accounts/fireworks/models/kimi-k3",
         max_tokens=2000,
+        temperature=0,
         messages=[
-            {"role": "system", "content": system_prompt},
+            {"role": "system", "content": system_prompt + "\n\nIMPORTANT: Return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object."},
             {"role": "user", "content": user_message}
         ]
     )
@@ -103,6 +104,12 @@ Output ONLY valid JSON with no additional text."""
             content = content.split("```json")[1].split("```")[0].strip()
         elif "```" in content:
             content = content.split("```")[1].split("```")[0].strip()
+
+        # Find JSON object boundaries (handle text before/after JSON)
+        if '{' in content and '}' in content:
+            start = content.find('{')
+            end = content.rfind('}') + 1
+            content = content[start:end]
 
         meddicc_state = json.loads(content)
 

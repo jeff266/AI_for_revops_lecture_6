@@ -214,13 +214,37 @@ def main():
 
             print(f"   {'✓' if passed else '✗'} Analysis {'passed' if passed else 'failed'} after {iterations} iteration(s)")
 
+            # Save analysis to file
+            print(f"   Saving analysis to file...")
+            output_dir = Path(__file__).parent.parent / "output"
+            output_dir.mkdir(exist_ok=True)
+
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            output_file = output_dir / f"meddicc_analysis_{deal_id}_{timestamp}.md"
+
+            with open(output_file, 'w') as f:
+                f.write(f"# MEDDICC Analysis: {company_name}\n\n")
+                f.write(f"**Deal ID:** {deal_id}\n")
+                f.write(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
+                f.write(f"**Calls Analyzed:** {total_calls}\n")
+                f.write(f"**Iterations:** {iterations}\n")
+                f.write(f"**Status:** {'✓ Passed' if passed else '✗ Failed'}\n\n")
+                f.write("---\n\n")
+                f.write(analysis)
+
+            print(f"   ✓ Saved to {output_file}")
+
             # Update HubSpot deal note
             print(f"   Updating HubSpot deal note...")
-            hubspot.upsert_meddicc_note(
-                deal_id=deal_id,
-                analysis_content=analysis,
-                calls_count=total_calls
-            )
+            try:
+                hubspot.upsert_meddicc_note(
+                    deal_id=deal_id,
+                    analysis_content=analysis,
+                    calls_count=total_calls
+                )
+                print(f"   ✓ HubSpot note updated")
+            except Exception as hub_error:
+                print(f"   ⚠️  HubSpot note failed (analysis saved to file): {hub_error}")
 
             # Save learning entry
             learning = {

@@ -106,13 +106,14 @@ jobs:
           path: |
             memory/learnings/*.json
             memory/diffs/*.md
+            output/*.md
           retention-days: 90
 
-      - name: Commit memory updates
+      - name: Commit memory and analysis updates
         if: steps.run_agent.outcome == 'success'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add memory/
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update MEDDICC agent memory [skip ci]"
+          git add memory/ output/
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update MEDDICC agent memory and analyses [skip ci]"
           git push
