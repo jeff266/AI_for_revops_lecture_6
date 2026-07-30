@@ -1,12 +1,12 @@
 """
 Context Builder for MEDDICC Agent
 
-Builds cumulative MEDDICC state from historical call summaries using Claude Haiku.
+Builds cumulative MEDDICC state from historical call summaries using Kimi K3 via Fireworks.
 """
 import os
 import json
 from typing import List, Dict
-from anthropic import Anthropic
+from openai import OpenAI
 
 
 def build_cumulative_meddicc(call_summaries: List[str], company: str) -> dict:
@@ -20,7 +20,11 @@ def build_cumulative_meddicc(call_summaries: List[str], company: str) -> dict:
     Returns:
         Structured MEDDICC state object with status, evidence, and scores
     """
-    client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+    # Use Fireworks AI with Kimi K3 for cost optimization
+    client = OpenAI(
+        api_key=os.getenv("FIREWORKS_API_KEY"),
+        base_url="https://api.fireworks.ai/inference/v1"
+    )
 
     # Build prompt
     system_prompt = """You are a MEDDICC sales methodology analyzer.
@@ -79,19 +83,18 @@ Analyze the following {len(call_summaries)} call summaries and extract the cumul
 
 Output ONLY valid JSON with no additional text."""
 
-    # Call Haiku
-    response = client.messages.create(
-        model="claude-3-7-haiku-20250219",
+    # Call Kimi K3 via Fireworks
+    response = client.chat.completions.create(
+        model="accounts/fireworks/models/kimi-k3-f1",
         max_tokens=2000,
-        system=system_prompt,
-        messages=[{
-            "role": "user",
-            "content": user_message
-        }]
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_message}
+        ]
     )
 
     # Extract JSON from response
-    content = response.content[0].text
+    content = response.choices[0].message.content
 
     # Try to parse JSON
     try:

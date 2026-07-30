@@ -1,14 +1,15 @@
 """
 MEDDICC Agent - Generator/Evaluator Loop
 
-Generates MEDDICC analyses using Claude Sonnet 4.6 with iterative refinement
-via Claude Haiku 4.5 evaluator.
+Generates MEDDICC analyses using Claude Sonnet 4.5 with iterative refinement
+via Kimi K3 evaluator (Fireworks AI).
 """
 import os
 import json
 from pathlib import Path
 from typing import Dict, Optional
 from anthropic import Anthropic
+from openai import OpenAI
 
 
 def load_claude_md() -> str:
@@ -168,10 +169,16 @@ def evaluate(
     client: Anthropic
 ) -> dict:
     """
-    Evaluate MEDDICC analysis using Claude Haiku 4.5.
+    Evaluate MEDDICC analysis using Kimi K3 via Fireworks AI.
 
     Returns evaluation result with pass/fail and feedback.
     """
+    # Use Fireworks AI with Kimi K3 for cost-effective evaluation
+    fireworks_client = OpenAI(
+        api_key=os.getenv("FIREWORKS_API_KEY"),
+        base_url="https://api.fireworks.ai/inference/v1"
+    )
+
     cumulative_json = json.dumps(cumulative_state, indent=2)
 
     evaluation_prompt = f"""# Generated MEDDICC Analysis to Evaluate
@@ -196,15 +203,17 @@ def evaluate(
 
 Evaluate this analysis against the rubric and return a JSON object with your assessment."""
 
-    response = client.messages.create(
-        model='claude-3-7-haiku-20250219',
-        system=rubric,
-        messages=[{"role": "user", "content": evaluation_prompt}],
-        max_tokens=2000
+    response = fireworks_client.chat.completions.create(
+        model="accounts/fireworks/models/kimi-k3-f1",
+        max_tokens=2000,
+        messages=[
+            {"role": "system", "content": rubric},
+            {"role": "user", "content": evaluation_prompt}
+        ]
     )
 
     # Extract JSON from response
-    content = response.content[0].text
+    content = response.choices[0].message.content
 
     try:
         # Handle markdown code blocks
@@ -308,7 +317,7 @@ def run_agent(
         'passed': evaluation['pass'] if evaluation else False,
         'model_used': {
             'generator': 'claude-sonnet-4-5-20250929',
-            'evaluator': 'claude-3-7-haiku-20250219'
+            'evaluator': 'kimi-k3-f1 (Fireworks AI)'
         }
     }
 

@@ -51,7 +51,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install anthropic requests PyGithub
+          pip install anthropic openai requests PyGithub
 
       - name: Run MEDDICC agent
         id: run_agent
