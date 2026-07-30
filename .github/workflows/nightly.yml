@@ -17,8 +17,10 @@ env:
   FIREFLIES_API_KEY: ${{ secrets.FIREFLIES_API_KEY }}
   APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
   HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
+  FIREWORKS_API_KEY: ${{ secrets.FIREWORKS_API_KEY }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_REPO: ${{ github.repository }}
+  TEST_MODE: ${{ github.event.inputs.test_mode || 'false' }}
 
 jobs:
   run-meddicc-agent:

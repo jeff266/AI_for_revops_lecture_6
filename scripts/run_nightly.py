@@ -34,6 +34,11 @@ def main():
     print(f"Started: {datetime.now().isoformat()}")
     print("=" * 80)
 
+    # Check for test mode
+    test_mode = os.getenv('TEST_MODE', 'false').lower() == 'true'
+    if test_mode:
+        print("\n⚠️  TEST MODE ENABLED - Will limit to 5 deals")
+
     # Initialize clients
     print("\n1. Initializing API clients...")
     fireflies = get_fireflies_client()
@@ -53,6 +58,11 @@ def main():
     # Get active deals
     print("\n3. Fetching active deals from HubSpot...")
     deals = hubspot.get_active_deals()
+
+    # Limit deals in test mode
+    if test_mode:
+        deals = deals[:5]
+
     print(f"   Found {len(deals)} active deals")
 
     # Process each deal
