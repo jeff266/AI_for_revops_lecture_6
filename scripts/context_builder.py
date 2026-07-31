@@ -9,7 +9,7 @@ from typing import List, Dict
 from anthropic import Anthropic
 
 
-def build_cumulative_meddicc(call_summaries: List[str], company: str) -> dict:
+def build_cumulative_meddicc(call_summaries: List[str], company: str, tracker=None) -> dict:
     """
     Build cumulative MEDDICC state from all historical call summaries.
 
@@ -98,6 +98,12 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
         system=system_prompt + "\n\nIMPORTANT: Return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object.",
         messages=[{"role": "user", "content": user_message}]
     )
+
+    if tracker:
+        tracker.record(response,
+                      model="claude-haiku-4-5-20251001",
+                      role="context_builder",
+                      company=company)
 
     # Extract JSON from response
     content = response.content[0].text

@@ -32,6 +32,7 @@ class GitHubMemory:
         self.versions_dir = self.memory_dir / "versions"
         self.diffs_dir = self.memory_dir / "diffs"
         self.issues_dir = self.memory_dir / "issues"
+        self.rubric_obs_dir = self.memory_dir / "rubric_observations"
         self.meta_dir = self.memory_dir / "meta"
 
         # Ensure directories exist (both local and GitHub Actions)
@@ -39,6 +40,7 @@ class GitHubMemory:
         self.versions_dir.mkdir(parents=True, exist_ok=True)
         self.diffs_dir.mkdir(parents=True, exist_ok=True)
         self.issues_dir.mkdir(parents=True, exist_ok=True)
+        self.rubric_obs_dir.mkdir(parents=True, exist_ok=True)
         self.meta_dir.mkdir(parents=True, exist_ok=True)
 
     # ─────────────────────────────────────────────────────────────────
@@ -128,6 +130,33 @@ class GitHubMemory:
             json.dump(issue, f, indent=2)
 
         return issue_path
+
+    def save_rubric_observation(self, observation: dict,
+                                company: str) -> Optional[Path]:
+        """
+        Save a rubric observation only when criterion_fired is not null
+        and suggested_change is not null.
+        Observations with no criterion fired are not worth storing.
+        """
+        if not observation.get('criterion_fired'):
+            return None
+        if not observation.get('suggested_change'):
+            return None
+
+        today = datetime.now().strftime('%Y-%m-%d')
+        existing = list(self.rubric_obs_dir.glob(f'{today}_*.json'))
+        idx = str(len(existing) + 1).zfill(3)
+        path = self.rubric_obs_dir / f'{today}_{idx}.json'
+
+        data = {
+            'id': f'{today}_{idx}',
+            'timestamp': datetime.now().isoformat(),
+            'company': company,
+            **observation
+        }
+        with open(path, 'w') as f:
+            json.dump(data, f, indent=2)
+        return path
 
     def get_todays_learnings(self) -> List[dict]:
         """Get all learning entries from today."""
