@@ -2,14 +2,13 @@
 MEDDICC Agent - Generator/Evaluator Loop
 
 Generates MEDDICC analyses using Claude Sonnet 4.5 with iterative refinement
-via Kimi K3 evaluator (Fireworks AI).
+via Claude Haiku evaluator and reflection gate.
 """
 import os
 import json
 from pathlib import Path
 from typing import Dict, Optional
 from anthropic import Anthropic
-from openai import OpenAI
 
 
 def load_claude_md() -> str:
@@ -176,15 +175,12 @@ def evaluate(
     client: Anthropic
 ) -> dict:
     """
-    Evaluate MEDDICC analysis using Kimi K3 via Fireworks AI.
+    Evaluate MEDDICC analysis using Claude Haiku.
 
     Returns evaluation result with pass/fail and feedback.
     """
-    # Use Fireworks AI with Kimi K3 for cost-effective evaluation (proven in Frontera)
-    fireworks_client = OpenAI(
-        api_key=os.getenv("FIREWORKS_API_KEY"),
-        base_url="https://api.fireworks.ai/inference/v1"
-    )
+    # Use Claude Haiku for cost-effective evaluation
+    anthropic_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
     cumulative_json = json.dumps(cumulative_state, indent=2)
 
@@ -212,18 +208,15 @@ Evaluate this analysis against the rubric.
 
 CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, markdown formatting, or commentary. Start your response with {{ and end with }}. The JSON must be valid and parseable."""
 
-    response = fireworks_client.chat.completions.create(
-        model="accounts/fireworks/models/kimi-k3",
-        max_tokens=4000,  # Increased to handle full evaluation response with all required fields
-        temperature=0,
-        messages=[
-            {"role": "system", "content": rubric + "\n\nIMPORTANT: You must return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object."},
-            {"role": "user", "content": evaluation_prompt}
-        ]
+    response = anthropic_client.messages.create(
+        model="claude-haiku-4-5-20251001",
+        max_tokens=4000,
+        system=rubric + "\n\nIMPORTANT: You must return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object.",
+        messages=[{"role": "user", "content": evaluation_prompt}]
     )
 
     # Extract JSON from response
-    content = response.choices[0].message.content
+    content = response.content[0].text
 
     try:
         # Handle markdown code blocks
@@ -279,11 +272,8 @@ def reflect(
 
     Returns reflection result with outcome and root_cause.
     """
-    # Use Fireworks AI with Kimi K3 for reflection
-    fireworks_client = OpenAI(
-        api_key=os.getenv("FIREWORKS_API_KEY"),
-        base_url="https://api.fireworks.ai/inference/v1"
-    )
+    # Use Claude Haiku for reflection
+    anthropic_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
     system_prompt = """You are a reflection gate for a MEDDICC analysis agent.
 Decide whether this execution should generate a learning entry.
@@ -319,17 +309,14 @@ Return ONLY valid JSON, no other text:
 Should this generate a learning entry? Return ONLY valid JSON."""
 
     try:
-        response = fireworks_client.chat.completions.create(
-            model="accounts/fireworks/models/kimi-k3",
+        response = anthropic_client.messages.create(
+            model="claude-haiku-4-5-20251001",
             max_tokens=500,
-            temperature=0,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_message}
-            ]
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_message}]
         )
 
-        content = response.choices[0].message.content
+        content = response.content[0].text
 
         # Extract JSON
         if "```json" in content:
