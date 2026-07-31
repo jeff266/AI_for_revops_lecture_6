@@ -1,12 +1,12 @@
 """
 Context Builder for MEDDICC Agent
 
-Builds cumulative MEDDICC state from historical call summaries using Kimi K3 via Fireworks.
+Builds cumulative MEDDICC state from historical call summaries using Claude Haiku.
 """
 import os
 import json
 from typing import List, Dict
-from openai import OpenAI
+from anthropic import Anthropic
 
 
 def build_cumulative_meddicc(call_summaries: List[str], company: str) -> dict:
@@ -20,11 +20,8 @@ def build_cumulative_meddicc(call_summaries: List[str], company: str) -> dict:
     Returns:
         Structured MEDDICC state object with status, evidence, and scores
     """
-    # Use Fireworks AI with Kimi K3 for cost optimization (proven in Frontera)
-    client = OpenAI(
-        api_key=os.getenv("FIREWORKS_API_KEY"),
-        base_url="https://api.fireworks.ai/inference/v1"
-    )
+    # Use Claude Haiku for cost-effective structured extraction
+    client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
     # Build prompt
     system_prompt = """You are a MEDDICC sales methodology analyzer.
@@ -87,26 +84,23 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
     # Formula: base (2000) + per-call allocation (500) with max cap (16000)
     base_tokens = 2000
     tokens_per_call = 500  # Allow ~500 tokens per call for evidence extraction
-    max_tokens_cap = 16000  # Kimi K3 model limit
+    max_tokens_cap = 16000  # Claude Haiku model limit
 
     calculated_tokens = base_tokens + (len(call_summaries) * tokens_per_call)
     max_tokens = min(calculated_tokens, max_tokens_cap)
 
     print(f"   Context builder tokens: {max_tokens} ({len(call_summaries)} calls × {tokens_per_call} + {base_tokens} base)")
 
-    # Call Kimi K3 via Fireworks (same as Frontera contract extraction)
-    response = client.chat.completions.create(
-        model="accounts/fireworks/models/kimi-k3",
+    # Call Claude Haiku for structured extraction
+    response = client.messages.create(
+        model="claude-haiku-4-5-20251001",
         max_tokens=max_tokens,
-        temperature=0,
-        messages=[
-            {"role": "system", "content": system_prompt + "\n\nIMPORTANT: Return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object."},
-            {"role": "user", "content": user_message}
-        ]
+        system=system_prompt + "\n\nIMPORTANT: Return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object.",
+        messages=[{"role": "user", "content": user_message}]
     )
 
     # Extract JSON from response
-    content = response.choices[0].message.content
+    content = response.content[0].text
 
     # Try to parse JSON
     try:
