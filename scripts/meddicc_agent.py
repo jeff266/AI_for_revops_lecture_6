@@ -103,7 +103,9 @@ def generate(
     deal_context: dict,
     previous_feedback: Optional[str],
     claude_md: str,
-    client: Anthropic
+    client: Anthropic,
+    tracker=None,
+    company: str = ''
 ) -> str:
     """
     Generate MEDDICC analysis using Claude Sonnet 4.6.
@@ -125,6 +127,12 @@ def generate(
             messages=messages,
             max_tokens=4000
         )
+
+        if tracker:
+            tracker.record(response,
+                          model="claude-sonnet-4-5-20250929",
+                          role="generator",
+                          company=company)
 
         # Check stop reason
         if response.stop_reason == 'end_turn':
@@ -172,7 +180,9 @@ def evaluate(
     call_summary: str,
     cumulative_state: dict,
     rubric: str,
-    client: Anthropic
+    client: Anthropic,
+    tracker=None,
+    company: str = ''
 ) -> dict:
     """
     Evaluate MEDDICC analysis using Claude Haiku.
@@ -214,6 +224,12 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
         system=rubric + "\n\nIMPORTANT: You must return ONLY valid JSON. No explanations, no markdown, no text outside the JSON object.",
         messages=[{"role": "user", "content": evaluation_prompt}]
     )
+
+    if tracker:
+        tracker.record(response,
+                      model="claude-haiku-4-5-20251001",
+                      role="evaluator",
+                      company=company)
 
     # Extract JSON from response
     content = response.content[0].text
@@ -263,7 +279,9 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
 def reflect(
     evaluation: dict,
     iterations: int,
-    passed: bool
+    passed: bool,
+    tracker=None,
+    company: str = ''
 ) -> dict:
     """
     Reflection gate: decide if this execution should generate a learning.
@@ -289,12 +307,24 @@ Rules:
 - Code or API errors: outcome = bug
 - CLAUDE.md format/structure issues: outcome = prompt_issue
 
-Return ONLY valid JSON, no other text:
+Additionally, evaluate the evaluator rubric itself.
+If the agent failed (passed == false or iterations > 1):
+  - Which specific criterion name caused the failure?
+  - Was that criterion appropriate given the available call data?
+  - If not appropriate, what should it say instead?
+If the agent passed on first try, set criterion_fired to null.
+
+Return ONLY valid JSON:
 {
   "outcome": "no_learning | observation | candidate | bug | prompt_issue",
   "root_cause": "instruction_gap | missing_data | customer_anomaly | model_limitation | edge_case | no_failure",
   "claude_md_would_help": true | false,
-  "reasoning": "one sentence max"
+  "reasoning": "one sentence max",
+  "rubric_observation": {
+    "criterion_fired": "criterion name or null",
+    "was_appropriate": true | false,
+    "suggested_change": "proposed new wording or null"
+  }
 }"""
 
     reflection_input = {
@@ -316,6 +346,12 @@ Should this generate a learning entry? Return ONLY valid JSON."""
             messages=[{"role": "user", "content": user_message}]
         )
 
+        if tracker:
+            tracker.record(response,
+                          model="claude-haiku-4-5-20251001",
+                          role="reflection",
+                          company=company)
+
         content = response.content[0].text
 
         # Extract JSON
@@ -332,7 +368,7 @@ Should this generate a learning entry? Return ONLY valid JSON."""
         reflection = json.loads(content)
 
         # Validate required keys
-        required = ['outcome', 'root_cause', 'claude_md_would_help', 'reasoning']
+        required = ['outcome', 'root_cause', 'claude_md_would_help', 'reasoning', 'rubric_observation']
         for key in required:
             if key not in reflection:
                 raise ValueError(f"Missing required key: {key}")
@@ -346,7 +382,12 @@ Should this generate a learning entry? Return ONLY valid JSON."""
             "outcome": "no_learning",
             "root_cause": "parse_error",
             "claude_md_would_help": False,
-            "reasoning": "Reflection parse failed"
+            "reasoning": "Reflection parse failed",
+            "rubric_observation": {
+                "criterion_fired": None,
+                "was_appropriate": False,
+                "suggested_change": None
+            }
         }
 
 
@@ -356,7 +397,9 @@ def run_agent(
     deal_context: dict,
     claude_md: str = None,
     rubric: str = None,
-    max_iterations: int = 3
+    max_iterations: int = 3,
+    tracker=None,
+    company: str = ''
 ) -> dict:
     """
     Run MEDDICC agent with generator/evaluator loop.
@@ -387,7 +430,9 @@ def run_agent(
             deal_context,
             previous_feedback,
             claude_md,
-            client
+            client,
+            tracker,
+            company
         )
 
         # Evaluate analysis
@@ -396,7 +441,9 @@ def run_agent(
             call_summary,
             cumulative_state,
             rubric,
-            client
+            client,
+            tracker,
+            company
         )
 
         # Check if passed
@@ -410,7 +457,7 @@ def run_agent(
 
     # Run reflection gate to decide if this should generate a learning
     passed = evaluation['pass'] if evaluation else False
-    reflection = reflect(evaluation, iteration, passed)
+    reflection = reflect(evaluation, iteration, passed, tracker, company)
 
     # Return final result with reflection
     return {
@@ -420,10 +467,11 @@ def run_agent(
         'passed': passed,
         'outcome': reflection['outcome'],
         'root_cause': reflection['root_cause'],
+        'rubric_observation': reflection.get('rubric_observation', {}),
         'model_used': {
             'generator': 'claude-sonnet-4-5-20250929',
-            'evaluator': 'kimi-k3 (Fireworks AI)',
-            'reflector': 'kimi-k3 (Fireworks AI)'
+            'evaluator': 'claude-haiku-4-5-20251001',
+            'reflector': 'claude-haiku-4-5-20251001'
         }
     }
 

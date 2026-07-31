@@ -41,3 +41,6 @@ Thumbs.db
 # Test outputs
 test_*.json
 test_*.md
+
+# Data files (historical ETL artifacts)
+data/*.csv

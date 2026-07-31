@@ -25,6 +25,35 @@ from hubspot_deals import get_hubspot_deals_client
 from context_builder import build_cumulative_meddicc
 from meddicc_agent import run_agent
 from github_memory import get_memory_manager
+from token_tracker import TokenTracker
+
+
+def get_most_recent_call_date(fireflies_calls: list, apollo_calls: list) -> datetime | None:
+    """Extract the most recent call date from fireflies and apollo calls."""
+    dates = []
+
+    # Extract Fireflies dates (millisecond timestamp in 'date' field)
+    for call in fireflies_calls:
+        date_value = call.get('date')
+        if date_value:
+            try:
+                if isinstance(date_value, (int, float)):
+                    dates.append(datetime.fromtimestamp(date_value / 1000))
+                elif isinstance(date_value, str):
+                    dates.append(datetime.fromisoformat(date_value.replace('Z', '+00:00')))
+            except:
+                pass
+
+    # Extract Apollo dates (ISO string in 'start_time' field)
+    for call in apollo_calls:
+        start_time = call.get('start_time')
+        if start_time:
+            try:
+                dates.append(datetime.fromisoformat(start_time.replace('Z', '+00:00')))
+            except:
+                pass
+
+    return max(dates) if dates else None
 
 
 def main():
@@ -49,6 +78,7 @@ def main():
     apollo = get_apollo_client()
     hubspot = get_hubspot_deals_client()
     memory = get_memory_manager()
+    tracker = TokenTracker(memory.memory_dir)
 
     # Check counter and determine run type
     print("\n2. Checking run type...")
@@ -81,6 +111,12 @@ def main():
     learnings = []
     errors = []
     skipped = 0
+    skipped_no_calls = 0
+    skipped_no_new_calls = 0
+    skipped_short = 0
+    deals_processed = 0
+    analyses_written = 0
+    learnings_written = 0
 
     for i, deal in enumerate(deals, 1):
         deal_id = deal.get('id')
@@ -161,14 +197,6 @@ def main():
 
             total_calls = len(fireflies_calls) + len(apollo_calls)
 
-            if total_calls < 1:
-                if since_date:
-                    print(f"   ⚠️  No new calls since {last_analysis_date_str}, skipping")
-                else:
-                    print(f"   ⚠️  No recorded calls found, skipping")
-                skipped += 1
-                continue
-
             print(f"   Found {total_calls} calls ({len(fireflies_calls)} Fireflies, {len(apollo_calls)} Apollo)")
 
             # Format all call summaries
@@ -184,26 +212,64 @@ def main():
             # Note: This is approximate since summaries are strings
             # In production, you'd sort the original objects before formatting
 
-            if len(all_summaries) == 1:
-                # Only 1 call - can't build cumulative state
-                print("   ⚠️  Only 1 call - need at least 2 for cumulative analysis, skipping")
+            # GUARD 1: No calls found for company
+            if len(all_summaries) == 0:
+                print(f"   ⏭️  {company_name}: no calls found — skipping")
+                if since_date:
+                    skipped_no_new_calls += 1
+                else:
+                    skipped_no_calls += 1
                 skipped += 1
                 continue
 
-            # Split: all except most recent = cumulative, last = recent
-            recent_call_summary = all_summaries[-1]
-            historical_summaries = all_summaries[:-1]
+            # GUARD 4: Most recent call already analyzed
+            if since_date:
+                last_call_date = get_most_recent_call_date(fireflies_calls, apollo_calls)
+                if last_call_date and last_call_date <= since_date:
+                    print(f"   ⏭️  {company_name}: most recent call ({last_call_date.strftime('%Y-%m-%d')}) already analyzed — skipping")
+                    skipped_no_new_calls += 1
+                    skipped += 1
+                    continue
 
-            # Build cumulative MEDDICC state
-            print(f"   Building cumulative state from {len(historical_summaries)} historical calls...")
-            cumulative_state = build_cumulative_meddicc(historical_summaries, company_name)
+            # GUARD 2: Only one call exists (nothing to contextualize)
+            if len(all_summaries) == 1:
+                print(f"   ⚡ {company_name}: single call — skipping context builder, analyzing directly")
+                recent_call_summary = all_summaries[0]
+                historical_summaries = []
+                cumulative_state = {
+                    "company": company_name,
+                    "calls_reviewed": 0,
+                    "meddicc_state": {
+                        k: {"status": "unknown", "evidence": "", "score": 0}
+                        for k in ["metrics", "economic_buyer", "decision_criteria",
+                                 "decision_process", "identified_pain", "champion", "competition"]
+                    },
+                    "key_context": "First call on record — no prior context."
+                }
+            else:
+                # Split: all except most recent = cumulative, last = recent
+                recent_call_summary = all_summaries[-1]
+                historical_summaries = all_summaries[:-1]
+
+                # Build cumulative MEDDICC state
+                print(f"   Building cumulative state from {len(historical_summaries)} historical calls...")
+                cumulative_state = build_cumulative_meddicc(historical_summaries, company_name, tracker)
+
+            # GUARD 3: Most recent call is below minimum signal threshold
+            if len(recent_call_summary.strip()) < 200:
+                print(f"   ⏭️  {company_name}: most recent call summary too short ({len(recent_call_summary)} chars) — skipping")
+                skipped_short += 1
+                skipped += 1
+                continue
 
             # Run MEDDICC agent
             print(f"   Running MEDDICC generator/evaluator loop...")
             result = run_agent(
                 call_summary=recent_call_summary,
                 cumulative_state=cumulative_state,
-                deal_context=deal_context
+                deal_context=deal_context,
+                tracker=tracker,
+                company=company_name
             )
 
             # Extract results
@@ -236,6 +302,7 @@ def main():
                 f.write(analysis)
 
             print(f"   ✓ Saved to {output_file}")
+            analyses_written += 1
 
             # Update HubSpot deal note
             print(f"   Updating HubSpot deal note...")
@@ -274,14 +341,25 @@ def main():
             if outcome in ["observation", "candidate"]:
                 learnings.append(learning)
                 memory.save_learning(learning)
+                learnings_written += 1
                 print(f"   ✓ Learning saved (outcome={outcome})")
             elif outcome in ["bug", "prompt_issue"]:
                 memory.save_issue(learning)
+                learnings_written += 1
                 print(f"   ✓ Issue saved (outcome={outcome})")
             else:
                 # no_learning - skip save entirely
                 print(f"   ✓ No learning generated (outcome={outcome})")
 
+            # Save rubric observation (runs regardless of outcome)
+            rubric_obs = result.get('rubric_observation', {})
+            if rubric_obs:
+                saved = memory.save_rubric_observation(
+                    rubric_obs, company_name)
+                if saved:
+                    print(f"   ✓ Rubric observation saved")
+
+            deals_processed += 1
             print(f"   ✓ Complete")
 
         except Exception as e:
@@ -303,6 +381,21 @@ def main():
         create_full_rewrite_pr(memory, learnings)
     else:
         create_incremental_pr(memory, learnings)
+
+    # Print guard summary
+    print(f"\n=== RUN SUMMARY ===")
+    print(f"  Deals evaluated:    {deals_processed}")
+    print(f"  Skipped (no calls): {skipped_no_calls}")
+    print(f"  Skipped (no new):   {skipped_no_new_calls}")
+    print(f"  Skipped (too short):{skipped_short}")
+    print(f"  Analyses written:   {analyses_written}")
+    print(f"  Learning entries:   {learnings_written}")
+
+    # Save and print token usage
+    print("\n7. Saving token usage...")
+    usage_summary = tracker.save()
+    tracker.print_summary(usage_summary,
+                          deals_processed=len(learnings))
 
     # Print summary
     print("\n" + "=" * 80)
@@ -333,6 +426,15 @@ def main():
 def create_incremental_pr(memory: any, learnings: List[dict]) -> None:
     """Create PR with today's learnings appended to CLAUDE.md."""
     today = datetime.now().strftime('%Y-%m-%d')
+
+    # GUARD 5: Nightly synthesizer with no candidates
+    today_files = list(memory.learnings_dir.glob(f'{today}_*.json'))
+    if not today_files:
+        print("   ⏭️  No learning entries today — skipping PR synthesis")
+        memory.save_diff("No analyses generated today — no learning entries written.")
+        claude_md_path = Path(__file__).parent.parent / 'prompts' / 'CLAUDE.md'
+        memory.save_version(claude_md_path.read_text())
+        return
 
     # Get current CLAUDE.md
     current_claude_md = memory.get_current_claude_md()
@@ -571,6 +673,99 @@ Next full rewrite scheduled for: {(datetime.now() + timedelta(days=30)).strftime
     )
 
     print(f"   ✓ Full rewrite PR created: {title}")
+
+    # Also create rubric update PR on 30-day cycle
+    prs_created = ['full_rewrite']
+    create_rubric_update_pr(memory, prs_created)
+
+
+def create_rubric_update_pr(memory: any, prs_created: list) -> None:
+    """
+    Read all rubric observations from the past 30 days.
+    If enough signal exists, propose updates to evaluator_rubric.md.
+    Only runs on the 30-day cycle alongside the full rewrite.
+    """
+    from anthropic import Anthropic
+
+    obs_files = sorted(memory.rubric_obs_dir.glob('*.json'))
+    if not obs_files:
+        print("   No rubric observations to synthesize")
+        return
+
+    # Load all observations
+    observations = []
+    for f in obs_files:
+        with open(f) as fp:
+            observations.append(json.load(fp))
+
+    # Only proceed if we have at least 5 observations with suggested changes
+    actionable = [o for o in observations if o.get('suggested_change')]
+    if len(actionable) < 5:
+        print(f"   Only {len(actionable)} actionable rubric observations — skipping (need 5+)")
+        return
+
+    # Load current rubric
+    rubric_path = Path(__file__).parent.parent / 'prompts' / 'evaluator_rubric.md'
+    current_rubric = rubric_path.read_text()
+
+    # Synthesize with Haiku
+    client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+
+    synthesis_prompt = f"""You are reviewing observations about an AI evaluator rubric
+used to score MEDDICC sales call analyses.
+
+Current rubric:
+{current_rubric}
+
+Observations from the past 30 days ({len(actionable)} with suggested changes):
+{json.dumps(actionable, indent=2)}
+
+Your task:
+1. Identify patterns: which criteria are consistently flagged as inappropriate?
+2. Identify criteria that are too strict, too loose, or missing entirely
+3. Propose a revised evaluator_rubric.md that:
+   - Fixes criteria that fired inappropriately multiple times
+   - Adds criteria that were clearly missing
+   - Removes or softens criteria that blocked good analyses
+   - Is no longer than the current rubric plus one new criterion maximum
+
+Return ONLY the complete revised rubric as markdown.
+Do not include explanations outside the rubric itself.
+Add a ## Revision Notes section at the bottom explaining what changed."""
+
+    response = client.messages.create(
+        model="claude-haiku-4-5-20251001",
+        max_tokens=2000,
+        messages=[{"role": "user", "content": synthesis_prompt}]
+    )
+
+    new_rubric = response.content[0].text
+
+    # Write to file and create PR
+    rubric_path.write_text(new_rubric)
+
+    branch = f"agent/rubric-update-{datetime.now().strftime('%Y-%m-%d')}"
+    pr_body = f"""## Evaluator Rubric Update — 30-Day Synthesis
+
+Based on {len(actionable)} rubric observations across {len(set(o['company'] for o in actionable))} companies.
+
+### Criteria modified
+See ## Revision Notes section in the updated rubric.
+
+### Criteria that triggered most frequently
+{chr(10).join(f"- {c}: {sum(1 for o in actionable if o.get('criterion_fired') == c)} times"
+              for c in set(o.get('criterion_fired') for o in actionable if o.get('criterion_fired')))}
+
+Review the diff carefully. The evaluator rubric affects every analysis.
+"""
+    memory.create_pr(
+        branch_name=branch,
+        title=f"chore: evaluator rubric update — {datetime.now().strftime('%Y-%m-%d')}",
+        body=pr_body,
+        files_to_commit={str(rubric_path): new_rubric}
+    )
+    print(f"   ✓ Rubric update PR created: {branch}")
+    prs_created.append('rubric_update')
 
 
 def get_top_weak_components(learnings: List[dict]) -> str:
