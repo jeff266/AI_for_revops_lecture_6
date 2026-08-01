@@ -154,72 +154,6 @@ class HubSpotDealsClient:
             print(f"Error getting contacts for deal {deal_id}: {e}")
             return []
 
-    def get_deal_notes(self, deal_id: str) -> List[dict]:
-        """Get notes associated with a deal."""
-        endpoint = f"/crm/v3/objects/deals/{deal_id}/associations/notes"
-
-        try:
-            response = self._get(endpoint)
-            note_associations = response.get('results', [])
-
-            notes = []
-            for assoc in note_associations:
-                note_id = assoc.get('id')
-                note_endpoint = f"/crm/v3/objects/notes/{note_id}"
-                note_response = self._get(note_endpoint, params={'properties': ['hs_note_body', 'hs_timestamp']})
-                notes.append(note_response)
-
-            return notes
-
-        except Exception as e:
-            print(f"Error getting notes for deal {deal_id}: {e}")
-            return []
-
-    def find_meddicc_note(self, deal_id: str) -> Optional[dict]:
-        """Find existing MEDDICC analysis note for a deal."""
-        notes = self.get_deal_notes(deal_id)
-
-        for note in notes:
-            body = note.get('properties', {}).get('hs_note_body', '')
-            if '## MEDDICC Analysis' in body or 'MEDDICC Analysis' in body:
-                return note
-
-        return None
-
-    def create_deal_note(self, deal_id: str, note_content: str) -> dict:
-        """Create a new note on a deal."""
-        endpoint = "/crm/v3/objects/notes"
-
-        data = {
-            'properties': {
-                'hs_note_body': note_content,
-                'hs_timestamp': int(datetime.now().timestamp() * 1000)
-            }
-        }
-
-        # Create note
-        note_response = self._post(endpoint, data)
-        note_id = note_response.get('id')
-
-        # Associate with deal
-        assoc_endpoint = f"/crm/v3/objects/notes/{note_id}/associations/deals/{deal_id}/note_to_deal"
-        self._patch(assoc_endpoint, {})
-
-        return note_response
-
-    def update_deal_note(self, note_id: str, note_content: str) -> dict:
-        """Update an existing note."""
-        endpoint = f"/crm/v3/objects/notes/{note_id}"
-
-        data = {
-            'properties': {
-                'hs_note_body': note_content,
-                'hs_timestamp': int(datetime.now().timestamp() * 1000)
-            }
-        }
-
-        return self._patch(endpoint, data)
-
     def update_deal_property(self, deal_id: str, property_name: str, value: str) -> dict:
         """Update a single deal property."""
         endpoint = f"/crm/v3/objects/deals/{deal_id}"
@@ -319,71 +253,37 @@ class HubSpotDealsClient:
 
     def upsert_meddicc_note(self, deal_id: str, analysis_content: str, calls_count: int = 0) -> dict:
         """
-        Create or update MEDDICC analysis on a deal using TWO mechanisms:
+        Update MEDDICC analysis on a deal by PATCHing deal properties.
 
-        1. PATCH deal properties with structured scores
-        2. POST timeline event with full analysis narrative
-
-        Also updates the legacy note for backwards compatibility.
+        Extracts structured scores from analysis markdown and updates:
+        - meddicc_score (0-70)
+        - meddicc_status (red/yellow/green)
+        - meddicc_last_analyzed (date)
+        - meddicc_champion_score (0-10)
+        - meddicc_economic_buyer_score (0-10)
+        - meddicc_analysis_summary (2-sentence summary)
         """
-        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M UTC')
         today = datetime.now().strftime('%Y-%m-%d')
 
         # Extract structured scores from analysis
         scores = self._extract_scores_from_analysis(analysis_content)
 
-        # MECHANISM 1: Update deal properties with structured scores
-        try:
-            endpoint = f"/crm/v3/objects/deals/{deal_id}"
-            properties_data = {
-                'properties': {
-                    'meddicc_score': scores['overall_score'],
-                    'meddicc_status': scores['status'],
-                    'meddicc_last_analyzed': today,
-                    'meddicc_champion_score': scores['champion_score'],
-                    'meddicc_economic_buyer_score': scores['economic_buyer_score'],
-                    'meddicc_analysis_summary': scores['summary'],
-                    'last_meddicc_analysis_date': today  # Keep for backwards compatibility
-                }
+        # PATCH deal properties with structured scores
+        endpoint = f"/crm/v3/objects/deals/{deal_id}"
+        properties_data = {
+            'properties': {
+                'meddicc_score': scores['overall_score'],
+                'meddicc_status': scores['status'],
+                'meddicc_last_analyzed': today,
+                'meddicc_champion_score': scores['champion_score'],
+                'meddicc_economic_buyer_score': scores['economic_buyer_score'],
+                'meddicc_analysis_summary': scores['summary']
             }
-            self._patch(endpoint, properties_data)
-            print(f"  ✓ Updated deal properties (score: {scores['overall_score']}, status: {scores['status']})")
-        except Exception as e:
-            print(f"  ⚠️  Failed to update deal properties: {e}")
+        }
 
-        # MECHANISM 2: Create timeline event with full analysis
-        try:
-            self.create_timeline_event(
-                deal_id,
-                analysis_content,
-                f"{scores['overall_score']}/100"
-            )
-        except Exception as e:
-            print(f"  ⚠️  Timeline event error: {e}")
-
-        # LEGACY: Also update note for backwards compatibility
-        formatted_note = f"""## MEDDICC Analysis
-**Generated:** {timestamp}
-**Based on:** {calls_count} recorded calls
-**Score:** {scores['overall_score']}/100 ({scores['status']})
-
-{analysis_content}
-
----
-*Auto-generated by MEDDICC Agent*
-"""
-
-        try:
-            existing_note = self.find_meddicc_note(deal_id)
-            if existing_note:
-                note_id = existing_note.get('id')
-                result = self.update_deal_note(note_id, formatted_note)
-            else:
-                result = self.create_deal_note(deal_id, formatted_note)
-            return result
-        except Exception as e:
-            print(f"  ⚠️  Note update failed (non-critical): {e}")
-            return {}
+        result = self._patch(endpoint, properties_data)
+        print(f"  ✓ Updated deal properties (score: {scores['overall_score']}/70, status: {scores['status']})")
+        return result
 
     def get_deal_context(self, deal_id: str) -> dict:
         """
@@ -490,83 +390,6 @@ class HubSpotDealsClient:
 
         return True
 
-    def setup_timeline_template(self) -> Optional[str]:
-        """
-        Create timeline event template for MEDDICC analysis.
-
-        Returns the template ID if successful.
-        """
-        endpoint = "/crm/v3/timeline/event-templates"
-
-        # Check if template already exists by trying to create it
-        template_data = {
-            "name": "MEDDICC Analysis",
-            "objectType": "deals",
-            "headerTemplate": "MEDDICC Analysis - {{score}}",
-            "detailTemplate": "{{analysis}}",
-            "tokens": [
-                {
-                    "name": "score",
-                    "label": "MEDDICC Score",
-                    "type": "string"
-                },
-                {
-                    "name": "analysis",
-                    "label": "Full Analysis",
-                    "type": "string"
-                }
-            ]
-        }
-
-        try:
-            response = self._post(endpoint, template_data)
-            template_id = response.get('id')
-            print(f"  ✓ Created timeline template: {template_id}")
-            return template_id
-        except requests.exceptions.HTTPError as e:
-            if e.response.status_code == 409:
-                # Template already exists - try to get it
-                print(f"  → Timeline template already exists")
-                # Note: We'll need to store the template ID in config or env
-                return os.getenv("HUBSPOT_TIMELINE_TEMPLATE_ID")
-            else:
-                print(f"  ⚠️  Error creating timeline template: {e}")
-                return None
-
-    def create_timeline_event(self, deal_id: str, analysis_content: str, score: str = "N/A") -> bool:
-        """
-        Create a timeline event for MEDDICC analysis.
-
-        Args:
-            deal_id: HubSpot deal ID
-            analysis_content: Full analysis markdown
-            score: MEDDICC score string
-        """
-        template_id = os.getenv("HUBSPOT_TIMELINE_TEMPLATE_ID")
-        if not template_id:
-            print("  ⚠️  Timeline template ID not configured, skipping timeline event")
-            return False
-
-        endpoint = "/crm/v3/timeline/events"
-
-        event_data = {
-            "eventTemplateId": template_id,
-            "objectId": deal_id,
-            "tokens": {
-                "score": score,
-                "analysis": analysis_content
-            },
-            "timestamp": int(datetime.now().timestamp() * 1000)
-        }
-
-        try:
-            self._post(endpoint, event_data)
-            print(f"  ✓ Created timeline event")
-            return True
-        except requests.exceptions.HTTPError as e:
-            print(f"  ⚠️  Timeline event failed: {e}")
-            return False
-
     def test_connection(self) -> bool:
         """Test API connection."""
         try:
@@ -598,13 +421,6 @@ if __name__ == "__main__":
     print("\nSetting up custom MEDDICC properties...")
     client.setup_hubspot_properties()
 
-    # Setup timeline template (run once, idempotent)
-    print("\nSetting up timeline event template...")
-    template_id = client.setup_timeline_template()
-    if template_id:
-        print(f"  Template ID: {template_id}")
-        print(f"  Set HUBSPOT_TIMELINE_TEMPLATE_ID={template_id} in your environment")
-
     # Get active deals
     print("\nFetching active deals...")
     deals = client.get_active_deals()
@@ -627,10 +443,3 @@ if __name__ == "__main__":
 
         contacts = context.get('contacts', [])
         print(f"  Contacts: {len(contacts)}")
-
-        # Check for existing MEDDICC note
-        meddicc_note = client.find_meddicc_note(deal_id)
-        if meddicc_note:
-            print(f"  ✓ Has existing MEDDICC note")
-        else:
-            print(f"  ✗ No MEDDICC note yet")
