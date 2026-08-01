@@ -1,7 +1,7 @@
 {
   "company": "bi-weekly sync w/GB",
   "slug": "bi-weekly-sync-w-gb",
-  "last_etl_date": "2026-08-01T10:41:40.171586",
+  "last_etl_date": "2026-08-01T12:40:38.757623",
   "calls": [
     {
       "id": "01KN7H41ZFKXK83MTKZJQ5363P",
@@ -206,6 +206,18 @@
       "participants": 12,
       "keywords": "sticky bucketing, Java SDK, GrowthBook, feature flags, assignment storage, bug fixes",
       "action_items": "\n**Brian Schultz**\nSend detailed sticky bucketing implementation examples and questions to Chris Sanders via Slack or email for review by the GrowthBook SDK team (06:46)\nPost questions and examples in the GrowthBook Teams Slack channel to facilitate team review and quicker response (10:57)\n\n**Chris Sanders**\nReview Brian’s provided examples and investigate the Java SDK’s handling of sticky bucketing to determine if internal method calls to retrieve saved assignments are missing or implemented incorrectly (06:46)\nCoordinate with the SDK team as needed to resolve the sticky bucketing implementation issue for the Java SDK (11:35)\n\n**Andrew Muller**\nContinue supporting bug fixes and assist other teams in their implementation efforts, particularly addressing some outstanding flagging items (09:19)\n"
+    },
+    {
+      "id": "01KY77Y40T263XCQZTP5D7123Q",
+      "source": "fireflies",
+      "title": "bi-weekly sync w/GB team",
+      "date": "2026-07-29",
+      "duration_minutes": 22.15999984741211,
+      "summary": "The team addressed a technical issue affecting an A/B test due to a cookie setup impacting test IDs, which was resolved internally before the meeting, allowing for a focus on metrics and reporting improvements. Key discussions included clarifying the conversion rate metric, which was shown as a decimal, leading to confusion among stakeholders who expected percentages. Feedback was escalated to improve the GrowthBook UI to display percentage signs and to ensure clearer reporting for leadership. Additionally, it was noted that the current SQL query does not compute the conversion rate as a proper ratio, which prompted plans for a query update. Overall, the meeting emphasized collaborative problem resolution and actionable feedback for GrowthBook.",
+      "organizer": "chris@growthbook.io",
+      "participants": 12,
+      "keywords": "A/B testing, conversion rate, GrowthBook, percentage display, clickstream data, experiment metric",
+      "action_items": "\n, *, *, A, n, d, r, e, w,  , M, u, l, l, e, r, *, *, \n, A, t, t, e, m, p, t,  , t, o,  , c, o, n, f, i, r, m,  , i, f,  , K, y, l, e,  , o, r,  , o, t, h, e, r,  , t, e, a, m,  , m, e, m, b, e, r, s,  , n, e, e, d,  , a, s, s, i, s, t, a, n, c, e,  , w, i, t, h,  , n, o, t, e, b, o, o, k,  , i, n, t, e, g, r, a, t, i, o, n,  , d, u, r, i, n, g,  , m, e, e, t, i, n, g,  , (, 0, 4, :, 1, 5, ), \n, A, t, t, e, m, p, t,  , t, o,  , b, r, i, n, g,  , i, n,  , C, a, s, e, y,  , o, r,  , o, r, i, g, i, n, a, l,  , e, x, p, e, r, i, m, e, n, t,  , c, r, e, a, t, o, r,  , t, o,  , c, l, a, r, i, f, y,  , o, r,  , r, e, d, e, f, i, n, e,  , c, o, n, v, e, r, s, i, o, n,  , r, a, t, e,  , m, e, t, r, i, c,  , s, e, t, u, p,  , i, f,  , n, e, e, d, e, d,  , (, 1, 2, :, 0, 0, ), \n, \n, *, *, C, h, r, i, s,  , S, a, n, d, e, r, s, *, *, \n, T, a, k, e,  , f, e, e, d, b, a, c, k,  , r, e, g, a, r, d, i, n, g,  , U, I,  , e, n, h, a, n, c, e, m, e, n, t,  , t, o,  , d, i, s, p, l, a, y,  , c, o, n, v, e, r, s, i, o, n,  , r, a, t, e, s,  , a, s,  , p, e, r, c, e, n, t, a, g, e, s,  , w, i, t, h,  , a, p, p, r, o, p, r, i, a, t, e,  , p, e, r, c, e, n, t, a, g, e,  , s, i, g, n, s,  , b, a, c, k,  , t, o,  , G, r, o, w, t, h, B, o, o, k,  , p, r, o, d, u, c, t,  , t, e, a, m,  , f, o, r,  , c, o, n, s, i, d, e, r, a, t, i, o, n,  , (, 1, 4, :, 3, 7, ), \n"
     }
   ]
 }

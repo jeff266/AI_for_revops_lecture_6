@@ -1,7 +1,7 @@
 {
   "company": "Chaos + GrowthBook",
   "slug": "chaos-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.256947",
+  "last_etl_date": "2026-08-01T12:40:38.746843",
   "calls": [
     {
       "id": "01KJT558J6CN4YT75JDB65KH5R",
@@ -14,6 +14,18 @@
       "participants": 8,
       "keywords": "A/B Testing, Feature Flags, Experimentation, Roketta CMS, Core Web Vitals, Product Analytics",
       "action_items": "\n**Christian Liebenow**\nSend detailed documentation on flicker avoidance, latency minimization, core web vitals impact, and GDPR cookie compliance to Bozhidar Kamenski (50:00)\nProvide detailed integration approaches for GrowthBook with Roketta CMS, especially cache and edge handling (50:00)\n\n**Bozhidar Kamenski**\nReview GrowthBook documentation on integration and compliance and send any additional technical questions following review (50:20)\n\n**Jake Wallace**\nCoordinate internal review of GrowthBook materials and sync with team to determine next steps for proof of concept or initial experimentation launch (51:40)\n\n**Logan Bates**\nProvide demo and detailed answers regarding product analytics, experiment setup, and feature flagging capabilities (00:00)\n"
+    },
+    {
+      "id": "01KYJMARDR6BKWFHCQZT133XCY",
+      "source": "fireflies",
+      "title": "Chaos + GrowthBook",
+      "date": "2026-07-30",
+      "duration_minutes": 47.709999084472656,
+      "summary": "The discussion emphasized creating a reliable testing foundation before scaling experimentation efforts, specifically through early organic traffic tests that identified and fixed bugs. Concerns about data integrity from past AB testing tools led to the selection of GrowthBook for accurate user flow tracking. Data architecture improvements were highlighted, necessitating SQL skills for detailed metric breakdowns. The need for efficient query costs in BigQuery was discussed, with best practices for caching and materialized views. The potential benefits of upgrading to an Enterprise plan were evaluated, contingent on stabilizing data setup. Additionally, measures for managing metrics post-experiment were reviewed, advocating for precomputed metrics to optimize costs, and overall communication strategies were solidified for ongoing collaboration.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, fact tables, slicing, experiment tracking, enterprise plan, data warehouse",
+      "action_items": "\n, *, *, J, a, k, e,  , W, a, l, l, a, c, e, *, *, \n, F, o, l, l, o, w,  , u, p,  , i, n, t, e, r, n, a, l, l, y,  , t, o,  , e, n, g, a, g, e,  , d, a, t, a,  , t, e, a, m,  , o, r,  , e, x, p, e, r, t, s,  , t, o,  , d, e, f, i, n, e,  , a, n, d,  , o, p, t, i, m, i, z, e,  , f, a, c, t,  , t, a, b, l, e, s,  , f, o, r,  , a, c, c, u, r, a, t, e,  , m, e, t, r, i, c, s,  , a, n, d,  , s, l, i, c, i, n, g,  , (, 3, 6, :, 4, 3, ), \n, \n, *, *, L, o, g, a, n,  , B, a, t, e, s, *, *, \n, P, r, o, v, i, d, e,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , a, n, d,  , e, x, a, m, p, l, e, s,  , o, n,  , a, u, t, o, -, s, l, i, c, i, n, g, ,,  , d, i, m, e, n, s, i, o, n,  , s, e, t, u, p, ,,  , a, n, d,  , a, d, v, a, n, c, e, d,  , u, s, e,  , o, f,  , f, a, c, t,  , t, a, b, l, e, s,  , f, o, r,  , C, h, a, o, s,  , t, e, a, m,  , r, e, v, i, e, w,  , (, 2, 0, :, 4, 2, ), \n, I, n, v, e, s, t, i, g, a, t, e,  , a, n, d,  , s, h, a, r, e,  , b, e, s, t,  , p, r, a, c, t, i, c, e, s,  , o, r,  , g, u, i, d, e, s,  , o, n,  , r, e, d, u, c, i, n, g,  , f, l, i, c, k, e, r, /, l, a, y, o, u, t,  , s, h, i, f, t, s,  , d, u, r, i, n, g,  , r, e, d, i, r, e, c, t,  , e, x, p, e, r, i, m, e, n, t, s,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , (, 4, 4, :, 0, 3, ), \n, \n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, C, o, o, r, d, i, n, a, t, e,  , o, n, g, o, i, n, g,  , c, o, m, m, u, n, i, c, a, t, i, o, n,  , a, n, d,  , s, u, p, p, o, r, t,  , v, i, a,  , S, l, a, c, k,  , a, n, d,  , e, m, a, i, l, ;,  , f, a, c, i, l, i, t, a, t, e,  , a, c, c, e, s, s,  , t, o,  , E, n, t, e, r, p, r, i, s, e,  , f, e, a, t, u, r, e, s,  , t, r, i, a, l,  , p, o, s, t,  , f, a, c, t,  , t, a, b, l, e,  , r, e, a, d, i, n, e, s, s,  , (, 4, 5, :, 0, 0, ), \n, \n, *, *, C, h, a, o, s,  , T, e, a, m, *, *, \n, E, v, a, l, u, a, t, e,  , t, e, s, t,  , r, e, s, u, l, t, s,  , w, i, t, h,  , c, u, r, r, e, n, t,  , G, r, o, w, t, h, B, o, o, k,  , P, r, o,  , s, e, t, u, p,  , a, n, d,  , r, e, a, s, s, e, s, s,  , i, f,  , E, n, t, e, r, p, r, i, s, e,  , u, p, g, r, a, d, e,  , i, s,  , n, e, e, d, e, d,  , b, a, s, e, d,  , o, n,  , s, l, i, c, i, n, g,  , a, n, d,  , s, u, p, p, o, r, t,  , b, e, n, e, f, i, t, s,  , a, f, t, e, r,  , i, n, i, t, i, a, l,  , f, i, x, e, s,  , (, 4, 4, :, 0, 9, ), \n"
     }
   ]
 }

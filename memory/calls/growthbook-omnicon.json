@@ -1,0 +1,19 @@
+{
+  "company": "Growthbook <> Omnicon",
+  "slug": "growthbook-omnicon",
+  "last_etl_date": "2026-08-01T12:40:38.749811",
+  "calls": [
+    {
+      "id": "01KYK5E0FE9KQ48EXDG4RSSWX4",
+      "source": "fireflies",
+      "title": "Growthbook <> Omnicon - Demo Follow Up",
+      "date": "2026-07-29",
+      "duration_minutes": 42.900001525878906,
+      "summary": "The meeting covered critical updates on GrowthBook's platform setup, highlighting the transition to unique user logins for better accountability and audit tracking. Logan Bates explained the multi-project and multi-organization structures, which enhance client data separation and security. The importance of feature flags for flexible rollout strategies was also stressed, with automated rollbacks for adverse metrics. New analytics features were discussed, including a funnel builder and session recordings, aimed at improving experiment insights. Finally, initial positive feedback on a partnership proposal was shared, with plans for a markup review to finalize terms and foster collaboration.",
+      "organizer": "dan@growthbook.io",
+      "participants": 8,
+      "keywords": "feature flagging, experimentation, multi-tenancy, GA4 integration, product analytics, partnership proposal",
+      "action_items": "\n, *, *, G, r, a, c, e,  , A, d, a, m, s, *, *, \n, C, o, n, f, i, r, m,  , c, u, r, r, e, n, t,  , s, t, a, t, u, s,  , o, f,  , i, n, d, i, v, i, d, u, a, l,  , t, e, a, m,  , a, c, c, e, s, s,  , a, n, d,  , u, s, a, g, e,  , o, f,  , G, r, o, w, t, h, B, o, o, k,  , p, l, a, t, f, o, r, m,  , (, 0, 4, :, 1, 1, ), \n, \n, *, *, D, a, n,  , W, a, t, h, n, e, *, *, \n, S, h, a, r, e,  , m, a, r, k, e, d, -, u, p,  , p, a, r, t, n, e, r, s, h, i, p,  , p, r, o, p, o, s, a, l,  , f, e, e, d, b, a, c, k,  , w, i, t, h,  , O, M, C,  , t, e, a, m,  , e, a, r, l, y,  , n, e, x, t,  , w, e, e, k,  , (, 4, 1, :, 2, 5, ), \n, \n, *, *, D, a, n,  , W, a, t, h, n, e,  , &,  , O, M, C,  , T, e, a, m, *, *, \n, S, c, h, e, d, u, l, e,  , l, i, v, e,  , s, e, s, s, i, o, n,  , e, a, r, l, y,  , n, e, x, t,  , w, e, e, k,  , t, o,  , r, e, v, i, e, w,  , a, n, d,  , n, e, g, o, t, i, a, t, e,  , p, a, r, t, n, e, r, s, h, i, p,  , p, r, o, p, o, s, a, l,  , d, e, t, a, i, l, s,  , (, 3, 9, :, 3, 0, ), \n, \n, *, *, L, o, g, a, n,  , B, a, t, e, s, *, *, \n, F, o, l, l, o, w,  , u, p,  , w, i, t, h,  , O, M, C,  , t, e, a, m,  , r, e, g, a, r, d, i, n, g,  , i, n, t, e, g, r, a, t, i, o, n,  , p, o, s, s, i, b, i, l, i, t, i, e, s,  , w, i, t, h,  , M, i, c, r, o, s, o, f, t,  , C, l, a, r, i, t, y,  , a, n, d,  , H, o, t, j, a, r,  , (, 3, 6, :, 4, 6, ), \n"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "company": "CFI & GrowthBook",
+  "company": "CFI + GrowthBook",
   "slug": "cfi-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.192076",
+  "last_etl_date": "2026-08-01T12:40:38.747979",
   "calls": [
     {
       "id": "01KVT4HC8G8A04MKS9M7T8586H",
@@ -14,6 +14,18 @@
       "participants": 2,
       "keywords": "feature flagging, experimentation, data-driven product management, GrowthBook, engineering integration, databricks",
       "action_items": "\n**James Shannon**\nSchedule a follow-up meeting at the end of next week to check in on the evaluation progress and coordinate resources for the next phase (01:01:11)\n\n**George Lakas**\nPrepare internal evaluation of GrowthBook platform and gather necessary resources to support the next phase of assessment (00:40)\n\n**Martin Kiuru**\nEvaluate engineering integration readiness and product management requirements for GrowthBook; prepare to present the approach and findings to the broader product team after internal review (58:15)\n"
+    },
+    {
+      "id": "01KYHP1TEPADQG75FXF3GHYNBJ",
+      "source": "fireflies",
+      "title": "CFI + GrowthBook",
+      "date": "2026-07-30",
+      "duration_minutes": 57.15999984741211,
+      "summary": "The team is in an early evaluation phase for selecting an experimentation platform, prioritizing engineering readiness and feature toggling support before making a decision. Currently, they lack feature toggling, which is essential for maximizing Growthbook's capabilities. The timeline for selection has shifted to Q4 or early Q1. Martin Kiuru highlighted the need for a unified dashboard to manage deployments, experiments, and results, while James Shannon proposed parallel engagement to align Growthbook integration with engineering changes. Metrics are crucial, with KPIs based on customer lifetime value and other features, while successful technical integration with existing workflows remains a priority. The next check-in is planned for mid-September.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature toggles, experimentation platform, GrowthBook, metrics tracking, A/B testing, AI integration",
+      "action_items": "\n, *, *, M, a, r, t, i, n,  , K, i, u, r, u, *, *, \n, C, o, o, r, d, i, n, a, t, e,  , i, n, t, e, r, n, a, l,  , c, h, a, n, g, e, s,  , f, o, r,  , d, e, l, i, v, e, r, y,  , f, l, o, w,  , a, n, d,  , b, r, a, n, c, h, i, n, g,  , s, t, r, a, t, e, g, y,  , t, o,  , e, n, a, b, l, e,  , f, e, a, t, u, r, e,  , t, o, g, g, l, e, s,  , i, n, t, e, g, r, a, t, i, o, n,  , (, 4, 5, :, 5, 7, ), \n, D, i, s, c, u, s, s,  , a, n, d,  , d, e, c, i, d, e,  , o, n,  , r, e, a, d, i, n, e, s, s,  , t, i, m, e, l, i, n, e,  , f, o, r,  , s, u, p, p, o, r, t, i, n, g,  , G, r, o, w, t, h, B, o, o, k,  , a, n, d,  , f, e, a, t, u, r, e,  , t, o, g, g, l, e, s,  , (, 5, 5, :, 0, 1, ), \n, R, e, v, i, e, w,  , a, n, d,  , c, o, n, s, i, d, e, r,  , p, o, t, e, n, t, i, a, l,  , p, r, o, o, f,  , o, f,  , c, o, n, c, e, p, t,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , p, o, s, t,  , i, n, f, r, a, s, t, r, u, c, t, u, r, e,  , c, h, a, n, g, e, s,  , (, 5, 5, :, 0, 1, ), \n, \n, *, *, G, e, o, r, g, e,  , L, a, k, a, s, *, *, \n, F, a, c, i, l, i, t, a, t, e,  , i, n, t, e, r, n, a, l,  , d, i, s, c, u, s, s, i, o, n, s,  , w, i, t, h,  , M, a, r, t, i, n,  , t, o,  , p, l, a, n,  , f, e, a, t, u, r, e,  , t, o, g, g, l, i, n, g,  , i, m, p, l, e, m, e, n, t, a, t, i, o, n,  , a, n, d,  , G, r, o, w, t, h, B, o, o, k,  , e, v, a, l, u, a, t, i, o, n,  , t, i, m, e, l, i, n, e,  , (, 5, 5, :, 1, 7, ), \n, A, r, r, a, n, g, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , f, o, r,  , m, i, d, -, S, e, p, t, e, m, b, e, r,  , t, o,  , a, s, s, e, s, s,  , p, r, o, g, r, e, s, s,  , (, 5, 5, :, 1, 7, ), \n, \n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, P, r, o, v, i, d, e,  , G, r, o, w, t, h, B, o, o, k,  , p, r, o, d, u, c, t,  , t, r, a, n, s, c, r, i, p, t, i, o, n,  , a, n, d,  , m, e, e, t, i, n, g,  , n, o, t, e, s,  , t, o,  , M, a, r, t, i, n,  , a, n, d,  , G, e, o, r, g, e,  , (, 4, 5, :, 4, 2, ), \n, E, x, p, l, o, r, e,  , a, n, d,  , r, e, p, o, r, t,  , o, n,  , a, n, y,  , s, p, e, c, i, a, l,  , p, a, r, t, n, e, r, s, h, i, p,  , o, r,  , i, n, t, e, g, r, a, t, i, o, n,  , b, e, n, e, f, i, t, s,  , r, e, l, a, t, e, d,  , t, o,  , A, n, t, h, r, o, p, i, c,  , c, o, l, l, a, b, o, r, a, t, i, o, n,  , f, o, r,  , C, F, I,  , (, 5, 0, :, 2, 4, ), \n, O, f, f, e, r,  , t, e, c, h, n, i, c, a, l,  , c, o, n, s, u, l, t, a, t, i, o, n,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , e, n, g, i, n, e, e, r, i, n, g,  , t, e, a, m,  , t, o,  , a, s, s, i, s, t,  , w, i, t, h,  , i, n, t, e, g, r, a, t, i, o, n,  , p, l, a, n, n, i, n, g,  , (, 5, 3, :, 2, 8, ), \n, P, r, o, p, o, s, e,  , p, i, l, o, t,  , o, f, f, e, r,  , t, o,  , s, t, a, r, t,  , u, s, i, n, g,  , G, r, o, w, t, h, B, o, o, k,  , d, u, r, i, n, g,  , b, a, c, k, e, n, d,  , c, o, d, e,  , r, e, f, a, c, t, o, r, i, n, g,  , t, o,  , g, a, t, h, e, r,  , e, a, r, l, y,  , v, a, l, u, e,  , (, 5, 4, :, 0, 9, ), \n, S, c, h, e, d, u, l, e,  , f, o, l, l, o, w, -, u, p,  , c, a, l, l,  , f, o, r,  , l, a, t, e,  , A, u, g, u, s, t,  , o, r,  , m, i, d, -, S, e, p, t, e, m, b, e, r,  , t, o,  , r, e, v, i, e, w,  , e, v, a, l, u, a, t, i, o, n,  , s, t, a, t, u, s,  , (, 5, 5, :, 1, 7, ), \n"
     }
   ]
 }

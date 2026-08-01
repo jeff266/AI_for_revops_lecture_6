@@ -1,7 +1,7 @@
 {
   "company": "teresa@growthbook.io",
   "slug": "teresa-growthbook-io",
-  "last_etl_date": "2026-08-01T10:41:40.198511",
+  "last_etl_date": "2026-08-01T12:40:38.751663",
   "calls": [
     {
       "id": "01KPP10T6S6FHMXJXWZPKSST6C",
@@ -62,6 +62,18 @@
       "participants": 1,
       "keywords": "table design, font weight, text color, background color, border color, design tokens",
       "action_items": "\n**Teresa Yung**\nChange column header font weight to 500 for lighter visual appearance and test the effect (04:11)\nUpdate all table header and cell text colors to use the Indigo 12 token defined as \"color text high\" (06:39)\nOverride the current Radix/React Table background colors for the table header to use the color token \"color panel solid\" (white) (14:17)\nApply the border stroke color using Slate A5 with specified RGBA values around header rows and cells (12:56)\nInvestigate and fix missing border issue caused by header background color change (19:49)\nImplement hover effect for table rows using Violet A2 accent color (18:48)\nDelay changes to sorting icons pending clarity on phosphoricons usage; prioritize color and font weight first (15:26)\nMerge all finalized design tweaks after confirming the fixes and testing (20:12)\n\n**Kari Kay**\nVerify font weight adjustments on her end for column headers according to live updates (04:35)\nProvide RGBA translation for Slate A5 token to assist with border color implementation (13:38)\nShare screenshot of desired sorting icon style for clarity before implementation (15:26)\n"
+    },
+    {
+      "id": "01KYQQKD3W366QK0Y3NXHYTXKC",
+      "source": "fireflies",
+      "title": "teresa@growthbook.io - Wed, 29 Jul 2026 13:03:36 PDT - Untitled",
+      "date": "2026-07-29",
+      "duration_minutes": 156.3000030517578,
+      "summary": "The team discussed integrating user context attributes into tracking callbacks for precise contextual bandit personalization, addressing issues with SDK versioning and timing delays that caused user attributes to be undefined on initial page loads. Luke Sonnet identified necessary modifications, leading to the decision to use existing warehouse attributes for dogfooding despite noting potential mismatches. A controlled feature flag for a new contextual bandit experiment was set up, emphasizing safe attribute selection to avoid data privacy issues. The group acknowledged tracking path discrepancies and emphasized the importance of operational improvements and incremental rollouts to enhance testing efficiency while maintaining debugging workflows to tackle further SDK fixes.",
+      "organizer": "teresa@growthbook.io",
+      "participants": 1,
+      "keywords": "tracking callback, user context attributes, contextual bandit, telemetry debugging, feature flag, Snowflake data source",
+      "action_items": "\n, *, *, T, e, r, e, s, a,  , Y, u, n, g, *, *, \n, M, o, d, i, f, y,  , t, h, e,  , f, r, o, n, t, e, n, d,  , t, r, a, c, k, i, n, g,  , c, a, l, l, b, a, c, k,  , t, o,  , i, n, c, l, u, d, e,  , u, s, e, r,  , c, o, n, t, e, x, t,  , a, t, t, r, i, b, u, t, e, s,  , a, n, d,  , p, r, e, p, a, r, e,  , a,  , P, R,  , f, o, r,  , r, e, v, i, e, w,  , (, 0, 0, :, 0, 0, ), \n, E, n, a, b, l, e,  , d, e, b, u, g,  , t, e, l, e, m, e, t, r, y,  , i, n,  , t, h, e,  , l, o, c, a, l,  , f, r, o, n, t, e, n, d,  , e, n, v, i, r, o, n, m, e, n, t,  , a, n, d,  , v, e, r, i, f, y,  , u, s, e, r,  , c, o, n, t, e, x, t,  , i, s,  , i, n, c, l, u, d, e, d,  , i, n,  , t, r, a, c, k, i, n, g,  , e, v, e, n, t, s,  , d, u, r, i, n, g,  , t, e, s, t, i, n, g,  , (, 0, 6, :, 0, 0, ), \n, C, r, e, a, t, e,  , a,  , t, e, s, t,  , f, e, a, t, u, r, e,  , f, l, a, g,  , i, n,  , t, h, e,  , f, r, o, n, t, e, n, d,  , f, e, a, t, u, r, e, s,  , p, a, g, e,  , c, o, d, e, b, a, s, e,  , f, o, r,  , c, o, n, t, e, x, t, u, a, l,  , b, a, n, d, i, t,  , d, o, g, f, o, o, d, i, n, g,  , a, n, d,  , p, r, e, p, a, r, e,  , a,  , s, e, p, a, r, a, t, e,  , P, R,  , f, o, r,  , t, h, i, s,  , c, h, a, n, g, e,  , (, 0, 1, :, 4, 7, :, 0, 0, ), \n, I, n, v, e, s, t, i, g, a, t, e,  , t, h, e,  , u, s, e, r,  , c, o, n, t, e, x, t,  , t, i, m, i, n, g,  , a, n, d,  , S, D, K,  , a, t, t, r, i, b, u, t, e,  , s, y, n, c, h, r, o, n, i, z, a, t, i, o, n,  , i, s, s, u, e, s,  , a, f, t, e, r,  , r, e, s, t, o, r, i, n, g,  , s, t, a, b, l, e,  , i, n, t, e, r, n, e, t,  , c, o, n, n, e, c, t, i, o, n,  , (, 0, 2, :, 1, 6, :, 0, 0, ), \n"
     }
   ]
 }

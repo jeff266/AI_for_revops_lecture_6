@@ -1,0 +1,19 @@
+{
+  "company": "Vladyslav Daryin and",
+  "slug": "vladyslav-daryin-and",
+  "last_etl_date": "2026-08-01T12:40:38.760329",
+  "calls": [
+    {
+      "id": "01KYM5AF0CEY27HGM96SQV68GQ",
+      "source": "fireflies",
+      "title": "Vladyslav Daryin and James Shannon",
+      "date": "2026-07-29",
+      "duration_minutes": 23.6200008392334,
+      "summary": "Vladislav Daryin discussed his role in growth analytics, dedicating 20% of his time to experimentation amid key strategic projects across product, marketing, and monetization. He highlighted the need to link experiment metrics to revenue outcomes, as current challenges include long experiment durations of 1.5 to 2 months. Vladislav mentioned the in-house experimentation system using a Vertica data warehouse and Python tools, while emphasizing ongoing efforts to improve efficiency and reduce variation in results. Growth Book's potential fit was explored, including features like remote control SDKs and enhanced analytics capabilities that could expedite decision-making and reduce maintenance burdens. An exploratory meeting concluded with a commitment to follow up with relevant materials for future evaluation.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "growth analytics, experimentation, A/B testing, feature flags, data warehouse, experiment analysis",
+      "action_items": "\n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, S, e, n, d,  , V, l, a, d, i, s, l, a, v,  , t, h, e,  , p, r, e, s, e, n, t, a, t, i, o, n,  , s, l, i, d, e, s,  , f, r, o, m,  , t, h, e,  , m, e, e, t, i, n, g,  , f, o, r,  , r, e, f, e, r, e, n, c, e,  , (, 2, 2, :, 1, 4, ), \n, O, f, f, e, r,  , r, e, s, o, u, r, c, e, s,  , f, o, r,  , f, u, t, u, r, e,  , e, v, a, l, u, a, t, i, o, n,  , o, f,  , G, r, o, w, t, h,  , B, o, o, k,  , i, f,  , t, h, e,  , t, e, a, m,  , d, e, c, i, d, e, s,  , t, o,  , e, x, p, l, o, r, e,  , e, x, t, e, r, n, a, l,  , e, x, p, e, r, i, m, e, n, t, a, t, i, o, n,  , s, o, l, u, t, i, o, n, s,  , (, 2, 1, :, 3, 4, ), \n, \n, *, *, V, l, a, d, i, s, l, a, v,  , D, a, r, y, i, n, *, *, \n, C, o, n, s, i, d, e, r,  , G, r, o, w, t, h,  , B, o, o, k,  , a, s,  , a,  , p, o, t, e, n, t, i, a, l,  , o, p, t, i, o, n,  , f, o, r,  , i, m, p, r, o, v, i, n, g,  , c, u, r, r, e, n, t,  , e, x, p, e, r, i, m, e, n, t, a, t, i, o, n,  , p, r, o, c, e, s, s, e, s,  , w, h, e, n,  , e, v, a, l, u, a, t, i, n, g,  , f, u, t, u, r, e,  , s, y, s, t, e, m,  , e, n, h, a, n, c, e, m, e, n, t, s,  , (, 2, 2, :, 1, 4, ), \n"
+    }
+  ]
+}

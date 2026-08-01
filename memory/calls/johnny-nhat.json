@@ -1,7 +1,7 @@
 {
   "company": "Johnny / Nhat",
   "slug": "johnny-nhat",
-  "last_etl_date": "2026-08-01T10:41:40.186632",
+  "last_etl_date": "2026-08-01T12:40:38.744680",
   "calls": [
     {
       "id": "01KWYXH7YSA450XQ4QTRFW0A6E",
@@ -14,6 +14,18 @@
       "participants": 2,
       "keywords": "Design feedback, multi-select filters, UX improvements, metrics filter, drag-and-drop UI, chart color scheme, disabled states, date range filtering",
       "action_items": "\n**Nhat Ho**\nUpdate the project filter to allow multiple selections with appropriate checkbox UI and spacing/styling changes in Figma based on Johnny’s feedback (08:43)\nAdd hover tooltip for disabled types to provide user feedback, ensuring it is clear why certain items are disabled (10:25)\nClarify with Luke how date range filters should function, specifically how comparisons work with start and end dates and whether multiple date filters are needed (18:50)\nAdjust chart color schemes to align better with the design system palette or approved color codes as advised by Johnny (16:28)\n\n**Johnny Martinez**\nProvide Nhat with a list of color codes or palettes from the design system to use for charts and badges to ensure consistent UI (16:50)\nScreenshot badge and header color examples from the design system and add them to the Figma file for reference (17:45)\nReview Nhat’s updated designs and color scheme changes once applied in Figma (00:00)\n"
+    },
+    {
+      "id": "01KYT1QPX7E5KEK6DHACW4777A",
+      "source": "fireflies",
+      "title": "Johnny / Nhat",
+      "date": "2026-07-30",
+      "duration_minutes": 14.239999771118164,
+      "summary": "The team discussed improvements to filter controls in the dashboard and metric explorer, focusing on a unified pill-based UI for better clarity and user experience. A single dropdown for general filters was proposed to consolidate options and avoid complexity. Alignment with familiar analytics tools like Google Analytics was emphasized to minimize user confusion, and existing performance issues with the current filtering system were identified. The discussion highlighted the need for better navigation and usability improvements based on client feedback while maintaining a user-centric design philosophy. Ongoing collaboration and feedback cycles were established to address both interface design and technical performance.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 1,
+      "keywords": "Dashboard filters, Metric Explorer, experiment filters, UI design, user experience, date picker",
+      "action_items": "\n, *, *, N, h, a, t,  , H, o, *, *, \n, S, e, n, d,  , s, c, r, e, e, n, s, h, o, t, s,  , o, f,  , t, h, e,  , f, u, l, l,  , f, i, l, t, e, r,  , v, i, e, w, s,  , a, n, d,  , r, e, l, a, t, e, d,  , U, I,  , e, l, e, m, e, n, t, s,  , t, o,  , a, s, s, i, s, t,  , i, n,  , d, e, s, i, g, n,  , r, e, v, i, e, w,  , a, n, d,  , d, i, s, c, u, s, s, i, o, n,  , (, 0, 8, :, 1, 2, ), \n, S, e, e, k,  , f, o, r, m, a, l,  , a, p, p, r, o, v, a, l,  , o, f,  , t, h, e,  , p, r, o, p, o, s, e, d,  , d, a, t, e,  , p, i, c, k, e, r,  , d, e, s, i, g, n,  , f, r, o, m,  , J, e, r, e, m, y,  , a, n, d,  , p, r, o, c, e, e, d,  , w, i, t, h,  , c, o, d, e,  , r, e, v, i, e, w,  , a, n, d,  , m, e, r, g, i, n, g,  , a, f, t, e, r,  , a, p, p, r, o, v, a, l,  , (, 0, 7, :, 3, 8, ), \n, \n, *, *, J, o, h, n, n, y,  , M, a, r, t, i, n, e, z, *, *, \n, R, e, v, i, e, w,  , t, h, e,  , s, h, a, r, e, d,  , s, c, r, e, e, n, s, h, o, t,  , f, i, l, e, s,  , a, n, d,  , r, e, t, h, i, n, k,  , t, h, e,  , f, i, l, t, e, r,  , d, e, s, i, g, n,  , a, p, p, r, o, a, c, h, ,,  , t, h, e, n,  , p, r, o, v, i, d, e,  , f, e, e, d, b, a, c, k,  , (, 1, 2, :, 5, 0, ), \n, \n, *, *, N, h, a, t,  , H, o,  , a, n, d,  , J, o, h, n, n, y,  , M, a, r, t, i, n, e, z, *, *, \n, C, o, n, t, i, n, u, e,  , i, t, e, r, a, t, i, n, g,  , o, n,  , a,  , s, i, m, p, l, i, f, i, e, d,  , f, i, l, t, e, r,  , i, n, t, e, r, f, a, c, e,  , d, e, s, i, g, n,  , f, o, c, u, s, i, n, g,  , o, n,  , a,  , s, i, n, g, l, e,  , b, u, t, t, o, n,  , w, i, t, h,  , d, r, o, p, d, o, w, n, /, s, e, a, r, c, h,  , a, n, d,  , e, d, i, t, a, b, l, e,  , f, i, l, t, e, r,  , p, i, l, l, s,  , g, r, o, u, p, e, d,  , b, y,  , t, y, p, e,  , \n"
     }
   ]
 }

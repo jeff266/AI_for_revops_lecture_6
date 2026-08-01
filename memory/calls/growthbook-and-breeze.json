@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook and Breeze",
+  "slug": "growthbook-and-breeze",
+  "last_etl_date": "2026-08-01T12:40:38.758705",
+  "calls": [
+    {
+      "id": "01KYJAN38FVBK4BMG1GHK5S0P8",
+      "source": "fireflies",
+      "title": "GrowthBook and Breeze",
+      "date": "2026-07-29",
+      "duration_minutes": 20.200000762939453,
+      "summary": "Breeze aims to upgrade to an enterprise tier to enhance feature flag controls, audit capabilities, and user account management for improved accountability. Key needs include strict enum validation to prevent invalid flag inputs, an audit trail for changes to track updates more effectively, and the expansion of user accounts from three shared to at least fifteen individual seats to support team growth. Current website traffic is substantial, at 200,000-300,000 daily visitors, necessitating scalable solutions. Breeze executes numerous experiments to drive product improvements but currently relies on manual analysis through Mixpanel, with interest in better integration with GrowthBook. A tailored proposal is to be prepared, detailing licensing and per-seat pricing for individual user accounts, with an emphasis on faster support and direct engineering access.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "feature flags, enterprise package, JSON schema validation, A/B testing, Mixpanel integration, audit trail",
+      "action_items": "\n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, P, r, e, p, a, r, e,  , a, n, d,  , s, e, n, d,  , G, r, o, w, t, h, B, o, o, k,  , e, n, t, e, r, p, r, i, s, e,  , p, r, o, p, o, s, a, l,  , c, o, v, e, r, i, n, g,  , b, a, s, e,  , l, i, c, e, n, s, e,  , f, o, r,  , t, r, a, f, f, i, c,  , a, n, d,  , p, e, r, -, s, e, a, t,  , c, o, s, t, ;,  , f, i, n, a, l, i, z, e,  , b, y,  , n, e, x, t,  , d, a, y,  , f, o, r,  , r, e, v, i, e, w,  , (, 1, 0, :, 1, 2, ), \n, S, e, n, d,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , o, n,  , d, a, t, a,  , c, o, n, n, e, c, t, i, o, n,  , o, p, t, i, o, n, s,  , a, n, d,  , i, n, t, e, g, r, a, t, i, o, n,  , p, o, s, s, i, b, i, l, i, t, i, e, s,  , f, o, r,  , a, n, a, l, y, t, i, c, s,  , r, e, l, a, t, e, d,  , t, o,  , G, r, o, w, t, h, B, o, o, k,  , (, 1, 5, :, 1, 0, ), \n, S, c, h, e, d, u, l, e,  , a, n, d,  , s, e, n, d,  , c, a, l, e, n, d, a, r,  , i, n, v, i, t, e,  , f, o, r,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , M, o, n, d, a, y,  , a, t,  , s, a, m, e,  , t, i, m, e,  , t, o,  , p, r, e, s, e, n, t,  , c, o, m, m, e, r, c, i, a, l,  , o, p, t, i, o, n, s,  , (, 1, 8, :, 4, 6, ), \n, \n, *, *, V, l, a, d, y, s, l, a, v,  , T, e, l, y, c, h, k, o, *, *, \n, C, o, n, s, u, l, t,  , w, i, t, h,  , C, T, O,  , r, e, g, a, r, d, i, n, g,  , G, r, o, w, t, h, B, o, o, k,  , p, r, i, c, i, n, g,  , a, n, d,  , e, n, t, e, r, p, r, i, s, e,  , p, r, o, p, o, s, a, l,  , f, o, r,  , a, p, p, r, o, v, a, l,  , (, 1, 1, :, 1, 9, ), \n, C, o, n, f, i, r, m,  , w, i, t, h,  , a, n, a, l, y, t, i, c, s,  , t, e, a, m,  , a, b, o, u, t,  , d, a, t, a,  , i, n, f, r, a, s, t, r, u, c, t, u, r, e,  , (, S, n, o, w, f, l, a, k, e,  , o, r,  , a, l, t, e, r, n, a, t, i, v, e, s, ),  , a, n, d,  , f, e, a, s, i, b, i, l, i, t, y,  , o, f,  , i, n, t, e, g, r, a, t, i, n, g,  , d, a, t, a,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , f, o, r,  , e, x, p, e, r, i, m, e, n, t,  , a, n, a, l, y, s, i, s,  , (, 1, 4, :, 5, 6, ), \n"
+    }
+  ]
+}

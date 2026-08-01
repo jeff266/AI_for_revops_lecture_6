@@ -1,7 +1,7 @@
 {
   "company": "Skyscanner + GrowthBook",
   "slug": "skyscanner-growthbook",
-  "last_etl_date": "2026-08-01T12:26:09.551753",
+  "last_etl_date": "2026-08-01T12:40:38.758982",
   "calls": [
     {
       "id": "6995e94e2982f50021ff2a92",
@@ -145,9 +145,21 @@
       "title": "Skyscanner + GrowthBook",
       "date": "2026-07-29",
       "duration_minutes": 24,
-      "summary": "GrowthBook’s account manager David Gregory and solutions engineer Logan presented their experimentation platform to Skyscanner’s Gareth Moger and incoming product manager Megan Crothers, focusing on replacing Skyscanner’s existing Dr. Jekyll tool for content experimentation and feature flagging on web, with planned future support for app and ad platform use cases. Key next steps include a phased POC evaluation (dev historical data comparison in August, followed by production AA/A/B tests in Q4), a",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and roles, next steps/action items. The transcript is messy with timestamps and unknown speakers. But from context, Skyscanner (customer) and GrowthBook (vendor) are discussing a POC evaluation for GrowthBook's experimentation platform. Key participants: David, Oliver, Megan (Skyscanner), Christian (GrowthBook account manager), Logan (solutions engineer). Discussion: Skyscanner evaluating GrowthBook to replace Dr. Jekyll for experimentation, focusing on content experimentation on web, with phased POC in Q3, limited rollout in Q4, and future hybrid platform. Pain points: moving from current internal tool, need to validate feature flagging, data integration, CMS integration (Contentful). Next steps: schedule next weekly call (Tuesday), share evaluation criteria, connect with procurement (Daniel) for commercial discussion, set up Slack channel for Logan. Summary: Skyscanner's product team (Megan, David, Oliver) discussed a phased POC evaluation of GrowthBook's experimentation platform to replace Dr. Jekyll, focusing on content experimentation on web with integration to Contentful CMS. Key pain points include migrating historical data, validating feature flagging, and establishing a self-serve workflow. Next actions include weekly check-ins, sharing evaluation criteria, and connecting with procurement to discuss commercial structure for",
       "host": "Christian Liebenow",
-      "participants": 4
+      "participants": 90
+    },
+    {
+      "id": "01KYJE8C2GYVH3KPEAJ7GY8JJR",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-07-29",
+      "duration_minutes": 25.329999923706055,
+      "summary": "The meeting outlined a three-phase POC evaluation for comparing Dr. Jekyll and Growth Book, scheduled from mid-August to early September. This will involve data migration and the inclusion of feature flag data, with participants from various teams assessing the tool. Following evaluation, production testing will target a Q4 rollout, emphasizing content experimentation and CMS integration. The licensing strategy aims for phased procurement, starting with 50 licenses in Q4 and scaling to 400 users by mid-2027. If successful, future expansion will transition to a hybrid platform supporting web and app experimentation, replacing Dr. Jekyll's UI. Key roles include Megan Crothers leading POC coordination, Christian Liebenow handling accounts, and Logan providing technical support.",
+      "organizer": "christian@growthbook.io",
+      "participants": 9,
+      "keywords": "Growth Book, Experimentation, Proof of Concept, Feature Flags, Contentful CMS, Procurement",
+      "action_items": "\n, *, *, M, e, g, a, n,  , C, r, o, t, h, e, r, s, *, *, \n, L, e, a, d,  , c, o, o, r, d, i, n, a, t, i, o, n,  , o, f,  , t, h, e,  , G, r, o, w, t, h,  , B, o, o, k,  , P, O, C,  , e, v, a, l, u, a, t, i, o, n,  , a, n, d,  , s, e, r, v, e,  , a, s,  , t, h, e,  , p, r, i, m, a, r, y,  , c, o, n, t, a, c, t,  , f, o, r,  , q, u, e, s, t, i, o, n, s,  , a, b, o, u, t,  , t, h, e,  , p, r, o, c, e, s, s,  , (, 0, 2, :, 1, 4, ), \n, \n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, C, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , p, r, o, c, u, r, e, m, e, n, t,  , c, o, n, t, a, c, t,  , D, a, n, i, e, l,  , t, o,  , j, o, i, n,  , w, e, e, k, l, y,  , c, a, l, l, s,  , a, n, d,  , a, s, s, i, s, t,  , w, i, t, h,  , l, i, c, e, n, s, e,  , p, r, o, c, u, r, e, m, e, n, t,  , p, l, a, n, n, i, n, g,  , (, 1, 8, :, 5, 8, ), \n, \n, *, *, S, h, r, i, d, a, r,  , S, u, r, i, y, a,  , M, o, o, r, t, h, y, *, *, \n, F, i, n, a, l, i, z, e,  , a, n, d,  , s, h, a, r, e,  , d, e, t, a, i, l, e, d,  , t, e, c, h, n, i, c, a, l,  , i, n, t, e, g, r, a, t, i, o, n,  , p, l, a, n, s,  , f, o, r,  , G, r, o, w, t, h,  , B, o, o, k,  , b, y,  , n, e, x, t,  , w, e, e, k,  , f, o, r,  , v, a, l, i, d, a, t, i, o, n,  , a, n, d,  , a, d, v, i, c, e,  , (, 2, 3, :, 3, 0, ), \n, L, e, a, d,  , t, e, c, h, n, i, c, a, l,  , d, e, s, i, g, n,  , a, n, d,  , e, n, s, u, r, e,  , e, v, a, l, u, a, t, i, o, n,  , c, r, i, t, e, r, i, a,  , f, r, a, m, e, w, o, r, k,  , i, s,  , f, i, n, a, l, i, z, e, d,  , a, n, d,  , c, i, r, c, u, l, a, t, e, d,  , w, i, t, h, i, n,  , 1, -, 2,  , w, e, e, k, s,  , (, 2, 3, :, 3, 5, ), \n, \n, *, *, D, a, v, i, d,  , G, r, e, g, o, r, y, *, *, \n, A, d, j, u, s, t,  , t, h, e,  , r, e, c, u, r, r, i, n, g,  , w, e, e, k, l, y,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, e,  , t, o,  , T, u, e, s, d, a, y,  , t, o,  , a, c, c, o, m, m, o, d, a, t, e,  , p, a, r, t, i, c, i, p, a, n, t,  , a, v, a, i, l, a, b, i, l, i, t, y,  , (, 0, 1, :, 3, 1, ), \n, M, a, n, a, g, e,  , i, n, t, e, r, n, a, l,  , s, t, a, k, e, h, o, l, d, e, r,  , c, o, o, r, d, i, n, a, t, i, o, n,  , f, o, r,  , e, v, a, l, u, a, t, i, o, n,  , g, r, o, u, p, s,  , a, n, d,  , f, e, e, d, b, a, c, k,  , s, y, n, t, h, e, s, i, s,  , (, 0, 7, :, 4, 1, ), \n, \n, *, *, L, o, g, a, n,  , B, a, t, e, s, *, *, \n, G, a, i, n,  , a, c, c, e, s, s,  , t, o,  , S, l, a, c, k,  , t, e, c, h, n, i, c, a, l,  , c, h, a, n, n, e, l,  , t, o,  , a, s, s, i, s, t,  , w, i, t, h,  , t, e, c, h, n, i, c, a, l,  , q, u, e, s, t, i, o, n, s,  , a, n, d,  , s, u, p, p, o, r, t,  , (, 2, 1, :, 3, 5, ), \n"
     }
   ]
 }

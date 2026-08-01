@@ -1,7 +1,7 @@
 {
   "company": "Demo Call with",
   "slug": "demo-call-with",
-  "last_etl_date": "2026-08-01T12:26:09.561132",
+  "last_etl_date": "2026-08-01T12:40:38.740634",
   "calls": [
     {
       "id": "01KVQXF41EXDVS8JGZYMQR0H74",
@@ -260,6 +260,54 @@
       "participants": 4,
       "keywords": "A/B testing, Growth Book, Sanity CMS integration, Visual Editor, Experimentation metrics, Cloudflare integration",
       "action_items": "\n**Ryan Shriver**\nReview Growth Book product details and pricing information sent by Dan Wathne; evaluate for fiscal year adoption (36:56)\nShare Growth Book Cloudflare integration documentation with LifeWise engineering team for technical assessment (31:49)\nProceed with online signup for Growth Book if agreed upon after review (37:08)\n\n**Dan Wathne**\nSend Growth Book detailed pricing, Cloudflare integration docs, and onboarding materials to Ryan post-meeting (36:56)\n"
+    },
+    {
+      "id": "01KYHCEMHXDC8SCDEHXVJ4FTZQ",
+      "source": "fireflies",
+      "title": "Demo Call with Donner  from Mekari",
+      "date": "2026-07-29",
+      "duration_minutes": 11.800000190734863,
+      "summary": "",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "",
+      "action_items": ""
+    },
+    {
+      "id": "01KYSZF0T9Z5S6M6M0W9JXBA8A",
+      "source": "fireflies",
+      "title": "Demo Call with Jim Bodor from  ",
+      "date": "2026-07-30",
+      "duration_minutes": 1,
+      "summary": "",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 4,
+      "keywords": "",
+      "action_items": ""
+    },
+    {
+      "id": "01KYN3VHEJ7GW1NARG34AR2B5X",
+      "source": "fireflies",
+      "title": "Demo Call with Jonathan Trengrove from",
+      "date": "2026-07-30",
+      "duration_minutes": 31.200000762939453,
+      "summary": "Ocean Finance is addressing challenges in their experimentation strategy, notably the slow, manual split testing which hampers the design team’s effectiveness. Jonathan Trengrove aims to empower designers with machine learning-driven tools for faster tests, backed by the CEO’s support to pilot multi-armed bandit experiments on product pages. The initiative focuses on increasing click-through rates for alternative credit products offered after declines. GrowthBook's platform aligns with their needs through rapid testing capabilities, minimal engineering involvement, and real-time data integrations with their existing warehouse. The expected impact from the pilot is a conversion lift of 0.5% to 7%, aiming to reduce revenue loss while fostering a culture of experimentation and rapid iteration.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "experimentation, multi-arm bandit, conversion optimization, financial products, data warehouse, self-serve testing",
+      "action_items": "\n, *, *, J, o, n, a, t, h, a, n,  , T, r, e, n, g, r, o, v, e, *, *, \n, S, c, h, e, d, u, l, e,  , a,  , f, o, l, l, o, w, -, u, p,  , t, e, c, h, n, i, c, a, l,  , d, e, m, o, n, s, t, r, a, t, i, o, n,  , c, a, l, l,  , i, n, v, o, l, v, i, n, g,  , e, n, g, i, n, e, e, r, i, n, g,  , a, n, d,  , d, a, t, a,  , t, e, a, m, s, ,,  , a, n, d,  , r, e, q, u, e, s, t,  , t, h, e,  , s, e, s, s, i, o, n,  , t, o,  , b, e,  , r, e, c, o, r, d, e, d,  , f, o, r,  , w, i, d, e, r,  , t, e, a, m,  , s, h, a, r, i, n, g,  , (, 2, 8, :, 0, 0, ), \n, R, e, v, i, e, w,  , t, h, e,  , d, e, m, o, n, s, t, r, a, t, i, o, n,  , s, l, i, d, e, s,  , a, n, d,  , m, a, t, e, r, i, a, l, s,  , p, r, o, v, i, d, e, d,  , b, y,  , G, r, o, w, t, h, B, o, o, k,  , t, o,  , p, r, e, p, a, r, e,  , f, o, r,  , t, h, e,  , n, e, x, t,  , m, e, e, t, i, n, g,  , a, n, d,  , i, n, t, e, r, n, a, l,  , d, i, s, c, u, s, s, i, o, n, s,  , (, 2, 9, :, 3, 6, ), \n, \n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, S, e, n, d,  , J, o, n, a, t, h, a, n,  , a,  , s, c, h, e, d, u, l, i, n, g,  , l, i, n, k,  , t, o,  , a, r, r, a, n, g, e,  , t, h, e,  , f, o, l, l, o, w, -, u, p,  , t, e, c, h, n, i, c, a, l,  , d, e, m, o,  , c, a, l, l,  , (, 2, 9, :, 2, 9, ), \n, P, r, o, v, i, d, e,  , d, e, m, o, n, s, t, r, a, t, i, o, n,  , s, l, i, d, e, s,  , f, r, o, m,  , t, h, e,  , c, u, r, r, e, n, t,  , m, e, e, t, i, n, g,  , t, o,  , J, o, n, a, t, h, a, n,  , f, o, r,  , r, e, v, i, e, w,  , a, n, d,  , s, h, a, r, i, n, g,  , w, i, t, h,  , s, t, a, k, e, h, o, l, d, e, r, s,  , (, 2, 9, :, 3, 6, ), \n, P, r, e, p, a, r, e,  , a, n, d,  , a, r, r, a, n, g, e,  , a, n,  , e, n, t, e, r, p, r, i, s, e,  , t, r, i, a, l,  , a, n, d,  , p, r, o, o, f,  , o, f,  , c, o, n, c, e, p, t,  , a, g, r, e, e, m, e, n, t,  , f, o, r,  , O, c, e, a, n,  , F, i, n, a, n, c, e,  , t, o,  , e, v, a, l, u, a, t, e,  , G, r, o, w, t, h, B, o, o, k, ', s,  , p, l, a, t, f, o, r, m,  , f, e, a, t, u, r, e, s,  , i, n, c, l, u, d, i, n, g,  , t, h, e,  , v, i, s, u, a, l,  , e, d, i, t, o, r,  , a, n, d,  , m, a, c, h, i, n, e,  , l, e, a, r, n, i, n, g,  , c, a, p, a, b, i, l, i, t, i, e, s,  , (, 2, 7, :, 3, 0, ), \n"
+    },
+    {
+      "id": "01KYPEB498G0JTA2Y0A3FYSQA3",
+      "source": "fireflies",
+      "title": "Demo Call with Donner  from Mekari",
+      "date": "2026-07-31",
+      "duration_minutes": 31.56999969482422,
+      "summary": "During the meeting, the team explored GrowthBook as a potential A/B testing solution, emphasizing the need for consistent visitor locking to ensure valid results. Donner highlighted past failures due to anonymous visitors seeing multiple variants. GrowthBook's unique approach utilizes consistent hashing of visitor IDs for stable variant assignments. Key features discussed included visual editing, server-side support for minimal coding, and no-code workflows for developers. Makari's business metrics revealed a conversion rate of approximately 0.025%, presenting a significant opportunity for improvement. The integration strategy included direct use of Makari's Postgres for analytics while noting limitations with Zoho CRM. The discussion also emphasized the importance of flexible workflows, and next steps involved trials and further documentation reviews.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "A/B testing, split testing, anonymous visitor locking, GrowthBook SDK, server-side experiments, data warehouse integration",
+      "action_items": "\n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, S, e, n, d,  , c, u, s, t, o, m, e, r,  , e, x, a, m, p, l, e, s,  , a, n, d,  , i, n, v, e, s, t, m, e, n, t,  , f, i, g, u, r, e, s,  , d, e, m, o, n, s, t, r, a, t, i, n, g,  , t, y, p, i, c, a, l,  , e, x, p, e, r, i, m, e, n, t,  , l, i, f, t,  , a, n, d,  , c, o, s, t, s,  , (, 1, 4, :, 3, 8, ), \n, P, r, o, v, i, d, e,  , t, e, c, h, n, i, c, a, l,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , o, n,  , s, e, r, v, e, r, -, s, i, d, e,  , S, D, K,  , a, n, d,  , a, r, c, h, i, t, e, c, t, u, r, e,  , (, 2, 8, :, 2, 3, ), \n, S, h, a, r, e,  , d, e, t, a, i, l, s,  , o, n,  , G, r, o, w, t, h, B, o, o, k, ’, s,  , o, p, e, n, -, s, o, u, r, c, e,  , v, s, .,  , e, n, t, e, r, p, r, i, s, e,  , t, r, i, a, l,  , o, p, t, i, o, n, s,  , (, 2, 8, :, 3, 1, ), \n, E, m, a, i, l,  , f, o, l, l, o, w, -, u, p,  , s, u, m, m, a, r, i, z, i, n, g,  , c, a, l, l, ,,  , s, e, n, d, i, n, g,  , r, e, s, o, u, r, c, e, s, ,,  , a, n, d,  , c, o, o, r, d, i, n, a, t, i, n, g,  , n, e, x, t,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, e,  , (, 2, 9, :, 4, 0, ), \n, \n, *, *, D, o, n, n, e, r,  , M, a, n, g, a, s, a, *, *, \n, C, o, n, f, i, r, m,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, e,  , f, o, r,  , f, o, l, l, o, w, -, u, p,  , v, i, a,  , e, m, a, i, l,  , (, 3, 0, :, 1, 4, ), \n"
     }
   ]
 }

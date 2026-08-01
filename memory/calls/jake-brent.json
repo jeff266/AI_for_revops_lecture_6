@@ -1,7 +1,7 @@
 {
   "company": "Jake <> Brent",
   "slug": "jake-brent",
-  "last_etl_date": "2026-08-01T10:41:40.162069",
+  "last_etl_date": "2026-08-01T12:40:38.751151",
   "calls": [
     {
       "id": "01KG325ZD2GJE3VH7WZ9SNNVDP",
@@ -230,6 +230,18 @@
       "participants": 2,
       "keywords": "Enterprise pricing, Outbound lead attribution, HubSpot opportunities, Podcast outreach strategy, Mid-market deals, Credit tracking",
       "action_items": "\n**Jake Stangl**\nReview and track inbound meetings he qualifies and passes to Account Executives, alongside outbound meetings, to better capture true engagement (18:08)\nBacktrack and analyze HubSpot opportunity creation and contact records over the last two months to identify overlaps between his outbound outreach and inbound opportunities for crediting discussion with Ryan (08:53)\nPrepare conversation with Ryan to discuss formal crediting methods for inbound leads that stem from his outbound outreach and clarify quota and credit structures (13:47)\nShift outreach approach for top 50 target accounts from cold discovery calls to inviting them on podcast episodes to increase engagement (27:21)\n\n**Brent Holloway**\nAdvise Jake to be transparent with prospects on product packaging options and creatively offer interim enterprise pricing based on key capabilities needed with usage restrictions (03:38)\nCoach Jake on approaching Ryan about crediting system for acknowledging BDR outbound influence on inbound enterprise opportunities (13:00)\nRecommend Jake to monitor Account Executives' calendars to correlate meetings passed and ensure accurate tracking and credit (08:17)\nEncourage Jake to keep pushing enterprise upsell on sub-100 employee companies and integrating event-based pricing evolutions into sales strategy (00:28)\n"
+    },
+    {
+      "id": "01KY3QMF5Z0TKVNZR9Y9TVMBYM",
+      "source": "fireflies",
+      "title": "Jake <> Brent weekly 1:1",
+      "date": "2026-07-29",
+      "duration_minutes": 12.59000015258789,
+      "summary": "The meeting addressed the health of the sales pipeline, with over 57 opportunities created year-to-date, totaling approximately $1.5 million in potential revenue, driven by effective outreach strategies despite limited meeting conversions. Brent Holloway emphasized the importance of hiring a new Business Development Representative (BDR) with hybrid selling skills to improve pipeline development and team efficiency. Discussions highlighted late-stage deals, including a $60,000 opportunity nearing completion, and strategies for improving data management through a shared dashboard, ensuring pipeline visibility. The team is optimistic about the quarter's performance, with 15 meetings held, aiming to maintain momentum and a steady flow of opportunities.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 2,
+      "keywords": "pipeline, champion tracking, hybrid BDR, Growth Book, sales opportunities, recruitment",
+      "action_items": "\n, *, *, J, a, k, e,  , S, t, a, n, g, l, *, *, \n, R, e, v, i, e, w,  , a, n, d,  , s, e, n, d,  , r, e, f, e, r, r, a, l, s,  , f, o, r,  , p, o, t, e, n, t, i, a, l,  , h, y, b, r, i, d,  , B, D, R,  , c, a, n, d, i, d, a, t, e, s,  , l, a, t, e, r,  , i, n,  , t, h, e,  , w, e, e, k,  , (, 0, 4, :, 5, 1, ), \n, A, d, d,  , c, o, n, s, e, r, v, a, t, i, v, e,  , p, l, a, c, e, h, o, l, d, e, r,  , v, a, l, u, e, s,  , (, ~, $, 2, 0, ,, 0, 0, 0, ),  , t, o,  , p, i, p, e, l, i, n, e,  , o, p, p, o, r, t, u, n, i, t, i, e, s,  , w, i, t, h, o, u, t,  , a, s, s, i, g, n, e, d,  , a, m, o, u, n, t, s, ,,  , c, o, o, r, d, i, n, a, t, i, n, g,  , w, i, t, h,  , A, E, s,  , t, o,  , a, d, j, u, s, t,  , a, s,  , n, e, e, d, e, d,  , (, 0, 8, :, 1, 4, ), \n, \n, *, *, B, r, e, n, t,  , H, o, l, l, o, w, a, y, *, *, \n, S, u, p, p, o, r, t,  , a, n, d,  , m, a, n, a, g, e,  , t, h, e,  , h, y, b, r, i, d,  , B, D, R,  , r, e, c, r, u, i, t, m, e, n, t,  , p, r, o, c, e, s, s,  , o, n, c, e,  , r, e, f, e, r, r, a, l, s,  , a, r, e,  , r, e, c, e, i, v, e, d,  , f, r, o, m,  , J, a, k, e,  , (, 0, 4, :, 5, 1, ), \n, A, d, d,  , t, h, e,  , o, p, s,  , d, a, s, h, b, o, a, r, d,  , l, i, n, k,  , t, o,  , S, l, a, c, k,  , c, h, a, n, n, e, l,  , f, o, r,  , i, n, t, e, r, n, a, l,  , v, i, s, i, b, i, l, i, t, y,  , a, n, d,  , m, o, n, i, t, o, r, i, n, g,  , (, 0, 5, :, 3, 1, ), \n"
     }
   ]
 }

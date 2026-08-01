@@ -1,0 +1,19 @@
+{
+  "company": "SmartSign + GrowthBook",
+  "slug": "smartsign-growthbook",
+  "last_etl_date": "2026-08-01T12:40:38.736912",
+  "calls": [
+    {
+      "id": "01KYQP88NN0DWAX0K46H6J6NGT",
+      "source": "fireflies",
+      "title": "SmartSign + GrowthBook",
+      "date": "2026-07-31",
+      "duration_minutes": 48.61000061035156,
+      "summary": "SmartSign's team is assessing Growth Book to replace Convert.com, aiming to enhance experimentation velocity and data trust, currently limited to 0.5 experiments per month due to dependency on third-party support. They highlighted Growth Book's integration with Snowflake for centralized data, enabling multi-site testing across over 21 websites. The team discussed technical architecture, focusing on how Growth Book uses Snowflake for flexible event logging and metric definitions. Features like staged rollouts and automated rollback on negative impacts were examined, alongside the capabilities for custom metrics and audience segmentation. The meeting concluded with the team planning further internal evaluations and a request for implementation documentation from Growth Book.",
+      "organizer": "christian@growthbook.io",
+      "participants": 7,
+      "keywords": "A/B testing, warehouse-native experimentation, Snowflake, feature flagging, client-side tracking, data analytics",
+      "action_items": "\n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, S, e, n, d,  , f, o, l, l, o, w, -, u, p,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , a, n, d,  , i, m, p, l, e, m, e, n, t, a, t, i, o, n,  , r, e, s, o, u, r, c, e, s,  , a, b, o, u, t,  , G, r, o, w, t, h, B, o, o, k,  , c, a, p, a, b, i, l, i, t, i, e, s,  , t, o,  , S, m, a, r, t, S, i, g, n,  , t, e, a, m,  , f, o, r,  , f, u, r, t, h, e, r,  , e, v, a, l, u, a, t, i, o, n,  , (, 4, 6, :, 0, 4, ), \n, \n, *, *, S, m, a, r, t, S, i, g, n,  , i, n, t, e, r, n, a, l,  , t, e, a, m,  , (, O, r, i, o, n,  , B, r, e, a, u, x, ,,  , G, a, u, r, a, v, ,,  , Y, o, g, e, s, h, ,,  , J, e, f, f, ), *, *, \n, E, v, a, l, u, a, t, e,  , G, r, o, w, t, h, B, o, o, k,  , p, l, a, t, f, o, r, m,  , a, g, a, i, n, s, t,  , e, x, i, s, t, i, n, g,  , t, o, o, l, s,  , a, n, d,  , i, n, f, r, a, s, t, r, u, c, t, u, r, e,  , r, e, a, d, i, n, e, s, s,  , f, o, c, u, s, i, n, g,  , o, n,  , e, v, e, n, t,  , t, r, a, c, k, i, n, g, ,,  , S, n, o, w, f, l, a, k, e,  , i, n, t, e, g, r, a, t, i, o, n, ,,  , a, n, d,  , S, D, K,  , u, s, a, g, e,  , (, 4, 5, :, 3, 3, ), \n"
+    }
+  ]
+}
