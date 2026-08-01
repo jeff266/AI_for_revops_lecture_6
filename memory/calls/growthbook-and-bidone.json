@@ -1,7 +1,18 @@
 {
   "company": "GrowthBook and BidOne",
   "slug": "growthbook-and-bidone",
+  "last_etl_date": "2026-08-01T10:41:40.118503",
   "calls": [
+    {
+      "id": "6a4ec23377cb1b0014c7f4d8",
+      "source": "apollo",
+      "title": "GrowthBook and BidOne ",
+      "date": "2026-07-08",
+      "duration_minutes": 1,
+      "summary": "[Summary failed] [Jake Stangl]: Hey guys. How's it going? Oh, hi. Sorry.\n[Kalyan Ramaiah Asari]: Jake\n[Jake Stangl]: had a back to back meeting so we should. So we're waiting on one more person. I invited my account e",
+      "host": "Jake Stangl",
+      "participants": 3
+    },
     {
       "id": "01KWT071833J8V79V7839MK0TD",
       "source": "fireflies",

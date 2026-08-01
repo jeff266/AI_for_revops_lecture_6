@@ -1,7 +1,18 @@
 {
   "company": "GLS/NXT + GrowthBook",
   "slug": "gls-nxt-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.144879",
   "calls": [
+    {
+      "id": "69a85580a4a37500211c13ab",
+      "source": "apollo",
+      "title": "GLS/NXT + GrowthBook",
+      "date": "2026-03-04",
+      "duration_minutes": 53,
+      "summary": "[Summary failed] [Christian Liebenow]: Hi Naughty.\n[Growthbook Dorn]: Hello,\n[Christian Liebenow]: how are you?\n[Noah]: Good, good, how are you?\n[Christian Liebenow]: Very good, thank.\n[Growthbook Dorn]: You.\n[Mathias",
+      "host": "Christian Liebenow",
+      "participants": 8
+    },
     {
       "id": "01KJD9FHA6BS5K33M48QPHA63B",
       "source": "fireflies",

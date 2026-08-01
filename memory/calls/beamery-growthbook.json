@@ -1,0 +1,17 @@
+{
+  "company": "Beamery / GrowthBook",
+  "slug": "beamery-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.123572",
+  "calls": [
+    {
+      "id": "6a2185a07430b50018fbd0af",
+      "source": "apollo",
+      "title": "Beamery / GrowthBook Technical Evaluation",
+      "date": "2026-06-04",
+      "duration_minutes": 1,
+      "summary": "[Summary failed] [Scott Keller]: Hello? Hey, good morning, Samuel. How\n[Samuel Clarke]: you doing?\n[Scott Keller]: I'm doing well. Almost Friday. How are you?\n[Samuel Clarke]: Yeah, I'm doing okay.\n[Scott Keller]: Gre",
+      "host": "Scott Keller",
+      "participants": 2
+    }
+  ]
+}

@@ -1,18 +1,19 @@
 {
   "company": "KBX + GrowthBook",
   "slug": "kbx-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.131529",
   "calls": [
     {
-      "id": "01KPP39Q4WNF60VB7R82JR41T5",
+      "id": "01KNYXQAABPSYXPSRW59ZMW53B",
       "source": "fireflies",
       "title": "KBX + GrowthBook",
-      "date": "2026-04-22",
-      "duration_minutes": 26,
-      "summary": "The meeting discussed a phased migration from LaunchDarkly to GrowthBook to minimize disruption, starting with one team while maintaining dual SDKs. Migration will include scripts and API token usage, encouraging cleanup of unused flags to simplify the process. GrowthBook's pricing is proposed at under $100k annually for 60 users, with a clear seat-based model and no hidden fees. The decision on the feature flag tool is expected by September 1st due to pricing pressures. GrowthBook supports critical features like Boolean flags and SSO. Comprehensive support and onboarding will be provided at no additional cost, ensuring efficient migration despite identified internal coordination challenges.",
+      "date": "2026-04-13",
+      "duration_minutes": 33,
+      "summary": "KBX Logistics is assessing feature flagging tools to replace LaunchDarkly, aiming to reduce annual costs while maintaining functionalities like SSO and security. They currently utilize basic Boolean flags across four environments, with a stringent decision deadline set for September 1st. GrowthBook was highlighted for its competitive pricing, open-source model, and support for enterprise features, offering significant advantages over competitors. The discussion also included the importance of migration support, flag management capabilities, and SLAs for uptime and security. A follow-up demo was scheduled to explore these aspects further and solidify the potential fit between GrowthBook and KBX's needs.",
       "organizer": "christian@growthbook.io",
       "participants": 3,
-      "keywords": "feature flag migration, pricing model, seat-based licensing, LaunchDarkly alternative, migration process, platform fee",
-      "action_items": "\n**Christian Liebenow**\nSend KBX an official order form and a refined slide deck summarizing the proposal and pricing to support leadership and procurement approval (18:06)\nProvide a tiered pricing rate table reflecting potential user count increases for KBX’s budgeting and planning (15:20)\nPotentially supply detailed migration effort estimates based on KBX’s feature flag usage if requested to aid internal planning (20:32)\n\n**Samuel Miller**\nCoordinate internally to identify the right resources and stakeholders for migration planning, execution, and budget approval (21:07)\nLead internal discussions with security and infrastructure teams regarding migration technical details and documentation (02:44)\nDrive leadership decision-making process aiming for a tool decision by September 1st, balancing project deadlines and migration resource allocation (19:18)\n"
+      "keywords": "Feature Flagging, LaunchDarkly, GrowthBook, Pricing Model, Role-Based Access, Enterprise SaaS",
+      "action_items": "\n**Samuel Miller**\nProvide GrowthBook with KBX’s current LaunchDarkly usage data to enable accurate pricing and feature comparison (13:33)\nConfirm availability and attend the detailed GrowthBook demo scheduled for tomorrow at 9:15 am Central time (32:33)\n\n**Mike Acord**\nAttend the detailed technical demo of GrowthBook’s platform tentatively scheduled for tomorrow morning (31:35)\n\n**Christian Liebenow**\nSend calendar invite and relevant documentation ahead of the detailed demo covering permissioning, environments, and advanced flag management (32:33)\nPrepare a pricing proposal for KBX that aims to be below their current six-figure annual cost with flexible seat increments (28:20)\nProvide a detailed demo covering GrowthBook’s feature flag UI, security features including SSO, prerequisite flags, and migration support from LaunchDarkly (16:26)\nShare technical documentation on prerequisite flags and role-based access control following today’s meeting (24:39)\n"
     },
     {
       "id": "01KP3SFXE5KSC8T5J11YYE90J6",
@@ -27,16 +28,26 @@
       "action_items": "\n**Sam Miller**\nConfirm current feature flag user seat count and share with GrowthBook team for pricing proposal (36:41)\nCoordinate internally with compliance/security and leadership to determine preferred hosting option (cloud vs self-hosted) and pricing expectations (35:29)\n\n**Logan Bates**\nProvide API and webhook swagger documentation post-meeting for KBX integration reference (07:47)\nShare recording of demo session to help Sam retain notes and details (36:29)\n\n**Christian Liebenow**\nPrepare and send proposal including pricing details once KBX provides seat count estimates (37:00)\nProvide SLA and support related documentation to clarify GrowthBook’s enterprise support offering (33:30)\n"
     },
     {
-      "id": "01KNYXQAABPSYXPSRW59ZMW53B",
+      "id": "69e90c9af1adf700196a12da",
+      "source": "apollo",
+      "title": "KBX + GrowthBook",
+      "date": "2026-04-22",
+      "duration_minutes": 0,
+      "summary": "[Summary failed] [Christian Liebenow]: Hey, sam. Hey, Christian. Can you hear me? I can hear you. How are you? Okay, good. How are you?",
+      "host": "Christian Liebenow",
+      "participants": 1
+    },
+    {
+      "id": "01KPP39Q4WNF60VB7R82JR41T5",
       "source": "fireflies",
       "title": "KBX + GrowthBook",
-      "date": "2026-04-13",
-      "duration_minutes": 33,
-      "summary": "KBX Logistics is assessing feature flagging tools to replace LaunchDarkly, aiming to reduce annual costs while maintaining functionalities like SSO and security. They currently utilize basic Boolean flags across four environments, with a stringent decision deadline set for September 1st. GrowthBook was highlighted for its competitive pricing, open-source model, and support for enterprise features, offering significant advantages over competitors. The discussion also included the importance of migration support, flag management capabilities, and SLAs for uptime and security. A follow-up demo was scheduled to explore these aspects further and solidify the potential fit between GrowthBook and KBX's needs.",
+      "date": "2026-04-22",
+      "duration_minutes": 26,
+      "summary": "The meeting discussed a phased migration from LaunchDarkly to GrowthBook to minimize disruption, starting with one team while maintaining dual SDKs. Migration will include scripts and API token usage, encouraging cleanup of unused flags to simplify the process. GrowthBook's pricing is proposed at under $100k annually for 60 users, with a clear seat-based model and no hidden fees. The decision on the feature flag tool is expected by September 1st due to pricing pressures. GrowthBook supports critical features like Boolean flags and SSO. Comprehensive support and onboarding will be provided at no additional cost, ensuring efficient migration despite identified internal coordination challenges.",
       "organizer": "christian@growthbook.io",
       "participants": 3,
-      "keywords": "Feature Flagging, LaunchDarkly, GrowthBook, Pricing Model, Role-Based Access, Enterprise SaaS",
-      "action_items": "\n**Samuel Miller**\nProvide GrowthBook with KBX’s current LaunchDarkly usage data to enable accurate pricing and feature comparison (13:33)\nConfirm availability and attend the detailed GrowthBook demo scheduled for tomorrow at 9:15 am Central time (32:33)\n\n**Mike Acord**\nAttend the detailed technical demo of GrowthBook’s platform tentatively scheduled for tomorrow morning (31:35)\n\n**Christian Liebenow**\nSend calendar invite and relevant documentation ahead of the detailed demo covering permissioning, environments, and advanced flag management (32:33)\nPrepare a pricing proposal for KBX that aims to be below their current six-figure annual cost with flexible seat increments (28:20)\nProvide a detailed demo covering GrowthBook’s feature flag UI, security features including SSO, prerequisite flags, and migration support from LaunchDarkly (16:26)\nShare technical documentation on prerequisite flags and role-based access control following today’s meeting (24:39)\n"
+      "keywords": "feature flag migration, pricing model, seat-based licensing, LaunchDarkly alternative, migration process, platform fee",
+      "action_items": "\n**Christian Liebenow**\nSend KBX an official order form and a refined slide deck summarizing the proposal and pricing to support leadership and procurement approval (18:06)\nProvide a tiered pricing rate table reflecting potential user count increases for KBX’s budgeting and planning (15:20)\nPotentially supply detailed migration effort estimates based on KBX’s feature flag usage if requested to aid internal planning (20:32)\n\n**Samuel Miller**\nCoordinate internally to identify the right resources and stakeholders for migration planning, execution, and budget approval (21:07)\nLead internal discussions with security and infrastructure teams regarding migration technical details and documentation (02:44)\nDrive leadership decision-making process aiming for a tool decision by September 1st, balancing project deadlines and migration resource allocation (19:18)\n"
     }
   ]
 }

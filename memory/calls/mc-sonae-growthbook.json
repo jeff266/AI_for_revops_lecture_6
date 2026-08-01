@@ -1,0 +1,27 @@
+{
+  "company": "MC Sonae<>GrowthBook",
+  "slug": "mc-sonae-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.126636",
+  "calls": [
+    {
+      "id": "69e8e9e4648de5001dd01e6c",
+      "source": "apollo",
+      "title": "MC Sonae<>GrowthBook - AI Roadmap and Q&A",
+      "date": "2026-04-22",
+      "duration_minutes": 32,
+      "summary": "[Summary failed] [Osf Soares]: Hey, graham.\n[Jake Heier]: Hey, how you doing?\n[Osf Soares]: Okay.\n[Webflow Demo]: Getting a notification of something. It's a beeping sound I don't recognize\n[Jake Heier]: in your house",
+      "host": "Jake Heier",
+      "participants": 5
+    },
+    {
+      "id": "6a0f1b79ffc62a0014b92ed7",
+      "source": "apollo",
+      "title": "MC Sonae<>GrowthBook - Discussion",
+      "date": "2026-05-21",
+      "duration_minutes": 20,
+      "summary": "[Summary failed] [Jake Heier]: How are you? Oh, I'm fine.\n[Logan Bates]: Can you hear me?\n[Jake Heier]: Well, I like that background. Yeah, I might have cut out for a second, I think. But yeah, I like your background.",
+      "host": "Jake Heier",
+      "participants": 3
+    }
+  ]
+}

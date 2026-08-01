@@ -1,0 +1,17 @@
+{
+  "company": "Jake Heier",
+  "slug": "jake-heier",
+  "last_etl_date": "2026-08-01T10:41:40.148981",
+  "calls": [
+    {
+      "id": "697cf8d8717165000d8b2ea2",
+      "source": "apollo",
+      "title": "30 min with Karen (Jake Heier)",
+      "date": "2026-01-30",
+      "duration_minutes": 20,
+      "summary": "[Summary failed] [Jake Heier]: No, no, I think a lot of that stuff doesn't matter as much to them once they actually get in and start exploring the platform. Some other areas I'm hearing of concern are static. Has def",
+      "host": "Karen Henke",
+      "participants": 2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Voyage Privé and",
+  "slug": "voyage-priv-and",
+  "last_etl_date": "2026-08-01T10:41:40.143653",
+  "calls": [
+    {
+      "id": "69b97aed1c1365001d6f7f98",
+      "source": "apollo",
+      "title": "Voyage Privé and Jake Heier",
+      "date": "2026-03-17",
+      "duration_minutes": 31,
+      "summary": "[Summary failed] [Cris Dizon]: Hello, Chris.\n[Jake Heier]: How's it going?\n[Cris Dizon]: Pretty good. It's kind of a busy morning.\n[Jake Heier]: Oh, yeah.\n[Cris Dizon]: Lots of questions and, and stuff. So trying to. ",
+      "host": "Jake Heier",
+      "participants": 7
+    }
+  ]
+}

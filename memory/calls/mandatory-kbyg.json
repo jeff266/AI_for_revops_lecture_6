@@ -1,6 +1,7 @@
 {
   "company": "[Mandatory] KBYG",
   "slug": "mandatory-kbyg",
+  "last_etl_date": "2026-08-01T10:41:40.192392",
   "calls": [
     {
       "id": "01KV9GC1QMT57TRHEJJBEVDMS6",

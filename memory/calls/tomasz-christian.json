@@ -1,7 +1,18 @@
 {
   "company": "Tomasz / Christian",
   "slug": "tomasz-christian",
+  "last_etl_date": "2026-08-01T10:41:40.145466",
   "calls": [
+    {
+      "id": "69a5ab43f5d48700155f1841",
+      "source": "apollo",
+      "title": "Tomasz / Christian",
+      "date": "2026-03-02",
+      "duration_minutes": 23,
+      "summary": "[Summary failed] [Tomasz Zaczek]: Sam. Hello.\n[Christian Liebenow]: Hey, Thomas, how are you?\n[Tomasz Zaczek]: Hi. I'm great. After the weekend, refreshed and ready to attack new challenges.\n[Christian Liebenow]: Oh, ",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
     {
       "id": "01KJD9FHPSEC2KB15N8S8PG8XM",
       "source": "fireflies",

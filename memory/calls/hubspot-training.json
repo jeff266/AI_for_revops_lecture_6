@@ -1,19 +1,8 @@
 {
   "company": "Hubspot Training",
   "slug": "hubspot-training",
+  "last_etl_date": "2026-08-01T10:41:40.252338",
   "calls": [
-    {
-      "id": "01KM0T9BYWVTNNP8Y752W3ACGS",
-      "source": "fireflies",
-      "title": "Hubspot Training: Managing Deal ACV and TCV",
-      "date": "2026-03-20",
-      "duration_minutes": 11,
-      "summary": "The session focused on streamlining sales expansions and renewals management within the sales pipeline. Key updates included managing expansions either within renewal opportunities or as separate mid-term opportunities, automating calculations for ARR and invoice values to reduce manual errors, and clarifying the distinction between new ARR and expansion ARR. A shift to a 'new plus expansion' forecast view was emphasized for improved visibility on revenue growth. Training was led by Jeff Ignacio, highlighting the importance of these updates for accurate forecasting and team alignment. Participants confirmed understanding of the new processes, which aim to enhance precision in forecasting and align with team submissions.",
-      "organizer": "jeff.ignacio@growthbook.io",
-      "participants": 6,
-      "keywords": "expansion, renewal, ARR, forecasting, sales pipeline, incremental ARR",
-      "action_items": "\n**Jeff Ignacio**\nUpdate training documentation to reflect new process for managing expansions and deal types in the sales pipeline (03:40)\nDevelop automation for calculating prior ARR and expansion ARR to improve forecasting accuracy (05:10)\nRemove the default sales forecast view within a few weeks after ensuring smooth transition to the new forecast method (09:00)\n\n**Cary Rakin**\nSubmit forecasts under the new 'new plus expansion' forecast view in Salesforce starting next week, ensuring her deals are correctly categorized under Renewals (09:50)\n\n**All Sales Team Members**\nTransition to using the new forecast view 'new plus expansion' instead of the default sales forecast in upcoming forecast submissions (08:40)\n"
-    },
     {
       "id": "01KKC73HTH1RMGAY67MZ2RGVTX",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 7,
       "keywords": "HubSpot, MEDDICC, Pipeline Management, Expansion Revenue, Renewal Process, Sales Enablement",
       "action_items": "\n**Jeff Ignacio**\nSchedule a follow-up session with Ryan McGurk and Cary Rakin to finalize design choices regarding expansion and renewal opportunities (43:29)\nLog a comment and add an open text field for more detailed metrics context in HubSpot MEDDICC fields (33:40)\nWork with Jennifer and finance to review and approve revenue recognition and opportunity structuring approaches discussed (01:22:05)\nMigrate HubSpot documentation into Notion sales enablement space once link and page are provided (34:58)\nReview and consider integrating sales tools shared by team members to standardize sales assets and ramping processes (13:48)\n\n**Ryan McGurk**\nProvide feedback and participate in tool evaluation for sales enablement, including GONG demos (07:07)\nShare link to Notion sales enablement page for Jeff to centralize HubSpot documentation (35:20)\nParticipate in detailed discussion with Jeff and Cary on expansion and renewal revenue recognition models (30:40)\n\n**Cary Rakin**\nSchedule time with Jeff Ignacio to co-model expansion/proration approaches and ensure correct setup in HubSpot (25:07)\nShare detailed examples of previous renewal forecasting templates and provide visual examples via Slack (01:05:14)\nProvide proposed contract/order form improvements for clearer term tracking and billing start/end dates (17:26)\nCollaborate with Ryan and Jeff on revenue recognition and forecasting design choices for expansions and renewals (30:44)\n\n**Dan Wathne**\nCoordinate with Jeff Ignacio offline to explore integrating existing sales documents and Slack workflows with HubSpot (37:53)\nReview and suggest improvements for deal documentation process balancing HubSpot and external tools (40:49)\n\n**All Participants**\nReview and provide feedback on sales process map, MEDDICC gating, and sales asset standardization to Jeff Ignacio (10:45)\nEnsure continuous feedback and collaboration during rollout of new pipeline and forecasting hygiene projects \n"
+    },
+    {
+      "id": "01KM0T9BYWVTNNP8Y752W3ACGS",
+      "source": "fireflies",
+      "title": "Hubspot Training: Managing Deal ACV and TCV",
+      "date": "2026-03-20",
+      "duration_minutes": 11,
+      "summary": "The session focused on streamlining sales expansions and renewals management within the sales pipeline. Key updates included managing expansions either within renewal opportunities or as separate mid-term opportunities, automating calculations for ARR and invoice values to reduce manual errors, and clarifying the distinction between new ARR and expansion ARR. A shift to a 'new plus expansion' forecast view was emphasized for improved visibility on revenue growth. Training was led by Jeff Ignacio, highlighting the importance of these updates for accurate forecasting and team alignment. Participants confirmed understanding of the new processes, which aim to enhance precision in forecasting and align with team submissions.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 6,
+      "keywords": "expansion, renewal, ARR, forecasting, sales pipeline, incremental ARR",
+      "action_items": "\n**Jeff Ignacio**\nUpdate training documentation to reflect new process for managing expansions and deal types in the sales pipeline (03:40)\nDevelop automation for calculating prior ARR and expansion ARR to improve forecasting accuracy (05:10)\nRemove the default sales forecast view within a few weeks after ensuring smooth transition to the new forecast method (09:00)\n\n**Cary Rakin**\nSubmit forecasts under the new 'new plus expansion' forecast view in Salesforce starting next week, ensuring her deals are correctly categorized under Renewals (09:50)\n\n**All Sales Team Members**\nTransition to using the new forecast view 'new plus expansion' instead of the default sales forecast in upcoming forecast submissions (08:40)\n"
     }
   ]
 }

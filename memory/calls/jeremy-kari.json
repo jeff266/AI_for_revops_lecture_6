@@ -1,19 +1,8 @@
 {
   "company": "Jeremy / Kari",
   "slug": "jeremy-kari",
+  "last_etl_date": "2026-08-01T10:41:40.274054",
   "calls": [
-    {
-      "id": "01KGNCCW3RZEYA7705PD1KDXCK",
-      "source": "fireflies",
-      "title": "Jeremy / Kari",
-      "date": "2026-02-10",
-      "duration_minutes": 28,
-      "summary": "The team discussed the status and prioritization of key projects, emphasizing the need for tight scope management to prevent delays and scope creep. Approval flows are currently blocked by team setup issues, with Adriel investigating technical details while Kari confirmed minimal additional design work is needed. The experiment creation flow is under review for simplification, with plans for an iterative launch approach. Delays in the holdout scheduling project were acknowledged, highlighting the importance of reevaluating low-impact projects. Design reviews are being streamlined to focus on functionality instead of minor details. Recruitment negotiations are addressing exclusivity clauses to ensure flexibility in sourcing candidates. Overall, the meeting reinforced the importance of clear prioritization and honest evaluations of project viability.",
-      "organizer": "kari@growthbook.io",
-      "participants": 2,
-      "keywords": "approval flows, experiment creation, project prioritization, design review, holdout scheduling, recruiter contract",
-      "action_items": "\n**Kari Kay**\nOutline the setup process for approval flows requester and clarify outstanding minor UI components (05:21)\nInform the team about multiple proposed approaches for experiment modal simplification to review with Jeremy (12:44)\nFollow up with Luke about scheduling meetings for approval flows and experiment creation discussions (06:15)\nPush back on the recruiter exclusivity clause and negotiate terms with Dave to ensure flexible recruiting (24:20)\nComplete homepage design sign-off process with the design agency this week and share with Jeremy and Graham (26:45)\nContinue steering design discussions to focus on functional flow before detailed UI polish to reduce review cycles (20:02)\n\n**Jeremy Dorn**\nProvide support in prioritizing projects and flagging when scope creep or delays make continuation impractical (15:30)\nAssist with recruiting strategy discussions and share concerns on exclusivity limitations (24:20)\nHelp enforce team culture to avoid excessive design nitpicking and refocus discussions on key priorities (20:02)\n\n**Unassigned**\nLuke to schedule meetings regarding approval flows and experiment creation to ensure clarity on scope and next steps (06:15)\n"
-    },
     {
       "id": "01KG0HS8X23ZB5J87N1NR83Y0M",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 2,
       "keywords": "Projects, Approval Flows, Onboarding, Product Analytics, Sample Data Experiments, Explorer UI",
       "action_items": "\n**Kari Kay**\nKari Kay to bring team questions on approval flows and permissions back to the team for clarity and follow-up discussion (08:16)\nKari Kay to discuss onboarding experiments next steps with experiment squad team and escalate as needed (16:58)\nKari Kay to confirm experiment ownership, potentially assigning Luke or team members, and track progress on sample data experiments (19:18)\nKari Kay to be included in future metric and fact table onboarding initiatives as they develop (25:59)\n\n**Jeremy Dorn**\nJeremy Dorn to meet with Adriel immediately after this call to clarify approval flow permissions and decide if a larger meeting is needed (08:24)\nJeremy Dorn and team to finalize decisions about default project assignment logic and implementation for new users and existing untagged data (09:39)\n\n**Engineering**\nEngineering to iterate on Product Analytics Explorer UI with improvements around save/add to dashboard, filters, axis controls, and chart interactivity (23:18)\n"
+    },
+    {
+      "id": "01KGNCCW3RZEYA7705PD1KDXCK",
+      "source": "fireflies",
+      "title": "Jeremy / Kari",
+      "date": "2026-02-10",
+      "duration_minutes": 28,
+      "summary": "The team discussed the status and prioritization of key projects, emphasizing the need for tight scope management to prevent delays and scope creep. Approval flows are currently blocked by team setup issues, with Adriel investigating technical details while Kari confirmed minimal additional design work is needed. The experiment creation flow is under review for simplification, with plans for an iterative launch approach. Delays in the holdout scheduling project were acknowledged, highlighting the importance of reevaluating low-impact projects. Design reviews are being streamlined to focus on functionality instead of minor details. Recruitment negotiations are addressing exclusivity clauses to ensure flexibility in sourcing candidates. Overall, the meeting reinforced the importance of clear prioritization and honest evaluations of project viability.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "approval flows, experiment creation, project prioritization, design review, holdout scheduling, recruiter contract",
+      "action_items": "\n**Kari Kay**\nOutline the setup process for approval flows requester and clarify outstanding minor UI components (05:21)\nInform the team about multiple proposed approaches for experiment modal simplification to review with Jeremy (12:44)\nFollow up with Luke about scheduling meetings for approval flows and experiment creation discussions (06:15)\nPush back on the recruiter exclusivity clause and negotiate terms with Dave to ensure flexible recruiting (24:20)\nComplete homepage design sign-off process with the design agency this week and share with Jeremy and Graham (26:45)\nContinue steering design discussions to focus on functional flow before detailed UI polish to reduce review cycles (20:02)\n\n**Jeremy Dorn**\nProvide support in prioritizing projects and flagging when scope creep or delays make continuation impractical (15:30)\nAssist with recruiting strategy discussions and share concerns on exclusivity limitations (24:20)\nHelp enforce team culture to avoid excessive design nitpicking and refocus discussions on key priorities (20:02)\n\n**Unassigned**\nLuke to schedule meetings regarding approval flows and experiment creation to ensure clarity on scope and next steps (06:15)\n"
     }
   ]
 }

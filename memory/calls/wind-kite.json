@@ -1,19 +1,8 @@
 {
   "company": "Wind & Kite",
   "slug": "wind-kite",
+  "last_etl_date": "2026-08-01T10:41:40.261640",
   "calls": [
-    {
-      "id": "01KJE3XFNFJ5J93RXEAEF7CQHY",
-      "source": "fireflies",
-      "title": "Wind & Kite + GrowthBook",
-      "date": "2026-03-02",
-      "duration_minutes": 30,
-      "summary": "The team demonstrated how GrowthBook streamlines feature flag management and experimentation setup, allowing for targeted rollouts and granular control over feature behavior. Its experiment integration supports hypothesis-driven testing with flexible traffic allocation, while data warehouse connections facilitate detailed metric tracking. Advanced visualization and reporting options allow teams to switch between Frequentist and Bayesian statistical analyses to better communicate results. Post-experiment automation streamlines the processes, reducing code adjustments, and flexible pricing plans cater to regulated industries seeking customization and data control. Direct access to founders also ensures fast and responsive feature development.",
-      "organizer": "christian@growthbook.io",
-      "participants": 3,
-      "keywords": "Feature Flags, Experimentation, SDK Integration, Visual Editor, Data Warehouse, Pricing Tiers",
-      "action_items": "\n**James Allen-Lewis**\nExplore and test GrowthBook features as demonstrated and follow up with any further questions via email (29:46)\n\n**Christian Liebenow**\nProvide responses to any subsequent questions James raises about GrowthBook capabilities and pricing tiers (29:46)\n\n**Logan Bates**\nSupport ongoing demos and technical discussions related to GrowthBook setup and feature usage as needed (29:54)\n"
-    },
     {
       "id": "01KJD9FG79JZ10XX9SDHSCVC73",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 2,
       "keywords": "GrowthBook, A/B testing, feature flagging, data warehouse, visual editor, multi-armed bandits",
       "action_items": "\n**Christian Liebenow**\nShare the webinar link with jamesallen-lewis for the upcoming experimentation culture session featuring Ronnie Kahavi (09:57)\nProvide documentation on GrowthBook’s Cloudflare integration and edge experimentation capabilities (20:53)\nEmail jamesallen-lewis a calendar link to facilitate booking a follow-up session for detailed product features, pricing, and competitor comparison (29:05)\n\n**James Allen-Lewis**\nBook a follow-up meeting using the calendar link from Christian to continue the demo and discuss pricing and competitive positioning (29:05)\n"
+    },
+    {
+      "id": "01KJE3XFNFJ5J93RXEAEF7CQHY",
+      "source": "fireflies",
+      "title": "Wind & Kite + GrowthBook",
+      "date": "2026-03-02",
+      "duration_minutes": 30,
+      "summary": "The team demonstrated how GrowthBook streamlines feature flag management and experimentation setup, allowing for targeted rollouts and granular control over feature behavior. Its experiment integration supports hypothesis-driven testing with flexible traffic allocation, while data warehouse connections facilitate detailed metric tracking. Advanced visualization and reporting options allow teams to switch between Frequentist and Bayesian statistical analyses to better communicate results. Post-experiment automation streamlines the processes, reducing code adjustments, and flexible pricing plans cater to regulated industries seeking customization and data control. Direct access to founders also ensures fast and responsive feature development.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature Flags, Experimentation, SDK Integration, Visual Editor, Data Warehouse, Pricing Tiers",
+      "action_items": "\n**James Allen-Lewis**\nExplore and test GrowthBook features as demonstrated and follow up with any further questions via email (29:46)\n\n**Christian Liebenow**\nProvide responses to any subsequent questions James raises about GrowthBook capabilities and pricing tiers (29:46)\n\n**Logan Bates**\nSupport ongoing demos and technical discussions related to GrowthBook setup and feature usage as needed (29:54)\n"
     }
   ]
 }

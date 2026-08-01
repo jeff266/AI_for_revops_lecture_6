@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> Writer",
+  "slug": "growthbook-writer",
+  "last_etl_date": "2026-08-01T10:41:40.147084",
+  "calls": [
+    {
+      "id": "698f836c5ff63300219f62d6",
+      "source": "apollo",
+      "title": "Growthbook <> Writer - Intro ",
+      "date": "2026-02-13",
+      "duration_minutes": 33,
+      "summary": "[Summary failed] [Daniel Wathne]: Wording in progress. What's up, dude? Hello. Happy Friday. Hey. Too.\n[Logan Bates]: You like to sniffle or something? That's what's going on. I don't. A little out of it.\n[Daniel Wath",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

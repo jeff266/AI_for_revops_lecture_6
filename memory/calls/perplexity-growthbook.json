@@ -1,7 +1,18 @@
 {
   "company": "Perplexity + GrowthBook",
   "slug": "perplexity-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.147598",
   "calls": [
+    {
+      "id": "698d00e7a4227f0019f41a21",
+      "source": "apollo",
+      "title": "Perplexity + GrowthBook",
+      "date": "2026-02-11",
+      "duration_minutes": 50,
+      "summary": "[Summary failed] [Christian Liebenow]: I'd take more if we can get more at retreat. I'll always take swag.\n[Webflow Demo]: Yeah, you can just ask for more money to the store. We have quite a lot.\n[Christian Liebenow]:",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
     {
       "id": "01KH79QHJDRF7XP5XRANWGSNFM",
       "source": "fireflies",

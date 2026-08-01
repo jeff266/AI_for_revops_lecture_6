@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> CIG",
+  "slug": "growthbook-cig",
+  "last_etl_date": "2026-08-01T10:41:40.132142",
+  "calls": [
+    {
+      "id": "69d7cd5569f49c0021d47098",
+      "source": "apollo",
+      "title": "Growthbook <> CIG - Product Meeting ",
+      "date": "2026-04-09",
+      "duration_minutes": 61,
+      "summary": "[Summary failed] [Dorine Moland-Segura]: Recording in progress.\n[Daniel Wathne]: Hey, Sam. How you doing? Hello.\n[Logan Bates]: Doing great.\n[Samuel Seguin]: How are you guys?\n[Daniel Wathne]: I'm great. Awesome. Are ",
+      "host": "Daniel Wathne",
+      "participants": 6
+    },
+    {
+      "id": "69e6812358c8070015f2eb1c",
+      "source": "apollo",
+      "title": "Growthbook <> CIG - Technical Demo ",
+      "date": "2026-04-20",
+      "duration_minutes": 40,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey, Logan. Hello. We can call ourselves a family company now.\n[Martin Le Bas]: We'll see.\n[Daniel Wathne]: Very exciting.\n[Martin Le Bas]: Hey.\n[Daniel Wathne]: Hey.\n[Martin Le Bas]:",
+      "host": "Daniel Wathne",
+      "participants": 5
+    }
+  ]
+}

@@ -1,7 +1,18 @@
 {
   "company": "Review of new",
   "slug": "review-of-new",
+  "last_etl_date": "2026-08-01T10:41:40.123458",
   "calls": [
+    {
+      "id": "6a22f925b8037d001888bf85",
+      "source": "apollo",
+      "title": "Review of new AI messaging on home page",
+      "date": "2026-06-05",
+      "duration_minutes": 12,
+      "summary": "[Summary failed] [Elyse Fox]: Do we. Do we have a skill or a prompt that we can run that does that?\n[Scott Bailey]: We do actually now have a skill for the ramp schedules. So part of the idea here was to make sure tha",
+      "host": "Ashley Stirrup",
+      "participants": 4
+    },
     {
       "id": "01KT73MA65J73YRDJJFXV5QX07",
       "source": "fireflies",

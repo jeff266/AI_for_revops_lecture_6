@@ -1,7 +1,18 @@
 {
   "company": "Growth Wizards <>",
   "slug": "growth-wizards",
+  "last_etl_date": "2026-08-01T10:41:40.123955",
   "calls": [
+    {
+      "id": "6a209f46f303cb0020ab2e2e",
+      "source": "apollo",
+      "title": "Growth Wizards <> GrowthBook",
+      "date": "2026-06-03",
+      "duration_minutes": 40,
+      "summary": "[Summary failed] [Lyndsie Berens]: It. Kick my note taker out.\n[Ashley Stirrup]: It's fine. Either way, it's fine.\n[Lyndsie Berens]: Landscapers are here.\n[Ashley Stirrup]: My dog hates them note takers. So, yeah, inv",
+      "host": "Lyndsie Berens",
+      "participants": 5
+    },
     {
       "id": "01KT20HAHKDGHV67568XWAH68G",
       "source": "fireflies",

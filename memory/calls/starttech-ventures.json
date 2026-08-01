@@ -1,0 +1,17 @@
+{
+  "company": "Starttech Ventures +",
+  "slug": "starttech-ventures",
+  "last_etl_date": "2026-08-01T10:41:40.128435",
+  "calls": [
+    {
+      "id": "69fde7f7b3e7f10015544134",
+      "source": "apollo",
+      "title": "Starttech Ventures + GrowthBook",
+      "date": "2026-05-08",
+      "duration_minutes": 26,
+      "summary": "[Summary failed] [Christian Liebenow]: Hello.\n[Aristeidis Kypriotis]: Hello\n[Christian Liebenow]: Aristides. How are you?\n[Aristeidis Kypriotis]: How are you? Fine, I'm fine. How are you?\n[Christian Liebenow]: Yeah, d",
+      "host": "Christian Liebenow",
+      "participants": 2
+    }
+  ]
+}

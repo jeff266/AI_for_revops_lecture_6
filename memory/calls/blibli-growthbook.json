@@ -1,0 +1,17 @@
+{
+  "company": "Blibli<>GrowthBook",
+  "slug": "blibli-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.143936",
+  "calls": [
+    {
+      "id": "69b232e9e032d100193179d4",
+      "source": "apollo",
+      "title": "Blibli<>GrowthBook - POC Prep Call",
+      "date": "2026-03-12",
+      "duration_minutes": 52,
+      "summary": "[Summary failed] [Kevin P]: Okay. Okay. Sorry, I think you're still on mute.\n[Jake Heier]: Oh, apologies. Can you hear me now?\n[Logan Bates]: Okay.\n[Kevin P]: Yeah.\n[Jake Heier]: Okay. Yeah, I was hoping maybe just up",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

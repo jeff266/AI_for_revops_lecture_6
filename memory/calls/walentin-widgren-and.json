@@ -1,0 +1,17 @@
+{
+  "company": "Walentin Widgren and",
+  "slug": "walentin-widgren-and",
+  "last_etl_date": "2026-08-01T10:41:40.144711",
+  "calls": [
+    {
+      "id": "69a9aacce067cf001dcd6174",
+      "source": "apollo",
+      "title": "Walentin Widgren and Jake Heier",
+      "date": "2026-03-05",
+      "duration_minutes": 10,
+      "summary": "[Summary failed] [Walentin Widgren]: It. Hey, Jeremy. Hey, how you doing? Good.\n[Jake Heier]: Thanks for doing this.\n[Walentin Widgren]: Yeah. Hello. Hello. How are you? Good. How are you guys doing well. Good.\n[Jake ",
+      "host": "Jake Heier",
+      "participants": 3
+    }
+  ]
+}

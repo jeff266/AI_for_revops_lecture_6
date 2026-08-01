@@ -1,0 +1,17 @@
+{
+  "company": "xAI<>GrowthBook",
+  "slug": "xai-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.147803",
+  "calls": [
+    {
+      "id": "698ce62f94be3c001d8f3feb",
+      "source": "apollo",
+      "title": "xAI<>GrowthBook - Discussion",
+      "date": "2026-02-11",
+      "duration_minutes": 27,
+      "summary": "[Summary failed] [Jake Heier]: Hey, Sam.\n[Samuel Nathanson]: Hey, Jake. How's it going?\n[Jake Heier]: Going well. How are you?\n[Samuel Nathanson]: Good. Doing great today. Are you over on the West Coast?\n[Jake Heier]:",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "company": "Impromptu meeting",
+  "slug": "impromptu-meeting",
+  "last_etl_date": "2026-08-01T10:41:40.120957",
+  "calls": [
+    {
+      "id": "69a9d2e6a3d5e6001d297384",
+      "source": "apollo",
+      "title": "Impromptu meeting",
+      "date": "2026-03-05",
+      "duration_minutes": 28,
+      "summary": "[Summary failed] [Chris Sanders]: Hey, christian.\n[Christian Liebenow]: Hey, Chris. How are you?\n[Chris Sanders]: Good.\n[Christian Liebenow]: Awesome, man.\n[Chris Sanders]: Your audio sounds a little maybe like. Yeah,",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "69f8609b209892001dd5e3ca",
+      "source": "apollo",
+      "title": "Impromptu meeting",
+      "date": "2026-05-04",
+      "duration_minutes": 26,
+      "summary": "[Summary failed] [James Shannon]: I appreciate it and I can share this with you guys after Tao. And thank you so much for joining. How are both of you? We haven't spoken in a few months. Everything is okay on your sid",
+      "host": "James Shannon",
+      "participants": 3
+    },
+    {
+      "id": "6a304cf0251d7000148ef59f",
+      "source": "apollo",
+      "title": "Impromptu meeting",
+      "date": "2026-06-15",
+      "duration_minutes": 23,
+      "summary": "[Summary failed] [Daniel Wathne]: I figured it out. Sorry, I had a troubleshoot live here. So yeah, as I was saying, GrowthBook is really focused on enabling experimentation and feature flagging at the warehouse level",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

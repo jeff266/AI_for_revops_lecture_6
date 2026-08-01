@@ -1,0 +1,17 @@
+{
+  "company": "Salesforce<>GrowthBook",
+  "slug": "salesforce-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.147505",
+  "calls": [
+    {
+      "id": "698e46521769df001569a62d",
+      "source": "apollo",
+      "title": "Salesforce<>GrowthBook - Onboarding",
+      "date": "2026-02-12",
+      "duration_minutes": 29,
+      "summary": "[Summary failed] [Jake Heier]: Hey Chris. Hey Naomi.\n[Salesforce, Inc.]: Hello.\n[Jake Heier]: How are you?\n[So-Young Nam]: Good, how are you doing?\n[Jake Heier]: Well, thanks for joining.\n[So-Young Nam]: I think we ne",
+      "host": "Jake Heier",
+      "participants": 5
+    }
+  ]
+}

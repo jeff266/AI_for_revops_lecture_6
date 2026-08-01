@@ -1,6 +1,7 @@
 {
   "company": "Blog quick sync",
   "slug": "blog-quick-sync",
+  "last_etl_date": "2026-08-01T10:41:40.244761",
   "calls": [
     {
       "id": "01KN9YDBBN34EPFSYQQ3QXVCZF",

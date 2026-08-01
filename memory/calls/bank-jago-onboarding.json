@@ -1,0 +1,17 @@
+{
+  "company": "Bank Jago Onboarding",
+  "slug": "bank-jago-onboarding",
+  "last_etl_date": "2026-08-01T10:41:40.145682",
+  "calls": [
+    {
+      "id": "699fb35c2eb77700117b7d55",
+      "source": "apollo",
+      "title": "Bank Jago Onboarding",
+      "date": "2026-02-26",
+      "duration_minutes": 39,
+      "summary": "[Summary failed] [Jake Heier]: So I'll send this out after the call. Great. Well, just for those I haven't met, I'm Jake Hire. I'm your on the account team here at Growth Book. So I'll be one of the many folks that yo",
+      "host": "Jake Heier",
+      "participants": 8
+    }
+  ]
+}

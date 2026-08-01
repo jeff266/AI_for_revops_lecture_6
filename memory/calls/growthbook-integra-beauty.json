@@ -1,0 +1,37 @@
+{
+  "company": "Growthbook <> Integra Beauty",
+  "slug": "growthbook-integra-beauty",
+  "last_etl_date": "2026-08-01T10:41:40.135102",
+  "calls": [
+    {
+      "id": "69bc1de42d8387001d547bb7",
+      "source": "apollo",
+      "title": "GrowthBook <> Integra Beauty - Intro",
+      "date": "2026-03-19",
+      "duration_minutes": 46,
+      "summary": "[Summary failed] [Daniel Wathne]: Logan. Hey, good morning, Luke. What's going on?\n[Luke Sonnet]: Hello.\n[lera.rastsiazhenka@integrabeauty.com Rastsiazhenka]: Hello.\n[Daniel Wathne]: How you doing? Vera, how you doing",
+      "host": "Daniel Wathne",
+      "participants": 6
+    },
+    {
+      "id": "69c6a88e73a5c20011fee8b8",
+      "source": "apollo",
+      "title": "Growthbook <> Integra Beauty - Demo ",
+      "date": "2026-03-27",
+      "duration_minutes": 40,
+      "summary": "[Summary failed] [lera.rastsiazhenka@integrabeauty.com Rastsiazhenka]: Recording.\n[Daniel Wathne]: Hey.\n[Integra Beauty]: Hello.\n[Daniel Wathne]: How you doing?\n[Wojciech.Malinowski@Integrabeauty.Com Malinowski]: Pret",
+      "host": "Daniel Wathne",
+      "participants": 5
+    },
+    {
+      "id": "69d7efc505d8350021a9cac4",
+      "source": "apollo",
+      "title": "Growthbook <> Integra Beauty - Pricing Sync",
+      "date": "2026-04-09",
+      "duration_minutes": 28,
+      "summary": "[Summary failed] [Daniel Wathne]: Recording.\n[Integra Beauty]: Hey, dad.\n[Daniel Wathne]: What's going on?\n[Integra Beauty]: Not much, Dan. How are you?\n[Daniel Wathne]: Oh, pretending I'm in paradise today. Yeah, I n",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

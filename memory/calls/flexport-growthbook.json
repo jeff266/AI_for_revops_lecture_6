@@ -1,18 +1,19 @@
 {
   "company": "Flexport + GrowthBook",
   "slug": "flexport-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.211972",
   "calls": [
     {
-      "id": "01KSJKPMNBJATTE8EAEDK5DJA0",
+      "id": "01KPV832WN9J2R423ZJ81NFE6T",
       "source": "fireflies",
-      "title": "Flexport + GrowthBook Demo",
-      "date": "2026-05-28",
-      "duration_minutes": 45,
-      "summary": "During the meeting, the team discussed integrating GrowthBook with Salesforce and Clay to enhance lead quality through real-time enrichment. Natalie Barzyk confirmed that Clay would replace LeanData for lead enrichment via webhook, while Logan Bates emphasized GrowthBook's ability to send experiment exposure data immediately. They explored feature-based experimentation to enable flexible campaign testing and the use of AI-driven workflows to streamline experiment management. Importantly, metrics will integrate diverse data sources like GA4 and Salesforce for nuanced lead quality tracking. A cautious approach to initial user testing was proposed, along with significant focus on a structured pricing model, fostering a supportive collaboration environment to achieve optimal experimentation outcomes.",
+      "title": "Flexport + GrowthBook",
+      "date": "2026-04-24",
+      "duration_minutes": 9,
+      "summary": "The meeting was rescheduled to Wednesday at 1:30 PM CT to include Natalie, the head of digital and performance, as her expertise is crucial for discussing website metrics. The team acknowledged the absence of tools like Amplitude, Optimizely, or LaunchDarkly, despite them being mentioned in job postings. A transition from Contentful to Sanity for CMS is underway to enhance content management ahead of the new website launch. The development agency's recommendation established trust in the partnership, reinforcing confidence in technical alignment. The conversation maintained a casual tone, fostering rapport, while focusing on leveraging Natalie’s expertise for enhancing the team’s discussions about digital performance.",
       "organizer": "christian@growthbook.io",
-      "participants": 4,
-      "keywords": "GrowthBook, Salesforce Integration, Experimentation, Lead Quality, API Automation, Visual Editor",
-      "action_items": "\n**Natalie Barzyk**\nMeet with engineering partner and Grace after PTO to discuss backend setup for GrowthBook integration and finalize decision on experimentation platform (37:17)\nFollow up with engineering partner regarding server-side rendering and flicker concerns for technical evaluation (32:26)\nCoordinate internal review of demo videos and materials from GrowthBook and share with Singapore engineering team (36:33)\nProvide feedback and update GrowthBook team on decision timeline, aiming for approximately two weeks (37:56)\n\n**Christian Liebenow**\nSend pricing information including user- and experiment-based models tailored for about 10 users, along with platform video tutorials and documentation (41:19)\nProvide follow-up materials including cloud workflow and new visual editor demo videos for Flexport team evaluation (31:41)\nOffer continued support in best practices and share similar customer experiences to assist Flexport in platform setup and adoption (40:50)\nPlan reconnect meeting approximately three weeks after marketing offsite to present updated capabilities and address further questions (43:57)\n\n**Logan Bates**\nAssist with visualizing callback functions and API orchestration for integrating GrowthBook, Clay, and Salesforce with marketing and engineering teams (08:22)\nProvide demo videos illustrating autonomous experiment creation, cloud workflows, and visual editor use to support Flexport evaluation (31:41)\nSupport technical clarifications on flicker issues, server-side rendering, and visual editor implementation options (32:26)\n"
+      "participants": 3,
+      "keywords": "Marketing Leadership, Website Metrics, CMS Migration, Meeting Rescheduling, Job Postings, Tool Integration",
+      "action_items": "\n**Courtney Heger**\nAdd Natalie, head of digital and website metrics, to the meeting invite and confirm her participation for the rescheduled session to ensure her input is included (04:44)\nCoordinate and confirm the new meeting date and time for Wednesday 1:30 PM to 3 PM Central Time with all participants (05:36)\n\n**Christian Liebenow**\nUpdate and reschedule the meeting to Wednesday 1:30 PM Central Time as agreed upon (07:06)\n"
     },
     {
       "id": "01KQ0ANC9F46SD88Z812QD35Q5",
@@ -27,16 +28,16 @@
       "action_items": "\n**Natalie Barzyk**\nDiscuss self-hosting versus cloud hosting options with the engineering partner and VP of engineering to decide the best approach for Flexport's AB testing platform deployment (17:45)\nCoordinate an internal evaluation with sales operations and engineering teams to assess the feasibility of linking experiment exposure data to Salesforce leads for improved lead quality tracking (29:15)\n\n**Christian Liebenow**\nProvide detailed follow-up information on Salesforce integration capabilities and related use cases for tracking lead quality via email to Flexport (30:26)\nSchedule a comprehensive follow-up demo for Flexport covering multivariate testing, experiment setup, and core platform functionalities after key stakeholders return from PTO (32:50)\n\n**Logan Bates**\nFollow up internally to clarify Salesforce integration possibilities and share findings with Flexport to support their CRM data linkage goals (29:43)\nShare demo video materials with Flexport to enhance their understanding of multivariate testing and platform features ahead of the follow-up demo (32:15)\n"
     },
     {
-      "id": "01KPV832WN9J2R423ZJ81NFE6T",
+      "id": "01KSJKPMNBJATTE8EAEDK5DJA0",
       "source": "fireflies",
-      "title": "Flexport + GrowthBook",
-      "date": "2026-04-24",
-      "duration_minutes": 9,
-      "summary": "The meeting was rescheduled to Wednesday at 1:30 PM CT to include Natalie, the head of digital and performance, as her expertise is crucial for discussing website metrics. The team acknowledged the absence of tools like Amplitude, Optimizely, or LaunchDarkly, despite them being mentioned in job postings. A transition from Contentful to Sanity for CMS is underway to enhance content management ahead of the new website launch. The development agency's recommendation established trust in the partnership, reinforcing confidence in technical alignment. The conversation maintained a casual tone, fostering rapport, while focusing on leveraging Natalie’s expertise for enhancing the team’s discussions about digital performance.",
+      "title": "Flexport + GrowthBook Demo",
+      "date": "2026-05-28",
+      "duration_minutes": 45,
+      "summary": "During the meeting, the team discussed integrating GrowthBook with Salesforce and Clay to enhance lead quality through real-time enrichment. Natalie Barzyk confirmed that Clay would replace LeanData for lead enrichment via webhook, while Logan Bates emphasized GrowthBook's ability to send experiment exposure data immediately. They explored feature-based experimentation to enable flexible campaign testing and the use of AI-driven workflows to streamline experiment management. Importantly, metrics will integrate diverse data sources like GA4 and Salesforce for nuanced lead quality tracking. A cautious approach to initial user testing was proposed, along with significant focus on a structured pricing model, fostering a supportive collaboration environment to achieve optimal experimentation outcomes.",
       "organizer": "christian@growthbook.io",
-      "participants": 3,
-      "keywords": "Marketing Leadership, Website Metrics, CMS Migration, Meeting Rescheduling, Job Postings, Tool Integration",
-      "action_items": "\n**Courtney Heger**\nAdd Natalie, head of digital and website metrics, to the meeting invite and confirm her participation for the rescheduled session to ensure her input is included (04:44)\nCoordinate and confirm the new meeting date and time for Wednesday 1:30 PM to 3 PM Central Time with all participants (05:36)\n\n**Christian Liebenow**\nUpdate and reschedule the meeting to Wednesday 1:30 PM Central Time as agreed upon (07:06)\n"
+      "participants": 4,
+      "keywords": "GrowthBook, Salesforce Integration, Experimentation, Lead Quality, API Automation, Visual Editor",
+      "action_items": "\n**Natalie Barzyk**\nMeet with engineering partner and Grace after PTO to discuss backend setup for GrowthBook integration and finalize decision on experimentation platform (37:17)\nFollow up with engineering partner regarding server-side rendering and flicker concerns for technical evaluation (32:26)\nCoordinate internal review of demo videos and materials from GrowthBook and share with Singapore engineering team (36:33)\nProvide feedback and update GrowthBook team on decision timeline, aiming for approximately two weeks (37:56)\n\n**Christian Liebenow**\nSend pricing information including user- and experiment-based models tailored for about 10 users, along with platform video tutorials and documentation (41:19)\nProvide follow-up materials including cloud workflow and new visual editor demo videos for Flexport team evaluation (31:41)\nOffer continued support in best practices and share similar customer experiences to assist Flexport in platform setup and adoption (40:50)\nPlan reconnect meeting approximately three weeks after marketing offsite to present updated capabilities and address further questions (43:57)\n\n**Logan Bates**\nAssist with visualizing callback functions and API orchestration for integrating GrowthBook, Clay, and Salesforce with marketing and engineering teams (08:22)\nProvide demo videos illustrating autonomous experiment creation, cloud workflows, and visual editor use to support Flexport evaluation (31:41)\nSupport technical clarifications on flicker issues, server-side rendering, and visual editor implementation options (32:26)\n"
     }
   ]
 }

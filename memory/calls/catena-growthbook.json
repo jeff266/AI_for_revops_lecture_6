@@ -1,7 +1,18 @@
 {
   "company": "Catena + GrowthBook",
   "slug": "catena-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.144988",
   "calls": [
+    {
+      "id": "69a73935caf947001d86a8a9",
+      "source": "apollo",
+      "title": "Catena + GrowthBook",
+      "date": "2026-03-03",
+      "duration_minutes": 40,
+      "summary": "[Summary failed] [Colton Rybus]: Sam. Guys, how's it going?\n[Chris Sanders]: Hey, Colton.\n[Christian Liebenow]: Hey, Colton. How are you?\n[Colton Rybus]: Pretty good.\n[Christian Liebenow]: Awesome. How was. How was yo",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
     {
       "id": "01KJR91GST99F05TYMP3TPW0S5",
       "source": "fireflies",

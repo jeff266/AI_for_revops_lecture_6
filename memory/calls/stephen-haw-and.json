@@ -1,19 +1,8 @@
 {
   "company": "Stephen Haw and",
   "slug": "stephen-haw-and",
+  "last_etl_date": "2026-08-01T10:41:40.257519",
   "calls": [
-    {
-      "id": "01KJWHF4F44KVVBNXDKC6MZXG2",
-      "source": "fireflies",
-      "title": "Stephen Haw and Graham McNicoll + 4 others",
-      "date": "2026-03-09",
-      "duration_minutes": 27,
-      "summary": "The team discussed a notable mismatch in experiment metrics, particularly in visits and conversions. Stephen reported 10,100 visits, while marketing claimed 18,923, leading to concerns over the reliability of data. Conversion tracking also revealed discrepancies, with only 54 internal conversions versus 2,972 reported externally. Graham clarified the primary conversion metric and highlighted issues with using Device IDs due to blank User IDs. A plan was established to engage the Growth Book engineering team for further diagnostics, with a focus on firing explicit page view events to improve data integrity. Collaborative troubleshooting between the frontend, backend, and engineering teams was emphasized to restore trust in experiment data.",
-      "organizer": "graham@growthbook.io",
-      "participants": 8,
-      "keywords": "GrowthBook, Conversion Tracking, Data Discrepancies, Event Firing, Page View Pixel, SQL Query",
-      "action_items": "\n**Stephen Haw**\nImplement explicit page view event firing on all pages and validate tracking improvements (20:19)\nCoordinate with marketing and internal team to create a new test experiment reflecting this update for accurate baseline (26:01)\nKeep GrowthBook team updated on test experiment outcomes and any anomalies detected (26:28)\n\n**Jay (Jacob Whittaker)**\nAssist Stephen in deploying test experiments with recommended tracking changes (26:17)\nContinue troubleshooting User ID issue and support SQL queries and data verification efforts (11:08)\n\n**Graham McNicoll**\nReview recorded meeting and internal engineering team to identify causes of data discrepancies and event loss (24:52)\nFollow up with Stephen and Jay with findings and possible technical resolutions (25:32)\nAdvise on best practices for event tracking and dashboard monitoring to ensure accurate experiment measurements (20:29)\n"
-    },
     {
       "id": "01KJPT0R6MBJXJV97ABNMW7097",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 7,
       "keywords": "Onboarding, Wedding, Family Reunion, Australia, Coral Reef Restoration, Travel",
       "action_items": "\n**Graham McNicoll**\nReview and fix legacy Calendly onboarding links to prevent unnecessary invitations (05:33)\nShare recommendations for reef tours with marine biologists for Coral restoration insights, to Daniel or colleagues interested in reef ecology (14:09)\n\n**Daniel**\nParticipate as an observer ('fly on the wall') for onboarding meetings only if appropriate, otherwise opt out (06:38)\nFollow up with Ashley as scheduled, and continue planning Hawaii trip with remote work logistics for his wife (20:31)\n"
+    },
+    {
+      "id": "01KJWHF4F44KVVBNXDKC6MZXG2",
+      "source": "fireflies",
+      "title": "Stephen Haw and Graham McNicoll + 4 others",
+      "date": "2026-03-09",
+      "duration_minutes": 27,
+      "summary": "The team discussed a notable mismatch in experiment metrics, particularly in visits and conversions. Stephen reported 10,100 visits, while marketing claimed 18,923, leading to concerns over the reliability of data. Conversion tracking also revealed discrepancies, with only 54 internal conversions versus 2,972 reported externally. Graham clarified the primary conversion metric and highlighted issues with using Device IDs due to blank User IDs. A plan was established to engage the Growth Book engineering team for further diagnostics, with a focus on firing explicit page view events to improve data integrity. Collaborative troubleshooting between the frontend, backend, and engineering teams was emphasized to restore trust in experiment data.",
+      "organizer": "graham@growthbook.io",
+      "participants": 8,
+      "keywords": "GrowthBook, Conversion Tracking, Data Discrepancies, Event Firing, Page View Pixel, SQL Query",
+      "action_items": "\n**Stephen Haw**\nImplement explicit page view event firing on all pages and validate tracking improvements (20:19)\nCoordinate with marketing and internal team to create a new test experiment reflecting this update for accurate baseline (26:01)\nKeep GrowthBook team updated on test experiment outcomes and any anomalies detected (26:28)\n\n**Jay (Jacob Whittaker)**\nAssist Stephen in deploying test experiments with recommended tracking changes (26:17)\nContinue troubleshooting User ID issue and support SQL queries and data verification efforts (11:08)\n\n**Graham McNicoll**\nReview recorded meeting and internal engineering team to identify causes of data discrepancies and event loss (24:52)\nFollow up with Stephen and Jay with findings and possible technical resolutions (25:32)\nAdvise on best practices for event tracking and dashboard monitoring to ensure accurate experiment measurements (20:29)\n"
     }
   ]
 }

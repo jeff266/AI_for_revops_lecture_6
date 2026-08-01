@@ -1,7 +1,18 @@
 {
   "company": "Dani Olean and",
   "slug": "dani-olean-and",
+  "last_etl_date": "2026-08-01T10:41:40.117415",
   "calls": [
+    {
+      "id": "6a5543f110ebee001065385a",
+      "source": "apollo",
+      "title": "Dani Olean and Ashley Stirrup + Christian Liebenow",
+      "date": "2026-07-13",
+      "duration_minutes": 21,
+      "summary": "[Summary failed] [logan]: I forget when this contract ends, but it is sometime in the near future.\n[Christian Liebenow]: Okay. Okay, cool. Okay, great. I think yeah, we've got a good direction for the, for the demo. L",
+      "host": "Ashley Stirrup",
+      "participants": 3
+    },
     {
       "id": "01KXEFAVNA3WTMN8VCWD01JVY5",
       "source": "fireflies",

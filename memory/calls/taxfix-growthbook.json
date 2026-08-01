@@ -1,0 +1,17 @@
+{
+  "company": "Taxfix<>GrowthBook",
+  "slug": "taxfix-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.134854",
+  "calls": [
+    {
+      "id": "69dd0d4f0d5066001d29bab8",
+      "source": "apollo",
+      "title": "Taxfix<>GrowthBook - AI & MCP Overview",
+      "date": "2026-04-13",
+      "duration_minutes": 35,
+      "summary": "[Summary failed] [Logan Bates]: Hello.\n[Jake Heier]: How's it going? Hey, Anna.\n[Anna Barnett]: Hello.\n[Jake Heier]: How was your weekend?\n[Anna Barnett]: It was nice. There's one day of sun, so it always gets very ex",
+      "host": "Jake Heier",
+      "participants": 7
+    }
+  ]
+}

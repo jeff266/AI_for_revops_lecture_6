@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook Experimentation Best",
+  "slug": "growthbook-experimentation-best",
+  "last_etl_date": "2026-08-01T10:41:40.149077",
+  "calls": [
+    {
+      "id": "697cd22399ef60000d921cf4",
+      "source": "apollo",
+      "title": "GrowthBook Experimentation Best Practices",
+      "date": "2026-01-30",
+      "duration_minutes": 46,
+      "summary": "[Summary failed] [Jake Heier]: Hello.\n[Growthbook Dorn]: Hi, Jake, how are you?\n[12 C9]: Very good.\n[Sebastian.Pazirai@Eqtpartners.Com Pazirai]: How are you?\n[Jake Heier]: I'm doing well. Hey, Jeremy. Hello. I believe",
+      "host": "Jake Heier",
+      "participants": 5
+    }
+  ]
+}

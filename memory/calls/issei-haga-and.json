@@ -1,7 +1,18 @@
 {
   "company": "ISSEI HAGA and",
   "slug": "issei-haga-and",
+  "last_etl_date": "2026-08-01T10:41:40.138300",
   "calls": [
+    {
+      "id": "69cb173d085be0001df9e43e",
+      "source": "apollo",
+      "title": "ISSEI HAGA and GrowthBook",
+      "date": "2026-03-31",
+      "duration_minutes": 36,
+      "summary": "[Summary failed] [芳賀一生]: nicetomyu.\n[Hajime Akagi]: nicetomyu.\n[Ashley Stirrup]: Ranwilbejogusaswel. Hiourchiefrvnuocer. Unfotuately,G r a h a m i s o n a p l a\n[Ryan McGurk]: n e h omf r A u\n[Ashley Stirrup]: s t ral",
+      "host": "Ashley Stirrup",
+      "participants": 4
+    },
     {
       "id": "01KMNXNAFYQF444CK3K7TBJ26G",
       "source": "fireflies",

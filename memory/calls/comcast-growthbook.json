@@ -1,0 +1,17 @@
+{
+  "company": "Comcast <> Growthbook",
+  "slug": "comcast-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.129261",
+  "calls": [
+    {
+      "id": "69f2553847551b0011caf105",
+      "source": "apollo",
+      "title": "Comcast <> Growthbook: Discovery Call",
+      "date": "2026-04-29",
+      "duration_minutes": 60,
+      "summary": "[Summary failed] [Jake Heier]: Have you seen anyone else except the invite on their side? I know we're up to three.\n[Cris Dizon]: Three? Three of them. The analytics person who kind of replaced me. It looks like a pro",
+      "host": "Cris Dizon",
+      "participants": 8
+    }
+  ]
+}

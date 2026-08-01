@@ -1,7 +1,18 @@
 {
   "company": "Growthbook <> Cogniteer",
   "slug": "growthbook-cogniteer",
+  "last_etl_date": "2026-08-01T10:41:40.126292",
   "calls": [
+    {
+      "id": "6a15e0203d8dc30020545445",
+      "source": "apollo",
+      "title": "Growthbook <> Cogniteer - Demo ",
+      "date": "2026-05-26",
+      "duration_minutes": 56,
+      "summary": "[Summary failed] [Daniel Wathne]: Just added it in now. So yeah, I'll make sure to get that sent over to you.\n[Fabian Hans]: Okay.\n[Logan Bates]: It's always fun to regurgitate. So at a high level I'll talk through li",
+      "host": "Daniel Wathne",
+      "participants": 3
+    },
     {
       "id": "01KS7FVXQTS3TCH373TY5GXJ1Q",
       "source": "fireflies",

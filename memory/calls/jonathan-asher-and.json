@@ -1,0 +1,17 @@
+{
+  "company": "Jonathan Asher and",
+  "slug": "jonathan-asher-and",
+  "last_etl_date": "2026-08-01T10:41:40.137717",
+  "calls": [
+    {
+      "id": "69cecb19b7fb7b001917fc6f",
+      "source": "apollo",
+      "title": "Jonathan Asher and Jake Heier",
+      "date": "2026-04-02",
+      "duration_minutes": 31,
+      "summary": "[Summary failed] [Jake Heier]: Not much. So we can.\n[Logan Bates]: Good. A little slow because of the holiday and all that. Same for you,\n[Jake Heier]: Jonathan. Hey guys, how you doing?\n[Jonathan Asher]: Pretty good.",
+      "host": "Jake Heier",
+      "participants": 5
+    }
+  ]
+}

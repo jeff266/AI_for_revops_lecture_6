@@ -1,19 +1,8 @@
 {
   "company": "RazorPay & Growthbook",
   "slug": "razorpay-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.246828",
   "calls": [
-    {
-      "id": "01KMZC7P59TTV22G6TQ0ZWWPBS",
-      "source": "fireflies",
-      "title": "RazorPay & Growthbook Pricing",
-      "date": "2026-03-31",
-      "duration_minutes": 38,
-      "summary": "The team is exploring the pros and cons of building an internal experimentation platform versus partnering for Magic Checkout. Anurag Allamsetty emphasized the need for clearer financial comparisons, while James Shannon highlighted that the estimated enterprise build cost exceeds $300,000 USD, prompting discussions on a lower entry price with success-based pricing models. Experimentation is seen as essential for improving merchant conversion rates, which can lead to increased revenue via reduced churn. Attribution challenges arise in isolating the effects of experimentation on retention; therefore, both parties have agreed to explore metrics linked to retention uplift among active experimenters. Next steps include sharing lifetime value data to refine the pricing model ahead of a planned rollout by early May.",
-      "organizer": "james.shannon@growthbook.io",
-      "participants": 3,
-      "keywords": "Experimentation platform, Pricing model, Retention uplift, Build vs. buy decision, Tiered licensing fees, Merchant conversion",
-      "action_items": "\n**Shubham Maheshwari**\nProvide Growthbook with Razorpay’s average lifetime value metrics or suggest alternative relevant metrics for pricing model development (36:25)\nDiscuss and finalize Razorpay’s budgetary expectations and acceptable year one cost for implementation of experimentation platform; share with Growthbook (37:04)\n\n**Anurag Allamsetty**\nFurther evaluate internal build vs. buy options, especially focusing on building on existing products and gauge effort/time required (19:30)\n\n**James Shannon**\nDevelop and share a tiered pricing model based on retention uplift and success metrics aligned with Razorpay’s feedback and metrics provided (35:21)\nFollow up after receiving Razorpay’s budget and retention metrics input with a detailed pricing proposal including success-based fee tiers (36:40)\n"
-    },
     {
       "id": "01KMD4JNWEQAJ4N0AD0VFNGZSK",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 2,
       "keywords": "Build-vs-Buy, Experimentation Platform, Pricing Model, Self-hosted Deployment, AB Testing, Statistical Analysis",
       "action_items": "\n**Anurag Allamsetty**\nProvide estimated number of experiments and events for current and scaled merchant base to Growth Book by tomorrow (17:02)\nShare a tentative preferred budget or directional number for the annual platform license with Growth Book after internal discussion (25:25)\n\n**James Shannon**\nPrepare alternative pricing model structures based on event/experiment usage once estimates are received (17:09)\nCreate a build-versus-buy cost calculator to help Razorpay assess internal build costs vs. Growth Book licensing (20:37)\nArrange a follow-up meeting on Friday around 11:15 AM Growth Book time for reviewing updated proposal and pricing (26:04)\n"
+    },
+    {
+      "id": "01KMZC7P59TTV22G6TQ0ZWWPBS",
+      "source": "fireflies",
+      "title": "RazorPay & Growthbook Pricing",
+      "date": "2026-03-31",
+      "duration_minutes": 38,
+      "summary": "The team is exploring the pros and cons of building an internal experimentation platform versus partnering for Magic Checkout. Anurag Allamsetty emphasized the need for clearer financial comparisons, while James Shannon highlighted that the estimated enterprise build cost exceeds $300,000 USD, prompting discussions on a lower entry price with success-based pricing models. Experimentation is seen as essential for improving merchant conversion rates, which can lead to increased revenue via reduced churn. Attribution challenges arise in isolating the effects of experimentation on retention; therefore, both parties have agreed to explore metrics linked to retention uplift among active experimenters. Next steps include sharing lifetime value data to refine the pricing model ahead of a planned rollout by early May.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation platform, Pricing model, Retention uplift, Build vs. buy decision, Tiered licensing fees, Merchant conversion",
+      "action_items": "\n**Shubham Maheshwari**\nProvide Growthbook with Razorpay’s average lifetime value metrics or suggest alternative relevant metrics for pricing model development (36:25)\nDiscuss and finalize Razorpay’s budgetary expectations and acceptable year one cost for implementation of experimentation platform; share with Growthbook (37:04)\n\n**Anurag Allamsetty**\nFurther evaluate internal build vs. buy options, especially focusing on building on existing products and gauge effort/time required (19:30)\n\n**James Shannon**\nDevelop and share a tiered pricing model based on retention uplift and success metrics aligned with Razorpay’s feedback and metrics provided (35:21)\nFollow up after receiving Razorpay’s budget and retention metrics input with a detailed pricing proposal including success-based fee tiers (36:40)\n"
     }
   ]
 }

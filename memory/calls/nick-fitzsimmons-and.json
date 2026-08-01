@@ -1,19 +1,8 @@
 {
   "company": "Nick Fitzsimmons and",
   "slug": "nick-fitzsimmons-and",
+  "last_etl_date": "2026-08-01T10:41:40.269444",
   "calls": [
-    {
-      "id": "01KH7PW783ZM9988627EQXZ52M",
-      "source": "fireflies",
-      "title": "Nick Fitzsimmons and Ashley Stirrup",
-      "date": "2026-02-13",
-      "duration_minutes": 59,
-      "summary": "The discussion centered around Growth Book's strategic positioning in the market, particularly following significant acquisitions by competitors like EPO and Statsig, which have created a unique opportunity for Growth Book to attract new customers. The company aims to double its annual recurring revenue (ARR) from $8 million to approximately $16 million this year, emphasizing a mix of enterprise and self-serve business. Key participants, including Ashley Stirrup and Nick Fitzsimmons, highlighted the importance of strong alignment between marketing and sales, with tailored marketing strategies and a focus on understanding customer needs being critical for pipeline growth. Successful campaigns, such as a Zero Trust video that generated significant revenue, showcased the effectiveness of creative, audience-focused content. Overall, the meeting underscored the foundational phase of the company and the need to establish robust systems before scaling operations.",
-      "organizer": "ashley@growthbook.io",
-      "participants": 2,
-      "keywords": "Experimentation, Pipeline Growth, Marketing-Sales Alignment, Pre-Sales, Content Marketing, Acquisition Integration",
-      "action_items": "\n**Nick Fitzsimmons**\nText Ashley Stirrup after meetings with Graham and Jeremy to provide updates and next steps (58:24)\n\n**Ashley Stirrup**\nProvide Nick with phone number for follow-up communications (58:23)\nCoordinate and schedule meetings between Nick, Graham, and Jeremy to discuss further technical marketing alignment (58:15)\nContinue recruiting efforts for webinar participants on AB testing and AI-powered experimentation best practices (57:10)\nShare examples of successful YouTube ads for content inspiration (32:37)\n"
-    },
     {
       "id": "01KGZZNZ2E0XR9MAQ98QDGCZK3",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 2,
       "keywords": "Growth Book, Demand Generation, Open Source Community, Marketing Strategy, SaaS Expansion, B2B Sales",
       "action_items": "\n**Ashley Stirrup**\nSend Nick Fitzsimmons calendly link for scheduling follow-up meeting (28:08)\nArrange introductions between Nick and Growth Book CTO and CEO Jeremy and Grant (28:08)\n\n**Nick Fitzsimmons**\nReview Growth Book funnel and prepare deeper questions for follow-up regarding demand generation and conversion (23:20)\n"
+    },
+    {
+      "id": "01KH7PW783ZM9988627EQXZ52M",
+      "source": "fireflies",
+      "title": "Nick Fitzsimmons and Ashley Stirrup",
+      "date": "2026-02-13",
+      "duration_minutes": 59,
+      "summary": "The discussion centered around Growth Book's strategic positioning in the market, particularly following significant acquisitions by competitors like EPO and Statsig, which have created a unique opportunity for Growth Book to attract new customers. The company aims to double its annual recurring revenue (ARR) from $8 million to approximately $16 million this year, emphasizing a mix of enterprise and self-serve business. Key participants, including Ashley Stirrup and Nick Fitzsimmons, highlighted the importance of strong alignment between marketing and sales, with tailored marketing strategies and a focus on understanding customer needs being critical for pipeline growth. Successful campaigns, such as a Zero Trust video that generated significant revenue, showcased the effectiveness of creative, audience-focused content. Overall, the meeting underscored the foundational phase of the company and the need to establish robust systems before scaling operations.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Experimentation, Pipeline Growth, Marketing-Sales Alignment, Pre-Sales, Content Marketing, Acquisition Integration",
+      "action_items": "\n**Nick Fitzsimmons**\nText Ashley Stirrup after meetings with Graham and Jeremy to provide updates and next steps (58:24)\n\n**Ashley Stirrup**\nProvide Nick with phone number for follow-up communications (58:23)\nCoordinate and schedule meetings between Nick, Graham, and Jeremy to discuss further technical marketing alignment (58:15)\nContinue recruiting efforts for webinar participants on AB testing and AI-powered experimentation best practices (57:10)\nShare examples of successful YouTube ads for content inspiration (32:37)\n"
     }
   ]
 }

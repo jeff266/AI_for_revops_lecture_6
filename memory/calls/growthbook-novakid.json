@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> NovaKid",
+  "slug": "growthbook-novakid",
+  "last_etl_date": "2026-08-01T10:41:40.148887",
+  "calls": [
+    {
+      "id": "69821fe238715c00111656f3",
+      "source": "apollo",
+      "title": "Growthbook <> NovaKid - Intro ",
+      "date": "2026-02-03",
+      "duration_minutes": 15,
+      "summary": "[Summary failed] [Vyacheslav Ryabukhin]: Also use the growth book experiments and rules of experiment rules of the features. I found some caveats there already in our setup and much more. Recently we encountered a pro",
+      "host": "Daniel Wathne",
+      "participants": 4
+    }
+  ]
+}

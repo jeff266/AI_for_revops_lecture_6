@@ -1,7 +1,18 @@
 {
   "company": "Kevin Yang and",
   "slug": "kevin-yang-and",
+  "last_etl_date": "2026-08-01T10:41:40.116755",
   "calls": [
+    {
+      "id": "6a566cfb3e2ea500185dbb65",
+      "source": "apollo",
+      "title": "Kevin Yang and Ashley Stirrup + Christian Liebenow",
+      "date": "2026-07-14",
+      "duration_minutes": 37,
+      "summary": "[Summary failed] [Christian Liebenow]: Hey Ashley.\n[Webflow Demo]: Hey, how you doing?\n[Christian Liebenow]: Good, Doing really well. How are you?\n[Ashley Stirrup]: I'm, I'm doing well as well. Icing both my knees\n[Ch",
+      "host": "Ashley Stirrup",
+      "participants": 5
+    },
     {
       "id": "01KXEM7409FATXBGWVF64PT285",
       "source": "fireflies",

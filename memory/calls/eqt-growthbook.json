@@ -1,0 +1,27 @@
+{
+  "company": "EQT<>GrowthBook",
+  "slug": "eqt-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.125730",
+  "calls": [
+    {
+      "id": "6994893b2a9ef00021ce815e",
+      "source": "apollo",
+      "title": "EQT<>GrowthBook - Experimentation Best Practices",
+      "date": "2026-02-17",
+      "duration_minutes": 28,
+      "summary": "[Summary failed] [Eric Schillstroem]: Hello.\n[Jake Heier]: We'll give believe there's gonna be a few folks on your side, Eric.\n[Eric Schillstroem]: No, it's only going to be me unfortunately I think the other ones cou",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "6a170d0cb9f181001456eaf0",
+      "source": "apollo",
+      "title": "EQT<>GrowthBook - Onboarding Discussion",
+      "date": "2026-05-27",
+      "duration_minutes": 26,
+      "summary": "[Summary failed] [Jake Heier]: Hello.\n[Gtp-3-05-Internal]: Hi, Jake, I'm Jacob from edra.\n[Jake Heier]: Nice to meet you.\n[Gtp-3-05-Internal]: Nice to meet you.\n[Jake Heier]: Where are you calling in from?\n[Gtp-3-05-I",
+      "host": "Jake Heier",
+      "participants": 5
+    }
+  ]
+}

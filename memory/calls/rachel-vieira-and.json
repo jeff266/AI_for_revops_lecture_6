@@ -1,18 +1,19 @@
 {
   "company": "Rachel Vieira and",
   "slug": "rachel-vieira-and",
+  "last_etl_date": "2026-08-01T10:41:40.184525",
   "calls": [
     {
-      "id": "01KWZ562QTCM1KQZG3Q3BK4BXW",
+      "id": "01KH4FW9WGSTBARTHWVQCWT9YV",
       "source": "fireflies",
       "title": "Rachel Vieira and Ashley Stirrup",
-      "date": "2026-07-08",
-      "duration_minutes": 11,
-      "summary": "The meeting addressed several key areas, starting with client engagement where satisfaction was confirmed by Ashley Stirrup, who noted positive feedback without any concerns. Discussions then shifted to hiring, focusing on roles in marketing, creative sectors, and growth engineering to support expansion linked to upcoming deals. Specific priorities included the demand generation manager and senior partner marketing manager roles, with Rachel offering assistance for tech recruitment challenges. On the creative front, Ashley pointed out inconsistencies in branding, emphasizing the need for better video production and potential engagement of branding specialists. The urgency of hiring was highlighted due to a significant new deal with Anthropic that could quadruple business volume, placing stress on hiring processes and resource allocation. Next steps included sharing necessary portfolios, recruitment summaries, and establishing connections to expedite efforts.",
+      "date": "2026-02-12",
+      "duration_minutes": 10,
+      "summary": "The team discussed ongoing challenges in finding suitable candidates for software-to-developer sales roles, as many candidates come from unrelated industries and lack critical role experience. Despite having a few potential candidates, including one strong Gen side prospect and two product marketing candidates, a more aggressive and focused search is planned. Budget constraints prevent the hiring of contract roles at this time, as the focus is on permanent hires to meet ambitious growth goals. Communication and collaboration are essential, with Rachel Vieira committing to restarting the search with a tighter selection filter to improve candidate quality, while Ashley Stirrup emphasized the need for ongoing updates and responsiveness to adjust search parameters as needed.",
       "organizer": "ashley@growthbook.io",
       "participants": 2,
-      "keywords": "recruitment, branding, creative resources, growth engineer, marketing roles, Anthropic deal",
-      "action_items": "\n**Rachel Vieira**\nSend portfolios of contract creative and branding consultants to Ashley for review (04:21)\nShare recruitment service details, fee structure, and offerings summary with Ashley to forward internally (07:22)\nConnect with Lindsay regarding the demand generation manager role (05:42)\nSupport technical hiring efforts by preparing a Slack-friendly message for Ashley to send to CTO Jeremy (06:50)\n\n**Ashley Stirrup**\nIntroduce Rachel to Lindsay, who handles the demand generation manager role (05:39)\nForward Rachel’s recruitment service summary and communication blurb to CTO Jeremy (06:50)\nProvide feedback on creative consultant portfolios Rachel sends (08:00)\n"
+      "keywords": "hiring challenges, candidate fit, software companies, contract roles, budgeting process, product marketing",
+      "action_items": "\n**Rachel Vieira**\nRestart and aggressively pursue new candidates fitting the company’s software/developer DNA for the two open roles (01:43)\nRemain prepared to support potential contract hires (trainer, tech writer) if those needs arise (03:43)\n\n**Ashley Stirrup**\nUpdate Rachel on any changes or expansions to contract or permanent hiring needs as budgeting concludes (02:55)\nKeep Rachel informed about other hiring needs or support requirements beyond current roles (04:20)\n"
     },
     {
       "id": "01KTRVP14A8WFJMPMJC5C81TGF",
@@ -27,16 +28,16 @@
       "action_items": "\n**Ashley Stirrup**\nConduct a reference call with Sarah regarding candidate Alyssa and email Rachel with an update and decision leaning after the call (00:57)\nProvide timeline and preference decision for candidate Nevin after her Friday interview with Jeremy (00:33)\nFinalize the hiring plan after the upcoming board meeting next week and communicate any new role needs to Rachel (02:56)\n\n**Rachel Vieira**\nContinue nurturing candidate Alyssa’s interest while awaiting feedback and maintain open communication with Ashley for updates (00:33)\n"
     },
     {
-      "id": "01KH4FW9WGSTBARTHWVQCWT9YV",
+      "id": "01KWZ562QTCM1KQZG3Q3BK4BXW",
       "source": "fireflies",
       "title": "Rachel Vieira and Ashley Stirrup",
-      "date": "2026-02-12",
-      "duration_minutes": 10,
-      "summary": "The team discussed ongoing challenges in finding suitable candidates for software-to-developer sales roles, as many candidates come from unrelated industries and lack critical role experience. Despite having a few potential candidates, including one strong Gen side prospect and two product marketing candidates, a more aggressive and focused search is planned. Budget constraints prevent the hiring of contract roles at this time, as the focus is on permanent hires to meet ambitious growth goals. Communication and collaboration are essential, with Rachel Vieira committing to restarting the search with a tighter selection filter to improve candidate quality, while Ashley Stirrup emphasized the need for ongoing updates and responsiveness to adjust search parameters as needed.",
+      "date": "2026-07-08",
+      "duration_minutes": 11,
+      "summary": "The meeting addressed several key areas, starting with client engagement where satisfaction was confirmed by Ashley Stirrup, who noted positive feedback without any concerns. Discussions then shifted to hiring, focusing on roles in marketing, creative sectors, and growth engineering to support expansion linked to upcoming deals. Specific priorities included the demand generation manager and senior partner marketing manager roles, with Rachel offering assistance for tech recruitment challenges. On the creative front, Ashley pointed out inconsistencies in branding, emphasizing the need for better video production and potential engagement of branding specialists. The urgency of hiring was highlighted due to a significant new deal with Anthropic that could quadruple business volume, placing stress on hiring processes and resource allocation. Next steps included sharing necessary portfolios, recruitment summaries, and establishing connections to expedite efforts.",
       "organizer": "ashley@growthbook.io",
       "participants": 2,
-      "keywords": "hiring challenges, candidate fit, software companies, contract roles, budgeting process, product marketing",
-      "action_items": "\n**Rachel Vieira**\nRestart and aggressively pursue new candidates fitting the company’s software/developer DNA for the two open roles (01:43)\nRemain prepared to support potential contract hires (trainer, tech writer) if those needs arise (03:43)\n\n**Ashley Stirrup**\nUpdate Rachel on any changes or expansions to contract or permanent hiring needs as budgeting concludes (02:55)\nKeep Rachel informed about other hiring needs or support requirements beyond current roles (04:20)\n"
+      "keywords": "recruitment, branding, creative resources, growth engineer, marketing roles, Anthropic deal",
+      "action_items": "\n**Rachel Vieira**\nSend portfolios of contract creative and branding consultants to Ashley for review (04:21)\nShare recruitment service details, fee structure, and offerings summary with Ashley to forward internally (07:22)\nConnect with Lindsay regarding the demand generation manager role (05:42)\nSupport technical hiring efforts by preparing a Slack-friendly message for Ashley to send to CTO Jeremy (06:50)\n\n**Ashley Stirrup**\nIntroduce Rachel to Lindsay, who handles the demand generation manager role (05:39)\nForward Rachel’s recruitment service summary and communication blurb to CTO Jeremy (06:50)\nProvide feedback on creative consultant portfolios Rachel sends (08:00)\n"
     }
   ]
 }

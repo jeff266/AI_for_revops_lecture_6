@@ -1,0 +1,17 @@
+{
+  "company": "DAT<>GrowthBook",
+  "slug": "dat-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.134982",
+  "calls": [
+    {
+      "id": "69d80adeed9d46000d504e3d",
+      "source": "apollo",
+      "title": "DAT<>GrowthBook - POC Prep Call",
+      "date": "2026-04-09",
+      "duration_minutes": 23,
+      "summary": "[Summary failed] [Rob Shields]: Hey, Jake, how's it going? Hello. I'm doing all right.\n[Jake Schlack]: How are you doing?\n[Jake Heier]: Doing well.\n[Jake Schlack]: Good. I believe everyone else will be on momentarily.",
+      "host": "Jake Heier",
+      "participants": 4
+    }
+  ]
+}

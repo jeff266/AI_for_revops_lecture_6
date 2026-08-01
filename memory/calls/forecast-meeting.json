@@ -1,7 +1,18 @@
 {
   "company": "Forecast Meeting",
   "slug": "forecast-meeting",
+  "last_etl_date": "2026-08-01T10:41:40.140671",
   "calls": [
+    {
+      "id": "69c5666a33b6ef0011879443",
+      "source": "apollo",
+      "title": "Forecast Meeting",
+      "date": "2026-03-26",
+      "duration_minutes": 60,
+      "summary": "[Summary failed] [Cary Rakin]: Yeah, she's open to it. She. I gave her, like, a couple options just to be safe, and she said del Frisco. Sounds good, so.\n[Jake Heier]: Nice.\n[Ryan McGurk]: Cool. How's it going, guys?\n",
+      "host": "",
+      "participants": 8
+    },
     {
       "id": "01KM5AZXN4BAV8V3AHRJR6RPJ3",
       "source": "fireflies",

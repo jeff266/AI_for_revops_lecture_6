@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> Groupon",
+  "slug": "growthbook-groupon",
+  "last_etl_date": "2026-08-01T10:41:40.132001",
+  "calls": [
+    {
+      "id": "69e650a20bd5d30019d4771e",
+      "source": "apollo",
+      "title": "Growthbook <> Groupon - Pro Sync ",
+      "date": "2026-04-20",
+      "duration_minutes": 13,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey Michael, how you doing?\n[Michal Pekarcik]: Hey guys. Good. How are you doing?\n[Daniel Wathne]: Good, thanks for taking the time.\n[Michal Pekarcik]: Sure.\n[Daniel Wathne]: You're b",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "69e7913a420e510011b577b7",
+      "source": "apollo",
+      "title": "Growthbook <> Groupon - Pricing Call ",
+      "date": "2026-04-21",
+      "duration_minutes": 31,
+      "summary": "[Summary failed] [Daniel Wathne]: Reporting in progress.\n[Ryan McGurk]: Good. How are you?\n[Daniel Wathne]: Yeah, yeah, Good. Early morning. Appreciate you hopping on.\n[Ryan McGurk]: Yeah, absolutely.\n[Daniel Wathne]:",
+      "host": "Daniel Wathne",
+      "participants": 5
+    }
+  ]
+}

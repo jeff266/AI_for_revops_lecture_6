@@ -1,0 +1,17 @@
+{
+  "company": "Puspita Rini Simamora",
+  "slug": "puspita-rini-simamora",
+  "last_etl_date": "2026-08-01T10:41:40.146320",
+  "calls": [
+    {
+      "id": "69952a6f2e3dd0001dfe2fed",
+      "source": "apollo",
+      "title": "Puspita Rini Simamora and Jake Heier",
+      "date": "2026-02-18",
+      "duration_minutes": 57,
+      "summary": "[Summary failed] [Jake Heier]: Puspita, sebelum kita berbicara, ada satu pertanyaan untuk Anda. Saya tahu di daftar Anda, salah satu hal yang ingin Anda tanyakan adalah salt, bukan? Sebagai referensi.\n[Puspita Simamor",
+      "host": "Jake Heier",
+      "participants": 5
+    }
+  ]
+}

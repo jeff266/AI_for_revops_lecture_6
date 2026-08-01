@@ -1,0 +1,17 @@
+{
+  "company": "AGS and GrowthBook",
+  "slug": "ags-and-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.128817",
+  "calls": [
+    {
+      "id": "69f8e1756afe49001de18306",
+      "source": "apollo",
+      "title": "AGS and GrowthBook",
+      "date": "2026-05-04",
+      "duration_minutes": 12,
+      "summary": "[Summary failed] [Gabe]: I can.\n[Jake Stangl]: Or honestly, you could just take it right away if you think, if you want to, since we didn't have that much conversation beforehand.\n[Scott Keller]: I'm just gonna deny. ",
+      "host": "Jake Stangl",
+      "participants": 4
+    }
+  ]
+}

@@ -1,7 +1,18 @@
 {
   "company": "Stack Overflow +",
   "slug": "stack-overflow",
+  "last_etl_date": "2026-08-01T10:41:40.149267",
   "calls": [
+    {
+      "id": "697bb37456fdeb001d697693",
+      "source": "apollo",
+      "title": "Stack Overflow + GrowthBook",
+      "date": "2026-01-29",
+      "duration_minutes": 23,
+      "summary": "[Summary failed] [Christian Liebenow]: How are you doing?\n[Webflow Demo]: Yeah, doing well.\n[Christian Liebenow]: When did you fly back from Austria?\n[Webflow Demo]: Tuesday. It's good.\n[Christian Liebenow]: Good trip",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
     {
       "id": "01KG0K5V4ZHYVX1Z5QEGAYQTKY",
       "source": "fireflies",

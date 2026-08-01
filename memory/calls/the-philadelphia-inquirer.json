@@ -1,0 +1,17 @@
+{
+  "company": "The Philadelphia Inquirer",
+  "slug": "the-philadelphia-inquirer",
+  "last_etl_date": "2026-08-01T10:41:40.129621",
+  "calls": [
+    {
+      "id": "69eba8b47fc842001da16755",
+      "source": "apollo",
+      "title": "The Philadelphia Inquirer and GrowthBook",
+      "date": "2026-04-24",
+      "duration_minutes": 30,
+      "summary": "[Summary failed] [Matthew Du Pont]: Hey, Jake. Hey, man. How's it going? Pretty good. Good, good. Definitely not gonna be rusty at all. Excited? I'm sure you'll be good. I'm sure it'll be something I'm excited to see.",
+      "host": "Jake Stangl",
+      "participants": 2
+    }
+  ]
+}

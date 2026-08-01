@@ -1,19 +1,8 @@
 {
   "company": "GrowthBook Enablement",
   "slug": "growthbook-enablement",
+  "last_etl_date": "2026-08-01T10:41:40.204361",
   "calls": [
-    {
-      "id": "01KT0E65ZJYT9PXMS69XBGB720",
-      "source": "fireflies",
-      "title": "GrowthBook Enablement - Developers",
-      "date": "2026-06-08",
-      "duration_minutes": 33,
-      "summary": "The meeting provided an overview of the technical setup needed for running feature experiments with GrowthBook. Chris Sanders articulated the SDK's data flow from initialization to data tracking and warehouse integration, highlighting how attributes like country or plan ID are critical for targeting and segmentation. The discussion included the importance of maintaining attribute consistency in experiment design, deliberate user bucketing through hashing methods, and the need for traffic allocation to manage user exposure effectively. Governance features such as approval flows and audit logs were also covered, along with next steps, including the setup of initial AA tests to validate the experimentation infrastructure before launching real experiments.",
-      "organizer": "chris@growthbook.io",
-      "participants": 9,
-      "keywords": "GrowthBook, experiment setup, SDK integration, Google Analytics, BigQuery, AA test",
-      "action_items": "\n**Walentin Widgren**\nAdd analytics tracking to the test environment to enable integration with the BigQuery data warehouse for experiment data ingestion and analysis (10:40)\nAttend the follow-up call focused on deeper experiment setup and data science aspects to further support EQT's GrowthBook implementation (31:36)\n\n**Chris Sanders**\nShare the presentation slides from this meeting with the EQT team to provide reference material for GrowthBook integration and experiment setup (31:43)\n\n**Unassigned**\nEnsure Eric, the analyst from EQT, joins subsequent calls to contribute to deeper experiment data discussions and analysis (02:17)\n"
-    },
     {
       "id": "01KPTYETHF81E3XTVQTAQ2R31M",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 3,
       "keywords": "GrowthBook, experimentation, data warehouse, fact tables, feature flags, query optimization",
       "action_items": "\n**Chris Sanders**\nProvide clarity about GrowthBook change history and audit logging capabilities, and investigate ways to surface this information in the UI or API to improve traceability (01:24:52)\nContinue providing direct support via Slack and calls to TV2 teams to assist with data warehouse optimization and query setup for GrowthBook (01:19:22)\nShare the meeting recording with TV2 to enable broader team access and facilitate knowledge sharing (01:32:50)\n\n**Andreas Jensen / Data Platform Team**\nCollaborate internally within TV2 to design distilled fact tables optimized for GrowthBook queries to reduce query load and warehouse costs (01:16:45)\nRun AA tests initially to verify experiment assignment correctness and data pipeline integrity before full-scale experiments (01:22:37)\n\n**Emil**\nFacilitate linking business data to GrowthBook for report generation as a current priority to enable meaningful experiment insights (01:06:35)\nRaise questions regarding query version control practices and overall evaluation criteria for complex metrics to GrowthBook for clarification and best practices (01:24:40)\n\n**tjek**\nFocus on efficient GrowthBook setup and minimizing operational costs from query loads to optimize performance and resource usage (01:20:30)\n"
+    },
+    {
+      "id": "01KT0E65ZJYT9PXMS69XBGB720",
+      "source": "fireflies",
+      "title": "GrowthBook Enablement - Developers",
+      "date": "2026-06-08",
+      "duration_minutes": 33,
+      "summary": "The meeting provided an overview of the technical setup needed for running feature experiments with GrowthBook. Chris Sanders articulated the SDK's data flow from initialization to data tracking and warehouse integration, highlighting how attributes like country or plan ID are critical for targeting and segmentation. The discussion included the importance of maintaining attribute consistency in experiment design, deliberate user bucketing through hashing methods, and the need for traffic allocation to manage user exposure effectively. Governance features such as approval flows and audit logs were also covered, along with next steps, including the setup of initial AA tests to validate the experimentation infrastructure before launching real experiments.",
+      "organizer": "chris@growthbook.io",
+      "participants": 9,
+      "keywords": "GrowthBook, experiment setup, SDK integration, Google Analytics, BigQuery, AA test",
+      "action_items": "\n**Walentin Widgren**\nAdd analytics tracking to the test environment to enable integration with the BigQuery data warehouse for experiment data ingestion and analysis (10:40)\nAttend the follow-up call focused on deeper experiment setup and data science aspects to further support EQT's GrowthBook implementation (31:36)\n\n**Chris Sanders**\nShare the presentation slides from this meeting with the EQT team to provide reference material for GrowthBook integration and experiment setup (31:43)\n\n**Unassigned**\nEnsure Eric, the analyst from EQT, joins subsequent calls to contribute to deeper experiment data discussions and analysis (02:17)\n"
     }
   ]
 }

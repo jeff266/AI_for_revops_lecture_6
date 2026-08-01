@@ -1,7 +1,18 @@
 {
   "company": "Marketing <> Sales",
   "slug": "marketing-sales",
+  "last_etl_date": "2026-08-01T10:41:40.115188",
   "calls": [
+    {
+      "id": "6a5a7ce74ad51100144d0249",
+      "source": "apollo",
+      "title": "Marketing <> Sales Alignment ",
+      "date": "2026-07-17",
+      "duration_minutes": 55,
+      "summary": "[Summary failed] [Lyndsie Berens]: If, if those are the four segments that we decide on to go to Ashley, I mean this is a conversation for me and you but we'd probably need more demand gen help just because if those t",
+      "host": "Lyndsie Berens",
+      "participants": 5
+    },
     {
       "id": "01KXGKB43WB1RQQ4G6DQZXHZMC",
       "source": "fireflies",

@@ -1,42 +1,29 @@
 {
   "company": "LeoVegas + GrowthBook",
   "slug": "leovegas-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.140280",
   "calls": [
     {
-      "id": "01KTJY47WD6EC1WFSMN0K4MAG8",
+      "id": "01KKA37CPKWZM183EVR65490MW",
       "source": "fireflies",
       "title": "LeoVegas + GrowthBook",
-      "date": "2026-06-09",
-      "duration_minutes": 12,
-      "summary": "The team confirmed a two-year contract renewal with Leo Vegas, adjusting pricing to lower the average user cost from €664 to €645 for 250 seats, with a total annual fee of approximately $181,000. Key developments included the elimination of enterprise support fees that used to cost €150 per hour, addressing budget concerns, and the urgency to finalize the renewal this month. The contract's start date is aligned with the current contract expiry and will cover 250 seats, with flexibility on the activation of additional seats. Legal concerns regarding AI-related clauses were raised, and Christian committed to addressing these with the legal team. Ongoing communication between stakeholders aims to facilitate a swift approval process.",
+      "date": "2026-03-12",
+      "duration_minutes": 53,
+      "summary": "The meeting presented Growth Book's approach to feature flagging and experimentation, emphasizing its integration with customer data warehouses and open-source customizability. Chris Sanders discussed how Growth Book differentiates itself from LaunchDarkly by performing data analysis directly on warehouse data. The platform supports various flag types, including JSON, and allows for controlled feature releases through percentage rollouts. Participants also highlighted the use of deterministic hashing for consistent user variant assignment, near real-time updates for feature flags, and successful migration from LaunchDarkly with full environment transfers. Additionally, they introduced a new beta product analytics package, which integrates event tracking with experimentation insights, enhancing decision-making.",
       "organizer": "christian@growthbook.io",
-      "participants": 2,
-      "keywords": "Contract renewal, platform fees, pricing negotiation, seat licensing, legal concerns, AI data usage",
-      "action_items": "\n**Christian Liebenow**\nSend updated pricing presentation slides to Dan for review and negotiation purposes (10:47)\nConsult with legal team regarding AI-related language in the contract and clarify concerns raised by Mark (09:48)\n\n**Daniel Jansson**\nDiscuss pricing proposal and contract terms with Mark and legal team to facilitate timely renewal within the current month (05:50)\nConfirm with Mark the required number of seats and timing for any increases related to the organizational merge (08:38)\nProvide Christian with feedback after discussions with Mark regarding pricing and contract extension (11:07)\nAttempt to contact Mark before the 3 PM meeting to update on negotiation progress and coordinate next steps (10:47)\n"
+      "participants": 68,
+      "keywords": "Growth Book, Feature Flags, A/B Testing, LaunchDarkly Migration, Safe Rollout, Experimentation Dashboards",
+      "action_items": "\n**Chris Sanders**\nReview and consider adding a UI feature for default values when a feature flag is disabled (29:50)\nProvide follow-up support via Slack channel for ongoing questions and best practices, including possible additional calls on specific experimentation topics (51:49)\n\n**Christian Liebenow**\nShare meeting recording in the Slack channel for team access and dissemination (52:28)\n\n**Mark Pace**\nRequest team members interested in Growth Book involvement to identify themselves for further engagement (51:22)\n"
     },
     {
-      "id": "01KSN9TA0B64C0Z9EDH2F15QW1",
-      "source": "fireflies",
+      "id": "69ca759aafb0b5001db518f3",
+      "source": "apollo",
       "title": "LeoVegas + GrowthBook",
-      "date": "2026-06-01",
-      "duration_minutes": 24,
-      "summary": "The discussion revolved around securing a two-year contract for Leo Vegas amidst significant budget constraints. Currently, Leo Vegas pays a $20,000 annual platform fee, but a new proposal suggests a minimum fee of $100,000, complicating approval processes. The company plans to increase user seats from 170 to between 225 and 250, aiming for better pricing through volume-based discounts. They also considered strategic timing for signing the contract, weighing the benefits of current pricing versus potential discounts later. Notably, procurement practices are tightening, emphasizing vendor consolidation and efficiency, particularly with AI tools that can complicate cost management. Clear communication and engagement with procurement stakeholders are crucial for contract approvals and aligning internal expectations.",
-      "organizer": "christian@growthbook.io",
-      "participants": 2,
-      "keywords": "Budget constraints, Platform fee, Two-year agreement, User licenses, Vendor consolidation, Procurement strategy",
-      "action_items": "\n**Christian Liebenow**\nDiscuss pricing and two-year contract strategy with GrowthBook’s Chief Revenue Officer Ryan to decide on proposal timing and possible platform fee reductions (08:00)\nReport back to Dan Jansson with the preferred approach for proposal timing and platform fees after consultation with Ryan (12:30)\n\n**Daniel Jansson**\nMeet with Mark to discuss the conversation with GrowthBook and provide reassurances or updates on pricing concerns to ease internal pressure (21:50)\n"
-    },
-    {
-      "id": "01KRRD16SQFRV086C9ZQA29KMZ",
-      "source": "fireflies",
-      "title": "LeoVegas + GrowthBook",
-      "date": "2026-05-19",
-      "duration_minutes": 18,
-      "summary": "The discussion centered around improving the legal and procurement process for software licenses at LeoVegas to address delays and enhance accuracy. Key points included the recent approval of 25 additional licenses, with a contract extension to December 20th to meet urgent needs while avoiding early renewal complications. A tiered pricing structure was clarified, incentivizing larger purchases, while an in-house sportsbook platform is being developed to reduce dependency on third-party providers. The transition from LaunchDarkly to GrowthBook was highlighted for consolidating feature flagging and experimentation tools, with a projected increase in user adoption. Overall, the focus remained on fulfilling immediate needs and strategic planning for sustainable cost efficiency.",
-      "organizer": "christian@growthbook.io",
-      "participants": 2,
-      "keywords": "contract management, license procurement, sportsbook relaunch, GrowthBook migration, pricing strategy, organizational change",
-      "action_items": "\n**Daniel Jansson**\nSend order form for 25 additional licenses to Christian to upload into Jira for expedited processing (04:57)\nInform Mark about the immediate need for 25 more licenses and liaise concerning delivery (16:33)\n\n**Christian Liebenow**\nUpload received order form into Jira to accelerate processing and license delivery (16:07)\nAdd 25 licenses to LeoVegas account as soon as order form is received (16:07)\nProvide Daniel with the order form template or rate table for the additional licenses (05:42)\nSchedule contract renewal discussion for early October 2023 (17:09)\n"
+      "date": "2026-03-30",
+      "duration_minutes": 8,
+      "summary": "[Summary failed] [Daniel Jansson]: Hi man.\n[Christian Liebenow]: How are you?\n[Daniel Jansson]: I'm fine. How are you?\n[Christian Liebenow]: Wonderful. You have a nice weekend?\n[Daniel Jansson]: Yeah, been skiing and ",
+      "host": "Christian Liebenow",
+      "participants": 2
     },
     {
       "id": "01KMNG5QS7S18GJF8Y8095YEMK",
@@ -51,16 +38,40 @@
       "action_items": "\n**Daniel Jansson**\nCheck internally with finance and signing authority (Caroline) regarding approval to accept invoice for license additions without legal involvement (04:55)\nFollow up on ticket raised concerning license provisioning to ensure response and resolution post-meeting (02:54)\nEmail Christian Liebenow confirmation about invoicing and signing process readiness once clarified with finance and legal avoidance strategy (08:24)\n\n**Christian Liebenow**\nVerify contract renewal terms and confirm no auto-renewal clause exists, supporting contract end date fix (03:16)\nSend a calendar placeholder for the planned follow-up meeting in early June to discuss contract renewal and licensing (08:12)\nPrepare to invoice LeoVegas directly once confirmation is received and coordinate signature via HelloSign with Caroline (05:53)\n"
     },
     {
-      "id": "01KKA37CPKWZM183EVR65490MW",
+      "id": "01KRRD16SQFRV086C9ZQA29KMZ",
       "source": "fireflies",
       "title": "LeoVegas + GrowthBook",
-      "date": "2026-03-12",
-      "duration_minutes": 53,
-      "summary": "The meeting presented Growth Book's approach to feature flagging and experimentation, emphasizing its integration with customer data warehouses and open-source customizability. Chris Sanders discussed how Growth Book differentiates itself from LaunchDarkly by performing data analysis directly on warehouse data. The platform supports various flag types, including JSON, and allows for controlled feature releases through percentage rollouts. Participants also highlighted the use of deterministic hashing for consistent user variant assignment, near real-time updates for feature flags, and successful migration from LaunchDarkly with full environment transfers. Additionally, they introduced a new beta product analytics package, which integrates event tracking with experimentation insights, enhancing decision-making.",
+      "date": "2026-05-19",
+      "duration_minutes": 18,
+      "summary": "The discussion centered around improving the legal and procurement process for software licenses at LeoVegas to address delays and enhance accuracy. Key points included the recent approval of 25 additional licenses, with a contract extension to December 20th to meet urgent needs while avoiding early renewal complications. A tiered pricing structure was clarified, incentivizing larger purchases, while an in-house sportsbook platform is being developed to reduce dependency on third-party providers. The transition from LaunchDarkly to GrowthBook was highlighted for consolidating feature flagging and experimentation tools, with a projected increase in user adoption. Overall, the focus remained on fulfilling immediate needs and strategic planning for sustainable cost efficiency.",
       "organizer": "christian@growthbook.io",
-      "participants": 68,
-      "keywords": "Growth Book, Feature Flags, A/B Testing, LaunchDarkly Migration, Safe Rollout, Experimentation Dashboards",
-      "action_items": "\n**Chris Sanders**\nReview and consider adding a UI feature for default values when a feature flag is disabled (29:50)\nProvide follow-up support via Slack channel for ongoing questions and best practices, including possible additional calls on specific experimentation topics (51:49)\n\n**Christian Liebenow**\nShare meeting recording in the Slack channel for team access and dissemination (52:28)\n\n**Mark Pace**\nRequest team members interested in Growth Book involvement to identify themselves for further engagement (51:22)\n"
+      "participants": 2,
+      "keywords": "contract management, license procurement, sportsbook relaunch, GrowthBook migration, pricing strategy, organizational change",
+      "action_items": "\n**Daniel Jansson**\nSend order form for 25 additional licenses to Christian to upload into Jira for expedited processing (04:57)\nInform Mark about the immediate need for 25 more licenses and liaise concerning delivery (16:33)\n\n**Christian Liebenow**\nUpload received order form into Jira to accelerate processing and license delivery (16:07)\nAdd 25 licenses to LeoVegas account as soon as order form is received (16:07)\nProvide Daniel with the order form template or rate table for the additional licenses (05:42)\nSchedule contract renewal discussion for early October 2023 (17:09)\n"
+    },
+    {
+      "id": "01KSN9TA0B64C0Z9EDH2F15QW1",
+      "source": "fireflies",
+      "title": "LeoVegas + GrowthBook",
+      "date": "2026-06-01",
+      "duration_minutes": 24,
+      "summary": "The discussion revolved around securing a two-year contract for Leo Vegas amidst significant budget constraints. Currently, Leo Vegas pays a $20,000 annual platform fee, but a new proposal suggests a minimum fee of $100,000, complicating approval processes. The company plans to increase user seats from 170 to between 225 and 250, aiming for better pricing through volume-based discounts. They also considered strategic timing for signing the contract, weighing the benefits of current pricing versus potential discounts later. Notably, procurement practices are tightening, emphasizing vendor consolidation and efficiency, particularly with AI tools that can complicate cost management. Clear communication and engagement with procurement stakeholders are crucial for contract approvals and aligning internal expectations.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Budget constraints, Platform fee, Two-year agreement, User licenses, Vendor consolidation, Procurement strategy",
+      "action_items": "\n**Christian Liebenow**\nDiscuss pricing and two-year contract strategy with GrowthBook’s Chief Revenue Officer Ryan to decide on proposal timing and possible platform fee reductions (08:00)\nReport back to Dan Jansson with the preferred approach for proposal timing and platform fees after consultation with Ryan (12:30)\n\n**Daniel Jansson**\nMeet with Mark to discuss the conversation with GrowthBook and provide reassurances or updates on pricing concerns to ease internal pressure (21:50)\n"
+    },
+    {
+      "id": "01KTJY47WD6EC1WFSMN0K4MAG8",
+      "source": "fireflies",
+      "title": "LeoVegas + GrowthBook",
+      "date": "2026-06-09",
+      "duration_minutes": 12,
+      "summary": "The team confirmed a two-year contract renewal with Leo Vegas, adjusting pricing to lower the average user cost from €664 to €645 for 250 seats, with a total annual fee of approximately $181,000. Key developments included the elimination of enterprise support fees that used to cost €150 per hour, addressing budget concerns, and the urgency to finalize the renewal this month. The contract's start date is aligned with the current contract expiry and will cover 250 seats, with flexibility on the activation of additional seats. Legal concerns regarding AI-related clauses were raised, and Christian committed to addressing these with the legal team. Ongoing communication between stakeholders aims to facilitate a swift approval process.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Contract renewal, platform fees, pricing negotiation, seat licensing, legal concerns, AI data usage",
+      "action_items": "\n**Christian Liebenow**\nSend updated pricing presentation slides to Dan for review and negotiation purposes (10:47)\nConsult with legal team regarding AI-related language in the contract and clarify concerns raised by Mark (09:48)\n\n**Daniel Jansson**\nDiscuss pricing proposal and contract terms with Mark and legal team to facilitate timely renewal within the current month (05:50)\nConfirm with Mark the required number of seats and timing for any increases related to the organizational merge (08:38)\nProvide Christian with feedback after discussions with Mark regarding pricing and contract extension (11:07)\nAttempt to contact Mark before the 3 PM meeting to update on negotiation progress and coordinate next steps (10:47)\n"
     }
   ]
 }

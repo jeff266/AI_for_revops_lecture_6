@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> Cyera",
+  "slug": "growthbook-cyera",
+  "last_etl_date": "2026-08-01T10:41:40.143841",
+  "calls": [
+    {
+      "id": "69b2dbec35974700116363d0",
+      "source": "apollo",
+      "title": "Growthbook <> Cyera - Intro ",
+      "date": "2026-03-12",
+      "duration_minutes": 29,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey y'. All, how you doing?\n[Barak Loudvinovsky]: Hi.\n[Daniel Wathne]: Hi back. How you doing?\n[Barak Loudvinovsky]: Good. Hello.\n[Daniel Wathne]: How you doing?\n[Logan Bates]: That's",
+      "host": "Daniel Wathne",
+      "participants": 5
+    }
+  ]
+}

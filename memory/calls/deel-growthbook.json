@@ -1,7 +1,18 @@
 {
   "company": "Deel + GrowthBook",
   "slug": "deel-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.116884",
   "calls": [
+    {
+      "id": "6a565176880aac001cd29617",
+      "source": "apollo",
+      "title": "Deel + GrowthBook",
+      "date": "2026-07-14",
+      "duration_minutes": 36,
+      "summary": "[Summary failed] [logan]: Asking questions.\n[Christian Liebenow]: How are you today?\n[Dmitry Christie]: Good, good. Lots of work.\n[Christian Liebenow]: I mean.\n[Dmitry Christie]: Yeah, that is what it is. Crazy week. ",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
     {
       "id": "01KX3VYVE69RJ2ATCWYVFKHFHK",
       "source": "fireflies",

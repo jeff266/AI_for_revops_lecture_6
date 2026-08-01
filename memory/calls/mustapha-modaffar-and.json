@@ -1,0 +1,17 @@
+{
+  "company": "Mustapha Modaffar and",
+  "slug": "mustapha-modaffar-and",
+  "last_etl_date": "2026-08-01T10:41:40.143308",
+  "calls": [
+    {
+      "id": "69bbdb9550af610019101577",
+      "source": "apollo",
+      "title": "Mustapha Modaffar and James Shannon",
+      "date": "2026-03-19",
+      "duration_minutes": 19,
+      "summary": "[Summary failed] [Alex.Cote Alex.Cote@Reachplc.Com]: Recording.\n[Mustapha Modaffar]: Good morning, apologies for being late.\n[James Shannon]: All good man, how are you?\n[Mustapha Modaffar]: We're doing well. It's a bu",
+      "host": "James Shannon",
+      "participants": 3
+    }
+  ]
+}

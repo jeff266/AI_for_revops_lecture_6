@@ -1,0 +1,17 @@
+{
+  "company": "Voyage Prive<>GrowthBook",
+  "slug": "voyage-prive-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.135309",
+  "calls": [
+    {
+      "id": "69d66bf254ebb4001d7a5218",
+      "source": "apollo",
+      "title": "Voyage Prive<>GrowthBook - Event Forwarder Discussion",
+      "date": "2026-04-08",
+      "duration_minutes": 23,
+      "summary": "[Summary failed] [Lucas Wolff]: Hi everyone.\n[Jake Heier]: Lucas, how are you?\n[Lucas Wolff]: Thank you, Andrew.\n[Jake Heier]: Doing well. Hey Jeremy.\n[Lucas Wolff]: Hello. Normally Hamed is coming and for the others,",
+      "host": "Jake Heier",
+      "participants": 4
+    }
+  ]
+}

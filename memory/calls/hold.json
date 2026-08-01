@@ -1,7 +1,18 @@
 {
   "company": "Hold",
   "slug": "hold",
+  "last_etl_date": "2026-08-01T10:41:40.146117",
   "calls": [
+    {
+      "id": "69979ad51286e00021f4bf0d",
+      "source": "apollo",
+      "title": "Hold:  Scott Bailey Presentation",
+      "date": "2026-02-19",
+      "duration_minutes": 49,
+      "summary": "[Summary failed] [Ashley Stirrup]: Ryan won't be able to. Sorry, say it again.\n[Scott Bailey]: Wait, let me just say we have some beautiful weather here, like 70 degrees.\n[Ashley Stirrup]: Oh, nice.\n[Scott Bailey]: Ye",
+      "host": "Ashley Stirrup",
+      "participants": 3
+    },
     {
       "id": "01KHQ3N8H2JTGT43A1XCJNDMA7",
       "source": "fireflies",

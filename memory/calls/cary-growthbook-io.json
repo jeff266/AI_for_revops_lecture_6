@@ -1,7 +1,32 @@
 {
   "company": "cary@growthbook.io",
   "slug": "cary-growthbook-io",
+  "last_etl_date": "2026-08-01T10:41:40.206413",
   "calls": [
+    {
+      "id": "01KRC8EBTA9C04VSRVF2SPE7YB",
+      "source": "fireflies",
+      "title": "cary@growthbook.io - Mon, 11 May 2026 09:32:53 HST - Untitled",
+      "date": "2026-05-11",
+      "duration_minutes": 11,
+      "summary": "The discussion focused on a significant bug that caused feature activation to occur immediately rather than on the scheduled date, disrupting user experience for restaurants. Damon and Cary identified inconsistencies in how rules can be edited once disabled, complicating management before activation. The role of SDKs in rule activation logic was also addressed, highlighting the need for clarification regarding backend processes. To enhance communication, the team agreed to use Slack for swift updates and escalation of issues to the development team for prompt resolution. Ongoing monitoring and progress updates will be shared via Slack to ensure transparency as they work on fixing the bug.",
+      "organizer": "cary@growthbook.io",
+      "participants": 1,
+      "keywords": "Rule creation, target attributes, rule activation, SDK, UTC timing, bug investigation",
+      "action_items": "\n**Damon Frendo**\nKeep Cary Rakin updated on the investigation and resolution progress of the premature rule activation and editing restrictions via Slack (05:58)\nInvolve a developer to provide deeper technical insights into the UTC timing and SDK behavior causing premature rule activation if needed (03:35)\n\n**Cary Rakin**\nContact Async to obtain detailed information about the SDK's handling and display of rule status related to device activation logic (03:35)\n\n**Cary Rakin and team**\nReview the identified bugs regarding rule activation timing and attribute editing restrictions and work on fixes before redeployment (04:19)\n"
+    },
+    {
+      "id": "01KS0PPWAMZK3366JD1A4S8M0C",
+      "source": "fireflies",
+      "title": "cary@growthbook.io - Tue, 19 May 2026 14:07:00 EDT - Untitled",
+      "date": "2026-05-19",
+      "duration_minutes": 25,
+      "summary": "The team focused on enhancing experiment metric tracking and standardization due to the rapid growth in experimentation, having 2,500 feature flags and 700 experiments. They identified issues with existing processes, such as experiments running outside GrowthBook, which complicates standardization. API improvements, including a new pagination endpoint for experiment data, were implemented to enhance usability. Security enhancements aimed at SDK key management and PII data prevention were discussed, including blocking feature flags containing sensitive information. The meeting concluded with plans for regular check-ins and on-site sessions to foster partnership with Upstart and improve user engagement.",
+      "organizer": "cary@growthbook.io",
+      "participants": 1,
+      "keywords": "Experimentation, Feature Flags, GrowthBook, Security Validation, Process Standardization, Webhook Alerts",
+      "action_items": "\n**Adittya Imam**\nConnect with GrowthBook team after vacation to discuss Iterable inline experiment pain points in detail (15:50)\nCoordinate with Cary Rakin to schedule regular check-in meetings post June 1st return (18:13)\nSet up future growth enablement sessions for the team, involving Tyler, manager Banshi, and product manager (18:25)\n\n**Cary Rakin**\nProvide Calendly link to Adittya for scheduling recurring meetings (18:06)\nFollow up with Luke and Chris on expediting feature requests and API improvements (04:27)\nAssist with configuring GrowthBook webhooks for experiment warnings (13:03)\nCoordinate potential enablement sessions and possibly organize in-person office visits (19:02)\nMaintain communication and support escalation paths while Adittya is on vacation (23:30)\n\n**Chris Sanders**\nShare GrowthBook event webhook documentation and collaborate on implementing proactive alerting (12:44)\nInvestigate and support regex validation to prevent PII in feature flags (10:29)\nSupport understanding of pain points around Iterable inline experiments and SDK connection scopes (14:46)\nAssist with stale flag detection via GitHub integration and notify about technical methods to identify unused flags (22:40)\n"
+    },
     {
       "id": "01KTA04R0PFW9WS89AGGARRYPC",
       "source": "fireflies",
@@ -25,30 +50,6 @@
       "participants": 1,
       "keywords": "GrowthBook SaaS, Self-hosted migration, CDN latency, MCP server, Experiment platform, Pricing negotiation",
       "action_items": "\n**Chris Sanders**\nProvide detailed latency metrics including P95 for the GrowthBook cloud setup to inform performance evaluation (00:01)\nSupply accurate CDN cache refresh time specifics for payload updates on Fastly to clarify performance expectations (00:17)\n\n**Cary Rakin**\nComplete internal approvals and share discounted SaaS pricing proposal with Conde by end of day following the meeting (00:18)\nPrepare and deliver materials comparing costs and features for self-hosted versus SaaS migration to support Conde leadership decision-making (00:22)\n\n**Utkarsh Srivastava**\nConfirm any security concerns or constraints regarding GrowthBook assisting in the migration process to ensure compliance and smooth transition (00:14)\nReview and respond to pricing proposal and cost comparison documents once received to aid internal evaluation process (00:22)\n"
-    },
-    {
-      "id": "01KS0PPWAMZK3366JD1A4S8M0C",
-      "source": "fireflies",
-      "title": "cary@growthbook.io - Tue, 19 May 2026 14:07:00 EDT - Untitled",
-      "date": "2026-05-19",
-      "duration_minutes": 25,
-      "summary": "The team focused on enhancing experiment metric tracking and standardization due to the rapid growth in experimentation, having 2,500 feature flags and 700 experiments. They identified issues with existing processes, such as experiments running outside GrowthBook, which complicates standardization. API improvements, including a new pagination endpoint for experiment data, were implemented to enhance usability. Security enhancements aimed at SDK key management and PII data prevention were discussed, including blocking feature flags containing sensitive information. The meeting concluded with plans for regular check-ins and on-site sessions to foster partnership with Upstart and improve user engagement.",
-      "organizer": "cary@growthbook.io",
-      "participants": 1,
-      "keywords": "Experimentation, Feature Flags, GrowthBook, Security Validation, Process Standardization, Webhook Alerts",
-      "action_items": "\n**Adittya Imam**\nConnect with GrowthBook team after vacation to discuss Iterable inline experiment pain points in detail (15:50)\nCoordinate with Cary Rakin to schedule regular check-in meetings post June 1st return (18:13)\nSet up future growth enablement sessions for the team, involving Tyler, manager Banshi, and product manager (18:25)\n\n**Cary Rakin**\nProvide Calendly link to Adittya for scheduling recurring meetings (18:06)\nFollow up with Luke and Chris on expediting feature requests and API improvements (04:27)\nAssist with configuring GrowthBook webhooks for experiment warnings (13:03)\nCoordinate potential enablement sessions and possibly organize in-person office visits (19:02)\nMaintain communication and support escalation paths while Adittya is on vacation (23:30)\n\n**Chris Sanders**\nShare GrowthBook event webhook documentation and collaborate on implementing proactive alerting (12:44)\nInvestigate and support regex validation to prevent PII in feature flags (10:29)\nSupport understanding of pain points around Iterable inline experiments and SDK connection scopes (14:46)\nAssist with stale flag detection via GitHub integration and notify about technical methods to identify unused flags (22:40)\n"
-    },
-    {
-      "id": "01KRC8EBTA9C04VSRVF2SPE7YB",
-      "source": "fireflies",
-      "title": "cary@growthbook.io - Mon, 11 May 2026 09:32:53 HST - Untitled",
-      "date": "2026-05-11",
-      "duration_minutes": 11,
-      "summary": "The discussion focused on a significant bug that caused feature activation to occur immediately rather than on the scheduled date, disrupting user experience for restaurants. Damon and Cary identified inconsistencies in how rules can be edited once disabled, complicating management before activation. The role of SDKs in rule activation logic was also addressed, highlighting the need for clarification regarding backend processes. To enhance communication, the team agreed to use Slack for swift updates and escalation of issues to the development team for prompt resolution. Ongoing monitoring and progress updates will be shared via Slack to ensure transparency as they work on fixing the bug.",
-      "organizer": "cary@growthbook.io",
-      "participants": 1,
-      "keywords": "Rule creation, target attributes, rule activation, SDK, UTC timing, bug investigation",
-      "action_items": "\n**Damon Frendo**\nKeep Cary Rakin updated on the investigation and resolution progress of the premature rule activation and editing restrictions via Slack (05:58)\nInvolve a developer to provide deeper technical insights into the UTC timing and SDK behavior causing premature rule activation if needed (03:35)\n\n**Cary Rakin**\nContact Async to obtain detailed information about the SDK's handling and display of rule status related to device activation logic (03:35)\n\n**Cary Rakin and team**\nReview the identified bugs regarding rule activation timing and attribute editing restrictions and work on fixes before redeployment (04:19)\n"
     }
   ]
 }

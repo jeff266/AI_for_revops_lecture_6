@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook and Rappi",
+  "slug": "growthbook-and-rappi",
+  "last_etl_date": "2026-08-01T10:41:40.128334",
+  "calls": [
+    {
+      "id": "69fe17dc3e210e0019d16fcb",
+      "source": "apollo",
+      "title": "GrowthBook and Rappi",
+      "date": "2026-05-08",
+      "duration_minutes": 35,
+      "summary": "[Summary failed] [Daniel Wathne]: Recording in progress. Hey Jake.\n[Jaime Sempertegui]: Hey Dan.\n[Daniel Wathne]: How's it going? Good, how are you? Good. Hey Jaime, how you doing?\n[Jaime Sempertegui]: Hey, we can fin",
+      "host": "Jake Stangl",
+      "participants": 2
+    }
+  ]
+}

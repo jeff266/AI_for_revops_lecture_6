@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> Pizza Express",
+  "slug": "growthbook-pizza-express",
+  "last_etl_date": "2026-08-01T10:41:40.141650",
+  "calls": [
+    {
+      "id": "69b047b6b61eaa001570cc66",
+      "source": "apollo",
+      "title": "Growthbook <> Pizza Express - Intro ",
+      "date": "2026-03-10",
+      "duration_minutes": 32,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey, Jason, how you doing?\n[Pizzaexpress (Restaurants) Ltd]: Hi, Dan. Good, thanks.\n[Ross Pyres]: How are you?\n[Daniel Wathne]: Yeah, doing all right. Thanks for taking an evening cal",
+      "host": "Daniel Wathne",
+      "participants": 5
+    },
+    {
+      "id": "69c16851a7bf600019082ecf",
+      "source": "apollo",
+      "title": "Growthbook <> Pizza Express - Commercial Review ",
+      "date": "2026-03-23",
+      "duration_minutes": 19,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey,\n[Ross Pyres]: how you doing?\n[Stephen Clay]: How you doing?\n[Daniel Wathne]: I'm doing great. How are you?\n[Stephen Clay]: I'm good. I'm good. Loving the background.\n[Daniel Wath",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

@@ -1,18 +1,19 @@
 {
   "company": "Leadership",
   "slug": "leadership",
+  "last_etl_date": "2026-08-01T10:41:40.179641",
   "calls": [
     {
-      "id": "01KWYREW5Q7YXR18H1DKDRKBW6",
+      "id": "01KH8C63WCNBZMAJQCY0JGECE9",
       "source": "fireflies",
       "title": "Leadership",
-      "date": "2026-07-14",
-      "duration_minutes": 9,
-      "summary": "The team decided to transition legal work from Amy to General Legal due to concerns about cost and quality. This switch arose from feedback regarding ambiguities and inconsistent advice from Amy, leading the team to trust General Legal for broader services. The end date for wrapping up existing deals with Amy is by the end of July, during which Graham will verify any contractual obligations. The discussion also emphasized the importance of limiting indemnification exposure and clarifying risk-return criteria to expedite the contract process. Additionally, there were updates on pricing and budgeting, indicating ongoing discussions that Ryan would handle offline with Ashley Stirrup, alongside a commitment to improve communication and operational coordination among team members.",
+      "date": "2026-02-17",
+      "duration_minutes": 30,
+      "summary": "The team discussed a cautious yet ambitious growth strategy for FY27, setting a revenue target between $16 million and $20 million, with an emphasis on managing hiring risks while striving for operational efficiency. Hiring pace will align with sales ramp and marketing enablement, focusing on new hires' impact on FY28 revenue. Improving onboarding and reducing churn was highlighted, with recommendations for hiring a technical engineer to enhance customer success. A pricing review was initiated after a price increase impacted user growth, considering tiered pricing to boost usage. The product roadmap includes better onboarding and integration features, along with a goal-setting meeting scheduled for further alignment on objectives.",
       "organizer": "graham@growthbook.io",
       "participants": 4,
-      "keywords": "Legal Services, Risk Mitigation, Contract Management, Budgeting, Transition, Forecast",
-      "action_items": "\n**Graham McNicoll**\nCheck with Jennifer regarding the contract or retainer status with Amy to understand termination terms (04:00)\nCoordinate the transition from Amy to General Legal, including ensuring existing deals are managed during the phase-out period (06:33)\nCommunicate with Amy about the termination plan, especially concerning any minimum spend agreements (05:51)\nInitiate discussions with General Legal to understand how to send more legal work their way and assess their performance and capabilities (04:00)\nRemove Fireflies recording tool from the meeting setup (08:00)\n\n**Ryan McGurk**\nProvide detailed forecast update as discussed (02:37)\nContinue managing current contracts, deciding which to transition from Amy to General Legal (06:09)\n\n**Ashley Stirrup**\nDiscuss budgeting details with Ryan separately offline to align on project financials (02:19)\n"
+      "keywords": "FY27 planning, hiring strategy, churn reduction, managed warehouse, onboarding analysis, pricing model",
+      "action_items": "\n**Ashley Stirrup**\nReach out to Ryan to discuss and refine the less aggressive hiring/headcount plan and bring proposals based on FY27 planning (07:39)\nShare onboarding and churn analysis during the upcoming weekly all-hands meeting (09:00)\nLook for time and coordinate with Graham to schedule a goal-setting meeting (29:34)\n\n**Graham McNicoll**\nAssist Ashley in scheduling the goal-setting meeting due to calendar challenges (29:39)\nContinue development and improvement of the chat interface for experiments, incorporating branding and user experience adjustments (25:01)\n\n**Jeremy Dorn**\nProvide feedback to feature squads regarding onboarding and event tracking goals and metrics to reduce onboarding friction and churn (13:47)\nValidate ramp and impact of hired salespeople to adjust Q1 goals accordingly (08:21)\nMonitor yard work interruptions and reconnect as needed (29:18)\n"
     },
     {
       "id": "01KKXTQBKWPTB2A2NBBYYB670D",
@@ -27,16 +28,16 @@
       "action_items": "\n**Ashley Stirrup**\nCollaborate with Ryan on pricing and managed warehouse transition plan, document and get feedback from sales and leadership (16:00)\nCoordinate outreach to major e-commerce customers for post-stratification feature trials and input for sales demos and QBRs (38:00)\n\n**Ryan McGurk**\nFollow up with team to clarify reasons Apollo is used over Fireflies and explore API integration possibilities (01:00)\nLead account expansion strategy planning for top 5-7 customers with sales and marketing collaboration (34:00)\nOversee defining and implementing transition of Pro and Enterprise new deals to usage-based pricing by mid-April (15:40)\n\n**Graham McNicoll**\nExplore legal AI contract review providers and assess cost-effectiveness vs. current legal counsel (18:00)\nMonitor and advise on ethical considerations regarding gambling industry clients and company stance (20:00)\nDrive due diligence and negotiations with Pageant AI for possible acqui-hire, including assessing their technology and valuation strategy (25:30)\n\n**Jeremy Dorn**\nSupport pricing strategy discussions around transitioning Pro tier to usage-based and enterprise deal pricing options (09:00)\nProvide insights on usage metrics, revenue floors, and competitive pricing models to shape new plan (14:00)\n"
     },
     {
-      "id": "01KH8C63WCNBZMAJQCY0JGECE9",
+      "id": "01KWYREW5Q7YXR18H1DKDRKBW6",
       "source": "fireflies",
       "title": "Leadership",
-      "date": "2026-02-17",
-      "duration_minutes": 30,
-      "summary": "The team discussed a cautious yet ambitious growth strategy for FY27, setting a revenue target between $16 million and $20 million, with an emphasis on managing hiring risks while striving for operational efficiency. Hiring pace will align with sales ramp and marketing enablement, focusing on new hires' impact on FY28 revenue. Improving onboarding and reducing churn was highlighted, with recommendations for hiring a technical engineer to enhance customer success. A pricing review was initiated after a price increase impacted user growth, considering tiered pricing to boost usage. The product roadmap includes better onboarding and integration features, along with a goal-setting meeting scheduled for further alignment on objectives.",
+      "date": "2026-07-14",
+      "duration_minutes": 9,
+      "summary": "The team decided to transition legal work from Amy to General Legal due to concerns about cost and quality. This switch arose from feedback regarding ambiguities and inconsistent advice from Amy, leading the team to trust General Legal for broader services. The end date for wrapping up existing deals with Amy is by the end of July, during which Graham will verify any contractual obligations. The discussion also emphasized the importance of limiting indemnification exposure and clarifying risk-return criteria to expedite the contract process. Additionally, there were updates on pricing and budgeting, indicating ongoing discussions that Ryan would handle offline with Ashley Stirrup, alongside a commitment to improve communication and operational coordination among team members.",
       "organizer": "graham@growthbook.io",
       "participants": 4,
-      "keywords": "FY27 planning, hiring strategy, churn reduction, managed warehouse, onboarding analysis, pricing model",
-      "action_items": "\n**Ashley Stirrup**\nReach out to Ryan to discuss and refine the less aggressive hiring/headcount plan and bring proposals based on FY27 planning (07:39)\nShare onboarding and churn analysis during the upcoming weekly all-hands meeting (09:00)\nLook for time and coordinate with Graham to schedule a goal-setting meeting (29:34)\n\n**Graham McNicoll**\nAssist Ashley in scheduling the goal-setting meeting due to calendar challenges (29:39)\nContinue development and improvement of the chat interface for experiments, incorporating branding and user experience adjustments (25:01)\n\n**Jeremy Dorn**\nProvide feedback to feature squads regarding onboarding and event tracking goals and metrics to reduce onboarding friction and churn (13:47)\nValidate ramp and impact of hired salespeople to adjust Q1 goals accordingly (08:21)\nMonitor yard work interruptions and reconnect as needed (29:18)\n"
+      "keywords": "Legal Services, Risk Mitigation, Contract Management, Budgeting, Transition, Forecast",
+      "action_items": "\n**Graham McNicoll**\nCheck with Jennifer regarding the contract or retainer status with Amy to understand termination terms (04:00)\nCoordinate the transition from Amy to General Legal, including ensuring existing deals are managed during the phase-out period (06:33)\nCommunicate with Amy about the termination plan, especially concerning any minimum spend agreements (05:51)\nInitiate discussions with General Legal to understand how to send more legal work their way and assess their performance and capabilities (04:00)\nRemove Fireflies recording tool from the meeting setup (08:00)\n\n**Ryan McGurk**\nProvide detailed forecast update as discussed (02:37)\nContinue managing current contracts, deciding which to transition from Amy to General Legal (06:09)\n\n**Ashley Stirrup**\nDiscuss budgeting details with Ryan separately offline to align on project financials (02:19)\n"
     }
   ]
 }

@@ -1,18 +1,19 @@
 {
   "company": "Elyse Fox and",
   "slug": "elyse-fox-and",
+  "last_etl_date": "2026-08-01T10:41:40.189974",
   "calls": [
     {
-      "id": "01KW72Z8Z4QZRVPYRK9NTM09TR",
+      "id": "01KG131Y0CVY91EZTQ9PRAPZ5Z",
       "source": "fireflies",
-      "title": "Elyse Fox and Kevin Travers",
-      "date": "2026-06-29",
-      "duration_minutes": 20,
-      "summary": "The team aimed to improve the storyboard visuals to better align with intended messaging and simplify complexity. Key discussions included integrating logos to demonstrate a unified code output, emphasizing safety, speed, and insight through animated text, and reducing visual clutter. They agreed on a minimalist design for logos and UI elements targeting knowledgeable users. The conversation also covered depicting staged feature rollouts with performance metrics, clear A/B testing visuals, and the animation of final results. They established a timeline for the final storyboard draft by March 3rd and video submission by March 6th while stressing the importance of detailed feedback and clarity in communication.",
-      "organizer": "elyse@growthbook.io",
+      "title": "Elyse Fox and Graham McNicoll",
+      "date": "2026-01-29",
+      "duration_minutes": 53,
+      "summary": "The discussion centered around establishing a strategic product marketing role at GrowthBook, emphasizing the importance of creating messaging frameworks and developing content while balancing execution and delegation. Elyse Fox highlighted the need to focus on content strategy and communication, aiming to delegate tactical tasks to improve creative output. Graham McNicoll outlined the content needs for GrowthBook, including educational materials and certifications, while both participants agreed on a multi-channel distribution strategy to enhance brand credibility. GrowthBook's strong market positioning was discussed, with key metrics showcasing a 100% retention rate among 2,700 active customers. Elyse expressed her interest in a new role, aligning with the company's culture and strategic goals, while emphasizing the importance of audience targeting through platforms like LinkedIn.",
+      "organizer": "graham@growthbook.io",
       "participants": 2,
-      "keywords": "Storyboard, Animation, Feature Rollout, AB Experimentation, UI Simplification, Auto-Rollback",
-      "action_items": "\n**Elyse Fox**\nProvide written detailed feedback and guidance on storyboard simplification and text usage by afternoon of meeting day (18:51)\nDeliver simplified screenshot or visual for the Claude Sonnet by Anthropic logo section to aid minimalistic design (11:06)\nSupply clear, detailed instructions and marked-up examples regarding UX for rollout stages, auto-rollback, and AB experimentation concepts (12:13)\nSubmit textual and visual tweaks to clarify UI segments and streamline storyboarding elements (16:55)\n\n**Kevin Travers**\nBegin animating video sections that are finalized or close to final, such as logo animations and feature three, to keep project on schedule (19:02)\nReview and integrate Elyse’s upcoming detailed feedback and screenshots to refine storyboard and animation accordingly (00:00)\nCoordinate with animation team to implement staggered text appearances and visual emphasis on key terms (09:23)\n"
+      "keywords": "Product Marketing, Experimentation Platform, Technical Audience, Content Strategy, Remote Culture, Marketing Analytics",
+      "action_items": "\n**Graham McNicoll**\nFollow up with Ashley to provide feedback and next steps to Elyse after the meeting (53:04)\nContinue development and improvement of product analytics suite to better measure marketing and product metrics (48:15)\nPlan content strategy including educational resources, thought leadership podcasts, interviews, and potential certifications around experimentation (32:29)\nPrepare clear communication on GrowthBook’s product marketing role expectations, messaging, and delegation balance for candidate onboarding (32:29)\n\n**Elyse Fox**\nConsider compiling strategic content marketing frameworks and priorities based on current and past product marketing experiences for GrowthBook’s review (00:00)\nPrepare follow-up questions on tactical versus strategic tasks and delegation to align with GrowthBook’s marketing needs if advancing in interview process (00:00)\n"
     },
     {
       "id": "01KGGH9MWNKF52K3XSVZKWXT4P",
@@ -27,16 +28,16 @@
       "action_items": "\n**Elyse Fox**\nPrepare and send a draft seven-slide one-year product marketing plan including approach, early priorities, onboarding strategy, and quick wins (27:51)\nSchedule and conduct formal presentation of the plan on Wednesday at 12:30 PM Pacific Time with key stakeholders (28:23)\n\n**Ashley Stirrup**\nSend calendar invite for the Wednesday presentation and confirm attendees from prior interview panel (29:02)\nProvide feedback on Elyse’s draft plan after submission to ensure alignment on role expectations and company priorities (23:07)\n"
     },
     {
-      "id": "01KG131Y0CVY91EZTQ9PRAPZ5Z",
+      "id": "01KW72Z8Z4QZRVPYRK9NTM09TR",
       "source": "fireflies",
-      "title": "Elyse Fox and Graham McNicoll",
-      "date": "2026-01-29",
-      "duration_minutes": 53,
-      "summary": "The discussion centered around establishing a strategic product marketing role at GrowthBook, emphasizing the importance of creating messaging frameworks and developing content while balancing execution and delegation. Elyse Fox highlighted the need to focus on content strategy and communication, aiming to delegate tactical tasks to improve creative output. Graham McNicoll outlined the content needs for GrowthBook, including educational materials and certifications, while both participants agreed on a multi-channel distribution strategy to enhance brand credibility. GrowthBook's strong market positioning was discussed, with key metrics showcasing a 100% retention rate among 2,700 active customers. Elyse expressed her interest in a new role, aligning with the company's culture and strategic goals, while emphasizing the importance of audience targeting through platforms like LinkedIn.",
-      "organizer": "graham@growthbook.io",
+      "title": "Elyse Fox and Kevin Travers",
+      "date": "2026-06-29",
+      "duration_minutes": 20,
+      "summary": "The team aimed to improve the storyboard visuals to better align with intended messaging and simplify complexity. Key discussions included integrating logos to demonstrate a unified code output, emphasizing safety, speed, and insight through animated text, and reducing visual clutter. They agreed on a minimalist design for logos and UI elements targeting knowledgeable users. The conversation also covered depicting staged feature rollouts with performance metrics, clear A/B testing visuals, and the animation of final results. They established a timeline for the final storyboard draft by March 3rd and video submission by March 6th while stressing the importance of detailed feedback and clarity in communication.",
+      "organizer": "elyse@growthbook.io",
       "participants": 2,
-      "keywords": "Product Marketing, Experimentation Platform, Technical Audience, Content Strategy, Remote Culture, Marketing Analytics",
-      "action_items": "\n**Graham McNicoll**\nFollow up with Ashley to provide feedback and next steps to Elyse after the meeting (53:04)\nContinue development and improvement of product analytics suite to better measure marketing and product metrics (48:15)\nPlan content strategy including educational resources, thought leadership podcasts, interviews, and potential certifications around experimentation (32:29)\nPrepare clear communication on GrowthBook’s product marketing role expectations, messaging, and delegation balance for candidate onboarding (32:29)\n\n**Elyse Fox**\nConsider compiling strategic content marketing frameworks and priorities based on current and past product marketing experiences for GrowthBook’s review (00:00)\nPrepare follow-up questions on tactical versus strategic tasks and delegation to align with GrowthBook’s marketing needs if advancing in interview process (00:00)\n"
+      "keywords": "Storyboard, Animation, Feature Rollout, AB Experimentation, UI Simplification, Auto-Rollback",
+      "action_items": "\n**Elyse Fox**\nProvide written detailed feedback and guidance on storyboard simplification and text usage by afternoon of meeting day (18:51)\nDeliver simplified screenshot or visual for the Claude Sonnet by Anthropic logo section to aid minimalistic design (11:06)\nSupply clear, detailed instructions and marked-up examples regarding UX for rollout stages, auto-rollback, and AB experimentation concepts (12:13)\nSubmit textual and visual tweaks to clarify UI segments and streamline storyboarding elements (16:55)\n\n**Kevin Travers**\nBegin animating video sections that are finalized or close to final, such as logo animations and feature three, to keep project on schedule (19:02)\nReview and integrate Elyse’s upcoming detailed feedback and screenshots to refine storyboard and animation accordingly (00:00)\nCoordinate with animation team to implement staggered text appearances and visual emphasis on key terms (09:23)\n"
     }
   ]
 }

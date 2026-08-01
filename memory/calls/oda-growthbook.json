@@ -1,18 +1,17 @@
 {
-  "company": "Oda & GrowthBook",
+  "company": "Oda + GrowthBook",
   "slug": "oda-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.141277",
   "calls": [
     {
-      "id": "01KNNAD3ARVT9BJ80RHSTFJR41",
-      "source": "fireflies",
-      "title": "Oda & GrowthBook Case Study",
-      "date": "2026-04-13",
-      "duration_minutes": 32,
-      "summary": "The team detailed their significant advancements in embedding experimentation into product development, emphasizing the use of Growth Book for running approximately 50 active experiments since 2021. They highlighted the benefits of A/B testing and control rollouts in validating features that positively impact profitability. The strategic approach prioritizes learning and risk mitigation, with concrete case studies demonstrating impressive outcomes, such as a 16-17% growth in usage through personalization improvements. Their technology stack, including Snowflake and Looker, is designed for flexibility and deep data integration, enhancing their experimentation process. Looking ahead, they plan to leverage new features from Growth Book to accelerate experimentation cycles and foster a culture of continuous learning.",
-      "organizer": "ashley@growthbook.io",
-      "participants": 6,
-      "keywords": "GrowthBook, experimentation, Bayesian statistics, product personalization, A/B testing, data analytics",
-      "action_items": "\n**Frederik Jorgensen**\nShare initial Slack messages and GrowthBook analysis graphs related to early experimentation to support the case study and future knowledge sharing (30:55)\n\n**Chris Newton**\nPrepare and share a written summary of the conversation for review and clarification (30:37)\n\n**All (Oda and GrowthBook teams)**\nContinue dialogue and share concrete experiment case examples or learnings that helped accelerate or improve results for collaborative insights (31:19)\n"
+      "id": "69c29eee993f7d0011e35f07",
+      "source": "apollo",
+      "title": "Oda + GrowthBook",
+      "date": "2026-03-24",
+      "duration_minutes": 25,
+      "summary": "[Summary failed] [Fredrik Jørgensen]: Sam,\n[Christian Liebenow]: Everyone today\n[Fredrik Jørgensen]: I'm good.\n[Christian Liebenow]: Everything.\n[Fredrik Jørgensen]: How are you?\n[Christian Liebenow]: Yeah, yeah, life",
+      "host": "Christian Liebenow",
+      "participants": 2
     },
     {
       "id": "01KMBDS04DFY7ED2GZ6ZQZ4N2R",
@@ -25,6 +24,18 @@
       "participants": 2,
       "keywords": "GrowthBook, ODA, Enterprise Proposal, Self-Hosting, Pricing Model, Experimentation",
       "action_items": "\n**Christian Liebenow**\nSend Fredrik the detailed slides and proposal deck shortly after the meeting (23:10)\nProvide a detailed explanation paragraph on GrowthBook’s data storage and porting specifics (03:04)\nFollow up via email to continue discussions and await internal feedback on budget constraints (25:23)\n\n**Fredrik**\nShare the proposal slides and pricing details with the CTO for review and decision-making on budget and adoption (21:33)\nExplore the possibility of proceeding without platform fee and support commitments with the CTO (19:20)\nConfirm and commit to participating in a case study and press release collaboration if GrowthBook proves successful (22:10)\nProvide Christian with feedback and next steps after the internal CTO discussion (25:23)\n"
+    },
+    {
+      "id": "01KNNAD3ARVT9BJ80RHSTFJR41",
+      "source": "fireflies",
+      "title": "Oda & GrowthBook Case Study",
+      "date": "2026-04-13",
+      "duration_minutes": 32,
+      "summary": "The team detailed their significant advancements in embedding experimentation into product development, emphasizing the use of Growth Book for running approximately 50 active experiments since 2021. They highlighted the benefits of A/B testing and control rollouts in validating features that positively impact profitability. The strategic approach prioritizes learning and risk mitigation, with concrete case studies demonstrating impressive outcomes, such as a 16-17% growth in usage through personalization improvements. Their technology stack, including Snowflake and Looker, is designed for flexibility and deep data integration, enhancing their experimentation process. Looking ahead, they plan to leverage new features from Growth Book to accelerate experimentation cycles and foster a culture of continuous learning.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, experimentation, Bayesian statistics, product personalization, A/B testing, data analytics",
+      "action_items": "\n**Frederik Jorgensen**\nShare initial Slack messages and GrowthBook analysis graphs related to early experimentation to support the case study and future knowledge sharing (30:55)\n\n**Chris Newton**\nPrepare and share a written summary of the conversation for review and clarification (30:37)\n\n**All (Oda and GrowthBook teams)**\nContinue dialogue and share concrete experiment case examples or learnings that helped accelerate or improve results for collaborative insights (31:19)\n"
     }
   ]
 }

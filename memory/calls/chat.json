@@ -1,19 +1,8 @@
 {
   "company": "chat",
   "slug": "chat",
+  "last_etl_date": "2026-08-01T10:41:40.168122",
   "calls": [
-    {
-      "id": "01KY0DZFVFHZR39MRK5S4H5DCH",
-      "source": "fireflies",
-      "title": "chat",
-      "date": "2026-07-20",
-      "duration_minutes": 8,
-      "summary": "The discussion centered on finalizing the proof of concept (PoC) terms, aiming for a July signing with a 30-day out clause, culminating in an August 31 deadline for the PoC. A revised deal amount of $138,000 was agreed upon, reflecting the shift from seat-based to volume-based pricing, enhancing negotiation leverage. To expedite the process, direct engagement with the client's senior leadership was emphasized to clarify expectations. Payment terms were set at net 60 days, aligning with internal goals for revenue recognition in Q3. The need for a firm timeline was underscored to avoid delays and ensure resource allocation, with the client's readiness to sign suggesting a swift resolution.",
-      "organizer": "scott.keller@growthbook.io",
-      "participants": 2,
-      "keywords": "proof of concept, out clause, negotiation, PoC timeline, pricing strategy, leadership engagement",
-      "action_items": "\n**Scott Keller**\nDraft a reply email addressing the customer's request to extend the PoC out clause to 60 days, incorporating explanations about typical PoC durations and internal approval requirements, then share it with Ryan McGurk for review before sending (06:01)\nPrepare a timeline example from a comparable customer (Change.org) illustrating typical PoC duration and successful outcomes to include in the reply email (06:44)\nShare the approach and rationale for transitioning from seat-based to volume-based pricing with the internal team via Slack as a best practice example (04:32)\n\n**Ryan McGurk**\nProvide feedback on Scott Keller's drafted reply email via Slack once received to ensure alignment before sending to the customer (06:01)\n\n**Scott Keller and Ryan McGurk**\nSchedule and conduct a phone call with senior customer executives Nate and Claire to clarify expectations and negotiate the PoC terms, particularly regarding the out clause and timeline (01:01)\n"
-    },
     {
       "id": "01KPRKHVB75EDMWZJP454DJ4M1",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 2,
       "keywords": "Experimentation, User Experience (UX), Personalization, AB Testing, AI in Optimization, Customer Experience",
       "action_items": "\n**David Massey**\nProvide Ashley with scrubbed study documents and examples from UPS experiments to support the podcast content (16:07)\nReview and confirm key experiment stories from UPS that are suitable for sharing on the podcast (16:07)\n\n**Ashley**\nPrepare a podcast episode outline based on the conversation and send it to David Massey for review and feedback (27:00)\n"
+    },
+    {
+      "id": "01KY0DZFVFHZR39MRK5S4H5DCH",
+      "source": "fireflies",
+      "title": "chat",
+      "date": "2026-07-20",
+      "duration_minutes": 8,
+      "summary": "The discussion centered on finalizing the proof of concept (PoC) terms, aiming for a July signing with a 30-day out clause, culminating in an August 31 deadline for the PoC. A revised deal amount of $138,000 was agreed upon, reflecting the shift from seat-based to volume-based pricing, enhancing negotiation leverage. To expedite the process, direct engagement with the client's senior leadership was emphasized to clarify expectations. Payment terms were set at net 60 days, aligning with internal goals for revenue recognition in Q3. The need for a firm timeline was underscored to avoid delays and ensure resource allocation, with the client's readiness to sign suggesting a swift resolution.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 2,
+      "keywords": "proof of concept, out clause, negotiation, PoC timeline, pricing strategy, leadership engagement",
+      "action_items": "\n**Scott Keller**\nDraft a reply email addressing the customer's request to extend the PoC out clause to 60 days, incorporating explanations about typical PoC durations and internal approval requirements, then share it with Ryan McGurk for review before sending (06:01)\nPrepare a timeline example from a comparable customer (Change.org) illustrating typical PoC duration and successful outcomes to include in the reply email (06:44)\nShare the approach and rationale for transitioning from seat-based to volume-based pricing with the internal team via Slack as a best practice example (04:32)\n\n**Ryan McGurk**\nProvide feedback on Scott Keller's drafted reply email via Slack once received to ensure alignment before sending to the customer (06:01)\n\n**Scott Keller and Ryan McGurk**\nSchedule and conduct a phone call with senior customer executives Nate and Claire to clarify expectations and negotiate the PoC terms, particularly regarding the out clause and timeline (01:01)\n"
     }
   ]
 }

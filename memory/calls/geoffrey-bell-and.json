@@ -1,0 +1,17 @@
+{
+  "company": "Geoffrey Bell and",
+  "slug": "geoffrey-bell-and",
+  "last_etl_date": "2026-08-01T10:41:40.120273",
+  "calls": [
+    {
+      "id": "6a3d65e36f9d280018cf27b3",
+      "source": "apollo",
+      "title": "Geoffrey Bell and Ashley Stirrup + Scott Keller",
+      "date": "2026-06-25",
+      "duration_minutes": 31,
+      "summary": "[Summary failed] [Ashley Stirrup]: Hi there.\n[Geoffrey Bell]: What's up, Ashley, can you hear me?\n[Ashley Stirrup]: Yeah, hear you. Great.\n[Geoffrey Bell]: How are you, man?\n[Ashley Stirrup]: I'm doing well, how are y",
+      "host": "Ashley Stirrup",
+      "participants": 3
+    }
+  ]
+}

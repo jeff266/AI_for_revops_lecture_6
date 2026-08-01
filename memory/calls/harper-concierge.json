@@ -1,7 +1,18 @@
 {
   "company": "Harper Concierge +",
   "slug": "harper-concierge",
+  "last_etl_date": "2026-08-01T10:41:40.144172",
   "calls": [
+    {
+      "id": "69b02416ce19e9001d2b36c2",
+      "source": "apollo",
+      "title": "Harper Concierge + GrowthBook",
+      "date": "2026-03-10",
+      "duration_minutes": 1,
+      "summary": "[Summary failed] [Christian Liebenow]: What's up? How are you? I'm good. How you doing? Good.",
+      "host": "Christian Liebenow",
+      "participants": 1
+    },
     {
       "id": "01KKA4RRSP8DF76PS2KKEGT9XK",
       "source": "fireflies",

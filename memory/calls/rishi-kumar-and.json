@@ -1,7 +1,18 @@
 {
   "company": "Rishi Kumar and",
   "slug": "rishi-kumar-and",
+  "last_etl_date": "2026-08-01T10:41:40.143442",
   "calls": [
+    {
+      "id": "69bab739829ddb0019f2fad4",
+      "source": "apollo",
+      "title": "Rishi Kumar and James Shannon",
+      "date": "2026-03-18",
+      "duration_minutes": 0,
+      "summary": "[Summary failed] [Cary Rakin]: Which recorder do you. I would use fireflies. 50 different ones in here. I guess the growth book recorder goes to.",
+      "host": "James Shannon",
+      "participants": 1
+    },
     {
       "id": "01KKEB5XK09J2W71X9FEB0P609",
       "source": "fireflies",

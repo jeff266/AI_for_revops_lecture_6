@@ -1,7 +1,38 @@
 {
   "company": "Growthbook <> First Table",
   "slug": "growthbook-first-table",
+  "last_etl_date": "2026-08-01T10:41:40.144286",
   "calls": [
+    {
+      "id": "698e6ff380b3860019e631ae",
+      "source": "apollo",
+      "title": "Growthbook <> First Table - Intro ",
+      "date": "2026-02-13",
+      "duration_minutes": 27,
+      "summary": "[Summary failed] [Daniel Wathne]: Okay. Hey, Jay, can you hear me?\n[Jay Jana]: Yeah, I can hear you.\n[Daniel Wathne]: Oh, nice to meet you. How you doing?\n[Jay Jana]: Good. Nice to meet you as well. I'm great. Are you",
+      "host": "Daniel Wathne",
+      "participants": 3
+    },
+    {
+      "id": "6994df47b7eedc001970f1b1",
+      "source": "apollo",
+      "title": "GrowthBook<>First Table - Working Session",
+      "date": "2026-02-17",
+      "duration_minutes": 36,
+      "summary": "[Summary failed] [Jake Heier]: Nice to meet you.\n[Jay Jana]: Yeah, nice to meet you. Where are you based?\n[Jake Heier]: I'm in Austin, Texas.\n[Jay Jana]: Ah, okay.\n[Jake Heier]: Okay. You guys are. Where are you at?\n[",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "69af2cc1f54711000d38abbb",
+      "source": "apollo",
+      "title": "Growthbook <> First Table - Scoping Sync ",
+      "date": "2026-03-09",
+      "duration_minutes": 25,
+      "summary": "[Summary failed] [Daniel Wathne]: Doing good.\n[Jay Jana]: How's.\n[Daniel Wathne]: How's the last couple weeks been?\n[Jay Jana]: Yeah, it's been busy, but I've actually just launched our apps and market, so iOS app is ",
+      "host": "Daniel Wathne",
+      "participants": 3
+    },
     {
       "id": "01KKPX5H858JFBYVPDB6QPH1G5",
       "source": "fireflies",

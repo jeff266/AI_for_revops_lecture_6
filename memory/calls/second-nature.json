@@ -1,7 +1,18 @@
 {
   "company": "Second Nature +",
   "slug": "second-nature",
+  "last_etl_date": "2026-08-01T10:41:40.138467",
   "calls": [
+    {
+      "id": "69cac5b49dd403001903d44f",
+      "source": "apollo",
+      "title": "Second Nature + GrowthBook",
+      "date": "2026-03-30",
+      "duration_minutes": 12,
+      "summary": "[Summary failed] [Nir Altmark]: Here. Hello. Just a second.\n[Christian Liebenow]: I'm sorry. I'm sorry I was late. I. I was in the wrong. In the wrong zoom room. So my apologies.\n[Nir Altmark]: Oh really? Was. I.\n[Chr",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
     {
       "id": "01KMTW54G89DGAWW0D3AHMJ1CB",
       "source": "fireflies",

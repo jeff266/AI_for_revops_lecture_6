@@ -1,0 +1,17 @@
+{
+  "company": "Amanotes + GrowthBook",
+  "slug": "amanotes-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.148195",
+  "calls": [
+    {
+      "id": "6989eef4f7e770002109e8d3",
+      "source": "apollo",
+      "title": "Amanotes + GrowthBook",
+      "date": "2026-02-09",
+      "duration_minutes": 27,
+      "summary": "[Summary failed] [Amanotes Trần Bảo]: Hello. Hello.\n[Christian Liebenow]: Hi. How are you today?\n[Amanotes Trần Bảo]: I'm good. How are you doing?\n[Christian Liebenow]: Great, thank you.\n[Amanotes Trần Bảo]: Let's wai",
+      "host": "Christian Liebenow",
+      "participants": 3
+    }
+  ]
+}

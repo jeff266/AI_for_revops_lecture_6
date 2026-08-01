@@ -1,0 +1,17 @@
+{
+  "company": "Prodigy + GrowthBook",
+  "slug": "prodigy-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.148520",
+  "calls": [
+    {
+      "id": "69860ec5aa1794001d8dfbfe",
+      "source": "apollo",
+      "title": "Prodigy + GrowthBook",
+      "date": "2026-02-06",
+      "duration_minutes": 25,
+      "summary": "[Summary failed] [Christian Liebenow]: Hi, Ben.\n[Ben Johnson]: Hello. How are you doing?\n[Christian Liebenow]: Well, how are you this morning?\n[Ben Johnson]: I'm okay. Things are busy here. I was not really expecting.",
+      "host": "Christian Liebenow",
+      "participants": 3
+    }
+  ]
+}

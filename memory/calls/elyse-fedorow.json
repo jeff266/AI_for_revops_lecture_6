@@ -1,7 +1,18 @@
 {
   "company": "Elyse Fedorow",
   "slug": "elyse-fedorow",
+  "last_etl_date": "2026-08-01T10:41:40.147700",
   "calls": [
+    {
+      "id": "698cf58249fe190021376e1d",
+      "source": "apollo",
+      "title": "Elyse Fedorow - 1 Year Plan",
+      "date": "2026-02-11",
+      "duration_minutes": 62,
+      "summary": "[Summary failed] [Ashley Stirrup]: How are you doing?\n[E]: Oh, doing well. Can you hear me?\n[Ashley Stirrup]: Yeah, I think the system was like, you know, was talking for a second, so I couldn't hear you.\n[E]: Oh, no ",
+      "host": "Ashley Stirrup",
+      "participants": 5
+    },
     {
       "id": "01KGNN6NJ198C70MB7Q3NVFZHE",
       "source": "fireflies",

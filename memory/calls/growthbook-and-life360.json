@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook and Life360",
+  "slug": "growthbook-and-life360",
+  "last_etl_date": "2026-08-01T10:41:40.129516",
+  "calls": [
+    {
+      "id": "69f0deacca0ec70021a13391",
+      "source": "apollo",
+      "title": "GrowthBook and Life360",
+      "date": "2026-04-28",
+      "duration_minutes": 22,
+      "summary": "[Summary failed] [Jake Stangl]: What was that?\n[Russ Painter]: Sorry. Not a whole lot, man.\n[Daniel Wathne]: Excited for the call today.\n[Jake Stangl]: Awesome. Yeah, yeah, should be good.\n[Daniel Wathne]: How was you",
+      "host": "Jake Stangl",
+      "participants": 4
+    }
+  ]
+}

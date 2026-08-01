@@ -1,7 +1,18 @@
 {
   "company": "Lyndsie Demand Generation",
   "slug": "lyndsie-demand-generation",
+  "last_etl_date": "2026-08-01T10:41:40.134599",
   "calls": [
+    {
+      "id": "69dec32079aa540015c443b7",
+      "source": "apollo",
+      "title": "Lyndsie Demand Generation Presentation",
+      "date": "2026-04-14",
+      "duration_minutes": 43,
+      "summary": "[Summary failed] [Ashley Stirrup]: My daughter heard her back, so I didn't get to see her play volleyball. Yeah. Hey, Graham.\n[Lyndsie]: Hey, Graham.\n[Ryan McGurk]: Absolutely.\n[Ashley Stirrup]: Hey, Lindsey.\n[Webflow",
+      "host": "Ashley Stirrup",
+      "participants": 5
+    },
     {
       "id": "01KP1VJCYKA1X4T74ANNSSM0RH",
       "source": "fireflies",

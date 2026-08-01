@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook & PodMe",
+  "slug": "growthbook-podme",
+  "last_etl_date": "2026-08-01T10:41:40.126744",
+  "calls": [
+    {
+      "id": "6a0eba587cf5fb00143619aa",
+      "source": "apollo",
+      "title": "GrowthBook & PodMe Catchup",
+      "date": "2026-05-21",
+      "duration_minutes": 14,
+      "summary": "[Summary failed] [Rami Daghlawi]: Yeah, no worries. No worries. So you're doing the evaluation on the SDK, is what I've gathered. And then you're sending anonymous data to. Or is that correct?\n[James Shannon]: That is",
+      "host": "James Shannon",
+      "participants": 3
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "company": "Growthbook <> Yeet",
   "slug": "growthbook-yeet",
+  "last_etl_date": "2026-08-01T10:41:40.147255",
   "calls": [
     {
       "id": "01KGZBN43W4W32BMVS4DMFPFZX",
@@ -13,6 +14,16 @@
       "participants": 4,
       "keywords": "Enterprise SLA, Feature Flags, Experimentation, Pricing Proposal, Integration, Reliability Issues",
       "action_items": "\n**Dan Wathne**\nShare detailed proposal and benefits document comparing Enterprise vs Pro plans this afternoon (15:31)\nPrepare and send discounted order form (~$20k/year) for 15 seats pricing by end of the week for Yeet’s review (13:32)\nSchedule and send invite for a 30-minute demo and Q&A session tomorrow around 08:30-09:00 focusing on experimentation capabilities (19:28)\nInvestigate and report back on recent feature flag reliability issues reported by Yeet to GrowthBook engineering team (22:07)\n\n**Gabor Koppanyi**\nReview GrowthBook documentation regarding flag integration and experimentation data linkage with user analytics tools by next day’s meeting (16:24)\nProvide feedback on order form and pricing promptly to enable quick purchase decision (14:09)\n"
+    },
+    {
+      "id": "698f5af66ecf11001d113793",
+      "source": "apollo",
+      "title": "Growthbook <> Yeet - Demo + Order Form Review ",
+      "date": "2026-02-13",
+      "duration_minutes": 36,
+      "summary": "[Summary failed] [Gabor Koppanyi]: It should be even more like if we are talking about testing, I think it would be even better if. Well, it is even better than the Dennis here and not Casper because. Because he's wor",
+      "host": "Daniel Wathne",
+      "participants": 4
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "company": "Ellipsis Health and",
+  "slug": "ellipsis-health-and",
+  "last_etl_date": "2026-08-01T10:41:40.119354",
+  "calls": [
+    {
+      "id": "6a4d69dc0b9276001015278c",
+      "source": "apollo",
+      "title": "Ellipsis Health and GrowthBook",
+      "date": "2026-07-07",
+      "duration_minutes": 32,
+      "summary": "[Summary failed] [Christian Liebenow]: Aspen Acres fire.\n[Logan Bates]: Yeah, look it up. It's pretty bad. To our south of us.\n[Amitesh Dwivedi]: Hey, everyone.\n[Christian Liebenow]: Hey, Amitesh.\n[Logan Bates]: Chris",
+      "host": "Jake Stangl",
+      "participants": 4
+    }
+  ]
+}

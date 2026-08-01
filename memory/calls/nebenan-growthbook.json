@@ -1,19 +1,8 @@
 {
   "company": "Nebenan + GrowthBook",
   "slug": "nebenan-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.142541",
   "calls": [
-    {
-      "id": "01KM0V68ZA806BGY1Q0FMKB2QV",
-      "source": "fireflies",
-      "title": "Nebenan + GrowthBook",
-      "date": "2026-03-20",
-      "duration_minutes": 50,
-      "summary": "The Nebanon team discussed the challenges faced with their in-house experimentation tool, which causes delays in metrics and results due to ad hoc reporting and post-experiment metric designs. The team is exploring Growth Book for its self-service capabilities, which enable faster setup and interpretation for product managers and stakeholders, and its flexible integration with backend systems. Key components discussed included metric definition, reusability, and visualization of results using Bayesian statistics. Additionally, the importance of GDPR compliance and potential for self-hosting were emphasized. The plan is to conduct a 10-day trial of Growth Book followed by a review of enterprise pricing to determine fit for Nebanon's needs.",
-      "organizer": "christian@growthbook.io",
-      "participants": 6,
-      "keywords": "Experimentation Platform, Feature Flags, Backend Experimentation, Metric Slicing, Bayesian Statistics, GDPR Compliance",
-      "action_items": "\n**Jose Coto**\nConduct internal trial of Growth Book to evaluate fit with Nebenan’s experimentation needs (47:30)\nCheck with legal team regarding GDPR compliance and approval process for potential enterprise trial subscription (49:00)\nCoordinate future follow-up discussion with Growth Book team based on trial outcomes and budget considerations (48:00)\n\n**Christian Liebenow**\nCreate a shared Slack channel for easier ongoing communication with Nebenan team (48:20)\nProvision enterprise trial license for Nebenan to enable full Growth Book evaluation (48:30)\nShare meeting recording with Nebenan team and provide necessary documentation and license keys (50:00)\n\n**Growth Book Team (Support/Technical)**\nProvide Nebenan with documentation for Ruby SDK integration and user context object for backend experiment targeting (25:30)\nOffer additional support for metric slicing and multi-source data integration within Growth Book metrics library (34:00)\n"
-    },
     {
       "id": "01KJD9FGF6GHE6S5RNV71541QZ",
       "source": "fireflies",
@@ -25,6 +14,28 @@
       "participants": 4,
       "keywords": "A/B testing, data governance, legal compliance, feature flags, experiment analytics, warehouse-native",
       "action_items": "\n**Christian Liebenow**\nShare GrowthBook slides, detailed legal and compliance documentation including SOC 2 reports, security architecture documents, and trust portal link with Nebenan (15:14)\nServe as primary point of contact for Nebenan’s legal and security teams, facilitate direct communication or calls as needed to address their concerns (16:22)\nProvide further product demos tailored to specific Nebenan use cases after legal clearance, and follow up with scheduling next calls within coming weeks (41:38)\n\n**Johanna Rocha and team**\nShare GrowthBook compliance materials internally with legal for review and decision-making to enable experiment rollout (16:14)\n\n**Johanna and Vadim**\nEvaluate GrowthBook against current internal experiment setup for baseline and comparative analysis starting with small pilot team (40:44)\n"
+    },
+    {
+      "id": "69bd6533365d53000d94afd6",
+      "source": "apollo",
+      "title": "Nebenan + GrowthBook",
+      "date": "2026-03-20",
+      "duration_minutes": 49,
+      "summary": "[Summary failed] [Christian Liebenow]: Cynthia. Hey, Jose. Hey, Kate.\n[jose]: How are you\n[Christian Liebenow]: doing? Well, Happy Friday, everybody.\n[jose]: Yes, yes. It's a. I, I guess the morning over there here is",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "01KM0V68ZA806BGY1Q0FMKB2QV",
+      "source": "fireflies",
+      "title": "Nebenan + GrowthBook",
+      "date": "2026-03-20",
+      "duration_minutes": 50,
+      "summary": "The Nebanon team discussed the challenges faced with their in-house experimentation tool, which causes delays in metrics and results due to ad hoc reporting and post-experiment metric designs. The team is exploring Growth Book for its self-service capabilities, which enable faster setup and interpretation for product managers and stakeholders, and its flexible integration with backend systems. Key components discussed included metric definition, reusability, and visualization of results using Bayesian statistics. Additionally, the importance of GDPR compliance and potential for self-hosting were emphasized. The plan is to conduct a 10-day trial of Growth Book followed by a review of enterprise pricing to determine fit for Nebanon's needs.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "Experimentation Platform, Feature Flags, Backend Experimentation, Metric Slicing, Bayesian Statistics, GDPR Compliance",
+      "action_items": "\n**Jose Coto**\nConduct internal trial of Growth Book to evaluate fit with Nebenan’s experimentation needs (47:30)\nCheck with legal team regarding GDPR compliance and approval process for potential enterprise trial subscription (49:00)\nCoordinate future follow-up discussion with Growth Book team based on trial outcomes and budget considerations (48:00)\n\n**Christian Liebenow**\nCreate a shared Slack channel for easier ongoing communication with Nebenan team (48:20)\nProvision enterprise trial license for Nebenan to enable full Growth Book evaluation (48:30)\nShare meeting recording with Nebenan team and provide necessary documentation and license keys (50:00)\n\n**Growth Book Team (Support/Technical)**\nProvide Nebenan with documentation for Ruby SDK integration and user context object for backend experiment targeting (25:30)\nOffer additional support for metric slicing and multi-source data integration within Growth Book metrics library (34:00)\n"
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> FirstTable",
+  "slug": "growthbook-firsttable",
+  "last_etl_date": "2026-08-01T10:41:40.129390",
+  "calls": [
+    {
+      "id": "69b31f0805401b001542135f",
+      "source": "apollo",
+      "title": "Growthbook <> FirstTable - Pricing Sync ",
+      "date": "2026-03-12",
+      "duration_minutes": 14,
+      "summary": "[Summary failed] [Jay Jana]: Because the RAM prices are so high, you can't even, like, build anything new anymore.\n[Daniel Wathne]: Yeah, man, it's so crazy. I. Dude, I got a PC like this last year actually, and it's ",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "69f13822520e760011511457",
+      "source": "apollo",
+      "title": "Growthbook <> FirstTable - Technical Demo ",
+      "date": "2026-04-28",
+      "duration_minutes": 44,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey team, how's it going?\n[Frans Waal]: Hello.\n[Logan Bates]: Hello.\n[Daniel Wathne]: Good to see you all. Okay. I know we've got quite a few folks today. Hey Jay, how you doing? Hey,",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> Rappi",
+  "slug": "growthbook-rappi",
+  "last_etl_date": "2026-08-01T10:41:40.127050",
+  "calls": [
+    {
+      "id": "6a0cbd80cb75350020c9fb80",
+      "source": "apollo",
+      "title": "Growthbook <> Rappi - Demo ",
+      "date": "2026-05-19",
+      "duration_minutes": 44,
+      "summary": "[Summary failed] [Jaime Sempertegui]: Hey there.\n[Daniel Wathne]: Hey, Amy. How you doing?\n[Jaime Sempertegui]: Everything fine and you?\n[Daniel Wathne]: Yeah, things are good.\n[Jaime Sempertegui]: Ben.\n[Daniel Wathne",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

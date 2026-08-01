@@ -1,7 +1,20 @@
 {
   "company": "Ryan / Christian",
   "slug": "ryan-christian",
+  "last_etl_date": "2026-08-01T10:41:40.263053",
   "calls": [
+    {
+      "id": "01KJ0R84R8J9FF7936JXNN0K4H",
+      "source": "fireflies",
+      "title": "Ryan / Christian",
+      "date": "2026-02-23",
+      "duration_minutes": 30,
+      "summary": "The discussion centered around the current status of several deals, including Bet365, Crypto.com, and Discord contracts. The Bet365 deal faces delays due to insufficient urgency and weak internal champions, prompting a plan to re-engage key stakeholders like Hannah, Dan, and Russ. Meanwhile, Crypto.com has received approval for an expansion of 50 additional seats, although legal reviews are still pending. Regarding Discord, the renewal process is progressing with growing user counts but requires flexible pricing negotiations to address concerns from stakeholders like Jen and Nate. Team members emphasized the importance of cultivating champion relationships to shorten sales cycles and improve the chances of closing deals effectively. Operational support was also discussed to enhance learning from customer interactions.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 2,
+      "keywords": "bet365, onboarding, crypto.com expansion, Discord user growth, champion cultivation, Legend POC",
+      "action_items": "\n**Christian Liebenow**\nSend another note to Hannah at bet365 to request a short call to clarify Infosec timing and onboarding expectations (02:56)\nConsider sending a note to Dan and Russ at bet365 about onboarding planning if no response from Hannah (06:52)\nFollow up with Helen at crypto.com to confirm legal team's response on order form (09:21)\nBefore the next day’s call with Discord, attempt to get user seat count clarified via email or phone call (14:07)\nPrepare to provide pricing options and negotiate deal size with Discord during the call (16:20)\nReach out to key champions (Kaido and Jonathan) and executive buyer at Legend to build business case and kick off delayed POC (28:45)\nSend relevant recorded customer calls to Carrie and James for training and product insights (30:13)\n\n**Ryan McGurk**\nSupport Christian by joining the Discord call scheduled at 13:30 to assist with negotiation (16:55)\nAdvise and strategize on cultivating champions for deals moving to technical evaluation and signature stages (21:36)\nEncourage direct phone outreach to Hannah for bet365 to expedite clarifications before involving Dan and Russ (24:44)\n"
+    },
     {
       "id": "01KJAVVCJM1PT0NJDJ6HET2HJQ",
       "source": "fireflies",
@@ -25,18 +38,6 @@
       "participants": 2,
       "keywords": "dm, experimentation, pricing strategy, e-commerce, ShiftKey, Bet365",
       "action_items": "\n**Christian Liebenow**\nProvide Yannick at dm with a placeholder pricing proposal reflecting $300k-$400k with differentiated pricing for heavy and light users and present it during the next call scheduled for next week (03:35)\nEnsure Yannick has the enterprise license set up before his dedicated GrowthBook evaluation day next Friday (11:37)\nPrepare and deliver tailored messaging framing GrowthBook’s value against dm’s e-commerce revenue uplift potential in the next pricing conversation (12:44)\nArticulate the three key value drivers over open source for dm: faster experimentation, scalability, and AI-driven experiment suggestions with governance (16:30)\nFollow up with ShiftKey for technical acceptance and execute POV call on next Tuesday (19:26)\nContinue engagement with Crypto’s finance team and provide updates as new information is received (21:15)\nCoordinate with Bet365’s infosec team to schedule and conduct a call to close out remaining questions and secure approval (22:16)\nVerify correctness of order forms and proceed with sending them out (26:00)\n\n**Ryan McGurk**\nSupport Christian by advising on pricing presentation strategy for dm and helping frame the conversation around revenue uplift and investment justification (04:15)\n"
-    },
-    {
-      "id": "01KJ0R84R8J9FF7936JXNN0K4H",
-      "source": "fireflies",
-      "title": "Ryan / Christian",
-      "date": "2026-02-23",
-      "duration_minutes": 30,
-      "summary": "The discussion centered around the current status of several deals, including Bet365, Crypto.com, and Discord contracts. The Bet365 deal faces delays due to insufficient urgency and weak internal champions, prompting a plan to re-engage key stakeholders like Hannah, Dan, and Russ. Meanwhile, Crypto.com has received approval for an expansion of 50 additional seats, although legal reviews are still pending. Regarding Discord, the renewal process is progressing with growing user counts but requires flexible pricing negotiations to address concerns from stakeholders like Jen and Nate. Team members emphasized the importance of cultivating champion relationships to shorten sales cycles and improve the chances of closing deals effectively. Operational support was also discussed to enhance learning from customer interactions.",
-      "organizer": "ryan.mcgurk@growthbook.io",
-      "participants": 2,
-      "keywords": "bet365, onboarding, crypto.com expansion, Discord user growth, champion cultivation, Legend POC",
-      "action_items": "\n**Christian Liebenow**\nSend another note to Hannah at bet365 to request a short call to clarify Infosec timing and onboarding expectations (02:56)\nConsider sending a note to Dan and Russ at bet365 about onboarding planning if no response from Hannah (06:52)\nFollow up with Helen at crypto.com to confirm legal team's response on order form (09:21)\nBefore the next day’s call with Discord, attempt to get user seat count clarified via email or phone call (14:07)\nPrepare to provide pricing options and negotiate deal size with Discord during the call (16:20)\nReach out to key champions (Kaido and Jonathan) and executive buyer at Legend to build business case and kick off delayed POC (28:45)\nSend relevant recorded customer calls to Carrie and James for training and product insights (30:13)\n\n**Ryan McGurk**\nSupport Christian by joining the Discord call scheduled at 13:30 to assist with negotiation (16:55)\nAdvise and strategize on cultivating champions for deals moving to technical evaluation and signature stages (21:36)\nEncourage direct phone outreach to Hannah for bet365 to expedite clarifications before involving Dan and Russ (24:44)\n"
     }
   ]
 }

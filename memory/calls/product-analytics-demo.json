@@ -1,6 +1,7 @@
 {
   "company": "Product Analytics demo",
   "slug": "product-analytics-demo",
+  "last_etl_date": "2026-08-01T10:41:40.259258",
   "calls": [
     {
       "id": "01KJTHFFEDAK2W2KQ6EXP6E5FG",

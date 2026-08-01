@@ -1,7 +1,28 @@
 {
   "company": "Plusgrade<>GrowthBook",
   "slug": "plusgrade-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.142909",
   "calls": [
+    {
+      "id": "69b478431b9b68001d5721c6",
+      "source": "apollo",
+      "title": "Plusgrade<>GrowthBook - Sagemaker Discussion",
+      "date": "2026-03-13",
+      "duration_minutes": 48,
+      "summary": "[Summary failed] [Bryce Fitzsimons]: Oh, okay.\n[Kerem Ataman]: That was the recorder. That's new. I haven't seen that before.\n[Jake Heier]: Oh, yeah, it follows me around on my. It shows up on these calls. I'm happy t",
+      "host": "Jake Heier",
+      "participants": 7
+    },
+    {
+      "id": "69bc440a646d060015238c1b",
+      "source": "apollo",
+      "title": "Plusgrade<>GrowthBook - Data Science Discussion",
+      "date": "2026-03-19",
+      "duration_minutes": 45,
+      "summary": "[Summary failed] [Lori.Livadariu@Plusgrade.Com Livadariu]: Take.\n[Jake Heier]: Hey, jake.\n[Luke Sonnet]: Hey, jake.\n[Lori.Livadariu@Plusgrade.Com Livadariu]: Hey luke.\n[Jake Heier]: How you doing?\n[Luke Sonnet]: Good,",
+      "host": "Jake Heier",
+      "participants": 6
+    },
     {
       "id": "01KS06GV3PQZ0MS1AQN507KGSD",
       "source": "fireflies",

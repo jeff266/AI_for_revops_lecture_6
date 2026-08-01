@@ -1,19 +1,8 @@
 {
   "company": "Growthbook <> Appcast",
   "slug": "growthbook-appcast",
+  "last_etl_date": "2026-08-01T10:41:40.193932",
   "calls": [
-    {
-      "id": "01KV9GC1Q9M211V2QH1XPJW1MF",
-      "source": "fireflies",
-      "title": "Growthbook <> Appcast - Demo",
-      "date": "2026-06-23",
-      "duration_minutes": 0,
-      "summary": "The discussion focused on enhancing the current slow and manual experimentation process by leveraging GrowthBook's features. The team aims to conduct eight experiments per quarter with mutual exclusivity using the platform's namespace feature to prevent user overlap. Key points included integrating GrowthBook with Athena for custom metrics, implementing flexible feature flagging, and rolling out experiments progressively with safeguards. A free three to four-week trial was proposed to map initial tests to GrowthBook's capabilities while promoting a data-driven culture within Appcast. Participants highlighted the importance of transparency, AI-assisted experimentation, and ongoing support during the trial to build confidence in the platform.",
-      "organizer": "dan@growthbook.io",
-      "participants": 5,
-      "keywords": "experiment setup, feature flagging, data warehouse, custom metrics, funnel analysis, trial/POC",
-      "action_items": "\n**Suet Yin Chow**\nConduct internal team discussion to identify potential tests and map them to GrowthBook’s features; decide on next steps for POC evaluation (55:27)\n\n**Logan Bates**\nSend meeting recording and detailed documentation for further review; provide booking link for scheduling trial kickoff (58:42)\n\n**Dan Wathne**\nCoordinate scheduling of trial kickoff session based on Appcast’s availability; offer support for engineering integration and trial setup (58:42)\n\n**Vlad Niavinski**\nFinalize internal discussion on Ruby SDK implementation details including passing variation IDs and event tracking strategies (54:40)\n"
-    },
     {
       "id": "01KV3SQMWV1DBP0B8T0301FBEB",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 5,
       "keywords": "A/B Testing, GrowthBook, Experimentation, Data Warehouse, SDK Integration, Pricing Model",
       "action_items": "\n**Dan Wathne**\nHold a detailed demo meeting on Monday at 2 PM Eastern time with the Appcast team to walk through the full GrowthBook platform and address deeper technical questions (24:54)\nSend a follow-up email containing the meeting recording, pre-call notes, documentation, and next steps to the Appcast participants (25:42)\n\n**Appcast team**\nReview the shared notes, documentation, and pre-call materials in preparation for the follow-up demo and deeper engagement with GrowthBook (26:00)\n"
+    },
+    {
+      "id": "01KV9GC1Q9M211V2QH1XPJW1MF",
+      "source": "fireflies",
+      "title": "Growthbook <> Appcast - Demo",
+      "date": "2026-06-23",
+      "duration_minutes": 0,
+      "summary": "The discussion focused on enhancing the current slow and manual experimentation process by leveraging GrowthBook's features. The team aims to conduct eight experiments per quarter with mutual exclusivity using the platform's namespace feature to prevent user overlap. Key points included integrating GrowthBook with Athena for custom metrics, implementing flexible feature flagging, and rolling out experiments progressively with safeguards. A free three to four-week trial was proposed to map initial tests to GrowthBook's capabilities while promoting a data-driven culture within Appcast. Participants highlighted the importance of transparency, AI-assisted experimentation, and ongoing support during the trial to build confidence in the platform.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "experiment setup, feature flagging, data warehouse, custom metrics, funnel analysis, trial/POC",
+      "action_items": "\n**Suet Yin Chow**\nConduct internal team discussion to identify potential tests and map them to GrowthBook’s features; decide on next steps for POC evaluation (55:27)\n\n**Logan Bates**\nSend meeting recording and detailed documentation for further review; provide booking link for scheduling trial kickoff (58:42)\n\n**Dan Wathne**\nCoordinate scheduling of trial kickoff session based on Appcast’s availability; offer support for engineering integration and trial setup (58:42)\n\n**Vlad Niavinski**\nFinalize internal discussion on Ruby SDK implementation details including passing variation IDs and event tracking strategies (54:40)\n"
     }
   ]
 }

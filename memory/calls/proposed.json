@@ -1,0 +1,17 @@
+{
+  "company": "Proposed",
+  "slug": "proposed",
+  "last_etl_date": "2026-08-01T10:41:40.148706",
+  "calls": [
+    {
+      "id": "6984af724770980015c9ea10",
+      "source": "apollo",
+      "title": "LeoVegas + GrowthBook (Proposed)",
+      "date": "2026-02-05",
+      "duration_minutes": 24,
+      "summary": "[Summary failed] [Christian Liebenow]: Hello.\n[Mark Pace]: I'm Mark. Good, I'm good. How are you today?\n[Christian Liebenow]: Doing well, doing well, doing well.\n[Mark Pace]: Awesome. How's the, how's the weather wher",
+      "host": "Christian Liebenow",
+      "participants": 2
+    }
+  ]
+}

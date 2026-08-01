@@ -1,0 +1,27 @@
+{
+  "company": "Ágata Marques Marinho",
+  "slug": "gata-marques-marinho",
+  "last_etl_date": "2026-08-01T10:41:40.140921",
+  "calls": [
+    {
+      "id": "69bab6cfed62ac001d6bd1e8",
+      "source": "apollo",
+      "title": "Ágata Marques Marinho and Jake Heier",
+      "date": "2026-03-18",
+      "duration_minutes": 30,
+      "summary": "[Summary failed] [Jake Heier]: Hello? I can't hear you. I don't know.\n[Ágata Marinho]: Now surrounding. Let's see. Sara is going to join in a minute and then I think we will have Thiago with us at least because I need",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "69c40c4ca49439001d9e4755",
+      "source": "apollo",
+      "title": "Ágata Marques Marinho and Jake Heier",
+      "date": "2026-03-25",
+      "duration_minutes": 24,
+      "summary": "[Summary failed] [Jake Heier]: Hey jim.\n[Growthbook Dorn]: Hey,\n[Jake Heier]: thanks for joining.\n[Thiago Cunha Cunha]: Yeah,\n[Jake Heier]: Hello. How's it going?\n[Ágata Marinho]: On my side, I think Louise is also go",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

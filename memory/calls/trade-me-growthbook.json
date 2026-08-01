@@ -1,0 +1,27 @@
+{
+  "company": "Trade Me<>GrowthBook",
+  "slug": "trade-me-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.126839",
+  "calls": [
+    {
+      "id": "69f912966dc6ed0019dbb811",
+      "source": "apollo",
+      "title": "Trade Me<>GrowthBook - POC Check In Call",
+      "date": "2026-05-04",
+      "duration_minutes": 37,
+      "summary": "[Summary failed] [Brian Wang]: There we go.\n[Ruby J]: Cool. I thought I might just start off by sharing what we have so far. So just to confirm the right track and there's anything that would need some attention, just",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "6a0e3cd8b975ab0020860cc3",
+      "source": "apollo",
+      "title": "Trade Me<>GrowthBook - Overview",
+      "date": "2026-05-20",
+      "duration_minutes": 60,
+      "summary": "[Summary failed] [Jake Heier]: Hello, giselle. Hey, luke.\n[Logan Bates]: Hello.\n[Jake Heier]: Hello.\n[Cosmic Corner]: Are you asking me?\n[Jake Heier]: I was. Did I? I think I froze for a second there.\n[Cosmic Corner]:",
+      "host": "Jake Heier",
+      "participants": 9
+    }
+  ]
+}

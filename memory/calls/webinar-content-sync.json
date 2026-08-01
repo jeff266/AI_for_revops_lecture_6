@@ -1,0 +1,17 @@
+{
+  "company": "Webinar Content Sync",
+  "slug": "webinar-content-sync",
+  "last_etl_date": "2026-08-01T10:41:40.121794",
+  "calls": [
+    {
+      "id": "6a282eafca5e82000c5083c3",
+      "source": "apollo",
+      "title": "Webinar Content Sync ",
+      "date": "2026-06-09",
+      "duration_minutes": 46,
+      "summary": "[Summary failed] [Ben Fanning]: Sorry.\n[Ashley Stirrup]: Unless you already had stuff that you wanted to use as a starting point.\n[Ben Fanning]: I noted down just some stuff based on what we talked about last time aro",
+      "host": "Lyndsie Berens",
+      "participants": 2
+    }
+  ]
+}

@@ -1,19 +1,8 @@
 {
   "company": "Chris <> Wellhub",
   "slug": "chris-wellhub",
+  "last_etl_date": "2026-08-01T10:41:40.150482",
   "calls": [
-    {
-      "id": "01KY1WTAH1QVRHS2TN1BQJBQRK",
-      "source": "fireflies",
-      "title": "Chris <> Wellhub Monthly Sync",
-      "date": "2026-07-28",
-      "duration_minutes": 11,
-      "summary": "The team decided to pause regular meetings in favor of an as-needed scheduling model to improve efficiency, as no urgent topics emerged. Larissa confirmed the cancellation of recurring meetings, supported by Chris's suggestion to optimize time. Communication will remain open for any pressing issues, allowing agile collaboration. On the AI front, Claude was recommended for GrowthBook due to existing partnerships and robust testing, while the Gemini model will be considered but deferred for internal benchmarking. The strategic partnership with Claude positions GrowthBook favorably in the market by offering early access to new AI features. Overall, there were no immediate blockers to integrating Claude, facilitating a smooth transition and resource planning, all within a collaborative culture respecting team members' time.",
-      "organizer": "chris@growthbook.io",
-      "participants": 4,
-      "keywords": "Claude, GrowthBook, AI model, Anthropic, meeting cadence, benchmarking",
-      "action_items": "\n**Larissa Minarini**\nCancel the recurring monthly meeting invite for this sync (01:34)\nCoordinate scheduling of future meetings only when necessary by reaching out directly (01:43)\n\n**Chris Sanders**\nRemain available for ad hoc meetings upon Larissa's request when key issues arise (01:44)\n"
-    },
     {
       "id": "01KRYTMTNBYZT3N88EWDEK2R17",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 4,
       "keywords": "GrowthBook proxy, remote evaluation, SDK keys, CDN cache, API endpoints, data leak mitigation",
       "action_items": "\n**Sidmar Junior**\nComplete migration of client-side applications by generating new SDK keys and switching SDK keys to use remote evaluation, ensuring no current sessions break (28:02)\nContinue monitoring proxy endpoints especially cache control headers and verify smooth shutdown of old API eval endpoint post-migration (14:44)\nTemporarily disable event streaming headers until subscribe endpoint is fully set up and stable (24:43)\n\n**Chris Sanders**\nVerify that no additional proxy endpoints besides /api/eval and /sdk/subscribe need to be exposed for remote evaluation to function properly and report findings (25:40)\nInvestigate proxy endpoint details to confirm completeness of proxy API exposure and configuration requirements (25:40)\n"
+    },
+    {
+      "id": "01KY1WTAH1QVRHS2TN1BQJBQRK",
+      "source": "fireflies",
+      "title": "Chris <> Wellhub Monthly Sync",
+      "date": "2026-07-28",
+      "duration_minutes": 11,
+      "summary": "The team decided to pause regular meetings in favor of an as-needed scheduling model to improve efficiency, as no urgent topics emerged. Larissa confirmed the cancellation of recurring meetings, supported by Chris's suggestion to optimize time. Communication will remain open for any pressing issues, allowing agile collaboration. On the AI front, Claude was recommended for GrowthBook due to existing partnerships and robust testing, while the Gemini model will be considered but deferred for internal benchmarking. The strategic partnership with Claude positions GrowthBook favorably in the market by offering early access to new AI features. Overall, there were no immediate blockers to integrating Claude, facilitating a smooth transition and resource planning, all within a collaborative culture respecting team members' time.",
+      "organizer": "chris@growthbook.io",
+      "participants": 4,
+      "keywords": "Claude, GrowthBook, AI model, Anthropic, meeting cadence, benchmarking",
+      "action_items": "\n**Larissa Minarini**\nCancel the recurring monthly meeting invite for this sync (01:34)\nCoordinate scheduling of future meetings only when necessary by reaching out directly (01:43)\n\n**Chris Sanders**\nRemain available for ad hoc meetings upon Larissa's request when key issues arise (01:44)\n"
     }
   ]
 }

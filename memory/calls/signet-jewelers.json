@@ -1,0 +1,17 @@
+{
+  "company": "Signet Jewelers",
+  "slug": "signet-jewelers",
+  "last_etl_date": "2026-08-01T10:41:40.121451",
+  "calls": [
+    {
+      "id": "6a287ae87a6359001465158c",
+      "source": "apollo",
+      "title": "Signet Jewelers - GrowthBook Demo",
+      "date": "2026-06-09",
+      "duration_minutes": 44,
+      "summary": "[Summary failed] [Craig Kistler]: Hey, guys. Hey.\n[Ashley Stirrup]: How you doing?\n[Craig Kistler]: Oh, we're doing good.\n[Ashley Stirrup]: Glad to hear it. Christian, did you get a chance to introduce yourself?\n[Chri",
+      "host": "Ashley Stirrup",
+      "participants": 4
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "company": "Brian Wang and",
+  "slug": "brian-wang-and",
+  "last_etl_date": "2026-08-01T10:41:40.127578",
+  "calls": [
+    {
+      "id": "698bdd3bd8064c0015d36f5f",
+      "source": "apollo",
+      "title": "Brian Wang and Jake Heier",
+      "date": "2026-02-11",
+      "duration_minutes": 36,
+      "summary": "[Summary failed] [Brian Wang]: Hey Brian. Hello, Jake. How's it going?\n[Jake Heier]: Going well, how are you?\n[Brian Wang]: Good, thank you.\n[Jake Heier]: Where are you calling in from?\n[Brian Wang]: New Zealand. Well",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "69c1ed64f5331e0015631e5b",
+      "source": "apollo",
+      "title": "Brian Wang and Jake Heier",
+      "date": "2026-03-24",
+      "duration_minutes": 46,
+      "summary": "[Summary failed] [Jake Heier]: Everyone.\n[Michael Evans]: That looks like. Everyone who's accepted.\n[Jake Heier]: Yeah, happy to. Happy to kick off if you think we're good.\n[Michael Evans]: He's in, mate. You happy fo",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "6a0b96e4785b990010a4f110",
+      "source": "apollo",
+      "title": "Brian Wang and Jake Heier",
+      "date": "2026-05-18",
+      "duration_minutes": 47,
+      "summary": "[Summary failed] [Jake Heier]: I'm triple booked. So I am really interested. We're doing a lot of AB stuff at the moment, so. And it's, Yeah, a few challenges. So, yeah, really interested to see what's going on here. ",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

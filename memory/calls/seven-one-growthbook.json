@@ -1,0 +1,27 @@
+{
+  "company": "Seven.one<>GrowthBook",
+  "slug": "seven-one-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.138002",
+  "calls": [
+    {
+      "id": "69cd26ed7a160e00196afc01",
+      "source": "apollo",
+      "title": "Seven.one<>GrowthBook - Discussion on Unleash",
+      "date": "2026-04-01",
+      "duration_minutes": 8,
+      "summary": "[Summary failed] [Jake Heier]: Jeremy,\n[Growthbook Dorn]: thanks for joining. Did you see the prep talk? Yeah, I just have it\n[Jake Heier]: open now. Okay, cool. I'm not sure where he is. I just pinged him to see if h",
+      "host": "Jake Heier",
+      "participants": 2
+    },
+    {
+      "id": "69ce7d06a415200015201fb2",
+      "source": "apollo",
+      "title": "Seven.one<>GrowthBook - Conversation on Unleash",
+      "date": "2026-04-02",
+      "duration_minutes": 28,
+      "summary": "[Summary failed] [Gaurav Dani]: Hey, gaurav,\n[Jake Heier]: How are you?\n[Gaurav Dani]: Okay. Hi, Jake. How are you doing?\n[Jake Heier]: Well, appreciate you time. My CTO Jeremy should be on here momentarily.\n[Gaurav D",
+      "host": "Jake Heier",
+      "participants": 3
+    }
+  ]
+}

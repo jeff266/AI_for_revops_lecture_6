@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook <> SassyClassy",
+  "slug": "growthbook-sassyclassy",
+  "last_etl_date": "2026-08-01T10:41:40.134707",
+  "calls": [
+    {
+      "id": "69de613c84082e000d1c5b15",
+      "source": "apollo",
+      "title": "GrowthBook <> SassyClassy - Intro ",
+      "date": "2026-04-14",
+      "duration_minutes": 44,
+      "summary": "[Summary failed] [Nadeem Pedarnig]: You experience a lot of flicker effects. And this led us to cancel the A B testing tool. And now we are in this stage. We migrated basically from software to Shopify and during that",
+      "host": "Daniel Wathne",
+      "participants": 4
+    }
+  ]
+}

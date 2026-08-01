@@ -1,30 +1,19 @@
 {
   "company": "MC Sonae +",
   "slug": "mc-sonae",
+  "last_etl_date": "2026-08-01T10:41:40.172483",
   "calls": [
     {
-      "id": "01KX3VYVF84YMZBZBARW8NW4HW",
+      "id": "01KVQSV1SHTE0TYEHMFCM07K3H",
       "source": "fireflies",
       "title": "MC Sonae + GrowthBook",
-      "date": "2026-07-16",
-      "duration_minutes": 24,
-      "summary": "The team is preparing for a July 21 launch that prioritizes technical stability and effective A/B testing to evaluate the impact of editorial content on product pages. To achieve success, they aim for flawless execution without production issues and gather actionable results from A/B tests, thereby guiding decisions based on their findings. Multiple A/B tests are scheduled before Black Friday, concentrating on significant developments while less critical tweaks are deprioritized. An emphasis on timely contract signing by July 31 was highlighted, with a focus on securing pricing and procurement approvals. The trial setup includes a 60-seat allocation for test creators, and the team is coordinating internally to evaluate the trial results despite holiday scheduling challenges. There is a strong sense of collaboration, with open communication channels established for future support.",
+      "date": "2026-06-26",
+      "duration_minutes": 37,
+      "summary": "The team discussed the upcoming launch of an A/B test scheduled for July 21, aiming to assess the impact of new product and brand content on product detail pages (PDPs). A significant concern is balancing potential revenue drops from lower carousel placements against overall conversion rate improvements. User acceptance tests will commence immediately. Due to uncertainties with SKU coverage from Syndigo, a 1-2 day soft launch is proposed to gather necessary data. The meeting also covered dual GrowthBook projects for e-commerce and in-store setups, preferring a Bayesian testing method for its simplicity. Challenges around the high costs of GrowthBook were addressed, with a future call planned for alignment on the business case, led by senior stakeholders.",
       "organizer": "christian@growthbook.io",
-      "participants": 6,
-      "keywords": "GrowthBook, AB Testing, Wells, Launch Strategy, Contract Process, Pilot Evaluation",
-      "action_items": "\n**Christian Liebenow**\nSend the order form to Cesar following the call to initiate contract processing (03:42)\nProvide security documentation to Wells' security team and respond promptly to any questions during the contract review process (13:40)\nExtend the current 60-seat trial for the Wells team to allow continued evaluation of GrowthBook (14:41)\nCoordinate with Wells team to ensure necessary platform access and support during upcoming AB test launches (22:17)\nFollow up offline with Wells on scheduling the next internal meeting after pilot review to discuss GrowthBook adoption (20:29)\n\n**Fatima Ferreira**\nCoordinate with Sara Cruz and Wells internal team to plan internal review and feedback session after pilot tests (16:25)\nClarify with Ricardo Nev whether the in-store team requires a separate trial or can rely on Wells’ trial results for final decision-making (18:37)\nInform GrowthBook team promptly if any access or tool usage issues arise during the pilot or trial period (22:36)\n\n**Sara Cruz**\nLead internal coordination for pilot programs and assessment of GrowthBook platform suitability within Wells (17:04)\nCollaborate with Fatima to invite users and administrators to GrowthBook for access to reports and insights necessary for evaluation (16:12)\nOrganize a follow-up meeting after internal review of pilot results with all stakeholders including Ricardo to decide on GrowthBook adoption (19:23)\n"
-    },
-    {
-      "id": "01KXBT9ERY6NMBFT4KV3015N4J",
-      "source": "fireflies",
-      "title": "MC Sonae + GrowthBook",
-      "date": "2026-07-15",
-      "duration_minutes": 0,
-      "summary": "The meeting consisted primarily of informal discussions, with no focus on business performance metrics, growth outcomes, or strategic initiatives. Participants engaged in conversation about a recent sports match between France and Spain, lacking any insights from individuals like Ryan McGurk or Christian Liebenow regarding growth initiatives or company performance. Additionally, there were no updates on ongoing projects, product strategy, technical requirements, operational processes, or competitive positioning. Overall, no actionable items or requests for support were mentioned, making the session devoid of substantial business insights.",
-      "organizer": "christian@growthbook.io",
-      "participants": 4,
-      "keywords": "sports, France vs Spain, teamwork, Dallas, Fireflies, meeting recording",
-      "action_items": "\n**Christian Liebenow**\nDecide on whether to record future meetings using Fireflies and manage the recording settings accordingly (02:08)\n"
+      "participants": 8,
+      "keywords": "GrowthBook, A/B Testing, Bayesian Statistics, Conversion Rate, Omnichannel, Experiment Decision Framework",
+      "action_items": "\n**Ágata Marinho**\nCheck availability and share calendar slots for next stakeholder meeting including Sara Krush, Cesar, Ricardo, and Fatima (30:27)\nCoordinate with Syndico to obtain SKU impact data post soft launch and share updates with GrowthBook team to define A/B test start and end dates (13:16)\nArrange next business case discussion call including Sara Krush and other key executives to align on investment and pricing (30:00)\n\n**Logan Bates and Christian Liebenow**\nProvide documentation on alerting, automatic rollbacks, and experiment decision frameworks for risk mitigation (22:42)\n\n**GrowthBook Team**\nSend meeting deck and related materials post-call for MC Sonae team reference (12:25)\n"
     },
     {
       "id": "01KWSSGQ222NQYRPE8F3WWGNA0",
@@ -39,16 +28,28 @@
       "action_items": "\n**Christian Liebenow**\nConfirm and prepare for the upcoming MC Sonae meeting to ensure their attendance and avoid a no-show (03:50)\nMaintain engagement with Russ from Optro and schedule a tentative call after their LaunchDarkly meeting, targeting next week for further discussion (06:44)\nExplore the feasibility of building custom features for Optro to meet their specific needs and demonstrate significant cost savings (07:12)\n\n**Logan Bates**\nSupport follow-ups with Optro and help push for next week’s meeting, ensuring alignment with their schedule (07:04)\n"
     },
     {
-      "id": "01KVQSV1SHTE0TYEHMFCM07K3H",
+      "id": "01KXBT9ERY6NMBFT4KV3015N4J",
       "source": "fireflies",
       "title": "MC Sonae + GrowthBook",
-      "date": "2026-06-26",
-      "duration_minutes": 37,
-      "summary": "The team discussed the upcoming launch of an A/B test scheduled for July 21, aiming to assess the impact of new product and brand content on product detail pages (PDPs). A significant concern is balancing potential revenue drops from lower carousel placements against overall conversion rate improvements. User acceptance tests will commence immediately. Due to uncertainties with SKU coverage from Syndigo, a 1-2 day soft launch is proposed to gather necessary data. The meeting also covered dual GrowthBook projects for e-commerce and in-store setups, preferring a Bayesian testing method for its simplicity. Challenges around the high costs of GrowthBook were addressed, with a future call planned for alignment on the business case, led by senior stakeholders.",
+      "date": "2026-07-15",
+      "duration_minutes": 0,
+      "summary": "The meeting consisted primarily of informal discussions, with no focus on business performance metrics, growth outcomes, or strategic initiatives. Participants engaged in conversation about a recent sports match between France and Spain, lacking any insights from individuals like Ryan McGurk or Christian Liebenow regarding growth initiatives or company performance. Additionally, there were no updates on ongoing projects, product strategy, technical requirements, operational processes, or competitive positioning. Overall, no actionable items or requests for support were mentioned, making the session devoid of substantial business insights.",
       "organizer": "christian@growthbook.io",
-      "participants": 8,
-      "keywords": "GrowthBook, A/B Testing, Bayesian Statistics, Conversion Rate, Omnichannel, Experiment Decision Framework",
-      "action_items": "\n**Ágata Marinho**\nCheck availability and share calendar slots for next stakeholder meeting including Sara Krush, Cesar, Ricardo, and Fatima (30:27)\nCoordinate with Syndico to obtain SKU impact data post soft launch and share updates with GrowthBook team to define A/B test start and end dates (13:16)\nArrange next business case discussion call including Sara Krush and other key executives to align on investment and pricing (30:00)\n\n**Logan Bates and Christian Liebenow**\nProvide documentation on alerting, automatic rollbacks, and experiment decision frameworks for risk mitigation (22:42)\n\n**GrowthBook Team**\nSend meeting deck and related materials post-call for MC Sonae team reference (12:25)\n"
+      "participants": 4,
+      "keywords": "sports, France vs Spain, teamwork, Dallas, Fireflies, meeting recording",
+      "action_items": "\n**Christian Liebenow**\nDecide on whether to record future meetings using Fireflies and manage the recording settings accordingly (02:08)\n"
+    },
+    {
+      "id": "01KX3VYVF84YMZBZBARW8NW4HW",
+      "source": "fireflies",
+      "title": "MC Sonae + GrowthBook",
+      "date": "2026-07-16",
+      "duration_minutes": 24,
+      "summary": "The team is preparing for a July 21 launch that prioritizes technical stability and effective A/B testing to evaluate the impact of editorial content on product pages. To achieve success, they aim for flawless execution without production issues and gather actionable results from A/B tests, thereby guiding decisions based on their findings. Multiple A/B tests are scheduled before Black Friday, concentrating on significant developments while less critical tweaks are deprioritized. An emphasis on timely contract signing by July 31 was highlighted, with a focus on securing pricing and procurement approvals. The trial setup includes a 60-seat allocation for test creators, and the team is coordinating internally to evaluate the trial results despite holiday scheduling challenges. There is a strong sense of collaboration, with open communication channels established for future support.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, AB Testing, Wells, Launch Strategy, Contract Process, Pilot Evaluation",
+      "action_items": "\n**Christian Liebenow**\nSend the order form to Cesar following the call to initiate contract processing (03:42)\nProvide security documentation to Wells' security team and respond promptly to any questions during the contract review process (13:40)\nExtend the current 60-seat trial for the Wells team to allow continued evaluation of GrowthBook (14:41)\nCoordinate with Wells team to ensure necessary platform access and support during upcoming AB test launches (22:17)\nFollow up offline with Wells on scheduling the next internal meeting after pilot review to discuss GrowthBook adoption (20:29)\n\n**Fatima Ferreira**\nCoordinate with Sara Cruz and Wells internal team to plan internal review and feedback session after pilot tests (16:25)\nClarify with Ricardo Nev whether the in-store team requires a separate trial or can rely on Wells’ trial results for final decision-making (18:37)\nInform GrowthBook team promptly if any access or tool usage issues arise during the pilot or trial period (22:36)\n\n**Sara Cruz**\nLead internal coordination for pilot programs and assessment of GrowthBook platform suitability within Wells (17:04)\nCollaborate with Fatima to invite users and administrators to GrowthBook for access to reports and insights necessary for evaluation (16:12)\nOrganize a follow-up meeting after internal review of pilot results with all stakeholders including Ricardo to decide on GrowthBook adoption (19:23)\n"
     }
   ]
 }

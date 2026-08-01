@@ -1,0 +1,17 @@
+{
+  "company": "Jeff <> Lyndsie",
+  "slug": "jeff-lyndsie",
+  "last_etl_date": "2026-08-01T10:41:40.120173",
+  "calls": [
+    {
+      "id": "6a3d84ddf7c43f00187d702a",
+      "source": "apollo",
+      "title": "Jeff <> Lyndsie",
+      "date": "2026-06-25",
+      "duration_minutes": 40,
+      "summary": "[Summary failed] [Lyndsie - Test Berens]: To their. Their form because it's a external form. It's not one of our forms.\n[Jeff Ignacio]: Okay.\n[Lyndsie - Test Berens]: The Zapier connects, it fills out a form in HubSpo",
+      "host": "Lyndsie Berens",
+      "participants": 2
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Kim Li and",
+  "slug": "kim-li-and",
+  "last_etl_date": "2026-08-01T10:41:40.121070",
+  "calls": [
+    {
+      "id": "6a303e1a5d87e3001c5fea6e",
+      "source": "apollo",
+      "title": "Kim Li and Ashley Stirrup + Scott Keller",
+      "date": "2026-06-15",
+      "duration_minutes": 31,
+      "summary": "[Summary failed] [Ashley Stirrup]: Hello?\n[Scott Keller]: Good.\n[Ashley Stirrup]: Hi, Cam.\n[Kim Li]: Hey. Can you guys hear me? Yeah. Okay.\n[Ashley Stirrup]: Yep, all good. Nice to see you again.\n[Kim Li]: Nice to see",
+      "host": "Ashley Stirrup",
+      "participants": 4
+    }
+  ]
+}

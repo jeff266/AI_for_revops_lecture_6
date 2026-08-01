@@ -1,7 +1,18 @@
 {
-  "company": "Growthbook <> Coreflow",
+  "company": "GrowthBook <> Coreflow",
   "slug": "growthbook-coreflow",
+  "last_etl_date": "2026-08-01T10:41:40.124994",
   "calls": [
+    {
+      "id": "6a1a14919927cb0014765369",
+      "source": "apollo",
+      "title": "GrowthBook <> Coreflow - Intro ",
+      "date": "2026-05-29",
+      "duration_minutes": 4,
+      "summary": "[Summary failed] [Justin Phu]: Hey,\n[Daniel Wathne]: Justin. Hey,\n[Justin Phu]: Dan. How you doing? Good to meet you.\n[Daniel Wathne]: Yeah, good to meet you too. Where are you calling from?\n[Daniel Wathne]: I'm calli",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
     {
       "id": "01KSXTC2M3YF1KEJDKKHGTZH6K",
       "source": "fireflies",

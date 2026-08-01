@@ -1,0 +1,17 @@
+{
+  "company": "MAF<>Brillmark<>GrowthBook Discussion",
+  "slug": "maf-brillmark-growthbook-discussion",
+  "last_etl_date": "2026-08-01T10:41:40.145371",
+  "calls": [
+    {
+      "id": "69a5adc19051d10015175d4e",
+      "source": "apollo",
+      "title": "MAF<>Brillmark<>GrowthBook Discussion",
+      "date": "2026-03-02",
+      "duration_minutes": 30,
+      "summary": "[Summary failed] [Tom Kassis]: And I'm currently working for Carrefour. So the grocery shopping store that is really big in the UAE and we're developing a bit everywhere, continuing our growth in every country in the ",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

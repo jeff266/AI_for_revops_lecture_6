@@ -1,7 +1,18 @@
 {
   "company": "Publico + GrowthBook",
   "slug": "publico-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.121685",
   "calls": [
+    {
+      "id": "6a2831b3f753a80014ff1928",
+      "source": "apollo",
+      "title": "Publico + GrowthBook",
+      "date": "2026-06-09",
+      "duration_minutes": 23,
+      "summary": "[Summary failed] [Webflow Demo]: The right time.\n[Christian Liebenow]: Yeah, yeah, we can show the visual editor and then you know, Victor and team, if what you're seeing you think is interesting, then we can get into",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
     {
       "id": "01KTPEAD77PA8YJHTHBNEPVBRK",
       "source": "fireflies",

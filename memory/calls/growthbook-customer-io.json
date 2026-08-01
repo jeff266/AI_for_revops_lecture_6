@@ -1,0 +1,77 @@
+{
+  "company": "Growthbook <> Customer.io",
+  "slug": "growthbook-customer-io",
+  "last_etl_date": "2026-08-01T10:41:40.132266",
+  "calls": [
+    {
+      "id": "69811f6a3e759400107234c5",
+      "source": "apollo",
+      "title": "Growthbook <> Customer.io - Intro ",
+      "date": "2026-02-02",
+      "duration_minutes": 35,
+      "summary": "[Summary failed] [Daniel Wathne]: It. Hey Graham, how you doing? Good to see you. Yeah, all good. Excited for the call. We got a decent audience in from their side. I think it might just be three people. Maybe we have",
+      "host": "Daniel Wathne",
+      "participants": 6
+    },
+    {
+      "id": "69864bc4b7a3d2000d7a3dfc",
+      "source": "apollo",
+      "title": "Growthbook <> Customer.io - Demo ",
+      "date": "2026-02-06",
+      "duration_minutes": 45,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey, graham. How's it going?\n[Webflow Demo]: Hey, dan. Hello.\n[Daniel Wathne]: You got any fun plans for the weekend?\n[Webflow Demo]: My landlord's kind of screwing me a bit, so I mov",
+      "host": "Daniel Wathne",
+      "participants": 5
+    },
+    {
+      "id": "69a60bc83f84de00194a17bd",
+      "source": "apollo",
+      "title": "Growthbook <> Customer.io - Sync ",
+      "date": "2026-03-02",
+      "duration_minutes": 14,
+      "summary": "[Summary failed] [Pino Nguyen]: Hi, Dan.\n[Daniel Wathne]: How you doing?\n[Pino Nguyen]: Yeah, I'm good. How are you? Welcome back.\n[Daniel Wathne]: I'm doing great. Thanks so much.\n[Pino Nguyen]: How was your. Your ti",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "69b1b287415ec9000dd76f4d",
+      "source": "apollo",
+      "title": "Growthbook <> Customer.io - POC Sync ",
+      "date": "2026-03-11",
+      "duration_minutes": 50,
+      "summary": "[Summary failed] [Daniel Wathne]: Long time no see.\n[Bryce Fitzsimons]: Yeah, right.\n[Daniel Wathne]: Oh, man. We're in the eye of the storm these days. Getting busy.\n[Pino Nguyen]: I love it.\n[Bryce Fitzsimons]: Yeah",
+      "host": "Daniel Wathne",
+      "participants": 6
+    },
+    {
+      "id": "69dd46f4b3348300218db3c8",
+      "source": "apollo",
+      "title": "Growthbook <> Customer.io - POC Check In",
+      "date": "2026-04-13",
+      "duration_minutes": 41,
+      "summary": "[Summary failed] [Andreas Pappas]: Party.\n[Elliot Shaw]: Hey, Dan.\n[Daniel Wathne]: Oh yeah. What's going on, dude?\n[Logan Bates]: Hey.\n[Elliot Shaw]: Not much. How you been, sir?\n[Daniel Wathne]: I've been good. It's",
+      "host": "Daniel Wathne",
+      "participants": 4
+    },
+    {
+      "id": "69e00183d1513e00153a9f7c",
+      "source": "apollo",
+      "title": "Growthbook <> Customer.io - Snowflake Data Sync",
+      "date": "2026-04-15",
+      "duration_minutes": 21,
+      "summary": "[Summary failed] [Daniel Wathne]: Again. What's up, dude?\n[Logan Bates]: Hello,\n[Daniel Wathne]: Christina. How you doing?\n[Kristina Im]: Good, how are you?\n[Daniel Wathne]: I am good. It's nice to finally meet you.\n[",
+      "host": "Daniel Wathne",
+      "participants": 4
+    },
+    {
+      "id": "69e2aa0c018404002194a5fe",
+      "source": "apollo",
+      "title": "Growthbook <> Customer.io - Sync ",
+      "date": "2026-04-17",
+      "duration_minutes": 15,
+      "summary": "[Summary failed] [Logan Bates]: Hello. Reopening I had, huh? From your employment days care package.\n[Daniel Wathne]: Dude, my swag pack that I got.\n[Logan Bates]: That's gonna be worth some money someday.\n[Daniel Wat",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

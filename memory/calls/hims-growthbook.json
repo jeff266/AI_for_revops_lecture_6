@@ -1,7 +1,18 @@
 {
   "company": "Hims & GrowthBook",
   "slug": "hims-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.135683",
   "calls": [
+    {
+      "id": "69d54fb6486f3c0021177e15",
+      "source": "apollo",
+      "title": "Hims & GrowthBook - AI Capabilities",
+      "date": "2026-04-07",
+      "duration_minutes": 40,
+      "summary": "[Summary failed] [Ashley Stirrup]: Had a little bit about the call we had with Dropbox earlier. Yeah, we're doing a lot of these AI interviews. Not a lot, but some.\n[Eric Sokolov]: Jeremy. Hey, Eric.\n[Ashley Stirrup]:",
+      "host": "Cris Dizon",
+      "participants": 5
+    },
     {
       "id": "01KN7SKYB65P959BBZ8HT02BV4",
       "source": "fireflies",

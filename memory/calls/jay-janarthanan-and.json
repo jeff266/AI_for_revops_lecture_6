@@ -1,0 +1,17 @@
+{
+  "company": "Jay Janarthanan and",
+  "slug": "jay-janarthanan-and",
+  "last_etl_date": "2026-08-01T10:41:40.129136",
+  "calls": [
+    {
+      "id": "69f299f746d87a0021f82306",
+      "source": "apollo",
+      "title": "Jay Janarthanan and Dan Wathne",
+      "date": "2026-04-29",
+      "duration_minutes": 22,
+      "summary": "[Summary failed] [Daniel Wathne]: Glad we could reconnect. How's the, how's the morning starting so far?\n[Jay Jana]: Yeah, it's always busy but it's, it's foggy though so I got a lot done.\n[Daniel Wathne]: It's good t",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

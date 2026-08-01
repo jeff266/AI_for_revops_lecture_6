@@ -1,0 +1,17 @@
+{
+  "company": "Rakuten + GrowthBook",
+  "slug": "rakuten-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.145881",
+  "calls": [
+    {
+      "id": "699e3fac13b5c400193ff7c1",
+      "source": "apollo",
+      "title": "Rakuten + GrowthBook",
+      "date": "2026-02-25",
+      "duration_minutes": 17,
+      "summary": "[Summary failed] [Christian Liebenow]: Hello.\n[Nour Shreim]: How are you?\n[Christian Liebenow]: I'm very good, thanks. Are you?\n[Nour Shreim]: Yeah, doing well. Busy, busy day. But. But things are exciting here.\n[Chri",
+      "host": "Christian Liebenow",
+      "participants": 2
+    }
+  ]
+}

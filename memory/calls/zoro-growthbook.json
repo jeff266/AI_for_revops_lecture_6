@@ -1,19 +1,8 @@
 {
   "company": "Zoro + GrowthBook",
   "slug": "zoro-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.177705",
   "calls": [
-    {
-      "id": "01KWYESHB5PS4DNM0FBYKK915T",
-      "source": "fireflies",
-      "title": "Zoro + GrowthBook",
-      "date": "2026-07-14",
-      "duration_minutes": 32,
-      "summary": "Growthbook presented its vision for integrating experimentation, product analytics, and session replay into a unified platform aimed at providing holistic insights and streamlined workflows. Key features discussed included advanced capabilities for feature flagging and A/B testing, the introduction of session replay in beta, and an AI data analyst that enhances user interactions with data through natural language queries. Additionally, enhancements in funnel analytics and proactive AI insights were highlighted, aiming to simplify anomaly detection and reduce manual monitoring. The session replay tool, designed to correlate user behavior with experiment outcomes, was also discussed, alongside robust developer tools like a native browser extension and APIs for automating experiment workflows. Growthbook's focus on documenting experiment learnings and its differentiation through AI capabilities were emphasized to support continuous improvement.",
-      "organizer": "christian@growthbook.io",
-      "participants": 8,
-      "keywords": "Growthbook, experimentation, product analytics, session replay, AI insights, warehouse-native",
-      "action_items": "\n**Christian Liebenow**\nFollow up with Jay Andersonville on Growthbook’s pricing model and costs for session replay and analytics features (16:52)\nSend Jay Andersonville an email summarizing the meeting and next steps, including links to resources and video materials (31:42)\n\n**Growthbook team**\nSend Jay Andersonville videos demonstrating the AI-first no-code visual editor for experiment creation (30:55)\n\n**Alexis Roth and Jay Andersonville**\nReview shared materials and coordinate next communications primarily via email to discuss further engagement (31:30)\n"
-    },
     {
       "id": "01KVXF4DB3N44ZB5WM8AJ453WB",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 11,
       "keywords": "feature flagging, experimentation platform, product analytics, AI assistant, data warehouse, LaunchDarkly replacement",
       "action_items": "\n**Christian Liebenow**\nSend available times to Jay Shell Larson for follow-up CEO roadmap meeting after December 4 (01:04:08)\n\n**Jay Shell Larson**\nCoordinate with team via email to schedule next GrowthBook CEO call (01:01:58)\n\n**Logan Bates**\nProvide additional information on GitHub Actions setup for code reference periodic updates (36:10)\n\n**GrowthBook Team**\nPrepare for enabling upcoming product analytics features mid-July such as session replay, funnels, and user journeys for Zoro’s testing (19:32)\n\n**Zoro Team (Alexis Roth, Jay Shell Larson)**\nPlan Proof of Concept evaluation for GrowthBook in August-September timeframe, aiming for tool selection by late September or early October (01:02:47)\n\n**Christian Liebenow / GrowthBook**\nMaintain email communication with Zoro for any interim questions and support POC preparations (01:04:08)\n"
+    },
+    {
+      "id": "01KWYESHB5PS4DNM0FBYKK915T",
+      "source": "fireflies",
+      "title": "Zoro + GrowthBook",
+      "date": "2026-07-14",
+      "duration_minutes": 32,
+      "summary": "Growthbook presented its vision for integrating experimentation, product analytics, and session replay into a unified platform aimed at providing holistic insights and streamlined workflows. Key features discussed included advanced capabilities for feature flagging and A/B testing, the introduction of session replay in beta, and an AI data analyst that enhances user interactions with data through natural language queries. Additionally, enhancements in funnel analytics and proactive AI insights were highlighted, aiming to simplify anomaly detection and reduce manual monitoring. The session replay tool, designed to correlate user behavior with experiment outcomes, was also discussed, alongside robust developer tools like a native browser extension and APIs for automating experiment workflows. Growthbook's focus on documenting experiment learnings and its differentiation through AI capabilities were emphasized to support continuous improvement.",
+      "organizer": "christian@growthbook.io",
+      "participants": 8,
+      "keywords": "Growthbook, experimentation, product analytics, session replay, AI insights, warehouse-native",
+      "action_items": "\n**Christian Liebenow**\nFollow up with Jay Andersonville on Growthbook’s pricing model and costs for session replay and analytics features (16:52)\nSend Jay Andersonville an email summarizing the meeting and next steps, including links to resources and video materials (31:42)\n\n**Growthbook team**\nSend Jay Andersonville videos demonstrating the AI-first no-code visual editor for experiment creation (30:55)\n\n**Alexis Roth and Jay Andersonville**\nReview shared materials and coordinate next communications primarily via email to discuss further engagement (31:30)\n"
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "company": "Anna Barnett and",
+  "slug": "anna-barnett-and",
+  "last_etl_date": "2026-08-01T10:41:40.148095",
+  "calls": [
+    {
+      "id": "698b62ab1c9ecd0015500a5b",
+      "source": "apollo",
+      "title": "Anna Barnett and Jake Heier",
+      "date": "2026-02-10",
+      "duration_minutes": 24,
+      "summary": "[Summary failed] [Jake Heier]: Hello. How are you?\n[Yael Farhy-Pöllmann]: I'm good. How are you doing?\n[Jake Heier]: I'm doing well. Thanks for joining.\n[Yael Farhy-Pöllmann]: What time is it over there?\n[Jake Heier]:",
+      "host": "Jake Heier",
+      "participants": 4
+    }
+  ]
+}

@@ -1,19 +1,8 @@
 {
   "company": "IKEA RFP",
   "slug": "ikea-rfp",
+  "last_etl_date": "2026-08-01T10:41:40.227886",
   "calls": [
-    {
-      "id": "01KQ5VW2E2E0G73DGZNNFJ17AJ",
-      "source": "fireflies",
-      "title": "IKEA RFP",
-      "date": "2026-04-28",
-      "duration_minutes": 78,
-      "summary": "The team aimed to finalize clarifying questions for IKEA's RFP, with 98% of requirements completed. Urgent clarifications related to hosting preferences, analytics needs, and functionality weighing are prioritized for a Thursday submission. Key discussions highlighted the impact of self-hosted vs. cloud hosting on information security responses and inquiries into IKEA's current analytics tools. Advanced metrics support, compliance features, and Growth Book’s competitive positioning against rivals like Statsig were also addressed. Finally, timelines for decision-making and integration were discussed, emphasizing the need for prompt submissions to maintain the overall schedule.",
-      "organizer": "christian@growthbook.io",
-      "participants": 5,
-      "keywords": "IKEA RFP, warehouse-native analytics, data privacy, infosec questionnaire, behavioral metrics, legal compliance",
-      "action_items": "\n**Christian Liebenow**\nSend the clarifying questions to IKEA, targeting submission by Thursday considering time zone differences (05:10)\nWork with marketing to polish and add additional user story narratives for the IKEA RFP (01:13:00)\nSend an email including governing law questions to IKEA and include the finalized clarifications (01:15:40)\nCollaborate with Jeremy and Graham to review and complete RFP answers, especially around infosec and requirements details (20:50)\n\n**Jeremy Dorn**\nAssist Christian reviewing and completing the infosec questionnaire, focusing on warehouse-native privacy and security clarifications (16:00)\nProvide detailed input on what is possible vs. planned functionality on behavioral and advanced metrics in the RFP (29:30)\nProvide feedback and participate in clarifying legal and GDPR-related questions for the RFP (55:00)\n\n**Graham McNicoll**\nReview and help fill out RFP requirements and clarifications, especially advanced analytics and accessibility standards (20:40)\nAssist in drafting clarifying questions about live site analysis and behavioral metrics (21:30)\nShare recent accessibility-related PR work with Jeremy for relevance to RFP (01:13:05)\nSupport Christian in legal jurisdiction follow-up and competitor analysis refinements (01:08:38)\n"
-    },
     {
       "id": "01KQ06KZ37APF55C2R971TC667",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 2,
       "keywords": "IKEA RFP, warehouse-native experimentation, BigQuery, behavioral metrics, rage clicking, company culture",
       "action_items": "\n**Christian Liebenow**\nShare the RFP requirements document with Graham and comment on responses for sections including business model and company culture (13:43)\nClarify ambiguous RFP requirements with IKEA where needed to ensure accurate and complete responses (19:25)\nProvide access and track progress on the RFP response spreadsheet alongside Graham and Jeremy to coordinate efforts (20:56)\nReview and update the RFP proposal draft shared by Graham, then comment for refinement and finalization (28:04)\n\n**Graham McNicoll**\nReview RFP requirements and collaboratively draft responses for sections on company culture, release strategy, and unique vendor strengths while managing time efficiently (13:43)\nShare the older RFP proposal PDF with Christian for reference and assist in updating and formatting the document, potentially using AI tools (27:00)\nSupport scripting or guidance for IKEA in behavioral metric tracking (rage clicking) implementation using GA4 to address knowledge gaps (23:45)\n\n**Unassigned**\nEngage development resources such as Jeremy to assist on detailed behavioral analytics and complete RFP responses, leveraging the available budget (25:03)\n"
+    },
+    {
+      "id": "01KQ5VW2E2E0G73DGZNNFJ17AJ",
+      "source": "fireflies",
+      "title": "IKEA RFP",
+      "date": "2026-04-28",
+      "duration_minutes": 78,
+      "summary": "The team aimed to finalize clarifying questions for IKEA's RFP, with 98% of requirements completed. Urgent clarifications related to hosting preferences, analytics needs, and functionality weighing are prioritized for a Thursday submission. Key discussions highlighted the impact of self-hosted vs. cloud hosting on information security responses and inquiries into IKEA's current analytics tools. Advanced metrics support, compliance features, and Growth Book’s competitive positioning against rivals like Statsig were also addressed. Finally, timelines for decision-making and integration were discussed, emphasizing the need for prompt submissions to maintain the overall schedule.",
+      "organizer": "christian@growthbook.io",
+      "participants": 5,
+      "keywords": "IKEA RFP, warehouse-native analytics, data privacy, infosec questionnaire, behavioral metrics, legal compliance",
+      "action_items": "\n**Christian Liebenow**\nSend the clarifying questions to IKEA, targeting submission by Thursday considering time zone differences (05:10)\nWork with marketing to polish and add additional user story narratives for the IKEA RFP (01:13:00)\nSend an email including governing law questions to IKEA and include the finalized clarifications (01:15:40)\nCollaborate with Jeremy and Graham to review and complete RFP answers, especially around infosec and requirements details (20:50)\n\n**Jeremy Dorn**\nAssist Christian reviewing and completing the infosec questionnaire, focusing on warehouse-native privacy and security clarifications (16:00)\nProvide detailed input on what is possible vs. planned functionality on behavioral and advanced metrics in the RFP (29:30)\nProvide feedback and participate in clarifying legal and GDPR-related questions for the RFP (55:00)\n\n**Graham McNicoll**\nReview and help fill out RFP requirements and clarifications, especially advanced analytics and accessibility standards (20:40)\nAssist in drafting clarifying questions about live site analysis and behavioral metrics (21:30)\nShare recent accessibility-related PR work with Jeremy for relevance to RFP (01:13:05)\nSupport Christian in legal jurisdiction follow-up and competitor analysis refinements (01:08:38)\n"
     }
   ]
 }

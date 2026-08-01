@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> Stage",
+  "slug": "growthbook-stage",
+  "last_etl_date": "2026-08-01T10:41:40.143747",
+  "calls": [
+    {
+      "id": "69b8cde2716c0a001dbe5ea8",
+      "source": "apollo",
+      "title": "Growthbook <> Stage - Pricing Discussion",
+      "date": "2026-03-17",
+      "duration_minutes": 13,
+      "summary": "[Summary failed] [Daniel Wathne]: Hey, Ashish, how you doing? Can you hear me? Are you there?\n[Ashish Pandey]: Yeah.\n[Daniel Wathne]: Hey.\n[Ashish Pandey]: Hi, Dan.\n[Daniel Wathne]: Okay. Hey, how you doing?\n[Ashish P",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

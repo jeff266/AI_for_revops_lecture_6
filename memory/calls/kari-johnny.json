@@ -1,19 +1,8 @@
 {
   "company": "Kari / Johnny",
   "slug": "kari-johnny",
+  "last_etl_date": "2026-08-01T10:41:40.235678",
   "calls": [
-    {
-      "id": "01KPP48Y71Q46Q3YN1S789AP88",
-      "source": "fireflies",
-      "title": "Kari / Johnny - Claude Setup",
-      "date": "2026-04-20",
-      "duration_minutes": 81,
-      "summary": "The team discussed the setup of the Claude AI desktop app, emphasizing the importance of creating project-specific folders to enhance task focus. They explored integrating GitHub repositories for efficient codebase analysis and highlighted the need for clear file permissions to streamline operations. A detailed audit of helper text components across various files revealed inconsistencies, prompting efforts towards standardization. The attendees discussed upcoming UI consistency goals to simplify helper text usage and improve the overall user experience. Workflow enhancements were identified to improve interactions with Claude and refine processes for exporting and reviewing data.",
-      "organizer": "johnny@growthbook.io",
-      "participants": 1,
-      "keywords": "Claude AI, Helper Text, Design System, GitHub Repository, UI Audit, CSV Export",
-      "action_items": "\n**Kari Kay**\nProvide Johnny with the GitHub repository link and guidance on cloning it locally to enable local codebase access (07:51)\nClarify with Guy the current state and any changes to the approval flow process to ensure alignment on feature workflows (01:00:00)\nReview and analyze Johnny’s shared draft wireframes for the one-click share experience and provide feedback to improve the design (54:21)\nTake screenshots of modals identified by Claude during the helper text audit to support before-and-after UI comparisons (01:12:30)\nCollect and organize definitions and style guidelines for helper text, descriptions, and callouts to establish a reference for UI consistency (51:40)\nLead the categorization efforts using Claude’s results for helper text and descriptions to guide UI update planning and prioritization (48:50)\nCoordinate with Jennifer to obtain enhanced Claude tool access and permissions necessary for deeper UI text analysis (58:35)\n\n**Johnny Martinez**\nCreate appropriate local folders for organizing Claude projects, including folders for the Design System and the cloned GitHub repository, to maintain project structure (04:05)\nClone the Growthbook GitHub repository locally and resolve any permission or terminal issues with Kari’s guidance to enable codebase querying (09:49)\nUse Claude to query the codebase for helper text component instances, classify them, and export the results as CSV files for audit and analysis (16:45)\nProvide Kari with CSV exports and prompt files via Slack for review and further processing to support UI text auditing and updates (01:05:24)\nRun analysis on callouts in the product and compare their usage to helper text as part of a comprehensive UI audit (01:19:38)\nSave and share updated CSV files tracking all UI text instances, including JSON input fields and date pickers, to maintain an up-to-date audit record (01:09:15)\n"
-    },
     {
       "id": "01KKHPR0455VKCCXGS22YDE3HD",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 1,
       "keywords": "Pagination, Design System, Radix Buttons, Component Styling, Figma, Engineering Handoff",
       "action_items": "\n**Kari Kay**\nFinalize and publish updated pagination components in Figma with comprehensive notes on spacing, alignment, colors, and states (00:56)\nOrganize and clean up design system files by moving outdated pagination notes to archival folders and removing redundant components (00:27)\nInclude detailed component construction info and styling differences in Figma notes for engineering reference (01:04)\nFacilitate continued review of next design system components (breadcrumbs) (01:08)\n\n**Johnny Martinez**\nCreate detailed screenshots and add clear instructions for engineers regarding pagination size, alignment, and component swapping on all relevant pages (homepage, features, experiments, bandits) (00:03)\nRebuild pagination components from scratch in Figma using Radix buttons and apply approved styles, color states, and spacing rules (00:31)\nImplement naming conventions for pagination components clearly differentiating previous/next buttons and page numbers with states (00:50)\nContinue detailed review and updates on design system tasks as scheduled, ensuring notes and documentation are complete for engineers (01:08)\n"
+    },
+    {
+      "id": "01KPP48Y71Q46Q3YN1S789AP88",
+      "source": "fireflies",
+      "title": "Kari / Johnny - Claude Setup",
+      "date": "2026-04-20",
+      "duration_minutes": 81,
+      "summary": "The team discussed the setup of the Claude AI desktop app, emphasizing the importance of creating project-specific folders to enhance task focus. They explored integrating GitHub repositories for efficient codebase analysis and highlighted the need for clear file permissions to streamline operations. A detailed audit of helper text components across various files revealed inconsistencies, prompting efforts towards standardization. The attendees discussed upcoming UI consistency goals to simplify helper text usage and improve the overall user experience. Workflow enhancements were identified to improve interactions with Claude and refine processes for exporting and reviewing data.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 1,
+      "keywords": "Claude AI, Helper Text, Design System, GitHub Repository, UI Audit, CSV Export",
+      "action_items": "\n**Kari Kay**\nProvide Johnny with the GitHub repository link and guidance on cloning it locally to enable local codebase access (07:51)\nClarify with Guy the current state and any changes to the approval flow process to ensure alignment on feature workflows (01:00:00)\nReview and analyze Johnny’s shared draft wireframes for the one-click share experience and provide feedback to improve the design (54:21)\nTake screenshots of modals identified by Claude during the helper text audit to support before-and-after UI comparisons (01:12:30)\nCollect and organize definitions and style guidelines for helper text, descriptions, and callouts to establish a reference for UI consistency (51:40)\nLead the categorization efforts using Claude’s results for helper text and descriptions to guide UI update planning and prioritization (48:50)\nCoordinate with Jennifer to obtain enhanced Claude tool access and permissions necessary for deeper UI text analysis (58:35)\n\n**Johnny Martinez**\nCreate appropriate local folders for organizing Claude projects, including folders for the Design System and the cloned GitHub repository, to maintain project structure (04:05)\nClone the Growthbook GitHub repository locally and resolve any permission or terminal issues with Kari’s guidance to enable codebase querying (09:49)\nUse Claude to query the codebase for helper text component instances, classify them, and export the results as CSV files for audit and analysis (16:45)\nProvide Kari with CSV exports and prompt files via Slack for review and further processing to support UI text auditing and updates (01:05:24)\nRun analysis on callouts in the product and compare their usage to helper text as part of a comprehensive UI audit (01:19:38)\nSave and share updated CSV files tracking all UI text instances, including JSON input fields and date pickers, to maintain an up-to-date audit record (01:09:15)\n"
     }
   ]
 }

@@ -1,7 +1,18 @@
 {
   "company": "Nick Presentation",
   "slug": "nick-presentation",
+  "last_etl_date": "2026-08-01T10:41:40.145576",
   "calls": [
+    {
+      "id": "69a202b81ca8c1000ddc5d79",
+      "source": "apollo",
+      "title": "Nick Presentation",
+      "date": "2026-02-27",
+      "duration_minutes": 45,
+      "summary": "[Summary failed] [Nick Fitzsimmons]: How y' all doing?\n[Ashley Stirrup]: All right, we got the. The show. Let's see. So Nick, I think you've met Ryan and Graham but not Jeremy.\n[Nick Fitzsimmons]: Yeah, that's true. I",
+      "host": "Ashley Stirrup",
+      "participants": 5
+    },
     {
       "id": "01KJBC0WG3QDCK07EK6ECWZBD4",
       "source": "fireflies",

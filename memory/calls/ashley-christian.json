@@ -1,19 +1,8 @@
 {
   "company": "Ashley / Christian",
   "slug": "ashley-christian",
+  "last_etl_date": "2026-08-01T10:41:40.191472",
   "calls": [
-    {
-      "id": "01KW0B2NT2FC2BWCQ86JPZ56EP",
-      "source": "fireflies",
-      "title": "Ashley / Christian",
-      "date": "2026-06-25",
-      "duration_minutes": 18,
-      "summary": "The team discussed strategies to enhance demo engagement by prioritizing high-potential accounts like Ancestry, DoorDash, and JPMorgan Chase while addressing challenges such as ghosting and stalled demos. They emphasized the importance of persistent follow-up and understanding buyer personas to improve demo acceptance. Product positioning centered on AI-driven experimentation, highlighting the platform's developer-friendly features and technical leadership. The upcoming conference in San Francisco was identified as an opportunity to raise Growth Book’s profile, although past experience indicated low matches in target audience. Team coordination around clear account ownership and proactive outreach was reinforced to ensure effective lead management.",
-      "organizer": "christian@growthbook.io",
-      "participants": 2,
-      "keywords": "Growth Book, demos, follow-up, AI features, experimentation platform, prospect outreach",
-      "action_items": "\n**Christian Liebenow**\nFollow up with leads including Pipeform, Ancestry, Chewy, DoorDash, RingCentral, Squarespace, and JP Morgan Chase to schedule demos or advance discussions (14:46)\nFind and reach out to Lena’s boss, Michael Wexler, SVP of Product, for a higher-level demo conversation (07:43)\nFollow up with Kevin Yang at JP Morgan Chase after his Spain trip to encourage demo participation using email or LinkedIn (09:40)\nCoordinate follow-ups on assigned leads and inform Ashley if overwhelmed to reassign tasks (15:11)\n\n**Ashley Stirrup**\nContinue managing and following up with specific leads, especially those where prior communications were ghosted or uncertain, like Alex Bass and others noted in discussion (01:48)\nMaintain contact with Dan’s assigned leads, respecting handoffs and assignments (04:10)\nSupport demo and outreach messaging emphasizing AI capabilities and developer-friendly enhancements (10:23)\n"
-    },
     {
       "id": "01KH52FA5MJSCBBW7FNJRHFD6J",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 2,
       "keywords": "Brazilian fintech, swag distribution, enterprise sales, competitive differentiation, experimentation workshop, Growthbook architecture",
       "action_items": "\n**Christian Liebenow**\nPropose discounted/subsidized attendance for the contact to Experimentation Island and check interest (04:14)\nConfirm with contact whether to send swag (stickers and/or T-shirts) and ask for attendees’ size preferences if T-shirts are chosen (09:50)\nFollow up with contact (Newton) from Stone with the Experimentation Island offer, inquire about shipping address in Sao Paulo, and communicate swag and coupon plans non-committally (34:30)\n\n**Ashley Stirrup**\nAssess swag options and pricing, evaluate and select T-shirt designs (prefer “Trust Me I’ve Tested It”) (05:00)\nCoordinate ordering of 100 stickers and possibly 10-20 T-shirts; manage logistics for shipping to Sao Paulo (34:20)\nSupport updating marketing collateral and competitive comparison pages to better highlight Growthbook’s enterprise scale and partnerships, especially against EPO and Statsig (16:40)\nProvide architectural slide and other sales materials to assist sales demos and clarify Growthbook’s integration for customers (20:50)\n"
+    },
+    {
+      "id": "01KW0B2NT2FC2BWCQ86JPZ56EP",
+      "source": "fireflies",
+      "title": "Ashley / Christian",
+      "date": "2026-06-25",
+      "duration_minutes": 18,
+      "summary": "The team discussed strategies to enhance demo engagement by prioritizing high-potential accounts like Ancestry, DoorDash, and JPMorgan Chase while addressing challenges such as ghosting and stalled demos. They emphasized the importance of persistent follow-up and understanding buyer personas to improve demo acceptance. Product positioning centered on AI-driven experimentation, highlighting the platform's developer-friendly features and technical leadership. The upcoming conference in San Francisco was identified as an opportunity to raise Growth Book’s profile, although past experience indicated low matches in target audience. Team coordination around clear account ownership and proactive outreach was reinforced to ensure effective lead management.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, demos, follow-up, AI features, experimentation platform, prospect outreach",
+      "action_items": "\n**Christian Liebenow**\nFollow up with leads including Pipeform, Ancestry, Chewy, DoorDash, RingCentral, Squarespace, and JP Morgan Chase to schedule demos or advance discussions (14:46)\nFind and reach out to Lena’s boss, Michael Wexler, SVP of Product, for a higher-level demo conversation (07:43)\nFollow up with Kevin Yang at JP Morgan Chase after his Spain trip to encourage demo participation using email or LinkedIn (09:40)\nCoordinate follow-ups on assigned leads and inform Ashley if overwhelmed to reassign tasks (15:11)\n\n**Ashley Stirrup**\nContinue managing and following up with specific leads, especially those where prior communications were ghosted or uncertain, like Alex Bass and others noted in discussion (01:48)\nMaintain contact with Dan’s assigned leads, respecting handoffs and assignments (04:10)\nSupport demo and outreach messaging emphasizing AI capabilities and developer-friendly enhancements (10:23)\n"
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook and MediaHub",
+  "slug": "growthbook-and-mediahub",
+  "last_etl_date": "2026-08-01T10:41:40.128656",
+  "calls": [
+    {
+      "id": "69fa15131b68620021cdabf7",
+      "source": "apollo",
+      "title": "GrowthBook and MediaHub",
+      "date": "2026-05-05",
+      "duration_minutes": 34,
+      "summary": "[Summary failed] [Jake Stangl]: Hey, Dan.\n[Daniel Wathne]: Good morning.\n[Jake Stangl]: Morning. How are you? I'm doing good, doing good. It's an early one for you, right? 8:30?\n[Daniel Wathne]: Yeah, that's not that ",
+      "host": "Jake Stangl",
+      "participants": 4
+    }
+  ]
+}

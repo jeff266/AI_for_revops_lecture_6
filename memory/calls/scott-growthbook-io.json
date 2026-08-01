@@ -1,19 +1,8 @@
 {
   "company": "scott@growthbook.io",
   "slug": "scott-growthbook-io",
+  "last_etl_date": "2026-08-01T10:41:40.214896",
   "calls": [
-    {
-      "id": "01KS839S5B79RWQYXQ6FCA7P32",
-      "source": "fireflies",
-      "title": "scott@growthbook.io - Fri, 22 May 2026 11:01:44 EDT - Untitled",
-      "date": "2026-05-22",
-      "duration_minutes": 31,
-      "summary": "Enrique Hoyos is leading initiatives to automate AI-driven experimentation and feature flag management to reduce manual effort and accelerate testing. The discussion highlighted the automation of data analysis for conversion improvement, utilizing Growth Book and Snowflake APIs for accurate experiment tracking, and addressing complexities arising from managing numerous feature flags. Automation challenges were noted, particularly concerning higher-risk experiments that require manual approval. Both speakers shared insights on the future vision of AI in streamlining processes while ensuring human oversight, and the need for user feedback to enhance product features and workflows. Techniques for better audience segmentation and managing experiment overlaps were also discussed.",
-      "organizer": "scott@growthbook.io",
-      "participants": 1,
-      "keywords": "Growth Book, AI automation, feature flags, experiment targeting, data warehouse, Cursor",
-      "action_items": "\n**Scott Bailey**\nFollow up with Enrique on prerequisite targeting features in Growth Book to clarify and potentially improve bucketing timing and targeting precision (24:19)\nExplore ways to simplify user segmentation and targeting flows in Growth Book possibly via AI-enabled agents to address Enrique’s pain points (28:05)\nGather feedback on preferred modes of API interaction (NCP server vs CLI plus skills) for Growth Book automation enhancements (10:30)\n\n**Enrique Hoyos**\nContinue developing agents/skills to automate Growth Book experiment analysis, ideation, and PR creation workflows with human review steps (05:33)\nInvestigate Growth Book data discrepancies particularly around revenue per user metrics and time zone handling to improve data accuracy (07:38)\nOrganize and manage feature flags better to handle the increasing volume and cross-team usage to improve experiment control (19:28)\nFurther refine experiment targeting logic and incorporate prerequisite/exclusion criteria once features are confirmed or improved (25:30)\n"
-    },
     {
       "id": "01KMJR9M89R96DZPFGYZY1HGGD",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 1,
       "keywords": "Experimentation team structure, governance, self-service enablement, CMS integration, product vs. marketing experiments, ICP targeting, tooling teams, maturity model",
       "action_items": "\n**Cris Dizon**\nDevelop and share a living document to track and document customers’ experimentation team structures for enablement and future reference (23:11)\nReview and provide feedback on ICP quantitative and qualitative documentation once finalized (28:51)\nUse updated ICP insights to aid in identifying high-potential accounts during customer conversations (28:51)\n\n**Scott Bailey**\nLocate and share the quantitative and qualitative ICP scoring documentation with Cris Dizon for review and feedback (28:14)\n"
+    },
+    {
+      "id": "01KS839S5B79RWQYXQ6FCA7P32",
+      "source": "fireflies",
+      "title": "scott@growthbook.io - Fri, 22 May 2026 11:01:44 EDT - Untitled",
+      "date": "2026-05-22",
+      "duration_minutes": 31,
+      "summary": "Enrique Hoyos is leading initiatives to automate AI-driven experimentation and feature flag management to reduce manual effort and accelerate testing. The discussion highlighted the automation of data analysis for conversion improvement, utilizing Growth Book and Snowflake APIs for accurate experiment tracking, and addressing complexities arising from managing numerous feature flags. Automation challenges were noted, particularly concerning higher-risk experiments that require manual approval. Both speakers shared insights on the future vision of AI in streamlining processes while ensuring human oversight, and the need for user feedback to enhance product features and workflows. Techniques for better audience segmentation and managing experiment overlaps were also discussed.",
+      "organizer": "scott@growthbook.io",
+      "participants": 1,
+      "keywords": "Growth Book, AI automation, feature flags, experiment targeting, data warehouse, Cursor",
+      "action_items": "\n**Scott Bailey**\nFollow up with Enrique on prerequisite targeting features in Growth Book to clarify and potentially improve bucketing timing and targeting precision (24:19)\nExplore ways to simplify user segmentation and targeting flows in Growth Book possibly via AI-enabled agents to address Enrique’s pain points (28:05)\nGather feedback on preferred modes of API interaction (NCP server vs CLI plus skills) for Growth Book automation enhancements (10:30)\n\n**Enrique Hoyos**\nContinue developing agents/skills to automate Growth Book experiment analysis, ideation, and PR creation workflows with human review steps (05:33)\nInvestigate Growth Book data discrepancies particularly around revenue per user metrics and time zone handling to improve data accuracy (07:38)\nOrganize and manage feature flags better to handle the increasing volume and cross-team usage to improve experiment control (19:28)\nFurther refine experiment targeting logic and incorporate prerequisite/exclusion criteria once features are confirmed or improved (25:30)\n"
     }
   ]
 }

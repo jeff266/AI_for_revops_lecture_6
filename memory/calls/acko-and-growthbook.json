@@ -1,0 +1,17 @@
+{
+  "company": "Acko and GrowthBook",
+  "slug": "acko-and-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.144523",
+  "calls": [
+    {
+      "id": "69aa513382635b001d2078cd",
+      "source": "apollo",
+      "title": "Acko and GrowthBook",
+      "date": "2026-03-06",
+      "duration_minutes": 30,
+      "summary": "[Summary failed] [Logan Bates]: Hey Jim.\n[Jake Heier]: Hey, Jake. How's it going? Sorry, I had to muted. Oh, good. I'm doing well. How are you doing? Good, Doing good. I know it's late, so don't feel like you have to ",
+      "host": "Jake Stangl",
+      "participants": 6
+    }
+  ]
+}

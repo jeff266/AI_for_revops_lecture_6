@@ -1,7 +1,18 @@
 {
   "company": "Motorway + GrowthBook",
   "slug": "motorway-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.145226",
   "calls": [
+    {
+      "id": "69a5bfb90d195a000dfd365c",
+      "source": "apollo",
+      "title": "Motorway + GrowthBook",
+      "date": "2026-03-02",
+      "duration_minutes": 48,
+      "summary": "[Summary failed] [Christian Liebenow]: How are you? Good, thank you. All as well. Sounds like there's been some sunshine in the, in the UK lately. Which, which hopefully you. You had a nice weekend. Nice, sunny, warme",
+      "host": "Christian Liebenow",
+      "participants": 6
+    },
     {
       "id": "01KJD9FHA52E8QBWK5APZG3WTM",
       "source": "fireflies",

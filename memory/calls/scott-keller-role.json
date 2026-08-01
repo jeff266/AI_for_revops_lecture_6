@@ -1,0 +1,17 @@
+{
+  "company": "Scott Keller Role",
+  "slug": "scott-keller-role",
+  "last_etl_date": "2026-08-01T10:41:40.146967",
+  "calls": [
+    {
+      "id": "698fa2eceaebec00192824f4",
+      "source": "apollo",
+      "title": "Scott Keller Role Play Exercise",
+      "date": "2026-02-13",
+      "duration_minutes": 76,
+      "summary": "[Summary failed] [Scott Keller]: Hey, scott. Hey, Graham.\n[Ryan McGurk]: How you doing?\n[Scott Keller]: Doing well. How are you?\n[Webflow Demo]: Yeah, like, we got lots of note takers here.\n[Ryan McGurk]: Couple. I'll",
+      "host": "",
+      "participants": 4
+    }
+  ]
+}

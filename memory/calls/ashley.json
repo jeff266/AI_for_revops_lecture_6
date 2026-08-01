@@ -1,19 +1,8 @@
 {
   "company": "Ashley",
   "slug": "ashley",
+  "last_etl_date": "2026-08-01T10:41:40.202956",
   "calls": [
-    {
-      "id": "01KT57MJEWBJGKRE4ACWBBG5Z0",
-      "source": "fireflies",
-      "title": "Ashley - PMM sync",
-      "date": "2026-06-08",
-      "duration_minutes": 23,
-      "summary": "The team discussed the imminent rollout of the Skills library and Visual Editor, emphasizing backend updates and community engagement. Graham is responsible for backend changes, while Elyse will confirm timing and logistics. Polished marketing materials, including high-quality videos and community demos, were prioritized to increase user engagement and clarity. The Growth Book 5.0 pricing rollout is tied to EU data center availability, necessitating clear messaging regarding new usage-based pricing. An early access program for the Visual Editor was proposed to gather user feedback and excitement. The need for professional video production was recognized, and ongoing documentation updates were deemed essential for consistent messaging.",
-      "organizer": "elyse@growthbook.io",
-      "participants": 3,
-      "keywords": "Visual Editor, Skills Library, Pricing Rollout, Early Access, Video Production, Managed Warehouse",
-      "action_items": "\n**Ashley Stirrup**\nKick off the process to engage a professional video producer for high-quality 2-minute explainer videos on AI capabilities and product features (08:32)\nOrganize a HubSpot registration form and coordinate with Graham to determine logistics for enabling early access to the visual editor (09:08)\nSpend time organizing thoughts on pricing rollout including grandfathering, messaging, and website updates (13:32)\nConduct full messaging review and map the signup experience focusing on managed warehouse and event forwarder options (18:30)\n\n**Elyse Fox**\nInclude Ashley in communication with Graham regarding enabling visual editor features and early access mechanics (09:38)\nShare recorded feature flag approvals video and scripting for other feature videos; proceed with video production if approved (10:31)\nPropose YouTube playlist organization strategy for experimentation and feature flagging videos to manage channel clutter (11:12)\n\n**Scott Bailey**\nSchedule and confirm attendance for community call to finalize skills project launch timing (00:12)\nPrepare blog posts, social posts, Slack broadcasts, and docs updates for skills and visual editor feature rollouts post community call (00:12)\nAssist Ashley in coordinating video production and provide content for AI native features' videos (08:32)\nReview Fireflies meeting recording about pricing and collaborate on marketing materials and messaging updates (13:49)\n"
-    },
     {
       "id": "01KMGSHPP2J92PX5J4A4F6S19V",
       "source": "fireflies",
@@ -25,6 +14,18 @@
       "participants": 3,
       "keywords": "AI experimentation, competitive pricing, onboarding improvements, product marketing documentation, 4.4 product launch, content generation AI",
       "action_items": "\n**Elyse Fox**\nComplete blog summarizing the Ronnie Kohavi webinar (12:00)\nDevelop competitive pricing and battle cards; collaborate with Ashley for initial ones and prioritize pricing research due to April overhaul (12:00)\nJoin 4.4 product launch discussions and related tasks with Scott and Jeremy (20:23)\n\n**Scott Bailey**\nContinue support on website revamp with Karen, including technical images and copy revisions (02:39)\nLead personalized webinar messaging collaboration for AI-themed customer outreach (02:39)\nConduct customer AI usage research with Ashley and Jeremy (02:39)\nDrive Managed Warehouse onboarding improvements and curriculum design with internal stakeholders (06:08)\nFinalize and refine in-app satisfaction survey PRD with Bryce (06:08)\nBuild GA4 Looker dashboard for website analytics (06:08)\nFollow up on 4.4 release documentation and coordinate launch efforts (06:08)\nDraft architecture diagram for documentation, website, sales use (08:49)\nRefine gold standard product marketing documents: Personas update, positioning and messaging framework aligned with new website and AI strategy (22:40)\nSet up joint positioning framework session with leadership (27:09)\n\n**Ashley Stirrup**\nProvide Elyse recording of call with Dan about Statsig’s packaging and pricing to serve as a primer for pricing research (30:17)\nCo-develop competitive pricing battle cards and assist Elyse’s ramp-up (14:19)\nGuide Elyse’s integration into AI-related projects including Air Ops content generation strategy (10:09)\nCoordinate weekly sync meetings with Scott and Elyse to monitor progress and adjust priorities (30:10)\n"
+    },
+    {
+      "id": "01KT57MJEWBJGKRE4ACWBBG5Z0",
+      "source": "fireflies",
+      "title": "Ashley - PMM sync",
+      "date": "2026-06-08",
+      "duration_minutes": 23,
+      "summary": "The team discussed the imminent rollout of the Skills library and Visual Editor, emphasizing backend updates and community engagement. Graham is responsible for backend changes, while Elyse will confirm timing and logistics. Polished marketing materials, including high-quality videos and community demos, were prioritized to increase user engagement and clarity. The Growth Book 5.0 pricing rollout is tied to EU data center availability, necessitating clear messaging regarding new usage-based pricing. An early access program for the Visual Editor was proposed to gather user feedback and excitement. The need for professional video production was recognized, and ongoing documentation updates were deemed essential for consistent messaging.",
+      "organizer": "elyse@growthbook.io",
+      "participants": 3,
+      "keywords": "Visual Editor, Skills Library, Pricing Rollout, Early Access, Video Production, Managed Warehouse",
+      "action_items": "\n**Ashley Stirrup**\nKick off the process to engage a professional video producer for high-quality 2-minute explainer videos on AI capabilities and product features (08:32)\nOrganize a HubSpot registration form and coordinate with Graham to determine logistics for enabling early access to the visual editor (09:08)\nSpend time organizing thoughts on pricing rollout including grandfathering, messaging, and website updates (13:32)\nConduct full messaging review and map the signup experience focusing on managed warehouse and event forwarder options (18:30)\n\n**Elyse Fox**\nInclude Ashley in communication with Graham regarding enabling visual editor features and early access mechanics (09:38)\nShare recorded feature flag approvals video and scripting for other feature videos; proceed with video production if approved (10:31)\nPropose YouTube playlist organization strategy for experimentation and feature flagging videos to manage channel clutter (11:12)\n\n**Scott Bailey**\nSchedule and confirm attendance for community call to finalize skills project launch timing (00:12)\nPrepare blog posts, social posts, Slack broadcasts, and docs updates for skills and visual editor feature rollouts post community call (00:12)\nAssist Ashley in coordinating video production and provide content for AI native features' videos (08:32)\nReview Fireflies meeting recording about pricing and collaborate on marketing materials and messaging updates (13:49)\n"
     }
   ]
 }

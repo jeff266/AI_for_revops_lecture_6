@@ -1,0 +1,27 @@
+{
+  "company": "1-800-Flowers<>GrowthBook",
+  "slug": "1-800-flowers-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.137839",
+  "calls": [
+    {
+      "id": "69bacf68e7c2d7000d1f7f6d",
+      "source": "apollo",
+      "title": "1-800-Flowers<>GrowthBook - Discussion",
+      "date": "2026-03-18",
+      "duration_minutes": 15,
+      "summary": "[Summary failed] [Joseph Treman]: It.\n[Chris Sanders]: Hey, Chris.\n[Joseph Treman]: Hi, Jake.\n[Andrew Muller]: How you doing?\n[Joseph Treman]: Pretty good. How about you? I'm doing well.\n[Jake Heier]: Thanks for jumpi",
+      "host": "Jake Heier",
+      "participants": 5
+    },
+    {
+      "id": "69ce9ae80be38e0015adda62",
+      "source": "apollo",
+      "title": "1-800-Flowers<>GrowthBook - ",
+      "date": "2026-04-02",
+      "duration_minutes": 34,
+      "summary": "[Summary failed] [Jake Heier]: Happy to take this in whatever direction you'd like, but I know it sounded like there might have been a few kind of more pressing questions if the team wants to start with that.\n[Andrew ",
+      "host": "Jake Heier",
+      "participants": 8
+    }
+  ]
+}

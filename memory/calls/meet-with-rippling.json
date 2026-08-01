@@ -1,18 +1,19 @@
 {
   "company": "Meet with Rippling",
   "slug": "meet-with-rippling",
+  "last_etl_date": "2026-08-01T10:41:40.242109",
   "calls": [
     {
-      "id": "01KNQEA3QWY768C5K9S8R9PWX4",
+      "id": "01KGG11AP4ZPCM9A6HBHYYC1YX",
       "source": "fireflies",
       "title": "Meet with Rippling Support",
-      "date": "2026-04-10",
-      "duration_minutes": 13,
-      "summary": "The meeting focused on correcting payroll records for a contractor who had an incorrect employer identification number (EIN). Jennifer confirmed the contractor's tax classification as S corp, clarifying that no 1099 NEC form would be issued. The team decided to zero out the incorrect payment and create an off-cycle payroll run while confirming a $20 fee only applicable to payroll corrections. Expectations for status updates on payroll corrections were set, with corrections moving to paid status by 2:30 PM PST and 1099 previews refreshing every 20-25 days. Step-by-step instructions were provided on how to handle the payroll app for corrections effectively, emphasizing the need for clear record-keeping and compliance with tax regulations regarding S corps.",
+      "date": "2026-02-03",
+      "duration_minutes": 29,
+      "summary": "The team convened to address the correction of Christopher Samuel Newton's EIN and legal name details in Rippling, ensuring that the updates align with IRS requirements for accurate 1099 form generation. Justice Straub led the decision to revert Chris's EIN to the previous version and update his profile to reflect sole proprietorship status, while confirming the addition of his legal middle name. The effective date for these changes is set to October 1st to accommodate the October pay run. The team plans to execute a payroll correction run with a nominal $20 correction fee, avoiding any monetary changes to payments. Future management strategies were discussed to prevent similar issues, including preemptive 1099 form previews. Clear communication will be maintained throughout the correction process, with updates coordinated between Justice and Jennifer.",
       "organizer": "jennifer@growthbook.io",
       "participants": 2,
-      "keywords": "Payroll Correction, Contractor, S Corporation, Off-Cycle Payroll, 1099 NEC, Rippling Payroll",
-      "action_items": "\n**Jennifer**\nVerify contractor’s tax classification and communicate status to contractor (06:58)\nPerform payroll correction by zeroing out the incorrect amount in payroll records dated January 9 (09:28)\nCreate and approve an off-cycle payroll run titled as correction for first paycheck, following the given steps to finalize correction (11:37)\nInform contractor regarding 1099 preview updates and correction status (13:17)\n\n**Anmol Lakhwani**\nGuide Jennifer on payroll correction process, including cost implications and bookkeeping recommendations (07:21)\nExplain 1099 preview refresh process and system update timelines (12:55)\n"
+      "keywords": "EIN update, 1099 correction, sole proprietorship, payroll correction, Rippling platform, tax year 2025",
+      "action_items": "\n**Jennifer**\nShare screen during meeting to walk through Rippling changes (09:41)\nConfirm correct EIN and client business information with Chris via Slack (13:16)\nSubmit EIN and legal name updates on Rippling and set effective date (17:36)\nLocate pay run dated October 3 and create payroll correction run for EIN update (20:40)\nApprove correction run ensuring no payroll deltas and fees only $20 (21:25)\nNotify Chris about the status and next steps on thread (28:06)\n\n**Justice Straub**\nGuide Jennifer on how to update EIN and business info and check profile impact on 1099 forms (10:12)\nAssist with backdating the effective date for EIN change and payroll correction steps (16:34)\nConfirm fees applicable for payroll correction and help preview payroll changes (21:25)\nInitiate corrected 1099 form generation starting Monday and notify Jennifer when draft is ready for review (26:45)\nFollow up by sending a detailed email summary about discussed steps and timeline (28:16)\n"
     },
     {
       "id": "01KJBMS5FREZNDMP7BMDF44FMF",
@@ -27,16 +28,16 @@
       "action_items": "\n**Jennifer**\nShare Chris's profile screen and navigate to necessary sections for edits (05:19)\nEdit and update the effective dates and EIN fields as directed (06:42)\nDuplicate browser tab for comparative review of profile history (09:52)\nSubmit the final corrected profile information after verification (12:08)\n\n**Justice Straub**\nGuide Jennifer through locating correct profile areas like View History and personal information for edits (05:44)\nAdvise on the possible effects of date changes regarding tax documents and EIN assignment (06:50)\nAssist in verifying profile changes, entity classification, and ensuring edits apply as intended (08:39)\nConfirm changes accuracy and final profile data correctness (12:27)\n"
     },
     {
-      "id": "01KGG11AP4ZPCM9A6HBHYYC1YX",
+      "id": "01KNQEA3QWY768C5K9S8R9PWX4",
       "source": "fireflies",
       "title": "Meet with Rippling Support",
-      "date": "2026-02-03",
-      "duration_minutes": 29,
-      "summary": "The team convened to address the correction of Christopher Samuel Newton's EIN and legal name details in Rippling, ensuring that the updates align with IRS requirements for accurate 1099 form generation. Justice Straub led the decision to revert Chris's EIN to the previous version and update his profile to reflect sole proprietorship status, while confirming the addition of his legal middle name. The effective date for these changes is set to October 1st to accommodate the October pay run. The team plans to execute a payroll correction run with a nominal $20 correction fee, avoiding any monetary changes to payments. Future management strategies were discussed to prevent similar issues, including preemptive 1099 form previews. Clear communication will be maintained throughout the correction process, with updates coordinated between Justice and Jennifer.",
+      "date": "2026-04-10",
+      "duration_minutes": 13,
+      "summary": "The meeting focused on correcting payroll records for a contractor who had an incorrect employer identification number (EIN). Jennifer confirmed the contractor's tax classification as S corp, clarifying that no 1099 NEC form would be issued. The team decided to zero out the incorrect payment and create an off-cycle payroll run while confirming a $20 fee only applicable to payroll corrections. Expectations for status updates on payroll corrections were set, with corrections moving to paid status by 2:30 PM PST and 1099 previews refreshing every 20-25 days. Step-by-step instructions were provided on how to handle the payroll app for corrections effectively, emphasizing the need for clear record-keeping and compliance with tax regulations regarding S corps.",
       "organizer": "jennifer@growthbook.io",
       "participants": 2,
-      "keywords": "EIN update, 1099 correction, sole proprietorship, payroll correction, Rippling platform, tax year 2025",
-      "action_items": "\n**Jennifer**\nShare screen during meeting to walk through Rippling changes (09:41)\nConfirm correct EIN and client business information with Chris via Slack (13:16)\nSubmit EIN and legal name updates on Rippling and set effective date (17:36)\nLocate pay run dated October 3 and create payroll correction run for EIN update (20:40)\nApprove correction run ensuring no payroll deltas and fees only $20 (21:25)\nNotify Chris about the status and next steps on thread (28:06)\n\n**Justice Straub**\nGuide Jennifer on how to update EIN and business info and check profile impact on 1099 forms (10:12)\nAssist with backdating the effective date for EIN change and payroll correction steps (16:34)\nConfirm fees applicable for payroll correction and help preview payroll changes (21:25)\nInitiate corrected 1099 form generation starting Monday and notify Jennifer when draft is ready for review (26:45)\nFollow up by sending a detailed email summary about discussed steps and timeline (28:16)\n"
+      "keywords": "Payroll Correction, Contractor, S Corporation, Off-Cycle Payroll, 1099 NEC, Rippling Payroll",
+      "action_items": "\n**Jennifer**\nVerify contractor’s tax classification and communicate status to contractor (06:58)\nPerform payroll correction by zeroing out the incorrect amount in payroll records dated January 9 (09:28)\nCreate and approve an off-cycle payroll run titled as correction for first paycheck, following the given steps to finalize correction (11:37)\nInform contractor regarding 1099 preview updates and correction status (13:17)\n\n**Anmol Lakhwani**\nGuide Jennifer on payroll correction process, including cost implications and bookkeeping recommendations (07:21)\nExplain 1099 preview refresh process and system update timelines (12:55)\n"
     }
   ]
 }

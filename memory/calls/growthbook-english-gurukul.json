@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> English Gurukul",
+  "slug": "growthbook-english-gurukul",
+  "last_etl_date": "2026-08-01T10:41:40.141542",
+  "calls": [
+    {
+      "id": "69c212e7ebbce40011ff14b1",
+      "source": "apollo",
+      "title": "Growthbook <> English Gurukul - Demo ",
+      "date": "2026-03-24",
+      "duration_minutes": 58,
+      "summary": "[Summary failed] [Poornima Siddabattuni]: Hello.\n[Daniel Wathne]: Good morning. How you doing?\n[Poornima Siddabattuni]: Hey. Hey, Don. This is from English Gurukul. Good evening. Very good evening. I'm doing good. How",
+      "host": "Daniel Wathne",
+      "participants": 4
+    }
+  ]
+}

@@ -1,30 +1,19 @@
 {
   "company": "Jack Virag and",
   "slug": "jack-virag-and",
+  "last_etl_date": "2026-08-01T10:41:40.248448",
   "calls": [
     {
-      "id": "01KMKE1WP3ZB10PXN655CSNS6Y",
+      "id": "01KG70211DAXPRZ0AT5VKNE1CQ",
       "source": "fireflies",
       "title": "Jack Virag and Ashley Stirrup",
-      "date": "2026-03-26",
-      "duration_minutes": 10,
-      "summary": "The discussion centered around the team's strategy for SEO workflows, prioritizing the development of two foundational workflows before expanding into broader campaigns. Jack Virag is tasked with finalizing these workflows, which include general and competitive SEO processes, while Ashley Stirrup stressed the importance of confirming their effectiveness through multiple cycles. Additionally, the team considered a shift from one-off workflows to ongoing monthly campaigns to address evolving SEO needs. The management structure post-launch was outlined, with Jack and Seat leading Air Ops workflows. Uncertainty about Jack's future role at Miro post-acquisition was addressed, alongside Miro's plans to integrate Reforge's AI products while keeping its education platform operational. Key insights on user engagement underscored the challenges of virtual collaboration tools.",
+      "date": "2026-01-31",
+      "duration_minutes": 27,
+      "summary": "The discussion emphasized the successful integration of AI-generated competitive content at Statsig, which led to a significant increase in conversions, accounting for roughly 50% of all content-driven leads since June 2023. Jack Virag detailed the importance of maintaining a dual content system, balancing AI-generated 'Perspectives' with curated blog posts to ensure quality while scaling production. He shared insights on mastering Air Ops for content creation, highlighting how it enabled rapid generation of SEO content with controlled quality, while also addressing procurement complexities. Additionally, Jack reflected on internal challenges such as marketing leadership turnover that hindered content team growth, while expressing his willingness to provide ongoing support and advice for future content strategy developments.",
       "organizer": "ashley@growthbook.io",
       "participants": 2,
-      "keywords": "SEO workflows, Miro acquisition, Reforge SaaS, synthetic agents, campaign strategy, virtual whiteboards",
-      "action_items": "\n**Jack Virag**\nFinalize and invoice Ashley for the two original SEO workflows after new site launch and content goes live (02:36)\nTrack Reforge’s AI and SaaS developments within Miro to position himself strategically (05:30)\nMonitor Miro role developments and consider GrowthBook employment option depending on outcome (04:20)\n\n**Ashley Stirrup**\nReview and approve invoicing for the two workflows upon delivery (03:27)\nContinue preparing for workflow implementation and possible extension into new campaign types after initial success (01:55)\n"
-    },
-    {
-      "id": "01KJP219H2EGQAKVEVN90ZFDXW",
-      "source": "fireflies",
-      "title": "Jack Virag and Ashley Stirrup",
-      "date": "2026-03-03",
-      "duration_minutes": 26,
-      "summary": "The discussion outlined a strategic approach to integrate Air Ops with ongoing consulting services aimed at enhancing SEO content workflows. The service model includes 1-2 hours of weekly consulting following an initial setup, where Jack will share insights on effective content. The collaboration with the SEO team, led by Jason Faber, will ensure integration of keyword strategies into Air Ops. A clear packaging and pricing strategy was recommended to simplify deliverables and justify fees, while also exploring market demand for paid support. The focus on keyword-driven content workflows aims to improve SEO relevance by leveraging existing site context and analytics for continuous performance monitoring.",
-      "organizer": "ashley@growthbook.io",
-      "participants": 2,
-      "keywords": "Air Ops, SEO strategy, content workflows, consulting package, AI content generation, marketing messaging",
-      "action_items": "\n**Jack Virag**\nPrepare a detailed deck outlining consulting process, deliverables, and support structure for Air Ops workflow setup and ongoing consulting (14:57)\nCoordinate with Ashley Stirrup to review and refine the consulting deck before using for client engagement (14:57)\nSchedule and participate in a planning meeting with Ashley, Jason Faber, and Emmy to outline Air Ops implementation and content workflow (09:12)\nExplore potential reseller or affiliate agreements with Air Ops for workflow packaging and commercial use (16:11)\n\n**Ashley Stirrup**\nArrange and facilitate scheduling of the kickoff meeting including Jason Faber and Emmy to plan Air Ops workflow deployment (09:12)\nCoordinate internal communications with Karen and Scott regarding website and content workflow integration to smooth collaboration (23:29)\nSupport Jack in feedback and advice on marketing messaging and packaging Air Ops consulting services effectively (14:57)\n\n**Jason Faber**\nProvide keyword lists, article title ideas, and SEO strategy inputs to Jack and Air Ops team for content creation workflows (03:56)\n\n**Emmy**\nAssist by reviewing content, performing copy-paste and publishing tasks as marketing intern support during Air Ops content execution (08:42)\n"
+      "keywords": "AI content generation, Air Ops, competitive content, SEO strategy, Contentful CMS, content marketing workflow",
+      "action_items": "\n**Jack Virag**\nSend a simple written proposal by Monday outlining AI content workflows, CMS integration plans, deliverables, and required support (18:34)\nCoordinate with Air Ops contact to potentially connect with Ashley for negotiation or info sharing (07:25)\nBook a follow-up call with Ashley to discuss the proposal and next steps (26:37)\n\n**Ashley Stirrup**\nReview Jack’s upcoming proposal and prepare to provide input on infrastructure and content support requirements (26:28)\nSchedule a follow-up call with Jack after proposal receipt to finalize plans and actions (26:37)\n"
     },
     {
       "id": "01KGKJ3H4EH54TSX82HCQ4ZEEZ",
@@ -39,16 +28,28 @@
       "action_items": "\n**Jack Virag**\nBuild and hand off two Air Ops workflows (SEO content and competitive content) with Loom recordings explaining customization and operation steps (03:37)\nAssist in collaborative tuning of AI prompts and workflow refinement based on initial article outputs to reduce hallucinations and improve messaging accuracy (11:11)\nSupport creation and structuring of knowledge base content, including chunking large documents for AI search efficiency (20:40)\nStandby for deployment support and workflow operational queries post handoff (30:46)\n\n**Ashley Stirrup & Karen Henke**\nFinalize messaging and writing style guides needed for content workflows over the next 6 weeks (11:59)\nCoordinate with web development team (e.g., Bright Scout or alternatives) to prepare Webflow blog collections and fields to enable seamless content publishing workflows (29:01)\nExplore working with recommended web development agency Huck Finch if current design firm fails to meet expectations (25:49)\n\n**Karen Henke**\nSetup and integrate Looker Studio reports with suitable tracking and visualization for ongoing SEO content performance monitoring (12:56)\n\n**Ashley Stirrup**\nFollow up on timeline adjustment to start article generation workflows in early April aligned with website launch plans (18:46)\n"
     },
     {
-      "id": "01KG70211DAXPRZ0AT5VKNE1CQ",
+      "id": "01KJP219H2EGQAKVEVN90ZFDXW",
       "source": "fireflies",
       "title": "Jack Virag and Ashley Stirrup",
-      "date": "2026-01-31",
-      "duration_minutes": 27,
-      "summary": "The discussion emphasized the successful integration of AI-generated competitive content at Statsig, which led to a significant increase in conversions, accounting for roughly 50% of all content-driven leads since June 2023. Jack Virag detailed the importance of maintaining a dual content system, balancing AI-generated 'Perspectives' with curated blog posts to ensure quality while scaling production. He shared insights on mastering Air Ops for content creation, highlighting how it enabled rapid generation of SEO content with controlled quality, while also addressing procurement complexities. Additionally, Jack reflected on internal challenges such as marketing leadership turnover that hindered content team growth, while expressing his willingness to provide ongoing support and advice for future content strategy developments.",
+      "date": "2026-03-03",
+      "duration_minutes": 26,
+      "summary": "The discussion outlined a strategic approach to integrate Air Ops with ongoing consulting services aimed at enhancing SEO content workflows. The service model includes 1-2 hours of weekly consulting following an initial setup, where Jack will share insights on effective content. The collaboration with the SEO team, led by Jason Faber, will ensure integration of keyword strategies into Air Ops. A clear packaging and pricing strategy was recommended to simplify deliverables and justify fees, while also exploring market demand for paid support. The focus on keyword-driven content workflows aims to improve SEO relevance by leveraging existing site context and analytics for continuous performance monitoring.",
       "organizer": "ashley@growthbook.io",
       "participants": 2,
-      "keywords": "AI content generation, Air Ops, competitive content, SEO strategy, Contentful CMS, content marketing workflow",
-      "action_items": "\n**Jack Virag**\nSend a simple written proposal by Monday outlining AI content workflows, CMS integration plans, deliverables, and required support (18:34)\nCoordinate with Air Ops contact to potentially connect with Ashley for negotiation or info sharing (07:25)\nBook a follow-up call with Ashley to discuss the proposal and next steps (26:37)\n\n**Ashley Stirrup**\nReview Jack’s upcoming proposal and prepare to provide input on infrastructure and content support requirements (26:28)\nSchedule a follow-up call with Jack after proposal receipt to finalize plans and actions (26:37)\n"
+      "keywords": "Air Ops, SEO strategy, content workflows, consulting package, AI content generation, marketing messaging",
+      "action_items": "\n**Jack Virag**\nPrepare a detailed deck outlining consulting process, deliverables, and support structure for Air Ops workflow setup and ongoing consulting (14:57)\nCoordinate with Ashley Stirrup to review and refine the consulting deck before using for client engagement (14:57)\nSchedule and participate in a planning meeting with Ashley, Jason Faber, and Emmy to outline Air Ops implementation and content workflow (09:12)\nExplore potential reseller or affiliate agreements with Air Ops for workflow packaging and commercial use (16:11)\n\n**Ashley Stirrup**\nArrange and facilitate scheduling of the kickoff meeting including Jason Faber and Emmy to plan Air Ops workflow deployment (09:12)\nCoordinate internal communications with Karen and Scott regarding website and content workflow integration to smooth collaboration (23:29)\nSupport Jack in feedback and advice on marketing messaging and packaging Air Ops consulting services effectively (14:57)\n\n**Jason Faber**\nProvide keyword lists, article title ideas, and SEO strategy inputs to Jack and Air Ops team for content creation workflows (03:56)\n\n**Emmy**\nAssist by reviewing content, performing copy-paste and publishing tasks as marketing intern support during Air Ops content execution (08:42)\n"
+    },
+    {
+      "id": "01KMKE1WP3ZB10PXN655CSNS6Y",
+      "source": "fireflies",
+      "title": "Jack Virag and Ashley Stirrup",
+      "date": "2026-03-26",
+      "duration_minutes": 10,
+      "summary": "The discussion centered around the team's strategy for SEO workflows, prioritizing the development of two foundational workflows before expanding into broader campaigns. Jack Virag is tasked with finalizing these workflows, which include general and competitive SEO processes, while Ashley Stirrup stressed the importance of confirming their effectiveness through multiple cycles. Additionally, the team considered a shift from one-off workflows to ongoing monthly campaigns to address evolving SEO needs. The management structure post-launch was outlined, with Jack and Seat leading Air Ops workflows. Uncertainty about Jack's future role at Miro post-acquisition was addressed, alongside Miro's plans to integrate Reforge's AI products while keeping its education platform operational. Key insights on user engagement underscored the challenges of virtual collaboration tools.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "SEO workflows, Miro acquisition, Reforge SaaS, synthetic agents, campaign strategy, virtual whiteboards",
+      "action_items": "\n**Jack Virag**\nFinalize and invoice Ashley for the two original SEO workflows after new site launch and content goes live (02:36)\nTrack Reforge’s AI and SaaS developments within Miro to position himself strategically (05:30)\nMonitor Miro role developments and consider GrowthBook employment option depending on outcome (04:20)\n\n**Ashley Stirrup**\nReview and approve invoicing for the two workflows upon delivery (03:27)\nContinue preparing for workflow implementation and possible extension into new campaign types after initial success (01:55)\n"
     }
   ]
 }

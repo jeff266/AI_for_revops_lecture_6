@@ -1,18 +1,19 @@
 {
   "company": "Messaging alignment session",
   "slug": "messaging-alignment-session",
+  "last_etl_date": "2026-08-01T10:41:40.225826",
   "calls": [
     {
-      "id": "01KQ3AHJV3H5HAC5SQDWNNP0TR",
+      "id": "01KPVA39R8WSTZTJJN92VV2G8G",
       "source": "fireflies",
-      "title": "Messaging alignment session 3",
-      "date": "2026-05-01",
-      "duration_minutes": 58,
-      "summary": "The meeting focused on developing a robust experimentation platform that allows organizations to run experiments with safety and speed. Elyse Fox emphasized the importance of guardrails for fast and secure feature releases, integrating safety into experimentation culture. The discussion highlighted the distinction between cultural and technical scaling, with Ashley Stirrup addressing GrowthBook's approach to feature flagging and integration. The need for learning optimization in product development was underscored, along with the importance of standardized metrics for consistency in analysis. Future visions included AI-driven analytics to enhance experimentation capabilities, while messaging strategies were outlined to ensure the product's value is clearly communicated to diverse audiences.",
+      "title": "Messaging alignment session",
+      "date": "2026-04-24",
+      "duration_minutes": 68,
+      "summary": "The team focused on developing a structured messaging framework with aligned vision and messaging pillars to enhance internal and external communication. Key objectives include refining messaging around four core pillars: developer experience, AI integration, iteration speed with safety, and scalability. The importance of AI as integral to speed and learning was emphasized, with plans to embed it throughout the user experience. Additionally, the role of experimentation in product development was discussed, advocating for a culture shift towards AB testing. Engaging with customers for feedback and sharing their stories was identified as crucial for validation and enriching messaging.",
       "organizer": "ashley@growthbook.io",
       "participants": 3,
-      "keywords": "Experimentation, Feature Flags, AI Integration, Product Analytics, Scaling Culture, Strategic Messaging",
-      "action_items": "\n**Elyse Fox**\nOutline a slide deck for new messaging aligning on vision, pain points, and solution pillars (50:00)\nExplore AI-generated and custom graphics for presentation visuals to illustrate platform pillars (51:05)\nDevelop draft slides to share with the broader team for feedback and iteration (56:33)\n\n**Ashley Stirrup**\nShare example strategic messaging slide deck from Taleo for reference to inform GrowthBook's storytelling framework (27:00)\nProvide testimonial and proof point stories including Dropbox and Hims for inclusion in messaging to demonstrate scaling and AI analytics use cases (56:33)\nCoordinate with graphic designer Alberto for visualization support to create compelling custom visuals illustrating platform pillars (51:05)\n"
+      "keywords": "experiment culture, AI integration, product messaging, feature flags, scalability, learning & iteration",
+      "action_items": "\n**Scott Bailey**\nFollow up with Carrie and Chris regarding Anthropic and other customers willing to share stories to support AI features and customer insights (01:03:15)\n\n**Scott Bailey and Elyse Fox**\nCollaborate to refine messaging draft including vision and pillar definitions (01:01:40)\n\n**Ashley Stirrup, Elyse Fox, Scott Bailey**\nSchedule and hold two brainstorming sessions next week to advance messaging framework before offsite (01:07:27)\n\n**Ashley Stirrup**\nResearch Optimizely’s AI tools such as Opal to inform GrowthBook's AI data scientist concept (01:06:10)\n\n**Entire team**\nPrepare to engage sales and product leadership during offsite to align on AI story and messaging rollout strategy (01:04:50)\n"
     },
     {
       "id": "01KQ3AHJTVJSN6KJCC1MT42TQB",
@@ -27,16 +28,16 @@
       "action_items": "\n**Elyse Fox**\nBook time with Scott Bailey tomorrow to work on articulating concrete value propositions and messaging synthesis (59:20)\n\n**Scott Bailey**\nPrepare suggestions and draft messaging framework based on meeting discussion to share with Elyse Fox (59:15)\n\n**Ashley Stirrup**\nCoordinate rescheduling of Friday’s feature flag meeting due to increased calendar load (59:35)\n"
     },
     {
-      "id": "01KPVA39R8WSTZTJJN92VV2G8G",
+      "id": "01KQ3AHJV3H5HAC5SQDWNNP0TR",
       "source": "fireflies",
-      "title": "Messaging alignment session",
-      "date": "2026-04-24",
-      "duration_minutes": 68,
-      "summary": "The team focused on developing a structured messaging framework with aligned vision and messaging pillars to enhance internal and external communication. Key objectives include refining messaging around four core pillars: developer experience, AI integration, iteration speed with safety, and scalability. The importance of AI as integral to speed and learning was emphasized, with plans to embed it throughout the user experience. Additionally, the role of experimentation in product development was discussed, advocating for a culture shift towards AB testing. Engaging with customers for feedback and sharing their stories was identified as crucial for validation and enriching messaging.",
+      "title": "Messaging alignment session 3",
+      "date": "2026-05-01",
+      "duration_minutes": 58,
+      "summary": "The meeting focused on developing a robust experimentation platform that allows organizations to run experiments with safety and speed. Elyse Fox emphasized the importance of guardrails for fast and secure feature releases, integrating safety into experimentation culture. The discussion highlighted the distinction between cultural and technical scaling, with Ashley Stirrup addressing GrowthBook's approach to feature flagging and integration. The need for learning optimization in product development was underscored, along with the importance of standardized metrics for consistency in analysis. Future visions included AI-driven analytics to enhance experimentation capabilities, while messaging strategies were outlined to ensure the product's value is clearly communicated to diverse audiences.",
       "organizer": "ashley@growthbook.io",
       "participants": 3,
-      "keywords": "experiment culture, AI integration, product messaging, feature flags, scalability, learning & iteration",
-      "action_items": "\n**Scott Bailey**\nFollow up with Carrie and Chris regarding Anthropic and other customers willing to share stories to support AI features and customer insights (01:03:15)\n\n**Scott Bailey and Elyse Fox**\nCollaborate to refine messaging draft including vision and pillar definitions (01:01:40)\n\n**Ashley Stirrup, Elyse Fox, Scott Bailey**\nSchedule and hold two brainstorming sessions next week to advance messaging framework before offsite (01:07:27)\n\n**Ashley Stirrup**\nResearch Optimizely’s AI tools such as Opal to inform GrowthBook's AI data scientist concept (01:06:10)\n\n**Entire team**\nPrepare to engage sales and product leadership during offsite to align on AI story and messaging rollout strategy (01:04:50)\n"
+      "keywords": "Experimentation, Feature Flags, AI Integration, Product Analytics, Scaling Culture, Strategic Messaging",
+      "action_items": "\n**Elyse Fox**\nOutline a slide deck for new messaging aligning on vision, pain points, and solution pillars (50:00)\nExplore AI-generated and custom graphics for presentation visuals to illustrate platform pillars (51:05)\nDevelop draft slides to share with the broader team for feedback and iteration (56:33)\n\n**Ashley Stirrup**\nShare example strategic messaging slide deck from Taleo for reference to inform GrowthBook's storytelling framework (27:00)\nProvide testimonial and proof point stories including Dropbox and Hims for inclusion in messaging to demonstrate scaling and AI analytics use cases (56:33)\nCoordinate with graphic designer Alberto for visualization support to create compelling custom visuals illustrating platform pillars (51:05)\n"
     }
   ]
 }

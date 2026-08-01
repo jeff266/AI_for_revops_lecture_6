@@ -1,7 +1,28 @@
 {
-  "company": "Notion + GrowthBook",
+  "company": "Notion<>GrowthBook",
   "slug": "notion-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.113435",
   "calls": [
+    {
+      "id": "6a19fce6b1d0ec00101a88c2",
+      "source": "apollo",
+      "title": "Notion<>GrowthBook - POC Planning",
+      "date": "2026-05-29",
+      "duration_minutes": 54,
+      "summary": "[Summary failed] [Parul Baweja]: Sa.\n[Jake Heier]: Hello.\n[Notion ]: Hey, Jake, how are you doing? Doing good. How are things on your end?\n[Jake Heier]: Good, good.\n[Samuel Kim]: Hello.\n[Jake Heier]: Give everybody a ",
+      "host": "Jake Heier",
+      "participants": 5
+    },
+    {
+      "id": "6a29d86474ac85001896f7b1",
+      "source": "apollo",
+      "title": "Notion<>GrowthBook - POC Technical Kick Off",
+      "date": "2026-06-10",
+      "duration_minutes": 49,
+      "summary": "[Summary failed] [Jake Heier]: Hey, dude.\n[Notion ]: Yep.\n[Logan Bates]: Just on another call. Graham was in the middle of the demo. I just.\n[Jake Heier]: Oh, were you on with Christian?\n[Notion ]: Yeah.\n[Shihao H]: B",
+      "host": "Jake Heier",
+      "participants": 4
+    },
     {
       "id": "01KV69J4S0TSB3Q92DV0QZ546V",
       "source": "fireflies",
@@ -13,6 +34,16 @@
       "participants": 10,
       "keywords": "Snowflake, Exposure Forwarding, SDK Setup, Pricing Model, Event Forwarding Cost, Proof of Value (POC)",
       "action_items": "\n**Christian Liebenow**\nShare follow-up questions about event, user, and experiment metrics to refine pricing models; prepare multiple tiered pricing proposals for Notion consideration (27:12)\n\n**Shi Hao**\nComplete SDK pre-setup work within one more week and coordinate on enabling exposure forwarding feature with GrowthBook team (05:51)\n\n**Logan Bates**\nSupport SDK and exposure forwarding setup; assist with pipeline and deduplication inquiries; maintain periodic Slack check-ins to address blockers or feedback during POC (14:53)\n\n**Jeff [Lastname Unknown]**\nCoordinate with GrowthBook on scheduling POC start post-4th of July; provide accurate event volume data to inform pricing discussions; monitor event forwarding cost impact (10:40)\n\n**Rashi Bhargava**\nCoordinate sourcing, procurement, legal review, and pricing contract discussions including tiered pricing modeling and flexible terms without minimum usage commitments (24:24)\n\n**Christian Liebenow and Notion Team**\nReschedule onsite meeting with GrowthBook to late July, after substantial POC progress, to ensure better team availability and readiness (13:21)\n"
+    },
+    {
+      "id": "6a68f6866b2304000c5f7341",
+      "source": "apollo",
+      "title": "Notion<>GrowthBook - Onsite Meeting",
+      "date": "2026-07-28",
+      "duration_minutes": 66,
+      "summary": "[Summary failed] [811 - Mattel Barbie]: West coast. You have a Seattle hub that's growing in size, you know.\n[811 - Mattel Barbie]: Right.\n[811 - Mattel Barbie]: It makes sense. It's where people are. Right. They're a",
+      "host": "Jake Heier",
+      "participants": 2
     }
   ]
 }

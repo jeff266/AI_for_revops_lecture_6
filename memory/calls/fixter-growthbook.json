@@ -1,7 +1,18 @@
 {
   "company": "Fixter & GrowthBook",
   "slug": "fixter-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.120064",
   "calls": [
+    {
+      "id": "6a47dd0eaab2ce001c17778e",
+      "source": "apollo",
+      "title": "Fixter & GrowthBook Demo",
+      "date": "2026-07-03",
+      "duration_minutes": 52,
+      "summary": "[Summary failed] [James Shannon]: My recorder. So you're pointing it at sections of your database where there's events and then you're going to use those to create metrics. So for an example.\n[Cristian Vrabie]: Sorry,",
+      "host": "James Shannon",
+      "participants": 3
+    },
     {
       "id": "01KWW89RSMBG2XVPWZKFYFNGJF",
       "source": "fireflies",

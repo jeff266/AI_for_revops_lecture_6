@@ -1,0 +1,37 @@
+{
+  "company": "Polymarket<>GrowthBook",
+  "slug": "polymarket-growthbook",
+  "last_etl_date": "2026-08-01T10:41:40.140798",
+  "calls": [
+    {
+      "id": "69a8657cd0698d000df78541",
+      "source": "apollo",
+      "title": "Polymarket<>GrowthBook - Experimentation Discussion",
+      "date": "2026-03-04",
+      "duration_minutes": 32,
+      "summary": "[Summary failed] [Luke Sonnet]: Recording.\n[Nick Riabov]: It's.\n[Luke Sonnet]: It.\n[Cris Dizon]: Hey,\n[Jake Heier]: glad you can join.\n[Cris Dizon]: Yeah, no problem.\n[Jake Heier]: Sorry it was a little last minute,\n[",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "69ab382113f3810011fa2549",
+      "source": "apollo",
+      "title": "Polymarket<>GrowthBook - Engineering Discussion",
+      "date": "2026-03-06",
+      "duration_minutes": 24,
+      "summary": "[Summary failed] [Jake Heier]: So Luke was able to give you kind of a rundown of what they're trying to do?\n[Bryce Fitzsimons]: Yeah, I mean it's. It's fairly complex as I understand it. It's a little bit outside of m",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "69c423620ff5ab001d28bcf0",
+      "source": "apollo",
+      "title": "Polymarket<>GrowthBook - Onboarding and Implementation Discussion",
+      "date": "2026-03-25",
+      "duration_minutes": 3,
+      "summary": "[Summary failed] [Jake Heier]: Hey, how's it going? Doing well.\n[Max “Primo” Mershon]: Hey, Chris. Hey, guys.\n[Jake Heier]: We're just waiting on\n[Jake Heier]: Nick.\n[Jake Heier]: Doesn't look like Kai's gonna join.\n[",
+      "host": "Jake Heier",
+      "participants": 3
+    }
+  ]
+}

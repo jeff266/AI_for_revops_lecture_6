@@ -1,0 +1,17 @@
+{
+  "company": "Canceled",
+  "slug": "canceled",
+  "last_etl_date": "2026-08-01T10:41:40.142213",
+  "calls": [
+    {
+      "id": "69bda301a1cf3b0019faf66a",
+      "source": "apollo",
+      "title": "Canceled: GrowthBook Demo for englishgurukul",
+      "date": "2026-03-20",
+      "duration_minutes": 7,
+      "summary": "[Summary failed] [Daniel Wathne]: I'm good. I, I didn't expect you to be joining. It's. It's got to be quite late in India right now.\n[Rahul Martin]: Yeah. Yeah. Okay.\n[Daniel Wathne]: Okay. Well, it's, it's nice to m",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

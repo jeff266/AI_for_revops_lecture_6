@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> HDFC",
+  "slug": "growthbook-hdfc",
+  "last_etl_date": "2026-08-01T10:41:40.145093",
+  "calls": [
+    {
+      "id": "69a707596cff0300113d783a",
+      "source": "apollo",
+      "title": "Growthbook <> HDFC - Intro ",
+      "date": "2026-03-03",
+      "duration_minutes": 7,
+      "summary": "[Summary failed] [Daniel Wathne]: Yo.\n[Logan Bates]: Yo.\n[Daniel Wathne]: You made it.\n[Logan Bates]: We ended, like, pretty early, so.\n[Daniel Wathne]: Oh, nice, man. Yeah, I. You know, to be honest, I'm not sure if ",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}
