@@ -1,0 +1,27 @@
+{
+  "company": "Ágata Marques Marinho and Jake Heier",
+  "slug": "gata_marques_marinho_jake_heier",
+  "last_etl_date": "2026-08-01T13:58:05.977540",
+  "calls": [
+    {
+      "id": "69bab6cfed62ac001d6bd1e8",
+      "source": "apollo",
+      "title": "Ágata Marques Marinho and Jake Heier",
+      "date": "2026-03-18",
+      "duration_minutes": 30,
+      "summary": "In this call, Jake Heier (GrowthBook) discussed AB testing a syndicated content feature on PDPs with Ágata Marinho, Sara Cruz, and Thiago Cunha (customer team). Key pain points included the need for a data-driven approach to validate partner benchmarks and concerns about integrating GrowthBook’s SDK with Salesforce Commerce Cloud, which had caused issues with a previous tool. Next steps include Jake checking data integration options (managed",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "69c40c4ca49439001d9e4755",
+      "source": "apollo",
+      "title": "Ágata Marques Marinho and Jake Heier",
+      "date": "2026-03-25",
+      "duration_minutes": 24,
+      "summary": "The call focused on GrowthBook’s integration challenges with Salesforce Commerce Cloud, particularly SDK conflicts in the Rhino backend environment, flickering, and caching issues. Jake Heier (sales) and Jeremy (technical lead) from GrowthBook proposed a server-side CDN payload fetch with client-side SDK embedding to avoid flicker and core web vitals impact, while discussing managed vs external data sources for metrics.",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "company": "teresa@growthbook.io",
+  "slug": "teresaio",
+  "last_etl_date": "2026-08-01T13:58:06.007497",
+  "calls": [
+    {
+      "id": "01KPRZE7H08NEK83W60WP9R4B9",
+      "source": "fireflies",
+      "title": "teresa@growthbook.io - Tue, 21 Apr 2026 14:34:15 PDT - Untitled",
+      "date": "2026-04-21",
+      "duration_minutes": 37,
+      "summary": "The team discussed integrating all SDK user attributes into the contextual bandit callback to enhance flexibility in targeting and logging. They agreed that this would aid in debugging and allow for more personalized user experiences, despite the potential for large attribute sets. A third argument will be added to the callback signature to facilitate the mapping of attributes, ensuring ease of access during evaluations. Additionally, direct SQL column-to-attribute mapping was emphasized to streamline the data warehouse process, alongside the importance of dual validation for both SDK attributes and SQL queries. The team planned to hold twice-weekly meetings to coordinate efforts effectively and address any blockers.",
+      "organizer": "teresa@growthbook.io",
+      "participants": 1,
+      "keywords": "Contextual Bandit, SDK Callback, Attribute Mapping, Data Warehouse, SQL Query, Personalization Payload",
+      "action_items": "\n**Teresa Yung**\nContinue developing the SDK callback signature to include attribute data to support contextual bandits (00:00)\nCreate initial flow diagram for the contextual bandit experiment setup to clarify UX and onboarding steps (34:46)\nCoordinate meeting schedule for biweekly (Tuesday and Thursday) check-ins to discuss progress and unblock issues (26:42)\nPrepare cron jobs and simulated data inputs to test data flows and mappings in bandit modeling (27:27)\nConsult with design lead Kari to discuss UX involvement in attribute mapping and query validation steps (32:30)\n\n**Luke Sonnet**\nProvide concrete examples of customer experiment assignment queries and associated SQL to Teresa for reference (10:35)\nCollaborate with Teresa and Luke Smith to finalize SDK payload data structures and backend data flow for personalization weights (24:09)\nAssist in aligning SDK and stats engine requirements to optimize payload for contextual bandit evaluation (25:02)\nProvide advice on validation steps and onboarding flows correlating contextual bandit attributes with assignment queries (18:11)\n\n**Luke Smith**\nPrepare BigQuery examples of contextual bandit assignment tables for Teresa to study and develop integrations (28:54)\nContinue supporting SQL creation for assignment queries that integrate attributes and contextual bandit use cases (10:37)\nUpdate and clean documentation from previous meetings and share it with the team (35:53)\nCoordinate closely with Teresa to iterate on input-output structures for bandit weight generation and data warehouse queries (24:24)\n"
+    },
+    {
+      "id": "01KQAY8388QRKQG3KP6E059B5D",
+      "source": "fireflies",
+      "title": "teresa@growthbook.io - Tue, 28 Apr 2026 13:59:45 PDT - Untitled",
+      "date": "2026-04-28",
+      "duration_minutes": 42,
+      "summary": "The team is dedicated to creating a minimum viable product (MVP) for Contextual Bandits, emphasizing essential features while minimizing initial UI resources. They are considering an API-first approach to facilitate early feedback from key clients like Anthropic and Sony, which would allow programmatic interaction without an extensive UI. The MVP will focus on core bandit mechanics and data models, with early releases potentially using beta SDK versions for feedback collection. Separation from existing code aims to avoid technical debt, while programmatic control is balanced with UI needs. The development will adopt iterative strategies with feature flags and beta releases to ensure product-market fit and manage rollout risks effectively.",
+      "organizer": "teresa@growthbook.io",
+      "participants": 1,
+      "keywords": "Contextual Bandits, API-first Development, SDK Callbacks, Query Validation, Minimum Viable Product (MVP), Data Model Separation",
+      "action_items": "\n**Teresa Yung**\nDevelop an initial prototype of the SDK and implement query changes to demonstrate progress and identify next blockers (38:50)\nEvaluate and decide on using a single callback or separate callbacks for contextual bandits in the SDK and consult with Bryce on the best approach (22:40)\nProvide ongoing updates and share learnings about the callback decision and data model choices with the team (39:00)\nFollow up on query understanding issues by messaging relevant team members as questions arise (23:32)\n\n**Luke Smith**\nDefine a minimal subset of data to return for an MVP contextual bandit status, focusing on weights and means without holdout to allow early usability (39:50)\n\n**Luke Sonnet**\nContinue to clarify and align on API-driven development concepts and minimum viable features for contextual bandits (34:50)\nEncourage and support Teresa in progressing with SDK prototype and callback decisions (38:50)\n\n**Guy Langford-lee**\nAssist with front-end or other development tasks as capacity allows to support contextual bandit feature progress (41:45)\n"
+    },
+    {
+      "id": "01KQG343HMV180Z844G93MC52B",
+      "source": "fireflies",
+      "title": "teresa@growthbook.io - Thu, 30 Apr 2026 14:01:10 PDT - Untitled",
+      "date": "2026-04-30",
+      "duration_minutes": 14,
+      "summary": "The team is developing a new contextual bandit data model aimed at managing context expansion and performance constraints. Teresa has created a flattened model to circumvent MongoDB's 16MB document size limit and is testing it using hard-coded API inputs. Meanwhile, Luke Sonnet emphasized the need to move existing experiment assignment queries into separate collections for better permissions and management, with migration expected within 1-2 months. The team decided to exclude holdout groups from the initial version of the contextual bandit experiment to expedite its rollout, focusing on core functionality first. Luke Smith is reviewing advanced statistical methods for arm selection and planning to enhance decisions through academic insights. Asynchronous communication will be used for feedback on the data model before the next meeting.",
+      "organizer": "teresa@growthbook.io",
+      "participants": 1,
+      "keywords": "contextual bandit, data model, experiment queries, holdout arm, permission scoping, multi-armed bandit modeling",
+      "action_items": "\n**Teresa Yung**\nComplete testing of the contextual bandit data model prototype and finalize API integration to enable demo in next meeting (01:21)\nPrepare documentation detailing the new data model and expected data flows for asynchronous review by the team, highlighting areas needing feedback (04:29)\nHave team review and comment on data model and query collection design, especially considering planned changes in query handling (08:44)\n\n**Luke Sonnet**\nReview Teresa’s contextual bandit data model documentation when ready and provide comments and feedback relating to potential changes needed for query collections and permission scoping (08:56)\n\n**Luke Sonnet and Luke Smith**\nResearch the Bogger Emben Athey paper and related literature on multi-armed contextual bandit solutions to identify modeling strategies suited for optimizing experimental arm selection (12:13)\n"
+    },
+    {
+      "id": "01KV6T9PMYFEHWZ7W4Y0T2SRKH",
+      "source": "fireflies",
+      "title": "teresa@growthbook.io - Mon, 15 Jun 2026 16:36:33 PDT - Untitled",
+      "date": "2026-06-15",
+      "duration_minutes": 21,
+      "summary": "The team addressed key updates for table design, focusing on adjusting header font weights, standardizing text colors to Indigo 12, and fixing background colors to ensure visual clarity. Font weight was set to 500 to improve readability, while the consistent application of the Indigo 12 color token aimed to enhance brand coherence. The header background was standardized to white to resolve inconsistencies, and borders set to Slate A5 for subtle separation. The conversation also brought up concerns regarding sorting icons and row hover states, deciding initially to standardize the hover state to Violet A2. Challenges were identified with third-party libraries overwriting styles, requiring strategic customizations. Immediate actions included finalizing color and border updates, with a target to merge the changes shortly.",
+      "organizer": "teresa@growthbook.io",
+      "participants": 1,
+      "keywords": "table design, font weight, text color, background color, border color, design tokens",
+      "action_items": "\n**Teresa Yung**\nChange column header font weight to 500 for lighter visual appearance and test the effect (04:11)\nUpdate all table header and cell text colors to use the Indigo 12 token defined as \"color text high\" (06:39)\nOverride the current Radix/React Table background colors for the table header to use the color token \"color panel solid\" (white) (14:17)\nApply the border stroke color using Slate A5 with specified RGBA values around header rows and cells (12:56)\nInvestigate and fix missing border issue caused by header background color change (19:49)\nImplement hover effect for table rows using Violet A2 accent color (18:48)\nDelay changes to sorting icons pending clarity on phosphoricons usage; prioritize color and font weight first (15:26)\nMerge all finalized design tweaks after confirming the fixes and testing (20:12)\n\n**Kari Kay**\nVerify font weight adjustments on her end for column headers according to live updates (04:35)\nProvide RGBA translation for Slate A5 token to assist with border color implementation (13:38)\nShare screenshot of desired sorting icon style for clarity before implementation (15:26)\n"
+    }
+  ]
+}

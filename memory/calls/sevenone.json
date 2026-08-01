@@ -1,0 +1,27 @@
+{
+  "company": "Seven.one<>GrowthBook",
+  "slug": "sevenone",
+  "last_etl_date": "2026-08-01T13:58:05.976725",
+  "calls": [
+    {
+      "id": "69cd26ed7a160e00196afc01",
+      "source": "apollo",
+      "title": "Seven.one<>GrowthBook - Discussion on Unleash",
+      "date": "2026-04-01",
+      "duration_minutes": 8,
+      "summary": "The call between Jake Heier and Jeremy (Growthbook Dorn) was cut short because the intended participant from Seven.one did not join. No product, features, or pain points were discussed. Next steps include rescheduling the meeting.",
+      "host": "Jake Heier",
+      "participants": 2
+    },
+    {
+      "id": "69ce7d06a415200015201fb2",
+      "source": "apollo",
+      "title": "Seven.one<>GrowthBook - Conversation on Unleash",
+      "date": "2026-04-02",
+      "duration_minutes": 28,
+      "summary": "Gaurav Dani (Data Product Leader at Seven.One Entertainment Group) discussed with Jake Heier and Jeremy (GrowthBook CTO) the challenge of choosing between",
+      "host": "Jake Heier",
+      "participants": 3
+    }
+  ]
+}

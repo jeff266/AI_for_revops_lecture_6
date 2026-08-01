@@ -1,0 +1,19 @@
+{
+  "company": "Van De Velde Follow Up",
+  "slug": "van_de_velde_follow_up",
+  "last_etl_date": "2026-08-01T13:58:06.015427",
+  "calls": [
+    {
+      "id": "01KT18T42AKFATK9NKW5Y9CH1S",
+      "source": "fireflies",
+      "title": "GrowthBook & Van De Velde Follow Up",
+      "date": "2026-06-01",
+      "duration_minutes": 59,
+      "summary": "The discussion highlighted the need for a straightforward, code-linked A/B testing solution to replace Dynamic Yield, focusing on ease of use and integration into the current tech stack. The team led by Janne noted gaps in their current experiment management due to inefficient manual analysis via Excel and emphasized simplifying the experiment setup. GrowthBook was identified as a potential solution with deep BigQuery integration, enabling flexible data analysis across multiple brands. The conversation also covered the modular approach of GrowthBook's features and the importance of cost-effective pricing aligned with Van de Velde's budget constraints. A decision is expected by the end of June, with a follow-up proposal scheduled for June 8th.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 1,
+      "keywords": "A/B testing, GrowthBook, BigQuery integration, feature flags, experiment analytics, multi-domain testing",
+      "action_items": "\n**James Shannon**\nPrepare and present a revised pricing proposal reflecting Van De Velde’s experiment volume and preferences, excluding paid training and support as they are not required (57:30)\nSchedule and conduct a follow-up meeting with Jane on June 8th at 13:30 CET for approximately 15 minutes to discuss the revised pricing proposal (58:14)\n\n**Janne Vdv**\nConfirm and finalize the internal decision on GrowthBook purchase by early June to align with pricing and timing requirements (55:13)\nCoordinate with legal department and executive approver if the pricing proposal exceeds €10,000 to obtain necessary approvals (56:10)\n\n**Shaun Janssens**\nReserve technical questions for later discussions as needed to ensure smooth evaluation process (18:01)\n\n**All Van De Velde Team**\nContinue evaluating GrowthBook demo and its fit for code-based A/B testing and analytics needs, and prepare for next steps discussion (59:08)\n"
+    }
+  ]
+}

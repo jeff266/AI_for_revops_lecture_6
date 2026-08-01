@@ -1,0 +1,19 @@
+{
+  "company": "Ashley Stirrup and Leah Thompson",
+  "slug": "ashley_stirrup_leah_thompson",
+  "last_etl_date": "2026-08-01T13:58:06.047786",
+  "calls": [
+    {
+      "id": "01KHQ2B8TWJ3GEX9KPY60B9W2V",
+      "source": "fireflies",
+      "title": "Ashley Stirrup and Leah Thompson",
+      "date": "2026-02-19",
+      "duration_minutes": 30,
+      "summary": "The meeting highlighted integration challenges between Growth Book and Customer IO, particularly concerning API errors and user data structure that hinder user syncing. Graham McNicoll pointed out specific errors related to the MongoDB trigger and the Identify call in Customer IO, while Leah Thompson suggested involving Customer IO's tech support for a detailed investigation. Additionally, there were issues regarding updates that overwrite existing user profiles, prompting a discussion on proper API structuring. The team also explored the implications of adding company objects for better targeting and segmentation, as Growth Book had recently onboarded a significant number of organizations. Lastly, they discussed enhancing user engagement through personalized messaging strategies, including in-app messages, and planned next steps for further collaboration and support.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "Customer IO, MongoDB triggers, Identify API error, onboarding campaigns, user segmentation, in-app messaging",
+      "action_items": "\n**Ashley Stirrup**\nCoordinate with Graham to send Customer IO Leah Thompson the block of code and sample payload causing API errors after the call (00:15)\nFollow up with Customer IO on adding company objects and pricing implications based on messaging needs (29:01)\n\n**Graham McNicoll**\nProvide Leah Thompson with the problematic Identify API call code and sample payload in a text file for tech support review after the meeting (15:02)\nAttempt to reproduce the API error during the call to capture error data (14:04)\n\n**Leah Thompson**\nCreate technical support ticket incorporating the meeting recording, shared code, error timestamp, and sample payload for troubleshooting (14:55)\nConnect Ashley Stirrup with Customer IO account management to explore pricing plans suitable for current and anticipated profile counts (02:52)\nSend Growth Book information explaining when company objects are beneficial and required versus optional, helping them decide on adoption based on use cases and cost (29:08)\nProvide additional helpful resources to Growth Book as they explore deeper Customer IO platform capabilities (28:50)\n"
+    }
+  ]
+}

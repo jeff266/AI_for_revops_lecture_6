@@ -1,0 +1,19 @@
+{
+  "company": "User Journey | Data Model Sync",
+  "slug": "user_journey__data_model_sync",
+  "last_etl_date": "2026-08-01T13:58:06.041594",
+  "calls": [
+    {
+      "id": "01KMGPZKQTK7C0YT3YJ0AZPYRM",
+      "source": "fireflies",
+      "title": "User Journey | Data Model Sync",
+      "date": "2026-03-25",
+      "duration_minutes": 28,
+      "summary": "The team discussed the implementation of a complex multi-step query approach for user journey analysis, which enhances UI responsiveness while providing accurate user path tracking. Limitations were noted, including a cap of 1,000 unique path rows and varying performance rates with larger data volumes. The prioritization of REST endpoints and MCP integration was established to support data visualization and sharing. Enhancements for enterprise billing and experiment-based pricing metrics were outlined, aiming for a rollout by the end of April. The meeting resulted in a shift in project focus, temporarily pausing user journey work to concentrate on integrating platform and API developments.",
+      "organizer": "michael@growthbook.io",
+      "participants": 2,
+      "keywords": "User Journey, Data Modeling, REST Endpoints, MCP Server, Usage-Based Billing, Experiment Pricing",
+      "action_items": "\n**Michael**\nPrioritize building REST endpoints for the Explorer querying functionality (00:21)\nIntegrate REST endpoints with MCP server to enable visualization of query results, including supporting binary responses and preview images (00:21)\nTemporarily pause work on user journey path visualization and resume after REST endpoints are delivered (00:19)\nReach out to the Orb team regarding enterprise subscription plan structuring and custom pricing strategies (00:26)\nImplement billing projects: enterprise subscription support in Orb, experiment-based pricing metric integration, and billing alert system based on Orb’s capabilities (00:23)\nReview and manage migration plan to usage-based billing for all new subscriptions, including Pro and Enterprise tiers, and removing per-seat pricing for new Pro subscriptions (00:26)\nTag relevant participants on Platform Squad project tracker for billing-related tasks (00:27)\n"
+    }
+  ]
+}

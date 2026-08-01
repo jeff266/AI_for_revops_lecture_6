@@ -1,0 +1,19 @@
+{
+  "company": "TLC Panel: Accessibility, AI Discoverability,",
+  "slug": "tlc_panel_accessibility_ai_discoverability",
+  "last_etl_date": "2026-08-01T13:58:06.008352",
+  "calls": [
+    {
+      "id": "01KTAY8W0SDR4A35BQCYK4735J",
+      "source": "fireflies",
+      "title": "TLC Panel: Accessibility, AI Discoverability, & SEO with Shirley van Haalem, Alisa Scharf, and Sani Manic",
+      "date": "2026-06-12",
+      "duration_minutes": 62,
+      "summary": "The discussion highlighted the close relationship between accessibility and AI discoverability, noting that accessibility guidelines overlap significantly with SEO needs, as explained by Shirley van Haalem. Misuse of ARIA attributes and rising accessibility errors were also addressed by Slobodan Manic. The panel observed a decline in accessibility trends due to complex web development practices. Changes in search engine optimization were examined, revealing that AI search differs from traditional SEO by emphasizing brand signals and user experience. Suggestions for embedding accessibility into workflows and creating new KPIs were proposed. The importance of bot strategies for brand safety and the need for a shift in mindset regarding accessibility and content strategy were reiterated.",
+      "organizer": "graham@growthbook.io",
+      "participants": 2,
+      "keywords": "Accessibility, AI Discoverability, SEO, Semantic HTML, Bot Strategy, Web Accessibility Compliance",
+      "action_items": "\n**Shirley van Haalem | Online Dialogue**\nEmbed accessibility as a core process metric in organizational workflows by tracking accessibility error rates per release and integrating these metrics into the definition of done (57:41)\n\n**Alisa Scharf**\nLead collaboration with IT teams to develop and manage bot configuration strategies that balance security concerns with AI training needs (58:06)\n\n**Slobodan Manic**\nPromote semantic and accessible web design processes by encouraging the use of real, meaningful content early in design stages and discouraging placeholder text such as lorem ipsum (54:47)\n\n**TLC Community**\nConsider running combined audits overlaying accessibility, SEO, and AI discoverability to identify correlated gaps and opportunities for holistic web improvements (34:55)\n\n**Panel Moderators**\nShare insights and case studies on the overlap of accessibility, SEO, and AI discoverability to educate the community and influence better website practices (03:38)\n"
+    }
+  ]
+}

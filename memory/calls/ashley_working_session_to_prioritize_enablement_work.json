@@ -1,0 +1,19 @@
+{
+  "company": "Ashley: working session to prioritize enablement work",
+  "slug": "ashley_working_session_to_prioritize_enablement_work",
+  "last_etl_date": "2026-08-01T13:58:05.988410",
+  "calls": [
+    {
+      "id": "01KY0QV3113D2JXR0RQ75GWENP",
+      "source": "fireflies",
+      "title": "PMM - Ashley: working session to prioritize enablement work",
+      "date": "2026-07-23",
+      "duration_minutes": 4,
+      "summary": "The team recognized an urgent need to progress the messaging framework, even as the product strategy and company positioning remain incomplete. Scott Bailey emphasized the importance of moving forward with messaging development and suggested revisiting earlier work on messaging pillars for relevance. Ashley Stirrup highlighted the close link between messaging and product strategy, noting that unclear messaging could cause anxiety among leadership. The team decided to pause the meeting due to a participant's emergency, agreeing to reschedule to ensure full engagement. They discussed using a Slack-based messaging framework to improve consistency and collaboration. The discussions revealed heightened sensitivity among leadership to messaging content, stressing the need for careful vetting before public dissemination, and they committed to an iterative approach for messaging development in parallel with strategy clarification.",
+      "organizer": "elyse@growthbook.io",
+      "participants": 3,
+      "keywords": "product strategy, messaging framework, enablement, positioning, messaging architecture, Slack collaboration",
+      "action_items": "\n**Scott Bailey**\nFind a new meeting time to reschedule the discussion focused on the important release and enablement topics (01:46)\n\n**Scott Bailey, Ashley Stirrup, Elyse Fox**\nRevisit the previously developed messaging framework and pillar ideas from prior work before the retreat to determine relevance and foundation for further messaging work (02:41)\n\n**Ashley Stirrup, Scott Bailey**\nContinue advancing messaging development efforts in parallel with ongoing product strategy clarifications, adjusting as needed (01:52)\n"
+    }
+  ]
+}

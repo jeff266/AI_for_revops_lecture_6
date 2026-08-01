@@ -1,0 +1,19 @@
+{
+  "company": "Forty Eight Point One",
+  "slug": "forty_eight_point_one",
+  "last_etl_date": "2026-08-01T13:58:06.029689",
+  "calls": [
+    {
+      "id": "01KPV1932YTATY4VWKW8RF4596",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Forty Eight Point One",
+      "date": "2026-04-24",
+      "duration_minutes": 25,
+      "summary": "The meeting addressed the urgent issue of reaching the 2 million CDN request limit on the free/pro cloud tier, which halted tracking services and necessitated an upgrade to an enterprise plan. Participants Joseph Lion and James Shannon confirmed that the free tier restricts experiments to two monthly, while the Pro tier allows four, making the enterprise plan essential for Dishoom's multi-experiment needs and high traffic. The move to enterprise is justified by the high volume of traffic and the requirement for more user seats. Self-hosting emerged as an option to eliminate CDN limits, increase security, and give the client full control. A temporary upgrade to the Pro plan was proposed to avoid downtime until the enterprise decision is finalized.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Enterprise Plan, CDN Usage Limit, Self-hosting, A/B Testing, User Seats",
+      "action_items": "\n**Joseph Lion**\nReview product documentation and self-hosting requirements before Monday’s follow-up meeting (21:45)\nProvide finalized numbers on expected monthly experiments and user seats to James for pricing preparation (17:45)\nConfirm with client stakeholders the preferred GrowthBook plan and readiness to move forward by Monday meeting (24:30)\n\n**James Shannon**\nVerify and confirm billing and over-usage policy regarding CDN usage on paid tiers (22:50)\nPrepare and provide enterprise pricing options based on number of users and experiments discussed (16:00)\nSchedule follow-up call for Monday 11:00 AM and be ready to discuss enterprise and self-hosted options (20:25)\n\n**Unassigned**\nPossibly involve a developer in Monday’s call for technical discussion on self-hosting (24:23)\n"
+    }
+  ]
+}

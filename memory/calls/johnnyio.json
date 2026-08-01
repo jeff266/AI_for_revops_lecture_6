@@ -1,0 +1,19 @@
+{
+  "company": "johnny@growthbook.io",
+  "slug": "johnnyio",
+  "last_etl_date": "2026-08-01T13:58:05.984156",
+  "calls": [
+    {
+      "id": "01KYNBTCCNNFZ5EBH0XRYXGTFA",
+      "source": "fireflies",
+      "title": "johnny@growthbook.io - Tue, 28 Jul 2026 14:59:13 PDT - Untitled",
+      "date": "2026-07-28",
+      "duration_minutes": 37,
+      "summary": "The team discussed improving dashboard filters for clarity and user flexibility, emphasizing the need to balance global and block-level filters while addressing user confusion about their scope. They introduced a new date range UI inspired by Google Analytics, aimed at enhancing analysis capabilities. Performance problems were noted, particularly with the app's initial loading times and high RAM usage due to bulk loading strategies. Development workflow challenges were highlighted, with delays due to code review backlogs and team member absences. The team is committed to evolving the dashboard design to be more user-friendly, ensuring the interface supports complex filtering and comparisons while avoiding overwhelming users with irrelevant options.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 1,
+      "keywords": "Filters, dashboard, Google Analytics, date picker, UI/UX, performance",
+      "action_items": "\n**Johnny Martinez**\nReview Google Analytics filter UI and send screenshots to Nhat Ho to serve as a reference for improving the filter design (28:43)\nRethink and improve how global and individual chart filters coexist and relate in the UI to clarify filter applicability and reduce user confusion (32:00)\nContinue working on UI/UX improvements regarding dashboard and block filter interaction, including deciding on terminology changes such as renaming the “edit” button to something more descriptive (20:08)\nFinalize clarifying the relationship between global filters and individual chart filters and ensure irrelevant filters are disabled per chart context (34:55)\n\n**Nhat Ho**\nSend Nhat Ho the notion document listing all filters and features being worked on by Michael and the team for clearer understanding and coordination (29:47)\nPush remaining pull requests involving all filters visible for experimentation after receiving feedback from Johnny (31:25)\n\n**Both Johnny Martinez and Nhat Ho**\nRevisit the new date picker and comparison features inspired by Google Analytics for potential improvements before pushing for review (21:02)\n"
+    }
+  ]
+}

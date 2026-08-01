@@ -1,0 +1,19 @@
+{
+  "company": "Infinite Locus",
+  "slug": "infinite_locus",
+  "last_etl_date": "2026-08-01T13:58:06.035134",
+  "calls": [
+    {
+      "id": "01KP84QGJ0ADP9S1ZFDBHZ5311",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Infinite Locus",
+      "date": "2026-04-16",
+      "duration_minutes": 25,
+      "summary": "The meeting focused on Infinite Locus assessing GrowthBook as a suitable A/B testing platform for their diverse clients, including those in e-commerce, sports, and nutraceutical sectors. With clients averaging one experiment per week, there is potential for rapid adoption, particularly with 1-2 clients ready to start soon. GrowthBook's features, such as supporting over 2,800 companies and having a flexible, warehouse-native architecture, were emphasized. The discussion also covered GrowthBook's new pricing structure, limiting experiments, and the anticipated integration of AI technologies. The meeting concluded with plans for follow-up materials and immediate client deployments framed around the Pro tier capabilities.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook, A/B Testing, Conversion Rate Optimization, Visual Editor, Data Warehouse, Experimentation Platform",
+      "action_items": "\n**James Shannon**\nSend the GrowthBook presentation deck and documentation to Infinite Locus team to support their evaluation and client discussions (24:41)\nProvide access or arrangements for a demo or trial of the GrowthBook Visual Editor to Infinite Locus for hands-on evaluation (18:59)\n\n**Ankur Bhatia**\nReview the GrowthBook materials sent by James and initiate internal discussions to assess client-specific A/B testing and integration needs (24:41)\n\n**Shivam Kohli**\nCoordinate follow-up communication with James Shannon to clarify specific integration details and A/B testing requirements for Infinite Locus’s current clients (24:41)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "A1apps",
+  "slug": "a1apps",
+  "last_etl_date": "2026-08-01T13:58:06.035268",
+  "calls": [
+    {
+      "id": "01KP5230TEZCRKXRC71X2KW0N6",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for A1apps",
+      "date": "2026-04-16",
+      "duration_minutes": 41,
+      "summary": "A1 Apps is facing significant challenges with Firebase, taking about 10 days for product experimentation due to manual data analysis and delays, which hampers real-time decision-making. Currently, they run about 10 experiments per month across five apps, each producing around $10,000 daily in revenue, focusing on monetization, retention, and engagement. They are exploring GrowthBook as a more automated and efficient platform, which offers real-time analysis, flexible experiment targeting, and no need for app redeployments. A1 Apps aims to run up to 20 experiments monthly using GrowthBook while requiring a clear pricing proposal before moving forward. The need for accurate and speedy experimentation is underscored by their significant revenue generation.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "remote config, experiment analysis, BigQuery integration, feature flagging, A/B testing, enterprise support",
+      "action_items": "\n**Shrinath Satyarthi**\nProvide GrowthBook with exact numbers for experiments per month and team size to enable accurate pricing proposal (36:41)\nReview GrowthBook’s pricing proposal and ROI model once received to inform decision making (40:24)\nCompile an evaluation document comparing Firebase and GrowthBook using shared materials and meeting transcript for internal reporting (41:03)\n\n**James Shannon**\nSend a one-page comparison document between GrowthBook and Firebase to A1apps after the call (17:31)\nPrepare and send a detailed pricing proposal including ROI metrics based on A1apps’ experiment volume and user count (40:24)\nSchedule a technical demonstration with GrowthBook’s technical team for early next week (37:24)\nArrange a separate call with Shrinath to build a customized ROI model specific to A1apps using their data (39:00)\nProvide requested documentation including presentation slides and meeting transcript for A1apps’ internal evaluation and reporting (41:00)\n"
+    }
+  ]
+}

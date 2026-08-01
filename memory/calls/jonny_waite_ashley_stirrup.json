@@ -1,0 +1,19 @@
+{
+  "company": "Jonny Waite and Ashley Stirrup",
+  "slug": "jonny_waite_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:05.996462",
+  "calls": [
+    {
+      "id": "01KWT0H3T2YBQ5VRWKXW1JMC0B",
+      "source": "fireflies",
+      "title": "Jonny Waite and Ashley Stirrup",
+      "date": "2026-07-10",
+      "duration_minutes": 30,
+      "summary": "The agency introduced its compliance-first approach for increasing brand visibility on Reddit, emphasizing both organic and paid strategies. Recco, a full-service agency, employs proprietary tools and expert manual strategies, serving notable clients like Google and Kohl’s. Their strategy includes building branded subreddits, utilizing profile personas for moderator trust, and focusing on content themes based on subreddit relevance. They also aim to accumulate significant karma points for credibility, planning to initiate AMAs to enhance brand engagement. A modest ad spend is recommended to complement organic efforts, and the pricing structure reflects the nature of Reddit's growth timeline, with a $5,200 monthly fee focusing on organic growth and a gradual ROI expected from the fifth month onwards.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 6,
+      "keywords": "Reddit Marketing, Organic Strategy, AI Citation, Feature Flagging, Brand Visibility, ROI Modeling",
+      "action_items": "\n**Jonny Waite**\nSend Growth Book examples of Reddit content and posting strategy post-meeting (29:00)\nCreate and share an ROI scenario and timeline model based on Growth Book’s average order value and conversion cycle for organic Reddit marketing (29:00)\nProvide Growth Book with the full presentation deck and a simplified two-sheet summary for review (09:01)\n\n**Ashley Stirrup**\nLocate and provide site organic conversion rate data to Jonny Waite for more precise ROI modeling (24:48)\n"
+    }
+  ]
+}

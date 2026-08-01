@@ -1,0 +1,19 @@
+{
+  "company": "Soham Patel and Cary Rakin",
+  "slug": "soham_patel_cary_rakin",
+  "last_etl_date": "2026-08-01T13:58:05.997725",
+  "calls": [
+    {
+      "id": "01KX1KCASRG5FKATY86JMV2JB7",
+      "source": "fireflies",
+      "title": "Soham Patel and Cary Rakin",
+      "date": "2026-07-08",
+      "duration_minutes": 32,
+      "summary": "Philo has been utilizing Growth Book’s enterprise features for over five months without a formal contract, primarily driven by a lack of awareness. The company is seeking clarity on costs and value before commitment. Key desired features include access control and governance capabilities due to compliance needs. The transition from self-hosted to SaaS enterprise is seen as beneficial, offering maintenance relief. Philo's pricing discussion indicates a rough estimate for 50 seats on SaaS enterprise at $100,000 per year, with flexibility in initial pricing. Philo emphasizes successful experimentation by empowering PMs with tools while minimizing data scientist involvement. The potential use of AI in their operations is also being explored, alongside a smooth migration path to SaaS.",
+      "organizer": "cary@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, Enterprise features, Experimentation platform, Feature flags, Data science, AI integration",
+      "action_items": "\n**Soham Patel**\nCompile a detailed report on GrowthBook enterprise features, cost structure, and limitations to present to Philo’s executive team for decision-making (14:07)\nMeet with manager to refine plan for executive conversations and gather feedback on continuing GrowthBook enterprise usage (28:45)\nCoordinate with C-suite to discuss GrowthBook enterprise continuation and cost justification based on compiled report (28:45)\nInform Cary about executives interested in attending the San Francisco AI and product dinner event and manage attendee logistics (29:20)\nSchedule follow-up discussions with Cary to deepen technical or contractual conversations after initial executive reporting (30:53)\n\n**Cary Rakin**\nProvide Soham with documentation and reports summarizing GrowthBook enterprise features, costs, and limitations for executive review (14:07)\nInvestigate GrowthBook’s capability to scale experiment impact metrics to full traffic and arrange a technical session if needed (20:16)\nShare GitHub repository of pre-built AI skills and tools with Soham to support experimentation and PM autonomy (21:51)\nFacilitate technical discussions between Philo’s operations/infrastructure teams and GrowthBook for seamless migration from self-hosted to SaaS enterprise (26:45)\nOffer executive alignment opportunities including CEO and CTO conversations and provide information about the San Francisco AI and product dinner event (29:03)\nFollow up with Soham after initial executive discussions to progress contract negotiations and deployment planning (30:53)\n"
+    }
+  ]
+}

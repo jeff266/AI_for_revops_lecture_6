@@ -1,0 +1,17 @@
+{
+  "company": "Mustapha Modaffar and James Shannon",
+  "slug": "mustapha_modaffar_james_shannon",
+  "last_etl_date": "2026-08-01T13:58:05.979459",
+  "calls": [
+    {
+      "id": "69bbdb9550af610019101577",
+      "source": "apollo",
+      "title": "Mustapha Modaffar and James Shannon",
+      "date": "2026-03-19",
+      "duration_minutes": 19,
+      "summary": "James Shannon (GrowthBook's new EMEA lead) spoke with Mustapha Modaffar and Alex Cote (data science team at Reach) about their use of GrowthBook for A/B testing, highlighting pain points like internal restructuring and impatient leadership that threaten renewal. They discussed features such as self-hosting and data sovereignty, which were key to their adoption. Next steps: James will introduce them to account manager Carrie to help engage senior stakeholders and improve retention chances.",
+      "host": "James Shannon",
+      "participants": 3
+    }
+  ]
+}

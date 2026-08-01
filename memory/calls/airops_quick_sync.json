@@ -1,0 +1,19 @@
+{
+  "company": "AirOps Quick Sync",
+  "slug": "airops_quick_sync",
+  "last_etl_date": "2026-08-01T13:58:06.017178",
+  "calls": [
+    {
+      "id": "01KSN8VC59E0E4KFYGPZPKM668",
+      "source": "fireflies",
+      "title": "AirOps Quick Sync",
+      "date": "2026-05-27",
+      "duration_minutes": 31,
+      "summary": "The meeting addressed ongoing SEO issues, particularly slow Google indexing of new Insights articles despite manual submissions, with factors like site health and internal linking raised. Non-branded organic traffic has increased to 9%, showcasing better reach, though distinguishing human from bot traffic remains a challenge. Gaps in analytics due to the absence of Google Tag Manager on key pages hinder conversion tracking, while current dashboards lack flexibility. The team aims to keep Insights content high-quality by planning updates and enhancing cross-linking with the blog for better visibility. Additionally, team member Karen Henke announced her transition to part-time special projects, signifying a shift in operational focus and content management practices.",
+      "organizer": "elyse@growthbook.io",
+      "participants": 4,
+      "keywords": "Google Indexing, Internal Linking, Conversion Tracking, HubSpot Forms, Organic Traffic, Content Optimization",
+      "action_items": "\n**Jack Virag**\nAdd internal links from blog posts to Insights articles to improve indexing signals and coordinate with Growth Book team to decide on appropriate internal linking strategy without over-saturating site navigation (20:15)\nInvestigate crawl speed issues and site health factors affecting Google’s indexing frequency for the Growth Book website (25:20)\nPlan and execute a “deletion session” to remove low-value content based on Looker Studio data to optimize site quality and performance (27:55)\n\n**Jason Faber**\nShare Looker Studio reports and grant proper access to team members to enable effective monitoring and analysis of organic traffic and content performance (05:00)\nContinue monitoring Google Search Console and inspect URLs to understand indexing delays or issues, especially related to sitemaps and crawl notifications (23:30)\nPush for updating high-value blog posts identified, such as “best AB testing platforms,” to maintain content relevance and performance and avoid dated URLs for easier future updates (17:00)\n\n**Karen Henke**\nTransition to part-time role focusing on special projects primarily around content and project management, effective around June 5th, while supporting Looker Studio reporting and tracking setup improvements (28:30)\nCollaborate with engineering and Growth Book team to advocate for improved Google Tag Manager deployment on auth, sign-in, and demo pages to enable conversion tracking (08:20)\n\n**Unassigned**\nAddress HubSpot iframe limitations on demo request forms, potentially seeking workaround for conversion tracking since direct redirect or thank you-page triggers are blocked (10:10)\n"
+    }
+  ]
+}

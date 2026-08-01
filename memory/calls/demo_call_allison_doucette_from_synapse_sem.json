@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Allison Doucette from Synapse SEM",
+  "slug": "demo_call_allison_doucette_from_synapse_sem",
+  "last_etl_date": "2026-08-01T13:58:05.990309",
+  "calls": [
+    {
+      "id": "01KY2EDDGS12BY1PKAYT663EMX",
+      "source": "fireflies",
+      "title": "Demo Call with Allison Doucette from Synapse SEM",
+      "date": "2026-07-22",
+      "duration_minutes": 29,
+      "summary": "The discussion highlighted GrowthBook’s features for supporting AB testing and landing page experimentation without heavy reliance on developers. Key aspects included a visual editor that simplifies testing for marketers, AI-enhanced tools that assist in setup and analysis, and a reliable metrics integration with platforms like GA4 and BigQuery. Synapse's needs for rapid, easy landing page testing were emphasized, as well as concerns regarding design quality and brand standards. GrowthBook's pricing structure was reviewed, noting a transition from seat-based to usage-based pricing, which encourages clients to sign up beforehand. The importance of technical setup involving SDK installation was addressed, alongside strategies to streamline integration and mitigate complexity.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "AB testing, GrowthBook, landing pages, visual editor, GA4 integration, experiment analysis",
+      "action_items": "\n**Dan Wathne**\nSend Allison quick-start guides and a recording of the visual editor demo for GrowthBook to assist with onboarding and evaluation (24:55)\nReview the call transcript and provide tailored recommendations on integrating BigQuery with GrowthBook for Synapse’s client data analysis needs (28:14)\n\n**Allison Doucette**\nReview the GrowthBook resources provided and share any further specific questions or feedback to clarify Synapse’s requirements and optimize usage (29:43)\n"
+    }
+  ]
+}

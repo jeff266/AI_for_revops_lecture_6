@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Andy Seaton from Fabric Analytics ",
+  "slug": "demo_call_andy_seaton_from_fabric_analytics",
+  "last_etl_date": "2026-08-01T13:58:05.995463",
+  "calls": [
+    {
+      "id": "01KXGJ3MHGZ68GXWC2ZHHQ92MC",
+      "source": "fireflies",
+      "title": "Demo Call with Andy Seaton from Fabric Analytics ",
+      "date": "2026-07-14",
+      "duration_minutes": 24,
+      "summary": "The discussion centered on evaluating the Enterprise package primarily for its Holdouts feature, which aims to enhance long-term results validation for 15 clients. Holdouts address client trust by testing winning variations against control groups, providing clearer incremental gains. Enterprise features allow better governance and risk management, vital for advanced experimentation. The platform fee starts at $50,000 per year, with a possible 10% discount, and a trial period of 2-3 weeks was proposed to demonstrate Holdouts' value. Fabric Analytics, acting as a CRO agency, manages about 3-4 experiments per client internally, targeting smaller clients like those on Shopify. The conversation also explored technical integration, current usage of GrowthBook, and the prospects for future partnership.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 3,
+      "keywords": "Holdouts, Enterprise Features, Conversion Rate Optimization, Self-Hosted A/B Testing, Pricing, Budget, Trial Evaluation",
+      "action_items": "\n**Andy Seaton**\nDiscuss the $50,000 Enterprise pricing and Holdouts feature with Rick and establish budget considerations for upgrade (18:00)\nCoordinate with Rick and Scott Keller to schedule a follow-up meeting to discuss Enterprise plan adoption and detailed terms (18:40)\n\n**Scott Keller**\nProvide information on GrowthBook pricing, Enterprise features, and send follow-up email post-call to recap discussion and confirm next steps (21:00)\nEnable a two-week trial for GrowthBook Enterprise Holdouts feature for Fabric Analytics at an appropriate time based on experiment planning (19:35)\n"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "company": "PodMe",
+  "slug": "podme",
+  "last_etl_date": "2026-08-01T13:58:06.023566",
+  "calls": [
+    {
+      "id": "01KPBF6M2MGH7DN417FFR8XYHZ",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Podme",
+      "date": "2026-04-20",
+      "duration_minutes": 44,
+      "summary": "PodMe's meeting revolved around adopting an experimentation strategy that embraces collaboration between product managers, developers, and designers to enhance decision-making through measurable outcomes. Key metrics, including subscription conversion rates from free to premium users paying €8/month in Nordic countries, guide this initiative. Currently, PodMe serves around 350,000 subscriptions and reaches 4.5 million users, potentially earning €1.8 million monthly with a 5% conversion rate. A technical integration discussion highlighted GrowthBook's platform capabilities, which support both client and server-side experiments and utilize BigQuery for data management. The team debated tier options, emphasizing that the recommended Enterprise tier offers essential features for safety and scalability, while upcoming limitations on the free version necessitate clarity for future planning.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, A/B Testing, Open Source, BigQuery, Feature Flags, Experimentation Culture",
+      "action_items": "\n**James Shannon**\nProvide detailed updated information on upcoming pricing changes and experiment limitations for open source and Pro tiers before next call (39:27)\nOrganize and lead a technical product demonstration covering setup, experiment creation, and deliver an enterprise pricing proposal (37:13)\n\n**Amin Ojani**\nConfirm calendar availability for the technical demonstration on Thursday at 16:00 local time (40:02)\nCoordinate internal review of GrowthBook’s fit and prioritization of use cases with his team (27:06)\n\n**Huijie Wang and Sara Brändström**\nPrepare any technical questions or specific evaluation criteria ahead of the next product demo call (41:26)\n"
+    },
+    {
+      "id": "01KQ5E2MHWKA0HP8S58SDEJV0R",
+      "source": "fireflies",
+      "title": "PodMe & Growthbook",
+      "date": "2026-05-07",
+      "duration_minutes": 40,
+      "summary": "The negotiation focused on aligning the enterprise offer with the client’s limited budget and experimentation requirements. The client requested two pricing options—one for 100 experiments at a reduced price and another for 200 experiments at the same rate for flexibility. Timing for contract signing was discussed, with a proposal to delay invoicing until the first experiment launch, considering seasonal constraints. The client, new to experimentation, plans to start cautiously and scale based on results, aiming for operational readiness by October. To facilitate this, onboarding will include setup, training, and AI-assisted tools. Competitive insights revealed that the client is weighing various vendors, with GrowthBook preferred for its secure, warehouse-native architecture.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Experimentation, A/B Testing, Pricing Negotiation, Onboarding, Data Warehouse Integration, Budget Constraints",
+      "action_items": "\n**James Shannon**\nProvide a revised pricing offer with two options: one with reduced price for 100 experiments per year, and another with the same price but doubled experiments, to be delivered by May 11 (36:54)\nDeliver an onboarding and AI experimentation support plan to accelerate client readiness and provide training materials (14:50)\nNegotiate internally regarding budget and pricing options to meet client’s financial constraints (10:43)\nPrepare a project timeline including setup, integration, and training phases, considering summer vacation impact and delayed invoice start (19:50)\n\n**Amin Ojani**\nPresent revised pricing and options to leadership team and coordinate extra ad hoc sessions for leadership discussion (34:48)\nConfirm internal decision on contract signing by end of May to meet Q3 experimentation readiness (32:58)\nClarify and share competitor vendor information to enable GrowthBook competitor positioning (37:40)\n"
+    }
+  ]
+}

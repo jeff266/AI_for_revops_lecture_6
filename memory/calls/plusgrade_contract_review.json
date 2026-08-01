@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook<>Plusgrade contract review",
+  "slug": "plusgrade_contract_review",
+  "last_etl_date": "2026-08-01T13:58:06.025692",
+  "calls": [
+    {
+      "id": "01KQCRZ1F7RF9CVZNE5HTM9XGS",
+      "source": "fireflies",
+      "title": "GrowthBook<>Plusgrade contract review",
+      "date": "2026-04-30",
+      "duration_minutes": 0,
+      "summary": "The team convened to discuss a data privacy and security strategy, opting for a self-hosted version of GrowthBook to enhance data control and limit external exposure. Key points included the clarification that GrowthBook would only access aggregates from a read-only data warehouse, ensuring compliance and reducing legal complexities. A four-month pilot contract with non-refundable fees was established, requiring flexibility for contract finalization due to internal approvals involving the CFO. The pilot testing of GrowthBook’s solution is currently underway in a non-production environment to validate integration before broad rollout. A communication plan was set with a target completion date for contract and deployment by May 15.",
+      "organizer": "jake@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook, Self-hosted Deployment, Data Privacy, Contract Terms, Legal Review, Pricing and Discounts",
+      "action_items": "\n**Leonid Gilburd**\nCoordinate with Plusgrade team to complete non-production self-hosted deployment and testing for GrowthBook, adhering to sprint timeline targeting mid-May completion (12:50)\nExpedite internal review process following receipt of legal feedback from Kevin, aiming to finalize agreement after Monday (14:33)\n\n**Kevin Adhami**\nReview and provide feedback on latest contract markup, especially regarding data use and termination clauses, by Monday at the latest (09:35)\n\n**Jake Heier**\nProvide updated contract terms removing or clarifying any language related to training models on customer data (05:34)\nDiscuss with GrowthBook leadership the possibility of extending discount validity beyond original deadline and communicate update to Plusgrade via Slack (13:42)\nPrepare and send order form contingent upon Master Service Agreement completion to secure current pricing for Plusgrade (11:31)\n\n**Simon Beaumier**\nMonitor internal process and coordinate with Kevin and CFO to facilitate contract approval next week (14:55)\n\n**Kent Ridge**\nSupport legal review of contract and provide input on removal or clarification of data usage clauses (06:15)\n"
+    }
+  ]
+}

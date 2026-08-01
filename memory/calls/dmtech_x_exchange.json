@@ -1,0 +1,19 @@
+{
+  "company": "dmTECH x GrowthBook Exchange",
+  "slug": "dmtech_x_exchange",
+  "last_etl_date": "2026-08-01T13:58:06.002403",
+  "calls": [
+    {
+      "id": "01KVZG7K3Z21F31V5WHY8AET4X",
+      "source": "fireflies",
+      "title": "dmTECH x GrowthBook Exchange",
+      "date": "2026-06-30",
+      "duration_minutes": 53,
+      "summary": "GrowthBook is positioned as a financially stable company serving approximately 3,200 active companies weekly, with plans for growth and a strong team of about 50 staff, primarily in development. The company's product vision includes leveraging AI to enhance experimentation and integrate deeply into product discovery. GrowthBook's open source strategy offers foundational features for free while delivering advanced enterprise functionalities to paying customers, all aimed at democratizing access to experimentation tools. Challenges discussed include pricing concerns from dmTECH regarding user access, especially read-only users, along with trade-offs associated with self-hosting versus SaaS models. Both GrowthBook and dmTECH expressed optimism about forming a successful partnership, detailing smooth progress in contract negotiations and shared enthusiasm for collaborative opportunities.",
+      "organizer": "graham@growthbook.io",
+      "participants": 8,
+      "keywords": "GrowthBook, experimentation platform, self-hosting, AI integration, pricing negotiation, dmTECH",
+      "action_items": "\n**Christian Liebenow**\nShare the self-hosted order form with dmTECH to replace the SaaS version order form (34:49)\nDiscuss and align with Ryan McGurk on language and mechanics for providing company-wide access to past experiments (34:49)\nPropose and provide a pricing structure including a flat fee for past experiments access and flexible seat licensing by the Thursday meeting (34:49)\nPrepare a rate table outlining unit costs for full and read-only seats, including volume discounts (49:23)\nFollow up with Yannick Weichert about the order form and legal language to progress contract negotiations (30:58)\nCoordinate with Ryan McGurk on offer pricing to ensure a competitive first-year contract tailored to dmTECH's user forecasts (42:53)\n\n**Yannick Weichert**\nSchedule and confirm follow-up meeting invite for Thursday at 4pm local time to discuss pricing and contract terms (51:58)\nCoordinate internal legal review and prepare to finalize adjustments to contract language, especially regarding self-hosted deployment (31:38)\nFollow up internally on management and pricing concerns, including reducing read-only users and exploring flat fee models for past experiments API access (33:30)\nLead internal alignment on pricing acceptability and user licenses estimates for first and subsequent years based on program success (34:42)\nPlan case study and conference speaking opportunities showcasing dmTECH’s collaboration with GrowthBook (43:45)\n\n**Graham**\nSupport answering additional technical or product questions from dmTECH whenever needed (30:16)\nMaintain ongoing support and partnership attitude, including embedding engineers in client communication channels to address feature requests rapidly (16:28)\n"
+    }
+  ]
+}

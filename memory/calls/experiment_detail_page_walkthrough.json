@@ -1,0 +1,19 @@
+{
+  "company": "Experiment Detail Page Walkthrough",
+  "slug": "experiment_detail_page_walkthrough",
+  "last_etl_date": "2026-08-01T13:58:06.043061",
+  "calls": [
+    {
+      "id": "01KKWMVKGSGFPNX9JN74PCMJZ5",
+      "source": "fireflies",
+      "title": "Experiment Detail Page Walkthrough",
+      "date": "2026-03-17",
+      "duration_minutes": 54,
+      "summary": "The team discussed centralizing variation editing on the experimentation side while reusing existing JSON components for efficiency. Kari Kay proposed a streamlined variation editing modal to reduce UI complexity, while Bryce Fitzsimons emphasized maintaining consistency with the feature flag page. The approach involves restricting direct edits on the experiment page, with future integration planned. For linked feature flags, a separate modal will ensure all necessary values are set to prevent null states. The need for visibility of draft states on the experiment page was acknowledged to avoid accidental deployments. Additionally, separating metadata like screenshots from core configurations was deemed crucial for clarity, while focusing on reducing UI complexity and modal proliferation across the user experience.",
+      "organizer": "kari@growthbook.io",
+      "participants": 6,
+      "keywords": "Variation Editing, Experiment Modal, Feature Flags, JSON Editing, Draft State, Environment Controls",
+      "action_items": "\n**Kari Kay**\nUpdate the variation editing modal to integrate Bryce’s existing inline JSON editing component for consistency (08:03)\nPrepare a revised modal for editing variations that separates variation name/split editing from value editing, minimizing the number of modals (26:33)\nCreate a specialized, multi-feature-flag modal flow for adding new variations with required values across multiple linked feature flags (34:40)\nAdjust metadata section UI to shrink empty states and enable toggled editing mode, particularly for running experiments (44:01)\nCoordinate with Jeremy for reviewing the updated modal design and share relevant materials before wider implementation (53:10)\n\n**Bryce Fitzsimons**\nDemonstrate and provide access to existing JSON editing interface component for reuse in upcoming modal revisions (06:14)\nAssist in clarifying lifecycle states management, especially draft vs live transitions with approval flows, to ensure UI reflects current backend logic (10:33)\nSupport Kari with designing modal flow that handles multi-flag variation editing complexities (35:18)\n\n**Luke Sonnet**\nReview and discuss draft and live state management strategies with Jeremy to ensure alignment and feasibility (12:55)\nValidate Kari’s updated modal designs and ensure they resolve major edge cases involving multi-flag experiments (52:54)\nProvide feedback to Kari on UI concerns such as editable fields that may confuse users, recommending locking or hiding fields when irrelevant (11:24)\n"
+    }
+  ]
+}

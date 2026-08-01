@@ -1,0 +1,31 @@
+{
+  "company": "Handoff Review / Features Refresh ",
+  "slug": "handoff_review_features_refresh",
+  "last_etl_date": "2026-08-01T13:58:06.050155",
+  "calls": [
+    {
+      "id": "01KGT8NDGBHMSQDPSXADCGX6PN",
+      "source": "fireflies",
+      "title": "Handoff Review / Features Refresh ",
+      "date": "2026-02-06",
+      "duration_minutes": 33,
+      "summary": "The team convened to enhance the user interface layout and table optimization by removing unnecessary elements such as prerequisites, rules, and stale columns for a cleaner design that improves scanning efficiency across large datasets. Discussions included truncating long text labels in the name column while considering tooltips for key information retention, and exploring adjustable column widths to accommodate varying content lengths. Teresa Yung raised concerns about customizable column visibility affecting team workflows, while the consensus favored sticky headers for better navigation on laptops. The team also refined column content, renaming the version column to changes column to indicate pending approvals, and debated the relevance of the default value column. Future enhancements were discussed, focusing on linking to developer tools for improved feature discoverability and maintaining consistency in team-wide views.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature Table, Column Truncation, Approval Flow, Sticky Header, Data Type, UI Refresh",
+      "action_items": "\n**Johnny Martinez**\nCopy Teresa’s existing “changes” column component into the new table layout as is (18:21)\nExplore truncation methods for long feature names, especially middle truncation in CSS and tooltips for full text (06:50)\nEvaluate moving default value column closer to the front of the columns, possibly after tags (18:56)\nImplement the “data type” column with text labels in place of the default value column (20:22)\nAdjust sticky header background to be full width but contained within the table width, following experiments page example (28:00)\n\n**Bryce Fitzsimons**\nCheck for any CSS solutions allowing truncation in the middle of strings to improve label display (10:58)\nInvestigate how to make the middle columns horizontally scrollable with sticky first (name) and possibly actions columns (12:35)\nCollaborate on possibly removing the duplicate feature action due to low importance and unclear utility (14:00)\nConfirm exact definition and data availability for “last published” timestamp on features to clarify the “last updated” column (23:50)\n\n**Teresa Yung**\nProvide notes and clarification on approval flow indicators and alignment with UI (16:04)\nParticipate in defining the position and usage of the data type column replacing default value (20:22)\nConfirm sticky header design preference and shadow improvements (28:24)\nShare examples of tag overflow and tooltip usage (15:40)\n"
+    },
+    {
+      "id": "01KGRDVCETKEG6WV26X50623QK",
+      "source": "fireflies",
+      "title": "Handoff Review / Features Refresh",
+      "date": "2026-02-06",
+      "duration_minutes": 46,
+      "summary": "The team convened to discuss a comprehensive refresh of the feature table layout, emphasizing the removal of less useful columns like prerequisites and actions to enhance clarity and reduce clutter. They confirmed the ‘stale’ column's removal, despite some concerns, with plans for future improvements tied to usage analytics. The ‘changes’ column will replace the old ‘version’ column to better indicate edits needing review. Toggles for environments will move to the actions menu to prevent accidental changes, while tooltips will be implemented for truncated content. The discussion also included ensuring access to design files and a preference for filtering results over adjustable page sizes to improve user experience and maintain design consistency across the board.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 4,
+      "keywords": "Feature Refresh, UI Layout, Column Truncation, Approval Flows, Sticky Headers, Environment Toggles",
+      "action_items": "\n**Johnny Martinez**\nImplement column removal and layout refresh based on discussion, including truncation approach with tooltips and wider columns where feasible (02:00)\nReplace 'version' column with existing 'changes' column design from Kari for draft review indicators (15:00)\nAdjust 'default value' column to display data type labels (string, JSON, number) instead of default values (16:00)\nUpdate sticky header design to clip shadow properly and align with company styling guidelines (41:00)\n\n**Kari Kay**\nAdd Teresa and Bryce to Figma project access and ensure they have appropriate permissions (43:30)\n\n**Bryce Fitzsimons**\nInvestigate CSS possibilities for middle truncation with ellipses on long text strings for feature names (07:00)\nSend Statsig screenshots showing environment views for team inspiration on feature serving per environment UI (36:10)\n\n**Kari Kay & Bryce Fitzsimons**\nExplore future implementation of sticky headers, environment toggling UX improvement, and integration of Dev tools/simulate features from table (18:00)\n\n**Teresa Yung**\nReview final Figma designs for changes and prepare a list of implementation changes post design freeze (43:00)\n"
+    }
+  ]
+}

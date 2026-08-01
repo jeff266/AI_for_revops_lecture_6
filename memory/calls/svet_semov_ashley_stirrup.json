@@ -1,0 +1,19 @@
+{
+  "company": "Svet Semov and Ashley Stirrup",
+  "slug": "svet_semov_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.033191",
+  "calls": [
+    {
+      "id": "01KPE6AX7NC8GNCXKNA1SMXWNS",
+      "source": "fireflies",
+      "title": "Svet Semov and Ashley Stirrup",
+      "date": "2026-04-20",
+      "duration_minutes": 34,
+      "summary": "Growth Book is currently experiencing significant growth, having doubled its revenue from $4 million to $8 million last year and aiming to double again this year. The company has a team of 35 employees and is shifting from an engineering-focused startup to a sales and marketing-driven organization. Notable customer acquisitions include companies like Anthropic and Salesforce, with a customer base of roughly 3,000, of which 75% are enterprise clients and half are free users. The company is implementing a freemium model to drive user acquisition, supported by a strong emphasis on marketing experimentation. Additionally, AI is seen as a key enabler for enhancing experimentation tools, though it won't replace human insights, highlighting a clear roadmap for scaling experiments effectively.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, Open Core, Experimentation, Marketing Data Science, A/B Testing, AI Integration",
+      "action_items": "\n**Ashley Stirrup**\nFollow up with Svet Semov to coordinate a potential podcast appearance discussing experimentation topics (33:20)\nConsider marketing strategies around the freemium model emphasizing free value with straightforward upgrade paths to paid tiers (19:30)\n\n**Svet Semov**\nContinue sharing and forwarding Growth Book-related leads from marketing and product experimentation contacts for potential collaboration (29:55)\n\n**Unassigned**\nMaintain ongoing open channel for collaboration opportunities between Growth Book and Svet’s marketing data science business (29:15)\n"
+    }
+  ]
+}

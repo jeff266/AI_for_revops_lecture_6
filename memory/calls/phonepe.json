@@ -1,0 +1,55 @@
+{
+  "company": "Growthbook <> PhonePe",
+  "slug": "phonepe",
+  "last_etl_date": "2026-08-01T13:58:06.021203",
+  "calls": [
+    {
+      "id": "01KJ5Q526BEFYZX6FST91XTNVK",
+      "source": "fireflies",
+      "title": "GrowthBook / PhonePe",
+      "date": "2026-02-24",
+      "duration_minutes": 36,
+      "summary": "The session outlined the upcoming GrowthBook upgrade, highlighting features such as full data retention and incremental load capabilities. The upgrade is set for this week and includes backward compatibility, ensuring existing data is preserved. A new data model will consolidate multiple tables into fewer, enhancing efficiency and performance by focusing on active metrics. Discussion also covered the handling of expired experiments, noting that archiving isn't recommended due to limited performance gains. Query observability will improve with the addition of metadata to Trino queries for better user tracking. Ongoing weekly meetings were emphasized for support in onboarding and scaling GrowthBook operations effectively.",
+      "organizer": "graham@growthbook.io",
+      "participants": 7,
+      "keywords": "GrowthBook upgrade, incremental load, data model, metric partitioning, experiment archiving, Trino query metadata",
+      "action_items": "\n**Koushik Roy**\nVerify existing GrowthBook roles and permissions related to settings access, including incremental load and experiment scheduling, and share screenshots/details after call (03:22)\nReview GrowthBook API instructions for data update triggering and follow up with Luke for any questions (05:26)\nWork with Jinan to finalize data model partitioning strategy and metric table design considering squad/business pod partitioning (14:47)\nPlan for staging environment upgrade next week and communicate internal rollout schedule (34:20)\nContinue testing incremental load and full load performance on new data source and tables; share updates as needed (08:33)\n\n**Abhishek Gaurav**\nProvide Koushik with screenshots of GrowthBook experiment scheduling parameter values and roles post-meeting (05:13)\nCoordinate with Luke’s team on receipt of updated GrowthBook Docker image and instructions (02:38)\n\n**Luke Sonnet**\nDeliver updated GrowthBook Docker image including incremental load and partitioning changes by end of week (01:17)\nProvide clear instructions on using updated Docker image and incremental load features (02:38)\nSupport questions related to GrowthBook API usage for experiment data updates (06:20)\nExplain handling of rule-based experiments and confirm support with proper exposure mapping (07:00)\nAssist PhonePe team on data model optimizations and provide guidance on partitioning and metric table design (13:07)\nShare documentation/advise on GrowthBook query metadata and Trino integration for query observability (28:18)\nClarify personal access token behavior for Trino client info fields (31:01)\n\n**Sharath Babu**\nCoordinate internal planning for staging and production rollout of GrowthBook upgrade (34:20)\nRequest and attend GrowthBook community and customer showcase events for scaling best practices (35:17)\n"
+    },
+    {
+      "id": "01KJT8HW9S3BWRCXP3T6A8EH8Z",
+      "source": "fireflies",
+      "title": "GrowthBook / PhonePe",
+      "date": "2026-03-04",
+      "duration_minutes": 37,
+      "summary": "The team discussed challenges related to users switching buckets mid-experiment and the optimal strategies for managing phased rollout data in GrowthBook. Luke Sonnet explained the non-switching bucket model, advising balanced splits for experiments to maintain integrity. Jinan noted that bucket switching triggers multiple exposure events, leading to inconsistencies. In distinguishing rollouts from true experiments, Sharath highlighted the necessity of fixed bucket assignments for reliable metrics. They explored strategies for validating bucket switching and suggested full data reloads for complex cases. The conversation also covered managing multiple projects within GrowthBook, using filtering for data governance, and how to handle partition configuration issues post-update. Members noted the importance of collaboration and sharing best practices to enhance GrowthBook's effectiveness.",
+      "organizer": "luke@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook SDK, incremental load, bucket switching, experiment rollout, data source configuration, multi-project governance",
+      "action_items": "\n**Jinan Sarmadi**\nVerify UI version and deployment environment for GrowthBook configuration; try hard refresh or incognito mode to resolve incremental data source validation errors (30:42)\n\n**Kaushik Roy**\nCoordinate internal checks on Jinan’s environment regarding incremental data source configuration and validation process (34:51)\n\n**Sharath Babu**\nInvestigate prevalence and causes of user bucket switching in experiment exposure logs to determine if this is a common or edge case scenario (11:12)\n\n**Luke Sonnet**\nShare documentation and resources on GrowthBook projects and SQL templates to guide PhonePe on project access control, metric segregation, and efficient querying (35:36)\n\n**All Participants**\nPrepare for next meeting to explore dimension analysis improvements and continue progress on incremental load testing and experiment data validation (36:21)\n"
+    },
+    {
+      "id": "01KKVGPK7RAKWEXZKMCSN6AQH0",
+      "source": "fireflies",
+      "title": "PhonePe / GrowthBook",
+      "date": "2026-03-16",
+      "duration_minutes": 25,
+      "summary": "The meeting focused on resolving issues with GrowthBook's incremental load logic, particularly the misalignment between partitioned data and timestamp ordering. Luke Sonnet and Jinan Sarmadi discussed potential solutions, including shifting to partition-based incremental loads to enhance data accuracy during reloading and deduplication processes. Device-generated timestamps were also noted as problematic, creating noise in data correctness, leading to an agreement on minimal filtering for incremental loads. The integration of AI assistance in the GrowthBook application was highlighted as a priority for improving user support, while upcoming discussions will refine data handling and performance metrics. Overall, participants committed to follow up on proposed solutions and keep communications active for swift resolutions.",
+      "organizer": "luke@growthbook.io",
+      "participants": 7,
+      "keywords": "Incremental load, timestamp filtering, data partitioning, GrowthBook, PhonePe, ETL processing",
+      "action_items": "\n**Luke Sonnet**\nDiscuss with GrowthBook team and provide a plan/ETA by next morning for adapting incremental load logic to rely on serial partition loading instead of timestamp filtering (09:00)\nExplore quick fix removing timestamp filters in ETL queries while considering constraints on future timestamps (15:00)\nArrange subsequent meetings to advise PhonePe on dimension setup for improved performance (23:25)\n\n**Jinan Sarmadi**\nConduct experiments testing full load vs incremental load with filtered partition timestamp data and report results back (04:50)\nConfirm that both exposure and metric tables will have timestamp filtering removed for incremental load as suggested (16:00)\n\n**Koushik Roy**\nConfirm internal data processing excludes future timestamps and rely on partition-based filtering (18:40)\nProvide any additional context or feedback to GrowthBook team to minimize back-and-forth and align assumptions (14:50)\n"
+    },
+    {
+      "id": "01KRAQWT980A4SZNPPF3A4FYHK",
+      "source": "fireflies",
+      "title": "Growthbook <> PhonePe",
+      "date": "2026-05-12",
+      "duration_minutes": 101,
+      "summary": "The meeting focused on outlining a four-phase workflow for seamlessly integrating Growth Book with PhonePe's existing systems. This includes initial experiment setup, linking to PhonePe’s business context, manual approvals to prevent unintended launches, and exposure logging for analysis. Key integration challenges discussed were the synchronization of experiment states between Growth Book and PhonePe's Ablaze and Chimera systems, along with the strategy of using Chimera as the central configuration system while exploring Growth Book's feature flags. Enhancements to the approval flow were also a priority, aiming for a maker-checker workflow to ensure responsible management of experiments. Lastly, the need for SSO integration with Olympus for authentication and identifying primary blockers for progress were emphasized.",
+      "organizer": "graham@growthbook.io",
+      "participants": 15,
+      "keywords": "Experiment Setup, Maker-Checker Flow, Chimera Integration, Feature Flags, SSO Authentication, State Synchronization",
+      "action_items": "\n**Diksha Agarwal**\nExplore and evaluate Growth Book’s feature flag capabilities and pre-launch checklists from a non-admin perspective for experiment setup and approval processes (01:39:20)\nCoordinate internally with Olympus team to clarify SSO integration requirements and confirm OIDC support (55:27)\nProvide clarifications on experiment ownership scope (one-to-one or one-to-many) and permissions requirements to Growth Book (01:34:19)\n\n**Achal Ananth**\nCoordinate internal discussions on timeframe and blockers for adopting Growth Book for experiment setup, targeting feedback and decision deadline by next week (27:43)\nCommunicate expectations that Growth Book provides responses to all 15 to 17 questions posed, including alternate approaches involving existing systems Ablaze and Chimera (01:37:21)\n\n**Luke Sonnet**\nProvide detailed written responses addressing all questions listed in PhonePe’s shared document, especially around maker-checker flow, SSO integration, state synchronization, and experiment configuration connectors (01:37:21)\nShare internal documentation for Growth Book Enterprise SSO integration and coordinate follow-up on Olympus system compatibility (56:43)\nContinue internal discussion on feasibility and timeline for native experiment approval flows, embedding Chimera UI, and integrating custom experiment configuration (26:56)\nAdvise on best practices for using feature flags as the configuration payload engine to accommodate complex Chimera configs and sync states (01:25:42)\n\n**Graham McNicoll**\nCollaborate to investigate permission model enhancement to restrict experiment editing to owners or limited users (01:34:10)\nSupport providing details and guidance on the use of SDK and event webhooks for synchronizing Growth Book with PhonePe backend systems (41:49)\nCoordinate with Growth Book team to answer specifics on webhook capabilities and state synchronization mechanisms (01:02:59)\n"
+    }
+  ]
+}

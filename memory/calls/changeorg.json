@@ -1,0 +1,19 @@
+{
+  "company": "Change.org",
+  "slug": "changeorg",
+  "last_etl_date": "2026-08-01T13:58:06.020279",
+  "calls": [
+    {
+      "id": "01KRS9KN7C3D1TQVZVV9TQ0BEG",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Change.org",
+      "date": "2026-05-18",
+      "duration_minutes": 35,
+      "summary": "The meeting focused on the strategy to consolidate experimentation tools at Change.org by implementing GrowthBook Enterprise. Key points included the decision to replace fragmented tools with GrowthBook to reduce maintenance and improve operational efficiency. Jeff Knight emphasized the importance of self-hosting for security and data privacy, while Scott Keller highlighted the need for clear pricing models. Discussions also covered the evolution of pricing from traditional models to a per-experiment structure, as well as the integration of GrowthBook with Change.org's existing data architecture. Both parties recognized the strategic partnership's potential and scheduled a follow-up to address detailed pricing and requirements.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, Self-Hosting, Enterprise License, Experimentation Framework, Pricing Discussion, Data Warehouse Integration",
+      "action_items": "\n**Scott Keller**\nSend Jeff Knight detailed legacy and new pricing breakdowns for both self-hosted enterprise and cloud-hosted plans (24:52)\nResearch and confirm cost differences and implications for self-hosted deployment pricing to clarify infrastructure and maintenance fees (30:09)\nSchedule a follow-up meeting with Jeff Knight, preferably Thursday afternoon after 3:30 PM Central Time, to discuss updated pricing and licensing options (33:24)\n\n**Jeff Knight**\nReview the pricing documents sent by GrowthBook and prepare feedback for the follow-up discussion (33:24)\n"
+    }
+  ]
+}

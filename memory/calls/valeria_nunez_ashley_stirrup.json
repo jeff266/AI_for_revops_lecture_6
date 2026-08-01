@@ -1,0 +1,43 @@
+{
+  "company": "Valeria Nunez and Ashley Stirrup",
+  "slug": "valeria_nunez_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:05.985352",
+  "calls": [
+    {
+      "id": "01KSX56K2VGYQ4GCS9E573BXCP",
+      "source": "fireflies",
+      "title": "Valeria Nunez and Ashley Stirrup",
+      "date": "2026-06-01",
+      "duration_minutes": 0,
+      "summary": "The meeting discussed strategies to enhance the company’s domain authority, which currently stands at around 70, lagging behind competitors like Statsig and LaunchDarkly. To bridge this gap, emphasis was placed on acquiring strong backlinks and implementing a multi-pronged earned media strategy consisting of news jacking, thought leadership, and data-led campaigns tailored to client budgets. A suggested baseline budget of $7,500 per month was proposed, with flexibility based on client investment to ensure sustained media exposure and engagement. Additionally, the onboarding process features weekly meetings and monthly reports to ensure alignment, and the integration of SEO with PR efforts was highlighted as a differentiation factor to improve rankings and support broader marketing objectives.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Earned media, Data-led campaign, PR strategy, Domain rating, SEO integration, AI market positioning",
+      "action_items": "\n**Valeria Nunez del Prado**\nBuild a detailed pull-through deck with data-led campaign ideas tailored to Growth Book AI and prepare a walk-through session with the PR executive team (13:12)\nCoordinate scheduling of a 15-minute brain dump call including Carla and send calendar options to Ashley for finding an appropriate time this week (16:38)\nPrepare to present media placement minimums and campaign scopes during next discussions (15:25)\nProvide client references for Ashley to contact after deck review and interest confirmation (16:12)\n\n**Ashley Stirrup**\nShare calendar link to Valeria for scheduling a quick brainstorming session this week (16:49)\nParticipate in initial 15-minute call to discuss strategic direction and priorities for earned media focus (16:12)\n\n**Mari Madrid**\nAssist in scheduling calls between Ashley, Valeria, and Carla, ensuring availability is considered for a time later this week or early next week (17:04)\n"
+    },
+    {
+      "id": "01KVVKBBDG177TJ92JVBZSWC4B",
+      "source": "fireflies",
+      "title": "Valeria Nunez and Ashley Stirrup",
+      "date": "2026-06-25",
+      "duration_minutes": 31,
+      "summary": "The team discussed a structured pricing and delivery plan for data-led campaigns, emphasizing a one-time fee and a delivery window of four to seven months due to the complexity of the campaigns. Valeria and Karla detailed the scope of these add-on projects, highlighting the flexibility to accommodate multiple campaigns while ensuring a minimum of 12 guaranteed media features, often exceeding expectations. A robust ideation and validation process was outlined, which includes validating client ideas and creating tailored campaign concepts. The methodology for surveying targeted audiences globally was explained, with a focus on data credibility and the associated costs. The deliverables will encompass detailed research reports and visually appealing digital assets to enhance media outreach. Additional insights on AI’s market impact and proposals for quicker campaign execution were also discussed.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "AI adoption, data-led campaign, survey design, media features, social media engagement, product management",
+      "action_items": "\n**Valeria Nunez del Prado**\nSend detailed proposal outlining deliverables, pricing, scope, and timing of one or two data-led campaigns, including validation and ideation process (29:50)\nInclude example research reports and social media engagement summaries in the recap email for client review (20:15)\n\n**Karla Fernandez**\nProvide example campaign reports and insights demonstrating media coverage and social engagement impact across industries to Ashley for evaluation (16:07)\nContinue refining survey filter parameters (roles, industries, geography) to assure data credibility and appropriateness of scope for client's global ambitions (09:30)\n\n**Ashley Stirrup**\nReview proposal and example deliverables once received; share with CEO for feedback and decision-making about campaign launch (29:40)\n"
+    },
+    {
+      "id": "01KYDBEXMRWGKSW8YJY93DX3YB",
+      "source": "fireflies",
+      "title": "Valeria Nunez and Ashley Stirrup",
+      "date": "2026-07-27",
+      "duration_minutes": 11,
+      "summary": "The team discussed the preference for a more expensive, rigorous vendor to ensure quality outcomes, spearheaded by Ashley Stirrup. She highlighted the importance of aligning this choice with current budget constraints, working alongside the fractional CFO to analyze company-wide budgets. A follow-up meeting is scheduled for August 4th to finalize vendor and budget decisions after discussions with leadership. Valeria Nunez del Prado acknowledged shared challenges in planning, indicating a collaborative approach to scheduling. The conversation also touched on remote work flexibility, with Valeria demonstrating these arrangements effectively while maintaining productivity, reflecting a supportive organizational culture.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "Proposal review, budget planning, fractional CFO, vendor selection, marketing spend, meeting scheduling",
+      "action_items": "\n**Ashley Stirrup**\nReview company and personal budgets with fractional CFO to clarify financial position and spending limits before finalizing vendor selection (01:29)\nPrepare for follow-up meeting to discuss decision and next steps after budget review, targeted for Tuesday, August 4th (02:46)\n\n**Valeria Nunez del Prado**\nSchedule a follow-up touchpoint on or around August 4th after Ashley confirms availability via calendar link (02:37)\n"
+    }
+  ]
+}

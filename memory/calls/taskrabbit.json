@@ -1,0 +1,65 @@
+{
+  "company": "Taskrabbit",
+  "slug": "taskrabbit",
+  "last_etl_date": "2026-08-01T13:58:05.965837",
+  "calls": [
+    {
+      "id": "01KSN9TA0FN951241NN582C838",
+      "source": "fireflies",
+      "title": "Taskrabbit + GrowthBook",
+      "date": "2026-06-02",
+      "duration_minutes": 50,
+      "summary": "TaskRabbit's team identified significant challenges in their current experimentation culture, characterized by low maturity and inconsistent rigor. David emphasized the need for speed in experimentation to enhance learning outcomes while Danielle highlighted varying pain points across commercial and product teams, including inadequate rigor in small-sample tests and reliance on engineering support. An urgent call for a new platform arose, one that streamlines processes and enforces rigorous methodologies automatically. Additionally, the integration with Snowflake and the platform's flexibility to address complex marketplace dynamics were deemed essential. GrowthBook was positioned as a favorable solution due to its open-source capabilities and active development, setting the foundation for a deeper technical review with broader team involvement.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "Experimentation, Feature Flagging, Warehouse Native, Bayesian Statistics, Marketplace, GrowthBook",
+      "action_items": "\n**Danielle Walker**\nReach out to GrowthBook team offline to schedule a technical demo including more TaskRabbit team members (49:00)\n\n**Christian Liebenow**\nProvide comprehensive list of GrowthBook supported experiment design capabilities (39:50)\nShare demos showcasing AI-driven workflows for experiment analysis and creation (45:36)\nFollow up with additional information about marketplace customers and reference cases (24:52)\n\n**Logan Bates**\nPrepare for and conduct a deeper technical demo including GrowthBook’s new visual editor and AI features (45:41)\nProvide examples and documentation related to statistical engines, guardrails, and monitoring rollouts (34:29)\n\n**David Tse**\nReview GrowthBook’s randomization and experiment design capabilities, especially around Metro-level randomization, and provide feedback in follow-up discussions (37:05)\n"
+    },
+    {
+      "id": "01KTPH9SWSMK7VZNXHAR0QVW9X",
+      "source": "fireflies",
+      "title": "Taskrabbit + GrowthBook",
+      "date": "2026-06-16",
+      "duration_minutes": 45,
+      "summary": "The meeting provided an overview of GrowthBook's capabilities in integrating with Snowflake for data storage and analysis, which forms a primary source for metrics and experimentation evaluations for TaskRabbit. Key features include client-side and server-side feature flag evaluations, a Docker container proxy for enhanced caching and reliability, and flexible targeting for experiments at the metro level. The system supports multiple randomization units, enabling cluster-level experiments with metrics analyzed down to specific regions. GrowthBook encourages customer feedback for continuous improvement and offers customizable solutions, backed by a collaborative approach featuring experts from various fields.",
+      "organizer": "christian@growthbook.io",
+      "participants": 12,
+      "keywords": "Experimentation, Feature Flags, Metro-level Randomization, Data Warehouse, Statistical Testing, Synthetic Controls",
+      "action_items": "\n**Danielle Walker Rowan**\nShare the meeting recording with TaskRabbit members who could not attend and collect any follow-up questions for the GrowthBook team (02:31)\n\n**Logan Bates**\nSend documentation regarding the local proxy Docker container setup for configuration caching to TaskRabbit team (33:59)\n\n**GrowthBook team**\nBe available for partnership conversations to develop advanced experimentation features such as interleaving experiments and synthetic controls as requested by TaskRabbit (43:39)\n\n**TaskRabbit team**\nTaskRabbit team to internally reconvene, digest information shared during the meeting, and coordinate with GrowthBook on next steps and feature requirements (44:20)\n"
+    },
+    {
+      "id": "6a57d901bd85b80020856dbd",
+      "source": "apollo",
+      "title": "Taskrabbit + GrowthBook",
+      "date": "2026-07-15",
+      "duration_minutes": 1,
+      "summary": "Christian Liebenow and Danielle Rowan exchanged greetings but did not discuss any product, features, or pain points related to Taskrabbit or GrowthBook. No next steps or action items were identified during the brief call.",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
+    {
+      "id": "01KXK9XGX6ETZMEX1TARE7CR8V",
+      "source": "fireflies",
+      "title": "Taskrabbit + GrowthBook",
+      "date": "2026-07-15",
+      "duration_minutes": 0,
+      "summary": "The discussion revolved around how GrowthBook can leverage advanced experimentation techniques like interleaving, cluster randomization, and contextual bandits to enhance testing processes and iteration speed. Interleaving was identified as a vital growth opportunity to reduce long sequential testing delays. Cluster randomized experiments allow for flexible randomization and variance management at various levels. Post stratification was favored for its ability to handle dynamic user identifiers, offering practical benefits over traditional stratified sampling. Contextual bandits and switchbacks were highlighted as critical features to improve adaptive experimentation and personalized solutions. The need to reduce experimentation costs and integrate seamlessly with development workflows was emphasized, alongside the importance of embedding governance and standards to maintain quality across experiments.",
+      "organizer": "christian@growthbook.io",
+      "participants": 9,
+      "keywords": "experimentation velocity, interleaving experiments, cluster randomization, post-stratification, feature flags, advanced data science experimentation",
+      "action_items": "\n**Danielle Walker Rowan**\nRegroup internally on TaskRabbit side regarding discussed experimentation capabilities and roadmap with GrowthBook (45:51)\nConnect with Christian Liebenow to continue discussions and potential next steps (45:51)\n\n**GrowthBook Team**\nProvide additional information and documentation on GrowthBook’s experimentation governance, templates, feature flags, and validation tools to TaskRabbit after internal regroup (34:27)\nExplore opportunities for design partnership with TaskRabbit for advanced features like interleaving experiments (30:48)\nFollow-up on any additional questions from TaskRabbit’s data science and experimentation teams (46:00)\n"
+    },
+    {
+      "id": "01KYHY6V3KSENH1B4YNCH73159",
+      "source": "fireflies",
+      "title": "Taskrabbit + GrowthBook",
+      "date": "2026-07-27",
+      "duration_minutes": 19,
+      "summary": "The team discussed launching a proof of concept (POC) integration to evaluate a tool's effectiveness before wider adoption. The POC will begin after completing security reviews and finalizing the NDA, with a minimal integration approach targeting two to three tests. Key data access will include funnel, jobs, and net revenue metrics from Snowflake for analyses. The integration relies on Snowflake technology managed by Terraform, supporting various authentication methods, and will utilize lightweight SDKs for experiment orchestration. The experimental strategy includes a Metro test and holdout groups, with the Data Science team to finalize key metrics. Clear communication will be maintained primarily through Slack, with technical leads available during Sean's absence.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "Snowflake, GrowthBook, POC, integration, SDK, experiment creation",
+      "action_items": "\n**Danielle Walker Rowan**\nProvide Sean with a detailed list of required databases, schemas, and specific data needed for the Proof of Concept (POC) (08:58)\nWork on structuring the Metro test hypothesis, metrics, and experiment plans and share them with Sean (16:19)\nAdd relevant TaskRabbit members to the Slack channel once invited by Christian to streamline communication (18:12)\n\n**Sean Schwartz**\nAwait detailed data requirements from Danielle to provision access and set up GrowthBook integration (08:58)\n\n**Christian Liebenow**\nReview and expedite NDA and security documents for TaskRabbit legal team to facilitate quick turnaround (17:02)\nSet up or confirm Slack channel for ongoing communication and invite relevant TaskRabbit participants (17:42)\nResend SDK integration details and general links to Danielle for product engineering review (10:26)\n\n**Logan Bates**\nShare documentation for Snowflake connection and GrowthBook integration process with Sean and team (08:06)\nProvide demo/explanation resources on experiment creation and feature flag usage to Danielle (11:35)\n"
+    }
+  ]
+}

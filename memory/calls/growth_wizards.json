@@ -1,0 +1,29 @@
+{
+  "company": "Growth Wizards <> GrowthBook",
+  "slug": "growth_wizards",
+  "last_etl_date": "2026-08-01T13:58:05.968722",
+  "calls": [
+    {
+      "id": "6a209f46f303cb0020ab2e2e",
+      "source": "apollo",
+      "title": "Growth Wizards <> GrowthBook",
+      "date": "2026-06-03",
+      "duration_minutes": 40,
+      "summary": "The call between Growth Wizards (David Dangelo, Tanner Green) and GrowthBook (Ashley Stirrup, Lyndsie Berens, Emmy Sharp) focused on improving the podcast guest-to-sales demo pipeline, addressing pain points like Ashley’s difficulty following up after recordings and a lack of lead source tracking. Key next steps include scheduling a joint sales/marketing call next week to align on a LinkedIn outreach playbook, having Jeff demo his approach, adding podcast opportunities to the CRM, moving Ashley’s newsletter to her personal LinkedIn page, and sharing the events calendar for pre",
+      "host": "Lyndsie Berens",
+      "participants": 5
+    },
+    {
+      "id": "01KT20HAHKDGHV67568XWAH68G",
+      "source": "fireflies",
+      "title": "Growth Wizards <> GrowthBook",
+      "date": "2026-06-03",
+      "duration_minutes": 38,
+      "summary": "The team discussed strategies to improve lead generation, aiming to raise the current conversion rate of 53% by refining their ideal customer profile and tracking lead sources more effectively. They addressed the need for optimized follow-up processes from podcast guest engagements to sales reps, proposing automation and immediate scheduling techniques. Enhancements in pipeline transparency were emphasized, particularly for tracking podcast-related opportunities in CRM to bolster performance reporting. To increase engagement, the newsletter distribution is shifting to personal LinkedIn profiles, projected to enhance reach by 5-10 times. A focus on upcoming events, specifically the AI Engineer World’s Fair, offers an opportunity to engage potential leads. Biweekly syncs between sales and marketing teams were proposed to improve collaboration and streamline processes.",
+      "organizer": "lyndsie@growthbook.io",
+      "participants": 4,
+      "keywords": "podcast outreach, sales pipeline, lead handoff, LinkedIn outreach, social media strategy, event marketing",
+      "action_items": "\n**Ashley Stirrup**\nShare a Friday list of pipeline leads with location information to improve sales rep assignment (10:39)\nCoordinate with Lindsay to establish a LinkedIn-exclusive outreach playbook and leverage Jeff’s outreach demo in the upcoming sales call (20:45)\nImplement the process of obtaining work email addresses from podcast guests during calls to facilitate smoother demo handoffs (06:36)\nWork with Lindsay to integrate podcast-related opportunities into the CRM with specific tagging and leaderboard features to track and encourage sales rep engagement (21:57)\nLead coordination for the company-wide social media calendar and encourage team participation with social posts (25:11)\nManage the upcoming sales and marketing meeting agenda and invite external parties (David, Tanner) to join for podcast outreach discussions (34:37)\n\n**David DAngelo**\nAssist in improving pipeline visibility by adding LinkedIn profile links to the dashboard and sending daily Slack notifications with guest preparation details (15:22)\nDevelop and potentially automate post-podcast meeting scheduling email sequences including calendar invites to improve demo conversion (07:12)\nParticipate in next week’s sales and marketing call to help coordinate agenda and task ownership (34:44)\nProvide example repurposing platform (builtbypeople.com) and advise on derivative content strategies using AI tools for social media (29:22)\n\n**Lyndsie Berens**\nFollow up with Jake S. and Christian to consolidate LinkedIn outreach approach and onboarding processes (20:09)\nManage and share the company marketing calendar including event schedules and social posts, facilitating team access (32:30)\nInclude David and Tanner in upcoming sales and marketing meetings and coordinate scheduling (36:18)\n\n**Tanner Green**\nFinalize and share the integrated social media calendar including content formats like infographics and carousels for Ashley’s LinkedIn channel (22:33)\nAssist in relocating the newsletter distribution to Ashley’s personal LinkedIn page to increase engagement (23:16)\nParticipate in next week’s sales and marketing call to discuss pipeline and event speaker outreach strategies (34:44)\n"
+    }
+  ]
+}

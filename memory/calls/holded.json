@@ -1,0 +1,19 @@
+{
+  "company": "Holded",
+  "slug": "holded",
+  "last_etl_date": "2026-08-01T13:58:06.007358",
+  "calls": [
+    {
+      "id": "01KV3F1FSGVT80TJ8F08SV1GCX",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Holded",
+      "date": "2026-06-16",
+      "duration_minutes": 34,
+      "summary": "During the meeting, the need for an experimentation layer for Holdet’s website was discussed, highlighting GrowthBook's capability to integrate Vercel feature flags and Amplitude event data for automated analysis. Mireia explained Holdet's migration to Vercel, which led to the loss of built-in A/B testing features, while Scott emphasized GrowthBook's advantages like automated variance reduction and sequential testing. The discussion covered GrowthBook's position as an open-source platform that supports over 3,000 companies, featuring customizable experimentation setups, easy SDK integration, and robust reporting tools. The meeting concluded with plans for a demo to explore GrowthBook's features in depth and clarify pricing tiers.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, AB Testing, Vercel, Amplitude, Feature Flags, Experimentation",
+      "action_items": "\n**Scott Keller**\nSend a recap email to Holded including a detailed comparison of GrowthBook's pricing tiers and features to clarify options and support decision-making (14:15)\nPropose and schedule the next one-hour demo session with Holded stakeholders, suggesting 9 or 10 am EST to align with Barcelona afternoon availability (31:55)\nCoordinate with a GrowthBook solution engineer to prepare a custom, in-depth demonstration tailored to Holded’s data analyst and engineering stakeholders' needs (10:54)\n\n**Mireia Casadevall**\nCheck availability of Holded team members, including data analyst and possibly engineer, for the proposed one-hour demo session next week (32:28)\n"
+    }
+  ]
+}

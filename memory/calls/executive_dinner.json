@@ -1,0 +1,19 @@
+{
+  "company": "Executive Dinner",
+  "slug": "executive_dinner",
+  "last_etl_date": "2026-08-01T13:58:06.038892",
+  "calls": [
+    {
+      "id": "01KN8C30467BCZRQGPKNH0DYZD",
+      "source": "fireflies",
+      "title": "Executive Dinner",
+      "date": "2026-04-03",
+      "duration_minutes": 19,
+      "summary": "The team discussed the upcoming product release 4.4, which will feature AI and enhanced analytics to improve customer engagement and retention. A shift to make Managed Warehouse the default for new signups aims to streamline customer experience and increase upsell potential. Additionally, an executive dinner is scheduled for May 21 at a Michelin one-star venue to foster relationships and explore new business opportunities, specifically targeting key clients and prospects. The guest list will include existing customers and high-potential prospects to maximize value in discussions about AI and experimentation. The meeting emphasized the importance of internal collaboration for outreach and event logistics, alongside clear messaging for invitations to enhance networking opportunities.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 7,
+      "keywords": "Managed Warehouse, Executive Dinner, Product Analytics, AI / A-B Testing, Customer Engagement, Prospect Invitation",
+      "action_items": "\n**Cary Rakin**\nStart sharing information with Anthropic contacts to secure their attendance and a possible speaker for the executive dinner (04:30)\nLead outreach and relationship-building efforts with Anthropic and other key customers such as Hims and SquareBlock to encourage their participation in the executive dinner (06:25)\nCompile and share a detailed prospect invitation list including rationale for each invitee to assist in finalizing the guest list for the executive dinner (15:30)\nManage RSVP tracking for the executive dinner using Excel or a shared document with status tabs to monitor responses effectively (16:10)\n\n**Ashley Stirrup**\nCreate a blurb or message for the executive dinner invitations to be sent to prospects and customers (15:50)\nCollaborate with Chris to develop a landing page for RSVP management to streamline guest responses for the executive dinner (16:30)\nWork with Cary and other team members to finalize the guest list and scheduling details for the executive dinner (08:30)\n\n**Jake Heier**\nIdentify and propose prospects for the executive dinner, including contacts at Twitter and Salesforce, to broaden the guest list with high-value attendees (13:00)\nAssist Cary in expanding the prospect list and provide input on guest invitations to ensure a balanced and strategic attendee mix (18:00)\n\n**Dan Wathne**\nProvide additional prospect and customer contacts, especially from former Static and Amplitude connections, to enhance the guest list for the executive dinner (17:30)\nCoordinate with Cary and Jake on the final guest list to optimize the attendee mix for the executive dinner (17:40)\n\n**Unassigned**\nAll team members to actively build relationships and invite high-caliber prospects and customers to the executive dinner to maximize event impact (08:50)\nConfirm attendees and speaker(s) well in advance of the executive dinner to ensure a valuable and well-organized event (00:00)\n"
+    }
+  ]
+}

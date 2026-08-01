@@ -1,0 +1,19 @@
+{
+  "company": "Experiment Creation Redesign Review",
+  "slug": "experiment_creation_redesign_review",
+  "last_etl_date": "2026-08-01T13:58:06.007014",
+  "calls": [
+    {
+      "id": "01KV8ZVAR87M9MMVH8MKKF6XS9",
+      "source": "fireflies",
+      "title": "Experiment Creation Redesign Review",
+      "date": "2026-06-16",
+      "duration_minutes": 57,
+      "summary": "The team focused on enhancing the experiment creation UI by introducing an expanded modal that captures vital settings such as project inclusion and hash attributes. They discussed the relationships between templates, projects, and holdouts, emphasizing the importance of project selection in filtering options. The need to clarify hard and soft blockers in the pre-launch checklist was also highlighted. Concerns over variation management led to a decision to revert to the previous UI while planning a redesign for a unified view. They addressed issues concerning the visibility of required fields and streamlined the flow for adding custom fields back into the modal. Immediate next steps include implementing discussed changes and preparing prototypes for review.",
+      "organizer": "msamper@growthbook.io",
+      "participants": 4,
+      "keywords": "Experiment Creation, Variation Editing, Hash Attribute, Data Source, EAQ Linkage, Prelaunch Checklist",
+      "action_items": "\n**Michael Samper**\nRemove the word \"select\" before the template field in the experiment creation modal to improve UI clarity (04:07)\nDemonstrate and explain the approach for handling experiment assignment questions (EAQ) and hash attribute linkage after experiment creation (05:37)\nAdd a callout in the experiment creation modal prompting users with data source edit permissions to link hash attributes to EAQs, with conditional rendering based on linkage status (55:12)\nModify the creation modal to default data source selection based on organizational default or single non-sample data source, leaving empty if multiple options exist to avoid silent failures (42:12)\nRevert the variation add/edit experience to the current application version due to user experience concerns with the new design, especially regarding editing splits and traffic percentages (44:01)\nAdd functionality to collapse completed items in the prelaunch checklist UI to reduce visual clutter and improve user experience (32:41)\nShare updated design prototypes with Kari Kay for feedback on custom fields placement, linkage callout, and variation editing improvements (56:27)\n\n**Luke Sonnet**\nCoordinate a follow-up session with Kari Kay to review the experiment creation flow, field styling, and variation editing improvements (56:33)\nProvide input on maintaining required custom fields as part of the experiment creation modal to ensure functional consistency (24:03)\n\n**Kari Kay**\nReview and improve the styling and messaging around the \"start anyway\" button to clarify that it is non-destructive for soft blockers and reduce user confusion (18:35)\n"
+    }
+  ]
+}

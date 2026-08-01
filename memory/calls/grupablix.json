@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook <> GrupaBlix",
+  "slug": "grupablix",
+  "last_etl_date": "2026-08-01T13:58:05.977098",
+  "calls": [
+    {
+      "id": "69cabc77fb830e001df3d9c8",
+      "source": "apollo",
+      "title": "GrowthBook <> GrupaBlix - Intro ",
+      "date": "2026-03-30",
+      "duration_minutes": 24,
+      "summary": "GrowthBook's Daniel Wathne (sales) and Logan (solutions engineering) spoke with Grzegorz Stawarczyk (backend team leader at GrupaBlix) about upgrading from the free GrowthBook feature‑flag tier to an enterprise plan to unlock advanced experimentation metrics, particularly user retention and conversion tracking via BigQuery. The key pain point is that GrupaBlix’s analytics team cannot measure retention with the current free version. Next steps: schedule a 45-minute demo for Wednesday, April 8, with Grzegorz’s analytics team to walk through warehouse connectivity and metric creation, after which GrowthBook may offer enterprise access for a trial period.",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

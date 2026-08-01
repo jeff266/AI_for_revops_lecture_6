@@ -1,0 +1,17 @@
+{
+  "company": "Discussion",
+  "slug": "discussion",
+  "last_etl_date": "2026-08-01T13:58:05.974046",
+  "calls": [
+    {
+      "id": "69f4f366fea8bc001d191e0c",
+      "source": "apollo",
+      "title": "Lonely Planet<>GrowthBook - Demo & Discussion",
+      "date": "2026-05-01",
+      "duration_minutes": 38,
+      "summary": "GrowthBook's Jake Heier (account executive) and Logan Bates (technical counterpart) demoed their experimentation platform to Lonely Planet's team, including Ruiye Ni (data & AI lead), Marcos Kashima (product management), Gabriel Smith (design lead), and others. They discussed features like multivariant testing, app-based testing, guardrail metrics, and a data warehouse native approach, addressing pain points around measuring feature impact and",
+      "host": "Jake Heier",
+      "participants": 5
+    }
+  ]
+}

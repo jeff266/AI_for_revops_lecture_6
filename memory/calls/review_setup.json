@@ -1,0 +1,19 @@
+{
+  "company": "Review Growthbook Setup",
+  "slug": "review_setup",
+  "last_etl_date": "2026-08-01T13:58:06.046444",
+  "calls": [
+    {
+      "id": "01KJRGYEMH91HY4Q82Z5W73PAF",
+      "source": "fireflies",
+      "title": "Review Growthbook Setup",
+      "date": "2026-03-03",
+      "duration_minutes": 35,
+      "summary": "The team addressed an ongoing issue with an experiment designed to target new users based on account creation dates, which was consistently defaulting to the control variant. Tomek confirmed the correct attributes were being sent, but issues persisted. Debugging using Growth Book dev tools revealed UI inconsistencies, sometimes displaying conflicting states and requiring manual updates. The SDK was initialized correctly, ruling out multiple instances, yet the UI did not reflect flag changes. They identified bugs within the dev tools that complicated debugging. Recommendations included relying on SDK debug logs for accuracy and focusing on attribute testing. Collaboration was emphasized for resolving these challenges efficiently.",
+      "organizer": "chris@growthbook.io",
+      "participants": 4,
+      "keywords": "Growthbook, Feature Flags, Experiment Targeting, SDK Initialization, Dev Tools Bug, Attribute Evaluation",
+      "action_items": "\n**Tomek Sułkowski**\nCreate new user accounts and test experiment flow end to end to verify correct application of feature flags (00:11)\nReview and fix code bug related to experiment evaluation impacting UI rendering (00:34)\n\n**Luke Sonnet**\nFollow up internally on the Growthbook dev tools bug causing incorrect rule rendering and mismatched UI statuses (00:16)\nProvide updates to Tomek regarding the dev tools rendering issue once resolved (00:35)\n\n**Chris Sanders**\nAssist in analyzing potential reinitialization of Growthbook SDK and confirm correct initialization sequence (00:07)\n"
+    }
+  ]
+}

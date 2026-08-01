@@ -1,0 +1,19 @@
+{
+  "company": "Van de Velde",
+  "slug": "van_de_velde",
+  "last_etl_date": "2026-08-01T13:58:06.023478",
+  "calls": [
+    {
+      "id": "01KQY82BCNBC05QRAWSAYZQK6R",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Van de Velde",
+      "date": "2026-05-07",
+      "duration_minutes": 41,
+      "summary": "The team is committed to transitioning from Dynamic Yield to GrowthBook, driven by dissatisfaction with high costs and inconsistencies in analytics that hinder decision-making. External analysis revealed discrepancies between Dynamic Yield's reports and their BigQuery data, prompting the need for a more trustworthy product. GrowthBook offers a warehouse-native architecture that enhances data transparency and reduces manual validation costs, addressing trust issues. Additionally, its pricing model, based on the number of experiments rather than traffic, is seen as predictable and manageable. The discussion highlighted GrowthBook's responsiveness and engineering support, as well as successful case studies demonstrating its value, leading to an agreement on follow-up steps for a demo and further discussions.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, A/B Testing, Warehouse-Native, BigQuery, Pricing Model, Experiment Transparency",
+      "action_items": "\n**James Shannon**\nShare meeting recording, slide decks, case studies, and pricing proposal with Shaun after the call (00:25)\nEmail available dates (May 18, 19, 26, 27) to Shaun for scheduling a follow-up demo session (38:47)\nProvide ideas and best practices for optimizing experiments across multiple platforms and environments (34:50)\n\n**Shaun Janssens**\nCoordinate with Yana to check her availability for follow-up demo and business discussion, then reply to James with available time slots (38:40)\n\n**Unassigned**\nFollow up with GrowthBook team regarding the demo focusing on usability for Winke and data analysis features (39:25)\n"
+    }
+  ]
+}

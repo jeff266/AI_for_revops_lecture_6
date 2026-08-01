@@ -1,0 +1,19 @@
+{
+  "company": "Mastiff reports",
+  "slug": "mastiff_reports",
+  "last_etl_date": "2026-08-01T13:58:06.043729",
+  "calls": [
+    {
+      "id": "01KKCDD1FXS193DHJG6MND5464",
+      "source": "fireflies",
+      "title": "James <> Brent EMEA catchup, 4 pm UK time (Mastiff reports)",
+      "date": "2026-03-12",
+      "duration_minutes": 30,
+      "summary": "The discussion centered on strategies to scale in the EMEA market by identifying high-value customer segments, with a focus on companies having at least 1 million monthly website visitors and employee sizes between 1,000 and 10,000. Engagement metrics revealed a successful breakdown of 180 opportunities that resulted in 62 wins, where the UK leads the wins tally. The software development sector emerged as the strongest performer with 16 wins, while discussions around new logo vs. expansion sales highlighted their respective win rates of 23% and 80%. Participant Brent emphasized the need for better data alignment between various sources. Innovations like transitioning to a Snowflake backend for enhanced dashboard performance were also discussed.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Lead enrichment, EMEA sales performance, ICP (Ideal Customer Profile), outbound strategy, website traffic metrics, vibe code objections",
+      "action_items": "\n**James Shannon**\nBegin taking sales calls starting next week to gain practical pitching experience (01:20)\nCoordinate with Jake (U.S. rep) to share lead strategies and potentially support lead generation in Europe (03:50)\nExplore the enriched lead data and initiate targeted outbound plays based on company size and website traffic metrics (05:04)\nGain access to the Tableau dashboard for EMEA sales insights and actively provide feedback on functionality and usability (25:36)\nDevelop a first draft of ICP and draft outbound plays for review with Brent (29:29)\nComplete setup of dual-factor authentication for Tableau access as instructed (29:59)\n\n**Brent Holloway**\nContinue refining enriched lead data to support James’s outbound efforts with up-to-date company and industry intelligence (02:36)\nProvide James with access and invitations to sales intelligence tools including Slack channels and pipeline generation groups (06:20)\nFollow up with James on biweekly meetings and ensure delivery of Tableau dashboard invites and instructions (29:45)\nSupport James by reviewing ICP drafts and sales plays as they are developed (29:45)\n"
+    }
+  ]
+}

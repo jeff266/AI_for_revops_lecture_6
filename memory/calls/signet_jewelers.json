@@ -1,0 +1,17 @@
+{
+  "company": "Signet Jewelers",
+  "slug": "signet_jewelers",
+  "last_etl_date": "2026-08-01T13:58:05.968029",
+  "calls": [
+    {
+      "id": "6a287ae87a6359001465158c",
+      "source": "apollo",
+      "title": "Signet Jewelers - GrowthBook Demo",
+      "date": "2026-06-09",
+      "duration_minutes": 44,
+      "summary": "The user wants me to summarize this sales call transcript in 2-3 sentences, focusing on what was discussed (product, features, pain points), key participants and their roles, and next steps or action items.\n\nLet me identify the key elements:\n\n**Key Participants:**\n- Craig Kistler - from Signet Jewelers (prospect/customer), has been at Signet 13 years working on experimentation and personalization\n- Ashley Stirrup - from GrowthBook (likely sales/leadership)\n- Christian Liebenow - Account Manager at GrowthBook\n- Logan Bates - Solutions Engineer at GrowthBook\n\n**What was discussed:**\n- GrowthBook demo - an experimentation/feature flagging platform\n- Key features: warehouse-native experimentation, visual editor, AI capabilities (Claude integration), metrics catalog, cupid for reducing sample size needed, Bayesian analysis, guardrail metrics, feature flags with rollout strategies\n- Pain points: Craig's team needs better personalization/experimentation integration, struggles with visual editors on SPA sites (their e-commerce sites use SAP Hybris), needs better analytics data (currently using Adobe Analytics and Dynamic Yield), wants to tie personalization to experimentation, needs to offload work from developers for simple changes\n- Craig mentioned they just renewed a long-term contract with Dynamic Yield\n\n**Next steps/Action items:**\n- No concrete next steps committed on the call\n- Craig showed interest in the analytics/data capabilities\n- Craig mentioned procurement likes to",
+      "host": "Ashley Stirrup",
+      "participants": 4
+    }
+  ]
+}

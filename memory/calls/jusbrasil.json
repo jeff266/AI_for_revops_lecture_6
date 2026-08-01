@@ -1,0 +1,29 @@
+{
+  "company": "Jusbrasil",
+  "slug": "jusbrasil",
+  "last_etl_date": "2026-08-01T13:58:05.971924",
+  "calls": [
+    {
+      "id": "6a0e1942a7055700143246c4",
+      "source": "apollo",
+      "title": "Jusbrasil + GrowthBook",
+      "date": "2026-05-20",
+      "duration_minutes": 27,
+      "summary": "We need to summarize the transcript in 2-3 sentences, focusing on what was discussed (product, features, pain points), key participants and roles, and next steps/action items. \n\nKey participants: Christian Liebenow (GrowthBook sales), Logan Bates (GrowthBook technical), Cristiano Santos (Jusbrasil), Vitor Azevedo (analytics engineer), Eduardo (data manager, mentioned but not speaking). \n\nDiscussed: Jusbrasil currently uses self-hosted GrowthBook, needs enterprise for scaling to 200 users. Must-have features: experiment query optimization (BigQuery cost/performance), experiment fields and launch checklist for governance, webhooks/JavaScript hooks for standard enforcement. Nice-to-have: incremental refresh, holdouts, advanced metrics, decision frameworks. Also SSO important. They want self-hosted enterprise license. Potential discount for case study. \n\nNext steps: Christian will set up Slack channel for communication, send order form. Jusbrasil will present to finance/leadership. They'll also estimate BigQuery cost savings.\n\nSummary: The call between GrowthBook (Christian Liebenow and Logan Bates) and Jusbrasil (Cristiano Santos, Vitor Azevedo) focused on Jusbrasil's need to upgrade from self-hosted to enterprise GrowthBook to scale from 30 to 200 users, requiring features like BigQuery query optimization, governance checklists, and SSO. Next steps include setting up",
+      "host": "Christian Liebenow",
+      "participants": 4
+    },
+    {
+      "id": "01KS11ZW3B2GNM3YNZ60X5ZZPZ",
+      "source": "fireflies",
+      "title": "Jusbrasil + GrowthBook",
+      "date": "2026-05-20",
+      "duration_minutes": 29,
+      "summary": "Just Brazil aims to scale its self-hosted GrowthBook platform to support 200 engineering users by the end of 2026. Key enterprise features needed include query optimization, cost management fields, and launch checklists for better governance and performance. Transitioning from their legacy system to GrowthBook is designed to be smooth, requiring only a license update. The enterprise pricing is set at US$1,250 per user annually, with discounts for larger teams. Dedicated customer success resources will support Just Brazil, and AI tools are being developed to enhance decision-making in experiments, aligning with Just Brazil’s strategic vision for improved experimentation practices.",
+      "organizer": "christian@growthbook.io",
+      "participants": 5,
+      "keywords": "enterprise features, self-hosted, BigQuery optimization, feature flags, AI decision framework, pricing model",
+      "action_items": "\n**Christian Liebenow**\nCreate and set up a dedicated Slack channel for Jusbrasil’s team to facilitate ongoing communication and support (25:49)\nProvide the order form and necessary documentation to begin the enterprise subscription process (27:13)\n\n**Cristiano Santos**\nCoordinate internal finance and leadership teams to review GrowthBook enterprise pricing and secure buy-in to proceed with the subscription (24:58)\n\n**Vitor Azevedo**\nContinue estimating BigQuery costs due to suboptimal queries to evaluate cost-saving benefits of GrowthBook enterprise features (26:13)\n\n**Logan Bates**\nSupport technical discussions on migration and license key updates, ensuring smooth transition from self-hosted to enterprise version without disruption (11:58)\n"
+    }
+  ]
+}

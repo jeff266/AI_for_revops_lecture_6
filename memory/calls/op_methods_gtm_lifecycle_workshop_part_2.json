@@ -1,0 +1,19 @@
+{
+  "company": "Op Methods GTM Lifecycle Workshop Part 2",
+  "slug": "op_methods_gtm_lifecycle_workshop_part_2",
+  "last_etl_date": "2026-08-01T13:58:05.996907",
+  "calls": [
+    {
+      "id": "01KWYZG5GWQ9FDKKQAP10PHEBS",
+      "source": "fireflies",
+      "title": "GrowthBook + Op Methods GTM Lifecycle Workshop Part 2",
+      "date": "2026-07-09",
+      "duration_minutes": 42,
+      "summary": "The team discussed improvements to CRM lifecycle management and data automation to enhance sales data accuracy and reduce manual work. Key updates included automation of contact stage transitions based on sales activities, ensuring consistent tracking of contacts at both the individual and company levels. An intake channel audit was planned to verify accurate lead source tagging and prevent data overwrites from various integrations. The discussions emphasized deal ownership, assigning the deal owner as the primary contact to improve accountability, and proposed enhancements to nurture workflows to reduce email overlap and fatigue among marketing contacts. Additionally, the exploration of AI integration in support functions and the need for better access to analytics were addressed, highlighting gaps in system visibility.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 6,
+      "keywords": "hubspot, lifecycle stages, intake channels, deal ownership, marketing nurture, support automation",
+      "action_items": "\n**Shawn Green**\nAudit all intake channels and integration lead source mappings to ensure first and last touch lead sources are tagged correctly in HubSpot (03:05)\nInvestigate HubSpot chat integration to determine if chats are creating contacts and how they are tagged; explore AI support agent capabilities and ticket pipeline options for support efficiency (15:54)\nDevelop and deploy workflow to assign company and contact ownership automatically based on deal owner where ownership differs (26:56)\nPrepare for automation process overview session to review and optimize existing workflows, particularly data hygiene and MQL workflows (29:36)\nMonitor marketing nurture workflows and propose adjustments to prevent contacts signing up for webinars from entering generic nurture sequences prematurely (36:44)\n\n**Lyndsie Berens**\nProvide additional details on marketing contact segmentation and webinar signup management to coordinate with nurture workflow improvements (36:00)\n\n**Jeff Ignacio**\nReview Apollo import process and marketing contact setting for compliance with marketing consent standards (05:39)\n\n**Chris Newton**\nShare Google Analytics 4 access if feasible to assist in auditing event and paid channel data (32:49)\nContinue refining account assignment rules and data hygiene workflows to align with deal ownership and territory routing rules (20:50)\n"
+    }
+  ]
+}

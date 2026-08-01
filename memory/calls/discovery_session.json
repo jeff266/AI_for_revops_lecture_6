@@ -1,0 +1,19 @@
+{
+  "company": "Discovery Session",
+  "slug": "discovery_session",
+  "last_etl_date": "2026-08-01T13:58:06.030531",
+  "calls": [
+    {
+      "id": "01KPC0VWMFPKW73838TK4W88A8",
+      "source": "fireflies",
+      "title": "Discovery Session: Safe Rollouts v2",
+      "date": "2026-04-23",
+      "duration_minutes": 0,
+      "summary": "The focus of the meeting was on improving the safe rollout process by integrating automated ramp schedules with monitoring. Kevin Gerami highlighted issues with abrupt rollouts causing incidents and the need for automatic rollback triggers. Bryce Fitzsimons described GrowthBook's approach utilizing A/B tests and guardrails for safer rollouts, while acknowledging the need for faster signal-driven rollups. Developers expressed challenges in defining monitoring parameters without adding complexity. Discussions centered on flexibility in ramp targets and current systems’ limitations in managing configurations across various groups and regions. The team emphasized the importance of a user-friendly UI for ramp scheduling and cautioned against unnecessary complexity in system design, concluding with a commitment to iterative improvements and gathering feedback.",
+      "organizer": "cris@growthbook.io",
+      "participants": 9,
+      "keywords": "safe rollout, ramp schedules, rollout orchestration, feature targeting, config changes, SDK payload",
+      "action_items": "\n**Bryce Fitzsimons**\nFollow up with participants to gather detailed feedback on ramp schedule limitations, UX issues, and general use cases for rollout targeting flexibility (31:13)\nExplore potential enhancements on ramp template and feature rule-level targeting to reduce developer friction and improve rollout orchestration (06:18)\n\n**Kevin Gerami**\nProvide detailed cases or examples of rollout segmentations and orchestration needs, including pods, regions, and config variance (00:34)\n\n**Winston**\nShare insights on current internal tagging and environment usages and ongoing challenges with multi-project and rollout orchestration complexities (07:44)\n\n**Luke Sonnet**\nAssist with clarifying ramp schedule capabilities regarding hash attributes and percent rollouts for various targeting conditions (26:59)\nSupport UX feedback collection and design of scalable rollout orchestration approaches, balancing complexity and usability (30:27)\n\n**Kari Kay**\nMonitor meeting progress and facilitate follow-up coordination for next steps (00:03)\n"
+    }
+  ]
+}

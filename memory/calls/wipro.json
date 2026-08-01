@@ -1,0 +1,19 @@
+{
+  "company": "Wipro and GrowthBook",
+  "slug": "wipro",
+  "last_etl_date": "2026-08-01T13:58:05.992695",
+  "calls": [
+    {
+      "id": "01KWWAXPMF128K3D58BZKYKZ91",
+      "source": "fireflies",
+      "title": "Wipro and GrowthBook",
+      "date": "2026-07-17",
+      "duration_minutes": 29,
+      "summary": "Wipro is focused on modernizing its B2B commerce by migrating from legacy platforms to containerized deployments. Raj, overseeing solution architecture for a distributed team, emphasized the exploration of tools for future projects, although there are no current integrations planned. The team is conducting exploratory research, with interest in GrowthBook for its potential applications in A/B testing and analytics. Key discussions were held on the importance of assessing client readiness before suggesting new tools. GrowthBook was presented as a mature platform integrating feature flags and analytics, with strong connectivity to data sources like BigQuery. The meeting concluded with a commitment to deeper technical demos and an openness for future collaboration as client needs arise.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "B2B Commerce, Feature Flagging, A/B Testing, Platform Modernization, Data Integration, Observability",
+      "action_items": "\n**Rajagopalachari Sreeram**\nConfirm attendance for the executive dinner invite for August 5th (00:30)\nExplore GrowthBook in relation to client needs and provide feedback when relevant opportunities arise during client platform migration projects (25:20)\nShare feedback internally within Wipro Business regarding potential future adoption and RFP applications of GrowthBook (26:54)\n\n**Dan Wathne**\nSend follow-up email summarizing meeting, including additional resources and case studies (27:39)\nCoordinate and schedule deeper technical demos involving engineering teams and Raj’s team for tailored platform exploration and use case discussion (27:39)\nVerify specific observability tool integrations, including compatibility with New Relic (11:40)\n\n**Jake Stangl**\nSupport scheduling and coordination of follow-up meetings and demos as requested (00:00)\n"
+    }
+  ]
+}

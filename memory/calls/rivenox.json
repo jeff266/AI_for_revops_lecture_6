@@ -1,0 +1,19 @@
+{
+  "company": "Rivenox",
+  "slug": "rivenox",
+  "last_etl_date": "2026-08-01T13:58:06.038016",
+  "calls": [
+    {
+      "id": "01KNKF3NH2XQ9QXPM310RWCX77",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Rivenox",
+      "date": "2026-04-08",
+      "duration_minutes": 37,
+      "summary": "A multimillion-dollar luxury cosmetics company is actively seeking a mid-level A/B testing solution to improve online sales conversions. They previously used VWO but stopped due to high costs despite it meeting their needs. The company employs a development team of 10 and relies heavily on online sales driven by an advertising team. Their requirements include simple UX/UI experiments, such as testing product size variants on detail pages. GrowthBook's lightweight HTML script tag SDK is a potential fit, allowing easier integration with BigCommerce. It supports flexible experiment targeting, provides clear analysis with Bayesian/Frequentist methods, and has a cost-effective pricing structure. The client plans to present GrowthBook's capabilities to their team for further evaluation and potential contract discussions.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B Testing, Feature Flags, BigCommerce, JavaScript SDK, Multi-arm Bandit, Data Warehouse Integration",
+      "action_items": "\n**Jaimin Gohel**\nShare the GrowthBook demo and discussion details with the internal client team to evaluate GrowthBook versus Firebase for their A/B testing needs (36:22)\nFollow up with GrowthBook for potential purchase engagement if the client approves GrowthBook as the preferred A/B testing solution (36:22)\n\n**James Shannon**\nProvide example or more detailed resources on multi-arm bandit testing to support client understanding and decision-making (31:47)\nCoordinate additional technical discussions with GrowthBook’s data science or engineering teams if requested by the client or partner team (00:28)\n"
+    }
+  ]
+}

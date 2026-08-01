@@ -1,0 +1,29 @@
+{
+  "company": "Nick Presentation",
+  "slug": "nick_presentation",
+  "last_etl_date": "2026-08-01T13:58:05.981498",
+  "calls": [
+    {
+      "id": "69a202b81ca8c1000ddc5d79",
+      "source": "apollo",
+      "title": "Nick Presentation",
+      "date": "2026-02-27",
+      "duration_minutes": 45,
+      "summary": "Nick Fitzsimmons presented his first-year demand gen strategy for Growthbook, a warehouse-native experimentation platform, focusing on two motions: PLG (engineers finding Growthbook via GitHub/Slack) and enterprise sales assist (warming outbound with content). He highlighted a near-term opportunity to capture displacement demand from EPO and Statsig customers concerned about data control and innovation slowdown. Key participants: Nick (candidate), Ashley Stirrup (interviewer), Growthbook Dorn (co-founder/CTO),",
+      "host": "Ashley Stirrup",
+      "participants": 5
+    },
+    {
+      "id": "01KJBC0WG3QDCK07EK6ECWZBD4",
+      "source": "fireflies",
+      "title": "Nick Presentation",
+      "date": "2026-02-27",
+      "duration_minutes": 43,
+      "summary": "The meeting outlined a strategic plan for building a demand generation engine that capitalizes on existing organic interest to target technical users with authentic, educational content. Key discussions included creating competitive content addressing concerns over innovation and data privacy among EPO and Statsig customers, which would enhance sales outreach. The current performance shows 50 to 60 demo requests and 1,300 to 1,500 monthly signups without paid marketing efforts, primarily driven by organic channels. Two distinct demand generation motions were identified: product-led growth and sales-assisted outreach, sharing resources to nurture leads efficiently. Nick emphasized a long-term content strategy focused on experimentation culture, while AI integration was highlighted to enhance content creation and measurement of marketing efforts.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "Demand Generation, Product-Led Growth, AI Content, Community Engagement, Experimentation Platform, Attribution Setup",
+      "action_items": "\n**Ashley Stirrup**\nConduct reference checks on Nick Fitzsimmons and explore backdoor references for verification (38:45)\nSchedule next discussion pending reference feedback to finalize hiring decision (42:50)\n\n**Graham McNicoll**\nAssist Ashley in sourcing and verifying candidate references, including potential backdoor checks (38:57)\n"
+    }
+  ]
+}

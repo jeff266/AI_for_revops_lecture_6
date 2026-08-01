@@ -1,0 +1,19 @@
+{
+  "company": "Vicson Victor and Chris Sanders",
+  "slug": "vicson_victor_chris_sanders",
+  "last_etl_date": "2026-08-01T13:58:05.986773",
+  "calls": [
+    {
+      "id": "01KY0Q680X1Q7FSV3QPGF7CYAB",
+      "source": "fireflies",
+      "title": "Vicson Victor and Chris Sanders",
+      "date": "2026-07-27",
+      "duration_minutes": 65,
+      "summary": "The team discussed the implementation setup and SDK integration for GrowthBook, highlighting the importance of callbacks and attribute handling for tracking experiments. They emphasized running AA tests post-code release to validate the user bucketing process and confirmed the structure of three projects for cross-platform feature management. The conversation also covered migrating existing experiments from the legacy system to GrowthBook, ensuring consistency in user IDs to maintain data integrity. Security around SDK payloads was addressed, noting that sensitive data typically does not require special handling. The session concluded with plans for scheduling training on experimentation and a follow-up call to discuss migration details with product stakeholders.",
+      "organizer": "chris@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook SDK, experiment bucketing, feature flags, Snowflake integration, attribute tracking, data migration",
+      "action_items": "\n**Chris Sanders**\nProvide detailed information on iOS SDK attribute merging behavior after investigation to confirm consistency with JS SDK (13:24)\nCheck and clarify the reasons behind discrepancies between GrowthBook dashboard SDK version and GitHub releases, then communicate findings (52:43)\nSend Calendly link to schedule the upcoming GrowthBook experimentation training session with product and engineering managers (01:03:21)\n\n**Adam Zając**\nDemonstrate GrowthBook example on proof of concept including attribute tracking and exposure event handling for Vicson and Corbin (10:18)\n\n**Vicson Victor**\nShare GrowthBook dashboard screen to review current project and environment setups during call (42:38)\n\n**Corbin Montague**\nDouble-check native iOS SDK integration regarding tracking callback firing on app launch and confirm load features API usage (05:51)\n"
+    }
+  ]
+}

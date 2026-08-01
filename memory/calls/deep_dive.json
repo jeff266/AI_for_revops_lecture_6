@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook Deep Dive",
+  "slug": "deep_dive",
+  "last_etl_date": "2026-08-01T13:58:06.023874",
+  "calls": [
+    {
+      "id": "01KQCM25N8GM2SW9PK47K34ZGA",
+      "source": "fireflies",
+      "title": "GrowthBook Deep Dive - Everything Financial Technologies",
+      "date": "2026-05-06",
+      "duration_minutes": 0,
+      "summary": "The team focused on validating GrowthBook's ability to support front-end experimentation with minimal backend effort. Key discussions included initial use cases such as optimizations through text changes, supported by non-developer user access. The feature flags showcased included various data types along with schema validation to prevent content errors. Consistent user identification was a challenge, yet growth solutions were discussed, including primary and fallback IDs. The platform's advanced analytics leveraged Bayesian analysis for improved insights and report generation, alongside AI assistance for decision-making. The POC was aimed for kickoff during a specified week, intending to validate crucial use cases and ensure technical compatibility.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 6,
+      "keywords": "Feature Flagging, Visual Editor, A/B Testing, Product Analytics, JSON Validation, Experimentation Platform",
+      "action_items": "\n**Scott Keller**\nSend GrowthBook introductory deck with case studies to Everything Financial team members to provide background and context (09:58)\nPrepare and share a detailed POC plan document including success criteria based on Everything Financial’s feedback to guide the evaluation process (56:32)\nCoordinate scheduling of the POC kickoff call with Everything Financial, targeting the week of March 18–22, considering team availability (57:49)\n\n**Logan Bates**\nDemonstrate GrowthBook platform’s Visual Editor and feature flagging features to Everything Financial, showcasing low-code UI editing and flexible feature management (10:20)\nValidate feasibility of supporting string templating and token substitution for dynamic personalized content in GrowthBook, then follow up with Everything Financial with findings (34:44)\nProvide documentation to Everything Financial on sticky bucketing and cross-platform consistent user ID strategies to ensure stable experiment exposure (51:39)\nAssist Everything Financial with technical questions during the POC and engage GrowthBook engineering team for any bespoke requirements that arise (39:44)\n\n**Everything Financial Team**\nEverything Financial team to internally discuss and confirm POC timing and readiness, especially regarding front-end resource availability and scheduling (57:18)\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Demo Call with Claire Diepenbrock from Extra Space Storage ",
+  "slug": "demo_call_claire_diepenbrock_from_extra_space_storage",
+  "last_etl_date": "2026-08-01T13:58:05.967239",
+  "calls": [
+    {
+      "id": "6a4d3f590c3be80018ff0ca7",
+      "source": "apollo",
+      "title": "Demo Call with Claire Diepenbrock from Extra Space Storage ",
+      "date": "2026-07-07",
+      "duration_minutes": 27,
+      "summary": "GrowthBook's Scott Keller demoed their enterprise A/B testing and feature flagging platform to Claire Diepenbrock (web optimization lead), Craig Kendall, and Drupad Khublani (engineering/data science) from Extra Space Storage. Key pain points included Optimizely's black-box metrics, high cost, and limited integration with their Azure/Databricks warehouse; GrowthBook's open-source, warehouse-native approach and visual editor were highlighted. Next steps: schedule a 45-minute deep-dive demo with an SE tomorrow at 11 a.m. Mountain Time, and",
+      "host": "Scott Keller",
+      "participants": 4
+    }
+  ]
+}

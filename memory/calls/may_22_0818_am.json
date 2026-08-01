@@ -1,0 +1,19 @@
+{
+  "company": "May 22, 08:18 AM",
+  "slug": "may_22_0818_am",
+  "last_etl_date": "2026-08-01T13:58:06.018398",
+  "calls": [
+    {
+      "id": "01KS848GDEMTGECVPWENMM2C1V",
+      "source": "fireflies",
+      "title": "May 22, 08:18 AM",
+      "date": "2026-05-22",
+      "duration_minutes": 11,
+      "summary": "The team discussed critical issues regarding dimension result discrepancies and metric slicing within the managed warehouse, particularly where dimension results show zero despite accurate metric values. Chris Sanders pointed out that the dimension values were derived from experiment assignment queries, which treats numeric dimensions as raw figures without grouping. Elizabeth Gilbert highlighted the necessity of applying consistent grouping logic to the experiment views table, which is currently limited. Both participants emphasized the importance of refining metric definitions, as seen in the transition from proportion to ratio metrics to enhance accuracy. A collaborative path forward was established, identifying steps for investigating dimensional grouping solutions in the managed warehouse, aimed at increasing data quality and user trust in reporting.",
+      "organizer": "chris@growthbook.io",
+      "participants": 1,
+      "keywords": "Dimension grouping, Managed Warehouse, Experiment views, Metric slices, Fact table, Ratio metric",
+      "action_items": "\n**Chris Sanders**\nInvestigate optimal approach with Managed Warehouse team for enabling grouped dimensions (age) in experiment views table to sync dimension results with fact table metrics (09:40)\nReview Managed Warehouse documentation and query customization capabilities for better handling of dimension grouping (06:10)\n\n**Elizabeth Gilbert**\nProvide clarifications and current setup details about fact table, experiment assignment, and dimension usage during ongoing discussions (00:35)\n"
+    }
+  ]
+}

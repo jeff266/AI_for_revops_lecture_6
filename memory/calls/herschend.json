@@ -1,0 +1,19 @@
+{
+  "company": "Herschend",
+  "slug": "herschend",
+  "last_etl_date": "2026-08-01T13:58:06.040798",
+  "calls": [
+    {
+      "id": "01KMJQF7ZHJW5F0TYHZHJ333GT",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Herschend",
+      "date": "2026-03-27",
+      "duration_minutes": 59,
+      "summary": "Herschend is exploring the implementation of Growth Book to address the lack of standardized testing tools and improve experimentation across their various properties. The need arises from integrating recent acquisitions with different testing approaches, requiring a clear standard baseline for measuring improvements. Currently, the team relies on manual changes and post-facto analytics, which has proven unreliable. The discussion highlighted challenges in testing processes, particularly around commerce flows that require developer involvement, while content changes are easier to implement. Key metrics, such as conversion rates and order values, are essential for success. They discussed pricing structures of Growth Book and proposed a trial for its enterprise features to evaluate full capabilities. Next steps include a technical deep dive with engineering to discuss integrations.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "A/B Testing, Feature Flags, Experimentation Platform, BigQuery Integration, Conversion Rate Optimization, SDK Integration",
+      "action_items": "\n**Matt Berry**\nCoordinate internal alignment with Bill Germani for more technical Growth Book integration discussion (55:33)\nStart hands-on exploratory testing with Growth Book free version and provide feedback to James Shannon’s team (55:33)\n\n**James Shannon**\nSend follow-up email with meeting summary, next steps, and invite for technical call including Bill Germani (59:07)\nSchedule technical deep-dive session with Bill and technical stakeholders for next week Tuesday 11:30am Eastern time (56:55)\n"
+    }
+  ]
+}

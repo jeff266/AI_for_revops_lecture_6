@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> Groupon",
+  "slug": "groupon",
+  "last_etl_date": "2026-08-01T13:58:05.975014",
+  "calls": [
+    {
+      "id": "69e650a20bd5d30019d4771e",
+      "source": "apollo",
+      "title": "Growthbook <> Groupon - Pro Sync ",
+      "date": "2026-04-20",
+      "duration_minutes": 13,
+      "summary": "Daniel Wathne (GrowthBook sales) and Michal Pekarcik (Groupon’s experimentation lead, who is leaving at month-end) discussed GrowthBook’s billing overhaul and Groupon’s underpayment for seats. They explored an enterprise plan (~$50k/year) with unlimited users and governance features like SSO and role-based access. Next steps: Daniel will draft a proposal for Michal to review with the CPO and head of product, while temporarily pausing billing; a fallback plan involves",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "69e7913a420e510011b577b7",
+      "source": "apollo",
+      "title": "Growthbook <> Groupon - Pricing Call ",
+      "date": "2026-04-21",
+      "duration_minutes": 31,
+      "summary": "The call between GrowthBook (Daniel Wathne, sales; Ryan McGurk, CRO) and Groupon (Michal Zachar, product director;",
+      "host": "Daniel Wathne",
+      "participants": 5
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Felipe Klussmann and Jake Heier",
+  "slug": "felipe_klussmann_jake_heier",
+  "last_etl_date": "2026-08-01T13:58:05.983388",
+  "calls": [
+    {
+      "id": "6986357333a8ba001d78ff96",
+      "source": "apollo",
+      "title": "Felipe Klussmann and Jake Heier",
+      "date": "2026-02-06",
+      "duration_minutes": 40,
+      "summary": "In the call, Jake Heier (GrowthBook",
+      "host": "Jake Heier",
+      "participants": 7
+    }
+  ]
+}

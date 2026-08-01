@@ -1,0 +1,19 @@
+{
+  "company": "Jennifer Pham-Le and Vaibhav Patel A S",
+  "slug": "jennifer_phamle_vaibhav_patel_a_s",
+  "last_etl_date": "2026-08-01T13:58:06.047646",
+  "calls": [
+    {
+      "id": "01KHSCWS59F8WMEWDVDJXTBETP",
+      "source": "fireflies",
+      "title": "Jennifer Pham-Le and Vaibhav Patel A S",
+      "date": "2026-02-19",
+      "duration_minutes": 20,
+      "summary": "A meeting was held to discuss the recording and backdating of a contractor payment for 2025, focusing on the manual backdating of payroll due to system limitations. Jennifer confirmed the contractor's US address, while Vaibhav outlined the necessity of keeping the payroll run in draft for manual adjustments. The team clarified that entering the total payment amount takes precedence over hours worked, as the total payment aligns with the contractor's invoicing. They planned to follow up on the approval and 1099 generation after finalizing the payroll run, noting the importance of the original IRS filing before any corrections. Communication with the engineering team was established to ensure timely compliance with filing requirements and to navigate system constraints effectively.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 2,
+      "keywords": "Contractor Payments, 1099 Form, Payroll Backdating, US Contractor, Off-Cycle Payroll, IRS Filing",
+      "action_items": "\n**Vaibhav Patel A S**\nManually backdate and finalize the payroll run as draft and inform Jennifer once done (11:49)\nFollow up with the engineering team to initiate original 1099 filing for the contractor and update Jennifer by end of day (20:02)\n\n**Jennifer Pham-Le**\nShare screen and provide access to contractor payment details and the payroll run for troubleshooting (05:58)\nPreview and approve the payroll run once Vaibhav completes manual backdating (17:54)\n"
+    }
+  ]
+}

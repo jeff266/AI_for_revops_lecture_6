@@ -1,0 +1,19 @@
+{
+  "company": "Voice of Customer",
+  "slug": "voice_customer",
+  "last_etl_date": "2026-08-01T13:58:06.052764",
+  "calls": [
+    {
+      "id": "01KG0A984DY6B814ZZT71CCMJP",
+      "source": "fireflies",
+      "title": "Voice of Customer - Workshop 1 (GrowthBook X Demandii)",
+      "date": "2026-01-28",
+      "duration_minutes": 54,
+      "summary": "The meeting delved into GrowthBook's core customer segments, primarily targeting mid-sized companies in the USA and Canada, with a growing interest in Europe and Asia. Key buyers include product, engineering, and data science leaders, as GrowthBook aims to provide solutions for firms lacking in-house experimentation tools, especially in contrast to larger enterprises like Google and Microsoft. The platform enhances experimentation efficiency, reducing cycles dramatically and allowing for more features to be tested. With a competitive edge through its open-source capabilities, GrowthBook is positioned to disrupt legacy competitors. Additionally, internal challenges related to engineering teams' resistance to experimentation were discussed, alongside a marketing strategy emphasizing storytelling and direct outreach to decision-makers.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "Experimentation, Feature Flags, Product Analytics, Customer Segments, Software Testing, Data-Driven Decision Making",
+      "action_items": "\n**Justin Slimm**\nReview GrowthBook’s ICP document shared by Ashley and prepare for next workshop discussion (12:17)\nPrepare next workshop session agenda on productized IP and sales cycle mapping (53:19)\nSchedule next workshop session, confirming availability for 3:30 PM Pacific time tomorrow (52:55)\n\n**Ashley Stirrup**\nShare GrowthBook’s ICP document detailing industries and titles with Justin (00:19)\nProvide company values and brand philosophical pillars to Justin to guide content creation (23:07)\n\n**Graham McNicoll**\nShare links to recent podcasts for Justin to understand speaking style and prepare content accordingly (29:26)\n"
+    }
+  ]
+}

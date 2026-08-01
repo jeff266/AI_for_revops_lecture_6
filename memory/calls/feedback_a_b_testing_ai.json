@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook Feedback for A/B Testing and AI",
+  "slug": "feedback_a_b_testing_ai",
+  "last_etl_date": "2026-08-01T13:58:06.039595",
+  "calls": [
+    {
+      "id": "01KMNXNAG4ZFZP3HF1CB2T9J02",
+      "source": "fireflies",
+      "title": "GrowthBook Feedback for A/B Testing and AI",
+      "date": "2026-03-31",
+      "duration_minutes": 31,
+      "summary": "The discussion revolved around the daily use of Growth Book at Khan Academy for experiment monitoring and the transition towards automation using Cloud Code to simplify workflows. Participants highlighted the flexibility of direct API calls over MCP for experiment management, with plans for dedicated endpoints to ease setups. They acknowledged challenges in metrics management, particularly the need for funnel reporting due to current reliance on manual SQL practices. The role of AI was addressed, noting its use for hypothesis generation while favoring human oversight to maintain data integrity. Furthermore, concerns about aligning Growth Book metrics with business intelligence tools were raised due to inaccuracies in labels. A new daily participation metric was proposed to improve engagement tracking in experiments.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "AI experimentation, feature flags, activation metrics, API automation, LLM testing, experiment monitoring",
+      "action_items": "\n**Anna Khazenzon**\nShare the cloud code and API skills developed for Growth Book experiment setup with the Growth Book team (07:19)\n\n**Scott Bailey**\nProvide documentation and assistance on setting up activation metrics for better experiment exposure measurement (15:00)\n\n**Growth Book Team**\nFollow up with Khan Academy to review shared skills and integrate feedback to improve API endpoints and skills packages (30:00)\nInvestigate feasibility and user appetite for AI-driven alerts, holistic experiment snapshots, and anomaly detection integrated with Growth Book alerting system (20:50)\n"
+    }
+  ]
+}

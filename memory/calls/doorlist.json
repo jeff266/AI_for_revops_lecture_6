@@ -1,0 +1,19 @@
+{
+  "company": "Doorlist",
+  "slug": "doorlist",
+  "last_etl_date": "2026-08-01T13:58:06.013882",
+  "calls": [
+    {
+      "id": "01KT2K6BDJ32DM3PCKKMA457JB",
+      "source": "fireflies",
+      "title": "Doorlist + GrowthBook",
+      "date": "2026-06-03",
+      "duration_minutes": 27,
+      "summary": "The discussion revolved around integrating Growth Book’s platform to streamline A/B testing, particularly focusing on non-engineering users. Key enhancements in the API and visual editor were highlighted, enabling programmatic management of experiments and facilitating user-friendly testing setups. A hybrid testing approach combining code-based and visual methods was advocated to improve flexibility and throughput while maintaining quality. Attendees also explored the platform’s capabilities for detailed experiment analysis and cohort breakdowns, and a skills library for AI agents was discussed to automate experiment management and reduce manual overhead. Current challenges included engineering bottlenecks and limitations from reliance on Posthog, with a commitment to ongoing collaboration for future improvements.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "AB testing, agentic workflows, GrowthBook API, Posthog, experimentation platform, feature flags",
+      "action_items": "\n**Mitchell Whalen**\nContinue exploring GrowthBook platform and provide follow-up questions or requests based on future evaluations (25:19)\n\n**Logan Bates**\nOffer an early sneak peek of GrowthBook’s skills library and agent integration once ready (25:36)\nProvide additional demo and technical walkthroughs of the platform’s capabilities as requested by Doorlist team (18:00)\nEngage in future discussions around data warehouse integration options and marketplace connectors (16:12)\n\n**Christian Liebenow**\nCoordinate further communications and demos based on Doorlist’s evolving experimentation needs (25:36)\n"
+    }
+  ]
+}

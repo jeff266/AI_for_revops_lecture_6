@@ -1,0 +1,39 @@
+{
+  "company": "GrowthBook Webinar",
+  "slug": "webinar",
+  "last_etl_date": "2026-08-01T13:58:05.967324",
+  "calls": [
+    {
+      "id": "6a315f7bc9f6b00014652f0c",
+      "source": "apollo",
+      "title": "GrowthBook Webinar - Content Flow Sync",
+      "date": "2026-06-16",
+      "duration_minutes": 22,
+      "summary": "The webinar prep focused on Fixer’s experimentation stack using GrowthBook, featuring automated feature flags via MCP, a Slack/Cursor agent for launch and updates, and a learnings database. Key participants were Ashley Stirrup (GrowthBook host/organizer), Ben Fanning (Fixer presenter), Lyndsie Berens (coordinator), and Leia (Fixer team member who will present the experimentation rigor section). Next steps: send slide link to Leia for review, hold a 15-minute rehearsal call tomorrow, and launch the webinar on Thursday.",
+      "host": "Lyndsie Berens",
+      "participants": 3
+    },
+    {
+      "id": "01KV3RBVE5EXQQ8SBH76X80JAS",
+      "source": "fireflies",
+      "title": "GrowthBook Webinar - Content Flow Sync",
+      "date": "2026-06-16",
+      "duration_minutes": 19,
+      "summary": "The team focused on significant conversion improvements driven by various experiments, including an 8.16% increase in trial starts from paywall layout changes, a 210% boost in invite rates from gamified referrals, and a 20% lift in referrals from pre-filled email suggestions. Emphasizing the importance of learning from both successful and unsuccessful experiments, Ben Fanning highlighted the iterative testing approach. Leia's recent arrival has brought a focus on tightening experimentation rigor. The integration of internal tools ensures transparency and accessibility, streamlining the experimentation process. The team is preparing for a polished presentation, with clear assignments for Leia and Ben, while expressing confidence in their storytelling and coordination.",
+      "organizer": "lyndsie@growthbook.io",
+      "participants": 4,
+      "keywords": "experiment automation, feature flags, GrowthBook, Fixer, A/B testing, Slack integration",
+      "action_items": "\n**Ashley Stirrup**\nOrganize the slide deck, remove duplicates, and streamline slide content based on feedback from Lindsey and Ben (14:47)\nCoordinate the quick 15-minute tech check Zoom session for the following day and remind participants of the webinar kickoff on Thursday (18:10)\n\n**Ben Fanning**\nForward the four recent experiment slides to Lindsey to integrate into the main deck (03:41)\nPing Leia with the slide link and coordinate asynchronously on slide review and her presentation contributions (16:29)\nSync with Leia to determine what parts of the presentation she will present and if additional content like memes should be included (16:36)\n\n**Lyndsie Berens**\nSend the presentation link to Leia so she can asynchronously review the slide content ahead of the rehearsal and webinar (16:54)\nFacilitate communication between Leia and Ben regarding her involvement in the webinar and presentation preparation (17:42)\nManage slide deck updates by merging related screenshots per Ben’s and Ashley’s suggestions (12:52)\n"
+    },
+    {
+      "id": "6a4c1acd94e30a0017a8310b",
+      "source": "apollo",
+      "title": "GrowthBook Webinar - Content Prep Session",
+      "date": "2026-07-06",
+      "duration_minutes": 15,
+      "summary": "The team prepared a GrowthBook webinar on trustworthy experiments, focusing on false positives, peeking, and multiple comparisons. Key participants included Ashley Stirrup",
+      "host": "Lyndsie Berens",
+      "participants": 4
+    }
+  ]
+}

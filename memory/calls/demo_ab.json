@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook Demo for AB",
+  "slug": "demo_ab",
+  "last_etl_date": "2026-08-01T13:58:06.008571",
+  "calls": [
+    {
+      "id": "01KTS9Z3PD37SDWXK2138PAKAX",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for AB",
+      "date": "2026-06-12",
+      "duration_minutes": 11,
+      "summary": "The meeting began with informal greetings and personal introductions, establishing a friendly atmosphere among participants. One participant apologized for their tardiness, while both confirmed their current locations, sharing backgrounds that included Swiss and Canadian roots. This small talk was aimed at fostering comfort before delving into business topics. Notably, there was no formal agenda or business discussion during this initial segment, which instead focused on building rapport and ensuring that both participants felt engaged and ready for the main conversation ahead.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Introduction, Location, Participant background, Remote meeting, Apology, Greetings",
+      "action_items": "\n**Unassigned**\nSchedule a follow-up meeting to discuss potential collaboration opportunities in more detail (00:00)\n"
+    }
+  ]
+}

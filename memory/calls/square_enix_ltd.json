@@ -1,0 +1,19 @@
+{
+  "company": "Square Enix LTD",
+  "slug": "square_enix_ltd",
+  "last_etl_date": "2026-08-01T13:58:06.035203",
+  "calls": [
+    {
+      "id": "01KNP67Y15G28PJJQZYVVY629C",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Square Enix LTD",
+      "date": "2026-04-16",
+      "duration_minutes": 47,
+      "summary": "The newly established performance optimization team, formed in February 2024, is tasked with conversion rate optimization (CRO) for 27 brand websites linked to game releases. Led by Kim FitzGerald, the team includes Chris as a front-end and AB testing integrator and Léonie Lindo as a UX developer. They aim to drive click-through conversions to platforms like PlayStation Store and Microsoft Store, although direct revenue attribution remains challenging. Currently managing considerable site traffic, they face hurdles in establishing consistent conversion tracking and optimizing performance effectively. Additionally, the team is evaluating vendor options between GrowthBook and Adobe Target to support their CRO strategies, while preparing for future discussions to address pricing and technical needs.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, A/B testing, Adobe Target, self-hosting, conversion rate optimization, data warehouse",
+      "action_items": "\n**Kim FitzGerald**\nProvide updates on details and pricing offer from Japanese team regarding Adobe Target to James Shannon (44:56)\nCoordinate internal discussions and schedule follow-up calls with GrowthBook once Adobe details are known (46:03)\n\n**James Shannon**\nPrepare and deliver Adobe Target vs. GrowthBook comparison battlecard including pricing and feature overview for Square Enix (44:56)\nOrganize and conduct a detailed GrowthBook demo session with technical team for Square Enix team, to be scheduled for next week (46:56)\nFollow up with Kim FitzGerald after her weekly meeting with Japanese team to assess progress and next steps (45:58)\n"
+    }
+  ]
+}

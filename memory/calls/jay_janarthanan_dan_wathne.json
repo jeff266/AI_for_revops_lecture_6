@@ -1,0 +1,17 @@
+{
+  "company": "Jay Janarthanan and Dan Wathne",
+  "slug": "jay_janarthanan_dan_wathne",
+  "last_etl_date": "2026-08-01T13:58:05.974122",
+  "calls": [
+    {
+      "id": "69f299f746d87a0021f82306",
+      "source": "apollo",
+      "title": "Jay Janarthanan and Dan Wathne",
+      "date": "2026-04-29",
+      "duration_minutes": 22,
+      "summary": "Jay Janarthanan (buyer) and Dan Wathne (sales rep) discussed Growthbook's Pro vs Enterprise plans, with Jay noting Enterprise is more cost-effective for their usage and requires managed warehouse and rollback features. Dan highlighted Enterprise provides better support and future-proofing, while a pricing discount (from $37K to $29.6K) is contingent on signing within the quarter. Next steps: Jay will propose a 30-day opt-out clause to his CEO/Jack to lock in the discount, or arrange a leadership call if needed, with Dan updating the order form and awaiting a decision within the next two weeks.",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

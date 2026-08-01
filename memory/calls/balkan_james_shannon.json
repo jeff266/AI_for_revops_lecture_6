@@ -1,0 +1,19 @@
+{
+  "company": "Balkan and James Shannon",
+  "slug": "balkan_james_shannon",
+  "last_etl_date": "2026-08-01T13:58:06.000041",
+  "calls": [
+    {
+      "id": "01KWYDR1AD6BAC9BY6N9D680B4",
+      "source": "fireflies",
+      "title": "Balkan and James Shannon",
+      "date": "2026-07-08",
+      "duration_minutes": 43,
+      "summary": "The meeting focused on Airalo's evaluation of GrowthBook as a potential enhancement to their experimentation capabilities, currently limited by Unleash. Balkan Misirli highlighted the need for product managers and semi-technical users to independently conduct 20 to 50 experiments monthly, integrating with BigQuery for data analysis. The team discussed GrowthBook's modular architecture, allowing it to coexist with Unleash while offering features like sticky bucketing for consistency across devices. Additionally, integration with dbt for metrics governance was emphasized, along with robust SDK functionality for capturing experiment data. The pricing model, starting at $75,000 annually for 60 experiments, was also reviewed, along with plans for further collaboration and a demo session in two weeks.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Feature Flagging, Experimentation Platform, GrowthBook, Unleash, BigQuery Integration, Pricing Model",
+      "action_items": "\n**Balkan Misirli**\nSend the internal comparison document for GrowthBook and other options to James Shannon for assistance in completing it (10:58)\nGather detailed responses about experiment volume, user counts, and roles to share with James Shannon via follow-up (07:17)\nSet up Slack channel communication with GrowthBook solutions team for ongoing technical Q&A and collaboration (38:55)\n\n**James Shannon**\nProvide detailed information on trade-offs of using GrowthBook for experimentation layered over Unleash for feature flags, including advanced feature limitations (26:10)\nConfirm and clarify GrowthBook’s capabilities related to one-click promotion of experiments to 100% rollout and reply with documented solutions/examples via email (36:30)\nSend formal pricing details and package summary to Balkan Misirli (41:10)\nSupport scheduling and delivery of a full demo to Airalo’s broader team after holiday period (42:05)\n"
+    }
+  ]
+}

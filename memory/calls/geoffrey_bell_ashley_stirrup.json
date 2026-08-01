@@ -1,0 +1,17 @@
+{
+  "company": "Geoffrey Bell and Ashley Stirrup",
+  "slug": "geoffrey_bell_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:05.967501",
+  "calls": [
+    {
+      "id": "6a3d65e36f9d280018cf27b3",
+      "source": "apollo",
+      "title": "Geoffrey Bell and Ashley Stirrup + Scott Keller",
+      "date": "2026-06-25",
+      "duration_minutes": 31,
+      "summary": "Geoffrey Bell (Ford Credit) shared pain points with Adobe Target, including DOM timing issues, micro frontend challenges, and poor",
+      "host": "Ashley Stirrup",
+      "participants": 3
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Nate and Ashley Stirrup",
+  "slug": "nate_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.024893",
+  "calls": [
+    {
+      "id": "01KQNPNJ9V4DFA2XQCJFXSKTGH",
+      "source": "fireflies",
+      "title": "Nate and Ashley Stirrup",
+      "date": "2026-05-04",
+      "duration_minutes": 11,
+      "summary": "The meeting covered the confirmation of Google Analytics and Tag Manager access for Nathaniel, who will lead event testing for the Growth Book site. There was a discussion on extending Tag Manager to the authentication and subdomains, pending CEO approval, to ensure accurate conversion tracking. A custom event was deemed necessary for tracking registration success due to the limitations of a single-page application. The team agreed on the need for clear documentation, which Nathaniel will provide immediately. Scheduled follow-ups, including a video update and additional meetings, were established to maintain progress and address questions.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Google Analytics, Google Tag Manager, event tracking, registration conversion, single-page app, custom events",
+      "action_items": "\n**Nathaniel Page**\nSend documentation and instructions to Ashley Stirrup on how to implement custom events for registration tracking in Google Tag Manager (06:07)\nRecord and send a status update video of the week's progress by Thursday (07:51)\nSchedule a follow-up meeting or check-in on Monday to address questions or further work (08:13)\n\n**Ashley Stirrup**\nReview and discuss with the CEO the possibility of adding Google Tag Manager tags to authentication pages to enable conversion tracking (02:51)\nTest the registration and sign-up process to assist in confirming tracking setup and event firing (06:07)\n"
+    }
+  ]
+}

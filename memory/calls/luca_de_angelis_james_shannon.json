@@ -1,0 +1,19 @@
+{
+  "company": "Luca De Angelis and James Shannon",
+  "slug": "luca_de_angelis_james_shannon",
+  "last_etl_date": "2026-08-01T13:58:06.034379",
+  "calls": [
+    {
+      "id": "01KPAPFGKZSGEJVBNVJP86M3BJ",
+      "source": "fireflies",
+      "title": "Luca De Angelis and James Shannon",
+      "date": "2026-04-17",
+      "duration_minutes": 15,
+      "summary": "The discussion revolved around forming a collaborative partnership for experimentation and analytics services with Growth Book, led by James Shannon and Luca De Angelis. Luca highlighted his agency's extensive experience in data and experimentation for medium to large clients, especially in Germany, and expressed readiness to refer clients and support integration. James outlined Growth Book's revenue-sharing model and the current demand landscape, acknowledging the need for experimentation tools in medium-sized companies. They identified target client profiles, with a focus on companies with 300-500 employees in sectors like fintech and B2C. Concerns about GDPR compliance were addressed, reinforcing Growth Book's self-hosted capabilities as a competitive edge, while next steps included preparing sales materials and training for effective engagement.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Experimentation, Data Analytics, Partnerships, GDPR Compliance, Growth Book, Mid-sized Companies",
+      "action_items": "\n**James Shannon**\nSend Growth Book sales and training materials to Luca De Angelis for review (12:51)\nRecommend Luca De Angelis as a preferred partner for German clients seeking experimentation support when opportunities arise (12:26)\nBe available to answer questions or provide walkthroughs about Growth Book as needed (12:51)\n\n**Luca De Angelis**\nReview Growth Book sales and training materials sent by James Shannon (10:28)\nExplore potential client introductions and collaboration opportunities once concrete deals appear (10:28)\nConsider offering experimentation leadership or analytics support for German and possibly US clients via his agency (12:51)\n"
+    }
+  ]
+}

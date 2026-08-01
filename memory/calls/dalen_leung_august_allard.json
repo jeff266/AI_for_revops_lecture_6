@@ -1,0 +1,19 @@
+{
+  "company": "Dalen Leung and August Allard",
+  "slug": "dalen_leung_august_allard",
+  "last_etl_date": "2026-08-01T13:58:06.027400",
+  "calls": [
+    {
+      "id": "01KQ4Z8GHWWJVWABBDM904QYF0",
+      "source": "fireflies",
+      "title": "Dalen Leung and August Allard",
+      "date": "2026-04-28",
+      "duration_minutes": 55,
+      "summary": "The meeting addressed a customer's integration issues with the GrowthBook SDK, pinpointing a misconfigured client key that blocked data flow to Google Analytics. After correcting this, an invalid API host error surfaced, which was resolved by switching to the customer's CDN. Additionally, static user data led to inaccurate analytics, prompting a shift to dynamic user variables for improved targeting. A real-world troubleshooting simulation helped assess candidates' problem-solving skills using actual support resources. The discussion also clarified key technical distinctions crucial for effective support and outlined the interview process, emphasizing the importance of technical aptitude and emotional intelligence.",
+      "organizer": "august@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook SDK, self-hosted, Google Analytics GA4, client key, API host, dynamic user attributes",
+      "action_items": "\n**Dalen Leung**\nSimulate customer communication by drafting clarifying information requests and troubleshooting steps in the provided Google Doc during the interview exercise (10:58)\nPrepare explanation and instructions for the customer on generating a valid SDK client key from GrowthBook UI and updating the SDK code accordingly (24:43)\nAdvise the customer on correcting the API host value to use their self-hosted CDN/proxy domain instead of the default GrowthBook API host for self-hosted installations (31:24)\nRecommend setting dynamic user attributes such as user ID and country in the GrowthBook SDK to resolve the issue of identical user data appearing in GA4 (36:25)\n\n**August Allard**\nShare pertinent documentation links including Python SDK and Google Docs references to support the interview exercise and candidate preparation (00:22)\nProvide responses simulating a customer in Slack-style conversation, including error reporting and confirmations, to facilitate troubleshooting during the interview exercise (19:45)\nManage interview scheduling logistics and communicate the timeline for next steps and candidate progression notifications (53:21)\n\n**Kevin Chant**\nSupport the interview process by participating in technical discussions and clarifications regarding GrowthBook SDK and infrastructure (00:00)\n"
+    }
+  ]
+}

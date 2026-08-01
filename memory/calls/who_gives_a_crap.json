@@ -1,0 +1,19 @@
+{
+  "company": "Who Gives a Crap",
+  "slug": "who_gives_a_crap",
+  "last_etl_date": "2026-08-01T13:58:06.018198",
+  "calls": [
+    {
+      "id": "01KSCWG2SRXFQSGF15DJQHJGPQ",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Who Gives a Crap",
+      "date": "2026-05-26",
+      "duration_minutes": 45,
+      "summary": "A discussion took place regarding the evaluation of a technical experimentation platform to replace Optimizely due to its inaccuracies in data and reporting. Growth Book was identified as a strong candidate with deep integration with Snowflake, allowing for complex subscription metrics and automation. Patrick emphasized the need for customizable solutions suitable for long customer lifetimes, while pricing based on experiment volume was highlighted as a differentiator. The replacement project is on a tight timeline that requires finalizing vendor selection and running proof of concepts before the Optimizely contract ends in August. Additionally, Growth Book plans to enhance its AI capabilities for experimentation workflows, reflecting Patrick's interest in leveraging advanced technologies.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 8,
+      "keywords": "GrowthBook, Experimentation, Subscription Metrics, Snowflake Integration, AI Capabilities, Vendor Evaluation",
+      "action_items": "\n**Patrick Condliffe**\nShare GrowthBook technical specifications and demo materials with Who Gives a Crap's engineering and product teams to prepare for integration and evaluation (43:24)\nSchedule and facilitate a GrowthBook demo with key stakeholders within the next two weeks to accelerate the vendor evaluation process (41:16)\nFollow up with Chameleon vendor to schedule and coordinate their demo as part of the vendor evaluation process (44:18)\nNarrow down vendor choices from three to two after demos and organize proof of concepts (POCs) accordingly before final contract decision (44:18)\n\n**James Shannon**\nSend full detailed GrowthBook presentation deck including answers to Patrick’s technical and pricing questions, and highlight AI capabilities (04:02)\nProvide links and case study materials related to Khan Academy and Fixer AI to support benchmarking and illustrate GrowthBook’s subscription experimentation capabilities (30:04)\nAssist in scheduling the GrowthBook demo and create a Slack collaboration channel for ongoing communication after demo approval (44:18)\nProvide support for onboarding, AI capability training, and trial setup once the contract is finalized to ensure smooth implementation (38:22)\n"
+    }
+  ]
+}

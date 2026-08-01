@@ -1,0 +1,19 @@
+{
+  "company": "Growthbook <> Goodnotes",
+  "slug": "goodnotes",
+  "last_etl_date": "2026-08-01T13:58:06.023396",
+  "calls": [
+    {
+      "id": "01KR1F11P3D28AJ87G6X222SRC",
+      "source": "fireflies",
+      "title": "Growthbook <> Goodnotes - Pricing Review",
+      "date": "2026-05-07",
+      "duration_minutes": 30,
+      "summary": "The meeting focused on finalizing the pricing structure for Growth Book’s deployments, which proposed a three-tier model with flat fees and discounts for larger user groups, designed for flexibility and budget ease. Clarifications were made regarding user count and additional pricing, easing financial commitment concerns. Vaida raised budget limits compared to the current costs, while Dan highlighted long-term value in adopting fixed fees. The team emphasized the importance of aligning deployment timelines with contract expirations and fostering effective communication through Slack for rapid feedback. They aimed for a phased rollout strategy that begins in May, with discussions around scaling to accommodate larger teams.",
+      "organizer": "dan@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, Amplitude, Static, Pricing, Deployment Options, Self-Hosted",
+      "action_items": "\n**Vaida Maksims**\nInform Hiro of clarification that GrowthBook is not partnering with Amplitude, alleviating his concerns (05:29)\nShare pricing details with Hiro and Toji and obtain feedback specifically on cost projections and wider company deployment potential (06:33)\nConfirm whether GrowthBook pricing is within budget for broader company use and decide between small versus full deployment options (22:09)\nUpdate GrowthBook with feedback and decisions on deployment scale and timeline within the day (23:46)\nCoordinate Slack channel setup and ensure Hiro and Toji's participation to facilitate communication (28:59)\nPing Toji during meeting to check immediate availability for input (24:04)\n\n**Dan Wathne**\nProvide clear follow-up email and formal order form covering pricing scenarios and options discussed, including mid-year user additions and discounts (20:00)\nSet up Slack communication channel adding Hiro and Toji for joint coordination (28:51)\nSupport pricing discussions with transparency and flexibility around contract scale and timing (22:25)\n"
+    }
+  ]
+}

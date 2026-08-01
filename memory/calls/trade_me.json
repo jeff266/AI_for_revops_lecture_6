@@ -1,0 +1,27 @@
+{
+  "company": "Trade Me<>GrowthBook",
+  "slug": "trade_me",
+  "last_etl_date": "2026-08-01T13:58:05.971826",
+  "calls": [
+    {
+      "id": "69f912966dc6ed0019dbb811",
+      "source": "apollo",
+      "title": "Trade Me<>GrowthBook - POC Check In Call",
+      "date": "2026-05-04",
+      "duration_minutes": 37,
+      "summary": "During the call, TradeMe (Brian Wang, Ruby J, Kevin Dyer) and GrowthBook (Logan Bates) reviewed the progress of a proof-of-concept (POC) integration for an AI experiment on map search. They discussed data flow validation, a timezone mismatch between Snowflake (NZ time) and GrowthBook (UTC), and the setup of a holdout for traffic allocation. Next steps include TradeMe turning on the AA test tomorrow, sharing results by Friday, and GrowthBook researching the timezone issue and best practices for transitioning from AA to AB testing.",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "6a0e3cd8b975ab0020860cc3",
+      "source": "apollo",
+      "title": "Trade Me<>GrowthBook - Overview",
+      "date": "2026-05-20",
+      "duration_minutes": 60,
+      "summary": "GrowthBook (Jake Heier, Logan Bates, Luke",
+      "host": "Jake Heier",
+      "participants": 9
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "company": "Growthbook <> BidOne",
+  "slug": "bidone",
+  "last_etl_date": "2026-08-01T13:58:05.966345",
+  "calls": [
+    {
+      "id": "6a4ec23377cb1b0014c7f4d8",
+      "source": "apollo",
+      "title": "GrowthBook and BidOne ",
+      "date": "2026-07-08",
+      "duration_minutes": 1,
+      "summary": "The call was an initial introduction between GrowthBook (represented by sales team members Jake Stangl and Daniel Wathne) and BidOne (represented by Kalyan Ramaiah Asari). No product features, pain points, or specific discussion occurred, as the team was still waiting for additional participant Trinity to join. No next steps or action items were established.",
+      "host": "Jake Stangl",
+      "participants": 3
+    },
+    {
+      "id": "01KWT071833J8V79V7839MK0TD",
+      "source": "fireflies",
+      "title": "GrowthBook and BidOne",
+      "date": "2026-07-08",
+      "duration_minutes": 34,
+      "summary": "BidOne is exploring alternatives to PostHog for feature flagging and experimentation due to rising costs and a need for self-hosting to comply with GDPR. GrowthBook was presented as a viable open-source option, emphasizing scalability and advanced experimentation features. The discussion included integration capabilities with various SDKs and APIs, essential for BidOne’s tech stack. Pricing comparisons showed similar costs between cloud and self-hosted options, and a preferred preference for self-hosting was noted. The team aims to finalize tool selection and begin technical onboarding in a timely manner, stressing the importance of detailed pricing and support for enterprise features to facilitate internal buy-in.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 6,
+      "keywords": "Feature flag, experimentation, self-hosting, AB testing, pricing, SDK integration",
+      "action_items": "\n**Dan Wathne**\nFollow up with BidOne team today with clarifying questions and resources regarding pricing and product (26:38)\nOrganize and schedule detailed technical demo session with solutions engineer for Tuesday at the same local time (24:53)\nPrepare a pricing proposal based on BidOne’s traffic, active users, and feature usage for review during Tuesday's technical demo (26:38)\nInclude pricing discussion and trial offer in technical demo to assist with commercial approval process (28:16)\n\n**Kalyan Ramaiah Asari**\nCoordinate internal preparation for pricing review and budget approval based on proposal expected after Tuesday demo (25:59)\nArrange to attend the technical deep dive demo and prepare technical questions especially related to DevOps integration and Datadog observability (23:12)\n\n**Srinivasan Arunachalam**\nProvide technical queries on SDK support, API integrations, multi-tenant feature flag management, and DevOps automation to GrowthBook team ahead of technical demo (19:54)\nParticipate in technical demo session on Tuesday to gain clarity on advanced product capabilities and integrations (25:52)\n\n**Nevin Ma**\nCollaborate with team to define metrics and experiment goals for GrowthBook integration on new platform (01:29)\nAssist in evaluating response time and configuration impact of feature flag rollouts and monitoring (15:50)\n"
+    },
+    {
+      "id": "6a555928df8d74000c47a8a0",
+      "source": "apollo",
+      "title": "Growthbook <> BidOne - Demo/Pricing Sync",
+      "date": "2026-07-13",
+      "duration_minutes": 0,
+      "summary": "We need to summarize a sales call transcript. The user gave only the call title and the first line of transcript. The transcript text is incomplete. The user likely expects a summary based on the call title and that snippet. But the instruction says \"summarize this sales call transcript\" but the provided transcript is just one line. Perhaps the user intended to paste the full transcript but only gave the first line? Or the user wants a summary based on the title alone? That seems unlikely. Let me re-read: The user says \"Summarize this sales call transcript\" and then provides \"Call Title: Growthbook <> BidOne - Demo/Pricing Sync\" and \"Transcript Text: [Daniel Wathne]: Hi. Just a moment. Can you hear us?\" That's the entire transcript. I cannot summarize a full call with only that. Possibly a mistake. I should address that the transcript is incomplete. But the instruction says \"Provide only the summary, no preamble.\" So I must produce a summary. Since there's insufficient info, I'll infer from the call title that it's a demo/pricing sync between Growthbook (a feature management/experimentation platform) and BidOne (a company). The participants: Daniel Wathne (likely from Growthbook) and someone from BidOne. Pain points, features, next steps unknown. I'll need to make a generic summary. Better to state that the transcript is too brief to summarize meaningfully, but the instruction forbids preamble",
+      "host": "Daniel Wathne",
+      "participants": 1
+    },
+    {
+      "id": "01KX9KAYB4HT8HCHGRJRWG9SB4",
+      "source": "fireflies",
+      "title": "Growthbook <> BidOne - Demo/Pricing Sync",
+      "date": "2026-07-13",
+      "duration_minutes": 60,
+      "summary": "The discussion centered on Growthbook's experimentation and feature flag platform, highlighting its ability to leverage Snowflake data warehouses for flexible metric creation and experimentation setups. The platform allows product managers to create metrics and dashboards quickly without requiring engineer assistance. It also includes detailed user targeting for feature flags using custom attributes, supporting multi-condition logic for precise scoping. The architecture emphasizes multi-tenant data isolation, with a recommendation for separate organizations per tenant. Managed warehouse options and self-hosting through Snowflake were discussed regarding data ingestion and event logging capabilities. Finally, the commercial model, trial setups, and ongoing support frameworks were outlined.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "feature flags, experimentation, multi-tenant architecture, data warehouse, SDK integration, pricing model",
+      "action_items": "\n**Dan Wathne**\nFollow up with engineering team regarding support for client's multi-tenant architecture and data isolation schemes (45:40)\nSend clarifying questions email about usage metrics for pricing determination, including event volume and number of experiments (47:22)\nProvide detailed pricing model information tailored to client’s self-hosted and managed cloud needs (54:45)\nCoordinate trial setup with client after defining success criteria and provide Slack channel for support (55:24)\nFollow up post meeting to provide recommendations and responses on multi-tenant capabilities and integration specifics (54:54)\n\n**Kalyan Ramaiah Asari**\nProvide Dan answers to clarifying questions on event traffic, experiment numbers, and migration timeline for pricing evaluation (47:05)\nScope internal success criteria for trial period and confirm testing priorities (56:18)\n\n**Logan Bates**\nSupport technical discussion and demo on SDK, feature flags, experimentation setup, and multi-tenant considerations during meeting (33:42)\nPossibly provide Terraform or API integration examples to assist client’s DevOps automation needs (33:42)\n"
+    },
+    {
+      "id": "01KY0Z05VZZCEQHXFMG4PNRQX8",
+      "source": "fireflies",
+      "title": "Growthbook <> Bidone - Trial Scoping/Pricing Sync",
+      "date": "2026-07-22",
+      "duration_minutes": 28,
+      "summary": "The team discussed a three-week trial to test Growthbook's feature flagging and experimentation capabilities, emphasizing minimal AB testing and integration workflows as success criteria. Kalyan Ramaiah Asari confirmed the trial duration is adequate, while Dan Wathne outlined onboarding steps. A multi-tenant architecture is to be supported with environment and site separation, confirmed by Nevin Ma and Logan Bates. Pricing concerns arose as the proposed Enterprise license costs $50,000 annually plus $1,000 per user seat, which Kalyan highlighted as expensive compared to competitors like Posthog. Growthbook's positioning as a premium option with superior enterprise features was reiterated, along with a commitment to revisit pricing strategies. Future updates on managed warehouse options are expected by week’s end to accommodate budget expectations.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "multi-tenancy, trial setup, pricing discussion, self-hosted solution, enterprise license, infrastructure cost",
+      "action_items": "\n**Kalyan Ramaiah Asari**\nComplete and share trial success criteria with Growthbook team to define goals for the three-week trial period (05:11)\n\n**Bidone team (Nevin Ma and Kalyan Ramaiah Asari)**\nCreate a free Growthbook account to initiate the trial setup and share account details with Growthbook team for Enterprise trial upgrade (06:04)\n\n**Dan Wathne (Growthbook team)**\nProvision the Enterprise trial upgrade for Bidone's Growthbook account and create a Slack channel for ongoing support and communication (06:04)\nShare formal ballpark pricing figures with Bidone management to assist in evaluation and decision-making (24:09)\n\n**Logan Bates and Dan Wathne (Growthbook team)**\nVerify technical feasibility and details of supporting multi-tenancy with site ID fields within a single organization environment in Growthbook (03:18)\n\n**Dan Wathne and Logan Bates (Growthbook team)**\nInternally review pricing and infrastructure options to identify a more suitable pricing approach for Bidone and follow up with updated proposals (17:07)\n"
+    }
+  ]
+}

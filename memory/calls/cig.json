@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> CIG",
+  "slug": "cig",
+  "last_etl_date": "2026-08-01T13:58:05.975106",
+  "calls": [
+    {
+      "id": "69d7cd5569f49c0021d47098",
+      "source": "apollo",
+      "title": "Growthbook <> CIG - Product Meeting ",
+      "date": "2026-04-09",
+      "duration_minutes": 61,
+      "summary": "GrowthBook's Daniel Wathne (sales) and Logan Bates (solutions engineering) demoed their open-source experimentation platform to Cloud Imperium",
+      "host": "Daniel Wathne",
+      "participants": 6
+    },
+    {
+      "id": "69e6812358c8070015f2eb1c",
+      "source": "apollo",
+      "title": "Growthbook <> CIG - Technical Demo ",
+      "date": "2026-04-20",
+      "duration_minutes": 40,
+      "summary": "GrowthBook (feature flagging and experimentation platform) was discussed to address CIG's pain points with a heavy, limited badging system and the need for centralized integration across their monolithic and microservice architecture. Key participants included Daniel Wathne and Logan Bates (GrowthBook), and Martin Le Bas, Jocelyn Menard, and Emilien Pierru (CIG). Next steps involve setting up a Teams channel, providing documentation",
+      "host": "Daniel Wathne",
+      "participants": 5
+    }
+  ]
+}

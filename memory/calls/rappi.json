@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> Rappi",
+  "slug": "rappi",
+  "last_etl_date": "2026-08-01T13:58:05.972109",
+  "calls": [
+    {
+      "id": "69fe17dc3e210e0019d16fcb",
+      "source": "apollo",
+      "title": "GrowthBook and Rappi",
+      "date": "2026-05-08",
+      "duration_minutes": 35,
+      "summary": "Daniel Wathne (GrowthBook AE) and Logan (solutions engineering) discussed with Jaime Sempertegui (Rappi analyst) how GrowthBook’s experimentation platform can address Rappi’s pain points: low adoption, inconsistent metrics across pods,",
+      "host": "Jake Stangl",
+      "participants": 2
+    },
+    {
+      "id": "6a0cbd80cb75350020c9fb80",
+      "source": "apollo",
+      "title": "Growthbook <> Rappi - Demo ",
+      "date": "2026-05-19",
+      "duration_minutes": 44,
+      "summary": "In a demo call, GrowthBook (Daniel Wathne and Logan Bates) addressed Rappi’s pain points of low Statsig adoption, metric fragmentation, and single points of failure, presenting features like metrics governance, Snowflake-native analysis, AI-powered experimentation, and a Statsig migration tool. Key participants included Jaime Sempertegui (Rappi’s advanced statistics lead) and the GrowthBook team. Next steps: Jaime will discuss internally with his team, and a follow-up check-in is scheduled for the following Tuesday.",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

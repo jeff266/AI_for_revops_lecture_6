@@ -1,0 +1,19 @@
+{
+  "company": "Growth Book <> Vanta",
+  "slug": "growth_book_vanta",
+  "last_etl_date": "2026-08-01T13:58:05.990388",
+  "calls": [
+    {
+      "id": "01KY52A2FJ0NVRTWK0JDTGR7NH",
+      "source": "fireflies",
+      "title": "Growth Book <> Vanta - Renewal",
+      "date": "2026-07-22",
+      "duration_minutes": 0,
+      "summary": "The discussion centered around the Vanta subscription renewal, scheduled for August 31, 2026, at a total cost of $18,000, which includes SOC 2 audit fees. Jennifer manages daily operations and will handle negotiations, while Ryan clarified that future audits will be contracted separately. Jennifer expressed a desire to retain the current subscription if pricing remains stable and indicated the need for cost comparisons with competitors before making a decision. The team is also reviewing ongoing compliance efforts for SOC 2, ISO, and GDPR, with discussions around utilizing alternative vendors for support. The next meeting is set for August 5, where they will review pricing options and vendor assessments.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 2,
+      "keywords": "Vanta renewal, SOC 2 audit, ISO certification, GDPR compliance, FedRAMP inquiry, vendor comparison",
+      "action_items": "\n**Ryan Dombrowski**\nPrepare and submit renewal pricing options for 1-year, 2-year, and 3-year contracts including and excluding ISO and GDPR certifications (07:11)\nSend calendar invite for renewal follow-up call on August 5th, 1:00 PM Pacific / 3:00 PM Eastern (15:39)\nMonitor updates from Jennifer regarding vendor comparisons and any additional support requests before the August meeting (16:20)\n\n**Jennifer**\nContact current auditors and other vendors (Insight Assurance, Onely) to gather quotes and explore certification maintenance options (10:45)\nCompare vendor pricing and service offerings for SOC 2, ISO, GDPR, and possible FedRAMP certification (07:43)\nDiscuss pricing and renewal options internally with CEO Graham to prepare for decision-making (07:43)\nReconnect with Ryan and provide updates on other vendor engagements before or by the August 5 follow-up call (16:20)\n"
+    }
+  ]
+}

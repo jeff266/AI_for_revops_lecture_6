@@ -1,0 +1,29 @@
+{
+  "company": "Publico",
+  "slug": "publico",
+  "last_etl_date": "2026-08-01T13:58:05.968156",
+  "calls": [
+    {
+      "id": "6a2831b3f753a80014ff1928",
+      "source": "apollo",
+      "title": "Publico + GrowthBook",
+      "date": "2026-06-09",
+      "duration_minutes": 23,
+      "summary": "Christian Liebenow (GrowthBook) demonstrated features like a new AI-driven visual editor, multi-arm bandits for dynamic traffic allocation, and experiment templates with remote configuration via feature flags to Pedro Vasques and colleagues from Publico. Pedro highlighted the pain point of reducing fixed costs currently spent on Piano and requested flexible pricing, possibly with a success-fee model. Next steps: Christian will follow up with enterprise pricing details and explore a joint marketing case study to potentially lower costs.",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "01KTPEAD77PA8YJHTHBNEPVBRK",
+      "source": "fireflies",
+      "title": "Publico + GrowthBook",
+      "date": "2026-06-09",
+      "duration_minutes": 32,
+      "summary": "The meeting highlighted positive feedback from DM Tech regarding GrowthBook 4.4, emphasizing its strong market fit against competitors like Statsig, particularly after the OpenAI acquisition. The demonstration showcased an advanced visual editor featuring multi-language support, AI-driven editing, and traffic targeting capabilities designed for non-technical users. Discussions on enterprise pricing revealed a $50,000 annual entry cost for 10 user licenses, with interest from Jornal Público in more flexible pricing options. Additionally, Jornal Público expressed a need for tools that empower their non-technical teams to independently run experiments revolving around paywalls and pricing. The meeting concluded with plans for future follow-ups, including a detailed email outlining the enterprise plan scope and potential partnerships.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Visual Editor, Multi-armed Bandits, Feature Flags, Pricing Model, Piano Alternative",
+      "action_items": "\n**Christian Liebenow**\nFollow up with Publico team by email outlining the Enterprise plan features and pricing model including the $50,000 annual cost and what it entails (30:24)\nDiscuss potential flexible pricing options and explore case study or joint marketing agreements with Publico for cost mitigation (28:26)\n\n**Graham McNicoll**\nProvide product demonstration including Visual Editor capabilities and experiment templates during the current meeting (07:39)\nShare relevant internal information with Publico team to assist in evaluating GrowthBook as a Piano alternative (29:53)\n\n**Jornal Público Team**\nShare current spend details with GrowthBook team regarding Piano subscription and clarify budget constraints (29:53)\n"
+    }
+  ]
+}

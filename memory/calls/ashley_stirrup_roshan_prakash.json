@@ -1,0 +1,31 @@
+{
+  "company": "Ashley Stirrup and Roshan Prakash",
+  "slug": "ashley_stirrup_roshan_prakash",
+  "last_etl_date": "2026-08-01T13:58:06.048909",
+  "calls": [
+    {
+      "id": "01KG30PY6ET3EY5FQHDFDHN7BF",
+      "source": "fireflies",
+      "title": "Ashley Stirrup and Roshan Prakash",
+      "date": "2026-01-30",
+      "duration_minutes": 22,
+      "summary": "The meeting covered the early-stage marketing efforts primarily through Google and LinkedIn ads, which currently lack lead generation despite a $10,000 monthly spend. Ashley Stirrup, who joined in September, is focused on building foundational marketing assets, including a new website and SEO strategies aimed at enhancing ad conversion through effective landing pages. The company, achieving $8 million in ARR with a target to double revenue, faces challenges with modest sales velocity and demo-to-close conversion rates. A data-driven advertising approach was proposed, emphasizing Meta and LinkedIn for better cost-effectiveness. The team is constrained by bandwidth and capacity issues, necessitating a focus on optimizing current marketing efforts before expanding channels.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 1,
+      "keywords": "GrowthBook, Marketing Strategy, A/B Testing, Lead Generation, Enterprise Sales, Ad Creatives",
+      "action_items": "\n**Ashley Stirrup**\nSend product brochure, sales deck, and list of pain points to Roshan to aid ad creative development (19:27)\nAttend follow-up call to review ad creatives on Wednesday at 1:30 pm San Francisco time (20:52)\n\n**Roshan Prakash**\nCreate five static ad creatives for GrowthBook using provided materials and current website branding (19:48)\nSchedule and conduct a 10-minute follow-up call to go over ad creatives and align on next steps (20:52)\nReview any additional materials sent by Ashley and follow up with specific questions by email if needed (19:30)\n"
+    },
+    {
+      "id": "01KH2BPR2T4B0CZ3RRJTQC5S8T",
+      "source": "fireflies",
+      "title": "Ashley Stirrup and Roshan Prakash",
+      "date": "2026-02-12",
+      "duration_minutes": 29,
+      "summary": "The meeting centered on revamping GrowthBook's ad strategy to increase demo bookings by targeting specific user pain points through clear messaging. Roshan proposed direct, pain-point-focused ads using A/B testing to identify the most effective variations and emphasized the importance of static ads for initial testing, reserving video ads for successful angles. The discussion also covered ad platform preferences, with Meta chosen for lower costs and faster data acquisition. Key metrics and proper CRM integration were highlighted as vital for assessing ad profitability, with a target of achieving a 10x lifetime ROAS. The pricing structure for ad services was clarified, including a $12,000 setup fee and ongoing management costs of $6,000. Roshan shared success stories demonstrating high lifetime ROAS and confirmed the feasibility of targeting developer audiences with tailored strategies.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 1,
+      "keywords": "GrowthBook, SaaS advertising, ad creatives, lifetime ROAS, GTM team, funnel metrics",
+      "action_items": "\n**Roshan Prakash**\nSend ad creatives and presentation documents to Ashley for review post-meeting (10:57)\nShare metrics document and a meeting link for follow-up call to map funnel KPIs and expected metrics (28:24)\nProvide additional data and metrics specific to developer-focused SaaS advertising when available (26:42)\n\n**Ashley Stirrup**\nReview materials sent by Roshan and consider next steps regarding ad strategy and collaboration (28:12)\nCommunicate decision to Roshan via email if not proceeding (28:24)\n"
+    }
+  ]
+}

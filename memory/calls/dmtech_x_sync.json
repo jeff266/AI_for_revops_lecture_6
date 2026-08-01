@@ -1,0 +1,19 @@
+{
+  "company": "dmTECH x GrowthBook Sync",
+  "slug": "dmtech_x_sync",
+  "last_etl_date": "2026-08-01T13:58:06.008955",
+  "calls": [
+    {
+      "id": "01KTRX98HD8TW53GBWMTM9TEYA",
+      "source": "fireflies",
+      "title": "dmTECH x GrowthBook Sync",
+      "date": "2026-06-11",
+      "duration_minutes": 44,
+      "summary": "The discussion centered on a significant increase in the cloud enterprise budget from $1,000 to $2,000 per month, facilitating uninterrupted usage of cloud tools for improved productivity. Jannick Weichert highlighted the alignment of the new budget with daily cloud usage costs, allowing for multiple automated tasks through Growth Book's platform. A follow-up session is scheduled with Growth Book's leadership to clarify the company vision and strengthen executive confidence. Legal and licensing issues remain hurdles, with suggestions to modify user licensing models to enhance accessibility. Parallel implementation planning is set to begin post-commitment, aiming for a seamless transition ahead of summer holidays, while emphasizing the need for CEO-level engagement to bridge communication gaps.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, AI Automation, Licensing Model, Legal Compliance, Experimentation Platform, CEO Engagement",
+      "action_items": "\n**Jannick Weichert**\nContinue efforts to identify legal contact for contract review and ensure legal clearance early next week (37:05)\nSend calendar invite for the June 18th CEO call or coordinate internally for scheduling (15:03)\nPrepare internal demos and usage data to present at decision meeting with top management in early July (27:17)\nEvaluate closer user count estimates for full and read-only users to refine licensing needs (24:04)\n\n**Christian Liebenow**\nCoordinate with GrowthBook CEO Graham Rothbook to confirm June 18th meeting time and agenda, focusing on visionary details and roadmap (12:09)\nShare Graham’s email and meeting details with Jannick for scheduling (15:14)\nDiscuss with head of sales Ryan about legal deployment options and knowledge base access pricing models (21:54)\nConfirm internal attorney consultation status and report back on feasibility of European governing law contracts (34:29)\nContinue preparations for the July decision meeting, ensuring readiness to address product, pricing, and legal questions (29:23)\nExplore adjustments in full and read-only user licensing mix per Jannick's feedback to align pricing proposal below $200k (25:15)\nFollow up post-June 18th call with clearer product vision and roadmap details to support confidence-building (30:06)\n"
+    }
+  ]
+}

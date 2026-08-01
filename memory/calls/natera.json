@@ -1,0 +1,19 @@
+{
+  "company": "Natera",
+  "slug": "natera",
+  "last_etl_date": "2026-08-01T13:58:06.018332",
+  "calls": [
+    {
+      "id": "01KRZY3A5NSNX6HMQDK6SZ5AT8",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Natera",
+      "date": "2026-05-22",
+      "duration_minutes": 0,
+      "summary": "The team is assessing GrowthBook to streamline their experimentation process, aiming to transition from a slow, manual system to a more agile, less resource-intensive platform. Key challenges include the need for improved user experience through quicker iterations and reduced engineering involvement in A/B testing and feature flagging. GrowthBook's open-source nature and flexible integration options appeal to the team, as it respects data privacy and supports existing analytics tools like Heap. The pricing model is based on the number of experiments and aims for adoption by Q3, contingent on vendor evaluation. The platform offers user-friendly experiment design features, real-time metrics, and capabilities for long-term analysis to foster a data-driven culture.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 7,
+      "keywords": "Experimentation, Feature Flagging, Data Warehouse, Power Analysis, Self-Service, Vendor Evaluation",
+      "action_items": "\n**Rebecca Hagan**\nOwn the vendor evaluation process and coordinate next steps internally for GrowthBook assessment at Natera (45:56)\n\n**Scott Keller**\nSend follow-up email with sales and marketing comparison materials against Optimizely and Statsig, including customer references and case studies (50:33)\nOffer free trial access to GrowthBook enterprise tools and assist with setup or proof of concept as Natera proceeds with evaluation (46:16)\n\n**Logan Bates & Luke Sonnet**\nSupport technical integration questions and provide insights on Heap integration, data warehouse connections, and self-hosting capabilities as required by Natera (05:17)\n"
+    }
+  ]
+}

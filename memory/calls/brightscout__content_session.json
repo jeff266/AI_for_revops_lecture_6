@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook <> Brightscout | Content Session",
+  "slug": "brightscout__content_session",
+  "last_etl_date": "2026-08-01T13:58:06.050658",
+  "calls": [
+    {
+      "id": "01KGQPX3EF3XHT9H7EK6RTHPPQ",
+      "source": "fireflies",
+      "title": "GrowthBook <> Brightscout | Content Session",
+      "date": "2026-02-06",
+      "duration_minutes": 64,
+      "summary": "The team discussed the timeline for delivering design-ready pages, targeting February 13th to initiate development. Daniela Ferrer presented a revised calendar that eliminates a buffer period, necessitating quicker feedback from the GrowthBook team. The group agreed on standardizing page structures while allowing for unique content needs, with a focus on SEO consistency. They emphasized the importance of aligning messaging from the homepage to product pages to enhance user experience. Daily stand-up meetings were approved to ensure alignment and address any blockers, while roles and responsibilities were clarified to improve process efficiency. The team also agreed on focusing on the first 13-14 pages for the next review cycle, with specific deliverables due shortly to maintain momentum.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 8,
+      "keywords": "Delivery Timeline, Content Structure, Page Templates, Development Workload, SEO Alignment, CMS Migration",
+      "action_items": "\n**Daniela Ferrer**\nShare updated delivery plan with clear deadlines and required inputs from GrowthBook by end of day (07:45)\nSet up optional daily 15-minute standups to monitor progress and blockers starting Monday, extend for the week (50:49)\nCompile meeting notes and send a recap with next week’s deliverables and dependencies (59:53)\n\n**Karen Henke**\nDeliver the draft content structure for “Why GrowthBook” page by Tuesday end of day (49:51)\nAlign with Ashley Stirrup on AI native page content and customer feedback, then provide refined copy guidance (01:02:27)\nReview previously delivered content focusing on product pages first and provide refinement feedback (01:00:34)\nCoordinate number and reusability of product images per page with design team to ensure manageable scope (54:00)\n\n**Tiffany Ingle**\nProvide character count guidelines for different copy types to aid design/content alignment (28:44)\nPerform content sweep to align all pages’ messaging with homepage and SEO requirements (53:35)\nContinue refining unresolved copy comments in Google Docs, ensuring comment separation for clarity (58:57)\nIncorporate feedback on platform-specific pages and ensure clarity on cloud vs self-hosted offerings (34:17)\n\n**Luciano Balzano**\nAnalyze page templates and confirm component flexibility for varied page structures (38:29)\nFollow up with developers on feasibility of marketers populating templates independently (12:43)\nAssist in reviewing page-specific structures and prepare components accordingly to meet timeline (41:00)\n\n**Ashley Stirrup**\nCoordinate with Karen on clarifying AI native content and solution pages (01:02:27)\nProvide input on customer examples and characteristics for solution pages (44:53)\n\n**Charles Haggas**\nAlert GrowthBook team regarding development scope and resource needs to avoid potential roadblocks (09:00)\nCoordinate with developers about phased page launch strategies and template availability (12:36)\nMonitor feedback turnaround speed to maintain sprint deadlines (04:00)\n"
+    }
+  ]
+}

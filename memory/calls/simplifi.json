@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> Simpli.fi",
+  "slug": "simplifi",
+  "last_etl_date": "2026-08-01T13:58:05.976334",
+  "calls": [
+    {
+      "id": "69d00e0de31b6100155f7a94",
+      "source": "apollo",
+      "title": "GrowthBook <> Simpli.fi - Intro ",
+      "date": "2026-04-03",
+      "duration_minutes": 29,
+      "summary": "GrowthBook's sales team (Daniel Wathne and solutions engineer Logan) introduced their experimentation platform to Simpli.fi. Key participants included Koy Eddleman (Creative Director), Carlos Betancourt (Web Specialist), and Ashley Barrett (Procurement). They discussed GrowthBook’s ability to run A/B tests on Simpli.fi’s headless WordPress website using a visual editor and SDK, addressing the team’s pain point of lacking a structured testing program and wanting to move from intuition-based decisions to data-driven optimization. Next steps: schedule a one-hour demo on Wednesday at noon Pacific, with additional technical stakeholders (Alexander, Ben from MindSize,",
+      "host": "Daniel Wathne",
+      "participants": 4
+    },
+    {
+      "id": "69d56305ced275001965cd99",
+      "source": "apollo",
+      "title": "Growthbook <> Simpli.fi - Demo ",
+      "date": "2026-04-07",
+      "duration_minutes": 62,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: product, features, pain points; key participants and roles; next steps/action items.\n\nFrom transcript: GrowthBook demo to Simpli.fi. Discussed A/B testing, feature flags, visual editor, data integration with HubSpot and data warehouse. Pain points: marketing team wants low-code testing, need to exclude existing customers, concerns about visual editor limitations with headless WordPress. Key participants: Daniel Wathne (sales, GrowthBook), Logan Bates (solutions engineer), Koy Eddleman (lifecycle marketing manager), Carson Rogers (lifecycle marketing), Corbyn Cunningham (senior lifecycle marketing), Ben Lobaugh (developer), Alexander Vyhmeister (data/security). Next steps: Simpli.fi team to regroup, then possibly set up a 3-week trial; Daniel to send recording, deck, quick start guides, and booking link for follow-up.\n\nSummary: GrowthBook demo focused on A/B testing and feature flagging for Simpli.fi's marketing team to optimize conversion paths, with discussion of visual editor limitations and data integration via HubSpot or BigQuery. Key participants included Daniel Wathne (sales), Logan Bates (solutions engineer), and Simpli.fi's marketing and engineering team (Koy, Carson, Corbyn, Ben, Alexander). Next steps involve Simpli.fi regrouping internally, followed by a potential 3-week trial, with Daniel sending resources and a booking",
+      "host": "Daniel Wathne",
+      "participants": 5
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "OHL",
+  "slug": "ohl",
+  "last_etl_date": "2026-08-01T13:58:05.969512",
+  "calls": [
+    {
+      "id": "6a18d86164719100189e1ef3",
+      "source": "apollo",
+      "title": "GrowthBook Demo for OHL",
+      "date": "2026-05-28",
+      "duration_minutes": 19,
+      "summary": "GrowthBook's Daniel Wathne demoed the platform to Jorge Bañuelos, a consultant and de facto chief data officer at One Health Link (OHL), who needs a HIPAA-compliant A/B testing tool for ML and LLM experiments to replace error-prone homegrown methods. Key features discussed included self-hosting (initially to bypass slow compliance), enterprise options with CUPED, sequential testing, and multi-armed bandit, plus warehouse",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

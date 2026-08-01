@@ -1,0 +1,19 @@
+{
+  "company": "MC Sonae<>GrowthBook Follow Up",
+  "slug": "mc_sonae_follow_up",
+  "last_etl_date": "2026-08-01T13:58:06.015205",
+  "calls": [
+    {
+      "id": "01KSX85TX2B6GA8VM45815KCGF",
+      "source": "fireflies",
+      "title": "MC Sonae<>GrowthBook Follow Up",
+      "date": "2026-06-01",
+      "duration_minutes": 0,
+      "summary": "During the meeting, the team confirmed a cluster-level experimentation strategy for physical stores, establishing that running experiments at the store level rather than at the self-checkout level is essential for maintaining consistent customer and staff experiences. GrowthBook's flexible randomization will ensure that all customers in a store experience the same variant, enhancing operational efficiency. The pilot for these experiments is targeted for Q3 2024, with ongoing software development and integration plans. The discussion highlighted the need for network reliability and hardware considerations, emphasizing that GrowthBook's SDK would cache configurations to support offline evaluations. Finally, the conversation illustrated the importance of contextual metadata for analyzing and identifying comparable stores for effective experimentation.",
+      "organizer": "jake@growthbook.io",
+      "participants": 5,
+      "keywords": "A/B testing, physical stores, GrowthBook SDK, self-checkout, experiment clustering, offline capability",
+      "action_items": "\n**Carlos Manuel Vieira**\nDebrief internal team on meeting content and communicate decisions regarding GrowthBook integration and pilot plans (20:24)\n\n**Ricardo Jorge Neves**\nReview technical requirements and consult with engineering team about SDK integration, offline operation, and hardware constraints to prepare for pilot phase (15:00)\nReview technical requirements and consult with engineering team about SDK integration, offline operation, and hardware constraints to prepare for pilot phase (19:00)\n\n**Jake Heier**\nSend a meeting recap email summarizing key discussion points and next steps to participants (20:29)\nCoordinate internally to identify and share case studies or examples of GrowthBook usage in physical retail/store environments similar to client's scenario (17:30)\nProvide engineering support and resources when client is ready to begin SDK integration and pilot phase (18:40)\n\n**Logan Bates**\nAssist with technical questions regarding SDK capabilities, offline fallback strategies, and older hardware compatibility (15:40)\nSupport client’s evaluation phase and be available for pilot testing and troubleshooting, including setup of proxy solutions if needed (16:30)\n"
+    }
+  ]
+}

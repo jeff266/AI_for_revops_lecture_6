@@ -1,0 +1,31 @@
+{
+  "company": "GrowthBook Technical Deep Dive for Jibble",
+  "slug": "technical_deep_dive_jibble",
+  "last_etl_date": "2026-08-01T13:58:06.005840",
+  "calls": [
+    {
+      "id": "01KVQT9F10BEX3591JA6Z60XVC",
+      "source": "fireflies",
+      "title": "GrowthBook Technical Deep Dive for Jibble",
+      "date": "2026-06-22",
+      "duration_minutes": 18,
+      "summary": "The team focused on assessing GrowthBook's capacity to facilitate quick initiation of structured A/B testing, moving away from informal methods previously used. Niloufar Khavari emphasized the importance of starting experiments with defined technical specifications, targeting up to 50 experiments in the first year, involving a small team for execution and a larger group for observation. The meeting included a technical demo by Logan Bates highlighting GrowthBook's data integration with data sources like Databricks, along with its feature flagging capabilities, automated rollback options, and AI automation to simplify workflows and metric creation. Discussions were held regarding the transition from Power BI to Databricks on AWS and the integration concerns with the Fabric platform, emphasizing risk management and effective experimentation strategies.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 1,
+      "keywords": "GrowthBook, Databricks, experimentation, feature flags, AI assistant, ramp-up rollout",
+      "action_items": "\n**Niloufar Khavari**\nProvide clarification on Fabric’s data specifics, especially if it supports a queryable data layer like Postgres, to assess compatibility with GrowthBook (16:47)\n\n**Scott Keller**\nFollow up with Jibble on success criteria for GrowthBook evaluation and prepare for proposed 3-week POC based on next discussions (00:49)\n\n**Logan Bates**\nShare links and information about the GrowthBook AI assistant, skills library, and MCP server to Jibble for technical exploration post-demo (04:34)\nPrepare further technical demos or explanations on namespaces and advanced targeting features if requested by Jibble after initial demo (15:12)\n"
+    },
+    {
+      "id": "01KV5W3S8XX5S5ZJXMB6WDV25A",
+      "source": "fireflies",
+      "title": "GrowthBook Technical Deep Dive for Jibble",
+      "date": "2026-06-22",
+      "duration_minutes": 0,
+      "summary": "The meeting involved a decision by Scott Keller to switch to Google Meet to enhance connection reliability, which was promptly agreed to by Nikolay Nikolaev. This transition aimed to eliminate potential communication delays. The participants also engaged in informal discussions about their respective locations, with Scott mentioning Atlanta's warm, humid mid-80s weather, while Nikolay noted the challenges posed by summertime tourism along the Adriatic coast, including heavy traffic and increased costs. Though these discussions did not lead to any direct business decisions, they served to build rapport and establish a comfortable tone for collaboration.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 4,
+      "keywords": "weather, tourism impact, traffic congestion, flight prices, Adriatic coast, meeting logistics",
+      "action_items": "\n**Scott Keller**\nInitiate and send Google Meet invitation for continuation of the meeting (02:32)\n\n**Nikolay Nikolaev**\nJoin the Google Meet as arranged by Scott Keller to proceed with the meeting (02:47)\n"
+    }
+  ]
+}

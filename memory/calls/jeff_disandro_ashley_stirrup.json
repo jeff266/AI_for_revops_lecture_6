@@ -1,0 +1,19 @@
+{
+  "company": "Jeff DiSandro and Ashley Stirrup",
+  "slug": "jeff_disandro_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.049116",
+  "calls": [
+    {
+      "id": "01KH6ZD4CZGS8AMPK997469EW2",
+      "source": "fireflies",
+      "title": "Jeff DiSandro and Ashley Stirrup",
+      "date": "2026-02-12",
+      "duration_minutes": 21,
+      "summary": "The meeting outlined the approach for recruiting a Director of Demand Generation at Growth Book, emphasizing the target candidate profile focused on marketing to developers, data scientists, and product managers, with a preference for those experienced in observability or database companies. The discussion highlighted the importance of understanding enterprise demand generation, as two-thirds of the business comes from enterprise clients. AI literacy was noted as significant but not mandatory. The remote work setup was discussed, favoring candidates in US time zones. Ashley shared insights on Growth Book's rapid growth, achieving 110% year-over-year growth and $8 million in revenue, with increasing deal sizes. The marketing infrastructure was described as foundational, with plans to expand the team further. J DiSandro emphasized a thorough recruitment process involving market mapping and close collaboration to ensure a cultural fit.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Demand Generation, Developer Marketing, GrowthBook, PLG (Product-Led Growth), AI Literacy, Recruitment Strategy",
+      "action_items": "\n**Ashley Stirrup**\nProvide Jeff with the finalized compensation range and confirm specifics for the Demand Gen Director role (09:59)\n\n**Jeff DiSandro**\nCoordinate with IT to fix email bounce-back issues caused by Drew Hoffman’s retirement (01:10)\nReview GrowthBook’s job description link provided by Ashley and prepare detailed market research and candidate mapping (15:10)\nSend standard agreement and contract terms to Ashley for review (14:15)\nAssemble a recruitment team comprising himself, a researcher, and a project coordinator to lead the search (14:45)\nPrepare a targeted search plan focusing on developer-marketing experienced director-level candidates in Bay Area and East Coast markets (08:30)\nFollow up with Ashley to clarify any outstanding questions and proceed with search process (20:35)\n"
+    }
+  ]
+}

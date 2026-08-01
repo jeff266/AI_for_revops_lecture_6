@@ -1,0 +1,19 @@
+{
+  "company": "Foundant and GrowthBook",
+  "slug": "foundant",
+  "last_etl_date": "2026-08-01T13:58:06.007155",
+  "calls": [
+    {
+      "id": "01KV3SQMDYPTFYV370JQTWAQ3R",
+      "source": "fireflies",
+      "title": "Foundant and GrowthBook",
+      "date": "2026-06-16",
+      "duration_minutes": 26,
+      "summary": "The discussion focused on assessing GrowthBook’s Pro account as a suitable replacement for discontinued free A/B testing tools, aligning with marketing needs. Key features discussed included the visual editor and multi-arm bandit testing, highlighting the Pro plan's cost structure of $40 per month per seat, transitioning to $150 covering up to 5 million events. The Enterprise tier was deemed excessive for marketing but valuable for engineering teams needing enhanced support and security. Demonstrations of the visual editor showcased its user-friendly drag-and-drop capabilities, and analytics highlighted a significant revenue impact. Additionally, compliance questions arose regarding SDK activation based on cookie consent, emphasizing a need for transparent documentation.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "A/B Testing, Visual Editor, GrowthBook Pro, Feature Flags, Data Compliance, Experimentation Platform",
+      "action_items": "\n**Dan Wathne**\nSend Collin a follow-up email with a polished video demo of the GrowthBook visual editor (25:06)\nConnect with Collin on LinkedIn to keep communication open for questions and support related to GrowthBook (25:06)\nProvide additional information on managing cookie consent and SDK toggling compliance if found or escalate with documentation team (23:48)\nClarify subdomain and organization data isolation capabilities in GrowthBook and report back to Collin (09:51)\n\n**Collin Moriarty**\nReview GrowthBook documentation and Ask AI tool regarding cookie consent and legal compliance for GA4 data sharing (24:22)\nEvaluate GrowthBook Pro plan features and discuss potential interest in Pro with procurement/manager for marketing budget approval (02:36)\nConsult internally with engineering team to identify if they have existing experimentation solutions or interest in GrowthBook’s feature flags and safe rollouts (06:43)\n"
+    }
+  ]
+}

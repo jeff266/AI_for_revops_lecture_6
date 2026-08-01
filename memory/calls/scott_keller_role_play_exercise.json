@@ -1,0 +1,17 @@
+{
+  "company": "Scott Keller Role Play Exercise",
+  "slug": "scott_keller_role_play_exercise",
+  "last_etl_date": "2026-08-01T13:58:05.982634",
+  "calls": [
+    {
+      "id": "698fa2eceaebec00192824f4",
+      "source": "apollo",
+      "title": "Scott Keller Role Play Exercise",
+      "date": "2026-02-13",
+      "duration_minutes": 76,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on what was discussed (product, features, pain points), key participants and their roles, and next steps/action items.\n\nKey participants: Scott Keller (sales rep), Brenton Holloway (playing VP Eng at Roblox), Ryan McGurk (observer/manager), Webflow Demo (Graham? observer). The call is a role play exercise to assess Scott's sales skills.\n\nWhat was discussed: Product is GrowthBook (experimentation/feature flag platform). Pain points: Roblox uses multiple tools (homegrown, LaunchDarkly, Optimizely) leading to fragmentation, data silos, slow experiment cycles (only 30% of features tested, week-long waits for data science). Key features: open-source, fixed seat pricing (no success tax), data warehouse integration, ability to consolidate.\n\nNext steps: Scott proposed a 2-week trial (instead of 90 days) with a kickoff call next Friday, involving key stakeholders. Negotiation scenario: Brent wanted price cut to $60k vs list $100k; Scott countered with three-year deal at $85k/year average, with added value (unlimited seats 90 days, waived implementation, etc.). Eventually agreed at $85k/year with 10% employee buffer. Action: Scott to send quote.\n\nBut summary must be 2-3 sentences focusing on the three bullet points. Need to condense.\n\nLet's write:",
+      "host": "",
+      "participants": 4
+    }
+  ]
+}

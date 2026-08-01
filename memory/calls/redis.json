@@ -1,0 +1,17 @@
+{
+  "company": "Redis<>GrowthBook",
+  "slug": "redis",
+  "last_etl_date": "2026-08-01T13:58:05.980906",
+  "calls": [
+    {
+      "id": "69a9cbb3955aad0011e8c8b1",
+      "source": "apollo",
+      "title": "Redis<>GrowthBook - Discussion",
+      "date": "2026-03-05",
+      "duration_minutes": 26,
+      "summary": "Redis (Keith Nyberg, demand gen/marketing, and Scott Weaver, engineer) is evaluating A/B testing tools after Mutiny's shutdown, seeking a server-side solution integrated with their Sanity CMS and GA4, with a simple UI for non-technical marketers, while avoiding costly LaunchDarkly experimentation pricing. GrowthBook (Jake Heier and Ashley Stirrup) presented their open-source platform with user-seat pricing, data",
+      "host": "Jake Heier",
+      "participants": 4
+    }
+  ]
+}

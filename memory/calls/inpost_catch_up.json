@@ -1,0 +1,19 @@
+{
+  "company": "InPost Catch Up",
+  "slug": "inpost_catch_up",
+  "last_etl_date": "2026-08-01T13:58:05.987649",
+  "calls": [
+    {
+      "id": "01KY4KKQRJRVANX4ESE7F34AED",
+      "source": "fireflies",
+      "title": "GrowthBook & InPost Catch Up",
+      "date": "2026-07-24",
+      "duration_minutes": 41,
+      "summary": "The team discussed the implementation of an experimentation platform, detailing technical and staffing needs such as a typical SDK setup time of 1-2 weeks, primarily requiring mobile engineers and backend only if specific experiments are planned. Data integration complexities were highlighted, emphasizing collaboration between engineering and data teams to ensure experiment event data pipelines function through PostgreSQL or Databricks. Pricing strategies were confirmed as tiered based on experiment volume, independent of user counts, with flexibility for upgrades. A proof of concept trial was proposed to secure stakeholder commitment, including a demo to familiarize relevant teams. Overall, a competitive edge was noted with Growthbook’s warehouse-native analytics and lightweight SDKs, aimed at addressing current tool inadequacies.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, feature flags, A/B testing, implementation, pricing model, self-hosting",
+      "action_items": "\n**Anita Krasińska**\nReview updated pricing from James and validate against expected scale and budgets (39:45)\nCoordinate and notify relevant stakeholders about scheduling the GrowthBook product demonstration (38:10)\nConfirm any formal procurement thresholds or processes regarding budgeting for the tool (07:22)\n\n**James Shannon**\nSend detailed answers to the technical and commercial questions submitted by InPost team (23:40)\nProvide updated, scale-adjusted pricing reflecting InPost’s large user base and experiment volume (39:45)\nOrganize and schedule the product demonstration session with InPost stakeholders (37:00)\nRecord the demonstration meeting as requested (39:30)\n\n**Michal Mańko**\nAssist Anita in confirming technical implementation needs, especially involving mobile engineers and backend involvement if any (16:00)\nDiscuss internal alignment on decision-making and decision makers for experimentation versus feature flags adoption (35:30)\nCoordinate with Michael Biavas to participate in upcoming meetings and demonstrations (38:40)\n"
+    }
+  ]
+}

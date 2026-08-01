@@ -1,0 +1,19 @@
+{
+  "company": "Ryan (Growthbook)",
+  "slug": "ryan",
+  "last_etl_date": "2026-08-01T13:58:05.993373",
+  "calls": [
+    {
+      "id": "01KXHCW6V129TCVNB8HDJJA4SZ",
+      "source": "fireflies",
+      "title": "Ryan (Growthbook) : Liz (General Legal)",
+      "date": "2026-07-16",
+      "duration_minutes": 0,
+      "summary": "The discussion centered on improving contracts and onboarding processes to reduce friction and ensure compliance. Key points included the need for a comprehensive review of outdated contracts to address issues such as proof of concept access, and the proposal to establish a legal liaison for early compliance support on product features. The team also highlighted the necessity of separate processes for negotiating enterprise versus SMB agreements, expanding legal support for broader company needs, and reinforcing financial controls for accurate revenue reporting. Additionally, they recognized the importance of integrating legal reviews into product development to address AI data usage clauses, alongside operational plans to formalize sales workflows and maintain the company's agility amidst growth.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 4,
+      "keywords": "contract review, proof of concept, legal compliance, GDPR, EU business, startup scaling",
+      "action_items": "\n**Ryan McGurk**\nSend existing contract documents, including customer agreement, DPA, privacy policy, and order forms for legal review (13:50)\nProvide documentation or description of the current customer onboarding and proof-of-concept process, including how agreement acceptance is managed (14:00)\nShare a PDF detailing the sales funnel and contractual process flow for prospects and customers (14:45)\n\n**Liz Paisner**\nConduct a holistic review of GrowthBook’s existing contracts and customer onboarding flows to identify weaknesses and update requirements (13:30)\nAdvise on optimizing proof-of-concept agreements to enforce acceptance consistently and reduce friction during sales processes (13:30)\nAssign a dedicated legal contact as a \"product counsel\" for ad hoc consultations on new product features and compliance issues such as GDPR and EU AI Act (06:55)\nExplore subscription model legal support options covering broad service areas besides financing (04:20)\nAdvise on potential setup of EU entity and coordinate pre-fundraising diligence review for GrowthBook’s data room, if applicable (08:45)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook Intro",
+  "slug": "intro",
+  "last_etl_date": "2026-08-01T13:58:05.991545",
+  "calls": [
+    {
+      "id": "01KXZFDJ6878WRMMT05B01X2N0",
+      "source": "fireflies",
+      "title": "GrowthBook Intro",
+      "date": "2026-07-21",
+      "duration_minutes": 33,
+      "summary": "The meeting focused on the introduction of A/B testing and experimentation strategies for improving conversion rates on the company's lease contract intermediary website. Achraf confirmed plans to test an AI search assistant and optimize call-to-action buttons to boost lead conversions among a monthly user base of about 100,000. Current metrics show a 1.89% conversion rate from visitors to leads, with potential for significant revenue uplift from experimentation. The company will employ a code-based experimentation approach using GrowthBook's SDK, utilizing stable user identifiers and SQL-based metrics for accurate evaluation. Coordination between engineering and data teams is essential to synchronize tracking and ensure reliable data flow, further supporting the company's goal of building a robust experimentation framework.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 4,
+      "keywords": "A/B testing, GrowthBook integration, feature flags, CRM data, conversion tracking, experiment analytics",
+      "action_items": "\n**Achraf Bardan**\nEvaluate GrowthBook free version and test potential integration with company tech stack and CRM (30:51)\nDiscuss internally the data integration flow between CRM and Google Analytics, considering backlog issues and data source unification for experimentation (22:02)\nNotify GrowthBook team if there is interest in exploring enterprise tier features and support (32:13)\n\n**James Shannon**\nProvide documentation and case studies on GrowthBook’s integration capabilities and use cases to LeaseAuto (10:54)\nOffer to coordinate technical teams and commercial discussions if LeaseAuto progresses beyond trial phase (01:28)\nFollow up with Achraf and LeaseAuto team for support and enterprise interest after trial evaluation (32:13)\n"
+    }
+  ]
+}

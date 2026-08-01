@@ -1,0 +1,19 @@
+{
+  "company": "Growthbook <> GlobeWest",
+  "slug": "globewest",
+  "last_etl_date": "2026-08-01T13:58:06.006050",
+  "calls": [
+    {
+      "id": "01KV9GC1QHSNEFDGVWV499Z9Z2",
+      "source": "fireflies",
+      "title": "Growthbook <> GlobeWest - Intro",
+      "date": "2026-06-19",
+      "duration_minutes": 43,
+      "summary": "The meeting detailed GrowthBook's experimentation platform, emphasizing its user-friendly Visual Editor that allows AI-assisted content testing and multi-variant launching via CDN, which simplifies the testing process. The introduction of multi-armed bandit testing aims to optimize traffic allocation dynamically without manual intervention. A comprehensive results dashboard with Bayesian statistics allows for in-depth analytics and AI-driven recommendations. The integration with Magento was explored, noting the immediate support for the Visual Editor, while deeper feature flag integrations may require backend access. Globe West's current setup and future roadmap were discussed, highlighting a need for accessible testing tools and custom pricing structures, with a plan for further exploration of Magento-specific integration.",
+      "organizer": "dan@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, Magento Integration, Visual Editor, A/B Testing, Feature Flags, AI Experimentation",
+      "action_items": "\n**Dan Wathne**\nFollow up by next day with information on any current customers using GrowthBook with Adobe Commerce/Magento and feedback on integration challenges (42:22)\nProvide GlobeWest with a tailored pricing proposal including consideration for custom implementations and enterprise support (40:47)\nAssist answering remaining questions on Magento integration and technical setup through support channels (39:34)\n\n**Michelle Lucas**\nCoordinate internal evaluation of budget and IT team capacity concerning GrowthBook’s platform implementation and Magento integration (32:21)\n\n**Tim Gu**\nCollect and communicate detailed technical questions or feedback from GlobeWest’s IT team regarding Magento integration requirements, seeking SDK or integration tools (42:01)\n\n**GrowthBook Team (Dan, Graham)**\nShare access to the Visual Editor Chrome extension with GlobeWest for immediate trial and experimentation testing (41:35)\nCollaborate with GlobeWest’s IT or digital agency to explore Magento feature flag integration possibilities (28:16)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Paradigm",
+  "slug": "paradigm",
+  "last_etl_date": "2026-08-01T13:58:06.022292",
+  "calls": [
+    {
+      "id": "01KQZ3QCAKPDPBHKJM71GZ95N5",
+      "source": "fireflies",
+      "title": "Paradigm + GrowthBook",
+      "date": "2026-05-07",
+      "duration_minutes": 34,
+      "summary": "In this meeting, the team agreed on a flexible, user-based pricing model with a minimum 12-month enterprise contract starting at $50,000. They planned an initial rollout with around 50 users, scaling up as adoption grows. Christian Liebenow committed to providing a proposal with pricing details and compliance documentation by the end of the next business day, which will include a rate table for 50 to 150 users. Eric Storck stressed the need for proving value with shorter contracts initially. The team discussed selecting Growth Book due to its cost-effective pricing and flexibility, avoiding vendor lock-in. They also addressed the importance of compliance and security documentation to assist Paradigm’s InfoSec review.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature Flagging, Pricing Model, User Licensing, Security Compliance, Cloud Hosting, Contract Terms",
+      "action_items": "\n**Christian Liebenow**\nSend security and compliance documentation including SoC2 and data governance policies to Paradigm’s security and legal teams (08:23)\nProvide a detailed pricing rate table with volume discounts for various user tiers (50, 100, 150 users) to assist Paradigm’s budgeting (10:45)\nPrepare and send draft proposal and legal order form/terms for Paradigm review within 1-2 business days, despite upcoming travel (33:07)\nClarify user seat policy—whether seats are assigned by name or can be reallocated within the organization (31:54)\nShare customer ROI examples and business case experiences to support Paradigm’s internal justification process (29:26)\n\n**Kenny Jinadu**\nProvide detailed user counts broken down by teams and applications to inform phased rollout and licensing requirements (27:44)\n\n**Eric Storck**\nCoordinate internal budget clarification on expected user seat counts and investment levels to finalize order details (29:09)\n"
+    }
+  ]
+}

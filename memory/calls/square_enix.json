@@ -1,0 +1,19 @@
+{
+  "company": "Square Enix",
+  "slug": "square_enix",
+  "last_etl_date": "2026-08-01T13:58:06.023148",
+  "calls": [
+    {
+      "id": "01KPBF6M2BTCV6GN8PV5EZCWSF",
+      "source": "fireflies",
+      "title": "Square Enix & Growthbook Technical Demo",
+      "date": "2026-05-07",
+      "duration_minutes": 44,
+      "summary": "The team is in the exploratory phase of evaluating GrowthBook as a baseline A/B testing tool, while awaiting an Adobe Target demo. Léonie emphasized that Japan's group intends to maintain autonomy over its 27 websites despite possibly using Adobe Target. Chris noted limitations from the lack of full ownership and source code access, which hinder experimentation. GrowthBook is being established as a free, self-hosted alternative, prioritizing developer-friendly features and cost efficiency. The integration with existing analytics tools and the ability to conduct targeted experiments were highlighted. The team values clear reporting for non-technical stakeholders and anticipates approximately 400 experiments, pending further discussions which will influence pricing.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "A/B Testing, GrowthBook, Adobe Target, Feature Flags, Experimentation Analytics, Self-Hosting",
+      "action_items": "\n**Léonie Lindo**\nProvide estimated number of experiments per month to GrowthBook team once decided with Japan (40:00)\nDiscuss potential Slack channel for questions and communication with Kim and team to get approval (38:36)\n\n**Chris Kekeke**\nContinue local setup including spinning up SQL server and firing events to see metrics flow (29:50)\nExplore options for running local experiments and testing user bucketing via Chrome DevTools (34:41)\n\n**James Shannon**\nFollow up with Square Enix in a few weeks to check progress and offer support (39:22)\nProvide ongoing relevant case studies and updates on GrowthBook developments (42:47)\nShare details of planned June executive dinner event in London for experimentation professionals (43:13)\nOffer to set up Slack communication channel, pending Square Enix internal approval (38:19)\n\n**Logan Bates**\nAssist with technical questions related to experimentation setup and local testing (26:55)\nClarify migration paths between self-hosted and cloud versions as needed (31:19)\n"
+    }
+  ]
+}

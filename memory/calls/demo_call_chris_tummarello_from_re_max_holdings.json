@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Chris Tummarello from RE/MAX Holdings, ",
+  "slug": "demo_call_chris_tummarello_from_re_max_holdings",
+  "last_etl_date": "2026-08-01T13:58:05.993162",
+  "calls": [
+    {
+      "id": "01KXP80BN08HVQPHBC7M4W2GPT",
+      "source": "fireflies",
+      "title": "Demo Call with Chris Tummarello from RE/MAX Holdings, ",
+      "date": "2026-07-16",
+      "duration_minutes": 50,
+      "summary": "ReMax's meeting focused on the necessity for a more robust feature flagging and A/B testing solution as their software engineering team expanded from 3 to nearly 30 members, highlighting the limitations of their current GitLab-integrated Unleash setup. Chris Tummarello pointed out issues like caching errors and demands for advanced A/B testing capabilities. The team prefers self-hosted solutions for control over uptime and caching, with Growth Book being introduced as a viable cost-effective option. Performance is crucial, necessitating features like sub-millisecond flag evaluations and multi-environment support. The estimated self-hosted enterprise pricing stands at around $95,000 per year for 55 seats, and next steps involve further vendor evaluations and technical demos.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 2,
+      "keywords": "feature flagging, self-hosted, A/B testing, caching proxy, enterprise pricing, experimentation",
+      "action_items": "\n**Scott Keller**\nSend customized RE/MAX pricing deck and detailed pricing tables covering self-hosted and cloud options (44:30)\nShare slide deck and sales collateral with Chris Tummarello (43:46)\nProvide calendar availability for scheduling follow-up in-depth demo with product and engineering teams (48:36)\n\n**Chris Tummarello**\nReview Growth Book pricing and functionality materials internally with peers and leadership (48:11)\nCoordinate scheduling of detailed demo session involving principal engineers and the product team after internal review (48:36)\n"
+    }
+  ]
+}

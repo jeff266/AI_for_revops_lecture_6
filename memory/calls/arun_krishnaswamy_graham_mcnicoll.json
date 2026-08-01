@@ -1,0 +1,19 @@
+{
+  "company": "Arun Krishnaswamy and Graham McNicoll",
+  "slug": "arun_krishnaswamy_graham_mcnicoll",
+  "last_etl_date": "2026-08-01T13:58:06.005553",
+  "calls": [
+    {
+      "id": "01KVKGZV4JKVZW13EPW9WNVFX6",
+      "source": "fireflies",
+      "title": "Arun Krishnaswamy and Graham McNicoll",
+      "date": "2026-06-22",
+      "duration_minutes": 38,
+      "summary": "The discussion centered on a platform designed to automate the testing and enhancement of AI agents. Key features include an Automated Agent Enhancement Workflow that utilizes synthetic data for stress testing and identifying edge cases, allowing for a proactive reduction in production failures. A Continuous Improvement Model is in place that increases agent readiness from 20% to 80% through iterative A/B testing. The company is shifting towards a self-service model to reduce onboarding time and shorten feedback cycles significantly. They also aim to improve market differentiation through proprietary forecasting models while targeting a $2 million ARR in six months, supported by recent funding. Clear messaging adjustments were suggested to better engage enterprise clients and clarify product understanding.",
+      "organizer": "graham@growthbook.io",
+      "participants": 2,
+      "keywords": "agent stress testing, synthetic data, wipe coding, AI agent optimization, foundation models, enterprise automation",
+      "action_items": "\n**Arun Krishnaswamy**\nRefine marketing messaging to clearly articulate the problem statement and product value proposition (35:35)\nContinue efforts to increase self-service capabilities and customer direct engagement to reduce dependence on partners (32:26)\nFollow up on funding discussions and investor interest to reach growth targets (24:15)\n\n**Amogh Ranganathaiah**\nPrepare and share detailed demonstration materials and agent stress test reports for potential partners and customers (10:27)\n\n**Graham McNicoll**\nDiscuss the solution internally with the co-founder on potential customer fit and partnership viability (32:36)\nProvide feedback on product framing to Arun for better market positioning (35:35)\n"
+    }
+  ]
+}

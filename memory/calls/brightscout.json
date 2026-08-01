@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook <> Brightscout",
+  "slug": "brightscout",
+  "last_etl_date": "2026-08-01T13:58:06.018876",
+  "calls": [
+    {
+      "id": "01KS35R0F16Z4WSZ6NQ57HA9WB",
+      "source": "fireflies",
+      "title": "GrowthBook <> Brightscout: Check-in",
+      "date": "2026-05-20",
+      "duration_minutes": 33,
+      "summary": "The team discussed critical updates necessary for the website ahead of the product launch scheduled for next Wednesday. Ljubomir approved publishing updated content before launch, and Karen planned immediate updates while holding further changes for post-launch. A redirect issue on the GrowthBook domain was identified, and DNS adjustments were assigned for implementation. Performance monitoring will occur with weekly checks post-launch, while thorough documentation and knowledge transfer sessions were scheduled for technical and marketing staff. The team is also working on outstanding bug fixes, particularly for compare pages and alt text issues, to improve user experience and address SEO concerns. Enhanced communication practices were agreed upon to manage task timelines effectively and maintain team alignment.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, Webflow, DNS Redirects, Documentation Handover, SEO Alt Text, Website Performance",
+      "action_items": "\n**Ljubomir Papuga**\nShare updated week-by-week plan including pending bug fixes and change order items for review (01:56)\nVerify and add link to the final homepage hero Figma design for GrowthBook team access (16:43)\nReview testimonial filtering issue on Bugherd, recreate filters if needed, and provide instructions (17:52)\nCoordinate replacement of “compare” page logos with alternative images and fix lumpy GrowthBook logo by Friday on staging (19:40)\nAssist in compiling and documenting handover materials for marketing and developer teams, including arranging walkthrough session involving Chris and Scott (08:55)\nMonitor website performance weekly using Lighthouse and send summary updates via Slack (27:40)\nImprove transparency and communication regarding timeline changes and slippage in the week-by-week plans (30:58)\n\n**Ashley Stirrup**\nCoordinate with DNS provider contact (Graham) to add missing DNS record for non-www GrowthBook domain version and tag as needed (04:53)\nArrange technical walkthrough session for Chris and Scott with Brightscout team for documentation handover (12:45)\nFacilitate design walkthrough involving Elise, Emmy, and Lindsay for Figma design system and image specs access (15:40)\n\n**Karen Henke**\nPrepare alt text updates for logos on compare pages to improve SEO and traffic (21:00)\nSubmit blog index page fix request (removal of time wrapper) into Slack channel for prioritization (29:20)\nShare feedback and report on performance issues and ongoing bug fixes with Brightscout (07:59)\nConfirm attendance and participant list for documentation sessions (marketing and design teams) (15:40)\n"
+    }
+  ]
+}

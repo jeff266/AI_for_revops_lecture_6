@@ -1,0 +1,29 @@
+{
+  "company": "Dani Olean and Ashley Stirrup",
+  "slug": "dani_olean_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:05.966615",
+  "calls": [
+    {
+      "id": "6a5543f110ebee001065385a",
+      "source": "apollo",
+      "title": "Dani Olean and Ashley Stirrup + Christian Liebenow",
+      "date": "2026-07-13",
+      "duration_minutes": 21,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on: discussed product/features/pain points, key participants and roles, next steps/action items.\n\nKey participants: Logan (Box employee, evaluator), Christian Liebenow (sales person from GrowthBook?), Ashley Stirrup (also from GrowthBook). Actually Logan is the customer from Box. Christian and Ashley are from GrowthBook (the vendor). Logan is the main contact, evaluating A/B testing platforms.\n\nDiscussed: GrowthBook's platform for experimentation and feature flagging, with agentic workflows (integration with Claude), visual editor, data warehouse native (BigQuery), governance, templates, etc. Pain points: Box uses multiple tools (Adobe, Split, Chameleon) for A/B testing and feature flags, wants consolidation; need end-to-end A/B testing across marketing and product; moving to \"new age\" AI-driven tools.\n\nNext steps: Christian will send competitive comparison notes (vs Adobe, Optimizely, Chameleon, Split). Then schedule a larger meeting with Logan's marketing counterpart and engineers, likely first week of August.\n\nSummary: Logan from Box evaluated GrowthBook's experimentation platform, focusing on agentic workflows, visual editor, and data warehouse-native architecture to address pain points of fragmented A/B testing tools across marketing and product. Christian Liebenow and Ashley Stirrup from GrowthBook demonstrated features for feature flagging, experiment setup, and governance. Next steps include Christian sharing competitive",
+      "host": "Ashley Stirrup",
+      "participants": 3
+    },
+    {
+      "id": "01KXEFAVNA3WTMN8VCWD01JVY5",
+      "source": "fireflies",
+      "title": "Dani Olean and Ashley Stirrup + Christian Liebenow",
+      "date": "2026-07-13",
+      "duration_minutes": 30,
+      "summary": "The meeting highlighted the need for tech stack consolidation to address challenges in manually stitching data from various sources like Adobe Target and revenue tools into Google Cloud Platform (GCP). The proposed solution involves a warehouse-native platform that integrates directly with GCP to unify data sources, supporting seamless analysis. Advantages include cross-platform experimentation capabilities, streamlined experiment setup with roles for governance, and advanced analytics features for ongoing measurement of cohort performance. The conversation also emphasized the platform's competitive edge over tools like Adobe and Optimizely, and next steps involve preparing for follow-up demos and further evaluations.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "AB testing, data stitching, experimentation platform, feature flags, agentic workflows, data warehouse native",
+      "action_items": "\n**Christian Liebenow**\nSend competitive analysis notes comparing Growth Book with Adobe, Optimizely, Chameleon, and Split to Dani Olean (27:21)\nShare availability options for follow-up meeting later this week, next week, and first week of August to include marketing, product, and engineering counterparts (27:36)\n\n**Dani Olean**\nCoordinate schedules with marketing, product, and engineering teams for follow-up session to evaluate tech stack consolidation and experimentation platform selection (28:17)\n\n**Logan Bates**\nPrepare technical demonstration showing data warehouse native analytics, agentic workflows, and multi-platform SDK capabilities to address stitching data and governance issues (09:40)\n"
+    }
+  ]
+}

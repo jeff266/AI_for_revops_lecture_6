@@ -1,0 +1,27 @@
+{
+  "company": "Plusgrade<>GrowthBook",
+  "slug": "plusgrade",
+  "last_etl_date": "2026-08-01T13:58:05.979106",
+  "calls": [
+    {
+      "id": "69b478431b9b68001d5721c6",
+      "source": "apollo",
+      "title": "Plusgrade<>GrowthBook - Sagemaker Discussion",
+      "date": "2026-03-13",
+      "duration_minutes": 48,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and their roles, next steps/action items.\n\nKey participants: Jake Heier (GrowthBook account team), Bryce Fitzsimons (GrowthBook engineer), Leonid Gilburd (Plusgrade), Lori Livadariu (Plusgrade data science), Kerem Ataman (Plusgrade), Nikhil Vemgal (Plusgrade data scientist), Simo Benkirane (Plusgrade). Plusgrade's pain points: need backend A/B testing with deterministic hashing based on booking IDs, strict approval workflows, self-hosted/air-gapped, support for scheduling experiments, multi-armed bandits (non-contextual currently), Snowflake integration (nice-to-have). GrowthBook features discussed: Python SDK, deterministic bucketing, SSO, approval flows, audit logs, self-hosting with air gap, scheduled experiments (basic), bandits (Thompson sampling), Snowflake connector.\n\nNext steps: Set up a demo call with GrowthBook data science team, provide enterprise trial/playground access for Plusgrade to test.\n\nSummary: Plusgrade (Leonid Gilburd, Lori Livadariu, Kerem Ataman, Nikhil Vemgal, Simo Benkirane) discussed using GrowthBook for backend A/B testing with deterministic hashing on booking IDs, approval workflows, self-hosting, and scheduling, while",
+      "host": "Jake Heier",
+      "participants": 7
+    },
+    {
+      "id": "69bc440a646d060015238c1b",
+      "source": "apollo",
+      "title": "Plusgrade<>GrowthBook - Data Science Discussion",
+      "date": "2026-03-19",
+      "duration_minutes": 45,
+      "summary": "GrowthBook's Luke Sonnet (Head of Experimentation) and Jake Heier (Sales) discussed their multi-armed bandit solution with Plusgrade's team (Lori Livadariu, Nikhil Vemgal, Kerem Ataman, Simo Benkirane), covering integration via SDK, warehouse-native tracking, handling delayed rewards, and forcing control group splits. Action items: Jake will create a shared Slack channel; Plusgrade",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

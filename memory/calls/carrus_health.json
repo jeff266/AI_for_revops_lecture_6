@@ -1,0 +1,19 @@
+{
+  "company": "Carrus Health",
+  "slug": "carrus_health",
+  "last_etl_date": "2026-08-01T13:58:06.031411",
+  "calls": [
+    {
+      "id": "01KPN87RGNJ1C9S4DDEZTWGW7D",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Carrus Health",
+      "date": "2026-04-22",
+      "duration_minutes": 4,
+      "summary": "The meeting addressed initial logistical challenges, including a five-minute delay caused by technical issues and participant scheduling. Christian Liebenow suggested rescheduling certain agenda items to optimize timing and manage participation effectively. Plans for a key call with KBX following this meeting were prioritized, ensuring a smooth transition. Afternoon follow-ups were scheduled to discuss outstanding topics while maintaining workflow. The need for clear communication was emphasized, with proposals to send notes for better scheduling clarity, crucial for managing a distributed team. Technical issues, such as laptop connection problems, were acknowledged and addressed to enhance meeting quality and effectiveness.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "meeting recording, scheduling, meeting invite, technical issues, call coordination, participant communication",
+      "action_items": "\n**Christian Liebenow**\nSend a note to the participant who declined attendance to ask for a better meeting time and propose rescheduling (03:23)\n\n**Logan Bates**\nAccept the meeting invite and resolve any technical issues related to laptops and meeting invitations to avoid confusion (02:18)\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Follow-Up dmTECH x Growthbook",
+  "slug": "followup_dmtech_x",
+  "last_etl_date": "2026-08-01T13:58:05.983517",
+  "calls": [
+    {
+      "id": "6985fb3463768a000d20e9c0",
+      "source": "apollo",
+      "title": "Follow-Up dmTECH x Growthbook",
+      "date": "2026-02-06",
+      "duration_minutes": 0,
+      "summary": "The call consisted of greetings between Christian Liebenow and Yannick, with brief confusion about a car recorder. No product, features, pain points, or next steps were discussed due to the early interruption.",
+      "host": "Christian Liebenow",
+      "participants": 1
+    }
+  ]
+}

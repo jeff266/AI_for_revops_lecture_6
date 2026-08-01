@@ -1,0 +1,17 @@
+{
+  "company": "Voyage Privé and Jake Heier",
+  "slug": "voyage_priv_jake_heier",
+  "last_etl_date": "2026-08-01T13:58:05.979983",
+  "calls": [
+    {
+      "id": "69b97aed1c1365001d6f7f98",
+      "source": "apollo",
+      "title": "Voyage Privé and Jake Heier",
+      "date": "2026-03-17",
+      "duration_minutes": 31,
+      "summary": "In this sales call, Jake Heier (account team) and Cris Dizon (customer success) from GrowthBook discussed with Kamal Ahmed, Lucas Wolff, Vincent Bellet, and Christian Dreydemy from Voyage Privé their need to scale A/B testing from 10–20 to 100 tests per year, replacing a slow manual homegrown solution. Key",
+      "host": "Jake Heier",
+      "participants": 7
+    }
+  ]
+}

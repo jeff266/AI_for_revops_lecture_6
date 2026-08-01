@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Ashley Gates from Cleo",
+  "slug": "demo_call_ashley_gates_from_cleo",
+  "last_etl_date": "2026-08-01T13:58:05.990610",
+  "calls": [
+    {
+      "id": "01KY0PRC8P2QJC40SAJY8MR5BS",
+      "source": "fireflies",
+      "title": "Demo Call with Ashley Gates from Cleo",
+      "date": "2026-07-22",
+      "duration_minutes": 0,
+      "summary": "The meeting addressed Clio's lack of a formal feature flagging system, with the team seeking a solution that simplifies integration for product managers. Ashley highlighted the current reliance on manual processes involving developers and support engineers, indicating a need for a centralized system. Concerns arose regarding their technical constraints, particularly the absence of a data warehouse. GrowthBook was introduced as a potential solution offering a managed cloud platform that supports over 25 SDK languages and provides features tailored for product managers. The conversation also touched on the importance of flexible feature flagging in relation to AI-driven product development, current rollout strategies, and ongoing technical considerations. The team agreed to schedule a follow-up demo for further exploration of integration details.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "feature flagging, AI-driven deployment, GrowthBook demo, multi-tenant targeting, managed vs self-hosted, lambda cold start latency",
+      "action_items": "\n**Dan Wathne**\nProvide technical follow-up on cold start latency impact for lambda-based environments (21:19)\nSend meeting recording and follow-up booking link for scheduling deeper technical demo (46:11)\nAnswer remaining technical questions from the meeting in a follow-up communication (46:11)\n\n**Ashley Gates**\nCoordinate internal team availability for follow-up technical demo and share times for scheduling (46:23)\n\n**GrowthBook Team**\nPrepare for detailed technical demo including discussions on tenant/user-level feature control, API usage, and backend integration flexibility (46:50)\n"
+    }
+  ]
+}

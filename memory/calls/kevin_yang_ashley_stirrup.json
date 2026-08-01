@@ -1,0 +1,29 @@
+{
+  "company": "Kevin Yang and Ashley Stirrup",
+  "slug": "kevin_yang_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:05.966157",
+  "calls": [
+    {
+      "id": "6a566cfb3e2ea500185dbb65",
+      "source": "apollo",
+      "title": "Kevin Yang and Ashley Stirrup + Christian Liebenow",
+      "date": "2026-07-14",
+      "duration_minutes": 37,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and their roles, and next steps/action items.\n\nKey participants: Kevin Yang (from CCB, interested in experimentation at scale, feature flagging), Ashley Stirrup (maybe from CCB? Actually from transcript: \"Ashley Stirrup\" - she's a participant, but her role? She's likely a colleague of Kevin, maybe product manager? The transcript shows she asks questions. Also Christian Liebenow (from Webflow? Actually \"Webflow Demo\" is a speaker, but Christian is also there. The call title: \"Kevin Yang and Ashley Stirrup + Christian Liebenow\". So Christian is likely from GrowthBook? Wait, the transcript has \"Webflow Demo\" as a speaker, but that might be a mislabel? Actually the transcript says \"Webflow Demo\" speaking, but later says \"Webflow Demo\" is someone from GrowthBook? Actually GrowthBook is the product. The speakers: Christian Liebenow (likely GrowthBook sales), \"Webflow Demo\" (maybe Graham or Logan? Actually later \"logan\" appears. And \"Ashley Stirrup\" and \"Kevin Yang\" from the customer side. So key participants: Kevin Yang (customer - from CCB?), Ashley Stirrup (customer), Christian Liebenow (GrowthBook sales), and \"Webflow Demo\" (Growth",
+      "host": "Ashley Stirrup",
+      "participants": 5
+    },
+    {
+      "id": "01KXEM7409FATXBGWVF64PT285",
+      "source": "fireflies",
+      "title": "Kevin Yang and Ashley Stirrup + Christian Liebenow",
+      "date": "2026-07-14",
+      "duration_minutes": 37,
+      "summary": "The discussion revolved around the complexities of evaluating AI models, particularly in handling non-deterministic outputs and establishing quality measurement methods. Anthropic's experimentation model emphasizes automated review processes to filter poor model updates before user testing, while metrics from user engagement patterns act as alternative quality signals since direct feedback is minimal. GrowthBook was highlighted for its flexible governance around feature flags, offering version control similar to GitHub and integration with organizational structures for enhanced experimentation. Additionally, the platform's dynamic traffic allocation through contextual bandits and secure querying capabilities were noted, as well as its strengths in providing a visual editor for marketers, supporting compliance and control in regulated environments.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 6,
+      "keywords": "Experimentation, Feature Flags, AI Evaluation, Governance, GrowthBook, Split.io",
+      "action_items": "\n**Christian Liebenow**\nFollow up with Kevin Yang via email to continue the conversation about GrowthBook's platform capabilities and potential collaboration (36:30)\n\n**Graham McNicoll and team**\nProvide further insights or demonstrations on GrowthBook features and flexibility to interested parties upon request (36:30)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Stay Partners",
+  "slug": "stay_partners",
+  "last_etl_date": "2026-08-01T13:58:06.019992",
+  "calls": [
+    {
+      "id": "01KRV5CEQZ52DEZ2RE5680EQ1R",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Stay Partners",
+      "date": "2026-05-19",
+      "duration_minutes": 40,
+      "summary": "The team seeks to improve their experimentation approach, currently limited to manual tests which capture only 10% of their targeted experimentation maturity. They aim to adopt GrowthBook’s full lifecycle experimentation platform, which integrates feature flagging and advanced analytics, supporting multiple brands and technologies. Key features include automated setup to increase efficiency, guardrail metrics with a kill switch to mitigate risks, and a pricing model that aligns with their expected experiment volume of 5 to 15 per month. The platform also supports a user-friendly visual editor to empower non-technical users, alongside secure data handling through a warehouse-native approach.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 4,
+      "keywords": "AB testing, feature flagging, experimentation platform, open source, scalability, guardrail metrics",
+      "action_items": "\n**Scott Keller**\nSend detailed email with pricing tiers and options based on estimated experiment volume and usage (36:24)\nShare scheduling options for next week’s technical deep-dive and pricing discussion (37:50)\nPrepare responses on event counting and managed warehouse associated with enterprise pricing (38:38)\n\n**Danylo Rudiment**\nProvide more precise experiment volume estimates to Scott to assist in pricing determination (36:12)\nConfirm availability for follow-up deep-dive meeting next week (37:23)\n\n**Unassigned**\nSchedule and conduct a follow-up technical demo involving a solutions engineer tailored to Stay Partners’ specific use cases (09:02)\nPossibly set up a cloud trial for Stay Partners post pricing agreement (36:40)\n"
+    }
+  ]
+}

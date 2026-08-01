@@ -1,0 +1,75 @@
+{
+  "company": "Aircall",
+  "slug": "aircall",
+  "last_etl_date": "2026-08-01T13:58:05.979184",
+  "calls": [
+    {
+      "id": "69baadc3f746c100157cdf67",
+      "source": "apollo",
+      "title": "Aircall + GrowthBook",
+      "date": "2026-03-18",
+      "duration_minutes": 21,
+      "summary": "Nestor, Engineering Director at ercol, met with Christian Liebenow and Logan (solutions engineer) to explore expanding GrowthBook from experiments-only to also serve as their feature flagging tool, addressing",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "01KKVEN3C92CQZKSN8FDRCGGGG",
+      "source": "fireflies",
+      "title": "Aircall + GrowthBook",
+      "date": "2026-03-18",
+      "duration_minutes": 23,
+      "summary": "The meeting addressed plans to expand GrowthBook's usage from basic experiments to full feature flagging, enhancing rollout control and targeting. Current limitations with Ercol's server-side flags prompted this exploration, highlighting the need for advanced features such as gradual rollouts and automatic rollback during errors. The demo will showcase both basic and advanced functionalities, aiming for buy-in from nearly 200 product and engineering employees. Participants expressed strong interest in GrowthBook's new data science features aimed at expediting experiment evaluation and providing deeper insights. Additionally, the team is weighing the benefits of self-hosting versus a SaaS model, considering operational overhead, privacy, and cost factors.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature Flagging, GrowthBook, Safe Rollouts, Role-Based Access, Experimentation, SaaS vs Self-Hosted",
+      "action_items": "\n**Christian Liebenow**\nRecord the demo session and share the recording via Slack for internal use (10:18)\n\n**Nestor Pina Fernandez**\nProvide current feature flag call volume data from existing tool to aid GrowthBook bandwidth and request estimation (20:43)\nCoordinate internal presentation of demo recording to additional team members who cannot attend live (22:52)\n\n**Logan Bates**\nSupport demo preparation focusing on advanced GrowthBook features, role-based access control, gradual rollouts, and safe rollout capabilities targeting Aircall's scale and teams (13:02)\nAddress any final clarification needed before demo with Nestor and Christian (21:34)\n"
+    },
+    {
+      "id": "69bc0f0fe8fead000d6b0725",
+      "source": "apollo",
+      "title": "Aircall + GrowthBook",
+      "date": "2026-03-19",
+      "duration_minutes": 58,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: discussed (product, features, pain points), key participants and roles, next steps/action items.\n\nFrom transcript: Product discussed is GrowthBook (feature flagging, experimentation, product analytics). Pain points: Aircall wants to increase experiment velocity, expand usage across teams, need role-based access control, audit logs, safe rollouts with reliability metrics (e.g., error rates from Datadog), and better environment management (currently one instance per environment). Also discussed cupid/post-strat, pre-strat, company-level experimentation.\n\nKey participants: Logan (likely Aircall engineer?), Christian Liebenow (GrowthBook rep), Nestor (Aircall - infrastructure side? Actually Nestor is Logan? Wait: transcript shows [logan] speaking multiple times; but also mentions \"Nestor\" as part of Aircall team. Actually from start: [logan] says \"Hello. Hi, Christian.\" Then later Christian asks \"Nestor, are we waiting on...\" So Nestor is Aircall person. Also Hannah (data science), Joel, Alex, Isidro, Adrian (growth team). Logan might be Aircall sales rep or PM? The transcript uses [logan] as speaker label for multiple people? This is messy. But key participants: Christian Liebenow (GrowthBook), Logan (maybe Aircall lead?), Nestor (Airc",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "01KKY2EXK7R3BQZVM33G9DJ7MX",
+      "source": "fireflies",
+      "title": "Aircall + GrowthBook",
+      "date": "2026-03-19",
+      "duration_minutes": 58,
+      "summary": "Aircall is exploring the adoption of a scalable feature flagging and experimentation platform, specifically GrowthBook, to facilitate faster and lower-risk feature deployments. The platform supports granular rollouts and role-based access controls to improve governance across teams. Key functionalities include multi-environment management within a single GrowthBook instance, ensuring project isolation, and monitoring of features. Furthermore, it allows complex targeting options, such as user-specific flags, percentage rollouts, and integration with various data sources for real-time metrics analysis. A new product analytics tool is also being introduced, enabling users to track product health and engagement—currently in beta with regular updates planned to enhance capabilities.",
+      "organizer": "christian@growthbook.io",
+      "participants": 11,
+      "keywords": "Feature Flagging, Experimentation, Role-Based Access Control, Safe Rollouts, Data Warehouse Integration, Product Analytics",
+      "action_items": "\n**Christian Liebenow**\nFollow up with Aircall on the exact threshold configuration details for safe rollout automatic rollback triggers (54:30)\nProvide documentation and resources regarding integration of observability data with GrowthBook safe rollouts (57:20)\n\n**Logan Bates**\nDemonstrate and explain role-based access controls and audit log features during demo (06:05)\nProvide more detailed technical information and documentation on integrating Datadog or observability metrics with safe rollouts including webhook usage (29:45)\nAnswer follow-up questions from Aircall’s data science or technical teams as needed, especially on nuanced experimentation features (09:50)\nShare links to documentation and stay available for further calls or discussion (29:50)\n\n**Nestor Pina Fernandez**\nRegroup internally with Aircall teams and coordinate next steps after assessing GrowthBook capabilities and documentation (58:05)\n"
+    },
+    {
+      "id": "01KPKGX8NNRDZYBQ8K6XS0RPFM",
+      "source": "fireflies",
+      "title": "Aircall + GrowthBook",
+      "date": "2026-04-21",
+      "duration_minutes": 34,
+      "summary": "The discussion centered on establishing clear pricing and contract terms to align with Aircall’s budget, highlighting a full user seat price of $1,250 per year and $500 for read-only users. Nestor emphasized clarity in pricing compared to competitors, while Christian provided details on platform fees that cover development and prioritized support. The need for a reliable SaaS solution was discussed due to past reliability issues with in-house systems, aiming to integrate feature flagging and experimentation to enhance adoption and support a culture of experimentation. Leadership engagement was planned to clarify pricing, flexibility in negotiations, and the importance of demonstrating past experimentation impacts to ensure buy-in for future efforts.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Feature flags, Experimentation, Pricing model, SaaS, Reliability, Negotiation",
+      "action_items": "\n**Christian Liebenow**\nProvide a detailed slide comparing Professional vs Enterprise plans and clearly outline platform fee components including SLA, support level, and uptime commitment for Aircall’s evaluation (25:43)\nConfirm pricing and feature differences between Professional and Enterprise tiers before the call with Christopher (23:49)\nFollow up with Hannah at Aircall to obtain detailed experiment impact data to better illustrate successes and challenges of experimentation (19:46)\n\n**Nestor Pina Fernandez**\nInternally refine the number of full editor and read-only users required and develop negotiation points for pricing adjustments and possible discounts with GrowthBook (29:58)\nPrepare to share internal feedback regarding pricing and SaaS model concerns during upcoming negotiation call with Christopher (05:29)\n"
+    },
+    {
+      "id": "01KPC4DTE9710YT9NBC7ZK4FHP",
+      "source": "fireflies",
+      "title": "Aircall + GrowthBook",
+      "date": "2026-04-22",
+      "duration_minutes": 31,
+      "summary": "The discussion centered on GrowthBook's pricing proposal for its enterprise offering, which was deemed too high by Aircall's representatives, particularly regarding the $100K annual platform fee and costs for user licenses. Christopher Howard expressed concerns that this cost exceeds their discretionary budget by double, necessitating significant price adjustments for approval. Christian Liebenow suggested a standard 10% discount for collaboration but acknowledged the possibility of exploring more flexible pricing options. Key features of the enterprise offering, such as SSO and role-based access, were highlighted as critical for Aircall. Ongoing innovations, including AI tool integrations, were also discussed for future value. Next steps involve revising the proposal to align better with Aircall's budget constraints.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "feature flagging, pricing proposal, enterprise offering, single sign-on, user permissions, joint marketing",
+      "action_items": "\n**Christian Liebenow**\nSend a follow-up note to Christopher Howard clarifying contract length and exploring the possibility of case studies or press releases for joint marketing opportunities (30:08)\nWork with the Chief Revenue Officer to create a revised pricing proposal that incorporates Aircall's feedback and aims to be more aligned with their budget constraints, targeting delivery within two to three business days (30:53)\n\n**Christopher Howard**\nReview the follow-up note from Christian Liebenow regarding contract length and joint marketing opportunities and provide a prompt response to facilitate further negotiations (30:46)\n"
+    }
+  ]
+}

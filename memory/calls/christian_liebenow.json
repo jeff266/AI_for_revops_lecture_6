@@ -1,0 +1,19 @@
+{
+  "company": "Christian Liebenow",
+  "slug": "christian_liebenow",
+  "last_etl_date": "2026-08-01T13:58:06.045670",
+  "calls": [
+    {
+      "id": "01KJTG7BD5N1DV3EW32R9R2FYB",
+      "source": "fireflies",
+      "title": "Book a meeting with Nestor (Christian Liebenow)",
+      "date": "2026-03-05",
+      "duration_minutes": 33,
+      "summary": "The meeting discussed strategies for expanding GrowthBook within Aircall, transitioning its use from primarily experimentation to full feature flagging across all teams. Led by Nestor Pina, the Engineering Director, the conversation highlighted the current involvement of about 13 teams using GrowthBook for experiments and the need for a scalable feature flagging solution. Nestor emphasized the importance of evaluating GrowthBook’s pricing plans, as well as enterprise features like SSO and audit logs. The need for an improved system became evident due to limitations of the existing manual feature flagging processes. The meeting underscored the significance of enterprise features for governance and security, with discussions on deployment models (self-hosted vs SaaS) and a planned demo to showcase GrowthBook’s comprehensive capabilities.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, feature flagging, experimentation, enterprise plan, self-hosted, SaaS",
+      "action_items": "\n**Nestor Pina**\nProvide availability and confirm internal participants for GrowthBook demo within 1-2 weeks (31:15)\nCoordinate with product, data, and security teams to assess GrowthBook features and deployment options before next meeting (24:19)\nEvaluate internal business case for investment in GrowthBook Enterprise expansion (27:29)\nGather detailed user count and licensing needs for all teams that may use GrowthBook (14:53)\n\n**Christian Liebenow**\nShare GrowthBook slides and information on plans, self-hosted vs SaaS options, and advanced enterprise features (00:50)\nArrange and conduct detailed demo session of feature flagging and experimentation capabilities tailored to Aircall’s use cases (21:33)\nClarify licensing structure regarding users with different permissions (viewer/editor) and pricing (13:14)\nProvide detailed comparison on costs and benefits of SaaS vs self-hosted models (28:20)\n"
+    }
+  ]
+}

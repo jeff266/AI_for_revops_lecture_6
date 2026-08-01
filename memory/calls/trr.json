@@ -1,0 +1,31 @@
+{
+  "company": "TRR & Growthbook",
+  "slug": "trr",
+  "last_etl_date": "2026-08-01T13:58:06.029443",
+  "calls": [
+    {
+      "id": "01KMMQRECGJS78YKQ02BTY8KW3",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for TRR",
+      "date": "2026-04-17",
+      "duration_minutes": 37,
+      "summary": "TRR is shifting to a proactive outreach model to assist clients before job loss, necessitating a redesign of its web presence and the tools used for client engagement. The organization is currently focused on website redesign and A/B testing to optimize content and user journeys, facing challenges due to high costs associated with existing solutions like Optimizely, quoted at about $40,000 per year. Alternatives like Growth Book have been proposed, offering competitive pricing and self-hosting options to address GDPR concerns. The organization plans to make a decision on A/B testing tools soon, with multiple vendors under consideration and a focus on internal buy-in and training to ensure successful adoption.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "TRR, GrowthBook, A/B Testing, GDPR Compliance, Self-Hosting, Experimentation Tooling",
+      "action_items": "\n**Ola Andersson**\nMake an internal decision by Monday on whether to purchase an A/B testing tool (12:23)\nPrepare and share a requirements list and decision criteria focused on price, GDPR compliance, data storage, and feature needs for tool evaluation (18:35)\nReview GrowthBook’s pricing and feature comparison materials to assess suitability (34:31)\nSchedule follow-up meeting with James Shannon for Friday next week to discuss evaluation progress and materials (36:59)\n\n**James Shannon**\nProvide Ola with side-by-side comparison documents between GrowthBook and competitors like Optimizely, Statsig, and LaunchDarkly (31:08)\nShare details on GrowthBook enterprise features including SSO, onboarding, training, and advanced statistics capabilities (25:28)\nExplain AI features and data privacy details including opt-out options to address client concerns (27:00)\nOutline GrowthBook pricing for cloud and self-hosted setups with no usage fees and custom onboarding (29:26)\nSend follow-up agenda and tailored comparison content ahead of the Friday call (37:01)\n"
+    },
+    {
+      "id": "01KPDNCCCGF1RMPS8D5AAPJNPE",
+      "source": "fireflies",
+      "title": "TRR & Growthbook",
+      "date": "2026-04-24",
+      "duration_minutes": 14,
+      "summary": "The organization is considering purchasing a tool with a pro license, pending formal approval expected by the end of May. Key points include the design team's urgency for adoption to support new initiatives, the need for documented use cases, and the budget constraints of a not-for-profit status favoring the pro tier over higher options. There are concerns regarding tier limitations that may restrict testing capabilities to four experiments per month. Active communication between stakeholders is emphasized, with a commitment to maintain updates until a formal decision is reached. The internal approval process has been slow but is nearing completion, with hopes to finalize contracts soon.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Tool purchase, subscription tiers, Pro license, Request for Information, organizational decision, design department initiatives",
+      "action_items": "\n**Ola Andersson**\nComplete and return the Request for Information (RFI) form regarding tool requirements and organizational details to advance the purchasing process (10:18)\nFacilitate involvement of relevant colleagues to support the purchasing process after initial approval (10:18)\nProvide updates or additional information about decision progress within one to two weeks to keep vendor informed (10:52)\n\n**James Shannon**\nFollow up with leadership to clarify whether new subscription tier limits will immediately apply to current Pro tier customers and communicate update to TRR (07:58)\nSend detailed breakdown and explanation of subscription tiers and their upcoming changes once finalized to TRR (12:03)\nMaintain email communication to share all necessary information and support TRR until formal decisions are made (14:07)\n"
+    }
+  ]
+}

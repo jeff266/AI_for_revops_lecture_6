@@ -1,0 +1,19 @@
+{
+  "company": "Experiment Results Info UI",
+  "slug": "experiment_results_info_ui",
+  "last_etl_date": "2026-08-01T13:58:06.051539",
+  "calls": [
+    {
+      "id": "01KG8AVVE65WBMGBJZ330NNAE0",
+      "source": "fireflies",
+      "title": "Experiment Results Info UI",
+      "date": "2026-01-30",
+      "duration_minutes": 64,
+      "summary": "The team convened to strategize on improving the user interface (UI) concerning suspicious and draw statuses, deciding to enhance clarity through updated icons and popover text while avoiding overwhelming users. Kari Kay proposed consolidating scattered tooltips into a single list to streamline user guidance, with Luke Sonnet and Adriel Vieira emphasizing the need for context-specific alerts. They agreed to retain the current color schemes pending user research, and preferred minimal, concise badges for the 'draw' state. Popovers were refined to trigger from specific UI elements, providing users with relevant information. Notably, the term 'significant' was eliminated from popovers for clearer communication. The timeline for these changes targets a Monday release, with plans to hire a dedicated visualization expert for future enhancements.",
+      "organizer": "kari@growthbook.io",
+      "participants": 5,
+      "keywords": "Results Page, Tooltip, Suspicious Change, Data Visualization, Confidence Interval, No Data State",
+      "action_items": "\n**Luke Sonnet**\nAdd suggested copy changes to Figma for tooltip text to support clarity and consistency (01:02:41)\nReview and ensure popovers trigger properly on suspicious icons and related elements (33:44)\nConfirm stability of UI components across dashboards, reports, rollouts, and drilldowns (01:00:07)\nAssist Adriel in copy simplification and PR review for tooltips and statuses (58:33)\n\n**Adriel Vieira**\nReview Luke’s PR related to removing risk and updating tooltip behaviors (58:20)\nImplement tooltip wiring and popover updates consistent with new badge and icon strategies (58:33)\nVerify tooltip and drilldown functionality in reports and dashboards after recent changes (01:02:16)\nWork on simplifying tooltip copy alongside Luke while focusing on the technical implementation (52:37)\n\n**Kari Kay**\nShare tooltip and status mockups and files with the team for reference and ongoing discussion (04:05)\nContinue work on product changes around approval flows and visualization improvements (01:03:25)\nCoordinate hiring a dedicated visualization designer to strengthen the team’s UI expertise (31:20)\n"
+    }
+  ]
+}

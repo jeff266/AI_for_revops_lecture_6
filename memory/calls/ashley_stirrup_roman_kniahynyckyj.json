@@ -1,0 +1,31 @@
+{
+  "company": "Ashley Stirrup and Roman Kniahynyckyj",
+  "slug": "ashley_stirrup_roman_kniahynyckyj",
+  "last_etl_date": "2026-08-01T13:58:06.049485",
+  "calls": [
+    {
+      "id": "01KFNV5ZZ96ZJSGRPPP6ZZD9P9",
+      "source": "fireflies",
+      "title": "Ashley Stirrup and Roman Kniahynyckyj - UTS",
+      "date": "2026-01-28",
+      "duration_minutes": 45,
+      "summary": "The team discussed the integration of outbound sales tools, centralizing sequencing in Apollo to improve email verification and usability, while maintaining HubSpot as the source of truth for opportunity management. Apollo will handle outbound sequencing and engagement tracking, while HubSpot will manage task creation, lead tracking, and opportunity management. The integration of Rio for account-level intent signals will guide targeted outreach, enriching data visibility. The team emphasized minimizing tool-switching and enhancing outbound email deliverability through throttling limits. Additionally, Apollo's enriched contact data and Sales Navigator's information were recognized as essential for effective prospecting, with next steps including updating workflows in HubSpot and training sales reps for smooth adoption.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "Outbound Sequences, Lead Assignment, HubSpot Integration, Apollo Platform, Sales Navigator, Domain Health",
+      "action_items": "\n**Ashley Stirrup**\nShare Apollo webinar recording with team for further understanding of Apollo’s capabilities (18:20)\nCoordinate rollout training for reps on Apollo sequences and follow-up process using HubSpot to manage tasks and opportunity tracking (29:45)\n\n**Daniel Wathne**\nFormalize outbound messaging templates for intent signal-based outreach (02:12)\nUse Rio signals to identify high potential accounts and add contacts from Sales Navigator to Apollo sequences for fast, personalized outreach (21:40)\nTest domain health management strategies with GrowthBook IO and coordinate clean email addresses for reps’ outbound activity (40:40)\n\n**Roman Kniahynyckyj**\nUpdate HubSpot workflows to create task notifications for assigned accounts and sync Rio segments to HubSpot, ensuring contacts and companies flow correctly (43:50)\nVerify data syncing between Rio, Apollo, and HubSpot including de-anonymized contacts, sequences, and task management (34:00)\nMeet with Karen separately to discuss further implementation details related to workflows (44:00)\n"
+    },
+    {
+      "id": "01KGQCMT6AHMSRDYJNVKSRNJ97",
+      "source": "fireflies",
+      "title": "Ashley Stirrup and Roman Kniahynyckyj - UTS",
+      "date": "2026-02-11",
+      "duration_minutes": 57,
+      "summary": "The team discussed enhancing project management by formalizing project tracking through added columns for priority, next steps, and ownership. Roman shared his flexible weekly hours, which vary from 3 to 7, allowing for better resource allocation while prioritizing urgent tasks. A HubSpot audit is planned to assess current usage and identify gaps in sales and marketing workflows. The account assignment workflow was demonstrated and refined to ensure unowned accounts are reassigned properly, with real account testing scheduled. Additionally, adjustments were made to Graham's demo scheduling to limit his hours to evenings, and strategies for managing webinar registrations were outlined to simplify future processes and ensure better branding consistency.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "HubSpot audit, workflow automation, Zoom webinar integration, account assignment, project prioritization, calendars scheduling",
+      "action_items": "\n**Roman Kniahynyckyj**\nAwait Karen’s email content for the second A/B tested email and prepare send setup once received (01:18)\nInclude all requests and tasks on the shared spreadsheet going forward (02:58)\nConduct a quick HubSpot portal audit focusing on current setup, gaps, and future sales and marketing model, taking into account available HubSpot hubs (Sales, Marketing, Service, Content, Data) (05:14)\nTest the workflow for account assignment using specific test companies like Priceline and update logic to capture accounts owned by deactivated users or unassigned in the hypo segment (11:21)\nSet up Graham's calendar availability for demos limited to Wednesday and Thursday 8-10pm and Friday 4-6pm Pacific Time (34:05)\nAdd priority, next step, and next step owner columns to the project spreadsheet and update accordingly (31:15)\nCreate standard webinar registration forms, landing pages (preferably in Webflow), and workflows to automate Zoom webinar registration and follow-up emails, coordinating with Karen on Zoom integration and permissions (38:44)\nDocument the end-to-end webinar process for registration, add to Zoom, send email confirmations, and calendar invites (53:16)\nSchedule weekly recurring meeting on Wednesdays at discussed time (56:34)\n\n**Ashley Stirrup**\nConfirm with Karen and provide updates or content needed for the webinar email campaign and Zoom integration (01:18)\nUpdate availability schedules or communicate with Graham regarding demo scheduling preferences and calendar connection issues (34:05)\nCoordinate webinar landing page content and collaborate with Chris and Roman on form and workflow set-up for registrations (43:42)\n\n**Chris Newton**\nFollow up with Ashley on webinar scheduling, assist in optimizing webinar process, and support in clarifying best practices for workflows and registrations (44:21)\n"
+    }
+  ]
+}

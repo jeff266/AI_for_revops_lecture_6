@@ -1,0 +1,17 @@
+{
+  "company": "Breakthrough",
+  "slug": "breakthrough",
+  "last_etl_date": "2026-08-01T13:58:05.976187",
+  "calls": [
+    {
+      "id": "69d6748cf6cdc4001574f972",
+      "source": "apollo",
+      "title": "GrowthBook Demo for Breakthrough",
+      "date": "2026-04-08",
+      "duration_minutes": 0,
+      "summary": "Jake Heier introduced himself to an unidentified participant on a call about GrowthBook, but the conversation was cut short with no discussion of product features, pain points, or next steps. No action items or key participants beyond Jake were identified.",
+      "host": "Jake Heier",
+      "participants": 1
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "company": "Diane Hagglund and Ashley Stirrup",
+  "slug": "diane_hagglund_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:05.987144",
+  "calls": [
+    {
+      "id": "01KXCGWNRDRS0J3GKRH7K76YEZ",
+      "source": "fireflies",
+      "title": "Diane Hagglund and Ashley Stirrup",
+      "date": "2026-07-14",
+      "duration_minutes": 31,
+      "summary": "The discussion emphasizes AI coding's transformative role in product development, highlighting Growth Book's feature flagging and experimentation tools that facilitate gradual feature rollouts and A/B testing while ensuring safety. Diane Hagglund underscores challenges related to rapid feature changes that frustrate users and suggests customizable feature flags to enhance user experience. The need for experimentation is further stressed, particularly due to the unpredictable nature of AI outcomes. The meeting also defines target audiences for Growth Book, focusing on engineers and product managers in high-traffic B2C sectors. Additionally, a robust research methodology is proposed to explore attitudes toward experimentation, balancing qualitative insights with quantitative data, while next steps include drafting a proposal for further research alignment.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "AI coding, feature flags, A/B testing, product development, experimentation maturity, research report",
+      "action_items": "\n**Diane Hagglund**\nSend Ashley a copy of the prior Shoreline research report and related survey questions for reference (22:23)\nDraft and provide a research proposal outlining participant profiles, pricing options, and timeline estimates (30:40)\n\n**Ashley Stirrup**\nReview Shoreline report and survey question materials once received to inform new research design (22:40)\nEvaluate proposal from Diane upon receipt to finalize study scope and participant targeting (30:40)\n"
+    },
+    {
+      "id": "01KY5M8T8SRB3EQGW2C3SM3T61",
+      "source": "fireflies",
+      "title": "Diane Hagglund and Ashley Stirrup",
+      "date": "2026-07-24",
+      "duration_minutes": 22,
+      "summary": "The meeting addressed several crucial elements for effective survey design and execution, emphasizing the need for a minimum of 300 participants, with 400 preferred for statistical confidence. Diane Hagglund highlighted that smaller sample sizes lead to a loss of credibility, while quality questions can mitigate this issue. Discussions also pointed towards the importance of targeting the right audience segments, integrating cost control with insightful analysis. The meeting noted that survey costs are primarily driven by participant sourcing and highlighted the need for clear, manageable question design focused on reducing bias. Additionally, the research's role as a central asset within a broader campaign to amplify reach through various content formats was stressed, underscoring the value of storytelling and strategic outreach.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Participants, Survey Design, Cost Structure, PR Strategy, Audience Targeting, Campaign Planning",
+      "action_items": "\n**Ashley Stirrup**\nDraft initial survey questions aligned with research goals and internal audience, then review with Diane for refinement (16:59)\nProvide PR firm’s sample proposal and pricing details to Diane for evaluation and competitive insight (17:20)\n\n**Diane Hagglund**\nAwait Ashley’s draft question list to help with focusing the survey and target respondent profiles (16:59)\nAnalyze PR proposal pricing and methodology when received for comparison with rigorous research approach (17:20)\n"
+    }
+  ]
+}

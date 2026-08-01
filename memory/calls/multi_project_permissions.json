@@ -1,0 +1,19 @@
+{
+  "company": "multi project permissions",
+  "slug": "multi_project_permissions",
+  "last_etl_date": "2026-08-01T13:58:05.992229",
+  "calls": [
+    {
+      "id": "01KXVEER47T1XHQHHWYCY3XR0B",
+      "source": "fireflies",
+      "title": "multi project permissions",
+      "date": "2026-07-20",
+      "duration_minutes": 0,
+      "summary": "The discussion centered around a flexible ownership model for resources, allowing for multiple owner projects with distinct permissions. The adopted owner and viewer project model controls access and allows shared resources across teams. A migration strategy is in place to ensure backward compatibility by supporting multiple owners initially. Complex permission logic was emphasized to prevent access conflicts, particularly with secret projects, which require special handling. Additionally, the team explored using teams for approval ownership to simplify processes, and identified distinct permissions for editing and approving changes. Custom hooks and their management were discussed, focusing on maintaining security and administrative control. Challenges in sharing metrics across projects were addressed, along with plans for an incremental rollout of features and visual aids for clarity.",
+      "organizer": "guy@growthbook.io",
+      "participants": 5,
+      "keywords": "multi-project permissions, owner project, approval flows, custom hooks, global resources, secret projects",
+      "action_items": "\n**Jeremy Dorn**\nCreate a technical document or diagram detailing the multi-project ownership, visibility, permission, and team relationships model for clarity (25:43)\nExplore migration strategy to support multi-project resource ownership including zero, one, or multiple owners for existing resources (14:37)\nInvestigate current permission behaviors for editing and viewing global resources and refine as needed for secret projects and global admin roles (09:44)\nImplement initial support for metric approval flows and custom hooks scoped by multi-project ownership with identical viewer/owner projects to unblock rollout (44:31)\n\n**Bryce Fitzsimons**\nAssist in creating documentation or visual aids describing ownership and visibility concepts between projects and teams (25:36)\nReview and define rules for custom hooks relating to project scope: where they run vs who can edit, possibly differentiating these two permissions (33:08)\nContribute to defining team and individual-level override models for permissions to ensure granular control (24:45)\n\n**Adriel Vieira**\nReview past discussions and documents to compare with new multi-project permissioning ideas for consistency and completeness (26:16)\nHelp clarify distinctions and overlaps between projects, teams, ownership, and visibility concepts (20:31)\nAnalyze whether existing permission primitives suffice or if modifications are needed to handle multi-project and team-based ownership (22:10)\n\n**Guy Langford-lee**\nProvide scenarios and security examples to guide rules for custom hooks and secret projects (21:26)\nExplore potential user experience issues with approval flows and multi-project edit permissions to recommend UI or UX improvements (16:55)\nAssist in defining admin lock-down features for sensitive resources (34:15)\n\n**Luke Sonnet**\nConfirm use cases where users belong to multiple teams or projects to validate flexible ownership models (29:26)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Managed Warehouse",
+  "slug": "managed_warehouse",
+  "last_etl_date": "2026-08-01T13:58:06.047311",
+  "calls": [
+    {
+      "id": "01KJ8FKS6WWJNQPT4TT90NZMAP",
+      "source": "fireflies",
+      "title": "Managed Warehouse",
+      "date": "2026-02-24",
+      "duration_minutes": 40,
+      "summary": "The discussion covered the end-to-end pipeline of event data from SDK ingestion through Kafka into Clickhouse, highlighting key challenges such as attribute management and UI limitations. Jeremy explained the enriched events table structure and the handling of identifiers alongside user metadata. The team acknowledged existing bugs in materialized views and discussed plans to simplify data management by removing key attributes. Enhancements to allow for real-time feedback in the user interface were proposed, alongside a hybrid cloud solution for real-time event processing. Operational challenges, including user data inconsistency and limits on event volume from free accounts, were also addressed.",
+      "organizer": "luke@growthbook.io",
+      "participants": 6,
+      "keywords": "Managed Warehouse, SDK ingestion, Clickhouse, materialized views, fact tables, attribute metadata",
+      "action_items": "\n**Adriel Vieira**\nInvestigate bug related to attribute renaming (user ID with capital I) and fact table breakage for specific user (35:40)\nCheck Clickhouse data to confirm attribute naming sent by user (36:30)\nPursue request for GrowthBook admin permissions to manage settings and materialized views (39:10)\n\n**Jeremy Dorn**\nProvide code pointers for materialized view creation and update functions (26:00)\nExplore fixing the bug causing fact table column metadata not updating properly, enabling refresh button to fix inconsistencies (33:30)\nGrant Adriel admin permissions in GrowthBook cloud (39:30)\nAssist in environment setup for dev access to Kafka and Clickhouse clusters (38:10)\n\n**Luke Sonnet**\nReview and analyze Managed Warehouse main backend file related to materialized views and attributes (35:40)\nCollaborate with Adriel and Michael on investigating the fact table user ID metadata problem and bug fixes (35:50)\nConfirm strategy for handling user ID attribute casing issues and fact table type arrays mismatch (37:00)\n\n**Bryce Fitzsimons**\nFollow up on dimension column usage and their role in fact tables and EAQs during further development (19:30)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Ryan Connors and Ashley Stirrup",
+  "slug": "ryan_connors_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.049815",
+  "calls": [
+    {
+      "id": "01KGWRP3XH223ZYJESPDSP9FHF",
+      "source": "fireflies",
+      "title": "Ryan Connors and Ashley Stirrup",
+      "date": "2026-02-09",
+      "duration_minutes": 30,
+      "summary": "Growth Book is experiencing significant growth, closing over $8 million in ARR and achieving a 110% year-over-year increase, serving over 2800 companies. The company aims to transition from a product-led to a scalable commercial model, emphasizing the need for a marketing hire to build demand generation strategies. Key marketing efforts will target technical buyers such as engineers and product managers, focusing on tailored messaging for conversion. The marketing strategy involves data-driven optimization, with Ryan Connors highlighting successful cost reduction in acquisition and effective use of channels like Meta. Growth Book differentiates itself by engaging product teams rather than just marketing teams, showcasing a robust competitive stance in the market.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, demand generation, marketing automation, enterprise software, paid advertising, buyer personas",
+      "action_items": "\n**Ashley Stirrup**\nContinue interview process with other candidates and select those proceeding to next round this week (29:01)\nInform Ryan Connors about next steps following interview decisions (29:31)\n"
+    }
+  ]
+}

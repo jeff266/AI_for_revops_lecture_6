@@ -1,0 +1,19 @@
+{
+  "company": "Jeremy Dorn and Ismael Stahelin",
+  "slug": "jeremy_dorn_ismael_stahelin",
+  "last_etl_date": "2026-08-01T13:58:06.007225",
+  "calls": [
+    {
+      "id": "01KV3CR7JJVWTXGSVCW8CWZ6DT",
+      "source": "fireflies",
+      "title": "Jeremy Dorn and Ismael Stahelin",
+      "date": "2026-06-16",
+      "duration_minutes": 26,
+      "summary": "Ismael Stahelin is a full-stack developer with 20 years of experience, primarily favoring front-end development with a strong expertise in languages like PHP, Java, and JavaScript. He led a hardware-software integration project for R Touch, enhancing user interaction for Marriott hotels through innovative algorithms. Ismael values roles that have meaningful user impact and promote collaboration, expressing a preference for React and TypeScript in his development projects. He integrates multiple AI coding tools to enhance his workflow and ensures high-quality code without over-engineering. The company’s focus on experimentation, an open-source approach, and client SQL optimization were also discussed. Ismael is currently seeking a full-time role with a monthly compensation around $7,000, open to both contractor and employee statuses.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 3,
+      "keywords": "Full-stack development, React, Feature Flagging, A/B Testing, Open Source, Data Warehousing",
+      "action_items": "\n**Jennifer**\nReach out to Ismael Stahelin to coordinate next steps in the interview process, including scheduling technical and system design interviews (24:34)\n\n**Jeremy Dorn**\nProvide Ismael with details about the interview stages and what to expect moving forward (24:34)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Acorns",
+  "slug": "acorns",
+  "last_etl_date": "2026-08-01T13:58:06.047443",
+  "calls": [
+    {
+      "id": "01KHAQ5QVMQCDDH567MSNN2JS2",
+      "source": "fireflies",
+      "title": "Acorns + GrowthBook",
+      "date": "2026-02-19",
+      "duration_minutes": 43,
+      "summary": "The Acorns team discussed their ambition to significantly scale experimentation capabilities from the current 100 experiments primarily conducted by the growth team to a target of 10,000 as more teams get involved. They identified existing challenges, such as manual reporting bottlenecks and multiple data sources that complicate the establishment of a single source of truth for experiment metrics. To address these challenges, the discussion turned to potential solutions like GrowthBook, which offers an open-source platform designed for scalability and compliance with fintech regulations. Additionally, the team explored the use of generative AI to automate portions of the experimentation process, enhancing overall efficiency and shortening test lifecycles. The focus included ensuring that the platform supports deep analysis, customizable reporting, and provides a near-zero incremental cost model to encourage rapid testing.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "Experimentation, Feature Flags, Open Source, Fintech, AI Enablement, Data Warehouse",
+      "action_items": "\n**Nick Bade**\nContinue assessment of experimentation maturity and tooling needs at Acorns (08:46)\nEvaluate potential fit of GrowthBook in scaling from current 100 experiments to thousands in future (14:52)\nConsider AI capabilities and integration relevance for accelerating experimentation lifecycle (15:00)\nFollow up with Christian and GrowthBook team for further discussions and demos (43:25)\n\n**Christian Liebenow**\nProvide further GrowthBook product demos tailored to Acorns’ experimentation needs (25:22)\nShare detailed pricing information and next steps post initial assessment (24:14)\nFacilitate introductions and technical follow-up between GrowthBook experts and Acorns team (07:32)\n\n**Graham McNicoll**\nDeliver comprehensive demo on GrowthBook’s platform capabilities including feature flags, metrics, and reporting (25:42)\nDiscuss and clarify technical aspects of product including open source features, customization, and AI enablement (20:40)\nSupport integration possibilities, open API and MCP server to extend platform as per Acorns’ use cases (36:00)\nFollow up on AI-powered experiment analysis features and product roadmap that could benefit Acorns (42:00)\n\n**Logan Bates**\nAssist in providing context on past Acorns evaluations and customer references (11:11)\nSupport technical questions and provide expertise related to GrowthBook through follow-up discussions (37:44)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Tomáš Voves from Livesport",
+  "slug": "demo_call_tom_voves_from_livesport",
+  "last_etl_date": "2026-08-01T13:58:05.994215",
+  "calls": [
+    {
+      "id": "01KX15WQJS7XZ4KH9PC3B8DVHK",
+      "source": "fireflies",
+      "title": "Demo Call with Tomáš Voves from Livesport",
+      "date": "2026-07-15",
+      "duration_minutes": 30,
+      "summary": "Live Sports has integrated a robust experimentation culture, running over 1,000 experiments since December 2022, led by Tomáš Voves. The web platform enjoys full autonomy, while mobile experimentation relies on engineering, creating inefficiencies. Two platforms are currently employed: Optimizely for web and Firebase for mobile, the latter of which contributes only 10% of the testing volume. Financially, the affiliate betting model and high Optimizely costs demand a more scalable solution. Tomáš is considering Growth Book for its flexibility and absence of traffic costs. The meeting concluded with a scheduled demo of Growth Book and a sense of urgency surrounding budgeting decisions due by October 2026.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, experimentation platform, Optimizely cost, mobile vs web experimentation, feature discovery, affiliate revenue model",
+      "action_items": "\n**Tomáš Voves**\nReschedule conflicting meeting to attend detailed Growth Book demo on the following day at 10:00 Prague time (28:19)\nInvite the AVA Experimentation team leader to join the detailed product demo to provide technical input (28:40)\n\n**James Shannon**\nPrepare and deliver a full demo of Growth Book’s platform capabilities tailored to Live Sport’s use cases including mobile and web unification (28:33)\nShare examples of companies in similar industries who succeeded in replacing Optimizely and Firebase to build confidence in Growth Book’s solution (23:04)\n"
+    }
+  ]
+}

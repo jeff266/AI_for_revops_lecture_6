@@ -1,0 +1,19 @@
+{
+  "company": "BigHaat",
+  "slug": "bighaat",
+  "last_etl_date": "2026-08-01T13:58:06.025388",
+  "calls": [
+    {
+      "id": "01KQCZ2P7TN19TJES8NG61GFFY",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for BigHaat",
+      "date": "2026-05-04",
+      "duration_minutes": 32,
+      "summary": "The team explored GrowthBook to enhance their A/B testing capabilities, as their current system is limited to 1-2 manual experiments and lacks advanced traffic splitting. James Shannon explained GrowthBook's features, emphasizing its open-source, multi-platform support, and integration with data warehouses. Current experiments have shown significant success, with a reported 30% increase in average order value from a single SKU test. The team aims to run 3-4 experiments per month across different user journeys. They reviewed GrowthBook’s pricing tiers, deciding to start with the Professional tier at $40 per user, considering it aligns with their immediate needs and future scaling ambitions.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 6,
+      "keywords": "A/B Testing, Feature Flags, Statistical Significance, Experimentation, Growth Book, Data Warehouse Integration",
+      "action_items": "\n**Utpal Dey**\nSign up for Growth Book free trial to explore dashboard and product capabilities (30:30)\nEvaluate Growth Book Professional tier features and pricing for initial experimentation use (31:23)\n\n**James Shannon**\nProvide email support for any follow-up questions on tier differences and setup process (30:56)\n\n**BigHaat Team**\nReview internal experimentation requirements and prepare for next meeting to discuss Growth Book demo and implementation details (31:27)\n"
+    }
+  ]
+}

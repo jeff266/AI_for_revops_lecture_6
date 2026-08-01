@@ -1,0 +1,19 @@
+{
+  "company": "Messaging alignment session",
+  "slug": "messaging_alignment_session",
+  "last_etl_date": "2026-08-01T13:58:06.028482",
+  "calls": [
+    {
+      "id": "01KPVA39R8WSTZTJJN92VV2G8G",
+      "source": "fireflies",
+      "title": "Messaging alignment session",
+      "date": "2026-04-24",
+      "duration_minutes": 68,
+      "summary": "The team focused on developing a structured messaging framework with aligned vision and messaging pillars to enhance internal and external communication. Key objectives include refining messaging around four core pillars: developer experience, AI integration, iteration speed with safety, and scalability. The importance of AI as integral to speed and learning was emphasized, with plans to embed it throughout the user experience. Additionally, the role of experimentation in product development was discussed, advocating for a culture shift towards AB testing. Engaging with customers for feedback and sharing their stories was identified as crucial for validation and enriching messaging.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "experiment culture, AI integration, product messaging, feature flags, scalability, learning & iteration",
+      "action_items": "\n**Scott Bailey**\nFollow up with Carrie and Chris regarding Anthropic and other customers willing to share stories to support AI features and customer insights (01:03:15)\n\n**Scott Bailey and Elyse Fox**\nCollaborate to refine messaging draft including vision and pillar definitions (01:01:40)\n\n**Ashley Stirrup, Elyse Fox, Scott Bailey**\nSchedule and hold two brainstorming sessions next week to advance messaging framework before offsite (01:07:27)\n\n**Ashley Stirrup**\nResearch Optimizely’s AI tools such as Opal to inform GrowthBook's AI data scientist concept (01:06:10)\n\n**Entire team**\nPrepare to engage sales and product leadership during offsite to align on AI story and messaging rollout strategy (01:04:50)\n"
+    }
+  ]
+}

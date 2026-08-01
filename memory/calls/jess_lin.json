@@ -1,0 +1,19 @@
+{
+  "company": "Jess Lin",
+  "slug": "jess_lin",
+  "last_etl_date": "2026-08-01T13:58:06.034182",
+  "calls": [
+    {
+      "id": "01KPBHMSX1BVE9KR795T1SNRQM",
+      "source": "fireflies",
+      "title": "30 min with Scott (Jess Lin)",
+      "date": "2026-04-17",
+      "duration_minutes": 45,
+      "summary": "Growthbook is establishing foundational marketing efforts to effectively position its complex product for technical audiences, especially in preparation for the 4.4 product release. Scott Bailey, the first full marketing hire, is developing core messaging and improving documentation for the managed warehouse solution. The company balances product-led growth with enterprise sales by targeting experimentation teams in larger organizations. Community engagement is emphasized, with direct interactions fostering trust and allowing for valuable feedback. The marketing team is preparing for a new website launch to enhance SEO and user experience while incorporating AI capabilities into its workflows to stay competitive. The company's culture promotes a balanced work environment, enabling employees to tackle diverse technical challenges.",
+      "organizer": "scott@growthbook.io",
+      "participants": 3,
+      "keywords": "Developer Advocacy, AI Agents, Technical Product Marketing, Experimentation Platform, Managed Warehouse, Content Creation",
+      "action_items": "\n**Scott Bailey**\nContinue foundational positioning and messaging work for GrowthBook’s upcoming 4.4 product release (26:36)\nDevelop and implement event tracking plan for new website rollout (29:23)\nRevise and improve managed warehouse documentation based on customer feedback and personal product experience (32:33)\nConduct ongoing customer research interviews to understand AI integration and experimentation workflows (39:48)\nBuild product features and structure REST API to support AI agent usage in experimentation (39:48)\n\n**Jess Lin**\nShare consulting client API guides and related content links with Scott for review (17:13)\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "MAF<>Brillmark<>GrowthBook Discussion",
+  "slug": "maf_brillmark_discussion",
+  "last_etl_date": "2026-08-01T13:58:05.981422",
+  "calls": [
+    {
+      "id": "69a5adc19051d10015175d4e",
+      "source": "apollo",
+      "title": "MAF<>Brillmark<>GrowthBook Discussion",
+      "date": "2026-03-02",
+      "duration_minutes": 30,
+      "summary": "Brillmark discussed deploying and managing GrowthBook’s enterprise package for Carrefour/Majid Al Futtaim, as the client lacks internal expertise. Key participants include client leads Tom Kassis and Shahryar Sherafati, Brillmark’s Neha Bisht, KM Abdullah Maroof (who presented capabilities",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

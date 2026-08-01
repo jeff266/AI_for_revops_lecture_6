@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook and Vio.com",
+  "slug": "viocom",
+  "last_etl_date": "2026-08-01T13:58:05.984987",
+  "calls": [
+    {
+      "id": "01KYFR86X6NMGY07CWHFQ61ERB",
+      "source": "fireflies",
+      "title": "GrowthBook and Vio.com",
+      "date": "2026-07-28",
+      "duration_minutes": 20,
+      "summary": "Vio is experiencing issues with its current flagging solution on Optimizely, notably reliability and usability problems that hinder non-technical users from effectively running experiments. They seek a lightweight SDK that allows for clear user bucket status and active rollout tracking while maintaining control over evaluation logic. GrowthBook's SDK was presented as a viable option, demonstrating capabilities in local evaluation, detailed rollout tracking, and compatibility with Vio's tech stack. Vio plans to initiate a proof of concept with GrowthBook's open-source SDK before considering enterprise features, focusing on improving their experimentation process and addressing frustrations stemming from Optimizely’s complexity and trust issues.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "feature flagging, SDK, experimentation platform, Optimizely, GrowthBook, proof of concept",
+      "action_items": "\n**Dale French**\nReview GrowthBook open source SDK by running a proof of concept to evaluate its flagging capabilities against current needs (16:45)\nDecide on potential engagement with GrowthBook enterprise tier after initial team review of the basic solution (17:45)\n\n**James Shannon**\nProvide GrowthBook open source resources and documentation to Dale’s team for initial testing and evaluation (16:30)\nRemain available to discuss commercial options and enterprise support if Vio decides to scale or requires additional features (19:01)\n"
+    }
+  ]
+}

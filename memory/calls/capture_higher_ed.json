@@ -1,0 +1,19 @@
+{
+  "company": "Capture Higher Ed",
+  "slug": "capture_higher_ed",
+  "last_etl_date": "2026-08-01T13:58:06.019920",
+  "calls": [
+    {
+      "id": "01KRXE0K5N1P1Q1066BRF9CK2W",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Capture Higher Ed",
+      "date": "2026-05-19",
+      "duration_minutes": 0,
+      "summary": "During the meeting, Capture Higher Ed representatives outlined their intent to leverage GrowthBook for enhancing dynamic landing pages. Robert Simora explained the focus on identifying prospective students’ intent to optimize content through experimentation. The engineering team's capabilities align well with GrowthBook’s architecture, with cost and flexibility favoring it over competitors like Optimizely. Scott Keller emphasized GrowthBook’s warehouse-native approach to experiments, which respects PII and eliminates duplicate data storage. The capabilities for feature flags and targeted audience experimentation were detailed, along with insights dashboard functionality, showing the financial impact of experiments. Discussions covered the pricing model, transitioning from seat-based to experiment-based pricing while accommodating legacy pricing for cost-effectiveness. The meeting concluded with actionable next steps to initiate a trial process swiftly.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 3,
+      "keywords": "Dynamic landing pages, Behavioral data, Experimentation platform, Feature flagging, Audience targeting, Pricing model",
+      "action_items": "\n**Scott Keller**\nSend a budgetary quote based on seat-based pricing model tailored for Capture Higher Ed’s team size and experiment volume (46:03)\nFollow up with a recap email including proposed next steps and scheduling options for a trial kick-off session (46:19)\nActivate and schedule a one-hour session to initiate the trial and demonstrate deeper functionalities as requested (37:13)\n\n**Robert Simora**\nReview the budgetary quote and next steps email upon receipt and communicate feedback or accept proposal (46:20)\nPrepare internal stakeholders with questions and experiment plans ahead of the trial kickoff (46:19)\n\n**Logan Bates**\nSupport Scott in extended demo and technical explanation as needed during and following this meeting, ensuring clarity on integration and features (19:29)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Pricing Discussion",
+  "slug": "pricing_discussion",
+  "last_etl_date": "2026-08-01T13:58:06.024416",
+  "calls": [
+    {
+      "id": "01KQQSCS227Q7PR2BGN3YEW2MX",
+      "source": "fireflies",
+      "title": "Pricing Discussion",
+      "date": "2026-05-05",
+      "duration_minutes": 92,
+      "summary": "The team discussed a strategic shift to consumption-based pricing, retaining free and self-serve plans for small customers. Key discussions revolved around clearly segmenting customer types into free, pro, and enterprise tiers to enhance packaging and conversion clarity. Ashley Stirrup emphasized creating distinct mental models for each customer tier and improving onboarding processes. Significant revenue opportunities, particularly through event forwarding for enterprise customers, were identified. There was debate on the conversion frequency of SMB/pro customers to enterprise, with recommendations for aligning tiers with company types. Pricing structures will include limits on features to encourage upgrades, and existing billing anomalies that could impact revenue were flagged for investigation, with plans for better pricing models and customer feedback mechanisms.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "pricing strategy, customer segmentation, consumption-based pricing, enterprise acquisition, managed warehouse, event forwarding",
+      "action_items": "\n**Michael Knowlton**\nInvestigate accounts marked as canceled but still actively using the product, identify any bugs or data issues causing misclassification, and prepare for scaling diagnostics tools to improve billing accuracy (44:55)\n\n**Ashley Stirrup**\nPackage the event forwarding offering for enterprise customers and prepare corresponding sales content and website information to support onboarding and sales efforts (57:54)\n\n**Ryan McGurk and Ashley Stirrup**\nMap out sales and marketing revenue forecast for the year, evaluate current headcount and investment needs, and align plans for growth and hiring, especially in Europe (01:31:00)\n\n**Graham McNicoll**\nSchedule a follow-up meeting with the Pageant team to conduct a code review and align on acquisition interest and valuation details (01:15:20)\n\n**Leadership Team (Jeremy, Ashley, Ryan)**\nReview and finalize proposed pricing changes and usage limits on features across Free, Pro, and Enterprise tiers to ensure alignment with strategic goals (54:00)\n\n**James**\nFinalize readiness of the managed warehouse product and aim to enable go-live during the upcoming company retreat if feasible (55:56)\n\n**Dan**\nVerify event forwarding billing and pricing specifics to ensure accuracy and prevent any double billing issues for customers (57:05)\n\n**Mark**\nRefine quarterly financial reports to provide clearer visibility on marketing spend and burn rate projections, incorporating feedback from finance and marketing teams (01:29:00)\n"
+    }
+  ]
+}

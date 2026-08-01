@@ -1,0 +1,17 @@
+{
+  "company": "Maradonna Sihon and Jake Heier",
+  "slug": "maradonna_sihon_jake_heier",
+  "last_etl_date": "2026-08-01T13:58:05.983142",
+  "calls": [
+    {
+      "id": "698bf0054dc0fa001158f541",
+      "source": "apollo",
+      "title": "Maradonna Sihon and Jake Heier",
+      "date": "2026-02-11",
+      "duration_minutes": 22,
+      "summary": "Jake Heier (vendor) discussed GrowthBook's self-hosted deployment with Puspita Simamora and Izam Nurazwar (telecom cell team). Key pain points included centralizing GrowthBook across multiple AWS clusters, ensuring scalability and low latency for millions of customers, and choosing between self-hosted, SaaS, or AWS marketplace tiers. Next",
+      "host": "Jake Heier",
+      "participants": 3
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "IKEA Professional Services",
+  "slug": "ikea_professional_services",
+  "last_etl_date": "2026-08-01T13:58:06.024326",
+  "calls": [
+    {
+      "id": "01KQWEZXFAHMA0AGJ5KENTF3ZJ",
+      "source": "fireflies",
+      "title": "IKEA Professional Services",
+      "date": "2026-05-05",
+      "duration_minutes": 26,
+      "summary": "The team outlined a professional services strategy, defining four main service categories: strategic consulting, training, solutions engineering, and managed services, each aimed at generating new revenue. Training is designed to guide clients in processes without prescribing changes, while managed services could significantly increase support costs as demonstrated by IKEA's substantial annual expenditure on support. Discussions centered on the pricing model, weighing hourly rates against fixed or percentage-based fees, with an initial hourly rate proposal raising concerns about bandwidth. They also considered embedding baseline support in the platform fee to avoid revenue loss. The urgency of finalizing these details was stressed due to an imminent RFP submission deadline.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "IKEA, professional services, pricing model, support tiers, training enablement, RFP submission",
+      "action_items": "\n**Christian Liebenow**\nMake initial tweaks to the professional services pricing document and share it for review (24:04)\nInvestigate and confirm details of self-hosting options before the next InfoSec meeting (22:09)\nSchedule a 45-minute meeting with Jeremy Dorn to finalize the InfoSec portion of the proposal, targeting the next day (22:09)\nContinue market research and contact internal and external sources to understand Optimizely’s pricing structures for IKEA professional services and support (20:41)\n\n**Cris**\nReview shared slides and documents on professional services buckets and refine descriptions and breakdowns (16:53)\nConduct market research on professional service pricing from former colleagues and external benchmarks (17:27)\nBegin drafting user stories focused on retail and e-commerce relevant to IKEA, including in-store systems and category team scenarios (24:06)\n\n**Jeremy Dorn**\nProvide input on reasonable pricing models especially regarding support tiers and premium support percentages based on past experiences (14:01)\nParticipate in follow-up meeting with Christian Liebenow on InfoSec and pricing finalization (22:09)\n"
+    }
+  ]
+}

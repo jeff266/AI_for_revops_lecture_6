@@ -1,0 +1,19 @@
+{
+  "company": "Everything Financial Technologies Limited",
+  "slug": "everything_financial_technologies_limited",
+  "last_etl_date": "2026-08-01T13:58:06.027252",
+  "calls": [
+    {
+      "id": "01KQ57J25FG6HJ1JN0V111YAGA",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Everything Financial Technologies Limited",
+      "date": "2026-04-28",
+      "duration_minutes": 57,
+      "summary": "The team is transitioning to select an A/B testing and feature management tool, identifying GrowthBook as a strong candidate post-discussion of past tools, specifically Google Optimize. They aim to find a tool supporting front-end experiments with minimal backend complexity, addressing slow testing processes. GrowthBook’s open-source nature, integration capabilities, and data privacy alignment with their operational environment for over one million customers per year makes it a suitable choice. The meeting concluded with plans for a detailed demo of GrowthBook and a free proof of concept to ensure its fit with their technical stack, which includes Next.js and Angular, alongside UX considerations for ease of use.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook, A/B testing, feature flags, UX design, frontend experimentation, data privacy",
+      "action_items": "\n**Liam Bailey**\nCoordinate internal stakeholders including Phil Jenkins, Anna, and John Dawes to join the follow-up GrowthBook demo scheduled for Wednesday 6th at 4 PM UK time (53:47)\n\n**Carl Dix**\nParticipate in the next GrowthBook demo focused on the visual editor and discuss experiment setup specifics from a UX/design perspective (53:47)\n\n**Scott Keller**\nSend calendar invite for the follow-up GrowthBook demo on Wednesday 6th at 4 PM UK time (56:56)\nPrepare and coordinate with the solution engineer to showcase GrowthBook’s visual editor and front-end UX-centric tools in the next session (28:40)\nProvide a recap of today's demo along with notes on visual editor capabilities to all attendees (56:06)\n\n**John Dawes**\nContinue refining identifier management strategy to ensure privacy-compliant, consistent user bucketing across devices and sessions in preparation for GrowthBook integration (26:23)\n\n**Phil Jenkins**\nParticipate in both current and follow-up sessions to evaluate UX designer use cases in GrowthBook experimentation (54:00)\n"
+    }
+  ]
+}

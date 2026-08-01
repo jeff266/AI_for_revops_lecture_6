@@ -1,0 +1,17 @@
+{
+  "company": "Buff",
+  "slug": "buff",
+  "last_etl_date": "2026-08-01T13:58:05.968556",
+  "calls": [
+    {
+      "id": "6a26b2279e86c80020ae2ca2",
+      "source": "apollo",
+      "title": "GrowthBook Demo for Buff",
+      "date": "2026-06-08",
+      "duration_minutes": 0,
+      "summary": "Yair Liberzon and Scott exchanged greetings at the start of a GrowthBook demo call for Buff, but no product details, features, pain points, or action items were discussed before Yair indicated he would remove the recorder. The only participants identified are Yair (likely the presenter) and Scott (the prospective customer). No next steps or follow-up items were established.",
+      "host": "Scott Keller",
+      "participants": 1
+    }
+  ]
+}

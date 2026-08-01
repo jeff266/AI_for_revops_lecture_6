@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook setup",
+  "slug": "setup",
+  "last_etl_date": "2026-08-01T13:58:06.041262",
+  "calls": [
+    {
+      "id": "01KMGF0BD61TQGFH9CNBWGEPW8",
+      "source": "fireflies",
+      "title": "GrowthBook setup",
+      "date": "2026-03-26",
+      "duration_minutes": 40,
+      "summary": "The team discussed the integration of GA4 event data stored in BigQuery with GrowthBook to facilitate A/B test analysis. They faced challenges including data inconsistencies in BigQuery, which correctly represented data about 50% of the time, and the need for proper mapping of experiment IDs between GrowthBook and BigQuery. Current custom queries hinder scalability, prompting a recommendation for a reusable general query to simplify data setups. The necessity of accessing BigQuery credentials was highlighted, as it is crucial for testing and validating queries. A follow-up meeting was scheduled for Wednesday to resolve these challenges, with Chris Sanders providing ongoing support to ensure efficient resolution of issues.",
+      "organizer": "chris@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, BigQuery, GA4, Experiment assignment, SQL query, Metrics",
+      "action_items": "\n**Giulio Antonini**\nObtain BigQuery access key from internal developer for GrowthBook data source setup (18:00)\nCollaborate with a more experienced team member on BigQuery query configuration and experiment assignment queries (34:00)\nCoordinate developer availability for the follow-up meeting on Wednesday (37:00)\n\n**Chris Sanders**\nProvide example BigQuery SQL queries for experiment assignment and metrics to Giulio's team for reference (16:00)\nArrange follow-up meeting with GrowthBook query expert Luke to review and explain experiment data connection and queries in detail (34:00)\n\n**Meeting participants**\nPrepare for next meeting by reviewing current GrowthBook and BigQuery data source configurations, and confirm all SDK/middleware setups (37:00)\nUse Slack for quick questions and clarifications prior to follow-up meeting (37:00)\n"
+    }
+  ]
+}

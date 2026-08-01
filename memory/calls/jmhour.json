@@ -1,0 +1,19 @@
+{
+  "company": "jmhour",
+  "slug": "jmhour",
+  "last_etl_date": "2026-08-01T13:58:06.021808",
+  "calls": [
+    {
+      "id": "01KR1PERY40AJ6N9TF56SHCHA5",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for jmhour",
+      "date": "2026-05-08",
+      "duration_minutes": 23,
+      "summary": "GrowthBook is presented as a flexible and scalable experimentation platform that offers a unique warehouse-native architecture, combining feature flags, A/B testing, and product analytics. The pricing structure is designed for transparency, catering to agencies like Jamurlab, with a Pro plan at $40 per user per month and an Enterprise plan starting at $50,000 annually for 10 users. Key technical advantages include server-side rendering to eliminate flicker issues during A/B testing. Compatibility with local e-commerce platforms like Seller and Zit is crucial for Jamurlab's clients. Over the next 2-3 years, Jamurlab aims to expand beyond e-commerce to include government and mobile applications, leveraging their developer-driven experimentation approach to enhance scalability and performance.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, A/B Testing, Warehouse Native, E-commerce, Server-side Rendering, Integration",
+      "action_items": "\n**Christian Liebenow**\nProvide ferasfa with documentation comparing GrowthBook Pro and Enterprise plans (21:42)\nInvestigate and share information about GrowthBook’s integration capabilities with Saudi e-commerce platforms Seller and Zit, including any existing client examples or relevant documentation (18:15)\nContinue availability for follow-up questions and arrange additional meetings as needed after sending documentation (21:42)\n\n**ferasfa**\nReview provided GrowthBook plan comparisons and documentation once received (21:35)\nConduct initial testing with GrowthBook Pro plan on select clients using Seller and Zit platforms to evaluate integration feasibility (18:15)\n"
+    }
+  ]
+}

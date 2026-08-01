@@ -1,0 +1,19 @@
+{
+  "company": "Iute Group",
+  "slug": "iute_group",
+  "last_etl_date": "2026-08-01T13:58:06.040099",
+  "calls": [
+    {
+      "id": "01KMN85ZBY711YZ0781CPR3PFM",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Iute Group",
+      "date": "2026-03-30",
+      "duration_minutes": 46,
+      "summary": "The discussion centered on the need to expedite feature flag deployment and implement A/B testing to manage risks during product rollouts and error rollbacks. The team currently faces 15-20 minute delays for each flag change due to required full service releases, and there is an interest in incorporating audit logs and SSO via Microsoft Entra. With approximately 100 existing feature flags across multiple services, the plan is to conduct internal tests followed by gradual customer rollouts. GrowthBook was introduced as an open-source platform for feature flags and A/B testing, supporting 30 SDKs and integrating with Redshift to secure experiment data. The enterprise tier pricing was discussed, alongside GrowthBook's competitive advantage over PostHog and Unleash, leading to a request for follow-up technical support to assess the implementation.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "Feature Flags, A/B Testing, GrowthBook, Enterprise Licensing, Redshift Integration, Experimentation Platform",
+      "action_items": "\n**James Shannon**\nFollow up with detailed information on integration with Argo Rollouts and GitLab CI by email (15:42)\nSend a one-page comparison document of GrowthBook versus Posthog and Unleash to Sergey Laada and team (42:29)\nSchedule a follow-up call for Wednesday or Thursday to discuss next steps and possibly involve GrowthBook’s technical team (44:43)\nPrepare and offer a proof of concept setup for GrowthBook integration and experimentation within Iute’s environment, including team support (40:53)\n\n**Sergey Laada**\nReview GrowthBook materials and consider licensing options, then communicate budget decision and next steps via email (39:50)\n"
+    }
+  ]
+}

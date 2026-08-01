@@ -1,0 +1,19 @@
+{
+  "company": "Genie Shopping",
+  "slug": "genie_shopping",
+  "last_etl_date": "2026-08-01T13:58:06.039317",
+  "calls": [
+    {
+      "id": "01KN1QC2CED1WGRJ0ZFEB9S6Y7",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Genie Shopping",
+      "date": "2026-04-01",
+      "duration_minutes": 35,
+      "summary": "The team focused on revitalizing stagnant B2C and B2B websites to enhance user engagement and conversions. They identified challenges stemming from a high bot-to-human traffic ratio affecting data accuracy, with daily traffic reports showing millions of bot hits. The current conversion rate stands at 3.5% to 4% overall, with product pages achieving about 18%. With recent leadership by Harriet Gribble and existing tools like Growth Book, the team aims to enable non-technical users to manage experiments effectively. Financial projections highlight that even a small conversion lift could significantly increase monthly revenue. The importance of experimentation as a key strategy to transform the underutilized website into a profitable channel was emphasized, alongside scalability and future planning.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "A/B testing, out clicks, conversion optimization, bot traffic, GrowthBook SDK, experiment implementation",
+      "action_items": "\n**Harriet Gribble**\nReview GrowthBook presentation slides and provide feedback or questions regarding the tool and its implementation (34:44)\nEvaluate internal resource availability and budget constraints to determine feasibility of adopting an experimentation program (15:47)\n\n**Ross Motley**\nIdentify and confirm a unique user or session identifier compatible with GrowthBook's deterministic hashing to enable accurate experiment tracking across GENIE Shopping's data systems (24:16)\nAssist the product team in aligning Google Analytics data and bot filtering logic with GrowthBook's experiment measurement requirements to ensure accurate conversion tracking (10:48)\n\n**James Shannon**\nShare GrowthBook presentation slides and additional product resources with the GENIE Shopping team to support their evaluation process (34:49)\nProvide ongoing support for any technical or commercial questions arising after GENIE Shopping reviews GrowthBook and other vendors (35:00)\n"
+    }
+  ]
+}

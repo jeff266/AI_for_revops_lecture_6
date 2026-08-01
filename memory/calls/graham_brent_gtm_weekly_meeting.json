@@ -1,0 +1,19 @@
+{
+  "company": "Graham <> Brent GTM weekly meeting",
+  "slug": "graham_brent_gtm_weekly_meeting",
+  "last_etl_date": "2026-08-01T13:58:06.051995",
+  "calls": [
+    {
+      "id": "01KFYJVPXJY8TZJ2RTQJ19NZ9F",
+      "source": "fireflies",
+      "title": "Graham <> Brent GTM weekly meeting",
+      "date": "2026-01-30",
+      "duration_minutes": 28,
+      "summary": "The meeting addressed the aggressive sales headcount ramp necessary to meet ambitious booking targets, emphasizing a balanced growth model combining bookings ramp and expense tracking. Brent Holloway highlighted the strong AE pacing at projected $250k bookings per AE, while proposing interim recruiting and coaching roles to enhance hiring processes and reduce costs. Concerns about candidate fit, particularly regarding Carrie, were discussed, with Graham advocating for clear communication of doubts. The competitive hiring market, particularly following layoffs at companies like Amazon, presents a wealth of talent. Plans for AI-powered data enrichment and personalized outreach were also outlined, alongside customer feedback influencing product pricing strategies. International investor interest signals potential growth, with caution about equity dilution, and competitor dynamics are shaping market strategies.",
+      "organizer": "graham@growthbook.io",
+      "participants": 2,
+      "keywords": "Headcount planning, recruitment strategy, lead enrichment, sales diversity, AI product roadmap, competitive positioning",
+      "action_items": "\n**Graham McNicoll**\nDiscuss Brent’s interim recruiter proposal with Jeremy and decide on engagement terms (10:55)\nPrepare for financial planning discussion, integrating feedback on growth targets and investor pressures (20:40)\nFollow-up internally on AI roadmap specificity for competitive positioning against Statsig (22:30)\nExplore customer interest in credit-based pricing model through Ryan’s efforts and gather feedback (25:00)\n\n**Brent Holloway**\nProvide access to growth and headcount ramp planning spreadsheet to Graham (11:00)\nConduct upcoming meeting with Ashley and Ryan to finalize prep on growth and ramp modeling (07:39)\nSupport sourcing and recruitment efforts for Growthbook, including candidate scorecard implementation and coaching BDRs (07:45)\nAssist in leveraging enrichment tools like Persona and Clay credits for improved lead generation (11:10)\nContinue candidate pipeline management and coordinated recruiting with Richard and Ryan (17:50)\nSupport creation of more digestible demo videos (3-5 minutes) for leadership to enhance sales effectiveness (25:30)\n\n**Ryan**\nContinue enrichment and lead qualification activities using Persona and Clay tools (11:10)\nLead exploration and testing of credit-based pricing models with select customers (25:00)\nSupport candidate evaluation and scoring with Graham and Brent (14:30)\nCollaborate with Brent on recruiting and project tracking (18:15)\n"
+    }
+  ]
+}

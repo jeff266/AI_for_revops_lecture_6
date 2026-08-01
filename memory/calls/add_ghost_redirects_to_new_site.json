@@ -1,0 +1,19 @@
+{
+  "company": "Add Ghost redirects to new site.",
+  "slug": "add_ghost_redirects_to_new_site",
+  "last_etl_date": "2026-08-01T13:58:06.030021",
+  "calls": [
+    {
+      "id": "01KPE6AX709ZAKQY1ED10YVSCE",
+      "source": "fireflies",
+      "title": "Add Ghost redirects to new site.",
+      "date": "2026-04-23",
+      "duration_minutes": 31,
+      "summary": "The team discussed several key areas to enhance website performance and user experience, including unresolved speed issues affecting page loading and scrolling, and styling errors on core pages. They highlighted the need for urgent fixes in blog content styling and planned a meeting with Kari for corrective measures. The lack of schema markup on various web elements was noted as a critical SEO gap. Additionally, the team aimed to optimize the presentation of testimonials and improve customer story pages. Bright Scout was confirmed as the main development partner for 30 days, emphasizing the importance of ongoing bug tracking and analytics improvements. The meeting also acknowledged a significant increase in organic traffic, relating it to enhanced SEO efforts.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "redirects, website performance, styling issues, testimonials, SEO schema, Bright Scout",
+      "action_items": "\n**Karen Henke**\nInform Graham that Bright Scout is handling the Ghost redirects and no further action from him is currently needed (00:33)\nCoordinate with Kari to join the upcoming Bright Scout meeting to clarify styling fixes, especially for blog content and style library usage, aiming to schedule the call by next Monday (05:45)\nProvide Kari's feedback and follow up to ensure styling fixes are implemented correctly (06:32)\nPrepare and send a spreadsheet for Google Tag Manager setup to Nate (25:29)\nCompile and deliver a next-step website plan for post-Bright Scout activities including pricing updates, events section, and product features pages (25:14)\nMonitor bug tracker and blog issues inputs continuously to ensure no updates are missed and issues are addressed promptly (20:43)\n\n**Ashley Stirrup**\nSchedule a half-hour call inviting Kari, Lubo, Luciana, Luciano, and Lucas immediately after company stand-up at 10:30 am to discuss styling issues and coordinate with Bright Scout (08:48)\nPush testimonial strategy refinement by coordinating with Karen to ensure relevant testimonials are displayed per page rather than indiscriminately (11:12)\nEvaluate traffic data on industry pages before deciding on individual logo implementation to ensure investment is justified (10:07)\nReview and provide feedback on homepage hero images and Warehouse native image improvements for better engagement (14:10)\nAssist in clarifying feature priorities including homepage cohesion, cards navigation fix, site performance, and auto-advance images (21:07)\nFollow up with marketing team on paid ads targeting relevant pages like 'get started' to increase conversions by improving visitor learning journey (30:14)\n\n**Unassigned**\nFix blog content styling and bullet/spacing issues as a priority in the next development cycle (04:59)\nImplement homepage hero image auto-advance and other cohesion fixes by Monday (15:51)\nCorrect logic in article recommendation to exclude the current article from suggestions (12:05)\nRemove ribbon overlays on gradients sitewide and finalize gradient fixes (11:43)\nAdd cookie consent manager from Webflow to comply with privacy requirements (19:41)\nApply missing schema markup to FAQs, quotes, product comparisons, and pricing tables to improve SEO (22:14)\nRestore copy updates that were missed in Bugherd to the live site (20:06)\n"
+    }
+  ]
+}

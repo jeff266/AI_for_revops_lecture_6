@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with William Amps from MVF Global",
+  "slug": "demo_call_william_amps_from_mvf_global",
+  "last_etl_date": "2026-08-01T13:58:06.002720",
+  "calls": [
+    {
+      "id": "01KVZ4RXCS5JEGD2XGP4NS84W1",
+      "source": "fireflies",
+      "title": "Demo Call with William Amps from MVF Global",
+      "date": "2026-06-30",
+      "duration_minutes": 35,
+      "summary": "The discussion revolved around MVF's potential transition from Optimizely to Growth Book, driven by the need for a more cost-effective and flexible solution for their extensive experimentation program. Billy Amps highlighted the significant financial burden imposed by Optimizely, as MVF conducts over 1,067 experiments annually. James Shannon outlined Growth Book's advantages, including its native integration with Snowflake, which facilitates seamless data analysis and eliminates silos. They investigated Growth Book's pricing model, which charges by experiment count instead of traffic, making it potentially more manageable for MVF's high volume. As next steps, they planned a detailed product demonstration and discussions on tailored pricing to support MVF's decision-making regarding the impending Optimizely contract renewal.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B Testing, Experimentation, Data Warehouse, Snowflake Integration, Cost Optimization, Feature Flags",
+      "action_items": "\n**James Shannon**\nPrepare and share a competitive pricing proposal tailored for MVF's 1000+ yearly experiments, including consideration of unlimited experiment tiers and current Optimizely spend (32:31)\nSend calendar invite and confirm the follow-up meeting scheduled for Thursday 15:00-16:00 for a detailed product walkthrough and commercial discussion (34:32)\n\n**Billy Amps**\nConfirm attendance for the follow-up Growth Book product walkthrough and pricing discussion on Thursday afternoon (34:39)\n"
+    }
+  ]
+}

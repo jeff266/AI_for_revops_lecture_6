@@ -1,0 +1,19 @@
+{
+  "company": "Kick Off",
+  "slug": "kick_off",
+  "last_etl_date": "2026-08-01T13:58:06.005699",
+  "calls": [
+    {
+      "id": "01KVG8RCTXHR656KA12TB7562R",
+      "source": "fireflies",
+      "title": "GrowthBook x Legend | Next Steps (Kick Off)",
+      "date": "2026-06-22",
+      "duration_minutes": 38,
+      "summary": "The meeting outlined the onboarding strategy for implementing GrowthBook across three main pillars: Gaming, Sports, and Money. The Gaming pillar will employ shared projects for its multi-application environment, while the Sports and Money pillars will focus on distinct domains with dedicated engineering teams. Discussions included the implementation of SDKs across various platforms, primarily starting with web technologies, and highlighted the data integration process with Snowflake for analytics purposes. Notably, access management will be centralized through SSO and IDP integrations. The timeline anticipates experimentation completion by the end of July, with structured developer enablement programs planned to guide teams through SDK implementation and validation processes.",
+      "organizer": "chris@growthbook.io",
+      "participants": 8,
+      "keywords": "GrowthBook, SDK implementation, experimentation, onboarding, SSO integration, Snowflake",
+      "action_items": "\n**Kaito Queiroz**\nDiscuss SSO setup and centralized user access for GrowthBook with the IT team in the scheduled meeting tomorrow (34:56)\nProvide updates after the IT meeting regarding SSO and user access approach to inform further onboarding steps (36:13)\n\n**Liam Dando**\nOrganize and schedule the developer enablement call with Chris Sanders and relevant development teams, considering time zones (36:31)\n\n**Chris Sanders**\nSend out next steps and meeting summary following this kickoff meeting to all participants (37:48)\n\n**Devin L**\nLead scheduling and coordination of the developer onboarding call within the sports team and coordinate timing with Liam Dando (36:37)\n"
+    }
+  ]
+}

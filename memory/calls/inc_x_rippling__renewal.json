@@ -1,0 +1,19 @@
+{
+  "company": "GROWTHBOOK INC x Rippling | Renewal",
+  "slug": "inc_x_rippling__renewal",
+  "last_etl_date": "2026-08-01T13:58:06.047980",
+  "calls": [
+    {
+      "id": "01KHM28TKTHGRR9NGN1JE892TA",
+      "source": "fireflies",
+      "title": "GROWTHBOOK INC x Rippling | Renewal",
+      "date": "2026-02-18",
+      "duration_minutes": 35,
+      "summary": "The discussion clarified the role of Account Manager Karoline, who serves as the primary contact for contractual agreements and platform guidance, managing renewals and support escalation processes. Jennifer highlighted current HR practices focused on hiring and payroll accuracy using Rippling, expressing interest in its automation capabilities and further employee benefits options. The company plans to increase full-time employees and explore global remote hiring opportunities. Renewal pricing options were addressed, including a standard increase and multi-year agreements to mitigate costs. Billing discrepancies between payroll and HR platform counts were noted, with a commitment to resolve them, and the manual nature of performance review processes was discussed, with suggestions for leveraging Rippling's integrated tools.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 4,
+      "keywords": "Rippling, Renewal, PEO, Global Contractor, Workflow Automation, Subscription Billing",
+      "action_items": "\n**Karoline Johnson**\nEscalate future benefits issues like FSA delays to ensure timely resolution (11:42)\nReach out to Rippling support to clarify discrepancy between payroll seat counts and HR platform seat counts (29:37)\nCheck with global team about potential future support for visa-sponsored contractors currently on Deel (16:23)\nProvide Jennifer with multi-year agreement details if requested (26:17)\nAssist in exploring options to remove global contractors mid-term and issue refunds if applicable for YC clients (31:48)\n\n**Jennifer**\nReview renewal subscription details and consider multi-year contract options (26:17)\nInvestigate current contractor and employee seat counts and report any adjustments or questions (29:37)\nInform Karoline if any new questions arise related to subscription, billing, or Rippling product usage (34:39)\n"
+    }
+  ]
+}

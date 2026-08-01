@@ -1,0 +1,89 @@
+{
+  "company": "Growthbook <> Picnic",
+  "slug": "picnic",
+  "last_etl_date": "2026-08-01T13:58:05.969847",
+  "calls": [
+    {
+      "id": "6a1715a939991d000cff9022",
+      "source": "apollo",
+      "title": "Growthbook <> Picnic - Demo ",
+      "date": "2026-05-27",
+      "duration_minutes": 61,
+      "summary": "Daniel Wathne (GrowthBook sales) and Logan Bates (solutions engineering) demonstrated the GrowthBook experimentation and feature flagging platform to Picnic’s team (Jip, Brian, Xavi, Stefan). They addressed Picnic’s pain points: fragmented manual workflows, lack of an experimentation framework, no historical record of tests, and inability to monitor experiments in real time. Next steps: Picnic will debrief internally and follow up with Daniel to decide on a trial or further questions; Daniel",
+      "host": "Daniel Wathne",
+      "participants": 3
+    },
+    {
+      "id": "01KV17B0JG1GA9CEHH0BNNWV8Q",
+      "source": "fireflies",
+      "title": "Growthbook <> Picnic - POC Scoping/Kickoff",
+      "date": "2026-06-15",
+      "duration_minutes": 36,
+      "summary": "The meeting outlined a three-week proof of concept (POC) for integrating GrowthBook into Picnic's operations, beginning with integration tasks in the first week, followed by conducting an experiment in the second week and reviewing results in the final week. The goals include validating the connection between GrowthBook and Picnic's data infrastructure, enhancing the ease of running experiments, and considering feature flag evaluations later. Resource allocation will involve 1-2 weeks of effort from developers and analysts with minimal disruption to ongoing projects. The importance of security reviews was highlighted, with a checklist provided by GrowthBook to clarify requirements. Additionally, the POC will be free of charge, with deployment options discussed, favoring a cloud-managed setup.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "Growthbook, Proof of Concept, Snowflake Integration, Experimentation, Feature Flags, Security Review",
+      "action_items": "\n**Dan Wathne**\nPrepare and send initial PoC readiness checklist and tracker document by the next day for review (23:39)\nDevelop and share a more detailed pricing presentation for follow-up conversation (27:02)\nSchedule and hold a follow-up meeting on Thursday at 4:30pm to discuss checklist and experiment selection (31:59)\nSet up and send Slack channel invite for private communication with Picnic team, including capacity for Picnic to add additional members like Brian Chavi (33:24)\n\n**Picnic Team (Eric Sala, Steffen Bunzel)**\nConfirm internal security review requirements and timing necessary prior to PoC start (24:31)\nIdentify and define an experiment to test during PoC as well as one or two historical experiments for analysis (30:38)\nReview initial checklist sent by Growthbook and prepare inputs for Thursday’s follow-up meeting (32:45)\n\n**Logan Bates**\nAssist Dan with providing relevant tutorials and documentation for integration to Picnic (23:43)\nSupport technical feasibility discussions on backend SDK use and historical experiment analysis options (15:53)\n"
+    },
+    {
+      "id": "01KV8YH3KNEG9BPEWCCJZ04EWS",
+      "source": "fireflies",
+      "title": "Growthbook <> Picnic - POC Kickoff - Check In",
+      "date": "2026-06-18",
+      "duration_minutes": 16,
+      "summary": "The team outlined their plan to initiate the proof of concept (POC) starting in week 28, specifically July 6th, following a necessary security review and completion of current roadmap tasks. They will provide early access to SDK documentation and account provisioning to facilitate a soft start before the formal POC launch. A security review is in progress, with no current issues reported regarding vendor integration. The team plans to conduct several experiments, including one high-impact test and a new live test in the second week of the POC with established success metrics. They are also addressing team availability, noting upcoming time off and supporting asynchronous coordination, with European engineering resources available. A proactive approach to communication and documentation sharing is in place, fostering collaboration and project transparency.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "POC tracker, security review, Snowflake connection, SDK integration, experiment use cases, roadmap season",
+      "action_items": "\n**Dan Wathne**\nSend SDK integration documentation to the client Slack channel promptly to enable technical preparations (12:03)\nProvision account access early to allow client technical onboarding before the official POC start date (12:03)\nSchedule and hold a preparatory check-in meeting on Monday, June 29 to confirm account setup and readiness for the POC start (10:49)\nProvide certification documents like SOC 2 ahead of or during the client’s security/privacy review process to facilitate compliance (13:34)\n\n**Picnic NL-Amsterdam - 24 The chilled cell**\nFollow up internally on the security/privacy review process and share details with Dan Wathne’s team to facilitate compliance (13:16)\nPrepare for SDK integration by reviewing any shared documentation prior to the POC start to ensure readiness (11:36)\n\n**Logan Bates**\nCollaborate with Dan Wathne to support client technical questions and maintain asynchronous help during Dan’s conference absence (09:52)\n"
+    },
+    {
+      "id": "01KWQ9P16TPRFMG8YA2F0VSNBJ",
+      "source": "fireflies",
+      "title": "GrowthBook <> Picnic - POC Launch",
+      "date": "2026-07-06",
+      "duration_minutes": 0,
+      "summary": "The team confirmed their readiness to advance with the proof of concept (PoC), primarily focusing on backend SDK integration led by Danilo and a recipe search experiment comparing keyword versus hybrid approaches. Dan Wathne ensured account setup is underway, while communication channels were established for support during the PoC. Privacy concerns were addressed, confirming that no data would leave Picnic NL's systems, only aggregated data would be used, aligning with security requirements. A pricing overview meeting is scheduled to clarify commercial expectations, while clear support roles from Natasha and August were defined to ensure timely responses throughout the process. Overall, the discussion highlighted a collaborative effort towards a successful evaluation with structured processes in place.",
+      "organizer": "dan@growthbook.io",
+      "participants": 6,
+      "keywords": "POC Launch, SDK Integration, Hybrid Search Experiment, Data Privacy, Pricing Discussion, Account Setup",
+      "action_items": "\n**Tijana Ninkovic**\nConfirm whether the existing GrowthBook account from May will be used or if a new account should be created, and notify the GrowthBook team accordingly (07:30)\n\n**Danilo (engineer)**\nBegin backend SDK integration as planned for this week to support the POC experiments (08:55)\n\n**Logan Bates**\nProvide and share GrowthBook trust center and security documentation link in the Slack channel for Picnic's privacy and security team (11:10)\nSupport Picnic's privacy and security team in addressing their questions and concerns about data egress and privacy during the POC (10:10)\nCoordinate scheduling of a separate 15-minute call later this week to present a high-level pricing overview and clarify any pricing questions (13:15)\n\n**Dan Wathne**\nFollow up with Picnic regarding account provisioning after the account usage decision is confirmed (09:15)\nSchedule and lead the pricing overview call with Picnic later this week (13:20)\nContinue to provide technical and sales support to Picnic during the POC execution to ensure smooth progress (13:40)\n\n**Picnic security/privacy team**\nReview the shared GrowthBook trust center security documentation and provide feedback or request further clarifications if needed (12:30)\n"
+    },
+    {
+      "id": "01KXBWVS45NKNRAPHBR5JTGNGX",
+      "source": "fireflies",
+      "title": "Growthbook <> Picnic - Pricing Sync",
+      "date": "2026-07-14",
+      "duration_minutes": 0,
+      "summary": "The meeting focused on the nearly completed backend integration and experiment setup, which is currently hindered by the need for privacy confirmation and Snowflake connection. The internal data analysts are responsible for metric definitions, with emphasis on aligning metrics to avoid inconsistencies. Quality versus quantity in experimentation was deliberated, with a need for standardized methods to ensure actionable results. A pricing model was introduced, indicating an estimated cost for 50-100 seats, alongside a flexible proposal to start with fewer seats at a discounted rate. The teams agreed on the necessity of continuous collaboration and expert guidance to refine experimentation practices and develop a robust business case for scaling usage.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "experiment platform, Snowflake integration, Data Processing Agreement, pricing model, metric definition, experimentation quality",
+      "action_items": "\n**Steffen Bunzel**\nFollow up with Dirk Rinsema on the Data Processing Agreement (DPA) signing status and push for confirmation to unblock Snowflake connection (06:05)\nRequest the internal data analyst to define and configure metric SQL queries within Growth Book once Snowflake connection is established to ensure consistent metric definitions (08:37)\n\n**Dan Wathne**\nCheck with Natasha on DPA confirmation from Growth Book’s side and follow up for updates to expedite privacy agreement (06:45)\nShare details of the webinar featuring experimentation expert Ronnie Kohavi to deepen understanding of best practices in experimentation (22:35)\nPrepare and present an updated pricing/order form with a discounted platform fee near $100,000 and 50 seats to facilitate Picnic’s internal approval process (35:06)\nArrange an additional session with Growth Book’s senior data scientist, Luke Sonett, to discuss experimentation culture, best practices, and challenges to improve experiment setup quality and trustworthiness (38:34)\n\n**Unassigned**\nCoordinate between both parties to expedite privacy agreement finalization to unblock Snowflake connection and enable integration setup (07:05)\nSchedule a follow-up meeting on Monday at 5pm Europe time to review POC insights, business case progress, and pricing discussions (38:01)\n\n**Picnic team (Steffen Bunzel and Enrique Sala)**\nBuild an internal business case based on Proof of Concept (POC) results focusing on time saved and insights gained before proceeding with signing any order form (37:20)\n"
+    },
+    {
+      "id": "01KXVB8BSJRP6NGPBKKA89985G",
+      "source": "fireflies",
+      "title": "Growthbook <> Picnic - Touch Base",
+      "date": "2026-07-20",
+      "duration_minutes": 0,
+      "summary": "The meeting focused on the trial's progress, with the data processing agreement signed and the Snowflake connection pending to enable analysis of past experiments. Analysts are set to monitor the trial, which involves approximately eight active team members, while efforts to finalize contracting are projected for mid to late August. Additionally, Dan will create a collaborative business case template to quantify time savings and operational efficiencies. Support from the Europe team is confirmed, and a technical call with an expert is scheduled to address questions. Both parties emphasize a cautious and phased approach to adoption, focusing on long-term value and cultural fit rather than rushing decisions.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "Data Processing Agreement, Snowflake connection, trial setup, business case, experiment analysis, pricing negotiation",
+      "action_items": "\n**Steffen Bunzel**\nProvide questions or topics for the Wednesday call with Growthbook’s data science lead by tomorrow morning to ensure proper preparation (19:11)\nTry the Growthbook platform for the past test during the trial week to evaluate its capabilities and gather relevant data (18:44)\nWork on building the business case during the trial week, incorporating insights from the trial and internal data to support future contracting decisions (18:44)\n\n**Dan Wathne**\nCreate and share a Google Doc template for the business case to combine Growthbook’s customer insights with Picnic’s internal knowledge, facilitating collaborative development (14:54)\nShare the collected questions/topics from Steffen with Growthbook’s data science lead, Luke Sonnet, ahead of the scheduled Wednesday call to ensure effective preparation (19:14)\nProvide support and monitor progress during the trial week via team communication channels to ensure smooth execution and address any issues promptly (19:54)\n"
+    },
+    {
+      "id": "01KY07R1Q28MFJ3BQPXE4PFDSN",
+      "source": "fireflies",
+      "title": "Growthbook <> Picnic - Experimentation Best Practice Session",
+      "date": "2026-07-22",
+      "duration_minutes": 0,
+      "summary": "Participants discussed the importance of aligning experimentation goals with strategic metrics to enhance the quality of insights derived from experiments. Misaligned experiments currently lead to inconclusive results, wasting resources and causing decision fatigue. Stefan highlighted the need for standardized customer journey metrics to better understand customer behavior across stages. Luke emphasized the significance of coordinated team metrics to prevent cannibalization and facilitate faster learning. The discussion also covered offline and online experimentation, advocating for offline validation as a quality gate. GrowthBook's capabilities were reviewed, noting its support for metric standardization and the limitations in guiding decisions beyond basic outcomes. Overall, the conversation aimed to enhance organizational alignment and cultivate a culture that maximizes the value of experimentation.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "Experimentation, Metrics, Offline Evaluation, Online Testing, GrowthBook, Customer Journeys",
+      "action_items": "\n**Stefan Bunzel**\nReview the business case document and past experiments more deeply in preparation for the upcoming discussion (47:59)\nSchedule a follow-up call to discuss the business case and evaluate collected experimental data early next week (47:59)\n\n**Dan Wathne**\nFollow up with Stefan Bunzel to touch base on experimental data and the business case by end of week or early next week (47:59)\n\n**GrowthBook Team**\nProvide ongoing support and answer further questions from the Picnic team as they proceed with experiments and platform usage (47:15)\n"
+    }
+  ]
+}

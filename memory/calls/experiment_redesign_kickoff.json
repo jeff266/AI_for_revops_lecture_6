@@ -1,0 +1,19 @@
+{
+  "company": "Experiment Redesign Kickoff",
+  "slug": "experiment_redesign_kickoff",
+  "last_etl_date": "2026-08-01T13:58:06.038745",
+  "calls": [
+    {
+      "id": "01KNHT64JJ0X1GXRVRZR91EY8E",
+      "source": "fireflies",
+      "title": "Experiment Redesign Kickoff",
+      "date": "2026-04-06",
+      "duration_minutes": 93,
+      "summary": "The team focused on simplifying the variation editing experience by prioritizing single feature flag use cases over complex multi-flag scenarios to speed development and reduce UI confusion. They discussed the ongoing challenges with variation cards and split percentages, considering clearer visualization methods. Additionally, the importance of better UI discoverability for the deletion of variations was highlighted. Implementation and empty state improvements were addressed, aiming to collapse unused sections while clarifying CTAs for feature flags. The philosophy of iterative building was emphasized, prioritizing core flows and clear decision-making. Roles and responsibilities were assigned to avoid bottlenecks, ensuring that components ready for development would be acted upon promptly, while balancing compression and clarity in UI design.",
+      "organizer": "msamper@growthbook.io",
+      "participants": 5,
+      "keywords": "Experiment redesign, Variation editing, Feature flags, Prelaunch checklist, Implementation table, UI component breakup",
+      "action_items": "\n**Kari Kay**\nRedo the implementations add button to include separate clear CTAs for different implementation types, especially feature flags (32:34)\nInvestigate exact impacts of changing the single implementation modal to support editing variations without add variation step (01:02:26)\nRemove Michael’s name from the variation cards implementation until design decisions are locked (01:12:19)\nMaintain communication and align with engineering on UX changes to enable cohesive product updates (01:12:56)\nContinue to complete and finalize designs for components flagged as ready for implementation (01:24:05)\nSupport creation of punch lists or task tracking for managing ongoing work and ripple effects of changes (01:25:23)\n\n**Jeremy Dorn**\nTake ownership of editing variation names and descriptions modal (59:09)\nTake ownership of building analysis settings modal and funnel view visualizations (01:19:14)\nBuild the start experiment redesign modal and prelaunch checklist floater components (29:56)\nAssign and mark components as “ready to go” or “need decisions” in the shared Notion doc to streamline progress (51:35)\nJoin experiment standups this week for alignment and progress monitoring (01:32:28)\n\n**Luke Sonnet**\nContinue work on implementation table editing features with split percentage handling (02:10)\nBuild the analysis settings modal and assist with prelaunch checklist considerations (01:18:30)\nSupport other engineers with UX input and clarify design rationale when blockers arise (02:10)\nAssist with punch list creation, ensuring clarity on task prioritization (01:25:23)\n\n**Michael Samper**\nWork on variation cards component and adding variations in draft mode (52:54)\n"
+    }
+  ]
+}

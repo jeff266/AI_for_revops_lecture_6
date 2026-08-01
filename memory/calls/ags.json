@@ -1,0 +1,17 @@
+{
+  "company": "AGS and GrowthBook",
+  "slug": "ags",
+  "last_etl_date": "2026-08-01T13:58:05.973966",
+  "calls": [
+    {
+      "id": "69f8e1756afe49001de18306",
+      "source": "apollo",
+      "title": "AGS and GrowthBook",
+      "date": "2026-05-04",
+      "duration_minutes": 12,
+      "summary": "GrowthBook (Scott Keller, Logan Bates, Jake Stangl) and AGS (Gabe) discussed AGS's table products (shufflers, progressives) and the pain point of limited data from casino closed systems, which doesn't align with GrowthBook's digital experimentation tool. GrowthBook determined the product is not a fit for Gabe's hardware division. Next steps: GrowthBook will reach out to Zoe Eberling, head of AGS's digital/e-gaming division, as a potential match.",
+      "host": "Jake Stangl",
+      "participants": 4
+    }
+  ]
+}

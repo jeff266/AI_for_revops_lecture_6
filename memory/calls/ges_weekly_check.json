@@ -1,0 +1,19 @@
+{
+  "company": "Growthbook // GES Weekly Check-In",
+  "slug": "ges_weekly_check",
+  "last_etl_date": "2026-08-01T13:58:06.025615",
+  "calls": [
+    {
+      "id": "01KQ8EBZWF2Z05QVKNTBMD2PZQ",
+      "source": "fireflies",
+      "title": "Growthbook // GES Weekly Check-In",
+      "date": "2026-04-30",
+      "duration_minutes": 22,
+      "summary": "The team devised a comprehensive outreach plan incorporating a structured schedule for event invites, emphasizing coordinated messaging through various channels like SDR emails and LinkedIn. Visual branding efforts are underway, with Liz overseeing signage details and Ashley confirming the order for printed materials. They created a prioritized shortlist of events focusing on audience relevance and sponsorship potential, particularly for AI-related opportunities. Additionally, team availability was discussed to mitigate conflicts during scheduled events, while budgeting discussions are ongoing to determine financial commitments for different sponsorship levels.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "Event Marketing, Sponsorship Planning, Product Events, Booth Setup, Event Budgeting, ICP Targeting",
+      "action_items": "\n**Liz Fox**\nContinue coordination with Caitlin to finalize venue details, menu, and signage for the upcoming event (01:34)\nReach out to GES network for feedback on Product Led and Product Con events to determine best fit based on attendee profiles (16:20)\nInitiate contract discussions and secure commitments for Engineer’s Fair event at the Series A budget level if approved (17:40)\nGather more detailed information on booth options beyond kiosks and update event cost spreadsheet accordingly (20:30)\nKeep Ashley included and CC’d on event-related conversations moving forward for visibility and decision-making (17:50)\nFollow up on AWS and Google Next event timelines and planning, preparing for early registration next year (18:00)\n\n**Ashley Stirrup**\nReview and approve marketing email schedule and SDR outreach plans for upcoming weeks (00:18)\nVisit event venue tonight and document potential signage or layout ideas, then share photos and notes via Slack (02:46)\nConsult with Ryan regarding preference on Snowflake World Tour locations, likely Dallas or New York City (07:15)\nConfirm vacation dates and personal availability around proposed event dates such as AI4 and July 4th timeframe (06:10)\nSend AI World Fair event details to Growthbook’s CTO for input and decision making (18:30)\nUpdate shared Google Doc with estimated event costs and additional expenses as they become available (21:30)\nRespond to Liz with any new event recommendations or changes through Slack (19:00)\n\n**Kelsey Crowell**\nProvide updated re:Invent budget details and hotel pricing intelligence to team (08:40)\nAssist Liz in sourcing feedback on the product-focused events from GES event contacts (15:25)\n"
+    }
+  ]
+}

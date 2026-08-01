@@ -1,0 +1,19 @@
+{
+  "company": "Hello TV",
+  "slug": "hello_tv",
+  "last_etl_date": "2026-08-01T13:58:06.031687",
+  "calls": [
+    {
+      "id": "01KPANGXBSE4P74ADEPKW66FVZ",
+      "source": "fireflies",
+      "title": "Hello TV & Growthbook Commercial Proposal",
+      "date": "2026-04-22",
+      "duration_minutes": 31,
+      "summary": "Participants discussed the transition from VWO to Growth Book, highlighting budget constraints and management approval as significant barriers. Current expenditure on VWO is about €31,000 annually, while Growth Book’s Pro plan costs €2,600, though it has limits. Importance was placed on feature flag testing, which is currently limited in VWO, complicating experimentation. Randy proposed a phased approach, starting with Growth Book's Pro version to familiarize the team before a potential full switch when the VWO contract expires in September next year. The goal is to leverage Growth Book’s advantages while ensuring management buy-in, which might require demonstrating its effectiveness through a proof of concept.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature Flagging, Experimentation, Growth Book, VWO, Budget Constraints, ROI",
+      "action_items": "\n**Randy Sewpersad**\nDiscuss Growth Book Pro and Enterprise options internally, including feature needs and budget constraints (23:50)\nCoordinate with Joyce and technical team to plan integration kickoff upon approval (25:32)\nProvide update on internal decision and scheduling before the next meeting if possible (29:00)\nSchedule next follow-up meeting approximately on May 20th (28:51)\n\n**James Shannon**\nProvide Randy with a detailed Growth Book and VWO feature comparison and indicative ROI estimates (09:59)\nPrepare contract options with flexible terms, including delayed invoicing and conditional start clauses (26:47)\nFollow up with Randy for a check-in meeting on or around May 20th (28:16)\nOffer to arrange a proof of concept pilot showing conversion uplift within four weeks, if requested by Randy’s team (30:00)\n"
+    }
+  ]
+}

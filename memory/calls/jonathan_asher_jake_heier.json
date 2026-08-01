@@ -1,0 +1,17 @@
+{
+  "company": "Jonathan Asher and Jake Heier",
+  "slug": "jonathan_asher_jake_heier",
+  "last_etl_date": "2026-08-01T13:58:05.976568",
+  "calls": [
+    {
+      "id": "69cecb19b7fb7b001917fc6f",
+      "source": "apollo",
+      "title": "Jonathan Asher and Jake Heier",
+      "date": "2026-04-02",
+      "duration_minutes": 31,
+      "summary": "Jake Heier (account team) and Logan Bates (solutions engineer) from Growthbook discussed sandbox setup with dummy data, integrations with Segment and Mixpanel, advanced experimentation features (Bayesian, multi-armed bandits, CUPED), and migrating from",
+      "host": "Jake Heier",
+      "participants": 5
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Alyssa Nicoll",
+  "slug": "alyssa_nicoll",
+  "last_etl_date": "2026-08-01T13:58:06.017842",
+  "calls": [
+    {
+      "id": "01KSHX2J411AQ6ZYY1JR09J6RK",
+      "source": "fireflies",
+      "title": "30 min with Scott (Alyssa Nicoll)",
+      "date": "2026-05-26",
+      "duration_minutes": 42,
+      "summary": "The meeting discussed the significant evolution of the DevRel role at Growth Book, transitioning to a multi-marketer position addressing enterprise sales and community engagement. With an emphasis on integrating core DevRel tasks within a broader organizational framework, challenges were identified in effectively engaging diverse user communities. The discussion highlighted the importance of creating user-generated content and maintaining developer trust while navigating complex product needs, particularly in feature flagging, experimentation, and analytics. Plans for a managed ClickHouse warehouse were outlined to enhance onboarding processes, aligning with Growth Book's focus on product-led growth while balancing existing enterprise customer requirements.",
+      "organizer": "scott@growthbook.io",
+      "participants": 3,
+      "keywords": "Developer Advocate, Product Marketing, Feature Flagging, Community Engagement, Managed Data Warehouse, Developer Tools",
+      "action_items": "\n**Alyssa Nicoll**\nReview Scott’s shared fintech dashboard project portfolio link and evaluate live app, code, and marketing video materials (11:55)\n\n**Scott Bailey**\nProvide Alyssa with portfolio link for the fintech dashboard project and any relevant Growth Book onboarding or product marketing materials (11:55)\nSend follow-up communication regarding next steps after this discussion through Ashley (40:52)\n"
+    }
+  ]
+}

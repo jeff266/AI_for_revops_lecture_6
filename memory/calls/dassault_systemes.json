@@ -1,0 +1,19 @@
+{
+  "company": "Dassault Systemes",
+  "slug": "dassault_systemes",
+  "last_etl_date": "2026-08-01T13:58:06.003978",
+  "calls": [
+    {
+      "id": "01KVTDD3E86HJKTHT63X2WZKJ4",
+      "source": "fireflies",
+      "title": "Dassault Systemes & GrowthBook Demo",
+      "date": "2026-06-25",
+      "duration_minutes": 69,
+      "summary": "The GrowthBook platform was showcased as a strong tool for personalization and efficient experimentation for marketing and engineering teams. It offers comprehensive features like feature flagging, metric tracking, and seamless integration with data warehouses like BigQuery. The platform supports non-technical users with an AI-driven interface and Visual Editor for marketers, while engineers can leverage code-based experimentation. GrowthBook enhances user experience through advanced personalization options, utilizing JSON payloads and user attributes from CDPs. The meeting highlighted the importance of data residency, transparency in analytics, and a timeline for a production proof of concept by year-end, emphasizing collaboration among key stakeholders.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Personalization, BigQuery integration, feature flags, experimentation, marketing automation, AI assistant",
+      "action_items": "\n**Nicolas Coze**\nOrganize internal meeting with Benoit and Olivier to gather feedback on GrowthBook demo and BigQuery integration (59:33)\nProvide clarification on Treasure Data CDP integration specifics with GrowthBook (19:03)\nConfirm whether Treasure Data writes data to BigQuery or if GrowthBook needs to ingest otherwise (18:40)\n\n**James Shannon**\nShare meeting recording, presentation, and pricing range information with Dassault team post-call (01:00:33)\nSchedule a 15-minute follow-up meeting with Dassault in approximately two weeks to discuss evaluation status and next steps (01:00:49)\nProvide commercial figures and detailed pricing after further discussion as requested (01:01:14)\n\n**Logan Bates**\nPrepare technical clarifications about GrowthBook’s BigQuery integration and personalization capabilities if requested for follow-up (21:27)\n"
+    }
+  ]
+}

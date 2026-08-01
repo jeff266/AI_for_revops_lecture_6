@@ -1,0 +1,19 @@
+{
+  "company": "Ashley Stirrup and Matthew Hunt",
+  "slug": "ashley_stirrup_matthew_hunt",
+  "last_etl_date": "2026-08-01T13:58:06.021924",
+  "calls": [
+    {
+      "id": "01KQZBN8M1K059K4ZZZXG6F3Y1",
+      "source": "fireflies",
+      "title": "Ashley Stirrup and Matthew Hunt",
+      "date": "2026-05-08",
+      "duration_minutes": 51,
+      "summary": "The discussion emphasized enhancing LinkedIn advertising efficacy by recommending a minimum budget of $100 per thought leadership post for better retargeting impact, while refining audience segmentation to combine ABM data and job titles for precision. Additionally, simplifying conversion tracking to focus on demo-related actions was stressed to ensure clearer ROI insights. Matthew proposed a substantial increase in monthly ad spend to $30,000 to maximize pipeline influence and further integrate events into the marketing strategy. Emphasis was also placed on executing tailored pre- and post-event campaigns for eight planned events within the year and adapting content strategy to include thought leadership messaging segmented by buyer roles, all aimed at improving engagement.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "LinkedIn Ads, Retargeting, ABM, Thought Leadership, Pipeline Attribution, Event Marketing",
+      "action_items": "\n**Ashley Stirrup**\nReview and reactivate archived retargeting lists in LinkedIn Campaign Manager and ensure they are properly utilized to improve campaign effectiveness (07:53)\nAdjust conversion tracking setup to eliminate non-demo page views and focus strictly on demo-related conversions to improve measurement accuracy (11:35)\nImplement at least a $100 budget boost behind every thought leadership LinkedIn post targeting the refined retargeting audience to increase engagement and pipeline impact (03:57)\nCollaborate with media/contact team to segment target audiences by job function and seniority and develop tailored creative messaging to improve engagement and conversion rates (35:00)\nCreate and test hyper-targeted company-specific ad creatives for named accounts (e.g., Robinhood, Dropbox) to increase relevance and response rates (41:44)\nCoordinate multi-phase event marketing campaigns with pre-event outreach, attendance engagement, and post-event follow-up ads and offers to maximize offline meetings and deal acceleration (24:30)\nCommunicate with Graham's team and Dave to better integrate content generation with sponsored advertising spend and strategy for cohesive marketing efforts (45:08)\n\n**Matthew Hunt**\nProvide Ashley with meeting notes and best practices summary to support communication with current LinkedIn advertising resource and enhance campaign management (28:00)\nContinue training and onboarding Biz, the new paid media strategist, to support enhanced LinkedIn paid media efforts and campaign optimization (46:40)\nOffer ongoing strategic consulting at $1,500 per engagement to support campaign optimization and budget ramping as company readiness allows (49:45)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Product analytics",
+  "slug": "product_analytics",
+  "last_etl_date": "2026-08-01T13:58:06.031552",
+  "calls": [
+    {
+      "id": "01KPRRK04GVZV11XEN3DBMRKVK",
+      "source": "fireflies",
+      "title": "Product analytics - AI Analyst walkthrough",
+      "date": "2026-04-22",
+      "duration_minutes": 26,
+      "summary": "The meeting examined the AI chat feature's effectiveness, noting its strong performance with specific, metric-based queries while highlighting struggles with vague prompts. Omar highlighted the need to refine the AI for broader usability, especially for less technical users. The team discussed the importance of a realistic demo environment, gathering synthetic data to enhance presentations. Plans were made for an imminent product release, with an emphasis on ensuring marketing and technical materials are ready in time. Limitations were noted regarding data access, with the AI only querying pre-defined metrics, which affects diverse user experiences. Overall, creating tailored user guidance and improving collaboration across teams was emphasized to facilitate success upon launch.",
+      "organizer": "scott@growthbook.io",
+      "participants": 4,
+      "keywords": "AI analyst, product analytics, Growth Book, synthetic data, demo environment, user experience",
+      "action_items": "\n**Omar Elshaikh**\nStart local server and share screen to demonstrate AI analyst capabilities and testing with sample and real data (02:11)\nTest and load sample data sets; make tweaks to improve AI search and charting capabilities (24:50)\nCollaborate with Jeremy regarding data and engineering input on demo environment setup and AI feature refinements (24:50)\n\n**Scott Bailey**\nShare examples of AI failures and challenges experienced to inform improvements (13:07)\nFollow up on Growth Lab setup and share Notion documentation and Docker compose configurations with the team (20:39)\nExperiment with Growth Lab generated data to identify use cases and happy paths for demo purposes (21:30)\nCoordinate with sales and pre-sales teams on establishing standardized sandbox/demo environments for early demos and marketing collateral (13:55)\nSchedule and lead follow-up meeting early next week to evaluate progress on demo data setup, AI usability, and gather feedback from Jeremy and engineering team (24:38)\n\n**Elyse Fox**\nProvide context on marketing and blog angle emphasizing AI analyst as an accessible alternative to human data analysts (22:37)\nParticipate in follow-up meeting and help frame user success messaging and content creation materials (25:11)\n"
+    }
+  ]
+}

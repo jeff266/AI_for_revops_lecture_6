@@ -1,0 +1,19 @@
+{
+  "company": "AJ Long and Ashley Stirrup",
+  "slug": "aj_long_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.023232",
+  "calls": [
+    {
+      "id": "01KQWS8MRA9QE00SX7J6Q4WPKW",
+      "source": "fireflies",
+      "title": "AJ Long and Ashley Stirrup",
+      "date": "2026-05-07",
+      "duration_minutes": 34,
+      "summary": "Prize Picks' meeting outlined their centralized product analytics and experimentation strategy, emphasizing the importance of a dedicated analytics team that drives data-informed product decisions while maintaining domain expertise. Over 200 experiments are planned for the year, focusing on learning and innovation, with a current win rate of 35%, down from 60% due to a shift toward riskier tests. AJ Long highlighted the significance of measuring value through avoided losses from unsuccessful features and insights gained from user behavior, such as the impact of early payout and wallet experience on engagement. Effective communication in external messaging and a disciplined experimentation culture were also emphasized as key components of their operational strategy.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Product Analytics, Experimentation, User Behavior, Centralized Analytics Team, Early Payout Feature, Experiment Iteration",
+      "action_items": "\n**AJ Long**\nProvide podcast communication guidelines and restricted language notes, including avoidance of the word 'bets' (27:44)\nSend additional notes or verbiage for podcast preparation referencing brand and regulatory considerations (27:44)\nConfirm podcast recording time by selecting from the booking link shared by Ashley (26:43)\n\n**Ashley Stirrup**\nShare Google Doc summary of discussion topics with AJ Long for podcast preparation (28:09)\nCoordinate scheduling of podcast recording for the week of May 18th, confirmed for May 20th at 5:30 pm (26:11)\n"
+    }
+  ]
+}

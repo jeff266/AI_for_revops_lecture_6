@@ -1,0 +1,29 @@
+{
+  "company": "Oda + GrowthBook",
+  "slug": "oda",
+  "last_etl_date": "2026-08-01T13:58:05.977707",
+  "calls": [
+    {
+      "id": "69c29eee993f7d0011e35f07",
+      "source": "apollo",
+      "title": "Oda + GrowthBook",
+      "date": "2026-03-24",
+      "duration_minutes": 25,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on discussed topics (product, features, pain points), key participants and roles, and next steps/action items.\n\nKey participants: Fredrik Jørgensen (customer, Oda), Christian Liebenow (GrowthBook sales rep). Product: GrowthBook (experimentation platform, self-hosted enterprise version). Discussed features: self-hosting, sticky bucketing, pre-exposure analysis, AI capabilities, product analytics. Pain points: Oda is small (25 people, 60 experiments) and cost-sensitive; they want enterprise features but without high platform fee, support, SLAs; they are on tight budget and can't afford $50k/year platform fee (discounted from $100k). Christian proposes $50k/year platform fee + user fees, with 10% discount for case study/press release. Fredrik says CTO will reject, hoping for no platform fee (essentially pro version). Next steps: Christian will share deck via email; Fredrik will discuss with CTO; Christian may check if further discount possible but says $50k is minimum. Action items: Fredrik to talk to CTO, Christian to send deck and follow up via email.\n\nSummary: Christian Liebenow (GrowthBook sales) presented an enterprise proposal to Fredrik Jørgensen (Oda customer), highlighting self-hosted experimentation features like sticky bucketing and AI capabilities. Fredrik,",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
+    {
+      "id": "01KMBDS04DFY7ED2GZ6ZQZ4N2R",
+      "source": "fireflies",
+      "title": "Oda + GrowthBook",
+      "date": "2026-03-24",
+      "duration_minutes": 26,
+      "summary": "The meeting detailed a tailored enterprise proposal from GrowthBook to ODA, proposing an annual platform fee starting at $100,000, with a discount of $50,000 due to budget limitations. User fees were established at $1,250 for authorized users and $500 for read-only users. A commitment to a case study could yield an additional discount, pending satisfactory outcomes. ODA's CTO’s budget constraints were a significant hurdle for acceptance. Additionally, GrowthBook highlighted key product features, including self-hosting capabilities and robust support models, while confirming ODA's preference for experimentation features, leading to a proposed partnership aimed for conclusion by April 30.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, ODA, Enterprise Proposal, Self-Hosting, Pricing Model, Experimentation",
+      "action_items": "\n**Christian Liebenow**\nSend Fredrik the detailed slides and proposal deck shortly after the meeting (23:10)\nProvide a detailed explanation paragraph on GrowthBook’s data storage and porting specifics (03:04)\nFollow up via email to continue discussions and await internal feedback on budget constraints (25:23)\n\n**Fredrik**\nShare the proposal slides and pricing details with the CTO for review and decision-making on budget and adoption (21:33)\nExplore the possibility of proceeding without platform fee and support commitments with the CTO (19:20)\nConfirm and commit to participating in a case study and press release collaboration if GrowthBook proves successful (22:10)\nProvide Christian with feedback and next steps after the internal CTO discussion (25:23)\n"
+    }
+  ]
+}

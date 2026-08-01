@@ -1,0 +1,17 @@
+{
+  "company": "Rakuten",
+  "slug": "rakuten",
+  "last_etl_date": "2026-08-01T13:58:05.981661",
+  "calls": [
+    {
+      "id": "699e3fac13b5c400193ff7c1",
+      "source": "apollo",
+      "title": "Rakuten + GrowthBook",
+      "date": "2026-02-25",
+      "duration_minutes": 17,
+      "summary": "Christian Liebenow (Rakuten) explained that they selected Statsig over GrowthBook due to Statsig's proactive POC support, custom feature development (including Roku tracker), and advanced statistical features like \"layers\" for mutually exclusive experiments. Nour Shreim (GrowthBook) listened to feedback on these gaps and learned about Rakuten's evaluations of Eppo and Amplitude. No specific next steps were agreed upon, though Christian left the door open for future collaboration.",
+      "host": "Christian Liebenow",
+      "participants": 2
+    }
+  ]
+}

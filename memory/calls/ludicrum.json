@@ -1,0 +1,19 @@
+{
+  "company": "Ludicrum",
+  "slug": "ludicrum",
+  "last_etl_date": "2026-08-01T13:58:06.020646",
+  "calls": [
+    {
+      "id": "01KRR9DY53G0X48BY14PKWPSDK",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Ludicrum",
+      "date": "2026-05-18",
+      "duration_minutes": 15,
+      "summary": "During the meeting, James presented GrowthBook’s features, highlighting its adaptability for the iGaming sector and the integration needs for Marco's company, which operates solely on browser-based platforms. The integration involves a front-end SDK setup and data warehouse connection, ensuring real-time experiment tracking while maintaining data security within the customer’s environment. Marco expressed the importance of validating their internal data warehouse setup before proceeding. The discussion also covered GrowthBook's pricing model, which charges based on experiment counts, making it predictable and budget-friendly. Finally, there was an emphasis on the alignment of technical capabilities with Marco’s operational model and the next steps involving further internal evaluations and sharing of technical resources.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Feature flags, Data warehouse integration, SDK initialization, iGaming industry, Pricing model, Experimentation platform",
+      "action_items": "\n**Marko Maric**\nConfirm current data warehouse type and integration requirements internally to ensure compatibility with GrowthBook (08:35)\nReview GrowthBook demo recording and slides sent by James to understand product capabilities and integration process (14:29)\nContact James with any follow-up questions or clarifications after internal evaluation of GrowthBook and data warehouse setup (14:37)\n\n**James Shannon**\nProvide demo recording and slides to Marko for internal review and evaluation (14:29)\nAwait follow-up from Marko after internal clarifications to continue discussion and potential integration planning (14:48)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Katherine Yeung and August Allard",
+  "slug": "katherine_yeung_august_allard",
+  "last_etl_date": "2026-08-01T13:58:06.030894",
+  "calls": [
+    {
+      "id": "01KPMS8PT527M2KQZMS2J4P8GJ",
+      "source": "fireflies",
+      "title": "Katherine Yeung and August Allard",
+      "date": "2026-04-23",
+      "duration_minutes": 42,
+      "summary": "The session discussed a structured approach to diagnosing customer issues related to Growth Book integration, emphasizing thorough data collection before escalation. Key strategies included verifying API key formats, clarifying API host configurations for cloud versus self-hosted setups, and investigating data flow discrepancies. Katherine, a support personnel, collaborated with colleague Natasha for technical accuracy and utilized AI and documentation for efficient troubleshooting. The meeting also addressed the hiring process, noting a resumption in candidate interviews and an emphasis on a strong interest in the Growth Book role, showcasing a supportive remote team dynamic and effective communication across time zones.",
+      "organizer": "august@growthbook.io",
+      "participants": 5,
+      "keywords": "Growth Book, API Key, GA4 Integration, Support Troubleshooting, Remote Work, Time Zone Challenges",
+      "action_items": "\n**Katherine Yeung**\nAdvise customer to replace the incorrect client API key with the correct one sourced from the Growth Book dashboard/UI and retry the integration (13:31)\nSuggest customer update the API host string based on whether Growth Book is cloud-hosted or self-hosted, then retry the integration (27:44)\nRequest the customer to share the exact Growth Book query used for metrics to further diagnose the integration issue (29:09)\nCollaborate with Natasha to confirm and clarify details about the API key and API host to ensure accurate troubleshooting guidance (12:08)\n\n**August Allard**\nProvide customer's detailed answers to initial troubleshooting questions to assist support efforts (03:08)\nReplace client key and API host string as directed by support, test the integration results, and provide feedback on success or errors (18:18)\nParticipate in interviews and coordinate next steps in the hiring process as updated during the meeting (39:47)\n\n**Natasha Lee**\nAdvise on validity of client API key format and correctness of API host string to support troubleshooting efforts (13:15)\nProvide colleague guidance and support to Katherine about Growth Book API and SDK details to facilitate effective troubleshooting (19:53)\n\n**Kevin Chant**\nClarify expectations about GA4 and Growth Book integration correctness, assuming GA4 is properly set up by the customer (06:36)\nExplain Growth Book documentation locations for API host and SDK keys to assist customer and support team in configuration (27:44)\n"
+    }
+  ]
+}

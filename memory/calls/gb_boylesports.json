@@ -1,0 +1,19 @@
+{
+  "company": "GB / BoyleSports",
+  "slug": "gb_boylesports",
+  "last_etl_date": "2026-08-01T13:58:06.038575",
+  "calls": [
+    {
+      "id": "01KN4XPCWEGRK5WKMEE6XFZ9SS",
+      "source": "fireflies",
+      "title": "GB / BoyleSports: Experimentation Fundamentals",
+      "date": "2026-04-07",
+      "duration_minutes": 0,
+      "summary": "The session focused on embedding experimentation within the product lifecycle to improve decision-making and ensure data-driven practices. Key points included establishing causality through random user assignments, which helps measure feature impact while reducing bias. Emphasizing the integration of experimentation from ideation to MVP measurement, the discussion highlighted the importance of continuous learning and iterative testing. Participants reviewed experiment design prioritization strategies, recommending frameworks like impact vs effort to maximize resource returns. They also underscored the need for guardrail metrics to prevent negative impacts on user satisfaction. Finally, plans for a homepage optimization workshop were announced, aiming to create impactful test ideas before implementing personalization.",
+      "organizer": "cris@growthbook.io",
+      "participants": 20,
+      "keywords": "Experimentation, Data-Driven Culture, Product Development, A/B Testing, Prioritization Framework, Multi-Armed Bandit",
+      "action_items": "\n**Cris Dizon**\nShare presentation slides covering experimentation fundamentals and framework with attendees (47:20)\nSend Growth Book sample size/power calculation tool links for experiment planning (49:33)\nCoordinate follow-up session after Boyle Sports homepage workshop to provide further guidance on experiment design and rollout (50:46)\nRemain active in Slack channel to respond to ongoing experimentation questions from Boyle Sports team (51:20)\n\n**Joe Taylor**\nProvide Growth Book team with homepage workshop insights and experiment ideas to enable tailored support and planning (48:37)\n"
+    }
+  ]
+}

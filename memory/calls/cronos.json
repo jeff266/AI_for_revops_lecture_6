@@ -1,0 +1,19 @@
+{
+  "company": "Cronos",
+  "slug": "cronos",
+  "last_etl_date": "2026-08-01T13:58:06.006695",
+  "calls": [
+    {
+      "id": "01KV8Y5464P1TBKB9D5NF0D7TG",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Cronos",
+      "date": "2026-06-17",
+      "duration_minutes": 30,
+      "summary": "The meeting detailed the Kronos app, a mobile-first financial platform aimed at Gen Z for buying tokenized assets on-chain, prioritizing user self-custody. The product team, consisting of eight product managers, seeks efficient tools for experimentation and data analysis through Growthbook, which will facilitate A/B testing and feature flagging. Data management, privacy options, and integration of Growthbook with Kronos’s current data warehouse were discussed, emphasizing flexibility and real-time metric adjustments. Pricing strategies highlighted an enterprise plan costing $100 per user and a pro plan at $40, with strong emphasis on security features and governance requirements. The adoption strategy includes using the pro plan initially focused on product managers to validate usage before considering an upgrade to enterprise features.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, AB Testing, Enterprise Plan, SSO, Data Warehouse, Cronos",
+      "action_items": "\n**Dan Wathne**\nSend a follow-up email explaining the importance and implications of Single Sign-On (SSO) for financial services to assist Emily's internal communication with her team and legal department (26:38)\nProvide a slide or document outlining the differences between GrowthBook Pro and Enterprise plans for Emily to share with product managers and legal stakeholders (22:53)\n\n**Emily Sit**\nReview internal requirements including SSO needs, budget constraints, and contract negotiation preferences, then communicate priorities back to Dan after receiving the follow-up email (26:38)\nProceed to subscribe or pilot the GrowthBook Pro plan for approximately six months focusing on product managers’ adoption and usage before potentially upgrading to the Enterprise plan (27:44)\n"
+    }
+  ]
+}

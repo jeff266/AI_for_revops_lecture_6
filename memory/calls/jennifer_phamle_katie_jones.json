@@ -1,0 +1,43 @@
+{
+  "company": "Jennifer Pham-Le and Katie Jones",
+  "slug": "jennifer_phamle_katie_jones",
+  "last_etl_date": "2026-08-01T13:58:05.984388",
+  "calls": [
+    {
+      "id": "01KX1A08525YXF4JTKXFMSXFNQ",
+      "source": "fireflies",
+      "title": "Jennifer Pham-Le and Katie Jones",
+      "date": "2026-07-09",
+      "duration_minutes": 0,
+      "summary": "The meeting focused on completing the resubmission of a hiring request after necessary assessment updates, which led to HR approval and contract issuance. Jennifer and Katie discussed the Labor Portage and Consultant models, weighing their compliance and security implications. The Labor Portage model is advised for legality, featuring a 36-month maximum contract with a cooling-off period, while the Consultant model offers more flexibility but less client control. Contract termination procedures were reviewed, highlighting severance responsibilities if the company initiates termination after six months. Additionally, employee onboarding support was emphasized, with Katie providing resources to streamline the hiring process and remain available for assistance.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 2,
+      "keywords": "Labor Portage, Consultancy model, French employment law, hiring assessment, contract termination, Rippling EOR",
+      "action_items": "\n**Katie Jones**\nCopy and paste hiring assessment change details in Zoom chat for Jennifer to incorporate into the hire request form (01:19)\nSend detailed help center articles comparing Labor Portage and Consultant models to Jennifer via Zoom chat and follow-up email (14:24)\nObtain and forward detailed HR/legal information on termination and options after the 36-month maximum Labor Portage contract period (22:08)\nProvide employee welcome guides for both Labor Portage and Consultant models to Jennifer (29:24)\nAct as Jennifer’s point of contact throughout the hiring and onboarding process until the employee is paid, offering ongoing support (30:13)\n\n**Jennifer Pham-Le**\nEdit the requested hire form in Rippling system, updating employee duties and qualifications as per assessment changes (03:22)\nSubmit updated hire request for HR approval after finalizing all required fields and documents (28:17)\nCoordinate internally to handle any employee questions on the offer, directing them either to Katie or employee self-service resources (25:02)\n"
+    },
+    {
+      "id": "01KXNWQZESVVCBZS2PTCK3BDYD",
+      "source": "fireflies",
+      "title": "Jennifer Pham-Le and Katie Jones",
+      "date": "2026-07-17",
+      "duration_minutes": 36,
+      "summary": "The discussion focused on addressing confusion related to the visibility of variable commissions in employee contracts, specifically how they appear in offer letters. Jennifer and Katie highlighted that while the commission is indicated in employee profiles, it is not clearly documented in offer letters, leading to employee inquiries. They discussed the differences between French EOR contracts—which often include variable pay in separate addendums—and UK contracts where it is bundled. Additionally, the meeting provided insights on the Labor Portage model, emphasizing its 36-month limitation, severance pay, and conditions for extending contracts. Furthermore, the implications of the Consultant model were reviewed, which offers more flexibility but incurs higher termination costs. Legal considerations regarding contract amendments were addressed, and steps for improving contract clarity were outlined.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 2,
+      "keywords": "labor portage, consultant model, variable commission, Rippling contract, severance, employment termination",
+      "action_items": "\n**Jennifer Pham-Le**\nSend employee’s questions about labor portage model and contract clauses to Katie for clarification and response (14:03)\nPerform a test hire or download consultative model contract from Rippling to evaluate alternative offer letter without impacting current workflow (30:58)\nDiscuss internally with HR and relevant stakeholders regarding hiring model choice between Labor Portage and Consultant (22:11)\n\n**Katie Jones**\nVerify where variable commission details appear in French labor portage contracts and confirm if separate addendum is used; inform Jennifer accordingly (07:08)\nRespond to employee contract questions on Jennifer’s behalf and clarify contract language, as Rippling cannot amend contracts (13:37)\nProvide information on severance calculation and termination processes for both Labor Portage and Consultant models, including legal and financial implications (24:31)\nCoordinate with global payroll account executive to gather additional insights on contract options and termination specifics to support Jennifer (34:45)\nAssist Jennifer in navigating Rippling system processes for editing or downloading offer letters/contracts as needed (31:54)\n"
+    },
+    {
+      "id": "01KYJ8NJ29E8N8TVRNXJYS2RSC",
+      "source": "fireflies",
+      "title": "Jennifer Pham-Le and Katie Jones",
+      "date": "2026-07-28",
+      "duration_minutes": 30,
+      "summary": "During the meeting, major topics included the finalization of employee agreements, specifically for new hire Remy, with equity and commission plans being incorporated into his profile. It was confirmed that Remy’s earliest start date is August 3rd. The discussion also covered the labor portage model, under which consultants like Remy must find new clients within one month post-termination, while being paid from accumulated financial reserves. Insights about PTO policies revealed Spain offers flexible PTO arrangements with potential negative leave, while France's policy is capped with no negative balances permitted. Additionally, payroll processes and notifications for employees, especially for those starting on August 10th, were reviewed, emphasizing a seamless onboarding experience and thorough use of the Rippling HR system.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 2,
+      "keywords": "labor portage, PTO policies, employee onboarding, termination clauses, equity plan, Rippling platform",
+      "action_items": "\n**Jennifer Pham-Le**\nSend Remy’s equity and commission plans as documents in Rippling and notify him about accessing them (06:05)\nInform hiring manager about capped PTO policies and labor portage rules, including no unlimited PTO in France (28:43)\nCoordinate with HR and submit further questions about termination scenarios especially post 36-month contract (12:31)\nSchedule follow-up meeting with Katie Jones if needed to discuss remaining questions (29:46)\n\n**Katie Jones**\nSend detailed documentation and explanation of the labor portage contract clauses, including financial reserves and termination conditions (03:04)\nConfirm PTO payout and termination fee rules for France labor portage contracts, clarify mutual separation vs. voluntary leave scenarios (04:29)\nAssist Jennifer with walkthrough of Rippling PTO policy configurations and provide guidance on flexible PTO setup for Spain and France (17:22)\nRespond to Jennifer’s submitted HR support case and coordinate direct contact once out of implementation phase (12:48)\nProvide follow-up support and join a future meeting if further clarifications are required (29:42)\n"
+    }
+  ]
+}

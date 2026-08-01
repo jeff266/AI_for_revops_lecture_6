@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> NovaKid",
+  "slug": "novakid",
+  "last_etl_date": "2026-08-01T13:58:05.983652",
+  "calls": [
+    {
+      "id": "69821fe238715c00111656f3",
+      "source": "apollo",
+      "title": "Growthbook <> NovaKid - Intro ",
+      "date": "2026-02-03",
+      "duration_minutes": 15,
+      "summary": "NovaKid (Vyacheslav Ryabukhin and Michael Lisovski) discussed their need for advanced GrowthBook features like prerequisite feature dependencies and sticky buckets, while preferring",
+      "host": "Daniel Wathne",
+      "participants": 4
+    }
+  ]
+}

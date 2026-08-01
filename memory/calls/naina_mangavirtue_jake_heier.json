@@ -1,0 +1,19 @@
+{
+  "company": "Naina Manga-Virtue and Jake Heier",
+  "slug": "naina_mangavirtue_jake_heier",
+  "last_etl_date": "2026-08-01T13:58:06.026997",
+  "calls": [
+    {
+      "id": "01KQAY5YN05NG7RXTXEDFF9FP0",
+      "source": "fireflies",
+      "title": "Naina Manga-Virtue and Jake Heier",
+      "date": "2026-04-28",
+      "duration_minutes": 45,
+      "summary": "The team confirmed the technical setup for running AA tests with Growth Book and Snowflake, ensuring a 50/50 client ID split for exposure tracking. Adjustments were identified for data source connections, with Ruby committed to fixing misconfigured table names. The decision was made to switch from anonymous client IDs to internal member IDs to improve logged-in user metrics. Additionally, a test metric was defined by Ruby to measure the impact of map-based searches, with filtering for residential property categories. The team agreed to begin with AA tests before transitioning to AB tests, emphasizing the importance of data integrity. Follow-up actions were established to finalize data sources and schedule meetings for progress review.",
+      "organizer": "jake@growthbook.io",
+      "participants": 10,
+      "keywords": "Growth Book, Snowflake, Experiment Setup, AA Test, Metric Definition, User Bucketing",
+      "action_items": "\n**Anna Walser**\nSpin up a test hack to run the experiment for a small group of users to generate initial exposure data (38:09)\nPrepare to test AA to AB transition by toggling experiment flags as needed and report results (38:20)\n\n**Ruby Jang**\nUpdate Snowflake data source configuration to fix table naming issues and rename User ID to Member ID for Growth Book compatibility (21:56)\nFinish setting up fact tables and define initial experiment metrics, including filters for map-based searches and category IDs (27:21)\nConnect corrected exposure data with metric fact tables and verify data flow into Growth Book (36:18)\n\n**Bach Two**\nCoordinate with Ruby on renaming Member ID attributes in Snowflake tables and reconcile with Growth Book schema (22:26)\nAssist in defining basic metrics such as map-based search counts and category filters for the experiment (29:51)\nDrive the initial setup and validation of experiment phases in Growth Book, including traffic allocation attribute changes and experiment restarts (17:00)\n\n**Logan Bates**\nProvide guidance on managing Growth Book experiments, including editing, phase restarts, and bucketing logic (13:59)\nClarify attribute naming conventions and confirm bucket targeting strategies for logged-in users (23:07)\nConfirm ability to filter experiments by logged-in user ID and configure post-experiment filtering in Growth Book (34:09)\nSupport team during setup phase and share feedback to Growth Book’s product team on UI and attribute handling (26:31)\n\n**Amy Peng**\nFacilitate filtering experiments to logged-in users only for accuracy in metrics (09:06)\nContribute to defining filtering criteria such as property category groups for metrics (31:26)\nCoordinate with Anna and the team to run the initial experiment tests and validate incoming data (38:20)\n\n**Jake Heier**\nUpdate Growth Book license to remove banner warnings (07:34)\nSchedule follow-up sync meeting at start of next week to review experiment setup and data (44:50)\n"
+    }
+  ]
+}

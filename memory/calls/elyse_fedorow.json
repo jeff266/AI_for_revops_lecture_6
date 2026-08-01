@@ -1,0 +1,29 @@
+{
+  "company": "Elyse Fedorow",
+  "slug": "elyse_fedorow",
+  "last_etl_date": "2026-08-01T13:58:05.983002",
+  "calls": [
+    {
+      "id": "698cf58249fe190021376e1d",
+      "source": "apollo",
+      "title": "Elyse Fedorow - 1 Year Plan",
+      "date": "2026-02-11",
+      "duration_minutes": 62,
+      "summary": "Elise Fedorow, interviewing for the Senior Product Marketing Manager role at GrowthBook, presented a detailed one-year plan focused on onboarding, sales enablement, competitive intelligence, and content creation to support a rapidly scaling sales team and drive pipeline. Key participants included Ashley Stirrup (hiring manager), Ryan McGurk (sales), Jeremy (GrowthBook Dorn, technical lead), and Graham (",
+      "host": "Ashley Stirrup",
+      "participants": 5
+    },
+    {
+      "id": "01KGNN6NJ198C70MB7Q3NVFZHE",
+      "source": "fireflies",
+      "title": "Elyse Fedorow - 1 Year Plan",
+      "date": "2026-02-11",
+      "duration_minutes": 60,
+      "summary": "Elise presented a robust one-year product marketing plan emphasizing onboarding, foundational buildout, and sales enablement to drive growth. The plan is structured into distinct phases, with the first 30 days dedicated to knowledge absorption, followed by diagnosing gaps and prioritizing areas for development. Key initiatives include implementing competitive analysis and revenue-impact programs in subsequent quarters, along with optimizing sales enablement content to support a rapidly growing sales team. Elise highlighted the importance of AI-driven content production for efficiency and quality, while fostering a collaborative team culture that values humility and openness. The team also discussed the need for a review of Elise's technical writing skills to ensure her fit for the role, underlining the significance of aligning messaging with audience needs.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "Product Marketing, Sales Enablement, Content Strategy, AI Tools, Competitive Intelligence, Market Onboarding",
+      "action_items": "\n**Elise Fedorow**\nProvide samples of developer-focused content from Plextrack for review (57:50)\n\n**Jeremy Dorn**\nSearch Plextrack’s public blog and eBooks for Elise’s authored content to assess technical writing skills (57:36)\n\n**Graham McNicoll**\nConsider interview feedback and relay any further thoughts post-review (59:45)\n\n**Ashley Stirrup**\nCoordinate collection of Elise's sample content and facilitate final discussions on hiring decision (57:30)\nLead debrief of interview panel and gather consensus on next steps (49:45)\n"
+    }
+  ]
+}

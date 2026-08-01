@@ -1,0 +1,19 @@
+{
+  "company": "Moonrail",
+  "slug": "moonrail",
+  "last_etl_date": "2026-08-01T13:58:06.043199",
+  "calls": [
+    {
+      "id": "01KKRVDFDP4W1E67ZDJGVWFC6Z",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Moonrail",
+      "date": "2026-03-17",
+      "duration_minutes": 71,
+      "summary": "The company discussed its growth strategy, emphasizing Dual.com, which targets the crypto casino sector with low House Edge games to enhance user acquisition and conversion. The legacy brand, csgoempire.com, continues to serve a steady user base but is seen as limited in growth potential. A crucial focus is on implementing web experimentation, led by VP of Data, Fraser Gray, and his small data team, aiming to employ feature flagging and variant testing. Conversion metrics from sign-up to first deposit were highlighted as key indicators of success, with the intent to use Bayesian methods for analysis. The team is evaluating GrowthBook for experimentation features, emphasizing self-hosted solutions for data control. A quick decision on this evaluation is anticipated by the end of March, with follow-up technical discussions planned.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Moonrail, GrowthBook, Web Experimentation, Bayesian Statistics, Feature Flags, Self-hosted Enterprise",
+      "action_items": "\n**Fraser Gray**\nMeet with Statsig vendor on Thursday to gather commercial and technical information (01:01:06)\nCoordinate internal evaluation and potentially bring VP of engineering to GrowthBook follow-up call for integration discussion (01:07:47)\nConfirm availability for follow-up technical call with GrowthBook early next week, preferably after 1 PM UTC / 2 PM CET (01:06:01)\nDecide between GrowthBook and Statsig by end of March or early April (01:03:49)\n\n**James Shannon**\nProvide detailed follow-up on variant assignment and traffic split methodology after internal review (33:06)\nSchedule and organize follow-up technical call with GrowthBook solution engineer (ex-Statsig) for early next week to address technical and integration questions (01:05:58)\nPrepare pricing proposals for GrowthBook Pro and Enterprise self-hosted options including potential pricing negotiation based on Statsig’s quote (46:51)\nAssist Fraser with clarifying outlier treatment methods and Bayesian statistical interpretation in GrowthBook (45:01)\nShare additional documentation on SDK implementation and custom attribute usage for user targeting (39:32)\n"
+    }
+  ]
+}

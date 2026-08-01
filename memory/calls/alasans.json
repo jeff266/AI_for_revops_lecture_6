@@ -1,0 +1,19 @@
+{
+  "company": "Alasans",
+  "slug": "alasans",
+  "last_etl_date": "2026-08-01T13:58:06.037062",
+  "calls": [
+    {
+      "id": "01KNY5GR7SCRADNGMEZKHEDZEQ",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Alasans",
+      "date": "2026-04-13",
+      "duration_minutes": 19,
+      "summary": "The discussion centered on the team's dissatisfaction with their current A/B testing tool, Convert, due to an 80% data loss impacting GA4 reports, which undermines decision-making. Jakub emphasized the urgent need for a more reliable tool that integrates with their BigQuery database, especially as they conduct around 27 experiments monthly across nearly 30 e-shops in Europe. These tests typically yield a 3% to 5% conversion uplift, crucial for their revenue generation. Plans were laid out to start with the Growth Book Pro version to evaluate its capabilities, allowing for five experiments per month at a subscription cost of US$40 per user, before considering an upgrade to the Enterprise version. Immediate testing is prioritized with the cloud-hosted Pro version, while an edge deployment via Cloudflare is anticipated for the future.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, Growth Book, Convert, experimentation, pricing, e-commerce",
+      "action_items": "\n**Jakub Rejlek**\nInitiate Growth Book Pro account testing to evaluate product fit and performance (11:09)\nDiscuss Growth Book pricing and potential investment with Marketing Director for possible Enterprise plan approval (16:22)\nCommunicate with James Shannon when ready to upgrade or require additional pricing discussions (19:17)\n\n**James Shannon**\nProvide Jakub with a detailed pricing summary and clarify differences between Pro and Enterprise packages (13:10)\nOffer to set up a proof-of-concept Enterprise trial pending budget approval to facilitate evaluation at scale (17:54)\nAwait Jakub’s email for next steps or pricing negotiation and assist with onboarding as needed (19:17)\n"
+    }
+  ]
+}

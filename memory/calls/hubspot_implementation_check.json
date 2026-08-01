@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook | HubSpot Implementation Check-In",
+  "slug": "hubspot_implementation_check",
+  "last_etl_date": "2026-08-01T13:58:06.048111",
+  "calls": [
+    {
+      "id": "01KH8C63WCPXH6XZGAHEPX9JCP",
+      "source": "fireflies",
+      "title": "GrowthBook | HubSpot Implementation Check-In",
+      "date": "2026-02-18",
+      "duration_minutes": 31,
+      "summary": "The team discussed the integration of webinar registration within HubSpot, utilizing Zoom for automated registrations through a newly configured workflow. The design of the landing page was deferred to a future relaunch to enhance efficiency and address other priorities. Clear naming conventions for workflows were established, and the integration confusion between Zoom Events and Webinars was clarified. Automating registration via LinkedIn lead gen forms was identified as an immediate focus to scale lead capture. Upcoming webinars were discussed, targeting Khan Academy in mid-April, with plans for landing page design and increased ad spending on LinkedIn.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "HubSpot integration, Zoom webinar registration, LinkedIn lead gen forms, Workflow automation, Zoom Events vs. Zoom Webinars, Webinar landing page design",
+      "action_items": "\n**Ashley Stirrup**\nObtain Zoom webinar ID and ticket type ID to complete workflow setup for webinar registration (16:02)\nRename HubSpot form to 'webinar registration' for clarity across platforms (11:21)\nConfirm ramping up LinkedIn ad spend with Jason to increase lead generation via LinkedIn forms (29:11)\nDisconnect current Zoom Events integration and reconnect Zoom Webinars with personal Zoom account (24:28)\n\n**Roman Kniahynyckyj**\nUpdate workflow to include multiple form triggers (HubSpot and LinkedIn lead gen) for Zoom webinar registration automation (09:05)\nRemove Slack notification from workflow temporarily; focus on form-to-Zoom registration automation (25:54)\nConduct testing of workflow by submitting form to verify registration and Zoom syncing functionality (27:37)\nAssist with disconnecting and switching Zoom integrations from Zoom Events to Zoom Webinars (24:28)\nShare Graham’s updated meeting embed code and coordinate round robin meeting assignment setup with Chris (29:25)\nSchedule follow-up meeting with Chris to review lead/contact assignment and round robin integration (30:10)\n\n**Chris Newton**\nAdvise on adding an additional LinkedIn lead gen form trigger to existing workflow (08:48)\nRecommend cloning workflows per webinar due to unique Zoom event and ticket IDs (13:53)\nSupport troubleshooting Zoom integration issue and suggest workflow simplification steps (23:38)\nCoordinate with Roman to finalize round robin contact assignment logic and meeting embed use (29:59)\nAgree to hold follow-up discussion with Roman to sort lead/contact assignment; flexible scheduling offered (30:28)\n"
+    }
+  ]
+}

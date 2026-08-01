@@ -1,0 +1,19 @@
+{
+  "company": "Hublo",
+  "slug": "hublo",
+  "last_etl_date": "2026-08-01T13:58:06.037131",
+  "calls": [
+    {
+      "id": "01KNP67Y108FF7XB65E4WH8ZX2",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Hublo",
+      "date": "2026-04-13",
+      "duration_minutes": 29,
+      "summary": "Hublot aims to cultivate a culture of frequent experimentation to improve product decisions and user experience, transitioning from minimal current practices to monthly testing per product team. The small data team currently manages only a couple of tests annually, underscoring the need for an independent testing solution. Key focus areas include smart matching for caregivers and payment transparency to enhance user flow. Current tools, Amplitude and LaunchDarkly, present limitations, prompting interest in GrowthBook for its ease of use and capability for autonomous testing by product managers. The meeting emphasized the importance of operational autonomy, data transparency, and a structured approach to enhance experimentation and improve client satisfaction in the B2B healthcare staffing sector.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, experimentation, feature flagging, Amplitude, LaunchDarkly, Snowflake",
+      "action_items": "\n**Gaëlle Nordström-Schüler**\nConfirm license type and details of current LaunchDarkly usage with head of engineering to clarify migration feasibility (28:25)\nCoordinate availability of product managers and developers for a detailed GrowthBook demo follow-up session (28:51)\n\n**James Shannon**\nSend follow-up email summarizing today’s GrowthBook demo call and outline next steps (28:35)\nSchedule and prepare a detailed GrowthBook demo for Gaëlle and other Hublot team members to explore product capabilities further (28:35)\n"
+    }
+  ]
+}

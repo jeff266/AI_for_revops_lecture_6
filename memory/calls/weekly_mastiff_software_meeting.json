@@ -1,0 +1,103 @@
+{
+  "company": "Weekly GrowthBook and Mastiff Software Meeting",
+  "slug": "weekly_mastiff_software_meeting",
+  "last_etl_date": "2026-08-01T13:58:05.989906",
+  "calls": [
+    {
+      "id": "01KKA2YRZYW6WA7Q0DFFT230Z3",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-03-12",
+      "duration_minutes": 32,
+      "summary": "In the meeting, the sales team discussed key strategies for improving lead targeting by focusing on high-potential accounts—specifically, those with over 1 million website visitors and more than 500 employees. They identified a significant gap in the current pipeline, which stands at $4.5 million versus an $18 million target, necessitating further outbound sales efforts. Activity goals for sales representatives were refined, aiming for 50-75 calls daily and at least two new business opportunities worth $20K+ ACV per week. Participants also addressed the prorated expansion booking model for revenue recognition, rep compensation linked to contract renewals, and the implementation of a minimum deal size of $50,000 to enhance overall profitability. The exploration of a partner strategy focused on referral partnerships was also highlighted.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "expansion booking, pipeline development, lead enrichment, sales ramping, enterprise sales, board presentation",
+      "action_items": "\n**Ryan McGurk**\nPost enriched lead list in PG channel for targeted sales follow-up (01:23)\nFollow up with Alex and Joe on candidate status post-board meeting (30:46)\nCoordinate scheduling with Misha after her return for further discussions (30:37)\nShare feedback on Vibe Code issue with Brent (31:58)\n\n**Brent Holloway**\nSupport with role plays for candidates Alex, Joe, or Misha as requested, considering Costa Rica travel schedule (30:50)\nReview and provide feedback on Vibe Code issue shared by Ryan (31:52)\n"
+    },
+    {
+      "id": "01KN022FB2MG3D6AB2V58WR3CA",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-04-01",
+      "duration_minutes": 31,
+      "summary": "The discussion centered on enhancing revenue growth and sales strategies by quantifying customer pain points to justify larger deal sizes. Key focus areas included winning bigger deals through better pain quantification, addressing displacement dynamics between competitors and homegrown solutions, and expanding the user base across departments to drive higher pricing. Reducing churn and exploring new markets emerged as urgent priorities in sales conversations. The team also refined sales training, emphasizing the importance of identifying and quantifying pain points. Additionally, significant revenue leakage from free users and the need for finance team expansion were highlighted as critical operational challenges.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Pain Quantification, Sales Training, Experimentation Platform, Homegrown Solutions, Deal Displacement, Recruitment",
+      "action_items": "\n**Ryan McGurk**\nPing Jennifer to update sales engineer compensation data in job requisition to reflect competitive salary levels (30:52)\nContinue hiring momentum by engaging top-tier candidates during leave period for timely recruitment (30:11)\n\n**Brent Holloway**\nProvide Ryan an updated job requisition with corrected sales engineer salary range and assist with recruiting top-quality candidates (30:54)\n\n**Unassigned**\nClean and shorten sales training documents focusing on pain identification and quantification, emphasizing discussion over slides (04:39)\nIncorporate probing questions under distinct customer pain scenarios into sales training for crowdsourcing among sales reps (14:41)\nFinalize document cleanup and clearly mark/discuss key framework points for upcoming sales discussion sessions (15:39)\n"
+    },
+    {
+      "id": "01KP46VWWVN1YR26EJC68S27J6",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-04-15",
+      "duration_minutes": 0,
+      "summary": "Sales performance has demonstrated significant growth, with current quarter sales nearing $1 million, showing a 10x increase compared to last year. The team is focusing on hiring demand generation personnel to maintain this growth, with priority AE hires in the UK and Germany/Scandinavia. A plan to shift the Pro product tier to usage-based pricing aims to encourage upgrades to the Enterprise tier. Emphasizing quality over quantity, sales reps must target 10 meetings per month to meet quotas. Additionally, there will be a workshop on champion development to address stalled deals and equip reps with effective tactics.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Q1 Goals, Lead Generation, Demand Gen, Pro Product Pricing, Sales Hiring, Champion Development",
+      "action_items": "\n**Ryan McGurk**\nContinue evaluating and implement routing tool between HubSpot and Calendly to route demo requests by company size, optimizing sales team time allocation (09:11)\nOversee hiring process for inbound and demand generation roles to increase lead volume and maintain growth momentum, focusing on US market needs (07:11)\nIncrease rigor and reporting around Jake’s meeting generation and activities with weekly monitoring to ensure meeting targets are met (20:00)\nCoordinate with Jeff to aggregate product feedback and feature requests into simplified, digestible insights to support marketing messaging and AI strategy (27:06)\nWork with James on AE hiring efforts in the UK and Northern Europe regions, including Germany and Scandinavia, to expand sales coverage (21:38)\nPrepare and schedule the next workshop focused on Champion development and overcoming deal stalls, incorporating the 'Unstick Your Deals' workbook (24:35)\n\n**Brent Holloway**\nAssist with recruiting efforts for BDR candidates and maintain warm leads like Brady for potential future hiring needs (16:49)\nSupport James on AE hiring efforts in the UK and Scandinavia region by leveraging personal network outreach (21:50)\nBuild and deliver a draft reporting framework for BDR input and output metrics tracking to support accountability and goal tracking by the next meeting (30:27)\nLead or co-lead the Champion workshop session when scheduled to help develop skills in overcoming deal stalls and building Champions (31:29)\nProvide networking and client event coordination with Ryan for an upcoming informal client gathering to foster relationships and engagement (30:42)\n"
+    },
+    {
+      "id": "01KQ84HXF2CQRXPXBP7VB0SZZJ",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-04-28",
+      "duration_minutes": 0,
+      "summary": "The discussion centered on strategic hiring and pipeline management within the sales team. A cautious approach is taken, tying hiring to pipeline growth and emphasizing selective recruitment based on performance, particularly in the Bay Area for AE roles. Recruitment is focused on candidates with a history of successful million-dollar sales, while maintaining a goal for flat revenue growth in Q2, with current revenue at $600K and a $900K pipeline. Demand generation is crucial, with a new hire set to improve lead quality as webinar requests decline. Additionally, product packaging strategies are being refined to encourage upgrades, and weekly metrics tracking is initiated to enhance operational efficiency. Acknowledging challenges with candidate quality, the team emphasizes urgency and alignment with company goals in recruitment efforts.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Sales Hiring, Demand Generation, AE Candidates, BDR Compensation, Marketing Funnel, Pipeline Management",
+      "action_items": "\n**Ryan McGurk**\nInterview Marcel on Friday and assess his fit for the mid-level AE role (06:03)\nTalk to Riley Young for about 15 minutes next week to keep warm as a potential future BDR hire (30:08)\nCoordinate Jeff and Ashley to review and clean marketing funnel data to accurately reflect lead flow and identify reasons for dip in demo requests (26:06)\nPopulate the sales KPI tracking spreadsheet by Friday and review it on Monday, ensuring inclusion of weekly data alongside monthly (20:24)\nConfirm new BDR compensation plan focusing on meetings booked and qualified opportunities for Q2, deferring advanced deal-based incentives until more data is available (24:36)\nPause Jake Stengel’s involvement in small pro deals until pricing and packaging are finalized to maximize his time efficiency (28:00)\n\n**Brent Holloway**\nContinue sourcing AE candidates focusing on Bay Area and maintain contact with Joel in Germany and Ron Nelson in LA; keep warm candidates like Ron Nelson (11:42)\nSupport assessment of Riley Young by arranging a 20-minute call with Ryan to evaluate suitability as a BDR hire (29:58)\nConduct weekly 1:1 meetings with Jake Stengel on Wednesdays, focusing on time management, pipeline development, and meeting booking effectiveness (26:49)\nProvide regular updates and candidate status reviews, including feedback on Kevin and other prospects (10:50)\n"
+    },
+    {
+      "id": "01KQT9717ACTV8DKZXAS6Q7XW9",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-05-06",
+      "duration_minutes": 0,
+      "summary": "The meeting reviewed Q1 sales performance, highlighting the decision to shift Jake's compensation to a monthly quota system to enhance motivation. The team discussed Jake's new compensation plan, which includes targets for meetings and opportunities aimed at achieving $500K in annual bookings. Christian was recognized for achieving $406K in bookings through disciplined pricing strategies. Additionally, adjustments to the Pro and Enterprise product tiers were explored to clarify value and encourage upgrades, while recruiting processes were redefined to improve candidate engagement and follow-up. Finally, the customer success model was refined to enhance adoption and retention across varying customer segments.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Sales Compensation, Customer Success, Candidate Recruitment, Experiment-Based Pricing, Sales Performance, Pipeline Management",
+      "action_items": "\n**Ryan McGurk**\nConfirm who owns the LinkedIn Recruiter license and coordinate follow-up with Jennifer to ensure timely applicant engagement (06:42)\nSlack Brent access to Road to Club comp plan spreadsheet (13:40)\nWalk Jake S. through the new compensation plan during Hawaii trip and gather his feedback (31:06)\nSchedule conversations with candidate Ron for the week after Hawaii trip (28:49)\nFollow up with Riley (senior BDR at Oracle) on interview scheduling (29:22)\nShare details and review Customer Success roles and KPIs internally, especially regarding renewal and new business opportunity targets (25:05)\nReview pricing and package strategy for Pro tier with Graham and support rollout of experimentation-based pricing (10:53)\n\n**Brent Holloway**\nOffer to review and engage LinkedIn Recruiter applicants if given access (06:42)\nAssist Ryan with candidate introductions for Joel, Ron, Michael, and follow up as appropriate post Hawaii (26:59)\nProvide updated sales data and reports to Ryan once Jeff Ignacio updates current results (12:23)\nSupport transition of Jake S.’s compensation plan into HR-friendly format (20:20)\nAdvise on Customer Success team structure and compensation incentives linked to renewal and business opportunity creation, provide benchmarking input (24:33)\nRemain available during Ryan’s Hawaii working sessions for calls and support (31:51)\n\n**Unassigned**\nUpdate sales results data for more accurate weekly pacing review (20:20)\n"
+    },
+    {
+      "id": "01KSGBJ2HQQ4DXEFNNGZ3Q17XZ",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-05-27",
+      "duration_minutes": 0,
+      "summary": "The meeting focused on the Mastiff platform's new features, including AI-powered executive summaries that deliver key performance metrics in a digestible format for leadership. Brent Holloway emphasized these summaries would facilitate data-driven decisions and replace complex dashboards. Additionally, a custom AI app allows strategic inquiries backed by enriched sales data, enhancing accessibility compared to generic AI tools. The team is facing a $2.5 million shortfall for annual growth, highlighting the need for 3 to 5 new sales hires. Refinements in sales segments were discussed, aiming to optimize focus on SMB accounts and larger deals. Enhancements in lead scoring and addressing operational hiring challenges were also significant points of discussion.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Mastiff platform, AI app, sales segmentation, candidate evaluation, lead scoring, GrowthBook hiring",
+      "action_items": "\n**Brent Holloway**\nSend Mastiff platform update and AI app access details to Ryan and Ashley for their feedback (04:34)\nShare introductory notes and coordinate introductions for the strong Bay Area mid-market/account manager candidate (26:26)\nContinue the Bay Area recruitment campaign targeting growth book sales candidates, aiming to deliver at least one new candidate by next week (34:08)\nConduct role-play training sessions with sales rep Jake to improve his sales skills and readiness for direct sales responsibilities (38:15)\nReview and refine the lead scoring model with Jeff and Ashley as needed to optimize lead segmentation and prioritization (36:26)\n\n**Ryan McGurk**\nProvide feedback on Mastiff executive summaries and AI app; perform side-by-side comparisons of AI-generated responses with Claude and ChatGPT outputs (05:20)\nEngage actively in the candidate interview process and calibrate internal feedback with Caitlin to ensure alignment on hiring decisions (31:33)\nImplement lead routing to sales rep Jake for SMB deal closing and track his performance against established meeting quotas and deal size targets (38:15)\nFinalize hiring requests with Graham and Jeremy for additional Account Executives in US and EMEA regions, targeting 3-5 new hires to close revenue gaps (22:57)\n\n**Jeff**\nOwn and implement the lead scoring model for lead segmentation at GrowthBook to improve targeting and prioritization of sales efforts (36:26)\n"
+    },
+    {
+      "id": "01KTMD43GCT8G0H7NDSHNW2S6X",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-06-10",
+      "duration_minutes": 0,
+      "summary": "During the meeting, urgent hiring needs were identified, as Ryan highlighted the workload issues due to Carrie managing expansion conversations, leading to a focus on hiring another sales rep with senior mid-market sales experience. Brent discussed expanding recruiting efforts through LinkedIn and Dripify campaigns, producing a candidate list while emphasizing quality over quantity. The QBR framework was introduced as a key strategy to enhance upsell opportunities for enterprise customers, with a focus on segmented sales teams to optimize coverage. The group acknowledged the risks of a conservative hiring approach, noting potential turnover's impact on growth. Additionally, automated dashboards will be developed to monitor customer activity, helping prioritize proactive outreach.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Recruiting, Quarterly Business Reviews, Expansion Strategy, Sales Team Segmentation, Growth Forecasting, Product Demo",
+      "action_items": "\n**Brent Holloway**\nCraft polite rejection messages focused on senior candidate profiles, specifically for Mitesh (04:40)\nImplement a broader recruiting campaign via Dripify targeting wider accounts beyond known companies (08:00)\nSend LinkedIn introduction messages to John and the rep from Antithesis on behalf of GrowthBook to keep them engaged for future opportunities (24:00)\nDocument and share a structured Quarterly Business Review (QBR) framework and process with Ryan’s team (13:00)\nAssist Ryan with building a discovery call guide and support James on demo practices (19:00)\nContinue expanding Bay Area recruiting efforts and run wider campaigns to support hiring goals (22:20)\nProvide feedback and coaching recordings for Jake’s sales calls to improve performance (18:00)\n\n**Ryan McGurk**\nFollow up on connecting with John and other promising candidates on LinkedIn to build relationships (08:10)\nWork with James to understand and possibly formalize his demo approach for broader team adoption (19:10)\nContinue managing enterprise QBRs and ensure consistent coverage across accounts by the sales team (13:20)\nMonitor and utilize automated dashboards to identify usage trends and potential churn or upsell opportunities (14:40)\nSegment sales reps by customer size and deal tier as per the discussed structure (15:50)\nManage team morale and communications regarding sales role reassignments and JK’s parental leave (17:00)\nPrepare for renewal and expansion discussions planned shortly after this meeting (20:05)\nTest and provide feedback on the Massive GTM AI tool to aid product positioning (26:15)\n"
+    },
+    {
+      "id": "01KY0HTDBB49984K4T8VZ1HBSQ",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-07-22",
+      "duration_minutes": 0,
+      "summary": "The meeting covered the company's promising revenue forecasts, projecting 50% quarter-over-quarter and 130% year-over-year growth, bolstered by $3 million from significant signed deals. The enterprise revenue is expected to increase by approximately 115%, with potential for 200% growth through additional contracts. Discussions highlighted the importance of the Anthropic deal, which aims to surpass the previous $810,000 contract with tailored product development. Hiring priorities include one AE and a hybrid BDR, with compensation structures designed to incentivize pipeline generation. Moreover, the sales team's strategy is shifting towards targeting hypergrowth AI companies while refining their lead qualification process and transitioning to an event-based pricing model.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Enterprise Growth, Sales Ramp, Candidate Hiring, Compensation Strategy, Pipeline Development, Hypergrowth AI",
+      "action_items": "\n**Ryan McGurk - GrowthBook**\nGet feedback from Ashley and Graham on Andy candidate and coordinate timing for role play session (14:45)\nFollow up and tactfully close out hiring process with junior Boston candidate by week’s end (21:35)\nCoach Jake on enterprise features and qualifying mid-market deals; assign him demos and deals to build skills (27:45)\nCoordinate role play scheduling with Brent and Andy considering urgency and time zones (14:40)\n\n**Brent Holloway**\nManage negotiation strategy and compensation discussions with Chris Washburn, including draw structure and ramp expectations (08:27)\nTactfully communicate candidate disqualification to junior Boston candidate (21:39)\nContinue Oracle displacement hiring campaign to identify outstanding AE candidates (17:43)\nCoach Jake on deal qualification and pipeline development with focus on hypergrowth AI prospects (22:08)\nSupport role play coordination for Andy and assist with coaching for candidate preparation (14:05)\nMaintain frequent updates and alignment with Ryan and leadership on hiring and sales progress (00:33)\n\n**Unassigned**\nPrioritize hiring a dedicated owner for the Pro product line to accelerate growth (05:15)\nContinue pipeline development targeting hypergrowth AI companies with emphasis on enterprise and pro segments (24:36)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Alpine Home Air",
+  "slug": "alpine_home_air",
+  "last_etl_date": "2026-08-01T13:58:06.034117",
+  "calls": [
+    {
+      "id": "01KPB7NHCQWE9SMC2QAZ0JPWF3",
+      "source": "fireflies",
+      "title": "Alpine Home Air + GrowthBook",
+      "date": "2026-04-17",
+      "duration_minutes": 45,
+      "summary": "During the meeting, Beiheng Guo, a senior product designer, discussed his struggles with product experimentation, notably running 3-4 experiments weekly on landing pages with limited developer support. Current tools like VWO present challenges such as visibility issues and high costs. The conversation pivoted to Growth Book, a developer-friendly platform that promises to streamline experimentation and minimize issues like flicker and load times, thereby improving conversion rates. Pricing options and potential internal approval steps were also addressed, highlighting the alignment between Growth Book’s capabilities and Beiheng's experimentation goals.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, Conversion rate optimization, Visual editor, Feature flags, Data warehouse, Experimentation tools",
+      "action_items": "\n**Beiheng Guo**\nReport GrowthBook pricing proposal to manager and gather feedback (44:31)\nKeep GrowthBook team updated on evaluation progress via email (45:07)\n\n**Christian Liebenow**\nProvide further visual editor demonstration and share additional documentation or videos to help Beiheng understand no-developer workflows (39:35)\nFollow up with Beiheng for any additional questions and support (45:07)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Jurgis Petrauskas-Mittas and James Shannon",
+  "slug": "jurgis_petrauskasmittas_james_shannon",
+  "last_etl_date": "2026-08-01T13:58:06.025457",
+  "calls": [
+    {
+      "id": "01KQA81W16MXNPPRTJRAPABNWV",
+      "source": "fireflies",
+      "title": "Jurgis Petrauskas-Mittas and James Shannon",
+      "date": "2026-05-04",
+      "duration_minutes": 15,
+      "summary": "The team discussed significant challenges related to nested feature flags and dependencies, which hinder their use of Growth Book for running 8 to 10 monthly experiments. Monika explained the need for prerequisite flags, as downstream features depend on upstream flags being active. They aim to layer experiments, but current limitations block this progress. Inline prerequisite flags were identified as essential for managing complex dependencies, enabling better control of related experiment toggles. The Enterprise plan, priced around USD 50,000 yearly for 50 users, is under evaluation, focusing specifically on these flags. The team seeks customization, expert engineering support, and a trial environment to validate functionality before full rollout.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "Prerequisite flags, Inline prerequisite targeting, Growth Book Enterprise, Feature flags, Experiment nesting, Pricing negotiation",
+      "action_items": "\n**Jurgis Petrauskas-Mittas**\nProvide a written summary of current use cases and challenges with prerequisite flags for Growth Book team review (10:01)\nReview and evaluate the enterprise pricing offer once sent by James Shannon (12:26)\n\n**James Shannon**\nSend an official enterprise pricing offer via email to Jurgis Petrauskas-Mittas for review by Sintra’s CEO (12:26)\nCoordinate and schedule a call with Growth Book engineer Logan to guide the client on prerequisite flags setup and usage (13:02)\nEnable a trial environment for prerequisite flags feature to allow Sintra team to test in a controlled setting (13:36)\nFollow up with participants after scheduling the technical session to confirm timing and address further questions (14:03)\n"
+    }
+  ]
+}

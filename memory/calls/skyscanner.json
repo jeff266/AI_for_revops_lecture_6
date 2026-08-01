@@ -1,0 +1,153 @@
+{
+  "company": "Skyscanner",
+  "slug": "skyscanner",
+  "last_etl_date": "2026-08-01T13:58:05.964355",
+  "calls": [
+    {
+      "id": "6995e94e2982f50021ff2a92",
+      "source": "apollo",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-02-18",
+      "duration_minutes": 61,
+      "summary": "GrowthBook's Christian Liebenow (account manager), Jeremy (co-founder/CTO), and Logan (solutions engineer",
+      "host": "Christian Liebenow",
+      "participants": 7
+    },
+    {
+      "id": "699ddbae9c6ca40021302dc8",
+      "source": "apollo",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-02-24",
+      "duration_minutes": 27,
+      "summary": "Christian Liebenow (GrowthBook) and David Gregory (Skyscanner) discussed GrowthBook’s experimentation platform to address Skyscanner’s pain points with experiment velocity, scalability, and the desire for a hybrid buy-vs-build approach. Key features highlighted include open-source vs enterprise capabilities, CX experimentation, and AI roadmap integration. Next steps include a Thursday call with GrowthBook CTO Jeremy to dive into",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
+    {
+      "id": "69a082f0854ef1001dab0862",
+      "source": "apollo",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-02-26",
+      "duration_minutes": 58,
+      "summary": "GrowthBook’s Christian Liebenow and Jeremy presented their open-core experimentation platform to Skyscanner’s David Gregory, Gareth Moger, and Zoltan Bacskai. They discussed enterprise vs. open-source features, a hybrid architecture that integrates with Skyscanner’s existing tools, and a visual editor for non-technical CX teams—addressing Skyscanner’s need to scale experimentation and democratize copy-only tests. Next steps: GrowthBook will share a",
+      "host": "Christian Liebenow",
+      "participants": 9
+    },
+    {
+      "id": "01KJ8BNTNEHB6T41HMJ8ABZHYS",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-02-26",
+      "duration_minutes": 58,
+      "summary": "The meeting detailed GrowthBook's offerings, distinguishing between open source and enterprise versions. Enterprise provides scalability with features like fine-grain permissions, audit logs, and up to 10x more efficient database queries, whereas open source is suited for smaller teams and lacks advanced integrations. Customization options for enterprise users were highlighted, showcasing its modular capabilities that allow flexible adoption. The team also explored Skyscanner's hybrid model strategy to balance build versus buy, emphasizing metrics management and experimental flexibility. A Proof of Concept (POC) to validate GrowthBook's suitability for CX experiments was planned for Q1, with a focus on integrating historic experiments from Skyscanner's warehouse and enhancing data analytics beyond mere experimentation.",
+      "organizer": "christian@growthbook.io",
+      "participants": 7,
+      "keywords": "Hybrid Model, Open Source vs Enterprise, CX Experimentation, Visual Editor, Data Warehouse Integration, Experiment Analytics",
+      "action_items": "\n**Christian Liebenow**\nSend the meeting recap along with slides shown during the call to Skyscanner team (57:22)\n\n**Gareth Moger**\nReview GrowthBook materials offline and coordinate internally on next steps for hybrid model and PoC discussions (57:39)\n\n**David Gregory**\nPrepare list of CX experiments and share with GrowthBook for further exploration and setup examples (26:24)\n\n**Skyscanner Team**\nDetermine timeline and scope for PoC potentially aiming for Q1 (March - June) (03:05)\nEvaluate integration approaches for existing revenue modeling in GrowthBook using data warehouse ingestion (24:47)\nPlan an initial A/A test to validate GrowthBook SDK integration and data pipeline without user experience impact (43:16)\nConsider importing historical experiments data from Dr. Jekyll into GrowthBook for calibration and consistency checking (44:11)\nExplore and decide on hybrid architecture and modular use of GrowthBook components alongside in-house tools (13:55)\n"
+    },
+    {
+      "id": "69b96647bcd75b000da6c902",
+      "source": "apollo",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-03-17",
+      "duration_minutes": 34,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences focusing on what was discussed (product, features, pain points), key participants and their roles, and next steps/action items. Key participants: Christian Liebenow (GrowthBook sales), Gareth Moger (Skyscanner), David (BCN-L5 Suez? Actually \"BCN-L5 Suez\" seems like a participant, but from context David is on Skyscanner side? Actually \"BCN-L5 Suez\" might be a meeting room name? The transcript shows \"BCN-L5 Suez\" speaking, but that appears to be David. Let's check: \"BCN-L5 Suez\" says \"Hey, Christian. Good to see you again.\" Then later \"BCN-L5 Suez\" says \"And Christian, for the variable piece...\" So David is likely from Skyscanner as well. Also Shridar Suriya Moorthy from Skyscanner. So key participants: Christian Liebenow (GrowthBook), Gareth Moger and David (Skyscanner) and Shridar. Product: GrowthBook (experimentation platform). Features: pricing model (platform fee + per user, not MAUs/events), self-hosting option. Pain points: Skyscanner has compliance program priority causing delays; they want clear pricing model and enterprise support tiers. Next steps: Gareth to email user numbers and experiment count; Christian to provide",
+      "host": "Christian Liebenow",
+      "participants": 4
+    },
+    {
+      "id": "01KKF92MW38EH4XHR5K1PHKXQ0",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-03-17",
+      "duration_minutes": 35,
+      "summary": "The discussion revolved around Growth Book's pricing model, which consists of an annual fixed fee per user and avoids metrics like monthly active users for scalable experimentation. Christian outlined clear pricing tiers, with a list price of $1,250 for authorized users and $500 for read-only users, along with potential discount structures. Transparency in fee tiers was emphasized by Gareth to prevent ambiguity. The need for a detailed proposal incorporating user estimates, volume tiers, and support expectations was also highlighted, particularly regarding the preferred self-hosting option. Additionally, flexibility in proof of concept timelines and high-touch customer support were key areas, with a median response time of 15 minutes mentioned. Both parties agreed on the importance of clear deliverables to aid Skyscanner's decision-making process.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Enterprise Pricing, Platform Fee, Experimentation, Proof of Concept, Support SLAs, User Licensing",
+      "action_items": "\n**Gareth Moger**\nProvide Growth Book estimated user numbers (fully authorized and read-only) for Year 1 (11:10)\nProvide anticipated number of experiments in Year 1 to assist pricing model development (24:00)\nConfirm hosting approach as self-hosting to exclude CDN/bandwidth considerations (25:28)\nClarify and summarize expectations around sandbox environment and flexibility on POC timings via email (31:59)\nSend all inputs to Growth Book to enable preparation of detailed commercial proposal (33:25)\n\n**Christian Liebenow**\nPrepare itemized, detailed Year 1 pricing proposal including platform fee breakdown, SLAs, onboarding commitments, and strategic partnership features based on Skyscanner inputs (21:29)\nProvide additional detail on how similar enterprise customers engage with Growth Book and feature development collaboration (23:00)\nArrange sandbox environment with pre-populated data for Skyscanner POCs ready for use when Skyscanner team has capacity (32:16)\n\n**David**\nAwait further inputs and participate in internal recommendations on commercial evaluation (assisting Gareth) \n"
+    },
+    {
+      "id": "01KMNG5QS2WQZ8A57FXJX14CJ4",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-03-31",
+      "duration_minutes": 40,
+      "summary": "Skyscanner aims to leverage experimentation for international growth and accelerate product innovation, particularly in customer experience. The discussion highlighted the current complexity of their in-house experimentation platform and the consideration of a hybrid build-buy architecture to simplify processes. Speed and volume of experiments are critical, with goals to align experimentation flows with AI-driven development. A partnership with GrowthBook is sought to support technical and cultural transformation while offering flexible pricing models and phased rollout strategies for implementation. The focus is on building a strong data foundation through warehouse-native integration for effective experimentation across varied use cases.",
+      "organizer": "christian@growthbook.io",
+      "participants": 5,
+      "keywords": "Skyscanner, GrowthBook, experimentation platform, pricing model, self-hosted, AI native experimentation",
+      "action_items": "\n**Gareth Moger**\nReview GrowthBook pricing and service tier details internally and prepare follow-up questions on differences between open source and Enterprise offerings (38:47)\n\n**Gareth Moger & David Gregory**\nDetermine clearer timelines for starting POCs and rollout phases, then communicate these timelines to GrowthBook (38:47)\n\n**Christian Liebenow**\nProvide Skyscanner with detailed pricing page comparison of Starter, Pro, and Enterprise plans clarifying limits and features, including self-hosted vs cloud (29:26)\nShare proposals for cloud deployment pricing including CDN bandwidth and usage costs if Skyscanner requests (34:07)\n\n**GrowthBook team**\nSupport Skyscanner’s POC process with flexibility on evaluation timelines and assist in navigating staged rollout plans (36:34)\nCoordinate with Skyscanner’s CTO (Jeremy) and internal teams to ensure technical alignment and tailored roadmap adjustments based on feedback from POCs and early usage (15:45)\n"
+    },
+    {
+      "id": "01KQSNH56QX2SS66KFHP4PCCCH",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-05-06",
+      "duration_minutes": 6,
+      "summary": "The meeting commenced with team members introducing themselves and discussing their specific roles, creating a collaborative environment. Oliver Paton shared his extensive experience in analytics and flights experimentation at Skyscanner, while Zoltan Bacskai outlined his responsibilities in product strategy for the experimentation platform. Joan Capdevila detailed his role as data science manager overseeing decision-making processes within the platform. The discussion emphasized the importance of the experimentation platform as a strategic asset for analytics, along with the need for clear geographical coordination among team members located in Dallas, Austin, and London. Additionally, the meeting was recorded for transparency, featuring an emphasis on initial rapport-building to clarify roles before delving into more complex discussions.",
+      "organizer": "christian@growthbook.io",
+      "participants": 5,
+      "keywords": "experimentation, analytics, Skyscanner, product strategy, digital analytics, data science",
+      "action_items": "\n**Oliver Paton**\nParticipate actively in discussion on experimentation tools and analytics aligned with Skyscanner Flights BAR team (03:56)\n\n**Zoltan Bacskai**\nLead product strategy discussions regarding experimentation platform at Skyscanner (04:33)\n\n**Joan Capdevila**\nCollaborate on decision layer improvements for experimentation platform with ERCAM and Nightingale team (04:56)\n"
+    },
+    {
+      "id": "01KT4FFMRM8DMVXK4P9ACZKP3V",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-06-04",
+      "duration_minutes": 51,
+      "summary": "The meeting addressed enabling localized copy experiments through a visual editor, with an immediate goal of conducting 30 to 100 experiments in the latter half of 2026 and reaching 1000 annually by 2027. GrowthBook's visual editor offers a legacy option for text changes and a new AI-first editor for both text and images, allowing for manual or AI-driven modifications. The team emphasized the importance of preventing flicker during implementation, particularly given the challenges presented by Skyscanner's SPA architecture. Additionally, AI integration aims to automate experiment creation and analysis to enhance learning from experiments. Licensing discussions highlighted an initial plan for around 20 user licenses in 2026, allowing for future scalability in 2027 based on needs.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "Visual Editor, Copy Experiments, Product Analytics, Experimentation Platform, Localization Testing, Flicker Prevention",
+      "action_items": "\n**David Gregory**\nProvide an updated count of user licenses required for the proof of concept, covering the CX content experimentation team and additional experiment power users to ensure appropriate licensing for the POC phase (16:12)\nContinue internal alignment on the Q3 roadmap and budget to ensure no blockers arise for the POC kickoff and smooth progress of experimentation initiatives (49:21)\n\n**Christian Liebenow**\nFollow up with David Gregory to finalize the detailed user license count for the CX team and other stakeholders involved in the experimentation POC (16:30)\nCoordinate with Graham McNicoll and GrowthBook engineering to explore and develop technical solutions addressing flicker and latency issues related to Skyscanner’s SPA microsite architecture during experimentation (50:23)\n\n**Graham McNicoll**\nDiscuss internally within GrowthBook engineering team potential solutions to prevent UI flicker during experiments on SPA microsites, including alternatives to the current edge worker approach (48:41)\nSupport Christian Liebenow with technical insights and collaboration to address flicker and latency challenges during integration of GrowthBook experimentation tools with Skyscanner’s SPA microsites (50:23)\n"
+    },
+    {
+      "id": "01KTS1BVY9T6EKM1EA20N79DN0",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-06-16",
+      "duration_minutes": 30,
+      "summary": "The discussion centered on the compliance program's timeline and the planned proof of concept (POC) for content experimentation, targeted for a mid-August launch dependent on upstream data readiness. David highlighted the necessity of focusing on content copy experiments to streamline the process and provide quick value without adding engineering complexities. The initial user base will include 45-50 cross-functional members, with plans for flexible license scaling as adoption grows. Revenue expectations from Q4 content experiments were discussed, aiming to drive significant incremental revenue, primarily from the flights vertical. Data integration challenges were acknowledged, requiring collaboration with BI teams. Commercial strategies involved separating project discussions from procurement negotiations to align timelines and financial commitments.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "POC, GrowthBook, content experimentation, licensing, timeline, revenue impact",
+      "action_items": "\n**Christian Liebenow**\nProvide point of view on POC capabilities, including examples of AA tests and basic experiments run by other customers (13:49)\nPrepare updated commercial proposal reflecting 50 users, including rate tables and flexible licensing options for incremental scaling; share with David’s procurement team (27:47)\nSend follow-up email within the coming days outlining POC structure, timelines, and commercial insights before end of week (29:21)\n\n**David Gregory**\nCoordinate with procurement team to prepare for commercial discussions related to GrowthBook licensing and investments (27:18)\nAttend Monday call with Jeremy and remain for 20-minute follow-up to discuss CLI agent experiment workflows and related agenda items (28:47)\n"
+    },
+    {
+      "id": "01KV6RCS6FSEHPHTQFAAPGZR2D",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-06-22",
+      "duration_minutes": 74,
+      "summary": "The meeting focused on GrowthBook's vision for an AI-driven experimentation platform that enhances the entire lifecycle from ideation to analysis. Graham McNicoll highlighted the need for improving validation and learning from experiments while emphasizing automation in idea generation and result summarization. The discussion included the integration of AI metrics and various agentic experimentation workflows tailored to customer maturity, as illustrated by examples from Anthropic and Dropbox. New proactive AI features aim to aggregate insights from numerous tests to focus on significant results. Additionally, the partnership with Skyscanner outlined a phased approach for PoC evaluation, onboarding, and long-term integration of GrowthBook's platform, ensuring flexibility and governance during their transition.",
+      "organizer": "christian@growthbook.io",
+      "participants": 7,
+      "keywords": "Experimentation, AI-driven testing, Feature flagging, Agentic workflows, Platform integration, Content experiments",
+      "action_items": "\n**David Gregory**\nCoordinate with internal teams and front-end engineering to plan phased integration of GrowthBook by Q3, including AA tests progressing to production AB tests (53:00)\nLead evaluation of GrowthBook alongside Dr. Jekyll with side-by-side historical data analysis and pilot experiments on dev pages (59:00)\nWork with procurement to prepare commercial terms for expansion after Q3 proof of concept (01:11:56)\nSchedule follow-up meetings with GrowthBook team to discuss seat proposals and commercial terms (01:12:40)\n\n**Logan Bates**\nSend customized phased evaluation timeline and onboarding plan to Skyscanner team (59:58)\nProvide technical and integration support to Skyscanner’s engineering teams for GrowthBook SDK and AI skills usage (58:45)\n\n**Christian Liebenow**\nPropose meeting times for commercial discussion including procurement and seat proposals (01:12:45)\n\n**Ryan McGurk**\nPrepare training and best practice support plan for Skyscanner’s experimentation culture transformation (01:07:13)\n\n**Unassigned**\nInvestigate capabilities for tracking skill usage, versions, and skill execution lineage for audit and optimization purposes (31:01)\n"
+    },
+    {
+      "id": "01KYFCGTSD7S0QNDR6Q1DC0ED1",
+      "source": "fireflies",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-07-28",
+      "duration_minutes": 33,
+      "summary": "The team is initiating the Proof of Concept (POC) execution with an evaluation framework expected in one to two weeks, involving the CX team for initial testing. A timeline aims for a decision by September 30 and potential operational start by October 31, with testing possibly extending into early Q4. A phased scaling strategy from 50 users in Q4 to 300-400 users by mid-2027 is outlined, emphasizing flexible licensing to match budget needs. Customer support will include dedicated architects and ongoing technical consultation, enhancing adoption. Discussions also highlighted a two-tier metric ownership model and the importance of clear business case preparations due to budget scrutiny driven by AI adoption and geopolitical pressures.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "POC, Budget Forecast, Metrics Onboarding, Phased Licensing, AI Evaluation, Semantic Layer",
+      "action_items": "\n**Christian Liebenow**\nUpdate proposals based on starting 50 users and discuss volume pricing and step-up options with Ryan (09:25)\nPrepare and send a spreadsheet quantifying value and inputs related to Growth Book deployment for review (30:56)\nShare examples of AI evaluations and use cases from other customers like Khan Academy to inform Skyscanner’s strategic decisions (31:54)\n\n**Gareth Moger**\nBrief Procurement and Finance teams in the upcoming session involving Daniel to align on budget and procurement planning (30:29)\nContinue discussions on scaling plan, license activation timing, and budget estimates for 2027 planning with Daniel and finance teams (12:26)\n\n**Logan Bates**\nProvide documentation and resources on governance, version control, and metric onboarding processes to support Skyscanner’s experimentation platform needs (25:00)\nFlag metric onboarding and governance priorities to the account manager for alignment in upcoming onboarding calls (24:58)\nSupport ongoing discussions on semantic layer integration and federated metric governance with the Skyscanner data team (28:53)\n\n**David Gregory**\nProvide guidance on finance rubric and leadership expectations for the business case preparation to ensure alignment with Skyscanner’s finance team (21:08)\nSupport aligning procurement processes and budget planning in light of macroeconomic constraints affecting the travel sector (19:18)\n"
+    },
+    {
+      "id": "6a6a1b636a11210018fc58a3",
+      "source": "apollo",
+      "title": "Skyscanner + GrowthBook",
+      "date": "2026-07-29",
+      "duration_minutes": 24,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and their roles, next steps/action items.\n\nKey participants: David Gregory (Skyscanner - seems to be leading evaluation), Megan Crothers (Skyscanner - product manager moving to experimentation, main POC contact), Gareth Moger (Skyscanner - likely product or engineering manager), Sridhar (Skyscanner - engineering manager, late), Daniel (procurement - absent). From GrowthBook: Christian (account manager), Logan (solutions engineer). Also mentioned Oliver.\n\nWhat was discussed: GrowthBook product for experimentation and feature flagging. Skyscanner currently using internal tool \"Dr. Jekyll\" and wants to migrate. Pain points: need for content experimentation on web, integration with CMS (Contentful), phased approach from dev evaluation to production. Timeline: Q3 dev evaluation (mid-Aug to early Sep), Q4 production testing with 50 users, then full rollout in 2027. Feature flagging evaluation, AA tests, ad tests. Commercial structure for phased licensing.\n\nNext steps: Skyscanner team to finalize evaluation criteria and technical design; GrowthBook to provide commercial quote for Q4 (50 licenses) and discuss structure for 2027. Connect Daniel (procurement) next week. Add Logan to Slack channel. Regular weekly check-ins.\n\nSummarize:",
+      "host": "Christian Liebenow",
+      "participants": 4
+    }
+  ]
+}

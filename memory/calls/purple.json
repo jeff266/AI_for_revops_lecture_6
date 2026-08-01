@@ -1,0 +1,27 @@
+{
+  "company": "Purple<>GrowthBook",
+  "slug": "purple",
+  "last_etl_date": "2026-08-01T13:58:05.973566",
+  "calls": [
+    {
+      "id": "69efc120351151001919455a",
+      "source": "apollo",
+      "title": "GrowthBook Demo for Purple",
+      "date": "2026-04-27",
+      "duration_minutes": 34,
+      "summary": "GrowthBook demo for Purple, a company moving off Optimizely and currently using a stopgap in-house solution. Key participants: Jake Heier (account team) and Logan Bates (solutions engineer) from GrowthBook; Katherine Liu (senior software engineering manager), Ishan Supanekar (senior business analyst), Devin Zuczek (software architect), and others from Purple. Discussed GrowthBook's feature flagging and experimentation platform, including Snowflake integration, Bayesian vs. frequent",
+      "host": "Jake Heier",
+      "participants": 6
+    },
+    {
+      "id": "6a02359b1ce14e001147b93e",
+      "source": "apollo",
+      "title": "Purple<>GrowthBook - Product Analytics Demo",
+      "date": "2026-05-11",
+      "duration_minutes": 31,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: product/features/pain points discussed, key participants and roles, next steps/action items.\n\nFrom transcript: Call is Purple (customer) and GrowthBook (vendor). Key participants: Ishan Supanekar (Purple - analyst/decision maker), Ashley Seguin (Purple - also on call, likely product or analytics), Logan Bates (GrowthBook - sales/demo lead), and possibly another Logan Bates (two Logans?) Actually there are multiple Logans - one is the main presenter, another is also in same room. But we'll just note Logan Bates as GrowthBook rep.\n\nDiscussed: GrowthBook's product analytics capabilities, including AI analyst, funnel analysis, metrics creation, insights tab, roadmap with upcoming features like user journey, cohort analysis, session replay, error tracking, core web vitals. Pain points: Purple wants to consolidate platforms (A/B testing + product analytics), needs repeatable dashboards, wants to track click-through rates, funnels, and ensure data definitions are accurate. They also want to see sample dashboards for e-commerce.\n\nNext steps: GrowthBook will send sample screenshots of dashboards; Ishan will reach out with more questions; follow-up email to recap and sync on next steps.\n\nKey participants: Ishan Supanekar (Purple), Ashley Seguin (Purple), Logan Bates (GrowthBook).\n\nNow produce 2-",
+      "host": "Jake Heier",
+      "participants": 3
+    }
+  ]
+}

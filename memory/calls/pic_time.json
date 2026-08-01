@@ -1,0 +1,19 @@
+{
+  "company": "Pic time",
+  "slug": "pic_time",
+  "last_etl_date": "2026-08-01T13:58:06.003379",
+  "calls": [
+    {
+      "id": "01KVMZQW0MWXPXHXXRSTSW4QZK",
+      "source": "fireflies",
+      "title": "Pic time & GrowthBook Catchup",
+      "date": "2026-06-29",
+      "duration_minutes": 12,
+      "summary": "The team is actively testing a platform by integrating it with their data infrastructure to confirm its technical suitability and workflow integration. Tal Binyamini reported that initial tests with Databricks show the platform meets technical requirements, prompting a forthcoming meeting with the data team to define evaluation metrics. The technical readiness supports a purchase decision by mid-July, and discussions center around finalizing pricing—potentially reducing costs by 5-15% from £43,750 if the agreement is signed before the end of July. A key meeting with the CEO is scheduled to align on pricing and next steps. The team feels confident in their ability to operationally integrate the platform, claiming no additional support is needed at this time, while maintaining an open dialogue that fosters collaboration.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "pricing, software integration, data warehouse, decision timeline, experiment testing, CEO involvement",
+      "action_items": "\n**James Shannon**\nSchedule a 30-minute call on Thursday around 11 AM UK time / 1 PM Israel time with Tal and his CEO to discuss pricing and next steps (06:44)\n\n**Tal Binyamini**\nCoordinate internally and confirm CEO’s availability for the scheduled Thursday call; communicate the potential 5–15% pricing range to CEO in advance (04:44)\nContinue testing and integration of GrowthBook software; engage with the data team to develop metrics and track progress (01:45)\n"
+    }
+  ]
+}

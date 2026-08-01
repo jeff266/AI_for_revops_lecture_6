@@ -1,0 +1,19 @@
+{
+  "company": "Duel",
+  "slug": "duel",
+  "last_etl_date": "2026-08-01T13:58:06.041461",
+  "calls": [
+    {
+      "id": "01KMDQZ7YWFDD6AAZNP0FJ2T1V",
+      "source": "fireflies",
+      "title": "Duel + Growthbook Outlier Discussion",
+      "date": "2026-03-25",
+      "duration_minutes": 30,
+      "summary": "The meeting centered on developing an outlier detection strategy for gambling data, with a preference for the scaled interquartile range (IQR) method over fixed percentiles, as emphasized by Fraser Gray. This approach adapts to data distribution, addressing the non-normally distributed nature of gambling data. Luke Sonnet described GrowthBook's existing methods and limitations, specifically the absence of IQR support. Fraser proposed enhancements to the GrowthBook user interface, including the ability to toggle between raw and capped KPI versions. The team outlined plans for a trial starting in April, emphasizing the need for backend integration using the PHP SDK and ongoing technical support. Overall, the discussions highlighted the importance of nuanced statistical methods for making informed decisions in gambling marketing.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "Outlier Detection, Gambling Data, Bayesian Estimation, GrowthBook, Winsorizing, Experimentation",
+      "action_items": "\n**Fraser Gray**\nCoordinate architecture discussion with Edison to confirm feature flag integration approach for GrowthBook SDK use (26:15)\n\n**James Shannon**\nConfirm possibility of increasing seat licenses from 5 to 8 and communicate final decision via email (23:32)\nDraft and send contract/order form including conditional PoC agreement with clear success criteria for trial period (28:31)\nArrange support infrastructure for direct communication lines (e.g., Slack channel) between GrowthBook and Fraser’s team during setup (28:52)\nProvide clarity on rollout plan and coordinate with internal team (Logan, Luke) for support during onboarding process (28:43)\n\n**Luke Sonnet**\nAssist Fraser and team during setup and integration of GrowthBook features, particularly around outlier detection toggles and capped metrics implementation (13:30)\nSupport with technical clarifications on metric duplication and UI toggling features described during call (07:56)\n"
+    }
+  ]
+}

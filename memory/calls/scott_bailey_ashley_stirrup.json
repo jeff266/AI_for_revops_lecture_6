@@ -1,0 +1,31 @@
+{
+  "company": "Scott Bailey and Ashley Stirrup",
+  "slug": "scott_bailey_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.048694",
+  "calls": [
+    {
+      "id": "01KGZZE2FANRH83PW4HKVFEGBC",
+      "source": "fireflies",
+      "title": "Scott Bailey and Ashley Stirrup",
+      "date": "2026-02-10",
+      "duration_minutes": 29,
+      "summary": "Growth Book has experienced significant growth, doubling its annual recurring revenue to $8 million, driven by strong performance in the last two quarters. Major client acquisitions, including Anthropic, Mistral XAI, Wikipedia, and Salesforce, have validated its market position, supported by a balanced revenue model of one-third product-led growth and two-thirds enterprise sales. The company plans to expand its marketing team to support growth, while Scott Bailey's unique technical expertise in product marketing will enhance its engagement with developer audiences. Scott emphasized the importance of tailored sales enablement content and coaching for complex sales, fostering trust and collaboration within sales teams. Insights into competitors like Linear and Sourcegraph provide valuable context for refining Growth Book's messaging and strategy.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, product marketing, demand generation, developer content, synthetic data, technical audiences",
+      "action_items": "\n**Ashley Stirrup**\nSend Scott link to schedule follow-up meeting with Growth Book co-founders Graham and Jeremy (26:57)\n\n**Scott Bailey**\nReview calendars and schedule follow-up meeting with Growth Book co-founders Graham and Jeremy (26:57)\n"
+    },
+    {
+      "id": "01KH728Y5VCCDSX7ZCAZCXVG7J",
+      "source": "fireflies",
+      "title": "Scott Bailey and Ashley Stirrup",
+      "date": "2026-02-13",
+      "duration_minutes": 60,
+      "summary": "The meeting addressed the company's go-to-market strategy, highlighting strong enterprise demand with inbound interest from notable clients like Ikea and Perplexity. Current marketing efforts are primarily inbound-focused, lacking targeted outbound campaigns. There is significant potential in self-service, particularly in product analytics, with plans for aggressive pricing and a redesign to enhance competitiveness. The competitive landscape includes overlapping players like Posthog and LaunchDarkly, with the company differentiating itself through an open-source foundation and warehouse-native architecture. Marketing funnel improvements are necessary, as the current structure lacks clarity. Additionally, clearer product packaging and upgrade paths are essential for converting open-source users to paid tiers. The alignment of sales and marketing is vital for effective messaging and deal acceleration.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Product-Led Growth, Experimentation Platform, Technical Product Marketing, Competitive Intelligence, Data Warehouse Partnerships, Sales Enablement",
+      "action_items": "\n**Scott Bailey**\nAttend scheduled meetings with Graham (CEO) and Ryan at GrowthBook (46:57)\nText Ashley Stirrup updates after calls with Graham and Ryan to share impressions (59:44)\nPrepare a presentation outlining one-year plan, priorities, and strategy as part of final interview step (56:50)\n\n**Ashley Stirrup**\nContinue evolving GrowthBook’s marketing assets and inbound funnel development (06:50)\nExplore co-marketing and sales partnership opportunities with data warehouse providers informed by Scott’s prior experience (52:00)\nConsider improvements for team enablement using Cloud Code and Cloud Cowork tools leveraging Scott’s insights (43:35)\n"
+    }
+  ]
+}

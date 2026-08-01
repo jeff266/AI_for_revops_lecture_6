@@ -1,0 +1,17 @@
+{
+  "company": "Demo Call with Cristian Vrabie from Fixter ",
+  "slug": "demo_call_cristian_vrabie_from_fixter",
+  "last_etl_date": "2026-08-01T13:58:05.967418",
+  "calls": [
+    {
+      "id": "6a3e5823bd43780018db42f4",
+      "source": "apollo",
+      "title": "Demo Call with Cristian Vrabie from Fixter ",
+      "date": "2026-06-26",
+      "duration_minutes": 34,
+      "summary": "Fiona Nematbakhsh and Cristian Vrabie (from Fixter) discussed pain points with their current A/B testing tool, Chameleon: extra costs for server-side/price testing, desire for simpler visual editing, and need for direct Google Analytics/BigQuery integration. James Shannon (GrowthBook sales rep) demonstrated their product’s strengths—server-side testing included, visual editor, warehouse-native analytics, and built-in feature flags. Next steps: Fixter will share their experiment volume for pricing, and they will schedule a full demo.",
+      "host": "Jake Stangl",
+      "participants": 3
+    }
+  ]
+}

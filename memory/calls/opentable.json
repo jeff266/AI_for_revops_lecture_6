@@ -1,0 +1,103 @@
+{
+  "company": "Growthbook <> OpenTable",
+  "slug": "opentable",
+  "last_etl_date": "2026-08-01T13:58:05.971047",
+  "calls": [
+    {
+      "id": "69de6935c1f9eb0011fa27dc",
+      "source": "apollo",
+      "title": "Growthbook <> OpenTable - Intro ",
+      "date": "2026-04-14",
+      "duration_minutes": 33,
+      "summary": "Federico Maffei (OpenTable senior engineering manager) met with Daniel Wathne and Logan (GrowthBook) to discuss replacing their aging, internally-built A/B testing tool. Key pain points included a clunky frontend, inability to run tests beyond two weeks, disconnected feature flags, and reliance on a shrinking maintenance team. Next steps involve Federico sharing detailed requirements, followed by a larger demo on Thursday with OpenTable’s cross-functional working group, and potentially a tailored trial.",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "69e12c077042ad000d4b5698",
+      "source": "apollo",
+      "title": "GrowthBook <> OpenTable - Intro ",
+      "date": "2026-04-16",
+      "duration_minutes": 66,
+      "summary": "GrowthBook (Daniel Wathne, sales; Logan Bates, solutions engineering) presented to OpenTable (Federico/Lon-London, Rahul Bhatia in ML/data engineering, Danyial Motiwala in",
+      "host": "Daniel Wathne",
+      "participants": 7
+    },
+    {
+      "id": "69ea4e17330aea001dcf27e9",
+      "source": "apollo",
+      "title": "Growthbook <> OpenTable - Intro/Recap ",
+      "date": "2026-04-23",
+      "duration_minutes": 51,
+      "summary": "GrowthBook demonstrated its feature flag and experimentation platform to OpenTable, highlighting the ability to replace OpenTable's aging internal tool by addressing key pain points like poor self-service UX, reliance on Mixpanel for real-time data, and frequent experiment configuration errors. Key participants included GrowthBook’s sales lead Daniel, solutions engineer Logan, and CEO Graham, while OpenTable was represented by product engineering lead Justin, senior engineering director Chris, and engineer Federico. Next steps involve scoping a proof of concept, aligning on timelines, and potentially completing a security review.",
+      "host": "Daniel Wathne",
+      "participants": 7
+    },
+    {
+      "id": "6a057e2ca78637002151cde0",
+      "source": "apollo",
+      "title": "Growthbook <> OpenTable - Pricing Sync ",
+      "date": "2026-05-14",
+      "duration_minutes": 48,
+      "summary": "Federico Maffei (OpenTable engineering manager) and Daniel Wathne (GrowthBook sales) discussed replacing OpenTable’s internal experimentation tool with GrowthBook, addressing pain points around scalability, friction, and StatSig’s instability due to its acquisition by Amplitude. Federico is convinced but needs to persuade the data analytics team, which is also considering StatSig. Next steps: Daniel will prepare a pricing proposal and ROI deck for Federico to present to executives next Thursday, with a follow-up meeting scheduled for Tuesday to review numbers and possibly include key stakeholders.",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "6a0c908f14a18b001c425cdf",
+      "source": "apollo",
+      "title": "Growthbook <> OpenTable - Pricing Review ",
+      "date": "2026-05-19",
+      "duration_minutes": 31,
+      "summary": "GrowthBook's team (Daniel Wathne and CRO Ryan McGurk) presented a pricing review to OpenTable stakeholders (Federico Maffei, Forrest Rice, Amazasp Shaumyan, and Rahul Bhatia), addressing pain points around",
+      "host": "Daniel Wathne",
+      "participants": 7
+    },
+    {
+      "id": "6a15c344e36eb60010738b92",
+      "source": "apollo",
+      "title": "Growthbook <> OpenTable - Check in ",
+      "date": "2026-05-26",
+      "duration_minutes": 28,
+      "summary": "In the call, Federico Maffei (OpenTable's product lead) informed Daniel Wathne (GrowthBook) that OpenTable's execs are aligned on GrowthBook’s feature set and pricing, with key pain points around Statsig's pricing uncertainty and the data team’s resource constraints for a proof of concept (POC). Federico is handing off to Chris (his manager) and Forest (senior data analytics lead), who will drive the evaluation. Next steps: Daniel will schedule a meeting next Tuesday with Chris, Forest, and engineer Rahul to scope a two-month POC (June–July), with a possible smaller initial contract to ease the data team’s workload.",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "01KSZR5MTFCPS9A8YA009X4Y40",
+      "source": "fireflies",
+      "title": "Growthbook <> OpenTable - Check In - POC Sync",
+      "date": "2026-06-04",
+      "duration_minutes": 0,
+      "summary": "The meeting addressed the need to extend the POC period to at least a quarter due to the complexity of setup, data integration, and vendor onboarding. Key phases include environment setup, historical data replay, and backend testing. Participants highlighted that internal approval delays, especially in legal and security reviews, are critical blockers. GrowthBook will provide necessary documentation to facilitate onboarding, and discussions on Snowflake integration were crucial for validating the stats engine. Regular check-ins and open communication were emphasized to enhance collaboration and manage risks effectively, with teams aligning on expectations and timelines.",
+      "organizer": "dan@growthbook.io",
+      "participants": 8,
+      "keywords": "GrowthBook, Proof of Concept, Vendor Onboarding, Snowflake, SDK Integration, Security Compliance",
+      "action_items": "\n**Dan Wathne**\nSend the GrowthBook trust center security documentation to OpenTable to support vendor onboarding and security review (27:00)\nProvide draft Master Service Agreement (MSA) for OpenTable's legal review to facilitate contract discussions (27:00)\nShare vendor onboarding information including company details and compliance questionnaires to initiate OpenTable's internal review process (27:00)\nProvide security certifications and access to GrowthBook’s trust portal to ease OpenTable's vendor onboarding process (17:00)\nShare PowerPoint/deck and standardized Google sheet outlining GrowthBook POC phase plans for OpenTable to review and provide feedback (07:00)\nOffer open calendar link for scheduling follow-up calls and technical sessions as needed to maintain alignment and address questions (26:50)\nRespond asynchronously to any detailed technical questions or clarifications, especially regarding SDK integration and event forwarding options (20:22)\n\n**Christopher Cartlidge**\nAct as internal liaison for general updates and communication with GrowthBook during Federico’s leave to ensure continuity (30:46)\nCoordinate with internal teams (security, compliance, infrastructure) to assess prioritization and timeline for vendor onboarding and POC start (29:15)\n\n**SFO-Oregano / OpenTable Vendor Team**\nConduct internal discussions on hosting preferences (cloud vs self-hosted) and share decisions with GrowthBook to align on deployment approach (17:10)\nProceed with legal, security, compliance, and business review processes required for vendor onboarding including completing questionnaires and providing requested contacts (26:50)\n\n**Rahul Bhatia**\nEvaluate SDK callback integration work required for forwarding events to OpenTable’s Kafka internal analytics platform (19:40)\n\n**Logan Bates**\nFollow up by sharing example implementation of SDK event forwarding callback to assist Rahul’s team with integration (20:14)\nSupport question responses regarding hosting options and security compliance requests to facilitate OpenTable’s vendor onboarding (16:45)\n"
+    },
+    {
+      "id": "01KWQ9P1JYGQGQ58K1PMD1FWRH",
+      "source": "fireflies",
+      "title": "Growthbook <> Opentable - Check In",
+      "date": "2026-07-06",
+      "duration_minutes": 0,
+      "summary": "The team is nearing completion of the security and procurement reviews, with key approvals pending to initiate the POC. Lydia is leading the third-party cyber risk assessment while the SOC 2 audit is finishing, essential for advancing onboarding. Stalled onboarding is due to final sign-offs and internal security reviews, with efforts from Federico and collaboration with Rahul's team crucial for POC success. Leadership has endorsed moving forward, reducing risks associated with onboarding delays, while Federico aims to proactively engage stakeholders to accelerate progress. The timing for contract finalization is affected by the quarter-end, but aims for execution by late August or early September remain realistic, emphasizing the need for clear communication to maintain momentum.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "Onboarding, Security review, Procurement, POC progress, SOC 2 audit, Vendor approval",
+      "action_items": "\n**Federico Maffei**\nMeet with Forest to understand current progress and clarify onboarding status (06:31)\nMeet with Rahul to discuss and advance the proof of concept (POC) activities (14:16)\nContact Patricia from the security team and Forest to express intent to move forward and request clarity on next steps (13:22)\nProvide update and progress report in early follow-up meeting next week (14:47)\n\n**Dan Wathne**\nContinue monitoring and supporting onboarding process, particularly related to security and procurement reviews (04:27)\nCoordinate sharing of SOC 2 report with Lydia in booking team once available (05:02)\nAssist in managing procurement documentation completion including banking and KYP forms (06:31)\nPrepare for start of POC after onboarding completion with awareness of end-of-quarter business timing constraints (13:44)\n"
+    },
+    {
+      "id": "01KYFYDY218MCHZVV0K39GKWFC",
+      "source": "fireflies",
+      "title": "Growthbook <> OpenTable - Pricing Sync",
+      "date": "2026-07-28",
+      "duration_minutes": 40,
+      "summary": "The discussion centered on contract negotiation and pricing strategies, with the aim of concluding the agreement by the end of Q3. Key points included significant discounts on the platform fee and seat costs, allowing flexibility for seat additions. Participants highlighted the importance of synchronizing legal reviews with internal agreements to facilitate timely onboarding, while also discussing the enhancement of the Proof of Concept (PoC) beyond an initial month. Security requirements and technical dependencies were flagged as potential blockers, necessitating early attention. The overarching goal is to create a stable long-term partnership, emphasizing predictable pricing and timely decision-making to ensure a smooth transition into Q4.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Pricing Tiers, Proof of Concept, Seat Licensing, Order Form, SSO Integration",
+      "action_items": "\n**Dan Wathne**\nShare the prior pricing and business case deck asynchronously with Sarah Fleming for her review and follow-up (03:45)\nSend updated presentation and draft order form reflecting final seat numbers and contract redlines for legal review (14:30)\nPrepare and send a dummy order form to enable trial access so the PoC can start before contract finalization (17:01)\nRe-share PoC structure and timeline documents to ensure clarity on deliverables and goals alignment (18:50)\nFollow up with deliverables and create a private communication channel to track PoC progress and keep main discussion threads uncluttered (29:44)\nCoordinate and support expedited contract signing effort to conclude by end of Q3 (August to October) (11:03)\n\n**Sarah Fleming**\nReview shared pricing and business case materials asynchronously and raise any questions afterward (03:45)\nConfirm with legal team the feasibility and requirements for a dummy order form to enable PoC trial access (17:28)\nCoordinate internal review and alignment on seat count and contract terms with team and executives (09:55)\nSynchronize with security and IT teams to clarify SSO and technical implications for PoC onboarding (25:48)\nEngage legal to expedite review timelines to meet Q3 contract decision deadline (16:28)\n\n**Federico Maffei**\nAlign with OpenTable internal stakeholders (Justin, Chris) on pricing, seat count, and PoC progress in coming days (09:11)\nCoordinate with Rahul for technical reviews and manage dependencies especially around SSO and security (26:20)\n\n**Rahul Bhatia**\nEvaluate technical dependencies including SSO integration needs in coordination with security teams (24:16)\nAttend planned sync meeting to clarify technical requirements and risks impacting PoC deployment timeline (26:23)\n"
+    }
+  ]
+}

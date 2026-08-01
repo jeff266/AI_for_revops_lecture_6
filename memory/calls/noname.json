@@ -1,0 +1,19 @@
+{
+  "company": "noname",
+  "slug": "noname",
+  "last_etl_date": "2026-08-01T13:58:06.035664",
+  "calls": [
+    {
+      "id": "01KP5F7RNJDHKDYAHVDRCJ8MEE",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for noname",
+      "date": "2026-04-15",
+      "duration_minutes": 38,
+      "summary": "The discussion centered on Growth Book's shift from a free version to an enterprise pricing model for self-hosted clients. Maxim Knezevic from No Name Team detailed their budget of €11,250–€18,750 paired with needs for multi-organization support and access controls. James Shannon explained the new per-experiment pricing, which starts with a minimum contract of $30,000, emphasizing flexibility on included experiments. The contract approval process involves Maxim selecting the tool but requires finance sign-off. Recent tests have shown measurable revenue impacts, yet feature needs like SLA and access controls remain critical, while several UI bugs were acknowledged. Aiming for quick contract closure, James proposed a meeting to align on pricing and finalize details due to tight internal schedules.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, Enterprise Pricing, Hyper-Casual Games, Experiment-Based Pricing, SLA, Budget Approval",
+      "action_items": "\n**Maxim Knezevic**\nCoordinate a call with the Chief of Analysts to discuss budget approval and GrowthBook’s value (20:48)\nConfirm and share the company name \"No Name Team\" for upcoming communications (34:09)\nAttend follow-up pricing and contract discussion call on Friday at 13:00 UAE time (11:00 UK time) (31:07)\n\n**James Shannon**\nInvestigate and follow up with GrowthBook support regarding metrics/dimensions bug reported by Maxim (07:10)\nDiscuss pricing adjustment options with senior management to bridge the old pricing quote and new experiment-based pricing model, considering Maxim’s team size and experiment volume (19:50)\nPrepare and present a tailored pricing proposal incorporating dropped customizations and SLA features, minimizing unused support and training (24:50)\nSchedule and conduct a detailed pricing and contract meeting with Maxim and his budget approver on Friday at 13:00 UAE time (31:07)\n"
+    }
+  ]
+}

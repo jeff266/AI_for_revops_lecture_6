@@ -1,0 +1,19 @@
+{
+  "company": "Tanaaz Khan and Ashley Stirrup",
+  "slug": "tanaaz_khan_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.034051",
+  "calls": [
+    {
+      "id": "01KPA5CW1N2Z8EP4Q6BGMEK0RQ",
+      "source": "fireflies",
+      "title": "Tanaaz Khan and Ashley Stirrup",
+      "date": "2026-04-17",
+      "duration_minutes": 40,
+      "summary": "The team discussed enhancing Growth Book's market position as a top feature flagging solution, distinct from competitors like LaunchDarkly. Ashley Stirrup’s framework highlighted strengths and emphasized a shift in marketing focus from experimentation to feature flags. The upcoming website relaunch on April 23 aims to improve messaging and SEO, introducing role-based pages. Content development will prioritize high-quality feature flagging resources, utilizing customer insights to boost authenticity. A video podcast strategy is in place, aiming to increase engagement and outreach through consolidated content hubs. Long-term SEO plans will focus on niche content and real-world examples to enhance authority and differentiation in the market.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature Flags, Messaging, Website Launch, Content Strategy, Podcast, AI Development",
+      "action_items": "\n**Ashley Stirrup**\nFinalize messaging and update the feature flag positioning document; share the blog on why Growth Book is a great feature flag solution with Tanaaz (10:30)\nShare the spreadsheet decision framework and the topic checklist document with Tanaaz for reference and use (15:32)\nSend Dropbox interview recording to Tanaaz for AI and feature flag related content context (20:28)\n\n**Tanaaz Khan**\nReview all provided documents, website, and internal resources; reach out to Scott Bailey for technical product and feature flag resources (11:30)\nHold off on some blog drafts until receiving the updated messaging and new website launch; target next article deadline May 24 (24:49)\nMonitor Slack for updates and ask for clarifications or missing info related to product and content changes (27:42)\n\n**Jason Faber**\nInform Tanaaz when the new website and role-based pages go live (planned for May 23) (25:31)\nReflect on finalizing strategy for podcast content integration and SEO amplification (34:29)\n\n**Scott Bailey**\nServe as main point of contact for product updates, SME interviews, and detailed feature flag product input going forward (24:44)\n\n**Jason Faber and Ashley Stirrup**\nExplore how to best integrate and amplify podcast content on the new website via a resource hub or guides section (33:00)\n"
+    }
+  ]
+}

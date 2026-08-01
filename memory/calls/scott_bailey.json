@@ -1,0 +1,19 @@
+{
+  "company": "Scott Bailey",
+  "slug": "scott_bailey",
+  "last_etl_date": "2026-08-01T13:58:06.018468",
+  "calls": [
+    {
+      "id": "01KRYDFPCSSNE9H31Q66DETSEC",
+      "source": "fireflies",
+      "title": "Enrique Meeting (30m) (Scott Bailey)",
+      "date": "2026-05-22",
+      "duration_minutes": 31,
+      "summary": "The discussion revolved around Growth Book's efforts to leverage AI for automating and enhancing experimentation workflows, particularly in improving free-to-paid conversion rates. Enrique Hoyos is leading the initiative to build AI agent skills for automating experiment analysis, tracking, and ranking. The upcoming 4.4 release aims to provide a robust REST API for comprehensive programmatic control of experiments and feature flags, while maintaining human oversight for quality assurance. Notable challenges include data integration discrepancies and managing numerous feature flags without sufficient organization tools. The team is actively exploring better targeting strategies for experiments and utilizing AI effectively to streamline processes.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "Growth Book, AI automation, feature flags, experiment targeting, data warehouse, API",
+      "action_items": "\n**Scott Bailey**\nFollow up with Enrique Hoyos on prerequisite targeting feature details and assist with configuring targeting to reduce audience noise and overlap in Growth Book (24:47)\nConsider AI/agent-driven improvements for Growth Book targeting UI/UX to simplify complex segmentation and user journey-specific bucketing based on Enrique’s feedback (28:06)\n\n**Enrique Hoyos**\nReview prerequisite targeting capability in Growth Book to verify if it meets requirements for accurate audience bucketing and segmentation (24:25)\nContinue building and refining AI agent skills for automation of experiment analysis, ideation, prioritization, prototyping, and brief creation with human review workflow (03:50)\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook and Life360",
+  "slug": "life360",
+  "last_etl_date": "2026-08-01T13:58:05.974441",
+  "calls": [
+    {
+      "id": "69f0deacca0ec70021a13391",
+      "source": "apollo",
+      "title": "GrowthBook and Life360",
+      "date": "2026-04-28",
+      "duration_minutes": 22,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on what was discussed (product, features, pain points), key participants and roles, and next steps/action items.\n\nKey participants: Daniel Wathne (sales lead, GrowthBook), Jake Stangl (sales team, though mostly intro), Logan Bates (solutions engineering, joins later), and Russ Painter (Life360, DTC team, web optimization, experimentation). Pain points: Life360 uses Statsig for server-side testing but finds it expensive, limited data passing, and poor hybrid front-end/back-end support. They want a cheaper alternative that integrates with their CMS (Contentful) and allows exporting to Databricks. GrowthBook is discussed as a potential replacement. Next steps: Daniel and Logan will send documentation and use cases to Russ; schedule a follow-up call on the 7th or 8th with Russ and his PM to demo, discuss POC/trial, and build a value case to bring to the dev team.\n\nSummary: In this call, GrowthBook sales rep Daniel Wathne and solutions engineer Logan Bates discussed with Russ Painter (Life360 DTC team) replacing their expensive, limited Statsig setup with GrowthBook for server-side experimentation. Key pain points included cost, inability to pass sufficient data, and poor hybrid front-end/back-end support. Next steps: GrowthBook will share documentation and use cases, followed by a meeting on the 7th/",
+      "host": "Jake Stangl",
+      "participants": 4
+    }
+  ]
+}

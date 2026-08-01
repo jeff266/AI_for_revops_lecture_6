@@ -1,0 +1,19 @@
+{
+  "company": "Cris to provide input on what head's of experimentation care about",
+  "slug": "cris_to_provide_input_on_what_heads_experimentation_care_about",
+  "last_etl_date": "2026-08-01T13:58:06.039112",
+  "calls": [
+    {
+      "id": "01KMRCVR7QZQWMMNVX2VDF7RM8",
+      "source": "fireflies",
+      "title": "Cris to provide input on what head's of experimentation care about",
+      "date": "2026-04-02",
+      "duration_minutes": 31,
+      "summary": "The team discussed the performance of 16 outbound campaigns targeting 5,300 prospects, which have shown limited success due to ineffective messaging. Current outreach focuses on experimentation frameworks, which do not resonate with engineering personas seeking specific feature capabilities. It was highlighted that product leaders respond better to messaging that demonstrates the ROI of features, indicating a need for targeted outreach based on the persona's role. There is an emphasis on organizing messages for experienced versus newer users and leveraging top-down executive buy-in to facilitate adoption. Addressing operational risks and ensuring tailored content for distinct audience segments emerged as critical aspects moving forward.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 6,
+      "keywords": "Experimentation, Outbound Campaigns, Feature Flags, Data Analytics, Engineering Leadership, Messaging Strategy",
+      "action_items": "\n**Ayhan K Isaacs**\nRefine outbound campaign messaging to be more feature-focused and tailored to specific personas, incorporating insights from Chris Dizon (28:09)\nShare the updated campaign dashboard and iterate messaging asynchronously with Chris Dizon and Ashley Stirrup to improve campaign effectiveness (28:09)\nMaintain communication through the shared Slack channel to update all parties on progress and coordinate next steps for campaign improvements (29:37)\n\n**Ashley Stirrup**\nIntroduce Ayhan to the internal BDR to share outreach tactics and collaborate on improving email response rates and overall outreach effectiveness (23:45)\n\n**Chris Dizon**\nReview and provide feedback on the shared HTML dashboard and campaign data to guide messaging refinement and campaign strategy (28:37)\n"
+    }
+  ]
+}

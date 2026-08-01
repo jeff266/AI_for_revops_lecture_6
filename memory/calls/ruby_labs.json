@@ -1,0 +1,19 @@
+{
+  "company": "Growthbook <> Ruby Labs",
+  "slug": "ruby_labs",
+  "last_etl_date": "2026-08-01T13:58:05.986856",
+  "calls": [
+    {
+      "id": "01KYDC1825XBMR4SRTFV097DM5",
+      "source": "fireflies",
+      "title": "Growthbook <> Ruby Labs - Check in",
+      "date": "2026-07-27",
+      "duration_minutes": 22,
+      "summary": "In the meeting, Growth Book's price was reduced to $66,000 to better compete with Statsic’s $45,000 offer, which lacked certain features like analytics and event logging. Dan Wathne secured internal approval for this significant price cut, maintaining essential resources like 200 million API requests and 600 GB bandwidth monthly. Daniil expressed willingness to stick with Growth Book if migration costs were manageable, despite the operational risks involved in switching platforms. Both parties agreed on a tight timeline for decision-making to finalize the contract, emphasizing the importance of retaining Growth Book's customer base amid competitive pressures. Concerns about Statsic's long-term pricing dynamics were also raised.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "Statsic, Growthbook, pricing negotiation, migration, product acquisition, event limits",
+      "action_items": "\n**Daniil Lebedinskiy**\nDiscuss Growthbook’s revised $66,000 proposal with Ruby Labs leadership promptly and provide feedback by the next day (10:07)\nShare the updated order form with internal teams and expedite final decision to meet the week’s deadline (11:22)\n\n**Dan Wathne**\nSend the revised Growthbook order form with adjusted pricing and bonus limits immediately after the call (10:26)\nSchedule a follow-up meeting for the next day (27th) to discuss Ruby Labs’ decision and next steps (11:37)\n"
+    }
+  ]
+}

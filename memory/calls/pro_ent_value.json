@@ -1,0 +1,19 @@
+{
+  "company": "Pro vs ent value",
+  "slug": "pro_ent_value",
+  "last_etl_date": "2026-08-01T13:58:06.035797",
+  "calls": [
+    {
+      "id": "01KP6QQ8062SS30RWR1ZEZBDTW",
+      "source": "fireflies",
+      "title": "Pro vs ent value",
+      "date": "2026-04-14",
+      "duration_minutes": 25,
+      "summary": "The discussion addressed how Enterprise pricing significantly reduces BigQuery costs for customers, with Jeremy Dorn highlighting a potential 90% cost reduction. Dan Wathne pointed out the challenges that high Enterprise contract costs might pose compared to Pro users. The team explored security trade-offs Pro customers make for cost savings, indicating risks involved in lacking enterprise-level security features. Advanced statistical methods that speed up experimentation were highlighted, with the capability to conduct experiments with smaller audience sizes. Additionally, the meeting emphasized the critical role of governance features as differentiators for Enterprise buyers and discussed Growth Book's efforts to position itself competitively by offering unique warehouse-native experimentation solutions catering to both self-service Pro users and larger organizations.",
+      "organizer": "scott@growthbook.io",
+      "participants": 1,
+      "keywords": "Enterprise, Pro Plan, Feature Flags, Warehouse Cost Optimization, Advanced Statistics, Usage-Based Pricing",
+      "action_items": "\n**Jeremy Dorn**\nContinue documenting the value conversation between Enterprise and Pro plans, focusing on cost savings, performance improvements, and feature flag capabilities to clarify customer benefits (05:59)\n\n**Ashley Stirrup**\nDevelop new marketing content that highlights GrowthBook’s feature flag capabilities to better position the product against competitors like LaunchDarkly (09:23)\n\n**Product and Sales Teams**\nRefine messaging for product and sales teams to emphasize the security risks and approval flow benefits of Enterprise plans, stressing the potential business impact of lacking these controls in Pro plans (18:57)\n\n**Pricing and Strategy Team**\nEvaluate usage-based pricing models and potential packaging adjustments to better differentiate small and mid-size customers from large-scale enterprise users, facilitating upgrade triggers and smoother transitions (19:38)\n\n**Product Team**\nConsider capping advanced experimentation features like multi-arm bandits and safe rollouts on Pro plans to allow users to trial these capabilities while reserving full access for Enterprise customers (23:29)\n"
+    }
+  ]
+}

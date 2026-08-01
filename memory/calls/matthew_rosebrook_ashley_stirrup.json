@@ -1,0 +1,19 @@
+{
+  "company": "Matthew Rosebrook and Ashley Stirrup",
+  "slug": "matthew_rosebrook_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:05.988327",
+  "calls": [
+    {
+      "id": "01KY5D3N298QGEYEEBZARASY48",
+      "source": "fireflies",
+      "title": "Matthew Rosebrook and Ashley Stirrup",
+      "date": "2026-07-23",
+      "duration_minutes": 11,
+      "summary": "The discussion focused on the potential acquisition of the domain name release.com, which has an initial price set at $2 million with a $500k minimum bid. Matt highlighted the owner's expectations and exclusivity conditions, while Ashley expressed uncertainty about the domain's value given her company's current business focus. Despite the domain's broad market interest, particularly from AI-related companies, its direct fit with Ashley's marketing needs was questioned. The parties acknowledged the premium pricing and market trends, with a plan for Ashley to consult her CEO regarding potential bids, while Matt will confirm pricing information to facilitate future negotiations.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "domain acquisition, release.com, feature flags, rebranding, AI transition, pricing negotiation",
+      "action_items": "\n**Ashley Stirrup**\nDiscuss the domain name release.com pricing and potential value internally with CEO to determine interest level (02:09)\n\n**Matt Rosebrook**\nSend a follow-up email to Ashley confirming pricing details and minimum bid conditions for release.com (05:50)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Alex Trost and Ashley Stirrup",
+  "slug": "alex_trost_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.031476",
+  "calls": [
+    {
+      "id": "01KPP59WF535W5VDTS2Z6C8ZKZ",
+      "source": "fireflies",
+      "title": "Alex Trost and Ashley Stirrup",
+      "date": "2026-04-22",
+      "duration_minutes": 28,
+      "summary": "Growth Book has doubled its revenue to $8 million with 35 employees and emphasizes a strong product-market fit, supported by significant deals with Salesforce and others. The company's customer base consists of approximately 3,000 clients, with a model that includes 25% self-serve and 75% enterprise. Growth Book aims to enhance developer relations by building a more engaging community beyond its current Slack group and plans to create a dedicated platform for story-sharing. Alex shared insights on evolving developer experience and the importance of improving CMS usability. Meanwhile, a shift in content strategy involves launching a new channel to target marketers with AI tools integration. Lastly, the technical advantages of Growth Book include local feature flag evaluation, positioning it favorably against competitors in the headless CMS space.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Developer Relations, Headless CMS, AI-assisted Coding, Feature Flags, Community Building, Video Education",
+      "action_items": "\n**Ashley Stirrup**\nFollow up with Scott to confirm Alex’s technical fit for the Developer Relations role and arrange a technical interview between Alex and Scott for further assessment (27:15)\n\n**Alex Trost**\nPrepare technical questions to ask Growth Book’s technical team, focusing on feature flag implementation and MCP server details to better understand the engineering complexities (26:27)\n"
+    }
+  ]
+}

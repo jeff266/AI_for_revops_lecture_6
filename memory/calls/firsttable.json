@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> FirstTable",
+  "slug": "firsttable",
+  "last_etl_date": "2026-08-01T13:58:05.974287",
+  "calls": [
+    {
+      "id": "69b31f0805401b001542135f",
+      "source": "apollo",
+      "title": "Growthbook <> FirstTable - Pricing Sync ",
+      "date": "2026-03-12",
+      "duration_minutes": 14,
+      "summary": "In the call, Daniel Wathne (GrowthBook sales) presented a discounted pricing model (platform fee + per-seat, not usage-based) to Jay Jana (FirstTable decision maker), addressing pain points around data warehouse integration and cost predictability. Jay noted they are still evaluating PostHog but appreciated the stable pricing and managed solution. Next steps: Daniel will send the order form, Jay will present the business case to his team and CFO, aiming for a March signature with a possible 30-day opt-out, and will provide a final decision by end of next week.",
+      "host": "Daniel Wathne",
+      "participants": 2
+    },
+    {
+      "id": "69f13822520e760011511457",
+      "source": "apollo",
+      "title": "Growthbook <> FirstTable - Technical Demo ",
+      "date": "2026-04-28",
+      "duration_minutes": 44,
+      "summary": "GrowthBook's Daniel Wathne and Solutions Engineer Logan Bates demoed their feature flagging and experimentation platform to FirstTable's engineering team (led by Frans \"Jay\" Waal, with CTO Ben, product lead Jack, and others). Key topics included safe rollouts with automatic rollback on metric regression, experiment health checks (e.g., sample ratio mismatches), metrics configuration (including a pain point around",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

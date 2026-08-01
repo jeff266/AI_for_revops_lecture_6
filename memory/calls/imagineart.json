@@ -1,0 +1,19 @@
+{
+  "company": "ImagineArt",
+  "slug": "imagineart",
+  "last_etl_date": "2026-08-01T13:58:06.037825",
+  "calls": [
+    {
+      "id": "01KNK1S510YF8TVJ44K98C9Q0V",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for ImagineArt",
+      "date": "2026-04-09",
+      "duration_minutes": 9,
+      "summary": "During the meeting, initial technical difficulties arose that delayed the start. Mehdi encountered 'three or four error' codes on his laptop, which hindered a stable connection. To quickly resolve these issues, Graham suggested switching to Google Meet. He initially shared the link via chat and later emailed it to facilitate Mehdi's access via his phone. This transition allowed Mehdi to join without further disruption, ensuring that communication could continue effectively throughout the meeting.",
+      "organizer": "graham@growthbook.io",
+      "participants": 2,
+      "keywords": "Google Meet, connection issues, technical difficulties, meeting recording, laptop error, remote access",
+      "action_items": "\n**Graham McNicoll**\nSend the Google Meet link to Mehdi via email to enable him to join the meeting from his phone due to laptop connection issues (07:41)\n\n**Mehdi**\nJoin the Google Meet session using the link sent by Graham to continue participation despite laptop issues (07:41)\n"
+    }
+  ]
+}

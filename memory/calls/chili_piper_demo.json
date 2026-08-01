@@ -1,0 +1,19 @@
+{
+  "company": "️ Chili Piper Demo for  GrowthBook",
+  "slug": "chili_piper_demo",
+  "last_etl_date": "2026-08-01T13:58:06.030603",
+  "calls": [
+    {
+      "id": "01KPRP3CJBEW70AXRQWQ5HHWGE",
+      "source": "fireflies",
+      "title": "️ Chili Piper Demo for  GrowthBook",
+      "date": "2026-04-23",
+      "duration_minutes": 0,
+      "summary": "The discussion centered on implementing a more intelligent lead routing system that segments demo requests by company size, location, and visitor data to optimize sales resources. Currently, leads are directed to Account Executives based on availability without proper segmentation, leading to inefficiencies. The proposed strategy includes tailored routing based on employee count and region, utilizing HubSpot CRM data and real-time enrichment from providers like Apollo. Additionally, the integration of Chili Piper’s platform aims to capture leads dynamically while ensuring fair distribution among sales reps through automated processes. A new bundled pricing model was introduced, reflecting a strategic shift towards higher-value deals and enhancing the user experience through enriched data.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 5,
+      "keywords": "Lead routing, Enrichment, Chili Piper, Demo scheduling, HubSpot integration, Website visitors",
+      "action_items": "\n**Jeff Ignacio**\nSync with Ryan McGurk asynchronously or live to debrief on Chili Piper and competitor evaluations (29:27)\nConfirm with Ashley (VP Marketing) whether to add website visitors as a required field on the web form for better qualification (34:23)\nReview and consider Chili Piper API and enrichment offer based on information Evan will send (37:30)\n\n**Ryan McGurk**\nConnect with Jeff post-meeting to align on requirements and insights from Chili Piper’s demo (29:27)\n\n**Evan Mangione**\nSend detailed information on Chili Piper API capabilities, enrichment integrations, pricing, and product roadmap to Jeff and Ryan (37:30)\nProvide a comparison document or information highlighting Chili Piper’s differences versus Default (38:54)\n"
+    }
+  ]
+}

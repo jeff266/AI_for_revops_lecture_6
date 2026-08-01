@@ -1,0 +1,29 @@
+{
+  "company": "Reo Tech Support",
+  "slug": "reo_tech_support",
+  "last_etl_date": "2026-08-01T13:58:05.981735",
+  "calls": [
+    {
+      "id": "69989b9d1bc23a001d8774a3",
+      "source": "apollo",
+      "title": "Reo Tech Support",
+      "date": "2026-02-20",
+      "duration_minutes": 34,
+      "summary": "Sanjana Devireddy (Customer Success Manager), Ashley Stirrup (Sales), Amey Sadar (Technical Support), and Graham (Growthbook engineer) discussed integrating Reo's Product Usage API to track sign-in events from Growthbook, which uses MongoDB triggers and server-side Node.js. Key pain points included confusing documentation, unclear product ID definitions, and incorrect API key usage. Next steps: Amey will provide detailed implementation steps and update documentation; Graham will configure metrics and use the proper Product Usage API endpoint.",
+      "host": "Ashley Stirrup",
+      "participants": 4
+    },
+    {
+      "id": "01KHV810DPGDPPANPC142J4ASC",
+      "source": "fireflies",
+      "title": "Reo Tech Support",
+      "date": "2026-02-20",
+      "duration_minutes": 32,
+      "summary": "The meeting addressed the implementation of the product usage API for tracking user sign-in events through server-side environments, primarily focusing on Node.js integration. Amey Sadar and Sanjana Devireddy clarified the API's correct usage, alleviating confusion regarding the required fields, such as product ID, which is self-assigned for internal reference. They emphasized the need for pre-configured metrics on the Rio UI to ensure proper data ingestion. The discussion highlighted the importance of email domain for mapping user activity to organizations while detailing the fallback methods for anonymous activities. A commitment to improve documentation and support materials was made to ease client confusion and assist future integrations. Ongoing customer support and clear communication were prioritized for successful adoption.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "product usage API, MongoDB triggers, server-side implementation, login event tracking, product ID, data enrichment",
+      "action_items": "\n**Amey Sadar**\nWrite a clear, detailed step-by-step guide on implementing server-side product usage API calls and update confusing documentation accordingly (31:07)\nShare and clarify definitions and usage of client ID, API key, and product ID in the product usage API documentation (12:04)\nAssist Graham with validation of implemented API calls in production environment and ensure data flows correctly in Rio UI (07:42)\n\n**Graham McNicoll**\nContinue to refine and implement server-side event firing for login, signup, and team invite activity using Product Usage API according to clarified documentation (30:44)\n\n**All Participants**\nGraham to reach out via email for any further clarifications or questions as needed following this meeting (30:49)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Jaineva Camille Zapanta and August Allard",
+  "slug": "jaineva_camille_zapanta_august_allard",
+  "last_etl_date": "2026-08-01T13:58:06.052330",
+  "calls": [
+    {
+      "id": "01KFZF9SRXN3GQFDHDFHWY0YMK",
+      "source": "fireflies",
+      "title": "Jaineva Camille Zapanta and August Allard",
+      "date": "2026-01-29",
+      "duration_minutes": 18,
+      "summary": "GrowthBook is expanding its support engineering team by hiring a senior support engineer in the Asia Pacific region to cover local business hours and improve customer responsiveness. Currently, the support team consists of two engineers covering US and Europe/Middle East time zones, with no dedicated APAC support coverage yet. The new hire will onboard with assistance from a Japan-based software engineer to ensure smooth integration. Work hours will be flexible within local business hours, starting between 7:00am and 10:00am, and no weekend support is planned. Notably, GrowthBook is an open-source platform focused on A/B testing and feature flagging, serving developers primarily. Jaineva, a candidate with seven years of experience, brings strong technical skills and a history of automation development, although she lacks direct API support experience. The hiring process emphasizes strong written communication and includes assessments and interviews to ensure candidates align with the company's values and strategic goals.",
+      "organizer": "august@growthbook.io",
+      "participants": 3,
+      "keywords": "Growth Book, Support engineering, A/B testing, Feature flagging, APAC hiring, Writing assessment",
+      "action_items": "\n**August Allard**\nSend Jaineva the writing assessment materials later on the day of the meeting (16:36)\nProvide support and answer any questions Jaineva may have about the writing assessment via email (16:50)\n\n**Jaineva Zapanta**\nComplete writing assessment within approximately one hour and return it at her convenience, ideally within a week (16:50)\n"
+    }
+  ]
+}

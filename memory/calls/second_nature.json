@@ -1,0 +1,29 @@
+{
+  "company": "Second Nature",
+  "slug": "second_nature",
+  "last_etl_date": "2026-08-01T13:58:05.977011",
+  "calls": [
+    {
+      "id": "69cac5b49dd403001903d44f",
+      "source": "apollo",
+      "title": "Second Nature + GrowthBook",
+      "date": "2026-03-30",
+      "duration_minutes": 12,
+      "summary": "Nir Altmark (VP at Second Nature AI) discussed replacing their internal feature toggle system with GrowthBook, primarily for feature flags, but found the $40/user/month Pro plan too expensive for ~30 users. Christian Liebenow (GrowthBook rep) offered a potential discount in exchange for a case study and explained enterprise self-hosted pricing starts at $50k/year. Next steps: Nir will check with his founders, and Christian will explore pricing options tailored to their feature-flag-only use case.",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
+    {
+      "id": "01KMTW54G89DGAWW0D3AHMJ1CB",
+      "source": "fireflies",
+      "title": "Second Nature + GrowthBook",
+      "date": "2026-03-30",
+      "duration_minutes": 12,
+      "summary": "The discussion addressed Growth Book's pricing structures for both cloud and self-hosted enterprise solutions to meet the budget needs of Second Nature AI. Key highlights included the Pro plan's cost of $40 per user per month for up to 50 users, which would total approximately $2,000 monthly for Second Nature AI's 30 users. The self-hosted minimum cost is $50,000 per year for 10 licenses, deemed advantageous for security and flexibility. Nir expressed interest in starting with the Pro plan to evaluate its value. The conversation also explored potential discounts related to a joint case study. Misunderstandings about the company identities were clarified, emphasizing the need for clear communication.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Feature flags, GrowthBook pricing, Self-hosted solution, Enterprise plan, Pro plan, Case study discount",
+      "action_items": "\n**Nir Altmark**\nEvaluate GrowthBook Pro plan costs and check internal approval feasibility (07:40)\nConsider starting GrowthBook usage with a limited number of users on the Pro plan (11:40)\n\n**Christian Liebenow**\nProvide detailed pricing information for GrowthBook enterprise cloud and self-hosted solutions (00:50)\nCheck internally about potential discounted pricing options tied to case studies and press releases with Second Nature using feature flags (08:45)\nFollow up on discount possibilities for Second Nature’s feature flag use case and communicate findings (09:30)\n"
+    }
+  ]
+}

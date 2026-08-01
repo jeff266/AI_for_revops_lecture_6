@@ -1,0 +1,19 @@
+{
+  "company": "Douglas and GrowthBook",
+  "slug": "douglas",
+  "last_etl_date": "2026-08-01T13:58:06.012623",
+  "calls": [
+    {
+      "id": "01KT6MJS88A33318G7J666MV1H",
+      "source": "fireflies",
+      "title": "Douglas and GrowthBook",
+      "date": "2026-06-05",
+      "duration_minutes": 38,
+      "summary": "The meeting highlighted the Douglas experimentation team's structure, led by Stane Zabot and including front-end engineers and QA professionals, that emphasizes A/B testing alongside product and UX teams. The discussions covered their cautious approach to integrating AI tools while maintaining reliance on manual coding due to platform complexities. Additionally, insights into their metrics management revealed a preference for simplicity using Chameleon over more complex systems like Snowflake. The team conducts about 150 experiments annually, including promotional and product/UX tests. They reviewed Growth Book's features, viewing it as a potential future solution to enhance their experimentation capabilities as they evolve.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "A/B testing, Data warehouse, Experimentation platform, AI-driven experimentation, Pricing model, User experience",
+      "action_items": "\n**James Shannon**\nIntroduce a German-speaking GrowthBook team member to Douglas to enhance communication and support (37:05)\nProvide Douglas with updated information on GrowthBook platform features and pricing changes (37:50)\n\n**Stane Zabot**\nShare Douglas’s current and future experimentation requirements with GrowthBook to ensure alignment and readiness (31:10)\n\n**Niklas Bräutigam**\nMaintain and update the experimentation platform comparison document to include GrowthBook’s latest features and pricing details (07:20)\n"
+    }
+  ]
+}

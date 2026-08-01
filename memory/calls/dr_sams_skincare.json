@@ -1,0 +1,17 @@
+{
+  "company": "Dr Sam's Skincare",
+  "slug": "dr_sams_skincare",
+  "last_etl_date": "2026-08-01T13:58:05.975966",
+  "calls": [
+    {
+      "id": "69d91aa0b1fd6e0021bd705a",
+      "source": "apollo",
+      "title": "GrowthBook Demo for Dr Sam's Skincare",
+      "date": "2026-04-10",
+      "duration_minutes": 29,
+      "summary": "Charlotte Dugue (Senior Ecom Manager at Dr Sam's Skincare) discussed with Jake Heier (GrowthBook account team) the need for an A/B testing platform",
+      "host": "Jake Heier",
+      "participants": 2
+    }
+  ]
+}

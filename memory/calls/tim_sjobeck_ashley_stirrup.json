@@ -1,0 +1,31 @@
+{
+  "company": "Tim Sjobeck and Ashley Stirrup",
+  "slug": "tim_sjobeck_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.033664",
+  "calls": [
+    {
+      "id": "01KKPWKA473FSFH5C01VAMDJC5",
+      "source": "fireflies",
+      "title": "Tim Sjobeck and Ashley Stirrup",
+      "date": "2026-03-16",
+      "duration_minutes": 27,
+      "summary": "The discussion centered on establishing a robust revenue operations infrastructure for GrowthBook as it faces growth challenges due to the absence of a dedicated Rev Ops leader. Tim Sjobeck will initially lead the Rev Ops efforts part-time, addressing operational gaps while Ashley Stirrup highlighted the disorganized data flows affecting sales and finance. There’s a critical need for improved customer data systems to clarify renewal processes and buyer journeys. Marketing operations require structured audits, including an unprioritized HubSpot audit, to focus on urgent improvements. Training and onboarding for new sales staff are informal, raising risks as the company plans to expand rapidly. Tim offered his consulting services at a flexible retainer model to guide strategic operations and align teams across functions.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Rev Ops, GrowthBook, Sales Operations, Customer Success, Marketing Operations, Data Management",
+      "action_items": "\n**Ashley Stirrup**\nDiscuss internally with CRO Ryan McGurk about Jeff’s performance and current forecasting setup to clarify next operational steps (11:08)\nIdentify appropriate GrowthBook leadership contacts Tim should engage with to define scope and priorities (20:04)\n\n**Tim Sjobeck**\nAwait internal direction from Ashley and GrowthBook’s leadership to confirm next meetings and engagement structure (20:04)\nPrepare to provide strategic advice on building scalable Rev Ops infrastructure for GrowthBook’s growth and enterprise ambitions (10:41)\nRemain available to support GrowthBook remotely after his week off, starting following Tuesday (20:04)\n"
+    },
+    {
+      "id": "01KPE6AX7DY00F6YWGQ24ZBJAC",
+      "source": "fireflies",
+      "title": "Tim Sjobeck and Ashley Stirrup",
+      "date": "2026-04-20",
+      "duration_minutes": 20,
+      "summary": "The team discussed the phased approach to optimizing the data warehouse by prioritizing high-impact data and removing lower-value sources like social media. They emphasized the importance of integrating GA4 and Google Tag Manager, exploring a new vendor for implementation. Additionally, a fractional CFO is engaged to clean up financial data, addressing billing and licensing inconsistencies for a reliable source of truth. Customer success processes are in early stages, focusing on basic tracking for top customers while aligning with future warehouse improvements. Lastly, the need to optimize consultant involvement and ensure clear communication across projects was highlighted for better accountability and coordination.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Data Warehouse, GA4 Integration, Customer Success, Accounting Data Cleanup, Consultant Management, Project Prioritization",
+      "action_items": "\n**Ashley Stirrup**\nFollow up with Matt to clarify project scope, pricing, and GA4 integration capability for the new website project (05:52)\nContact Charlie from the accounting firm to clarify his skill set, roles, and deliverables related to the data cleanup and integration project (14:45)\nAssess internal team’s ability to prioritize and package consultant projects for stakeholder buy-in, including addressing CRO concerns about consultant overhead (18:04)\nManage ongoing communications with Matt regarding project progress and escalate issues to Tim only when necessary (19:32)\n\n**Tim Sjobeck**\nEngage with Matt on business alignment discussions to clarify project goals and advise on scope phasing as needed (04:06)\nProvide flexible consulting support with a low baseline hourly commitment to help prioritize projects and integrate consultant efforts effectively (06:01)\nResend previous advisory consultant engagement email to Ashley if requested to support clarity on consulting arrangements (16:45)\n"
+    }
+  ]
+}

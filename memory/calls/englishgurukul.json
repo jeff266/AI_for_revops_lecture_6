@@ -1,0 +1,17 @@
+{
+  "company": "englishgurukul",
+  "slug": "englishgurukul",
+  "last_etl_date": "2026-08-01T13:58:05.978667",
+  "calls": [
+    {
+      "id": "69bda301a1cf3b0019faf66a",
+      "source": "apollo",
+      "title": "Canceled: GrowthBook Demo for englishgurukul",
+      "date": "2026-03-20",
+      "duration_minutes": 7,
+      "summary": "Rahul Martin (customer, likely product/manager) discussed switching from Firebase to GrowthBook for experimentation due to inconsistent data, but was concerned about the lack of a Unity SDK. Daniel Wathne (GrowthBook sales) explained they can use the C# SDK and will share documentation. Next steps: reschedule a call for Tuesday with both teams' engineers to demo the platform and discuss BigQuery integration.",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

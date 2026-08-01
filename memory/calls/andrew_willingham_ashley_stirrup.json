@@ -1,0 +1,19 @@
+{
+  "company": "Andrew Willingham and Ashley Stirrup",
+  "slug": "andrew_willingham_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.033256",
+  "calls": [
+    {
+      "id": "01KPE6AX7KZSMQVNAYBG52TQ02",
+      "source": "fireflies",
+      "title": "Andrew Willingham and Ashley Stirrup",
+      "date": "2026-04-20",
+      "duration_minutes": 43,
+      "summary": "The discussion centered on the importance of a data-driven approach to product experimentation, led by Andrew Willingham, who emphasized that this method resolves stakeholder conflicts by ensuring decisions are based on data instead of opinions. He highlighted challenges faced in internal software at Atlassian due to limited user bases, necessitating supplementary qualitative methods like user research. Strategic persistence in experimentation was discussed, underscoring the need to focus on core hypotheses while isolating tests to identify drivers of success. Additionally, AI's role in accelerating product development and the complexities it introduces were covered, alongside the need for effective internal HR products that streamline processes. The conversation also touched on cultivating an experiment-friendly culture within organizations to garner executive buy-in and foster a more data-driven environment.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, HR software, experimentation strategy, AI in product development, talent management, large language models (LLMs)",
+      "action_items": "\n**Ashley Stirrup**\nDigest the conversation and restructure to send Andrew an outline of potential podcast topics related to experimentation and AI in HR software (35:36)\nFollow up with Andrew to explore how to influence senior executives on the importance of experimentation (36:50)\n\n**Andrew Willingham**\nProvide perspective and insight on using experimentation to influence senior leadership when Ashley shares the outline (36:50)\nShare thoughts on structuring content regarding AI experimentation challenges and evaluation for podcast (42:46)\n"
+    }
+  ]
+}

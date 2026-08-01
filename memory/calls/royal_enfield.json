@@ -1,0 +1,19 @@
+{
+  "company": "Royal Enfield",
+  "slug": "royal_enfield",
+  "last_etl_date": "2026-08-01T13:58:06.029164",
+  "calls": [
+    {
+      "id": "01KPTEKXNX62JDJZ9Q6FYQV4BY",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Royal Enfield",
+      "date": "2026-04-24",
+      "duration_minutes": 31,
+      "summary": "Royal Enfield's team outlined significant challenges with their current testing setup, which limits the scalability of experimentation across multiple markets. The deployment of tests currently takes between 2 to 5 days, hindering rapid progression and primarily affecting markets like India, the USA, and Brazil. Successful past tests have shown a 7-8% lift in lead capture conversion rates, essential for growth across motorcycle and allied sales. Growth Book was highlighted as a promising solution, offering unique self-hosting capabilities to ensure data security while streamlining the experimentation process for non-technical users. A competitive analysis is underway, involving vendors like Adobe Target and BWA, amidst plans for a technical demo next week to explore integrations and existing analytics infrastructure.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, CRO, GrowthBook, Interaction Studio, self-hosting, product analytics",
+      "action_items": "\n**Madhurima Kashyap**\nConfirm availability for a follow-up technical walkthrough of GrowthBook next Thursday at the same time (28:55)\nShare internal research and considerations regarding cybersecurity and integration specifics to clarify constraints (27:22)\nCirculate GrowthBook’s product deck and comparison with other vendors internally for team review (30:52)\nIdentify and invite relevant CRM/CDP team members and technical stakeholders for the next demo session (29:32)\n\n**James Shannon**\nSchedule and send calendar invite for the technical demo next Thursday (29:22)\nProvide detailed vendor comparison documents tailored to competitors Royal Enfield is evaluating (Adobe Target, AB Smartly) (29:42)\nPrepare a demo focusing on ease of use, reporting capabilities, implementation process, and self-hosting solution addressing cybersecurity concerns (27:34)\nShare summary email and product presentation deck with Madhurima post-call (29:32)\n"
+    }
+  ]
+}

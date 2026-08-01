@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook <> Brightscout | Weekly Call",
+  "slug": "brightscout__weekly_call",
+  "last_etl_date": "2026-08-01T13:58:06.052660",
+  "calls": [
+    {
+      "id": "01KFNV5ZYTN3D16PDJSP9J4AKE",
+      "source": "fireflies",
+      "title": "GrowthBook <> Brightscout | Weekly Call",
+      "date": "2026-01-28",
+      "duration_minutes": 45,
+      "summary": "The team discussed enhancing the design feedback process by establishing clearer communication and collaboration methods. Kari Kay stressed the importance of direct engagement with designers and proposed daily meetings to streamline feedback. The homepage was identified as a critical area needing refinement, as it sets the tone for the entire site; suggestions included balancing abstract imagery with actual product screenshots. The introduction of copy docs as the single source of truth for content aims to improve consistency and align visuals with text. Additionally, the team committed to a new delivery timeline that allows for a 48-hour review period to enhance feedback clarity and minimize ambiguity. Overall, the meeting underscored the need for actionable feedback and improved communication between teams.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 14,
+      "keywords": "homepage design, feedback workflow, copy docs, visual assets, design coordination, screenshots",
+      "action_items": "\n**Sofia Fazio**\nShare updated sprint plan and meeting invite for detailed timeline and workflow review (tbd in next meeting) (01:35)\n\n**GrowthBook Team**\nProvide detailed feedback on homepage and other pages within 3 days following this meeting (13:54)\n\n**Kari Kay**\nCoordinate offline with Karen Henke to develop plan for providing core screenshots and images required for website pages; organize design meetings with Brightscout designers for ongoing alignment (32:21)\n\n**Karen Henke**\nWork with Kari to identify core visual assets and provide clear guidance on image usage and messaging goals for each page, especially homepage and demo page (29:12)\n\n**Luciano Balzano**\nIncorporate feedback on visuals, coordinate with GrowthBook on style tiles, graphics, and placeholders; use copy docs as source of truth and integrate linked inspiration Figma files; support scheduling and participation in working sessions (22:55)\n\n**Charles Haggas**\nFacilitate feedback integration, internal cleanup of communication and feedback process; schedule future calls to coordinate screenshots and design progress (39:37)\n\n**Agency Design Team**\nPrepare for detailed working sessions on visuals; align homepage animations, textures, and graphic treatments per client feedback and style tile direction (24:39)\n\n**All Participants**\nUse word docs as primary method for large feedback items; supplement with precise Figma comments and Slack discussions as appropriate to clarify design intent and implementation questions (38:50)\n"
+    }
+  ]
+}

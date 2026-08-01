@@ -1,0 +1,29 @@
+{
+  "company": "Perplexity",
+  "slug": "perplexity",
+  "last_etl_date": "2026-08-01T13:58:05.982925",
+  "calls": [
+    {
+      "id": "698d00e7a4227f0019f41a21",
+      "source": "apollo",
+      "title": "Perplexity + GrowthBook",
+      "date": "2026-02-11",
+      "duration_minutes": 50,
+      "summary": "In the call, Christian Liebenow and Graham (GrowthBook) demoed their open-source experimentation and feature flag platform to Alexis (head of experimentation at",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
+    {
+      "id": "01KH79QHJDRF7XP5XRANWGSNFM",
+      "source": "fireflies",
+      "title": "Perplexity + GrowthBook",
+      "date": "2026-02-11",
+      "duration_minutes": 51,
+      "summary": "The meeting highlighted GrowthBook's robust feature flagging and experimentation platform, emphasizing its flexibility and developer-friendly tools. Key features discussed included comprehensive feature flagging with JSON validation, detailed experiment analysis with customizable dashboards, advanced debugging capabilities, and AI-driven enhancements for productivity. The product roadmap indicates a commitment to rapid innovation with frequent releases and a focus on customer collaboration to meet real needs. Migration considerations were addressed, showcasing straightforward data import tools and compatibility with Open Features standards. Pricing transparency and contract flexibility were also key discussion points, with a focus on building trust through open discussions with clients. Internal feedback highlighted stability concerns, positioning GrowthBook as a potential solution to address these pain points.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "Experimentation platform, feature flags, open source, AI integration, product analytics, data warehouse",
+      "action_items": "\n**Alexis Weill**\nExplore GrowthBook demo environment with real data and provide feedback on functionality and UX by next touchpoint (40:19)\nContinue gathering executive feedback on EPO pain points to clarify dissatisfaction sources (46:33)\nCirculate findings on paper-cut pain points and aggregate engineering concerns for next meeting (49:57)\n\n**Graham McNicoll**\nShare demo environment access with Alexis and team (41:49)\nProvide video or additional resources demonstrating VS Code AI integration for flag and experiment creation (33:02)\nAssist Perplexity with creating an importer tool from EPO to GrowthBook to ease migration (41:03)\nRespond to UX polish feedback from Alexis to improve the product interface (50:23)\n\n**Christian Liebenow**\nSchedule a check-in meeting with Alexis in approximately two weeks to review questions and demo feedback (49:22)\nOffer to facilitate executive-level conversations regarding contract and financial arrangements with Perplexity as needed (48:30)\n"
+    }
+  ]
+}

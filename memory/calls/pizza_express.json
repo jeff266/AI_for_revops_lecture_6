@@ -1,0 +1,27 @@
+{
+  "company": "Growthbook <> Pizza Express",
+  "slug": "pizza_express",
+  "last_etl_date": "2026-08-01T13:58:05.977854",
+  "calls": [
+    {
+      "id": "69b047b6b61eaa001570cc66",
+      "source": "apollo",
+      "title": "Growthbook <> Pizza Express - Intro ",
+      "date": "2026-03-10",
+      "duration_minutes": 32,
+      "summary": "We need to summarize the transcript in 2-3 sentences, focusing on discussed topics (product, features, pain points), key participants and roles, and next steps/action items.\n\nKey participants: Daniel Wathne (sales, GrowthBook), Logan Bates (solutions engineer), Ross Pyres (customer technology director, PizzaExpress, former GrowthBook user), Jason (product ops & analytics, PizzaExpress), Stephen Clay (technical product manager). Pain points: Optimizely is expensive, contract ending soon, need cost-effective alternative, desire for warehouse-native integration with Snowflake, need for both feature flags and experimentation, visual editor not critical. Discussed GrowthBook's feature flags and experimentation, warehouse-native deployment, integration with Snowflake and FullStory, pricing model. Next steps: Upgrade existing free trial, set up Slack channel, Jason and Ross will talk to data warehouse team about Snowflake integration, then schedule follow-up with data team.\n\nSummary: Daniel Wathne (Sales) and Logan Bates (Solutions Engineer) from GrowthBook met with PizzaExpress's Ross Pyres (Customer Technology Director), Jason (Product Ops), and Stephen Clay (Technical PM) to discuss replacing costly Optimizely with GrowthBook's feature flagging and experimentation platform, emphasizing warehouse-native integration with Snowflake and FullStory. Key pain points were Optimizely's high cost and desire for developer-friendly tooling. Next steps include upgrading a trial account, connecting Snowflake, and scheduling a follow-up with",
+      "host": "Daniel Wathne",
+      "participants": 5
+    },
+    {
+      "id": "69c16851a7bf600019082ecf",
+      "source": "apollo",
+      "title": "Growthbook <> Pizza Express - Commercial Review ",
+      "date": "2026-03-23",
+      "duration_minutes": 19,
+      "summary": "Daniel Wathne (Growthbook sales) discussed Growthbook’s pro vs. enterprise pricing with Ross Pyres (Pizza Express decision-maker) and Stephen Clay (technical user), focusing on CDN request costs and the need to save money vs. Optimizely. A 12-month enterprise plan was proposed at ~$29,600 (down from ~$37k), with",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

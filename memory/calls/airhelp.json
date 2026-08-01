@@ -1,0 +1,19 @@
+{
+  "company": "AirHelp",
+  "slug": "airhelp",
+  "last_etl_date": "2026-08-01T13:58:06.024715",
+  "calls": [
+    {
+      "id": "01KQEPK1AJX2V6D99SEATS762V",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for AirHelp",
+      "date": "2026-05-05",
+      "duration_minutes": 40,
+      "summary": "AirHelp is currently utilizing GrowthBook for A/B testing across three main projects, appreciating its ease of use and effectiveness over previous tools. The team, including Pedro Duque and Ahmed Teailab, highlighted GrowthBook's metrics and test setup, currently running about 10 active experiments with plans to scale to 50 tests per quarter. They are interested in the Enterprise plan for features like holdout groups and advanced statistical tools. With approximately 30 million annual visitors and a significant conversion funnel, AirHelp's growth ambitions necessitate effective scaling of their A/B testing program. Pricing discussions revealed concerns over the high cost of the Enterprise plan at $50,000 annually, prompting a need for a value-driven pricing proposal. A follow-up meeting is scheduled to align on expected outcomes and budget.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, A/B Testing, Enterprise Plan, Holdout Groups, Pricing Model, Experimentation Scale",
+      "action_items": "\n**James Shannon**\nSend Fixer case study to AirHelp team immediately after this meeting to provide a relevant example of scaling experimentation (39:10)\nFollow up with an email explaining feature value simulation details for GrowthBook to clarify benefits of Enterprise features (17:28)\nCreate and share a tailored presentation including value-based pricing and case studies to support AirHelp's internal advocacy for upgrading to Enterprise plan (35:08)\nSchedule and conduct a 30-minute follow-up meeting on Thursday 7th between 11 am and 12 pm UK time to review presentation and pricing proposal with AirHelp team and additional stakeholders (37:34)\n\n**Pedro Duque**\nVerify participation of relevant stakeholders including CPO, CMO, and possibly CTO for approval process to ensure decision-making alignment (29:02)\nInvite relevant team members to join the follow-up call to maximize benefit and ensure comprehensive discussion (38:30)\nCollaborate internally to align different project expectations and revenue estimates influenced by GrowthBook experiments to inform pricing discussion (28:01)\n\n**Ahmed Teailab**\nConfirm availability for the follow-up call with James scheduled on Thursday 7th to ensure participation and continuity (38:25)\n"
+    }
+  ]
+}

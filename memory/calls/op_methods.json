@@ -1,0 +1,19 @@
+{
+  "company": "Op Methods",
+  "slug": "op_methods",
+  "last_etl_date": "2026-08-01T13:58:06.011895",
+  "calls": [
+    {
+      "id": "01KT7DMS83RXCGY1RPYJB8XGY3",
+      "source": "fireflies",
+      "title": "GrowthBook + Op Methods",
+      "date": "2026-06-05",
+      "duration_minutes": 29,
+      "summary": "The meeting outlined Methods' RevOps strategy, emphasizing a partnership model that offers both senior strategic and junior operational support to improve client outcomes. Key challenges identified include the lack of lead prioritization and efficient lifecycle management in the client's current CRM setup, which relies heavily on demo requests. Participants discussed improving data quality and tracking through HubSpot, and the urgency to scale outbound and nurturing processes due to a planned expansion of the sales team. A future audit phase was proposed to create a lifecycle framework and lead scoring system, while plans to consolidate tools were also discussed to enhance efficiency and data consistency.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "RevOps, HubSpot, Lead Scoring, Lifecycle Management, Data Cleansing, SaaS Growth",
+      "action_items": "\n**Eric Potter**\nPrepare and send a detailed proposal outlining the audit approach, timelines, pricing, and retainer for ongoing support by Monday (26:05)\nSchedule a follow-up meeting with Chris and Ashley on Tuesday for proposal review and kickoff discussion (26:32)\nProvide strategic recommendations and frameworks during the audit, including lifecycle and lead scoring workshops (17:17)\nAccept and review data cleanup files from Chris by Monday morning to include in proposal and audit scope (27:40)\n\n**Chris Newton**\nClean up the demo request and lead qualification dataset to reduce duplicates and improve clarity, then send to Eric by Monday (27:23)\nCoordinate with sales and BDR team to finalize lead scoring criteria and sales handoff processes in collaboration with Methods (10:56)\nFacilitate internal discussions and trainings regarding MQL workflows to accelerate adoption before full automation tasks (21:10)\n\n**Ashley Stirrup**\nProvide input on priorities and participate in workshops; emphasize urgency on lead conversion and nurture processes (03:30)\nSupport coordination for scheduling and internal alignment for workshops and proposal reviews (26:17)\n"
+    }
+  ]
+}

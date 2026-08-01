@@ -1,0 +1,19 @@
+{
+  "company": "TNET and GrowthBook",
+  "slug": "tnet",
+  "last_etl_date": "2026-08-01T13:58:06.027320",
+  "calls": [
+    {
+      "id": "01KQ4SFFWF51F7QQ76V4YXMA97",
+      "source": "fireflies",
+      "title": "TNET and GrowthBook",
+      "date": "2026-04-28",
+      "duration_minutes": 11,
+      "summary": "The discussion highlighted TNET's active implementation of GrowthBook for feature flagging and initial A/B testing on their real estate platform, My Home. The team is currently utilizing GrowthBook to enable controlled rollouts of features, which helps prevent users from encountering incomplete functionalities during testing phases. Plans for future A/B testing include exploring different checkout flows tailored to distinct user segments. Access and permissions are tightly controlled by team leads to ensure quality and accountability in experimentation. TNET's revenue model relies on service sales and advertising, influencing their experimentation approach. Minimal support needs were reported, and there are considerations for scaling the GrowthBook Pro plan as the experiment volume grows. The communication structure and positive relationships among team members indicate readiness for future enhancements.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "feature flagging, A/B testing, GrowthBook, TNET, real estate website, enterprise features",
+      "action_items": "\n**James Shannon**\nSend Giorgi information on GrowthBook enterprise features for internal review by TNET team (08:29)\n\n**Giorgi Shavishvili**\nShare enterprise feature information with team lead and discuss potential interest in higher-tier plans (08:40)\nProvide contact details of team lead or decision makers to James Shannon if there is interest in further discussions regarding GrowthBook support or plans (07:30)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Matt Carter from NABIS ",
+  "slug": "demo_call_matt_carter_from_nabis",
+  "last_etl_date": "2026-08-01T13:58:06.005766",
+  "calls": [
+    {
+      "id": "01KVQXF41EXDVS8JGZYMQR0H74",
+      "source": "fireflies",
+      "title": "Demo Call with Matt Carter from NABIS ",
+      "date": "2026-06-22",
+      "duration_minutes": 27,
+      "summary": "In the meeting, the team, led by Matt Carter, discussed their immediate need for a straightforward feature flagging tool, planning to finalize their decision within one to two weeks. The current approach involves running an open-source version first to validate its fit, emphasizing self-hosting due to past pricing volatility with cloud vendors. The team confirmed that they prioritize feature flagging over experimentation, viewing the latter as a long-term goal, approximately a year away. They are also migrating to a new data warehousing solution to support analytics. Cost sensitivity is paramount, as Matt seeks clear annual pricing for the Growth Book enterprise license. Finally, deployment flexibility was deemed critical, with upcoming discussions planned to address integration and technical specifics.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 3,
+      "keywords": "feature_flagging, self_hosting, enterprise_license, data_warehouse, experimentation, pricing",
+      "action_items": "\n**Scott Keller**\nSend a detailed enterprise self-hosted GrowthBook proposal to NABIS by afternoon, including pricing and feature details (25:36)\nFlip NABIS's current self-hosted GrowthBook instance to an enterprise trial to enable evaluation of enterprise features (25:36)\nSchedule and conduct a 30-minute technical session with solutions engineer Logan on Monday at 10am CT to discuss data flow, warehousing integration, and deployment specifics (22:14)\n\n**Matt Carter**\nReview the GrowthBook enterprise proposal upon receipt and decide on next steps regarding enterprise licensing (25:36)\nParticipate in the technical session with solutions engineer Logan to clarify questions about warehouse data integration and deployment requirements (22:25)\nCoordinate with NABIS DevOps engineer to ensure readiness for self-hosted GrowthBook deployment and clarify deployment environment requirements (20:09)\n"
+    }
+  ]
+}

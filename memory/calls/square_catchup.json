@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook <> Square Catchup",
+  "slug": "square_catchup",
+  "last_etl_date": "2026-08-01T13:58:06.043333",
+  "calls": [
+    {
+      "id": "01KKAEZQVQR7B6R13JNHNY3YY1",
+      "source": "fireflies",
+      "title": "GrowthBook <> Square Catchup",
+      "date": "2026-03-16",
+      "duration_minutes": 31,
+      "summary": "The team is working on a company-wide initiative to unify various experimentation and feature flag platforms, currently fragmented across Block due to historical acquisitions. André Madeira highlighted the inefficiencies caused by using multiple tools like Amplitude and LaunchDarkly, emphasizing a transition to a single solution starting with Square. The need for Growth Book to meet scalability requirements for audiences exceeding 100,000 users was also discussed, particularly its current limitations. Additionally, the existing enterprise license for Growth Book was discovered, underscoring the urgency to clarify ownership to streamline operations. Overall, the meeting underscored the critical importance of migration to Growth Book to achieve a more data-driven organization.",
+      "organizer": "graham@growthbook.io",
+      "participants": 7,
+      "keywords": "Growth Book, Feature Flagging, Experimentation, Enterprise Licensing, Square, Block",
+      "action_items": "\n**Bell Halasz**\nShare detailed list of feature requests and requirements with Growth Book team (15:40)\n\n**Graham McNicoll**\nInvestigate engineering workaround for safe group limits and clarify refresh rates and feature availability (17:26)\nSend existing Growth Book enterprise contract details and billing information to Square to clarify account ownership (20:45)\n\n**André Madeira, Yan Tang**\nReview Growth Book contract and prepare internal assessment on current usage and budget allocation (25:24)\n\n**All**\nMaintain and enhance Slack channel communication for technical support and feature discussions (26:40)\n\n**Square team**\nPrepare migration plan and roadmap for expanding Growth Book’s experimentation and feature flag use within Square (30:00)\n"
+    }
+  ]
+}

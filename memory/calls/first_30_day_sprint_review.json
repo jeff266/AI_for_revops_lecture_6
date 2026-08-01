@@ -1,0 +1,19 @@
+{
+  "company": "First 30 Day Sprint Review",
+  "slug": "first_30_day_sprint_review",
+  "last_etl_date": "2026-08-01T13:58:06.052260",
+  "calls": [
+    {
+      "id": "01KG3AXZ1WKQWQK5A2KJRMJHYQ",
+      "source": "fireflies",
+      "title": "First 30 Day Sprint Review",
+      "date": "2026-01-29",
+      "duration_minutes": 28,
+      "summary": "The team convened to address gaps in deal ownership and improve the sales and renewal processes. Jeff Ignacio highlighted the need for a formal deal booking process to enhance pipeline accuracy, particularly through HubSpot and Retool. Ryan McGurk emphasized the importance of managing enterprise contracts effectively, particularly regarding renewals and pricing changes. The discussion included implementing a gated MEDDIC framework for better deal discipline and forecasting accuracy, as well as automating lead enrichment through Apollo and Zapier to streamline lead routing. A phased training approach was agreed upon to ensure reps adapt to the new processes without feeling overwhelmed. The meeting concluded with a focus on improving renewal management and operational visibility to drive revenue growth.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 2,
+      "keywords": "HubSpot, Medpic, forecasting, lead enrichment, sales process, renewals",
+      "action_items": "\n**Jeff Ignacio**\nBuild a Medpic stage gate map for both mid-market and enterprise pipelines and share for review (09:28)\nRecommend sales stage layout and required fields for HubSpot deal records for Ryan’s feedback (15:10)\nSet up HubSpot forecasting process and tools to enable forecast meetings to run in HubSpot next week (14:50)\nWork with Jennifer or support to gain access to Zapier for lead enrichment automation (15:25)\nCreate training documentation and training stages for Medpic and forecasting for team rollout after internal review (15:50)\nDraft a document detailing sales stages description for Ryan to edit and finalize (19:40)\nMap new vs expansion revenue split calculation processes and engage Jennifer on renewal math and backend systems after week 2 (20:15)\nSchedule and commit to weekly Friday recap emails, set Monday planning calls, and join sales meetings as needed, including sessions with Jake H. and Dan for process insights (26:56)\nReview demo request and other lead types with Ashley to define lead qualification and routing (25:50)\n\n**Ryan McGurk**\nProvide feedback on deals without owners and current data in HubSpot (02:55)\nAssist with defining renewal and expansion rules and logic on deal handling (17:00)\nSchedule and organize sales team meetings weekly to support forecast reviews and training rollout (13:30)\nShare learnings on self-hosting as an enterprise differentiator based on call reviews (10:40)\nProvide insight into required information fields and typical sales questions to help shape HubSpot layout (16:25)\nCoordinate with Jennifer to understand current renewal workflows and backend tools (20:50)\nCoordinate with Jeff to scale enablement resources if needed (20:12)\nAgree on lead assignment criteria based on enriched data and be involved in lead routing design (12:40)\nFacilitate ongoing communication and quick syncs to support sprint progress (28:10)\n"
+    }
+  ]
+}

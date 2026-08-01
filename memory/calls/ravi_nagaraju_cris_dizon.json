@@ -1,0 +1,29 @@
+{
+  "company": "Ravi Nagaraju and Cris Dizon",
+  "slug": "ravi_nagaraju_cris_dizon",
+  "last_etl_date": "2026-08-01T13:58:05.974927",
+  "calls": [
+    {
+      "id": "69e7b43c9c90c60019d706ed",
+      "source": "apollo",
+      "title": "Ravi Nagaraju and Cris Dizon",
+      "date": "2026-04-21",
+      "duration_minutes": 0,
+      "summary": "Cris Dizon and Cary Rakin discussed the difference between Growth Books and Firefly recorders, comparing their features. No specific pain points or decision was reached. No next steps or action items were identified.",
+      "host": "Cris Dizon",
+      "participants": 2
+    },
+    {
+      "id": "01KPKTVNYZ46VDV4DRZ3NY63XA",
+      "source": "fireflies",
+      "title": "Ravi Nagaraju and Cris Dizon",
+      "date": "2026-04-21",
+      "duration_minutes": 0,
+      "summary": "The meeting established a collaborative framework between Growth Book and Sony, with Cary Rakin emphasizing understanding Sony's requirements and providing support. Cris Dizon noted recent growth and the importance of aligning with Sony's evolving needs. Ravi Nagaraju shared positive initial experiences with Growth Book as an analytics tool, and highlighted a critical upcoming transition in May when Growth Book will replace Sony's internal platform. Challenges regarding metadata mapping were discussed, affecting migration success. Integration with enterprise tools poses further complexities and requires ongoing communication. Key feature enhancements and bandit algorithms were also raised as vital areas for improvement and strategic alignment.",
+      "organizer": "cris@growthbook.io",
+      "participants": 4,
+      "keywords": "experimentation migration, integration challenges, bandit algorithms, enterprise tools, start/end date feature, data model mapping",
+      "action_items": "\n**Ravindra Nagaraju**\nShare internal data model details and mapping challenges with Growth Book if located to aid integration efforts (20:00)\nDiscuss with Angela about capabilities related to start and end date custom fields and communicate findings to Growth Book to clarify feature support (31:00)\nCoordinate internal stakeholders to assess feasibility of sharing enterprise tool insights or QA versions for integration discussions with Growth Book (19:00)\nParticipate in upcoming workshop after next week to explore bandit and reinforcement learning capabilities with Growth Book (35:00)\n\n**Cris Dizon**\nFollow up with Growth Book engineering and product teams on release notes and onboarding materials for new features like start/end date and payload handling to improve Sony adoption (32:00)\nProvide Sony with documentation on current bandit algorithms (Thompson sampling) and planned contextual bandits roadmap to support evaluation and adoption (28:00)\nInitiate scheduling of detailed bandit strategy discussion sessions with Sony decision makers after their workshops to deepen collaboration (34:00)\nEngage with Growth Book teams to improve clarity and transparency around data model and metadata for better Sony integration (20:00)\n\n**Cary Rakin**\nSupport discussions on Growth Book’s bandit strategy and address Sony’s questions related to reinforcement learning and operationalization workflows (22:00)\nAssist in organizing ongoing feature request categorization by program/team alongside Sony’s internal structure to streamline progress tracking (18:00)\nProvide contextual input on adoption impact of bandit strategy development and support pitch to Sony leadership to facilitate internal buy-in (25:00)\n"
+    }
+  ]
+}

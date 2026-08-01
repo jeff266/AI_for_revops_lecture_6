@@ -1,0 +1,19 @@
+{
+  "company": "Lingo.dev",
+  "slug": "lingodev",
+  "last_etl_date": "2026-08-01T13:58:06.014032",
+  "calls": [
+    {
+      "id": "01KT2KE7TVCPEDHY9FTFS1SG5M",
+      "source": "fireflies",
+      "title": "Lingo.dev - Demo",
+      "date": "2026-06-03",
+      "duration_minutes": 36,
+      "summary": "The discussion outlined the benefits of lingo.dev’s localization platform, highlighting its AI-driven translation capabilities that minimize the need for traditional agencies. Key features include a stateful translation API for precise translations, a quality observability layer that monitors and improves translation quality, and efficient integration tools like GitHub bots. Developers can add languages quickly with minimal maintenance. The Next.js integration is stable, and complex content handling is supported, addressing concerns about localization maintenance. Incremental rollout strategies were examined, and pricing models for proof of concept were clarified, emphasizing the importance of internal sales readiness before implementing localization.",
+      "organizer": "graham@growthbook.io",
+      "participants": 5,
+      "keywords": "localization, Webflow integration, Lingo.dev platform, AI translation, maintenance cost, incremental roll-out",
+      "action_items": "\n**Ashley Stirrup**\nCoordinate an internal leadership discussion at Growthbook to prioritize localization efforts and determine when to move beyond 'nice to have' status (32:45)\nConnect Lingo.dev with Growthbook's new Webflow developer to clarify the current Webflow implementation and assess localization feasibility (30:45)\n\n**Jeremy Dorn**\nPrepare to collaborate on pull requests and approve integration scope and changes necessary for localization implementation (15:00)\n\n**Max Prilutskiy**\nProvide detailed pricing and enterprise plan information to Growthbook based on their localization scope discussed during the call (27:15)\nSupport Growthbook with an engineer to implement a proof of concept (POC) integration, including potentially building a custom Webflow integration (15:00)\nFollow up with Growthbook after their internal prioritization to discuss next steps for localization implementation (34:30)\n"
+    }
+  ]
+}

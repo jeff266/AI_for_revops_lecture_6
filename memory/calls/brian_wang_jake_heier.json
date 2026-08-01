@@ -1,0 +1,37 @@
+{
+  "company": "Brian Wang and Jake Heier",
+  "slug": "brian_wang_jake_heier",
+  "last_etl_date": "2026-08-01T13:58:05.972813",
+  "calls": [
+    {
+      "id": "698bdd3bd8064c0015d36f5f",
+      "source": "apollo",
+      "title": "Brian Wang and Jake Heier",
+      "date": "2026-02-11",
+      "duration_minutes": 36,
+      "summary": "Brian Wang (organizer), Jake Heier (GrowthBook account manager), Kevin Dyer (principal data engineer), and Meridy Boyd-Clark (product owner) discussed GrowthBook's feature flagging and A/B testing platform to replace their fragmented in-house system and Firebase/GA setup, with pain points around slow manual data analysis and lack of cross-channel coherence. Next steps include setting up a Slack channel for support, internal kickoff",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "69c1ed64f5331e0015631e5b",
+      "source": "apollo",
+      "title": "Brian Wang and Jake Heier",
+      "date": "2026-03-24",
+      "duration_minutes": 46,
+      "summary": "Luke Sonnet (GrowthBook Head of Experiments) demoed setting up an A/B test using feature flags, experiment assignment queries, and metric fact tables in their warehouse-native platform. Brian Wang (Trade Me organizer), Michael Evans (product owner), and Amy (data engineer) discussed pain points around connecting Snowflake and validating data for a simple visual layout test on map search. Next steps: connect Snowflake, create the identifier and fact tables, then set up the experiment with Luke and Jake Heier supporting via Slack, aiming to launch next week.",
+      "host": "Jake Heier",
+      "participants": 4
+    },
+    {
+      "id": "6a0b96e4785b990010a4f110",
+      "source": "apollo",
+      "title": "Brian Wang and Jake Heier",
+      "date": "2026-05-18",
+      "duration_minutes": 47,
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and their roles, next steps or action items.\n\nFrom transcript: Main discussion is about GrowthBook experimentation platform, specifically analyzing results of a proof-of-concept experiment. Features discussed: Bayesian vs Frequentist, results page, power calculator, AI analysis, dimensional breakdowns, Insights tab. Pain points: need for self-service metrics library, data setup in Snowflake, product managers needing to interpret results easily.\n\nKey participants: Brian Wang (internal host, seems to be from the customer company), Jake Heier (internal, briefly at start), Logan Bates (GrowthBook representative, explains features), Michael Evans (product manager/owner asking questions), Amy Silvester-Brooks, Amy Keighley (other participants). Roles: Brian is internal lead for this PoC, Logan is GrowthBook sales/support, Michael and others are product stakeholders.\n\nNext steps: Jake to set up a product-focused presentation later this week (Thursday for them), invitees included. Also Brian will push for investment in building a metrics library.\n\nSummary: Brian Wang and Logan Bates discussed GrowthBook's experiment results page, Bayesian analysis, and AI interpretation features, addressing product managers' need for self-service metrics and guardrails. Key participants included Brian (internal PoC lead), Logan (GrowthBook rep), and product stakeholders Michael Evans and Amy Keighley. Next steps:",
+      "host": "Jake Heier",
+      "participants": 6
+    }
+  ]
+}

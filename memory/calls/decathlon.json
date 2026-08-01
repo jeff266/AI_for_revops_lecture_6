@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook / Decathlon",
+  "slug": "decathlon",
+  "last_etl_date": "2026-08-01T13:58:06.029097",
+  "calls": [
+    {
+      "id": "01KPQQ45JQWC9WBEHEW7074VHT",
+      "source": "fireflies",
+      "title": "GrowthBook / Decathlon",
+      "date": "2026-04-24",
+      "duration_minutes": 27,
+      "summary": "Decathlon is focusing on building a robust and flexible experimentation infrastructure that includes automated alerts for monitoring both purchase and post-purchase metrics to improve decision-making. Antoine highlighted the need for alerts to catch issues like increased cancellation or return rates, thus expanding insights beyond just page access. Consolidating experiment data across multiple teams and countries is enhancing statistical power and reliability, with AI being cautiously integrated for task automation rather than blind adoption. Product teams lead most experiments, primarily aimed at product improvements, but the limited involvement of marketing presents missed opportunities. Additionally, efforts to integrate data warehouses are in early stages, and challenges persist regarding statistical flexibility and variance reduction in experimentation.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "automation, experimentation, data ingestion, AI agents, variance reduction, statistical models",
+      "action_items": "\n**Antoine TISSIER**\nAttend upcoming meeting next week to explore data ingestion features with Statsig (07:32)\nContinue providing feedback and ideas on variance reduction techniques and power analysis improvements for experimentation tools (23:57)\nConsider potential future collaboration for deeper statistical and AI-related tooling with GrowthBook data science team, without current commitment to RFP (20:29)\n\n**James Shannon**\nOffer detailed presentations on GrowthBook’s statistical models and AI capabilities in future conversations (20:29)\nKeep Antoine informed about GrowthBook’s product roadmap, AI features, and developments over next 6 to 8 months (26:24)\nProvide insights on implications and changes related to the OpenAI acquisition of Statsig when relevant (05:42)\n"
+    }
+  ]
+}

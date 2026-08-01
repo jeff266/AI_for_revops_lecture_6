@@ -1,0 +1,19 @@
+{
+  "company": "GetAway Group",
+  "slug": "getaway_group",
+  "last_etl_date": "2026-08-01T13:58:06.020779",
+  "calls": [
+    {
+      "id": "01KRR9DY5317P8BSMRTJDSNZ8Q",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for GetAway Group",
+      "date": "2026-05-18",
+      "duration_minutes": 53,
+      "summary": "Getaway Group, a startup with 140 employees managing seven brands in the DACH region, currently utilizes Optimizely for experiments, but finds it complex and costly, running fewer than a dozen tests. They aim to scale their experimentation efforts, targeting around 10 experiments per month across key brands. Growth Book was presented as a lightweight alternative, offering a single license model based on experiment volume, enabling cost predictability and scalability. It integrates with BigQuery for data analysis and features a user-friendly interface that allows non-technical users to manage tests. Initial steps for implementation involve defining key metrics and connecting BigQuery, with a focus on validating the setup through simple tests.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 7,
+      "keywords": "feature flagging, A/B testing, BigQuery integration, Bayesian analysis, experiment scalability, data warehouse",
+      "action_items": "\n**James Shannon**\nSend pricing tiers based on experiment volume with monthly and annual contract options (39:43)\nProvide implementation plan detailing integration steps for BigQuery and SDK setup (49:34)\nShare relevant case study demonstrating high-volume experiment scaling and ROI (49:34)\nPrepare and offer a product demonstration including experiment creation, feature flag usage, and integration overview (18:05)\n\n**Getaway Group Team (Bastian Buch, Diana Araújo, Thomas Handorf)**\nReview received GrowthBook pricing, implementation documentation, and case study once delivered (49:40)\nConsider identifying 3-4 key metrics to define for BigQuery fact tables setup in preparation for GrowthBook integration (48:31)\nAssess potential pilot with playground brand for initial experimentation using GrowthBook SDK and data integration (48:31)\n"
+    }
+  ]
+}

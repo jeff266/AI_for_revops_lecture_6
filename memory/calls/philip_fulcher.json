@@ -1,0 +1,19 @@
+{
+  "company": "Philip Fulcher",
+  "slug": "philip_fulcher",
+  "last_etl_date": "2026-08-01T13:58:06.025768",
+  "calls": [
+    {
+      "id": "01KQFFZXHWYEXJ7BK2AN4Q0BXA",
+      "source": "fireflies",
+      "title": "30 min with Scott (Philip Fulcher)",
+      "date": "2026-04-30",
+      "duration_minutes": 45,
+      "summary": "Growth Book is emphasizing rapid feature development and customer feedback to establish itself as a leading AI experimentation platform. Key developments are guided by Anthropic, which influences features through continuous feedback that often benefits a broader audience. The company aims to compete with existing solutions by offering integrated feature flags and analytics at lower costs, while leveraging warehouse-native analytics to enhance compliance and developer efficiency. Furthermore, community engagement efforts are being revitalized to rebuild trust post-layoffs, featuring personalized support to improve retention. Growth Book's relaxed work culture promotes employee well-being while maintaining productivity, and transparent hiring practices are prioritized to attract the right candidates.",
+      "organizer": "scott@growthbook.io",
+      "participants": 3,
+      "keywords": "Growth Book, developer advocacy, AI integration, community management, feature flagging, product marketing",
+      "action_items": "\n**Philip Fulcher**\nPhilip Fulcher to follow up with Scott Bailey via email for any additional questions about Growth Book and next steps (44:55)\n\n**Scott Bailey**\nScott Bailey to provide timely responses to Philip Fulcher's follow-up questions via email (44:55)\n\n**Unassigned**\nAshley or another Growth Book team member to contact Philip Fulcher regarding next hiring steps (44:55)\n"
+    }
+  ]
+}

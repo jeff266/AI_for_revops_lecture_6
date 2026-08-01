@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> Writer",
+  "slug": "writer",
+  "last_etl_date": "2026-08-01T13:58:05.982705",
+  "calls": [
+    {
+      "id": "698f836c5ff63300219f62d6",
+      "source": "apollo",
+      "title": "Growthbook <> Writer - Intro ",
+      "date": "2026-02-13",
+      "duration_minutes": 33,
+      "summary": "Daniel Wathne (GrowthBook sales) and Logan Bates (solutions engineer) introduced their feature flagging and experimentation platform to Michelle Cho (Writer's head of data/analytics). Writer is considering alternatives to LaunchDarkly due to high pricing (~$35k) and data trust issues; GrowthBook offers a warehouse-native, transparent approach with integrations to BigQuery/Snowflake. Next steps include Daniel sending a recap email and scheduling a demo with a colleague, with a pricing commitment to stay under $30k.",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Jeff Ignacio and Roman Kniahynyckyj",
+  "slug": "jeff_ignacio_roman_kniahynyckyj",
+  "last_etl_date": "2026-08-01T13:58:06.048527",
+  "calls": [
+    {
+      "id": "01KH5R5HS1YFZD6T1TK5JYZ76E",
+      "source": "fireflies",
+      "title": "Jeff Ignacio and Roman Kniahynyckyj - UTS",
+      "date": "2026-02-13",
+      "duration_minutes": 25,
+      "summary": "The team discussed the development of a scalable lead assignment process to manage growth and prevent overlap, with a round-robin system in HubSpot on hold until roles for new reps are defined. Jeff is tasked with creating a strategic lead distribution plan that allows new reps to start with lower-tier leads for effective onboarding. Enhancements to sales forecasting and pipeline accuracy were emphasized, with a major data cleanup initiative for renewal deals from 2023-2025. The need for lead scoring and lifecycle frameworks was acknowledged, and a new RevOps Slack channel was proposed to centralize communication and improve coordination. Additionally, the integration and cleanup of data systems, including HubSpot, Apollo, and Rio, were highlighted as critical for seamless lead management.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "RevOps, Lead Scoring, HubSpot Integration, Sales Forecasting, Lead Routing, Sales Cadence",
+      "action_items": "\n**Ashley Stirrup**\nLead the coordination with Jeff and Ryan to define scalable lead/account assignment and routing processes, especially for new rep onboarding (06:26)\nInvestigate and resolve Slack channel creation permissions; create and add members to a private RevOps Slack channel including Jeff, Roman, Ryan, and Chris Newton (22:50)\nFacilitate linking Zoom and HubSpot integration for lead generation events and workflows (09:40)\nClarify Sales Navigator usage internally and gather information on rep access levels (11:00)\n\n**Jeff Ignacio**\nDevelop detailed lead scoring model based on historical closing data and lead behaviors to inform marketing and sales alignment (19:00)\nContinue building out and refining sales forecasting cadence, forecast submission process, and revenue attribution mechanisms including automations (12:30)\nDraft sales process stage definitions and MEDDIC qualification framework; validate with Ryan (16:40)\nCreate estimates/models for sales calls and meetings goals for Ryan’s team (20:20)\nExplore Sales Navigator subscriptions and evaluate integration benefits for outbound sales motions (11:00)\n\n**Roman Kniahynyckyj**\nContinue managing HubSpot configuration, round robin assignment workflows, and advise on best practices for data integration (05:00)\nProvide feedback on Sales Navigator subscription requirements and integration capabilities (11:10)\nShare access and manage collaboration within Slack environments, including potentially the external Unlimited channel (25:00)\n"
+    }
+  ]
+}

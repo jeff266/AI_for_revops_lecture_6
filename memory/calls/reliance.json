@@ -1,0 +1,19 @@
+{
+  "company": "Reliance",
+  "slug": "reliance",
+  "last_etl_date": "2026-08-01T13:58:06.037697",
+  "calls": [
+    {
+      "id": "01KNQVTR8Z4AHW95TV9HB389R5",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Reliance",
+      "date": "2026-04-10",
+      "duration_minutes": 35,
+      "summary": "The conversation revolved around the early deployment of Growth Book’s free version in a development setting, highlighting potential infosec challenges related to SSO blocking enterprise readiness. Participants discussed the need for early infosec buy-in due to common objections when using the free tier. An enterprise trial was suggested to facilitate SSO use and ensure infosec approval. Resistance from infosec to external integrations and data access was noted, complicating full utilization. The pricing strategy was examined, emphasizing Growth Book's appeal at higher user phases. Additionally, the internal challenges a small team faces within a large organization were underscored, including high cost sensitivity and the need for precise experimentation and clear approvals.",
+      "organizer": "graham@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, SSO, InfoSec, enterprise trial, AB testing, feature flagging",
+      "action_items": "\n**Vinay**\nReach out to GrowthBook team if and when InfoSec raises formal authorization or SSO issues during the evaluation process (31:33)\nKeep in touch with GrowthBook team for updates or support during ongoing evaluation of GrowthBook integration (34:31)\n\n**Jake Heier**\nProvide initial two-week enterprise trial offer with SSO enabled to Vinay for pilot testing of GrowthBook (15:45)\nCoordinate evaluation preparation call with Vinay to understand use cases and build a formal trial plan (15:48)\nOffer flexible trial extension depending on evaluation progress and internal hurdles faced by Reliance team (16:37)\nAssist Vinay with navigating InfoSec and vendor management processes as needed during GrowthBook evaluation and integration (27:15)\n\n**Graham McNicoll**\nWork with Vinay to explore alternative pricing options or trial adjustments based on Reliance's cost sensitivity and constraints (22:45)\nSupport unblocking integration and compliance issues with self-hosted environment and public endpoint discussions to ease InfoSec concerns (18:33)\nProvide ongoing hand-holding and technical support to ensure trial success and eventual enterprise adoption by Reliance (14:19)\n"
+    }
+  ]
+}

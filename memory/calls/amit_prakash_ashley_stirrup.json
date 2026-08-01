@@ -1,0 +1,19 @@
+{
+  "company": "Amit Prakash and Ashley Stirrup",
+  "slug": "amit_prakash_ashley_stirrup",
+  "last_etl_date": "2026-08-01T13:58:06.048596",
+  "calls": [
+    {
+      "id": "01KH728XSV05B4R863F6M93BTM",
+      "source": "fireflies",
+      "title": "Amit Prakash and Ashley Stirrup",
+      "date": "2026-02-13",
+      "duration_minutes": 27,
+      "summary": "The meeting highlighted the company's impressive growth of 110% year-over-year, supported by $20 million in Series A funding, indicating strong investor confidence. Major clients such as Anthropic and Salesforce validate the business model, which is primarily composed of two-thirds enterprise customers. The current marketing team consists of two members, with plans to expand into demand generation and outbound marketing strategies. Amit Prakash shared insights from his experience at Cloudflare and AWS, emphasizing data-driven demand generation and successful marketing initiatives. The company is strategically leveraging the uncertainty surrounding competitor Statsig to attract new customers, while also planning for cautious yet ambitious growth with a fully remote team and a focus on full-time hires for marketing roles.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, Demand Generation, Product Marketing, Cloudflare, Paid Search, Customer Expansion",
+      "action_items": "\n**Ashley Stirrup**\nSend Amit an unlisted demo video done by Growth Book’s CEO to replace a live demo and save sales time (08:20)\nProvide calendar link for follow-up meeting scheduling (26:36)\n\n**Amit Prakash**\nReview demo video and decide whether to cancel the scheduled live demo accordingly (08:14)\nBook follow-up meeting via the calendar link shared by Ashley (26:44)\n"
+    }
+  ]
+}

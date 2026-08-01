@@ -1,0 +1,19 @@
+{
+  "company": "Sync on 4.4 release positioning",
+  "slug": "sync_on_44_release_positioning",
+  "last_etl_date": "2026-08-01T13:58:06.036002",
+  "calls": [
+    {
+      "id": "01KP1J46Y24JSEXTHD2796KQB2",
+      "source": "fireflies",
+      "title": "Sync on 4.4 release positioning & strategy",
+      "date": "2026-04-14",
+      "duration_minutes": 32,
+      "summary": "The team aligned on the narrative for Growth Book 4.4, centering on human-AI collaboration, which includes safe rollouts, accessible analytics, and programmable experiments. The primary goals target increased engagement and adoption of key features among users. Messaging is tailored for different audiences, such as engineering and product teams, addressing their unique needs. The AI Data Analyst will launch as a beta feature, with feedback mechanisms established to guide future improvements. Competitive positioning highlights Growth Book's advantages in end-to-end automation and feature flagging, aiming to differentiate it from peers like Statsig and LaunchDarkly. Finally, short product videos are planned to enhance user retention and effectively showcase the release's key features.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "4.4 release, AI Data Analyst, feature flagging, experiment automation, product analytics, competitive differentiators",
+      "action_items": "\n**Elyse Fox**\nIncorporate partner feedback and finalize positioning messages for the 4.4 release assets including blogs and videos (31:34)\n\n**Scott Bailey**\nAdd notes on automating workflows for engineering, product, and data teams in audience messaging and coordinate updates for launch messaging and core narrative with Elyse and team (11:00)\n\n**Jeremy Dorn**\nHandle messaging nuances regarding AI Data Analyst limitations and beta status, support feedback channel setup in Slack and product, assist with competitive differentiators clarity, and contribute to video content production specifically on AI Data Analyst (18:48)\n\n**Ashley Stirrup**\nSuggest and confirm including “beta” label and user feedback importance for AI Data Analyst, help identify Slack channels and product feedback mechanisms for user input collection, and advocate for messaging targeting existing customers regarding Bandits re-engagement (18:48)\n"
+    }
+  ]
+}

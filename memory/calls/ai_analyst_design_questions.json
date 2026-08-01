@@ -1,0 +1,19 @@
+{
+  "company": "AI Analyst Design Questions",
+  "slug": "ai_analyst_design_questions",
+  "last_etl_date": "2026-08-01T13:58:06.039176",
+  "calls": [
+    {
+      "id": "01KN7NP8PQ6GGSJMFEAE24056T",
+      "source": "fireflies",
+      "title": "AI Analyst Design Questions",
+      "date": "2026-04-02",
+      "duration_minutes": 22,
+      "summary": "The discussion revolved around important aspects of UI design, particularly the modal usage for the 'Search Chats' feature, which was confirmed to follow a familiar layout to enhance user experience. The sidebar height configuration was deemed sufficient as is, avoiding unnecessary redesigns. Dropdown components were retained for consistency, following a recommendation. The team explored model selection settings, proposing local and global overrides to improve user flexibility, while the context dropdown remained uncertain until user data is available. Tool usage visibility during queries was examined, revealing a need for improved layout to avoid UI disruption, while light mode color issues necessitated further investigation into CSS elements. A focus on chat titling and feedback mechanisms rounded out the conversation to enhance overall usability.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 1,
+      "keywords": "search chats modal, sidebar design, model settings override, context filters, quick action prompts, feedback mechanism",
+      "action_items": "\n**Omar Elshaikh**\nAsk Jeremy about model setting preferences, especially regarding override usage at a dropdown or per-tool level (03:38)\nExplore and possibly mock up alternative UI designs for tool usage debug information to reduce clutter, such as single-line view or collapsible display (14:37)\nInvestigate UI color issues in light mode related to variable and background panel classes to improve color consistency (20:24)\nInform Johnny when the product is deployed and playable to gather user feedback and revisit implementation details (21:21)\n\n**Johnny Martinez**\nLocate and share the Figma mockup of the search chat modal and context dropdown filters with the team (00:46)\nAdvise on UI design consistency for dropdown elements, providing feedback on whether to reuse existing components or create new styles (02:30)\nDevelop a feedback mechanism design concept incorporating thumbs up/down and freeform feedback options for agent responses (19:06)\nResearch style system regarding background colors affecting light mode UI inconsistencies and share findings with Omar (20:24)\n"
+    }
+  ]
+}

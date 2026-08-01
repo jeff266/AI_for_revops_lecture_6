@@ -1,0 +1,19 @@
+{
+  "company": "WorkAxle",
+  "slug": "workaxle",
+  "last_etl_date": "2026-08-01T13:58:06.048840",
+  "calls": [
+    {
+      "id": "01KH4SAKN90A3BMNXXYCKAM7EJ",
+      "source": "fireflies",
+      "title": "WorkAxle + GrowthBook",
+      "date": "2026-02-12",
+      "duration_minutes": 59,
+      "summary": "GrowthBook's meeting emphasized its robust product analytics strategy, highlighting integration with major data warehouses like Snowflake and BigQuery, which ensures compliance and governance. The platform allows users to create custom metrics using SQL, providing deep insights into product performance. Experimentation-driven development was discussed, with examples of pricing, signup, and retention strategies. Upcoming features include enhanced dashboards and AI tools for better data visualization. Additionally, GrowthBook's flexible feature flagging supports both short-term experiments and long-term entitlements, aimed at optimizing user engagement. The evaluation timeline indicates customers are in early assessment phases with follow-ups planned for February.",
+      "organizer": "graham@growthbook.io",
+      "participants": 5,
+      "keywords": "Feature Flags, Product Analytics, Self-Hosting, Experimentation, Data Residency, Multi-Cluster Architecture",
+      "action_items": "\n**Christian Liebenow**\nSend recording of the demo and presentation to Ana and Vadim (56:37)\nShare GrowthBook documentation for further learning (56:37)\nFollow up with Ana and Vadim in a couple of weeks/end of February to reconnect (57:00)\nSet up Slack channel for customer evaluation support if requested (57:33)\n\n**Graham McNicoll**\nDiscuss with engineering team about better supporting per-client feature entitlement use cases (52:46)\n\n**Anastasiia Konovalenkova**\nReview GrowthBook capabilities and internal requirements against other solutions being evaluated (54:52)\nDiscuss with Vadim regarding evaluation and get back to GrowthBook team about further engagement (58:06)\n\n**Vadim Shalamov**\nAssess compliance and data residency constraints relative to self-hosting needs for the solution (55:39)\nCollaborate with Anastasiia on internal discussions and respond regarding Slack channel and next steps (58:06)\n"
+    }
+  ]
+}

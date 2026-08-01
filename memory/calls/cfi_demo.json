@@ -1,0 +1,19 @@
+{
+  "company": "CFI & GrowthBook Demo",
+  "slug": "cfi_demo",
+  "last_etl_date": "2026-08-01T13:58:06.004056",
+  "calls": [
+    {
+      "id": "01KVT4HC8G8A04MKS9M7T8586H",
+      "source": "fireflies",
+      "title": "CFI & GrowthBook Demo",
+      "date": "2026-06-25",
+      "duration_minutes": 62,
+      "summary": "The team plans to complete the platform evaluation by mid-July, with a decision expected by the end of July, led by CTO Martin Kiuru. The evaluation approach emphasizes integration with existing tools like GitHub and GitLab, addressing the need for tracking feature impact and justifying development costs. The business objectives include establishing a data-driven management framework to align feature development with metrics such as net profit and customer engagement, particularly through AI-driven features. GrowthBook's architecture supports self-hosted deployments, integrating seamlessly with Databricks and offering extensive feature management capabilities. With a pricing model based on seat licenses, next steps involve a follow-up meeting for further collaboration between teams.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "feature flagging, experimentation, data-driven product management, GrowthBook, engineering integration, databricks",
+      "action_items": "\n**James Shannon**\nSchedule a follow-up meeting at the end of next week to check in on the evaluation progress and coordinate resources for the next phase (01:01:11)\n\n**George Lakas**\nPrepare internal evaluation of GrowthBook platform and gather necessary resources to support the next phase of assessment (00:40)\n\n**Martin Kiuru**\nEvaluate engineering integration readiness and product management requirements for GrowthBook; prepare to present the approach and findings to the broader product team after internal review (58:15)\n"
+    }
+  ]
+}

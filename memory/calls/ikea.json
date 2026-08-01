@@ -1,0 +1,61 @@
+{
+  "company": "IKEA",
+  "slug": "ikea",
+  "last_etl_date": "2026-08-01T13:58:05.982193",
+  "calls": [
+    {
+      "id": "698cae56bb6310001d184aac",
+      "source": "apollo",
+      "title": "Ikea + GrowthBook",
+      "date": "2026-02-11",
+      "duration_minutes": 29,
+      "summary": "GrowthBook (Ryan McGurk, CRO, and Christian Liebenow) discussed replacing Ikea's expensive Optimizely platform with their engineering-centric experimentation tool, addressing pain points like cost (~$1-1.5M/year) and usability. Key participant Jelmer Timmer (Ikea engineer handling cost optimization) shared usage metrics and a timeline to 2027. Next steps: Christian will meet with Ikea's product owner Cecilia to discuss evaluation progress,",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "698c9078f4c7bf000dff3809",
+      "source": "apollo",
+      "title": "IKEA + GrowthBook",
+      "date": "2026-02-11",
+      "duration_minutes": 52,
+      "summary": "IKEA’s experimentation team (Cecilia,",
+      "host": "Christian Liebenow",
+      "participants": 6
+    },
+    {
+      "id": "01KH1VFF7DKK5Z3QTNNHRZZ1CD",
+      "source": "fireflies",
+      "title": "Ikea + GrowthBook",
+      "date": "2026-02-11",
+      "duration_minutes": 31,
+      "summary": "IKEA is currently spending over €1 million annually on Optimizely, with a contract extending through July 2027. The platform's usability challenges prompted IKEA to develop a custom frontend for better experiment management. With an average of 16.5 to 17 million monthly active users and 571 seats in use, IKEA intends to expand its seat count to enhance its experimentation culture. Growth Book is positioned as a potential alternative, proposing a seat-based pricing model that could halve IKEA's costs, along with flexible transition options. The procurement process will involve vendor comparisons and board-level approvals, with plans for proof of concept trials to guide their decision-making.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation, Optimizely, GrowthBook, Pricing Model, BigQuery, Procurement",
+      "action_items": "\n**Jelmer Timmer**\nProvide BigQuery proof of concept cost estimates after deeper analysis by Basim and Mitchell to share with GrowthBook and procurement (26:55)\nConfirm timeline for evaluation and next steps with product owner Cecilia and share relevant vendor comparison details with GrowthBook (29:40)\n\n**GrowthBook (Ryan McGurk & Christian Liebenow)**\nPrepare to support IKEA procurement process, including detailed pricing models and potential cost-saving proposals (21:37)\n\n**GrowthBook and IKEA teams**\nArrange customer reference calls between GrowthBook’s existing clients and IKEA stakeholders as part of vendor evaluation (29:13)\n\n**All**\nMaintain Slack communication channel open for additional questions and clarifications throughout evaluation process (30:26)\n"
+    },
+    {
+      "id": "699474a00328dc001d8c59e2",
+      "source": "apollo",
+      "title": "IKEA + GrowthBook",
+      "date": "2026-02-17",
+      "duration_minutes": 30,
+      "summary": "Cecilia Jeppsson (IKEA) and Christian Liebenow (GrowthBook) discussed IKEA's evaluation of GrowthBook as a potential replacement for Optimizely, highlighting pain points like technical fragmentation, scaling challenges, and cultural adoption of experimentation. Christian will provide a written summary of GrowthBook's agentic AI vision and differentiation, and arrange a customer reference call within weeks, while Cecilia continues internal market research and demos.",
+      "host": "Christian Liebenow",
+      "participants": 2
+    },
+    {
+      "id": "01KPVBD95YFEWZK32DYPZ5Q07H",
+      "source": "fireflies",
+      "title": "IKEA + GrowthBook",
+      "date": "2026-04-23",
+      "duration_minutes": 31,
+      "summary": "The discussion centered on IKEA's ambition to enhance its experimentation capabilities, aiming for an annual target of 1,500 to 2,000 experiments, up from around 500 currently. The focus was on prioritizing experiment quality and safety to avoid costly incidents, utilizing tools like feature flags. AI integration was highlighted as a critical leverage point to increase efficiency and enhance ROI across the experimentation lifecycle. Two pricing models were proposed by GrowthBook, both priced around $871,000 annually, offering flexible options for IKEA to evaluate. Additionally, operational risks related to infrastructure and uncertain BigQuery costs were acknowledged, along with an emphasis on the partnership, which aims to be a long-term strategic collaboration, ensuring adaptability in IKEA’s evolving needs.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation, Pricing Models, AI Integration, Feature Flags, RFP Proposal, Reliability Risks",
+      "action_items": "\n**Christian Liebenow**\nShare detailed pricing rate tables for both user-based and experiment-based models by Friday early day to support RFP continuation (30:25)\n\n**Christian Liebenow & Ryan McGurk**\nCollaborate on building the complete proposal deck including all math and pricing details and send it to Jelmer Timmer (30:05)\n\n**Jelmer Timmer**\nReview the sent proposal, rate tables, and pricing models with IKEA procurement team including Stefan to support final decision in RFP (30:36)\n\n**IKEA Team (Basim and Mitchell)**\nContinue analysis and optimization of BigQuery usage and cost implications to improve pricing predictability and reduce expenses (23:30)\n"
+    }
+  ]
+}

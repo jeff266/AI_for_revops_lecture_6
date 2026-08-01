@@ -1,0 +1,19 @@
+{
+  "company": "Cosmose",
+  "slug": "cosmose",
+  "last_etl_date": "2026-08-01T13:58:06.038087",
+  "calls": [
+    {
+      "id": "01KNKCE7FPPY51Z9B2PPFBHM5A",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Cosmose",
+      "date": "2026-04-08",
+      "duration_minutes": 43,
+      "summary": "The meeting discussed the company's plan to expand its use of Growthbook beyond the free version to leverage Enterprise features for improved A/B testing. Aiming to engage 30 million users, the company highlights the need for custom fields, better dashboards, and integration with historical data through Cupid to enhance test management. The current challenges involve database limitations in Clickhouse that hinder full analysis due to sampling, impacting statistical power. Significant revenue could be influenced by A/B tests, with a 4% uplift viewed as meaningful. Pricing considerations include a $30,000 annual license for up to 50 users and 100 experiments, and there is a follow-up planned to address technical and budget alignments.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, A/B testing, self-hosting, enterprise features, programmatic ads, data pipeline optimization",
+      "action_items": "\n**Mateusz Susik**\nConsult internally with technical and business stakeholders about GrowthBook enterprise integration and pricing considerations (42:50)\nIdentify and involve key backend technical lead for the follow-up technical call (38:00)\nConfirm availability for tentative follow-up call around 3–4pm local time next week (42:45)\n\n**James Shannon**\nProvide follow-up email summarizing meeting notes, GrowthBook roadmap deck, and pricing details within the hour (42:58)\nSchedule tentative technical follow-up meeting involving GrowthBook data science/engineering team and Cosmose’s backend lead (38:00)\nPrepare case studies and ROI analyses based on other customers’ experiences with GrowthBook enterprise features (35:00)\nClarify internally about AA testing feature availability and follow up on this specific query for Mateusz (25:35)\n"
+    }
+  ]
+}

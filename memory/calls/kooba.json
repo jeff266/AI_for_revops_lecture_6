@@ -1,0 +1,17 @@
+{
+  "company": "Kooba",
+  "slug": "kooba",
+  "last_etl_date": "2026-08-01T13:58:05.976417",
+  "calls": [
+    {
+      "id": "69d5235df5a910000d0f697c",
+      "source": "apollo",
+      "title": "GrowthBook Demo for Kooba",
+      "date": "2026-04-07",
+      "duration_minutes": 32,
+      "summary": "Daniel Wathne (Sales) and Logan Bates (Solutions Engineering) demoed GrowthBook to Tom Gillan (UX designer at a Dublin web agency) who needs an A/B testing tool for client Water Wipes, comparing it to Optimizely and Convert. They discussed GrowthBook's visual editor, feature flags, SDK integration, metric analysis, and affordable pricing ($40/user/month), addressing Tom's pain point of needing a proper tool over a makeshift solution. Next steps: Daniel will send guides on the visual editor and implementation, and Tom will have his developer Thomas",
+      "host": "Daniel Wathne",
+      "participants": 3
+    }
+  ]
+}

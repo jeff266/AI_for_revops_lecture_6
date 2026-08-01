@@ -1,0 +1,61 @@
+{
+  "company": "Stone",
+  "slug": "stone",
+  "last_etl_date": "2026-08-01T13:58:05.965091",
+  "calls": [
+    {
+      "id": "698a4ac024ef3f00212b1f96",
+      "source": "apollo",
+      "title": "Stone + GrowthBook",
+      "date": "2026-02-09",
+      "duration_minutes": 26,
+      "summary": "Christian Liebenow and Chris Sanders (GrowthBook sales) discussed GrowthBook's data warehouse-native experimentation features with Newton Calegari (Stone), who praised its hybrid approach, statistical flexibility, and governance reports. However, a CEO change at Stone triggered a cost-cutting mandate, blocking new vendor deals and leaving Newton stuck with an existing Amplitude contract. Next steps include Christian researching a case study from Neon Bank for Newton’s internal case, potentially providing a speaker or swag for Stone’s April experimentation meetup, and Newton promising to revisit GrowthBook when budget frees up next semester.",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "6a0b4cf082f13800141362e7",
+      "source": "apollo",
+      "title": "Stone + GrowthBook",
+      "date": "2026-05-18",
+      "duration_minutes": 0,
+      "summary": "The transcript contains only a brief comment from Logan Bates suggesting Christian order coffee, with no discussion of product, features, or pain points. Key participants are Logan Bates (speaker) and Christian (listener). No next steps or action items are provided.",
+      "host": "Christian Liebenow",
+      "participants": 1
+    },
+    {
+      "id": "01KRS1MBY5M4FBS86CF42Z378Q",
+      "source": "fireflies",
+      "title": "Stone + GrowthBook",
+      "date": "2026-05-18",
+      "duration_minutes": 47,
+      "summary": "The team discussed a phased rebuild of their tracking infrastructure, transitioning from Amplitude to a real-time data pipeline using Kafka for event ingestion into Databricks. The current Amplitude setup has over 4,000 poorly defined event types, leading to governance challenges. A hybrid migration approach allows initial experimentation with a pilot group of PMs using GrowthBook, fostering growth in a culture of experimentation alongside technical development. GitHub will manage event definitions to maintain consistency, while the flexible SDK from GrowthBook enables custom integrations. Competitive pricing and ongoing organizational education efforts were also highlighted, aiming to maximize the effectiveness of experimentation and drive business value.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "Tracking Infrastructure, Experimentation Platform, Amplitude Migration, Data Warehouse Integration, Feature Flagging, Event Taxonomy",
+      "action_items": "\n**Newton Calegari - Stone&Co**\nKeep GrowthBook informed of Stone's progress on implementing data warehouse native architecture and SDK development; schedule a follow-up technical discussion with Stone's tech lead (38:30)\nEngage Stone leadership to discuss pricing considerations, especially addressing currency conversion issues and negotiating flexible pricing terms with GrowthBook (35:32)\nTrial GrowthBook open source or enterprise platform and coordinate test experiment setups aiming for June/July timeframe (16:10)\nFacilitate introduction and conversation between Stone and Neon fintech for knowledge sharing and collaboration in Latin America (22:40)\n\n**Christian Liebenow**\nArrange potential introduction between Stone and Neon fintech customers in Brazil to foster collaboration and experience exchange (22:35)\nProvide GrowthBook metric YAML syncing documentation and GitHub resources to Stone's Newton Calegari to support integration efforts (10:15)\nSupport Newton and Stone team during GrowthBook trial period via Slack, including providing demo materials and onboarding assistance (27:40)\nWork with Stone's Newton on flexible pricing models and enterprise licensing details tailored to Stone’s scale and experiment rollout plan (34:50)\n\n**Logan Bates**\nProvide demo of GrowthBook features relevant to Stone’s scenario to illustrate platform capabilities and migration benefits (23:00)\nShare documentation and Kotlin SDK GitHub links with Stone to support integration and customization efforts (38:50)\nAdvise Stone on query frequency, cost management, and pipeline caching options to optimize data warehouse usage and control expenses (15:03)\nAssist Stone in creating migration scripts for SDK and feature flags to ease transition from Amplitude to GrowthBook platform (20:35)\nHelp coordinate GrowthBook enterprise trial and provide ongoing technical support during Stone’s pilot experiments (16:25)\n"
+    },
+    {
+      "id": "6a60f922c8d385001081682e",
+      "source": "apollo",
+      "title": "Stone + GrowthBook",
+      "date": "2026-07-22",
+      "duration_minutes": 39,
+      "summary": "Newton Calegari (CTO at Stone) discussed replacing Amplitude with GrowthBook due to pain points like event-based pricing, inability to use warehouse metrics, outage risks, and feature flagging overhead. GrowthBook’s composable, warehouse-native architecture (with APIs, Bayesian/frequentist stats, and self-hosting options) was positioned as a flexible engine for Stone’s in-house experimentation platform. Next steps: Newton will test GrowthBook locally via Docker, and Christian will connect him with the NEON team, with a follow-up call planned in two weeks.",
+      "host": "Christian Liebenow",
+      "participants": 4
+    },
+    {
+      "id": "01KY08PHAZC2CGTAVG9H1KGJTW",
+      "source": "fireflies",
+      "title": "Stone + GrowthBook",
+      "date": "2026-07-22",
+      "duration_minutes": 39,
+      "summary": "The discussion centered on enhancing data infrastructure and experimentation at Stone. The team is developing a robust data pipeline to improve event tracking through distinct signal types—action, time, and business signals—while also creating an in-house experimentation platform. GrowthBook emerged as a key consideration for managing experiments and feature flags, offering modular API access and self-hosting options. Concerns about current feature flag overload, particularly with over 500 flags causing outages, prompted the shift toward GrowthBook's fail-safe design. Insights into the integration of SDKs and the asynchronous computation of metrics were also shared. The next steps involve deploying GrowthBook locally for trials and clarifying enterprise licensing options.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "experimentation platform, event tracking, server-side SDK, feature flags, Bayesian statistics, warehouse-native metrics",
+      "action_items": "\n**Newton Calegari**\nSet up a GrowthBook Docker container locally for hands-on interface testing and experimentation platform evaluation (38:07)\nShare Stone&Co’s tracking and experimentation architecture layouts with GrowthBook team for alignment and collaboration (38:07)\n\n**Christian Liebenow**\nContinue discussions with the NEON team and explore their interest in connecting with Newton for collaboration (37:14)\nArrange a follow-up meeting with Newton in about two weeks to discuss GrowthBook’s open-source versus Enterprise offerings and answer remaining questions (37:14)\n\n**Graham McNicoll / GrowthBook Team**\nProvide detailed answers on SDK caching, buffering, and offline capabilities relevant to intermittent connectivity scenarios (25:55)\nSupport Newton in evaluating server-side SDK options (Python, Go) and provide guidance on integration choices (07:16)\n"
+    }
+  ]
+}

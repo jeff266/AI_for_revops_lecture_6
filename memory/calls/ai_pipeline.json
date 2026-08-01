@@ -1,0 +1,19 @@
+{
+  "company": "AI Pipeline",
+  "slug": "ai_pipeline",
+  "last_etl_date": "2026-08-01T13:58:06.024807",
+  "calls": [
+    {
+      "id": "01KQNN2AAPSS9TJW9PS95BNMHF",
+      "source": "fireflies",
+      "title": "2:30p PT Intro: Ryan McGurk (GrowthBook) x Ryan Caldbeck (Waystation AI) | BDR Signals & AI Pipeline",
+      "date": "2026-05-04",
+      "duration_minutes": 15,
+      "summary": "The meeting revolved around effective sales strategies aimed at scaling the business by leveraging expertise and building systems. Matthew was engaged as a sales consultant to dedicate 10-15 hours per week to help create scalable sales processes, focusing on system setup instead of direct selling. His role encompasses the creation of automated outbound campaigns integrating phone, email, and LinkedIn outreach, thereby enhancing lead quality and quantity. Additionally, the current sales team has three BDRs, solely acquiring customers through founders to date, while Matthew's coaching is intended to accelerate their effectiveness. Leadership expressed strong support for Matthew’s analytical skills and emphasized structured check-ins to ensure progress in the sales process, integrating multiple sales tools for efficiency.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 2,
+      "keywords": "Waystation, Consumer Packaged Goods, Sales Systems, Outbound Prospecting, Advisor/Consultant, Automation Tools",
+      "action_items": "\n**Ryan Caldbeck**\nIncrease direct communication with Matthew to leverage his expertise beyond initial sales coaching and engage him as a thought partner (13:51)\nDefine clear deliverables and establish two weekly check-ins with Matthew to monitor sales strategy and results effectively (12:37)\nImplement outcome-based incentive compensation for Matthew aligned with sales results to motivate performance and accountability (13:17)\n\n**Ryan McGurk**\nContinue supporting and overseeing Matthew’s onboarding to an outcome-based sales role and scaling of sales systems at Growth Book (13:20)\n"
+    }
+  ]
+}

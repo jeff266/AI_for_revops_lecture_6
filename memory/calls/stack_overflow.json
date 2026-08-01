@@ -1,0 +1,29 @@
+{
+  "company": "Stack Overflow",
+  "slug": "stack_overflow",
+  "last_etl_date": "2026-08-01T13:58:05.983916",
+  "calls": [
+    {
+      "id": "697bb37456fdeb001d697693",
+      "source": "apollo",
+      "title": "Stack Overflow + GrowthBook",
+      "date": "2026-01-29",
+      "duration_minutes": 23,
+      "summary": "In this call, Graham (GrowthBook co-founder) and Christian (GrowthBook sales) received detailed feedback from Emma Leyden, a Product Manager at Stack Overflow, who explained that her company ultimately chose Statsig over GrowthBook due to a strategic shift toward enterprise, which made product analytics and user recordings—features where Statsig had a stronger pitch—critical decision factors, despite Emma’s personal preference for GrowthBook’s seat-based",
+      "host": "Christian Liebenow",
+      "participants": 3
+    },
+    {
+      "id": "01KG0K5V4ZHYVX1Z5QEGAYQTKY",
+      "source": "fireflies",
+      "title": "Stack Overflow + GrowthBook",
+      "date": "2026-01-29",
+      "duration_minutes": 23,
+      "summary": "Stack Overflow's leadership decided to adopt Statsig over GrowthBook for experimentation and product analytics, primarily due to a strategic shift towards enhancing enterprise capabilities. Emma Leyden highlighted Statsig's robust analytics, which proved crucial for decision-making in a newer enterprise product with unclear data. The decision was also influenced by the ease of setup and strong partnership support, with Graham McNicoll's involvement fostering trust. Pricing models were debated, with a preference for flexible credit-based pricing aligning with enterprise growth needs. While leadership valued Statsig's association with OpenAI, they sought clearer AI roadmaps for proactive innovation. Additionally, user recordings were questioned for their long-term value, leading to suggestions for better communication regarding their purpose.",
+      "organizer": "graham@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation tooling, Product analytics, User recordings, AI roadmap, Pricing models, Enterprise strategy",
+      "action_items": "\n**Emma Leyden**\nContinue scaling experimentation efforts within Stack Overflow during the Statsig contract period (22:39)\n\n**Graham McNicoll**\nConsider producing short, focused demo videos highlighting GrowthBook’s key features and value propositions for decision maker education (17:12)\nDevelop clear messaging/video explaining the company’s position on user recordings and their roadmaps for relevant features (18:20)\n\n**Christian Liebenow**\nExplore and communicate different pricing models, including the possibility of credit-based licensing, to address client flexibility concerns (13:05)\n\n**GrowthBook team**\nStrengthen AI product roadmap transparency to better compete with peers connected to AI leaders like OpenAI (20:46)\n"
+    }
+  ]
+}

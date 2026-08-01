@@ -1,0 +1,19 @@
+{
+  "company": "Solotopiax.com",
+  "slug": "solotopiaxcom",
+  "last_etl_date": "2026-08-01T13:58:06.012848",
+  "calls": [
+    {
+      "id": "01KT86KZGF1HRKPGG5673WMCCM",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Solotopiax.com",
+      "date": "2026-06-05",
+      "duration_minutes": 48,
+      "summary": "GrowthBook presents a sophisticated solution for managing A/B tests and feature releases, allowing multiple concurrent experiments with precise user assignments and robust analytics. The platform integrates seamlessly with external data sources, supports warehouse-native analytics, and leverages AI for enhanced reporting and creative testing. It offers a Pro plan for $40 per month, suitable for small to mid-sized teams, and an Enterprise tier for larger groups. The ease of integration, global support, and ongoing localization efforts were highlighted as key strengths. Alice Zhou's company expresses interest in adopting GrowthBook due to its open-source model and capabilities in complex testing scenarios.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "AB Testing, Feature Flagging, Deterministic Hashing, GrowthBook Demo, Self-hosted vs Cloud, AI-assisted Experimentation",
+      "action_items": "\n**Alice Zhou**\nShare the domain of Thinking Data AI platform with Graham to explore potential integration with GrowthBook (12:15)\nExplore GrowthBook free trial and test account for hands-on evaluation (25:16)\nInvestigate with development team whether to adopt self-hosted or cloud version of GrowthBook (39:53)\nReview differences between GrowthBook Pro and Enterprise plans to determine best fit for Solotopiax team (46:21)\nCoordinate further communication with GrowthBook team primarily via Microsoft Teams (45:32)\nFollow up on potential collaboration introduction between GrowthBook and Thinking Data AI for integrated event tracking (44:09)\n\n**Graham McNicoll**\nProvide GrowthBook demo account and assist Solotopiax with setting up trial access (25:29)\nSend recording of the meeting to Solotopiax for review and reference (46:53)\nCheck with GrowthBook team about WeChat communication and support options for Solotopiax (45:15)\nProvide license key for self-hosted enterprise features if Solotopiax selects that option (40:30)\n"
+    }
+  ]
+}

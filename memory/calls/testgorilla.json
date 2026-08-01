@@ -1,0 +1,19 @@
+{
+  "company": "Testgorilla",
+  "slug": "testgorilla",
+  "last_etl_date": "2026-08-01T13:58:06.014276",
+  "calls": [
+    {
+      "id": "01KT3JEPRDPQS8XV83CG4FBGXN",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Testgorilla",
+      "date": "2026-06-03",
+      "duration_minutes": 30,
+      "summary": "The team is evaluating tools for web-based A/B and split testing to enhance marketing growth and conversion rates. Led by Abhinav Jolly, the initiative aims to optimize layout, landing pages, and pricing pages with minimal coding. Previous experiences with platforms like VWO and Optimizely inform the choice. GrowthBook is considered for its AI-assisted visual editor that allows for modifications without developer assistance, supporting rapid experimentation. The cost structure is based on experiments rather than traffic, with anticipated expenses of $75,000 to $125,000 annually for extensive testing. The integration with existing tech stacks through SDKs and alignment with marketing goals focusing on increasing demo bookings and improving conversion rates are critical aspects of the discussion.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation platform, GrowthBook, A/B testing, visual editor, data warehouse integration, pricing model",
+      "action_items": "\n**James Shannon**\nSend detailed pricing quotes for 10, 15, 20, and 30 experiments per month to Abhinav Jolly (27:30)\nShare the presentation deck and relevant case studies with the Testgorilla team (28:33)\nSchedule a follow-up call to discuss pricing feedback, tentatively set for Wednesday at 10:30 (28:33)\n\n**Abhinav Jolly**\nReview pricing quotes and presentation deck upon receipt (27:30)\nDiscuss pricing and experimentation platform options with the Head of Marketing (27:52)\nConfirm availability for the follow-up meeting on Wednesday at 10:30 (28:09)\n"
+    }
+  ]
+}

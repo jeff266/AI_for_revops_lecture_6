@@ -1,0 +1,37 @@
+{
+  "company": "Growthbook <> Integra Beauty",
+  "slug": "integra_beauty",
+  "last_etl_date": "2026-08-01T13:58:05.976107",
+  "calls": [
+    {
+      "id": "69bc1de42d8387001d547bb7",
+      "source": "apollo",
+      "title": "GrowthBook <> Integra Beauty - Intro",
+      "date": "2026-03-19",
+      "duration_minutes": 46,
+      "summary": "GrowthBook discussed its warehouse-native experimentation platform, addressing Integra Beauty’s pain points with Statsig (event limitations, anonymous ID issues, and lack of self-sufficiency for their part-time analyst). Key participants included Daniel Wathne (GrowthBook sales), Luke Sonnet (head of data science), and Logan Bates (solutions engineering), along with Integra Beauty’s David (senior marketing data analyst), Lera (analyst), and Wojciech (engineer). Next steps: schedule a full demo on February 24th, set up a Slack channel, and potentially start a trial to validate GrowthBook’s integration with their Snowflake and Shopify stack.",
+      "host": "Daniel Wathne",
+      "participants": 6
+    },
+    {
+      "id": "69c6a88e73a5c20011fee8b8",
+      "source": "apollo",
+      "title": "Growthbook <> Integra Beauty - Demo ",
+      "date": "2026-03-27",
+      "duration_minutes": 40,
+      "summary": "The demo focused on GrowthBook's experimentation platform, highlighting its ability to integrate with Integra Beauty's existing Snowflake data warehouse (where they store experiment exposures and metrics) and replace their current Statsig setup. Key participants included Daniel Wathne (GrowthBook CS), Logan Bates (GrowthBook engineer), David (Integra Beauty lead), Lera (analyst), and Wojciech (developer). Next steps are for Lera and David to connect their Snowflake data source to GrowthBook, explore the platform, and then schedule a follow-up call the same time next week to troubleshoot and review progress.",
+      "host": "Daniel Wathne",
+      "participants": 5
+    },
+    {
+      "id": "69d7efc505d8350021a9cac4",
+      "source": "apollo",
+      "title": "Growthbook <> Integra Beauty - Pricing Sync",
+      "date": "2026-04-09",
+      "duration_minutes": 28,
+      "summary": "During the call, Daniel Wathne (GrowthBook sales) and Integra Beauty (customer) discussed GrowthBook’s A/B testing platform, focusing on Pro vs. Enterprise pricing, features like dashboards and metric impact, and the customer’s pain",
+      "host": "Daniel Wathne",
+      "participants": 2
+    }
+  ]
+}

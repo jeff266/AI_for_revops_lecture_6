@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Ryan Shriver from LifeWise Academy",
+  "slug": "demo_call_ryan_shriver_from_lifewise_academy",
+  "last_etl_date": "2026-08-01T13:58:05.985274",
+  "calls": [
+    {
+      "id": "01KYAS7FAXRYXXSSFACKM1MXFP",
+      "source": "fireflies",
+      "title": "Demo Call with Ryan Shriver from LifeWise Academy",
+      "date": "2026-07-27",
+      "duration_minutes": 47,
+      "summary": "The team decided to adopt Growth Book as their A/B testing tool to support their transition to Sanity CMS. Ryan Shriver emphasized the tool's integration compatibility with their existing WordPress setup and expressed confidence in its ease of use based on prior research. Given that the team is new to A/B testing, engineering support will ensure smooth onboarding and technical integration. Growth Book's visual editor facilitates direct on-page editing, while its traffic targeting relies on Google Analytics 4 data. Approval workflows within the platform enable separation between creative teams and experiment owners. The tool provides integrated analytics for tracking, with real-time metrics demonstrating a potential 14% increase in purchase events. Lastly, the Pro plan pricing aligns well with their traffic needs, making for cost-effective deployment.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "A/B testing, Growth Book, Sanity CMS integration, Visual Editor, Experimentation metrics, Cloudflare integration",
+      "action_items": "\n**Ryan Shriver**\nReview Growth Book product details and pricing information sent by Dan Wathne; evaluate for fiscal year adoption (36:56)\nShare Growth Book Cloudflare integration documentation with LifeWise engineering team for technical assessment (31:49)\nProceed with online signup for Growth Book if agreed upon after review (37:08)\n\n**Dan Wathne**\nSend Growth Book detailed pricing, Cloudflare integration docs, and onboarding materials to Ryan post-meeting (36:56)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Julio Perdiguer Ordóñez from Docplanner",
+  "slug": "demo_call_julio_perdiguer_ordez_from_docplanner",
+  "last_etl_date": "2026-08-01T13:58:05.997561",
+  "calls": [
+    {
+      "id": "01KX0KYCDBGWFSQP1JQ43JKS2V",
+      "source": "fireflies",
+      "title": "Demo Call with Julio Perdiguer Ordóñez from Docplanner",
+      "date": "2026-07-09",
+      "duration_minutes": 36,
+      "summary": "The team focused on unifying five different feature flag and experimentation tools into a single, scalable platform that supports both client and server-side toggles and advanced experimentation features by Q4. Key discussions included the need for advanced experimentation capabilities to accelerate decision-making, thereby shortening the significance time of experiments from 4-6 weeks to 2-3 weeks. Pricing transparency was emphasized, with cloud enterprise pricing set at a baseline of $50,000 plus $1,000 per user annually, and a self-hosted option available for $45,000. Data residency compliance was addressed with the upcoming launch of an EU data center. Technical insights covered the flexible architecture with SDKs deployed across various environments, and the decision-making process involved gathering feedback from stakeholders to ensure that the platform meets business needs effectively.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "feature flags, experimentation platform, GrowthBook, pricing model, data residency, SDK architecture",
+      "action_items": "\n**Julio Perdiguer Ordoñez**\nCoordinate with more stakeholders to gather specific requirements and feedback on experimentation needs (08:15)\nPotentially arrange a follow-up call with James after stakeholder alignment (33:00)\n\n**Nerios Lamaj**\nVerify data residency compliance with legal team regarding cloud hosting and data storage locations (27:40)\nReview pricing details internally for budget considerations and communicate decision on proceeding further (33:50)\nReach out to James for follow-up call if moving forward with GrowthBook (33:50)\n\n**James Shannon**\nSend presentation slides and meeting recording to Julio and Nerios for internal use (35:05)\nProvide any additional documentation or information requested by Docplanner after their stakeholder meetings (14:50)\nOffer support for follow-up demo or technical clarifications as needed (33:00)\n"
+    }
+  ]
+}

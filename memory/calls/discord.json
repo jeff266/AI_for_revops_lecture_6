@@ -1,0 +1,17 @@
+{
+  "company": "Discord",
+  "slug": "discord",
+  "last_etl_date": "2026-08-01T13:58:05.981973",
+  "calls": [
+    {
+      "id": "69979320dcf7d00019913c06",
+      "source": "apollo",
+      "title": "Discord + GrowthBook",
+      "date": "2026-02-19",
+      "duration_minutes": 18,
+      "summary": "Christian Liebenow (GrowthBook sales) presented a two-year renewal proposal for Discord, addressing their pain points around payment flexibility, staying under a $500k total deal threshold to avoid CFO review, and ensuring affordable per-user pricing (currently $405/user) despite tripling seat volume. Key participants included Jennifer Richardson and Nate B (both from Discord), who pushed for a steeper volume discount and flagged the year-two jump to $400k as problematic. Next steps: Discord will investigate reducing user counts to lower costs, GrowthBook will explore splitting invoices, and both parties will reconvene next week to discuss two options (unlimited at 600 users or a reduced-seat plan).",
+      "host": "Christian Liebenow",
+      "participants": 3
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Growthbook <> ClickHouse React SDK setup check",
+  "slug": "clickhouse_react_sdk_setup_check",
+  "last_etl_date": "2026-08-01T13:58:06.050987",
+  "calls": [
+    {
+      "id": "01KGNF9FG1R2NNX8ZYFGDHFMX2",
+      "source": "fireflies",
+      "title": "Growthbook <> ClickHouse React SDK setup check",
+      "date": "2026-02-05",
+      "duration_minutes": 32,
+      "summary": "The team discussed the persistent problem of multiple variant exposures in Growth Book experiments due to inconsistent user identifiers used for traffic splitting and analysis. Jeremy Dorn identified that different identifiers like `user_id`, `User ID`, and `Galaxy ID` are causing confusion and recommended standardizing on explicit IDs while removing any auto-generated identifiers. The group agreed to clean up existing ID logic, ensuring stable identifiers are used to minimize tracking errors. Jeremy also explained the careful process needed to reset experiments, emphasizing the importance of setting start dates correctly to avoid skewed data. Furthermore, the team acknowledged the benefits of consolidating metrics into fact tables for improved query efficiency and discussed a dual-ID strategy for tracking users in Auth0 environments. Next steps included cleanup of ID usage and coordination with the data warehouse team for better metrics queries.",
+      "organizer": "graham@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook, user_id, multiple exposure, experiment setup, auto attributes plugin, fact tables",
+      "action_items": "\n**Dani Sandoval**\nRecord and share the call with Chloe for review (01:06)\nInvestigate whether to split experiment traffic on User ID or Organization ID and coordinate with Chloe for decision-making (11:55)\nReset and update experiment phase and start date in GrowthBook after updating attribute setup to user_id (12:35)\nClean up SDK code to remove conditional ID handling and unify on user_id and other stable IDs for targeting and event publishing (28:55)\nAdd comments and confirm disabling of Auto Attributes plugin’s ID generation in SDK setup (30:10)\nReview and implement Jeremy’s shared documentation on fact tables and query optimization with Data Warehouse team (31:03)\n\n**Nick Troshkov**\nInvestigate the behavior of auto attributes plugin around ID conflicts with passed-in attributes (06:32)\nHelp clarify and refactor identifier usage in GrowthBook SDK initialization and experiment setup to avoid ambiguity with ID (16:01)\nCoordinate with Dani on code cleanup and removal of outdated role tracking fields (21:00)\n\n**Jeremy Dorn**\nProvide instructions on experiment updating: reverting to draft, changing traffic split attribute, restarting experiment phases (11:40)\nExplain GrowthBook fact tables usage and submit supporting documentation on query optimization (31:03)\nConfirm behavior of attribute persistence and re-rendering mechanisms in GrowthBook SDK (22:41)\nAdvise disabling default GrowthBook auto ID generation cookie in auto attributes plugin (30:00)\n"
+    }
+  ]
+}

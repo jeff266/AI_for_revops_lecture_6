@@ -1,0 +1,19 @@
+{
+  "company": "Zoom | RunSybil, Growthbook <> Khosla Ventures",
+  "slug": "zoom__runsybil_khosla_ventures",
+  "last_etl_date": "2026-08-01T13:58:06.002185",
+  "calls": [
+    {
+      "id": "01KWA7885RYY2ZPMMN6P50B0BJ",
+      "source": "fireflies",
+      "title": "Zoom | RunSybil, Growthbook <> Khosla Ventures",
+      "date": "2026-06-30",
+      "duration_minutes": 35,
+      "summary": "Runcible is evolving its sales strategy from being inbound-driven to a robust outbound approach following its Series A funding in spring 2023, with leadership from Holly and Rachel. They aim to establish better analytics and customer understanding to facilitate consistent marketing efforts. Insights shared by Graham from Growth Book highlighted how they nearly tripled revenue by targeting large enterprises and utilizing strategic outbound methods. He emphasized the importance of continual communication around product features to enhance user engagement, supported by weekly engineering demos and customer webinars. Each company shared tactics for effective sales team building, emphasizing accountability and structured hiring processes to ensure strong conversions from leads to revenue.",
+      "organizer": "graham@growthbook.io",
+      "participants": 6,
+      "keywords": "RunSybil, GrowthBook, inbound growth, outbound sales, feature marketing, sales hiring",
+      "action_items": "\n**Graham McNicoll**\nShare the mock sales interview framework used by GrowthBook with Rachael Watkins and the RunSybil team to assist in their sales hiring process (33:06)\n\n**RunSybil marketing and sales teams**\nExplore integrating engineering feature meetings into marketing content development and webinar planning to better educate customers and promote feature adoption (19:19)\n\n**RunSybil marketing team**\nDevelop and refine a tiered feature communication funnel leveraging GitHub issue tagging to prioritize feature announcements by marketing impact level (22:59)\nContinue balancing inbound and outbound growth strategies while preserving the hacker/research-focused brand culture and experimenting with new growth channels such as podcasts, webinars, and short-form videos (06:14)\n\n**RunSybil sales team**\nOnboard the newly hired Account Executive and scale the sales team by applying lessons learned from GrowthBook’s sales hiring and interview frameworks (33:28)\n"
+    }
+  ]
+}

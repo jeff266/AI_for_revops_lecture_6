@@ -1,0 +1,19 @@
+{
+  "company": "Ask Phill",
+  "slug": "ask_phill",
+  "last_etl_date": "2026-08-01T13:58:06.036702",
+  "calls": [
+    {
+      "id": "01KNRS1S6SJZG06DGZTDY6X4CY",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Ask Phill",
+      "date": "2026-04-13",
+      "duration_minutes": 22,
+      "summary": "GrowthBook, an open-source A/B testing and feature management tool, is designed for various industries, including e-commerce and tech companies like Discord and Dropbox. Founded by engineers, it prioritizes a strong community, transparency, and reducing vendor lock-in. The tool integrates with client-side evaluations and SDKs, ensuring efficient performance for experiments. Panama Studios expressed interest in using GrowthBook for visual A/B testing primarily on their product detail page, while industry benchmarks highlight the need for multiple tests to find successful variations. Two pricing plans were discussed, with the Pro plan being initially suitable. The next steps involve detailed discussions with the client to define their testing goals and scope.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, A/B Testing, Feature Flags, Data Warehouse, SDK Integration, Visual Testing",
+      "action_items": "\n**Mandy Yip**\nFollow up internally with Panama Studios to clarify their detailed A/B testing requirements and potential broader implementation scope (22:01)\nReview and utilize the GrowthBook presentation deck sent by James to prepare client pitch (21:18)\n\n**James Shannon**\nSend the GrowthBook overview presentation deck to Mandy for client pitching purposes (21:18)\nProvide further support and answer any additional questions post-internal client discussions (22:01)\n\n**George Stevanovic**\nUse GrowthBook’s documentation for the Sanity integration and advise on implementation technicalities (20:33)\n"
+    }
+  ]
+}

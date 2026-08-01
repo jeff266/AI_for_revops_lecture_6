@@ -1,0 +1,31 @@
+{
+  "company": "RazorPay",
+  "slug": "razorpay",
+  "last_etl_date": "2026-08-01T13:58:06.039875",
+  "calls": [
+    {
+      "id": "01KM5AZXN5KQBVWX8XV7B51ZHD",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Razorpay",
+      "date": "2026-03-23",
+      "duration_minutes": 41,
+      "summary": "The meeting centered on integrating an A/B testing solution into Razorpay’s Magic Checkout, enabling merchants to easily conduct experiments on aspects like login methods and shipping fees to optimize conversion and revenue. Key points included the necessity for a user-friendly interface, allowing merchants to manage variants without technical know-how; ensuring data privacy and isolation for up to 20,000 merchants; addressing challenges for low traffic merchants, who might see as few as 5 sessions per day; and defining a self-hosting requirement to meet privacy regulations. Moreover, flexible and competitive pricing was emphasized, with a focus on embedded experimentation as a strategy to boost merchant retention.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "A/B testing, Magic Checkout, merchant isolation, API abstraction, self-hosted, experiment traffic allocation",
+      "action_items": "\n**Anurag Allamsetty**\nProvide technical POC for the next call to discuss integration and data warehouse architecture (37:45)\nShare internal requirements and ensure tech team availability for the upcoming technical discussion (40:20)\n\n**James Shannon**\nShare Fireflies meeting notes with Anurag Allamsetty promptly after the call (40:36)\nArrange and confirm participation of technical resource for Wednesday’s 10 AM UK time call, and send calendar invite to Razorpay (39:37)\nFollow up on querying timing/control capabilities within Growth Book and provide update to Razorpay (28:12)\nPrepare for technical deep dive call with Razorpay to discuss architecture, API abstraction, data isolation, and statistical engine capabilities (31:08)\n"
+    },
+    {
+      "id": "01KMZC7P59TTV22G6TQ0ZWWPBS",
+      "source": "fireflies",
+      "title": "RazorPay & Growthbook Pricing",
+      "date": "2026-03-31",
+      "duration_minutes": 38,
+      "summary": "The team is exploring the pros and cons of building an internal experimentation platform versus partnering for Magic Checkout. Anurag Allamsetty emphasized the need for clearer financial comparisons, while James Shannon highlighted that the estimated enterprise build cost exceeds $300,000 USD, prompting discussions on a lower entry price with success-based pricing models. Experimentation is seen as essential for improving merchant conversion rates, which can lead to increased revenue via reduced churn. Attribution challenges arise in isolating the effects of experimentation on retention; therefore, both parties have agreed to explore metrics linked to retention uplift among active experimenters. Next steps include sharing lifetime value data to refine the pricing model ahead of a planned rollout by early May.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation platform, Pricing model, Retention uplift, Build vs. buy decision, Tiered licensing fees, Merchant conversion",
+      "action_items": "\n**Shubham Maheshwari**\nProvide Growthbook with Razorpay’s average lifetime value metrics or suggest alternative relevant metrics for pricing model development (36:25)\nDiscuss and finalize Razorpay’s budgetary expectations and acceptable year one cost for implementation of experimentation platform; share with Growthbook (37:04)\n\n**Anurag Allamsetty**\nFurther evaluate internal build vs. buy options, especially focusing on building on existing products and gauge effort/time required (19:30)\n\n**James Shannon**\nDevelop and share a tiered pricing model based on retention uplift and success metrics aligned with Razorpay’s feedback and metrics provided (35:21)\nFollow up after receiving Razorpay’s budget and retention metrics input with a detailed pricing proposal including success-based fee tiers (36:40)\n"
+    }
+  ]
+}

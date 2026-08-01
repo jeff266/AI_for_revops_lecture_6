@@ -1,0 +1,19 @@
+{
+  "company": "Gifthealth Award Application Workshop",
+  "slug": "gifthealth_award_application_workshop",
+  "last_etl_date": "2026-08-01T13:58:06.019357",
+  "calls": [
+    {
+      "id": "01KRVZFBAWE7KFVACM7XX6EGD7",
+      "source": "fireflies",
+      "title": "Gifthealth Award Application Workshop",
+      "date": "2026-05-19",
+      "duration_minutes": 45,
+      "summary": "Gift Health successfully launched its experimentation program with executive support, achieving notable results such as a 2.75% increase in checkout completion rate and a 4.5% decrease in days to checkout. The program started mid-January with a detailed 12-page guide to facilitate team participation and engagement, though initial user involvement remains limited. Key strategies focus on the checkout flow for significant customers, such as Eli Lilly. Future plans include automation efforts, expanding test ownership beyond the core team, and tools integration, especially with GrowthBook to streamline experimentation processes. High engineering velocity presents challenges regarding comprehensive testing, requiring innovative solutions to maintain productivity while implementing experiments.",
+      "organizer": "elyse@growthbook.io",
+      "participants": 4,
+      "keywords": "Experimentation Program, A/B Testing, GrowthBook, Gift Health, Feature Flags, Experimentation Awards",
+      "action_items": "\n**Elyse Fox**\nDraft a 1,000 character, 350-word Award submission profile based on Elizabeth Gilbert's input, capturing Gift Health's foundational experimentation build, first experiment success, and scaling approach for review and fine tuning (41:12)\nFollow up with Elizabeth Gilbert on sharing documentation and progress of the Award submission before the end of the week (43:07)\n\n**Elizabeth Gilbert**\nReview with team lead about sharing the experimentation guide, experiment setup template, and results communication template with the GrowthBook team to support collaboration and scaling (42:18)\nContinue development of an experiment idea submission form and results tracking sheets to facilitate team engagement and systematic experiment management (06:25)\nMaintain and expand the metric dictionary to standardize metric definitions and ensure clarity among stakeholders (39:00)\n\n**Ashley Stirrup**\nCheck with GrowthBook CEO about the possibility of exporting experiment presentation summaries to Google Slides or other formats to enhance reporting capabilities (30:02)\nOffer introduction to Rudger from Mint, an expert in Jira-GrowthBook integration and experiment reporting setup, to Elizabeth Gilbert for learning and potential process improvement (33:16)\nExplore training opportunities such as Ronnie Kohabi’s experimentation class to enhance team skills and support program growth (40:08)\n"
+    }
+  ]
+}

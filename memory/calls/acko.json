@@ -1,0 +1,17 @@
+{
+  "company": "Acko and GrowthBook",
+  "slug": "acko",
+  "last_etl_date": "2026-08-01T13:58:05.980827",
+  "calls": [
+    {
+      "id": "69aa513382635b001d2078cd",
+      "source": "apollo",
+      "title": "Acko and GrowthBook",
+      "date": "2026-03-06",
+      "duration_minutes": 30,
+      "summary": "The call between Acko (Rahul, Shiv, Dev, Jashan – growth/engineering team) and GrowthBook (Jake Heier – account team, Logan Bates – solutions engineer) focused on Acko’s pain points with sticky bucketing across Flutter, Node, and Java SDKs (users reshuffling, lack of centralized storage) and interest in prerequisite flags and remote evaluation. Next steps: Rahul’s team will assess internal solutions, then potentially activate a two-week enterprise trial; Jake will send Pro vs Enterprise documentation and follow",
+      "host": "Jake Stangl",
+      "participants": 6
+    }
+  ]
+}

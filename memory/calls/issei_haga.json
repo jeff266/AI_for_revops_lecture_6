@@ -1,0 +1,29 @@
+{
+  "company": "ISSEI HAGA and GrowthBook",
+  "slug": "issei_haga",
+  "last_etl_date": "2026-08-01T13:58:05.976912",
+  "calls": [
+    {
+      "id": "69cb173d085be0001df9e43e",
+      "source": "apollo",
+      "title": "ISSEI HAGA and GrowthBook",
+      "date": "2026-03-31",
+      "duration_minutes": 36,
+      "summary": "During the call, Issei Haga (CEO of Unite Holdings) introduced his company’s digital advertising and landing page services, expressing interest in partnering with GrowthBook to provide A/B testing tools to clients. Key pain points included the high cost of existing tools like VWO, the need for Japanese localization, and the lack of a unique product to differentiate their offerings. However, Ryan McGurk and Ashley Stirrup from GrowthBook noted their small team (35 people) and current focus on US/European markets, concluding that a partnership was not feasible at this time, with no specific next steps agreed upon.",
+      "host": "Ashley Stirrup",
+      "participants": 4
+    },
+    {
+      "id": "01KMNXNAFYQF444CK3K7TBJ26G",
+      "source": "fireflies",
+      "title": "ISSEI HAGA and GrowthBook",
+      "date": "2026-03-31",
+      "duration_minutes": 35,
+      "summary": "The meeting provided an overview of AppGo Holdings, founded in April 2024, generating around 3.5 billion yen with 66 employees and two subsidiaries—apco in Tokyo and Zoost in Osaka. Apco focuses on comparison media and affiliate services for HR and finance, while Zoost, a top digital advertising agency, services over 3,000 clients. The dialogue emphasized the importance of localizing digital solutions for Japan and the Asian market, particularly through GrowthBook, which AppGo sees as a tool to enhance landing page quality. They are interested in reselling GrowthBook's platform and acknowledge the necessity for further product localization. AppGo, backed by Jafco, is positioned as a strong partner to help GrowthBook navigate Japan's complex market, recognizing the potential for future collaboration.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 6,
+      "keywords": "A/B Testing, Localization, Digital Advertising, Landing Pages, Japanese Market, Partnership",
+      "action_items": "\n**Hajime Akagi**\nShare detailed information and contacts related to local A/B testing competitors like Gaprise for GrowthBook’s review (32:00)\n\n**Ashley Stirrup**\nEvaluate GrowthBook’s current capacity and strategy to support partnerships involving significant local support for Asian market entry (24:00)\n\n**Ryan McGurk**\nClarify user profiles and potential technical integration needs for the Japanese market based on feedback from Hajime and team (17:15)\nContinue exploring technical localization and agency support models required for GrowthBook’s usability in Japan (17:15)\n"
+    }
+  ]
+}

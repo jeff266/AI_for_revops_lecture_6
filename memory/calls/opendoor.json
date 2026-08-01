@@ -1,0 +1,55 @@
+{
+  "company": "Opendoor<>GrowthBook",
+  "slug": "opendoor",
+  "last_etl_date": "2026-08-01T13:58:05.990905",
+  "calls": [
+    {
+      "id": "01KWD7T7NWZVGEED4SCCY5Y74W",
+      "source": "fireflies",
+      "title": "Growthbook <> Opendoor - Check In",
+      "date": "2026-07-01",
+      "duration_minutes": 0,
+      "summary": "The meeting outlined progress on the proof of concept for Growth Book, highlighting the successful completion of security approval and Okta integration, which enabled activation of the Enterprise trial. The trial, now extended to 30 days, allows for uninterrupted testing. The data integration strategy involves connecting a Snowflake data pipeline and initiating an AA test to validate data flows. A product demo is scheduled for July 9th to demonstrate key features, with documentation shared beforehand. A multi-timezone support team has been established for technical assistance, and pricing discussions are set to align with existing provider benchmarks. Effective scheduling practices were discussed to maximize client participation.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "Growth Book, Proof of Concept, Edge evaluation, Cloudflare, Okta integration, Trial period",
+      "action_items": "\n**Dan Wathne**\nVerify and extend Growth Book trial period to full 30 days as per contract (02:09)\nOrganize and schedule a deep demo session of Growth Book for Opendoor team early next week (03:46)\nShare general quick start guides and Cloudflare edge evaluation documentation with Opendoor via Slack (07:50)\nSend invites for the technical demo on July 9, 4-5 PM Eastern, and manage recording for asynchronous viewing (09:57)\n\n**Logan Bates**\nAssist with technical questions and provide Cloudflare edge evaluation documentation via Slack (07:46)\n\n**Caue Guerra**\nCoordinate with procurement lead Siva to clarify finance and procurement process post-PoC (05:24)\nProvide Growth Book team with a list of expected participants for the July 9 technical demo (10:36)\n\n**Ackshaey Singh**\nFinalize and confirm timing and attendees for the July 9 technical demo (09:45)\n"
+    },
+    {
+      "id": "01KWZ3J85G3FHSEZ4BKHYAX93S",
+      "source": "fireflies",
+      "title": "Growthbook <> Opendoor - Demo refresh",
+      "date": "2026-07-09",
+      "duration_minutes": 56,
+      "summary": "The meeting addressed the progress of GrowthBook's proof of concept, highlighting the successful launch of an initial AA test with data integration and a planned B test on the homepage hero section. The discussion included features like flexible targeting, segmentation, and robust experiment management capabilities. Metrics cataloging and detailed statistical analyses were emphasized, demonstrating GrowthBook's analytical power. Challenges related to user identity mapping and the necessity for cleanup of legacy IDs were acknowledged, as were plans for upcoming features such as funnel analysis and user journey mapping. Support mechanisms, including 24/7 assistance and automated monitoring, were also outlined to ensure seamless operational readiness.",
+      "organizer": "dan@growthbook.io",
+      "participants": 10,
+      "keywords": "feature flags, experiments, statistical analysis, identity resolution, data warehouse integration, holdouts",
+      "action_items": "\n**Caue Guerra**\nLaunch the planned AB test on the homepage hero next week (04:10)\nCoordinate a follow-up session including a deep dive with Growth Book data science team on post-stratification and statistical methods (46:20)\nValidate data identity mappings with Aleshia Ayers and Andy to address known complexities for Growth Book integration (54:12)\n\n**Aleshia Ayers**\nReview and share current Snowflake schemas and metric tables with Growth Book for identity resolution assessment (51:03)\nAssist Caue and team in cleaning up legacy identifier usage within Opendoor data (51:31)\n\n**Josh Benard**\nSupport identity resolution cleanup and provide technical context on legacy experiment ID mappings (51:30)\nEnsure use of consistent and valid IDs for experiments and metrics across systems (53:50)\n\n**Logan Bates**\nShare technical documentation on Cupid statistical methods, Bayesian priors, and experiment bias checks with Opendoor team (36:47)\nGet back to Opendoor team on dashboard export or API capabilities and future plans (44:50)\nConfirm with Growth Book data team on nesting capabilities for holdouts and project-based segmentation (31:51)\n\n**Dan Wathne**\nShare meeting recording to the Opendoor team for future reference (46:20)\nFacilitate Slack channel access and invite additional Opendoor members as necessary (54:58)\nCoordinate scheduling of next calls and provide continuous support throughout PoC, especially in deployment of upcoming tests (54:58)\n"
+    },
+    {
+      "id": "01KX1K8VZFA8G573H0FJ61YCXW",
+      "source": "fireflies",
+      "title": "Growthbook <> Opendoor - Pricing Sync",
+      "date": "2026-07-10",
+      "duration_minutes": 0,
+      "summary": "The discussion centered on aligning Growth Book’s pricing proposal with Opendoor's spending patterns, proposing a $100,000 platform fee plus seat fees to match their $200,000 budget for 150 seats. Dan Wathne emphasized the proposal's flexibility, allowing for discounts and potential phased access based on actual usage. Contract signing is targeted for July, with coordination for procurement led by Siva. Growth Book commits to 24/7 support and rapid feature requests, ensuring a user-friendly experience. Both teams expressed a desire for a long-term partnership, focusing on sustainable collaboration, while Growth Book's open-source nature was highlighted as a competitive advantage amid concerns around rival companies.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "pricing, enterprise contract, seat licensing, procurement, experimentation platform, support",
+      "action_items": "\n**Dan Wathne**\nRevise pricing proposal to reduce total cost by about 50% and send updated order form and master service agreement (MSA) by end of day or early next week (19:27)\nSchedule and conduct a review call with Opendoor procurement lead Siva early next week to discuss contract details and procurement process (18:31)\nEnsure support team (Natasha, August, Logan) promptly address technical questions such as AB test matching assignments raised by Caue (09:34)\n\n**Caue Guerra**\nCoordinate with Siva regarding availability for contract review call and share the updated proposal and related documents with him promptly once received (20:08)\nProvide feedback on licensing and seat usage after internal review to guide final commitment numbers (14:09)\nFacilitate any internal procurement and legal review, including sharing Growth Book materials with legal team and Siva for expedited approvals (18:13)\n"
+    },
+    {
+      "id": "01KY0Q8MNFVQWX1XDBEJQMTBMV",
+      "source": "fireflies",
+      "title": "Opendoor<>GrowthBook - Discussion",
+      "date": "2026-07-21",
+      "duration_minutes": 0,
+      "summary": "The meeting addressed urgent contract negotiations between OpenDoor and Growthbook, emphasizing a need to finalize terms and pricing amidst limited legal resources. Abbie Thomsen highlighted the critical end-of-month deadline, and Jake Heier discussed potential pricing flexibility due to budget constraints. The team sought to reduce the contract from $210K to $170K, with a possible 10% discount through marketing collaboration that would enhance OpenDoor's profile. Legal and procurement processes were actively moving forward, with a single lawyer at OpenDoor prioritizing contract review. Both parties showed commitment to open communication and a strong partnership, highlighting operational readiness following a successful POC phase.",
+      "organizer": "jake@growthbook.io",
+      "participants": 6,
+      "keywords": "Pricing negotiation, contract addendum, legal review, InfoSec security, procurement process, marketing collaboration",
+      "action_items": "\n**Abbie Thomsen**\nPush legal team to prioritize review of Growthbook contract addendum and provide feedback quickly (01:55)\nCoordinate with Sandy to verify whether additional InfoSec documentation is required and communicate findings promptly (12:32)\nContinue leading indirect procurement and keep pushing toward the end-of-month contract deadline (01:55)\n\n**Jake Heier**\nConsult Growthbook leadership regarding pricing flexibility, especially related to the target $170K figure and marketing collaboration discounts (01:55)\nExpedite paperwork turnaround upon receiving final contract to avoid bottlenecks (09:31)\nCoordinate with legal team for possible joint call with Opendoor legal to resolve outstanding contract issues (10:56)\nOffer support in security team calls if further InfoSec documentation or discussions are required (13:09)\nProvide follow-up communication confirming pricing and contract progress status (09:31)\n\n**Sivasubramaniyan**\nMove forward with triggering full InfoSec review if required and coordinate with internal security team for timely document requests (11:47)\nSuggest and facilitate a case study or marketing collaboration to potentially secure a discount (05:44)\nSupport negotiations and internal approvals with Growthbook team alongside Jake and Dan (00:01)\n\n**Dan Wathne**\nAssist Jake in internal leadership discussions regarding pricing and contract terms flexibility (04:15)\nHelp to expedite contract paperwork once legal review is completed (09:31)\n"
+    }
+  ]
+}

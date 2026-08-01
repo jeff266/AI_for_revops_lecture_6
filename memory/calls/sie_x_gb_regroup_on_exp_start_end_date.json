@@ -1,0 +1,19 @@
+{
+  "company": "SIE x GB Regroup on Exp Start/End Date",
+  "slug": "sie_x_gb_regroup_on_exp_start_end_date",
+  "last_etl_date": "2026-08-01T13:58:06.017774",
+  "calls": [
+    {
+      "id": "01KSDTK4WDGMR6Q99GWG5YZWHS",
+      "source": "fireflies",
+      "title": "SIE x GB Regroup on Exp Start/End Date",
+      "date": "2026-05-26",
+      "duration_minutes": 0,
+      "summary": "The team discussed the management of experiment start and end dates within GrowthBook's SDK payload, noting that only active experiments are included and controlled server-side. They identified client-side caching as a challenge, causing stale experiment assignments and affecting timing accuracy. Proposed solutions included refreshing cached payloads and exploring attribute-level targeting. Plans to enhance API scheduling were outlined, with commitments to streamline the process by allowing schedule settings at the creation endpoint. Additionally, the need for better phase index tracking in telemetry was emphasized to ensure accurate analytics. Follow-up sessions were agreed upon to address these ongoing issues.",
+      "organizer": "cris@growthbook.io",
+      "participants": 8,
+      "keywords": "experiment scheduling, SDK payload, start date, end date, payload caching, phase tracking",
+      "action_items": "\n**Luke Sonnet**\nProvide a detailed explanation of the experiment scheduling API flow including creation and update endpoints (00:19)\nAdd schedule support to the experiment creation API endpoint to reduce the number of API calls needed to set schedules (00:21)\nCollaborate with Bryce Fitzsimons to investigate phase index exposure on telemetry and experiment assignment logs, determining current coverage and gaps (00:32)\nClarify assignments caching behavior and how start/end date enforcement applies, based on Sony’s SDK caching strategy (00:39)\nShare notes about the SDK payload and phase tracking in the shared Slack channel for further alignment (00:40)\n\n**Bryce Fitzsimons**\nInvestigate potential solutions for time-based gating in SDK payloads to support better offline or cacheable timing accuracy (00:11)\n\n**Brittany Reves**\nReview and test the API scheduling implementation once modified to support schedule on experiment creation (00:20)\n\n**Ravi Nagaraju**\nCoordinate follow-up session(s) with GrowthBook team and Sony internal team to deep dive into caching, assignment validation, and phase tracking (00:39)\nCommunicate additional questions or changes needed after discussion with internal teams on current design and caching implications (00:17)\n\n**Jiong Zhong**\nParticipate in follow-up discussions about telemetry event collection incorporating phase data and assignment variant IDs (00:29)\n"
+    }
+  ]
+}

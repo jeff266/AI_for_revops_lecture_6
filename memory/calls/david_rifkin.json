@@ -1,0 +1,19 @@
+{
+  "company": "David  Rifkin",
+  "slug": "david_rifkin",
+  "last_etl_date": "2026-08-01T13:58:06.017249",
+  "calls": [
+    {
+      "id": "01KSHXH21VRCYYV1KG3AYYAYQF",
+      "source": "fireflies",
+      "title": "30 min with Scott (David  Rifkin)",
+      "date": "2026-05-27",
+      "duration_minutes": 32,
+      "summary": "Growth Book is establishing itself as a unique player in the market by targeting engineering and product teams for its warehouse-native, open-source platform that specializes in feature flagging, experimentation, and product analytics. The recent 4.4 release included significant updates like an AI data analyst feature, enhancing its appeal to business users. Future analytics rollouts are set for 6 to 10 weeks, emphasizing data-driven decision-making. The developer advocate will focus on content for community engagement, while the company shifts from product-led to a more sales-driven approach for enterprise customers, enhancing its organic community growth that has been largely bottom-up.",
+      "organizer": "scott@growthbook.io",
+      "participants": 2,
+      "keywords": "feature flagging, experimentation, product analytics, developer content, warehouse-native, open source",
+      "action_items": "\n**David Rifkin**\nDavid Rifkin to follow up with Scott Bailey via email for any additional questions arising from the conversation (30:39)\n\n**Scott Bailey**\nScott Bailey to provide follow-up answers and support via email to David Rifkin as needed (30:39)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "BestSeller",
+  "slug": "bestseller",
+  "last_etl_date": "2026-08-01T13:58:06.011536",
+  "calls": [
+    {
+      "id": "01KT70NJ1QCJXF155Z9DNM2YQM",
+      "source": "fireflies",
+      "title": "BestSeller & GrowthBook",
+      "date": "2026-06-08",
+      "duration_minutes": 28,
+      "summary": "The team is transitioning from Salesforce Commerce Cloud to a new technology stack with Shopify and Sanity to better support smaller brands and improve operational efficiency. The migration includes embedding A/B testing capabilities directly into the CMS, allowing brands to conduct tests independently. The first brand is nearing launch, setting the stage for scaling up to 12-15 storefronts within a year. Data privacy is a concern, with plans for EU-based hosting being addressed by Growth Book’s development of a data center. The team plans to formalize a partnership with Growth Book, focusing on integration and pricing discussions to enhance their testing strategy.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Bestseller, GrowthBook, Sanity CMS, A/B Testing, Multi-brand Ecommerce, Data Residency",
+      "action_items": "\n**Kenneth Christiansen**\nProvide preliminary user and experiment volume estimates by brand to GrowthBook team to assist in tailoring commercial proposals (27:00)\nConfirm participation of technical and development team members for the June 17 technical demo and integration discussion with GrowthBook (26:28)\n\n**James Shannon**\nSchedule onsite meeting in Denmark during week 26, preferably June 23 afternoon, to align on commercial terms, technical demos, and integration planning (18:45)\nOrganize and lead a technical demo session with GrowthBook’s senior solutions engineer Logan Bates on June 17 to present detailed demos and integration approaches (26:10)\nSend proposed agenda for June 17 technical session and coordinate calendar confirmations with all participants (26:40)\nSetup Slack channel including Kenneth and Bestseller technical team for ongoing communication and Q&A (26:54)\nRequest and collect user count and experiment volume data from Kenneth to prepare commercial pricing and package options tailored to Bestseller’s multi-brand setup (19:39)\nProvide timelines and options regarding EU data center availability and self-hosting solutions to address Bestseller’s legal and data residency requirements (22:45)\nPrepare a demo and use case presentation before the onsite meeting to illustrate GrowthBook’s offering, including visual editor and integration with Sanity CMS (24:30)\n\n**Logan Bates**\nSupport technical integration discussion focusing on Sanity CMS compatibility and data warehousing via Snowflake during the June 17 technical deep-dive (12:20)\nCollaborate with James Shannon and Bestseller’s development team for the June 17 technical deep-dive to cover implementation and tooling use-cases (26:10)\n"
+    }
+  ]
+}

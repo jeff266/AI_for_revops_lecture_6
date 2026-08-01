@@ -1,0 +1,19 @@
+{
+  "company": "1:30 CST Jake Brent catch-up",
+  "slug": "130_cst_jake_brent_catchup",
+  "last_etl_date": "2026-08-01T13:58:06.013448",
+  "calls": [
+    {
+      "id": "01KT87VG1FCJ8WDWZXJB3VQ603",
+      "source": "fireflies",
+      "title": "1:30 CST Jake Brent catch-up",
+      "date": "2026-06-04",
+      "duration_minutes": 0,
+      "summary": "The meeting covered significant developments in the sales pipeline, highlighting strong momentum with multiple contracts, including five deals already signed this quarter. Discussions included the upsell dynamics with X AI, where the adjusted offer totals around $491k ACV due to a reduced user base and cautious buyer adoption. Notion is considering a switch due to dissatisfaction with Statsig, with potential contract sizes ranging from $150k to $200k. GrowthBook's acceptance of net 120 payment terms for SpaceX reflects broader cash flow impacts. The importance of GrowthBook's AI capabilities and proactive support were emphasized as key differentiators in the competitive landscape, alongside strategic sales decisions regarding deal size and risk for the Portuguese account.",
+      "organizer": "jake@growthbook.io",
+      "participants": 2,
+      "keywords": "upsell negotiation, ROI study, client engagement, pilot program, payment terms, AI roadmap",
+      "action_items": "\n**Jake Heier**\nShare the detailed ROI study for the X AI upsell deal with Brent after the call (03:44)\nPrepare and bring POC deck and details for the upcoming Portuguese retailer deal discussion next Thursday morning (15:23)\nDecide and outline strategy whether to land a smaller deal first or pursue a larger scope for the Portuguese retailer client (15:23)\n\n**Brent Holloway**\nReview ROI study for X AI upsell once received from Jake (03:44)\nParticipate in 15-minute meeting on Thursday morning with Jake to discuss deal strategy for the Portuguese retailer client (16:27)\n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Growthbook <> English Gurukul",
+  "slug": "english_gurukul",
+  "last_etl_date": "2026-08-01T13:58:05.977790",
+  "calls": [
+    {
+      "id": "69c212e7ebbce40011ff14b1",
+      "source": "apollo",
+      "title": "Growthbook <> English Gurukul - Demo ",
+      "date": "2026-03-24",
+      "duration_minutes": 58,
+      "summary": "During the demo, GrowthBook sales rep Daniel Wathne and co-founder Graham presented their experimentation and feature flagging platform to English Gurukul's technical head Poornima Siddabattuni and backend engineer Sameer Rather. Key pain points included Firebase's lack of gradual rollout, evaluation capabilities, and experimentation support needed for testing ad placements, UI colors/themes",
+      "host": "Daniel Wathne",
+      "participants": 4
+    }
+  ]
+}

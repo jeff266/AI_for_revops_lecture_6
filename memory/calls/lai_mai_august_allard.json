@@ -1,0 +1,19 @@
+{
+  "company": "Lai Mai and August Allard",
+  "slug": "lai_mai_august_allard",
+  "last_etl_date": "2026-08-01T13:58:06.032984",
+  "calls": [
+    {
+      "id": "01KPJKKJPG6W7P4V72TJ5GSK6W",
+      "source": "fireflies",
+      "title": "Lai Mai and August Allard",
+      "date": "2026-04-21",
+      "duration_minutes": 47,
+      "summary": "The session concentrated on the technical support team's collaborative dynamics and troubleshooting skills regarding Growth Book's self-hosted SDK. Key misconfigurations in customer SDK setups were identified by Lai Mai, particularly concerning the incorrect API host and client key usage that hindered data flow to Google Analytics. The team discussed using an auto attributes plugin to address hardcoded user IDs and country attributes. Role-played customer interactions showcased Lai Mai's empathetic communication and effective guidance. Additionally, the support team, consisting of three members, handles an average of 13 tickets daily, aiming to enhance expertise while addressing language support gaps, particularly for Japanese-speaking customers. The meeting wrapped up with an overview of the hiring process for future team alignment.",
+      "organizer": "august@growthbook.io",
+      "participants": 5,
+      "keywords": "Growth Book, Technical Support, Troubleshooting, SDK, Google Analytics, A/B Testing",
+      "action_items": "\n**Lai Mai**\nShare screen for troubleshooting demonstration to facilitate collaborative problem solving (02:49)\nRead and analyze the provided support scenario document carefully before starting troubleshooting to understand the context and issues (03:49)\nEngage in simulated customer communication by greeting and requesting customer code snippets to verify implementation details (08:05)\nIdentify and communicate to the customer the incorrect use of sample API host and client key, advising to update to customized credentials for proper tracking callback function (12:00)\nRecommend adding console logs to validate that the tracking callback is executing properly to aid in debugging (15:00)\nAdvise the customer to use the auto attributes plugin instead of hardcoded attributes to ensure correct user ID and device type tracking (25:50)\nRespond thoughtfully to role-play questions about explaining A/B testing simply and share insights on support work preferences and stress management techniques (29:51)\nAsk questions about Growth Book team organization, case volumes, and language support capabilities to better understand the support environment (41:07)\n\n**August Allard**\nProvide introduction, share notes document link, and act as simulated customer to support troubleshooting during the session (00:01)\nConfirm next steps and procedural timing for hiring process communication to keep candidate informed (46:35)\n\n**Kevin Chant**\nProvide technical guidance on SDK usage and plugin dependencies for tracking to assist troubleshooting and clarify technical details (05:49)\nValidate troubleshooting findings and discuss plugin capabilities for automatic attribute gathering to improve support accuracy (19:11)\nEngage with Lai on escalation patterns and time zone coverage for support to clarify operational procedures (42:49)\n\n**Natasha**\nParticipate in interview questions including explaining A/B testing for a young audience to evaluate communication skills (29:15)\n"
+    }
+  ]
+}

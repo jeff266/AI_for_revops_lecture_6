@@ -1,0 +1,31 @@
+{
+  "company": "Growthbook<>Discord monthly sync",
+  "slug": "discord_monthly_sync",
+  "last_etl_date": "2026-08-01T13:58:06.019014",
+  "calls": [
+    {
+      "id": "01KNQ15H3TCEHKPEJ1XK5Y5NN6",
+      "source": "fireflies",
+      "title": "Growthbook<>Discord monthly sync",
+      "date": "2026-04-08",
+      "duration_minutes": 55,
+      "summary": "Team discussions centered on significant API enhancements, including replacing Python with TypeScript to streamline the codebase and meet customer demand for programmatic access. Customers are seeking deeper, customizable experiment analyses, leading to improvements in SQL and Results APIs for more flexible analytics. Operational challenges were identified, such as the need for expanded email distribution for enterprise licenses, alongside ongoing performance optimization. The team is actively gathering customer feedback to inform future planning, with the next meeting scheduled for May 6th. The long-term vision includes developing internal tools for advanced analyses, addressing both sophisticated and basic user needs.",
+      "organizer": "cris@growthbook.io",
+      "participants": 8,
+      "keywords": "Growth Book API, SQL Integration, Custom Reports, Experiment Analysis, Python Package, Performance Guardrails",
+      "action_items": "\n**Jake Mainwaring**\nPush pull requests for custom report API endpoints to the Growth Book repository to enhance reporting capabilities (32:25)\nProvide ongoing examples of bottlenecks and friction points users experience with Growth Book APIs and analysis workflows to inform product improvements (32:25)\nShare specifics on Discord’s internal report generation and analysis tools including use cases and feedback to guide Growth Book feature development (19:30)\n\n**Luke Sonnet**\nCoordinate API improvements and technical debt projects focusing on SQL integration enhancements and removal of the Python package while ensuring functionality for custom analysis workflows (22:00)\nMaintain communication loop with Discord team to refine API and feature set based on user feedback and examples of use cases (32:25)\nWork with platform team to investigate and address Growth Book performance issues related to organization definition queries (36:00)\n\n**Cris Dizon**\nTrack and document enterprise license email management concerns and coordinate with sales/support to ensure no single point of email failure (34:15)\nAssist in planning next sync meeting and communicate date changes to participants, considering Discord’s offsite schedule and potential in-person collaboration (51:45)\n\n**Mike Grimes**\nContinue improving internal rebase strategies and manage internal forks concerning locked performance metrics to reduce technical debt and maintain code quality (48:15)\n"
+    },
+    {
+      "id": "01KS35W34SM01REK2TH0DYF1HN",
+      "source": "fireflies",
+      "title": "Growthbook<>Discord monthly sync",
+      "date": "2026-05-20",
+      "duration_minutes": 42,
+      "summary": "The meeting centered on improving data production efficiency, specifically focusing on generating raw statistics for the Growthbook engine to simplify user access. The development of an incremental refresh pipeline to optimize data handling and reduce analysis costs was discussed. Challenges in SQL integration, such as manual processes and refactoring risks, were highlighted, along with the need for a more modular plugin architecture. Additionally, the underutilization of the Insights dashboard prompted plans for customization and better metadata organization. The team also emphasized enhancing tools to detect experiment configuration errors, ultimately aiming to improve lifecycle management and transparency in experiment configurations.",
+      "organizer": "cris@growthbook.io",
+      "participants": 11,
+      "keywords": "Growthbook, Incremental Refresh, Cupid Integration, Experiment Dashboard, SQL Integration, Custom Reports",
+      "action_items": "\n**Luke Sonnet**\nShare a concrete medium-term feature list around query efficiency, HTEs, dimensions, dashboards, and contextual bandits for H2 planning (03:51)\nFollow up with Mike Grimes on example implementations of plugin-like SQL modules, specifically the Cupid use case, to advance incremental refresh development (19:34)\nCollaborate with Mike Grimes and Jake Mainwaring on brainstorming incremental refresh pipeline improvements and compatibility with Cupid (20:33)\nEncourage the platform team to prioritize improvements on slow endpoints performance issues (39:06)\n\n**Mike Grimes**\nLocate and share pre-scrubbed example code showing pluggable module implementation for Cupid to assist Growthbook’s pipeline rework (19:34)\nPrepare a concise list of ongoing fork customizations to communicate with Growthbook team for potential upstreaming (32:50)\n\n**Jake Mainwaring**\nProvide feedback on the experiment dashboard “freeze in time” features and explain previous limitations or blockers encountered, helping Growthbook prioritize dashboard improvements (35:48)\n\n**Chris**\nFollow up with the platform team about prioritizing and resolving slow endpoint issues affecting report performance (39:06)\n\n**All Participants**\nContinue discussions regarding SQL integration, incremental refresh improvements, Cupid compatibility, and dashboard adoption (40:11)\n\n**Scott (Discord team)**\nSchedule a meeting between Discord and Growthbook teams to explore internal AI usage and potential collaboration (40:38)\n"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "company": "Wellis Health",
+  "slug": "wellis_health",
+  "last_etl_date": "2026-08-01T13:58:06.011618",
+  "calls": [
+    {
+      "id": "01KTC8PJ3RV4HNWM226SJCRN4H",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Wellis Health",
+      "date": "2026-06-08",
+      "duration_minutes": 24,
+      "summary": "The team discussed the selection process for an A/B testing tool, emphasizing the importance of ease of use and a visual editor to reduce developer reliance. Eliel Bendjuya highlighted the need for a platform accessible to less technical staff, which was one reason for moving away from the current Optibase solution. Growth Book stood out due to its competitive pricing, particularly the Pro tier, and its advanced visual editor capabilities that allow real-time updates without developer intervention. The integration with data warehouses like BigQuery, alongside flexible analytics, aligns with Wellis Health's technical needs, while the migration plan from Webflow to a Next JS platform is set to begin shortly after. The decision aims to streamline digital experimentation and reduce previous high costs associated with tools like VWO.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, A/B Testing, Visual Editor, Wellis Health, BigQuery, Experiment Reporting",
+      "action_items": "\n**James Shannon**\nSend Eliel the GrowthBook implementation plan detailing integration steps and data setup (22:31)\nProvide all necessary documentation for GrowthBook usage and setup to Eliel (23:33)\n\n**Eliel Bendjuya**\nProceed with GrowthBook Pro plan after completion of Wellis platform migration in the next couple of weeks (23:33)\n"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "company": "Harper Concierge",
+  "slug": "harper_concierge",
+  "last_etl_date": "2026-08-01T13:58:05.980436",
+  "calls": [
+    {
+      "id": "69b02416ce19e9001d2b36c2",
+      "source": "apollo",
+      "title": "Harper Concierge + GrowthBook",
+      "date": "2026-03-10",
+      "duration_minutes": 1,
+      "summary": "The call began with an exchange of greetings between Christian Liebenow (likely a sales representative) and an unnamed participant, but no product features, pain points, or next steps were discussed in the provided transcript.",
+      "host": "Christian Liebenow",
+      "participants": 1
+    },
+    {
+      "id": "01KKA4RRSP8DF76PS2KKEGT9XK",
+      "source": "fireflies",
+      "title": "Harper Concierge + GrowthBook",
+      "date": "2026-03-10",
+      "duration_minutes": 24,
+      "summary": "The meeting discussed the integration of checkout data into GrowthBook to facilitate easy experiment analysis. Logan explained the connection of Athena as a data source, emphasizing the importance of mapping user identifiers for comprehensive data linkage. The setup of custom SQL fact tables was outlined, indicating that they would include timestamped metrics and can be adjusted retroactively. Martin highlighted the e-commerce checkout funnel metrics use case, which will track crucial data points like SKU and checkout times. Additionally, GrowthBook's automatic calculation of statistical significance was presented, along with features for safe experiment rollouts. The open-source nature of GrowthBook allows for customization, while API connectivity supports integration with existing tools. The team expressed confidence in using the platform, reinforced by ongoing support through Slack.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, Metrics, Experimentation, Data Integration, Funnel Analysis, Statistical Significance",
+      "action_items": "\n**Jordan Robins**\nContinue connecting current data infrastructure (JSON/parquet formats) with GrowthBook data sources and fact tables for metric definitions (05:22)\nFollow up with questions on data integration or metric definitions as understanding deepens (17:39)\n\n**Martin**\nDefine relevant metrics from checkout funnel (item SKUs, step completions, timestamps) to build fact tables and metrics in GrowthBook (11:40)\nMonitor rollout of funnel metrics feature and plan for utilizing it after Q1 release (12:41)\nWork with team to incorporate guardrail and multiple metric goal setups to balance outcomes (15:29)\n\n**Charles Bennett**\nCoordinate internal review and experimentation using GrowthBook’s significance tracking and metrics visualization (14:52)\nExplore use of presentation features for experiment readouts (23:30)\nMonitor product analytics and insights tools adoption for ongoing reporting (20:30)\n\n**Logan Bates**\nAssist Harper Concierge team in technical setup of data sources, fact tables, and metrics configuration in GrowthBook (07:56)\nProvide demonstration and support on experiment significance tracking, metrics interpretation, and funnel metrics roadmap (13:22)\nOffer support for codebase access, API usage, and integration options (18:30)\nProvide guidance and demos around product analytics, insights, metric correlations, and presentations (20:30)\nRemain available for follow-up calls and Slack support (24:00)\n\n**Chloe - Data Analyst**\nReview GrowthBook visualizations and explore integration possibilities with other internal data sources/databases (18:27)\n"
+    }
+  ]
+}

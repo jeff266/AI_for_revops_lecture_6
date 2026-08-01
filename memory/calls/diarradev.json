@@ -1,0 +1,19 @@
+{
+  "company": "DIARRADEV",
+  "slug": "diarradev",
+  "last_etl_date": "2026-08-01T13:58:06.020346",
+  "calls": [
+    {
+      "id": "01KRSC3H8KQ1DRPYDAD9SXBRE6",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for DIARRADEV",
+      "date": "2026-05-18",
+      "duration_minutes": 32,
+      "summary": "The meeting showcased GrowthBook, highlighting its core features such as easy feature flag creation, experimentation management, and results analysis using Bayesian statistics. Scott Keller demonstrated how users can efficiently set up SDKs and feature flags, with various options for rollout control and safe testing. The platform empowers non-technical users to manage experiments in real-time, shortening setup times significantly. Additionally, a free open-source version was introduced for ease of access, along with community resources for ongoing support. The conversation acknowledged the diverse technical stack of users like Moise and discussed the importance of adopting GrowthBook to avoid costly mistakes while making data-driven decisions. Overall, the meeting emphasized accessibility and support for users in need of streamlined experimentation processes.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, Feature Flag, Experimentation, A/B Testing, SDK Configuration, Product Analytics",
+      "action_items": "\n**Moise Diarra**\nTest and set up Growth Book free version by signing up at GrowthBook.io (27:26)\nReach out to Scott via email or Slack if technical questions arise during trial (30:11)\n\n**Scott Keller**\nSend Moise link to Growth Book users Slack community for peer support (30:41)\nProvide ongoing support and be available for questions via email (30:11)\n"
+    }
+  ]
+}

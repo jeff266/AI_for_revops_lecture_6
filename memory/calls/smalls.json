@@ -1,0 +1,19 @@
+{
+  "company": "smalls",
+  "slug": "smalls",
+  "last_etl_date": "2026-08-01T13:58:06.036601",
+  "calls": [
+    {
+      "id": "01KNYT3V6TBSTCEH8PZM89SSQ6",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for smalls",
+      "date": "2026-04-13",
+      "duration_minutes": 27,
+      "summary": "The discussion focused on assessing Growth Book’s Enterprise plan to meet the scaling needs of Smalls, emphasizing better security, permissions, and support while also comparing pricing and features with the existing Pro plan. Key points included a shift from seat-based to experiment-based pricing, which offers flexibility and aligns with customer needs; the Enterprise plan starts at $30K/year for up to 25 users and 100 experiments. Feature enhancements in the Enterprise plan address advanced access control, audit logs, and the performance of Snowflake queries. Current challenges, such as experiment volume and quality issues, were discussed, with a focus on how these features could help increase experiment velocity. Budget sensitivity and the urgency of decision-making were also highlighted, with expectations for a quick turnaround.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, Enterprise Plan, Experimentation, Pricing Model, Snowflake Optimization, Customer Support",
+      "action_items": "\n**John Melia**\nCoordinate with internal stakeholders Kaushik (Senior Director of Engineering and Product) and Teresa (Chief Revenue Officer) regarding Growth Book pricing and features overview to support decision-making (23:00)\nProvide timeline for decision-making on Growth Book Enterprise adoption following resolution of current experiment implementation issues (23:00)\nEngage with agency Spiro or other auditors for implementation audit and troubleshooting of current experimentation issues such as sample ratio mismatch and user overlap (07:45)\nJoin scheduled 20-minute ROI analysis session with Growth Book next Monday at 10:30am EST to build ROI framework and discuss pricing and support options (26:15)\n\n**James Shannon**\nSend detailed Growth Book Enterprise vs Pro feature comparison and pricing deck including ROI metrics to John Melia for internal presentation and evaluation (24:00)\nSchedule and prepare framework for 20-minute ROI and experiments capacity discussion session next week with Smalls team (24:30)\nFollow up on support coordination to help Smalls resolve current experiment implementation issues including sample ratio mismatch and user overlap (07:45)\nConsider involving US-based colleague to improve accessibility and communication for Smalls due to time zone differences (26:30)\nMaintain Slack communications for ongoing support, queries, and coordination with Smalls team (24:00)\n"
+    }
+  ]
+}

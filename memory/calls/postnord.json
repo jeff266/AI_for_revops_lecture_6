@@ -1,0 +1,31 @@
+{
+  "company": "PostNord",
+  "slug": "postnord",
+  "last_etl_date": "2026-08-01T13:58:06.030980",
+  "calls": [
+    {
+      "id": "01KM3DA8DYJTG6F2H8CTB5TY38",
+      "source": "fireflies",
+      "title": "PostNord and GrowthBook",
+      "date": "2026-03-20",
+      "duration_minutes": 32,
+      "summary": "Postnord has fully adopted GrowthBook and plans to scale its usage from 27 to about 100 active users, targeting teams currently using other tools like Firebase for A/B testing. The primary use cases involve feature flagging and experimentation on UI elements for apps, focusing on enabling non-technical users to create experiments. Single Sign-On (SSO) is identified as a critical enterprise requirement for secure user management across 40,000 employees. Additionally, GrowthBook's enterprise features, such as visual A/B editors and multi-armed bandits, are seen as essential for improving experimentation capabilities. Competitive pricing is expected, with a follow-up meeting planned to finalize terms and engage key stakeholders post-PI planning.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, PostNord, feature flagging, enterprise edition, single sign-on, experimentation",
+      "action_items": "\n**Jake Stangl**\nSet up and send a calendar invite for follow-up meeting on Tuesday, March 31 at 4 PM CET with PostNord team (30:48)\nCoordinate with Tolu Caleb regarding availability for the follow-up meeting after PI planning week (29:27)\n\n**James Shannon**\nPrepare and send GrowthBook Enterprise pricing proposal based on current and projected user seat numbers discussed (20:05)\nSend case studies and detailed GrowthBook Enterprise information to Tolu Caleb post-meeting (21:46)\nSupport creation of business case highlighting experimentation benefits, revenue impact, and efficiency improvements for PostNord (18:06)\n\n**Tolu Caleb**\nDiscuss internally with domain architect and enterprise architect about GrowthBook Enterprise adoption and share updates with James and Jake (19:10)\nConfirm availability for follow-up call in the week after next (post-PI planning) and inform Jake accordingly (29:27)\n"
+    },
+    {
+      "id": "01KPRBH648T4B5FV5PMRPJRREM",
+      "source": "fireflies",
+      "title": "PostNord & Growthbook Proposal",
+      "date": "2026-04-23",
+      "duration_minutes": 54,
+      "summary": "The discussion explored the complex decision-making structure at PostNord concerning the adoption of Growthbook, highlighting the roles of the Customer Solutions and Production Divisions. Currently, 27 Growthbook seats are in use, with plans to scale to over 100, particularly focusing on onboarding flow experiments. Pricing concerns arose regarding the proposed Enterprise license at $200,000 annually, which is perceived as expensive compared to the existing self-hosted version. A one-month proof of concept is proposed to showcase Growthbook’s ROI related to key performance indicators. Additionally, technical requirements such as SSO integration and advanced experimental features, like sticky bucketing, are crucial for any potential deployment.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Growthbook, PostNord, Experimentation, Onboarding, Procurement, ROI",
+      "action_items": "\n**Bernhard Hettman**\nDiscuss Growthbook proof of concept and enterprise proposal at upcoming tech leads meeting (weekly) and CPO meeting (monthly, possibly late May) (51:35)\nReach out to License Management Operation (LMO) team to identify suitable contact person for license and procurement discussions (52:50)\n\n**Tolu Caleb**\nEvaluate existing PostNord projects internally to prioritize best candidates for Growthbook experimentation with cross-team collaboration and KPI alignment (49:25)\n\n**James Shannon**\nSend further documentation on Cupid statistical engine and sticky bucketing to PostNord team (23:01)\nAdjust Growthbook pricing model to offer unlimited experiments for PostNord’s needs and discuss this modification with Growthbook CEO (31:55)\nProvide slide deck overview of Growthbook product, commercial offer, and security features from enterprise tier to PostNord (19:00)\nSchedule check-in email within a week to follow up on LMO contact identification and procurement progress (53:00)\nPut placeholder meeting for third week of May to review progress and discuss proof of concept next steps with PostNord (52:25)\n"
+    }
+  ]
+}

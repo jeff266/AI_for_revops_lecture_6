@@ -1,0 +1,19 @@
+{
+  "company": "Taalhammer B.V.",
+  "slug": "taalhammer_bv",
+  "last_etl_date": "2026-08-01T13:58:06.034247",
+  "calls": [
+    {
+      "id": "01KPAW83P9PK6TX8XK2EX7G79S",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Taalhammer B.V.",
+      "date": "2026-04-17",
+      "duration_minutes": 21,
+      "summary": "The meeting discussed the need for flexible, rapid A/B testing for paywall messaging and pricing to boost customer conversion and revenue for a language learning app. Lukasz Korona pointed out the slow current testing cycles due to manual efforts, necessitating enhancements in dynamic testing tools. The team selected GrowthBook as it allows for multiple test variants and includes AI tools for hypothesis generation. Technical compatibility with the existing app stack was confirmed, and the integration path was recommended to start with the free tier. The discussion also covered the transition to an experiment-based pricing model to better reflect usage and emphasized the importance of strategic experimentation for reducing churn and maximizing revenue growth.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, A/B testing, paywall, RevenueCat, Postgres, sticky bucketing",
+      "action_items": "\n**Lukasz Korona**\nExplore GrowthBook documentation in detail and begin integration of GrowthBook SDK into existing frontend and backend environments (21:10)\nSet up initial A/B tests focusing on paywall messaging and pricing on the web application (05:07)\n\n**James Shannon**\nProvide guidance on GrowthBook MCP server configuration URL and related documentation to Lukasz (20:15)\nExplore possibilities to offer limited consulting or analysis services tailored to smaller organizations/startups outside of enterprise contract (18:47)\n"
+    }
+  ]
+}

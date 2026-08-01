@@ -1,0 +1,19 @@
+{
+  "company": "Demo Call with Burak Tahtacı from TRT",
+  "slug": "demo_call_burak_tahtac_from_trt",
+  "last_etl_date": "2026-08-01T13:58:06.000682",
+  "calls": [
+    {
+      "id": "01KWF0FC0SC6DME6P3M9XZ9AGV",
+      "source": "fireflies",
+      "title": "Demo Call with Burak Tahtacı from TRT",
+      "date": "2026-07-07",
+      "duration_minutes": 49,
+      "summary": "The team at TRT is focused on selecting a unified A/B testing tool to manage over 40 products, enhancing consistent experimentation across mobile apps, websites, and smart TVs. Key representatives, including Burak Tahtaci and Ruck, emphasize the need for a user-friendly interface, deep testing capabilities, and quick integration, recognizing the strategic importance of data-driven decision-making. GrowthBook was presented as a potential solution, offering customizable features and a pricing model based on user seats. The platform prioritizes ease of use and data privacy, with integration into TRT’s existing systems like BigQuery. Next steps involve a proof of concept phase and technical demonstrations to assess functionality and integration viability.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 7,
+      "keywords": "A/B testing, cross-platform experimentation, GrowthBook, product management, SDK integration, proof of concept",
+      "action_items": "\n**James Shannon**\nSend meeting recording, presentation, notes, and video demonstration of the GrowthBook visual editor to TRT participants for internal review (00:03)\nFollow up with TRT to schedule a technical demo with their engineers before proceeding with the Proof of Concept (PoC) (00:43)\nProvide customized pricing details to TRT after confirmation of user seats and internal review (00:27)\n\n**Burak Tahtacı**\nDiscuss internally at TRT to confirm the number of GrowthBook user seats required for the project (00:27)\nCoordinate with TRT engineers, managers, and business managers to prepare for the upcoming Proof of Concept (PoC) on the TRT DNE hybrid app/website (00:42)\nConfirm TRT internal team availability for technical follow-up calls and PoC scheduling, potentially by the next day (00:46)\n\n**All Participants**\nPrepare for a Proof of Concept (PoC) on the TRT DNE product covering mobile apps and website to evaluate GrowthBook’s cross-platform capabilities (00:09)\n"
+    }
+  ]
+}

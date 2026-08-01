@@ -1,0 +1,31 @@
+{
+  "company": "Growthbook <> Felt",
+  "slug": "felt",
+  "last_etl_date": "2026-08-01T13:58:05.996135",
+  "calls": [
+    {
+      "id": "01KWYZD09XDCCM1CXQJAS75XN5",
+      "source": "fireflies",
+      "title": "GrowthBook and Felt",
+      "date": "2026-07-08",
+      "duration_minutes": 32,
+      "summary": "Felt's meeting focused on transitioning from Statsig to GrowthBook driven by dissatisfaction with Statsig's degraded quality and support. Matt Menzi highlighted performance issues, bugs, and dashboard shortcomings at Statsig, pushing for a more reliable option like GrowthBook. Dan Wathne praised GrowthBook's open-source model, emphasizing community support and scalability, critical for Felt’s data demands. GrowthBook offers warehouse-native solutions, enabling Felt to handle complex queries efficiently. The platform's experimentation capabilities, including feature flagging and streamlined migration from Statsig, align with Felt’s operational needs. A focus on security compliance, necessary for Felt's health tech context, and continuous product enhancements further solidified GrowthBook as a favorable choice.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 4,
+      "keywords": "experiment platform, data warehouse, migration, AB testing, feature flags, HIPAA compliance",
+      "action_items": "\n**Dan Wathne**\nSend follow-up email recapping discussion and asking clarifying questions for pricing proposal preparation (27:20)\nPrepare and send pricing proposal to Felt team for review by Friday 1:00 pm PT meeting (26:50)\nProvide BAA documentation to Felt for legal compliance prior to trial (25:50)\nVerify CDN request handling and event volume cost structure with CTO and report back to Felt post-call (23:30)\nSchedule and conduct Friday pricing and demo deep-dive session with Felt for further product exploration (26:50)\n\n**Felt Team (Matt Menzi and Joshua Tolman)**\nDecide on trial approach (clean slate vs. migrated data) and confirm requirements for BAA signing (25:30)\n"
+    },
+    {
+      "id": "01KX23RJJQ7NKYCJ5VRJ6SR570",
+      "source": "fireflies",
+      "title": "Growthbook <> Felt - Demo/Pricing Sync",
+      "date": "2026-07-10",
+      "duration_minutes": 32,
+      "summary": "Participants discussed the development of GrowthBook’s analytics features, including integration with Slack for event notifications and status updates, though current limitations in dashboard embedding were noted. Dashboard sharing options are being enhanced for external client access, with permissioned sharing similar to Google Docs and plans for improved export options. Logan highlighted the complexity of access control for different user roles, while future analytics capabilities such as cohort analysis and funnel tracking are set to launch in the coming months, reflecting a commitment to enhancing features to meet client needs. Discussions on pricing strategies acknowledged client budget constraints and the necessity of flexible trial arrangements to facilitate onboarding.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "analytics, dashboarding, Slack integration, event forwarding, pricing negotiation, BAA compliance",
+      "action_items": "\n**Dan Wathne**\nFollow up with GrowthBook finance and engineering teams to explore pricing flexibility and accelerated onboarding incentives; plan to update Felt on Monday with new pricing information (24:40)\nSet up Slack channel for ongoing communication and support during Felt’s implementation testing (27:29)\nProvide Felt with GrowthBook roadmap and quickstart guides for upcoming features and analytics improvements (30:31)\nPrepare order form including BAA with opt-out and delayed start options so Felt can trial within compliance requirements while finalizing contract (26:40)\n\n**Joshua Tolman**\nShare the latest Statsig invoice with Dan to help with internal pricing discussions at GrowthBook (28:03)\nCoordinate with team to start implementing GrowthBook trial environment possibly while Matt is out of town (25:12)\n\n**Matt Menzi**\nProvide any necessary access or environment details to support trial setup and collaboration (25:12)\n\n**Logan Bates**\nSend Felt detailed documentation on dashboard access controls and permission configurations (09:23)\nInvestigate and report back if Slack integration can support dashboard snapshots or scheduled dashboard posting like Statsig does (05:36)\n"
+    }
+  ]
+}

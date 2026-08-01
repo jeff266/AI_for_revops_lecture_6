@@ -1,0 +1,19 @@
+{
+  "company": "Capacity",
+  "slug": "capacity",
+  "last_etl_date": "2026-08-01T13:58:06.030741",
+  "calls": [
+    {
+      "id": "01KP90W19ANHTVE54BAVSSW0HX",
+      "source": "fireflies",
+      "title": "GrowthBook Demo for Capacity",
+      "date": "2026-04-23",
+      "duration_minutes": 24,
+      "summary": "The discussion addressed the need for affordable A/B testing solutions tailored to the nonprofit arts sector, which has tight budgets and limited marketing funds. Yosaif Cohain highlighted the necessity for experimentation, especially after a decline due to Google Optimize’s shutdown and pandemic-related constraints. The pricing model of Growth Book was discussed, revealing that the Pro tier is accessible at $40 per user per year, but the enterprise tier poses challenges due to its starting price of $50,000 per year for 10 users. The integration strategy via Google Tag Manager allows clients to deploy tests simply, catering to those with limited developer resources. A proposal for a pilot rollout with a few clients on Pro accounts was made to validate the impact before scaling up. Moreover, responsive customer support channels, like email and potential Slack integration, were emphasized to boost confidence among early adopters.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, nonprofit arts organizations, GrowthBook, Pricing tiers, Visual editor, Agency client onboarding",
+      "action_items": "\n**Yosaif Cohain**\nIdentify and engage clients to trial GrowthBook’s Pro plan for A/B testing, starting with the client currently using Mida, and evaluate their experience (17:30)\nCommunicate with GrowthBook on developing case studies if the client trials prove successful to support scaling and enterprise onboarding (22:54)\nMaintain email communication with Christian Liebenow for ongoing support, questions, and next steps regarding GrowthBook adoption (23:22)\n\n**Christian Liebenow**\nProvide joint demos to Yosaif’s clients interested in GrowthBook, particularly the client currently using Mida, to facilitate onboarding and adoption (18:53)\nSupport onboarding for non-technical users by emphasizing GrowthBook’s visual editor designed for simple experiment creation without developer involvement (20:16)\nProvide additional product and pricing details if Yosaif wishes to explore GrowthBook Enterprise plans as client base grows (15:40)\nMaintain email contact and offer potential Slack channel for ongoing client support and quicker communication (23:22)\n"
+    }
+  ]
+}
