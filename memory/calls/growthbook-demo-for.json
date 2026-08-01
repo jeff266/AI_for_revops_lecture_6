@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook Demo for",
   "slug": "growthbook-demo-for",
-  "last_etl_date": "2026-08-01T10:41:40.122187",
+  "last_etl_date": "2026-08-01T12:26:09.571015",
   "calls": [
     {
       "id": "69b2cdd1aadf6a00115df609",
@@ -9,7 +9,7 @@
       "title": "GrowthBook Demo for Kerala Ayurveda",
       "date": "2026-03-12",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Jake Heier]: Hello.\n[Valentina Tarun Bhowal]: Hello, guys. Good evening.\n[Jake Heier]: How are you?\n[Valentina Tarun Bhowal]: Hey. I hope I'm audible. I see Nishant is already here. Hi, Jake.\n[Kal Si",
+      "summary": "GrowthBook's Jake Heier demoed the platform to Valentina (Product) and Nishant (Analytics) of Kerala Ayurveda, who are seeking to replace their current pre-post analysis with feature flagging and A/B testing integrated with GA4 and BigQuery to improve conversion tracking and rollout control. Key pain points included transitioning from 100% rollouts to staggered experiments and multivariate testing. Next steps: Valentina and Nishant will review provided documentation internally and reach out with questions",
       "host": "Jake Heier",
       "participants": 3
     },
@@ -19,7 +19,7 @@
       "title": "GrowthBook Demo for oda.com",
       "date": "2026-03-17",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Fredrik]: Frederick. Hey Christian,\n[Christian Liebenow]: how are you?\n[Fredrik]: I'm good. Hi. See me as well. I haven't used Zoom since early Covid so I'm not sure.\n[Christian Liebenow]: Oh, okay.\n",
+      "summary": "Fredrik (ODA) and Thor (infrastructure) discussed upgrading from GrowthBook's self-hosted open-source version to Enterprise for features like sticky bucketing and pre-exposure analysis, citing cost constraints as ODA is not yet profitable. Christian Liebenow (GrowthBook) acknowledged their budget (~$2,400/year for 10 seats) and proposed a discounted multi-year deal, possibly including a case study. Next steps: Christian will email a proposal; Fredrik will review with the CTO, aiming to finalize by end of April.",
       "host": "Christian Liebenow",
       "participants": 3
     },
@@ -53,7 +53,7 @@
       "title": "GrowthBook Demo for Carvago",
       "date": "2026-03-18",
       "duration_minutes": 17,
-      "summary": "[Summary failed] [Carvago Sro]: It. Hello. Hello.\n[James Shannon]: Hey, good morning. How are you?\n[Carvago Sro]: Yeah, fine. You?\n[James Shannon]: I'm good, I'm good. Thanks for. Thanks for taking some time to meet.\n",
+      "summary": "During the call, Carvago Sro (architect) explained their migration from Flexmith to GrowthBook due to the need for A/B testing and sticky bucketing, which is missing in the open-source version. James Shannon (GrowthBook) outlined the key differences between Cloud Pro ($40/user/month, includes sticky bucketing) and self-hosted Enterprise (advanced access controls, audit logs, dedicated support). Next steps: James will send an enterprise proposal by end of day, and Carvago will review it with their CTO.",
       "host": "James Shannon",
       "participants": 2
     },
@@ -63,7 +63,7 @@
       "title": "GrowthBook Demo for SMG Swiss Marketplace Group",
       "date": "2026-03-18",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Guilherme Rios]: Can't complain. How about you?\n[James Shannon]: Yeah, no, very good. It's my, my first meeting of the day. How about yourself? I guess you're, Are you in European time?\n[James Shanno",
+      "summary": "We need to summarize the transcript in 2-3 sentences focusing on: discussed product/features/pain points, key participants and roles, next steps. \n\nProduct: GrowthBook (self-hosted open source and enterprise versions). Features: feature flags, experimentation, warehouse-native, SDKs for Next.js/Flutter/Java, integrations with BigQuery/Snowflake. Pain points: current SaaS provider's per-seat pricing (Guido mentioned it's a no-go), desire for self-hosted open source, flexibility, no per-seat pricing for feature flags.\n\nKey participants: James Shannon (GrowthBook EMEA lead), Lan Ha (experimentation program manager from SMG), Damir Zecevic and Nikola Suvajcevic (frontend engineers), Guilherme Rios (engineering manager), Guido Trueeb (principal engineer), others from different verticals.\n\nNext steps: Lan will gather questions from the team, then either answer via email or schedule another call with technical representatives.\n\nSummary: James Shannon (GrowthBook EMEA lead) demoed GrowthBook to SMG Swiss Marketplace Group, represented by Lan Ha (experimentation program manager), Damir Zecevic, Nikola Suvajcevic (frontend engineers), Guilherme Rios (engineering manager), and Guido Trueeb (principal engineer). They discussed the open-source self-hosted option for feature flags and experimentation, with pain points around their current provider's per-seat pricing and a",
       "host": "James Shannon",
       "participants": 8
     },
@@ -85,7 +85,7 @@
       "title": "GrowthBook Demo for Yoto",
       "date": "2026-03-23",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [James Shannon]: London, Correct.\n[Amelie Bruhat]: Sorry, you're in London? No, I'm based in Edinburgh.\n[James Shannon]: Oh, you're in Edinburgh. Oh, lovely. That's where my brother lives.\n[Amelie Bru",
+      "summary": "In a sales demo call, James Shannon (GrowthBook EMEA lead) discussed the platform's feature flagging and A/B testing capabilities with Amelie Bruhat (Lead Product Analyst at Yoto). Yoto's pain points include fragmented data, an inadequate front-end-only tool (AB Tasty), and a need for cross-platform experimentation on web and app to improve acquisition and stickiness. Next steps: James will share slides, pricing, and relevant case studies; Amelie will gather input from her PMs and schedule a broader technical demo.",
       "host": "James Shannon",
       "participants": 2
     },
@@ -179,7 +179,7 @@
       "title": "GrowthBook Demo for handdii",
       "date": "2026-03-31",
       "duration_minutes": 35,
-      "summary": "[Summary failed] [Daniel Wathne]: Recording in progress. Hello. Hey Cameron, how you doing?\n[Cameron Dechene]: Hey Dan, how's it going? Good.\n[Daniel Wathne]: Am I echoing to you?\n[Cameron Dechene]: No, you're. No, yo",
+      "summary": "Daniel Wathne (GrowthBook sales) and Logan Bates (solutions engineering) demoed GrowthBook’s A/B testing and feature flag platform to Cameron Dechene (product manager at Handdii), a B2B insurance construction middleware company. Cameron’s pain points included a small team, ad-hoc decision-making, and a need for a visual editor to run simple experiments without heavy developer dependency. Next steps: Cameron will sign up for the free tier to explore, and Daniel will send the recording and supporting documentation.",
       "host": "Daniel Wathne",
       "participants": 3
     },
@@ -225,7 +225,7 @@
       "title": "GrowthBook Demo for Kooba",
       "date": "2026-04-07",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Daniel Wathne]: What's up, Dan?\n[Logan Bates]: Hello.\n[Tom Gillan]: Hello.\n[Daniel Wathne]: You come to watch me flounder a demo?\n[Logan Bates]: All my struggle, this life.\n[Daniel Wathne]: Yes, Like",
+      "summary": "Daniel Wathne (GrowthBook sales) and Logan Bates (solutions engineering) demoed GrowthBook to Tom Gillan (UX designer at Kooba agency). They discussed A/B testing for client Water Wipes, highlighting features like a visual editor, feature flags, SDK integration, and affordable $40/user/month pricing; Tom’s pain points included using a makeshift solution and evaluating costlier tools like Optimizely. Next steps: Daniel will send setup guides and docs, and Tom will review with his backend developer Thomas for potential follow-up.",
       "host": "Daniel Wathne",
       "participants": 3
     },
@@ -247,7 +247,7 @@
       "title": "GrowthBook Demo for Breakthrough",
       "date": "2026-04-08",
       "duration_minutes": 0,
-      "summary": "[Summary failed] [Jake Heier]: Doing very well. Awesome. Appreciate you taking some time. Are we waiting for anyone else on your side? Nope, Just me. Okay, awesome. Well, to introduce myself. Oh, sorry. I got multiple",
+      "summary": "Jake Heier, the presenter, greeted a single participant at the start of a GrowthBook demo for Breakthrough, noting he had multiple call recorders active. No product features, pain points, or next steps were discussed in the available transcript.",
       "host": "Jake Heier",
       "participants": 1
     },
@@ -293,7 +293,7 @@
       "title": "GrowthBook Demo for Heartland Home Services",
       "date": "2026-04-10",
       "duration_minutes": 27,
-      "summary": "[Summary failed] [Jake Heier]: Hey, john,\n[John Rizzo]: How's it going?\n[Jake Heier]: Good. How are you? Good.\n[John Rizzo]: Duncan's gonna be here as well.\n[Jake Heier]: Awesome. Where are you calling in from?\n[John ",
+      "summary": "Jake Heier (GrowthBook account team) demoed the platform to Duncan McKee (manager of website strategy/SEO) and John Rizzo (new team member) of Heartland Home Services. They discussed GrowthBook’s A/B testing and feature flagging capabilities, addressing Heartland’s pain points with their limited Unbounce usage and need to test across 38 domains for lead gen (qualified leads as North Star metric), while noting they lack a central data warehouse. Next steps: Jake will share documentation, and Duncan will review with his team, with a follow-up call planned for early next week.",
       "host": "Jake Heier",
       "participants": 3
     },
@@ -303,7 +303,7 @@
       "title": "GrowthBook Demo for Dr Sam's Skincare",
       "date": "2026-04-10",
       "duration_minutes": 29,
-      "summary": "[Summary failed] [Charlotte Dugue]: It. Sa.\n[Jake Heier]: Hey Charlotte, how are you?\n[Charlotte Dugue]: I don't think you can see me. Yeah.\n[Jake Heier]: Now there we go.\n[Charlotte Dugue]: How you been? Okay. Are yo",
+      "summary": "Charlotte Dugue (Senior Ecom Manager at Dr Sam's Skincare) discussed the need for a proper CRO program to manage constant content changes and run A/B tests on shipping, subscriptions, and pricing, citing pain points like a drop in conversion rate and lack of data visibility. Jake Heier (GrowthBook account team) demonstrated the platform’s feature flags, managed warehouse, SQL-transparent experimentation, and dashboards, highlighting its suitability for Charlotte’s data-limited environment. Next steps: Charlotte will review with her director and CEO, aim to recruit a data analyst, and test the free version of GrowthBook.",
       "host": "Jake Heier",
       "participants": 2
     },
@@ -481,7 +481,7 @@
       "title": "GrowthBook Demo for Plant Addicts",
       "date": "2026-04-22",
       "duration_minutes": 39,
-      "summary": "[Summary failed] [Chris Link]: Hey, Scott.\n[Scott Keller]: Hey, Chris. How are you?\n[Chris Link]: I'm good. How are you doing?\n[Scott Keller]: Great, thanks. Hey, Sam. Hi, guys.\n[Chris Link]: Thanks for joining. Thank",
+      "summary": "GrowthBook demo for Plant Addicts addressed their need to scientifically test website changes to improve conversion rates and avoid regressions, using GrowthBook’s feature flags and experimentation platform (including a visual editor for non-developers). Key participants were Scott Keller (GrowthBook enterprise sales) and Logan Bates (solutions engineer), along with Plant Addicts co-founders Chris Link and Richard Anderson, plus web developer Sam. Next steps: Plant Addicts will evaluate GrowthBook’s Pro plan ($40/month) with the visual editor and compare it with a VWO demo before deciding.",
       "host": "Scott Keller",
       "participants": 4
     },
@@ -563,7 +563,7 @@
       "title": "GrowthBook Demo for Purple",
       "date": "2026-04-27",
       "duration_minutes": 34,
-      "summary": "[Summary failed] [Logan Bates]: Sam.\n[Jake Heier]: Hey Spencer, how are you? Pretty good, how are you doing well, thanks for joining.\n[Logan Bates]: Hey Cat, how's it going?\n[Jake Heier]: Good, how are you?\n[Katherine",
+      "summary": "GrowthBook (open-source feature flag and experimentation platform) was presented to Purple, who recently moved off Optimizely and built a temporary in-house solution, seeking to scale their experimentation program with deeper statistical capabilities (Bayesian/frequentist stats, Cupid, post-stratification) and data warehouse integration (Snowflake). Key participants included Jake Heier (GrowthBook account team), Logan Bates (solutions engineer), and from Purple: Katherine Liu (senior software engineering manager), Ishan Sup",
       "host": "Jake Heier",
       "participants": 6
     },
@@ -573,7 +573,7 @@
       "title": "GrowthBook Demo for MarseerAI",
       "date": "2026-04-28",
       "duration_minutes": 23,
-      "summary": "[Summary failed] [Daniel Wathne]: Recording in progress. Hey Geneva, how you doing?\n[Srinivas Aripirala]: Sorry. Are you able to see me yet?\n[Daniel Wathne]: Yeah, yeah, yeah, I can see you. How are you? It's nice to ",
+      "summary": "Daniel Wathne (GrowthBook sales) and Srinivas Aripirala (co-founder of MarseerAI, a CDP startup) discussed integrating GrowthBook’s experimentation platform into MarseerAI’s multi-tenant SaaS product. Srinivas needs a multi-org setup where he acts as super admin for different client brands, but GrowthBook’s enterprise plan (starting ~$50k) is too costly; they agreed to start with a Pro account for the first brand to test integration and revisit enterprise options as usage grows. Next steps: Daniel will send resources, and Srinivas",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -679,7 +679,7 @@
       "title": "GrowthBook Demo for Goodnotes Ltd",
       "date": "2026-05-06",
       "duration_minutes": 25,
-      "summary": "[Summary failed] [Daniel Wathne]: Recording in progress.\n[Vaida Maksims]: It. Hello, Dan.\n[Daniel Wathne]: Hi. How you doing?\n[Vaida Maksims]: How. Yeah, I'm good. How are you?\n[Daniel Wathne]: I'm good. Am I pronounc",
+      "summary": "Daniel Wathne (GrowthBook sales) demonstrated the platform to Vaida Maksims (Goodnotes procurement) and Hiro Vuong (technical lead evaluating tools). They discussed GrowthBook’s enterprise features (visual editor, multi-armed bandits, SSO/SAML, advanced permissions) to address Goodnotes’ need for secure, scalable experimentation on new projects. Next steps: Daniel will send a pricing proposal with three scenarios; they agreed to meet again",
       "host": "Daniel Wathne",
       "participants": 3
     },
@@ -773,7 +773,7 @@
       "title": "GrowthBook Demo for Cogniteer",
       "date": "2026-05-19",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [Daniel Wathne]: Learning in progress.\n[Fabian Hans]: Hello,\n[Daniel Wathne]: Can you hear. Hi, Fabian, can you hear me?\n[Fabian Hans]: I can hear you, yes. How are you?\n[Daniel Wathne]: I'm great. Ho",
+      "summary": "Daniel Wathne (GrowthBook representative) and Fabian Hans (Cogniteer consultant) discussed GrowthBook's feature flagging, experimentation, and product analytics platform, focusing on AI-driven agentic workflows (MCP, CLI, AI data analyst) and upcoming hypothesis creation. Fabian highlighted client pain points with tracking and the need for sophisticated server-side experimentation beyond marketing-focused tools. Next steps include a product demo scheduled for Monday, and Daniel will connect Fabian with GrowthBook's marketing leader for a potential podcast and partnership discussion.",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -783,7 +783,7 @@
       "title": "GrowthBook Demo for Surpreme Opti",
       "date": "2026-05-19",
       "duration_minutes": 29,
-      "summary": "[Summary failed] [Tenea Welsh]: Hello.\n[Jake Heier]: Hello. How's it going?\n[Tenea Welsh]: How's. Good, good. How are you doing?\n[Jake Heier]: Well, are we waiting on anyone else or should we get going?\n[Tenea Welsh]:",
+      "summary": "Jake Heier (GrowthBook account team) demoed the",
       "host": "Jake Heier",
       "participants": 3
     },
@@ -841,7 +841,7 @@
       "title": "GrowthBook Demo for Auctane",
       "date": "2026-05-20",
       "duration_minutes": 34,
-      "summary": "[Summary failed] [Erin Rizal]: Sa.\n[Jake Heier]: Hey, Aaron.\n[Erin Rizal]: Hi.\n[Jake Heier]: How are you?\n[Erin Rizal]: I'm good. How are you?\n[Jake Heier]: I'm doing well. Are you? It looks like your company is all o",
+      "summary": "Jake Heier (GrowthBook account manager) demoed the platform",
       "host": "Jake Heier",
       "participants": 2
     },
@@ -851,7 +851,7 @@
       "title": "GrowthBook Demo for Kiosk",
       "date": "2026-05-21",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey Graham, good to see you.\n[Mark Nelson]: Good.\n[Daniel Wathne]: Got a nice little tan from Hawaii.\n[Webflow Demo]: That's just the colors.\n[Daniel Wathne]: Well, I was like, I got ",
+      "summary": "GrowthBook sales rep Daniel Wathne and co-founder Graham demoed the platform to marketing agency Kiosk (Mark Nelson, Roger Webb, Daisy). Key pain points included the high cost and lack of scalability of their previous Optimizely setup, especially for segmenting 2,000 keyword campaigns, and the need for an ML-driven solution to automate experimentation. Next steps are a full demo tomorrow covering the visual editor, multi-armed",
       "host": "Daniel Wathne",
       "participants": 4
     },
@@ -933,7 +933,7 @@
       "title": "GrowthBook Demo for OHL",
       "date": "2026-05-28",
       "duration_minutes": 19,
-      "summary": "[Summary failed] [Jorge Bañuelos]: Progress. Hi, how are you?\n[Daniel Wathne]: Hey, Jorge. I'm doing well, how are you?\n[Jorge Bañuelos]: Doing well, thank you. Doing well. Pleasure to meet you.\n[Daniel Wathne]: Yeah,",
+      "summary": "Jorge Bañuelos (consultant/de facto chief data officer at One Health Link) discussed his need for a HIPAA-compliant, self-hosted A/B testing platform to replace homegrown solutions for testing LLMs, ML models, and app changes. Daniel Wathne (GrowthBook sales) highlighted GrowthBook’s self-hosting option, enterprise features like CUPED and multi-armed bandit, and a seat-based pricing model ($1,000/user/year plus platform fee). Next steps: Jorge will start with the free",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -1027,7 +1027,7 @@
       "title": "GrowthBook Demo for Buff",
       "date": "2026-06-08",
       "duration_minutes": 0,
-      "summary": "[Summary failed] [Yair Liberzon]: Hello, Scott. Hello. Is it Yair? Yes. How are you? I'm doing well, Yair. And yourself? I'm great. How are you? Yeah, I'm fantastic. I'm gonna remove the recorder for now. I.",
+      "summary": "The call transcript only captures initial introductions between Yair Liberzon and Scott, with no discussion of product features, pain points, or next steps. The recording was removed before any substantive conversation began, so no action items or participant roles beyond the names are identifiable.",
       "host": "Scott Keller",
       "participants": 1
     },

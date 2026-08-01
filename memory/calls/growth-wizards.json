@@ -1,7 +1,7 @@
 {
   "company": "Growth Wizards <>",
   "slug": "growth-wizards",
-  "last_etl_date": "2026-08-01T10:41:40.123955",
+  "last_etl_date": "2026-08-01T12:26:09.573358",
   "calls": [
     {
       "id": "6a209f46f303cb0020ab2e2e",
@@ -9,7 +9,7 @@
       "title": "Growth Wizards <> GrowthBook",
       "date": "2026-06-03",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [Lyndsie Berens]: It. Kick my note taker out.\n[Ashley Stirrup]: It's fine. Either way, it's fine.\n[Lyndsie Berens]: Landscapers are here.\n[Ashley Stirrup]: My dog hates them note takers. So, yeah, inv",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences focusing on what was discussed (product, features, pain points), key participants and roles, and next steps/action items.\n\nFrom transcript: Participants: Ashley Stirrup (GrowthBook - likely marketing/sales leader), David Dangelo (Growth Wizards - external partner), Tanner Green (Growth Wizards), Lyndsie Berens (GrowthBook - new Director of Demand Gen), Emmy Sharp (GrowthBook - social/media). Discussion: Podcast guest recruitment process for GrowthBook's podcast. Pain points: Ashley struggles with follow-up after podcast recordings; guests say yes but then go dark; need better handoff to sales reps. Also discussed social media strategy (newsletter, LinkedIn). Next steps: Set up a joint call with sales team next week to align on podcast outreach; implement process to set demo meetings during recording; collect work emails; improve tracking via CRM; shift newsletter to personal page; and collaborate on social content calendar.\n\nSummary: Discussed improving podcast-driven lead generation for GrowthBook, focusing on streamlining handoff from Ashley's podcast recordings to sales reps by setting demos during recordings and collecting work emails. Key participants: Ashley Stirrup (GrowthBook host), David Dangelo and Tanner Green (Growth Wizards partners), Lyndsie Berens (new Demand Gen director), and Emmy Sharp (social media). Next steps include a joint sales-marketing call next week to align on outreach, implementing a CRM tracking system for",
       "host": "Lyndsie Berens",
       "participants": 5
     },

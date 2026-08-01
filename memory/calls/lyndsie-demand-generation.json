@@ -1,7 +1,7 @@
 {
   "company": "Lyndsie Demand Generation",
   "slug": "lyndsie-demand-generation",
-  "last_etl_date": "2026-08-01T10:41:40.134599",
+  "last_etl_date": "2026-08-01T12:26:09.589575",
   "calls": [
     {
       "id": "69dec32079aa540015c443b7",
@@ -9,7 +9,7 @@
       "title": "Lyndsie Demand Generation Presentation",
       "date": "2026-04-14",
       "duration_minutes": 43,
-      "summary": "[Summary failed] [Ashley Stirrup]: My daughter heard her back, so I didn't get to see her play volleyball. Yeah. Hey, Graham.\n[Lyndsie]: Hey, Graham.\n[Ryan McGurk]: Absolutely.\n[Ashley Stirrup]: Hey, Lindsey.\n[Webflow",
+      "summary": "Lyndsie presented her demand generation strategy for GrowthBook, focusing on converting existing high-intent traffic through PQL signals and lifecycle optimization while expanding awareness to new personas via the 95/5 framework, AEO, and community engagement. Key participants included Ashley Stirrup (hiring manager), Ryan McGurk (sales lead), and Graham (product/marketing), who asked about attribution, AI workflows, and channel priorities",
       "host": "Ashley Stirrup",
       "participants": 5
     },

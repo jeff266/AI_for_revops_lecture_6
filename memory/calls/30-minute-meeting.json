@@ -1,7 +1,7 @@
 {
   "company": "30 minute meeting",
   "slug": "30-minute-meeting",
-  "last_etl_date": "2026-08-01T10:41:40.141805",
+  "last_etl_date": "2026-08-01T12:26:09.595387",
   "calls": [
     {
       "id": "69c154c549f5df00156c6894",
@@ -9,7 +9,7 @@
       "title": "30 minute meeting - Clemens Bauer from Neuroth and Christian",
       "date": "2026-03-23",
       "duration_minutes": 27,
-      "summary": "[Summary failed] [Clemens Bauer]: Hi, Christian.\n[Christian Liebenow]: Hey, how are you?\n[Clemens Bauer]: I'm good, thank you. How are you?\n[Christian Liebenow]: Yeah, doing well, thank you.\n[Clemens Bauer]: Very good",
+      "summary": "Clemens Bauer, an internal advocate who previously used GrowthBook at Deutsche Telekom, is leading Neuroth's adoption of the platform for A/B testing. The primary hurdle is completing a",
       "host": "Christian Liebenow",
       "participants": 2
     },

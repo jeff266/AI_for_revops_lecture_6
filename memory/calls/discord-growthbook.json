@@ -1,7 +1,7 @@
 {
   "company": "Discord + GrowthBook",
   "slug": "discord-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.146222",
+  "last_etl_date": "2026-08-01T12:26:09.601538",
   "calls": [
     {
       "id": "698cd8890a59a00011b5d1f8",
@@ -9,7 +9,7 @@
       "title": "Discord & GrowthBook",
       "date": "2026-02-11",
       "duration_minutes": 29,
-      "summary": "[Summary failed] [Jennifer Richardson]: Hi.\n[Christian Liebenow]: Hi, Jen.\n[Ryan McGurk]: How are you doing well.\n[Christian Liebenow]: How are you?\n[Jennifer Richardson]: I'm good, thank you.\n[Christian Liebenow]: Wo",
+      "summary": "In this sales call with Discord (represented by Jennifer Richardson and Nathaniel Bennett) and GrowthBook (Ryan McGurk and Christian Liebenow), the team discussed GrowthBook's self-hosted experimentation platform, which Discord has used extensively with over 500 users. Pain points included a missed renewal, backdated billing from August to December, and strict budget constraints. Next steps: Ryan and Christian will propose a two-year site license for up to 600 seats at ~$100k the first year and ~$300k the second, waiving half the backdated fees, and will",
       "host": "",
       "participants": 4
     },
@@ -19,7 +19,7 @@
       "title": "Discord + GrowthBook",
       "date": "2026-02-19",
       "duration_minutes": 18,
-      "summary": "[Summary failed] [Christian Liebenow]: How's your hopefully abbreviated week going?\n[Nate B]: It's good. How's yours?\n[Christian Liebenow]: Good. Did y' all have Monday off as well? Yep.\n[Jennifer Richardson]: Nice.\n[",
+      "summary": "Christian Liebenow (GrowthBook) presented a two-year renewal proposal to Jennifer Richardson and Nate B (Discord), addressing Discord’s pain points around payment flexibility, a $101k budget cap, and back-pay discounting. Key discussion centered on per-seat pricing (currently ~$405/user) and the need to keep the total deal under $500k to avoid CFO approval. Next steps: Christian will share slides, Discord will explore reducing user count to lower year-two costs, and both parties will reconvene next week.",
       "host": "Christian Liebenow",
       "participants": 3
     }

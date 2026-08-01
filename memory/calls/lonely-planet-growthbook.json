@@ -1,7 +1,7 @@
 {
   "company": "Lonely Planet<>GrowthBook",
   "slug": "lonely-planet-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.129004",
+  "last_etl_date": "2026-08-01T12:26:09.586738",
   "calls": [
     {
       "id": "69f4f366fea8bc001d191e0c",
@@ -9,7 +9,7 @@
       "title": "Lonely Planet<>GrowthBook - Demo & Discussion",
       "date": "2026-05-01",
       "duration_minutes": 38,
-      "summary": "[Summary failed] [Logan Bates]: Hey, dude. Hello.\n[Jake Heier]: Happy Friday.\n[Logan Bates]: Hey, man. Happy Friday.\n[Jake Heier]: How you doing?\n[Logan Bates]: Have a good week? Good. End of quarter, hopefully.\n[Jake",
+      "summary": "GrowthBook (represented by account executive Jake Heier and SE Logan Bates) demoed its open-source experimentation platform to Lonely Planet’s team, including Ruiye Ni (data/AI lead), Marcos Kashima (product), and others, addressing pain points around",
       "host": "Jake Heier",
       "participants": 5
     }

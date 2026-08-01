@@ -1,7 +1,7 @@
 {
   "company": "GB/SIE Bi-Weekly",
   "slug": "gb-sie-bi-weekly",
-  "last_etl_date": "2026-08-01T10:41:40.115796",
+  "last_etl_date": "2026-08-01T12:26:09.557930",
   "calls": [
     {
       "id": "01KMNXKSATD9F5333X5AADEANS",
@@ -105,7 +105,7 @@
       "title": "GB/SIE Bi-Weekly",
       "date": "2026-07-16",
       "duration_minutes": 0,
-      "summary": "[Summary failed] [Cris Dizon]: Hello. Hey, Chris. How are you doing? Good. How are you doing? Okay.\n[Cary Rakin]: Nice. Hey, Kerry. Hey, guys. Hey, Ravi. How are you?\n[sony]: I'm doing well, Kerry. How are you doing?\n",
+      "summary": "The call discussed a signage approval process, noting it is not as simple as DocuSign but requires going through Coupa and VP-level approval. Key participants included Cris Dizon and Cary Rakin (speakers), with a mention of \"Sony\" as a third party. Next step: Cary will ping the VP to check if the Coupa request was received.",
       "host": "Cris Dizon",
       "participants": 3
     },

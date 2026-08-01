@@ -1,7 +1,7 @@
 {
   "company": "Kevin Yang and",
   "slug": "kevin-yang-and",
-  "last_etl_date": "2026-08-01T10:41:40.116755",
+  "last_etl_date": "2026-08-01T12:26:09.559261",
   "calls": [
     {
       "id": "6a566cfb3e2ea500185dbb65",
@@ -9,7 +9,7 @@
       "title": "Kevin Yang and Ashley Stirrup + Christian Liebenow",
       "date": "2026-07-14",
       "duration_minutes": 37,
-      "summary": "[Summary failed] [Christian Liebenow]: Hey Ashley.\n[Webflow Demo]: Hey, how you doing?\n[Christian Liebenow]: Good, Doing really well. How are you?\n[Ashley Stirrup]: I'm, I'm doing well as well. Icing both my knees\n[Ch",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and their roles, next steps/action items.\n\nKey participants: Christian Liebenow (host, from GrowthBook?), Webflow Demo (likely Graham, co-founder/CEO of GrowthBook), Ashley Stirrup (from GrowthBook?), Yang, Kevin (from CCB? - customer, interested in experimentation), and others like Vasant, Julia, Lauren (team members). Actually, from transcript: Christian Liebenow is from GrowthBook (calls Graham co-founder), Webflow Demo is Graham (co-founder/CEO), Ashley Stirrup is also from GrowthBook. Kevin Yang is from Chase? He says \"in Chase\" - so likely Chase bank. He mentions his team: Vasan (TPM), Julia, Lauren (PMs). They currently use Split IO for feature flags and have internal experimentation platform.\n\nWhat was discussed: GrowthBook's feature flagging and experimentation platform. Pain points: scaling experimentation, non-deterministic AI experiences, governance of feature flags across many apps, flag cleanup, age of flags, lack of holistic view across projects in Split, difficulty enabling marketing users, need for flexible roles and MCP servers. Features demoed: feature flags with version control, roles/permissions, project organization, stale flag detection, MCP servers, visual editor, bandit algorithm, Snowflake integration, agentic interaction",
       "host": "Ashley Stirrup",
       "participants": 5
     },

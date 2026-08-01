@@ -1,7 +1,7 @@
 {
   "company": "Legend + GrowthBook",
   "slug": "legend-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.127740",
+  "last_etl_date": "2026-08-01T12:26:09.585138",
   "calls": [
     {
       "id": "697b944533bbcb001149c8f0",
@@ -9,7 +9,7 @@
       "title": "Legend + GrowthBook Demo",
       "date": "2026-01-29",
       "duration_minutes": 70,
-      "summary": "[Summary failed] [Net Management Ltd]: Sam.\n[Jacqui Glover]: Afternoon. Hey, Christian. How's it going? Is it Christian or Christian?\n[Christian Liebenow]: Christian. Yeah, you said it correctly. I'm doing well. How a",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences focusing on: discussed product, features, pain points; key participants and roles; next steps/action items.\n\nKey participants: Christian Liebenow (GrowthBook sales), Chris Sanders (GrowthBook technical), Liam Dando (Legend - likely product/engineering lead), Kaito (engineering), James Berry, David Williams, Devin L, etc. Legend team evaluating GrowthBook vs other platforms for feature flagging and experimentation. Pain points: latency/core web vitals, performance, data warehouse native, alerting, edge SDK, flickering. Discussed features: local evaluations, low latency (~50ms), Bayesian statistics, multi-armed bandits, edge SDK with Cloudflare KV, self-hosting, warehouse native, etc. Next steps: Christian to provision enterprise trial (15 licenses, extend to end of Feb), set up in Slack, Legend team to run AA experiments and geo-targeted tests for performance validation, continued comms in Slack channel.\n\nSummary: \nChristian Liebenow (GrowthBook) demonstrated the platform's low-latency feature flagging and experimentation capabilities, emphasizing local evaluations and warehouse-native architecture, to address Legend's pain points around core web vitals and performance. Key Legend participants included Liam Dando (product), Kaito (engineering), and decision-makers David Williams and Claudia. Next steps: Christian will provision a 15-user enterprise trial through end of February; the Legend team will run AA",
       "host": "Christian Liebenow",
       "participants": 8
     },
@@ -19,7 +19,7 @@
       "title": "Legend + GrowthBook",
       "date": "2026-02-03",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Net Management Ltd]: Hello. Hello. Yeah, I'm not sure who's joining. People are very busy today and. But we can record it and share words for other people that cannot enter make it. But I invited Ani",
+      "summary": "In the call, Christian Liebenow and Jeremy Dorn (Growth",
       "host": "Christian Liebenow",
       "participants": 4
     },
@@ -29,7 +29,7 @@
       "title": "Legend + GrowthBook",
       "date": "2026-02-04",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Christian Liebenow]: Hi, James.\n[James Berry]: Hey, how you doing?\n[Christian Liebenow]: Doing well. How are you?\n[James Berry]: Yeah, good, thanks. I've forwarded this on to Claudia who works with m",
+      "summary": "Christian Liebenow (Legend sales) discussed replacing SiteSpect with GrowthBook for experimentation due to latency issues (200-400ms). Participants included James Berry (experimentation team) and Claudia Windberger (technical). Next steps: a POC will begin in ~2 weeks, led by Cato, replicating past experiments on staging; Christian will follow up with David Williams on pricing and business case.",
       "host": "Christian Liebenow",
       "participants": 4
     },
@@ -39,7 +39,7 @@
       "title": "Legend + GrowthBook",
       "date": "2026-02-06",
       "duration_minutes": 42,
-      "summary": "[Summary failed] [Net Management Ltd]: Hello. Hi, Cato. Hello. How you doing? Doing well. How are you today? Yeah, not so bad. Wonderful. Friday? Yeah. Any nice plans for the weekend? Not really, no. Okay, relax. Good",
+      "summary": "Chris Sanders (GrowthBook) and Kato (Net Management Ltd, engineer) discussed using the GrowthBook SDK in a Cloudflare Worker to evaluate feature variants at the edge, addressing pain points like latency from complex cache key strategies and flicker from client-side evaluation. They explored options including self-evaluation (pre-computing variants and passing as query parameters for caching) and a turnkey worker (injecting SDK payload client-side). Next steps: Chris will share code examples for feature evaluation in Slack; Kato will proceed with the self-evaluation approach as the primary option, with the turnkey solution as a fallback.",
       "host": "Christian Liebenow",
       "participants": 2
     },
@@ -49,7 +49,7 @@
       "title": "Legend + GrowthBook",
       "date": "2026-03-04",
       "duration_minutes": 13,
-      "summary": "[Summary failed] [Net Management Ltd]: We would not need the Adobe Analytics. But is it still under discussion? And if we have the Adobe analytics possibility to. If you have the possibility to integrate Adobe analyti",
+      "summary": "Kaido (Net Management Ltd) discussed GrowthBook's features including an alpha Adobe Analytics connector (not needed as they feed data into Snowflake), a configurable Snowflake integration, and the Visual Editor (not for their casino.org project but relevant for the sports team). Key participants were Kaido (lead for Net Management), Christian Liebenow and Growthbook Dorn (GrowthBook sales/tech). Next steps: Kaido will finish evaluating a second",
       "host": "Christian Liebenow",
       "participants": 3
     },
@@ -83,7 +83,7 @@
       "title": "Legend + GrowthBook",
       "date": "2026-03-17",
       "duration_minutes": 56,
-      "summary": "[Summary failed] [Christian Liebenow]: Hi, devin. Hey, logan.\n[logan]: Hey,\n[logan]: evan.\n[Christian Liebenow]: How are you today? My bad.\n[Devin L]: How are you doing?\n[Christian Liebenow]: Well.\n[logan]: Hello.\n[Ch",
+      "summary": "GrowthBook account manager Christian and solutions engineer Logan demoed their feature flagging, visual editor, and analytics platform to Legend's James (experimentation lead for sports) and Devin (backend developer",
       "host": "Christian Liebenow",
       "participants": 3
     },
@@ -129,7 +129,7 @@
       "title": "Legend + GrowthBook",
       "date": "2026-05-18",
       "duration_minutes": 44,
-      "summary": "[Summary failed] [Chris Sanders]: Hello.\n[Net Management Ltd]: Hey James, Good to see you again. How are you? Yeah, good, thanks. St. Yeah, all is well. Chris and I just returned from the Growth Book trip in Maui so w",
+      "summary": "We need to summarize the call transcript in 2-3 sentences focusing on: what was discussed (product, features, pain points), key participants and roles, and next steps/action items.\n\nKey participants: Chris Sanders (GrowthBook team), Net Management Ltd (Cato? likely client), Babak Tourani (client side), pilar.frontera (client side). Also mention of Liam (not present). Roles: Chris is from GrowthBook, others are from the client (Net Management Ltd). They discussed integration of GrowthBook with Snowflake, using Adobe Analytics as data source. Pain points: cost concerns with event forwarder, need to avoid additional costs, data synchronization frequency, query optimization, pre-aggregation vs raw data. Features: data source configuration, fact tables, metrics, REST API for exporting results, polling intervals. Next steps: client's experimentation team to identify events/metrics, configure Snowflake data source with read-only role, possibly schedule sync, and test queries. Also future consideration of event forwarder or custom pipeline.\n\nSummary: Chris Sanders from GrowthBook and the client team (Net Management Ltd, Babak Tourani, Pilar Frontera) discussed integrating GrowthBook with Snowflake using Adobe Analytics as the data source, addressing concerns about the event forwarder's cost and data synchronization frequency. They reviewed how to set up data sources, fact tables, and metrics, with emphasis on query optimization and pre-aggregation trade-offs. Next steps involve the",
       "host": "Christian Liebenow",
       "participants": 4
     },

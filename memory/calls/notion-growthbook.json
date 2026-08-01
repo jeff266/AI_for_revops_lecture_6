@@ -1,7 +1,7 @@
 {
   "company": "Notion<>GrowthBook",
   "slug": "notion-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.113435",
+  "last_etl_date": "2026-08-01T12:26:09.552583",
   "calls": [
     {
       "id": "6a19fce6b1d0ec00101a88c2",
@@ -9,7 +9,7 @@
       "title": "Notion<>GrowthBook - POC Planning",
       "date": "2026-05-29",
       "duration_minutes": 54,
-      "summary": "[Summary failed] [Parul Baweja]: Sa.\n[Jake Heier]: Hello.\n[Notion ]: Hey, Jake, how are you doing? Doing good. How are things on your end?\n[Jake Heier]: Good, good.\n[Samuel Kim]: Hello.\n[Jake Heier]: Give everybody a ",
+      "summary": "The call focused on Notion evaluating GrowthBook as a replacement for Statsig, citing pain points around Statsig’s reliability, scaled-back AI roadmap, support issues, and desire for a more flexible warehouse-native platform. Key participants included Jake Heier (GrowthBook sales lead) and Logan Bates (GrowthBook engineer, ex-Statsig), while Notion’s team included Jeff (data scientist, main POC), Parul Baweja (data platform),",
       "host": "Jake Heier",
       "participants": 5
     },
@@ -19,7 +19,7 @@
       "title": "Notion<>GrowthBook - POC Technical Kick Off",
       "date": "2026-06-10",
       "duration_minutes": 49,
-      "summary": "[Summary failed] [Jake Heier]: Hey, dude.\n[Notion ]: Yep.\n[Logan Bates]: Just on another call. Graham was in the middle of the demo. I just.\n[Jake Heier]: Oh, were you on with Christian?\n[Notion ]: Yeah.\n[Shihao H]: B",
+      "summary": "The call served as a POC technical kickoff between Notion (customer) and GrowthBook (vendor). Key participants included Jake Heier (GrowthBook account lead), Logan Bates (GrowthBook sales/former Statsig), Shihao H (Notion engineer",
       "host": "Jake Heier",
       "participants": 4
     },
@@ -41,7 +41,7 @@
       "title": "Notion<>GrowthBook - Onsite Meeting",
       "date": "2026-07-28",
       "duration_minutes": 66,
-      "summary": "[Summary failed] [811 - Mattel Barbie]: West coast. You have a Seattle hub that's growing in size, you know.\n[811 - Mattel Barbie]: Right.\n[811 - Mattel Barbie]: It makes sense. It's where people are. Right. They're a",
+      "summary": "The call involved Notion's data/experimentation team (Sam, Snehal, Jeff) and GrowthBook's team (Luke, Graham, Jake) discussing GrowthBook's vision, AI features, scalability, and customization for experimentation, contrasting it with their current platform, Statsig. Key pain points included experiment governance, metric quality, capturing learnings at scale, and reliable feature flag rollouts. Next steps: Notion will run real experiments over the next month; Jake will send a recap and gather feedback",
       "host": "Jake Heier",
       "participants": 2
     }

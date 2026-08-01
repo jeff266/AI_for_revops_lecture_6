@@ -1,7 +1,7 @@
 {
   "company": "Taskrabbit + GrowthBook",
   "slug": "taskrabbit-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.116354",
+  "last_etl_date": "2026-08-01T12:26:09.558483",
   "calls": [
     {
       "id": "01KSN9TA0FN951241NN582C838",
@@ -33,7 +33,7 @@
       "title": "Taskrabbit + GrowthBook",
       "date": "2026-07-15",
       "duration_minutes": 1,
-      "summary": "[Summary failed] [Christian Liebenow]: Sa. Hello? Hello? Hello.\n[Danielle Rowan]: Hi,\n[Christian Liebenow]: Danielle. Hey, Luke.\n[Danielle Rowan]: Good afternoon.\n[Christian Liebenow]: Where in the world are you?\n[Dan",
+      "summary": "The transcript captures only the initial greetings between Christian Liebenow and Danielle Rowan, with no discussion of any product, features, pain points, or participant roles. No next steps or action items are mentioned. The call appears to be at the very start with no substantive content from the Taskrabbit and GrowthBook context.",
       "host": "Christian Liebenow",
       "participants": 2
     },

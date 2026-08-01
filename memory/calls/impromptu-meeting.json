@@ -1,7 +1,7 @@
 {
   "company": "Impromptu meeting",
   "slug": "impromptu-meeting",
-  "last_etl_date": "2026-08-01T10:41:40.120957",
+  "last_etl_date": "2026-08-01T12:26:09.566057",
   "calls": [
     {
       "id": "69a9d2e6a3d5e6001d297384",
@@ -9,7 +9,7 @@
       "title": "Impromptu meeting",
       "date": "2026-03-05",
       "duration_minutes": 28,
-      "summary": "[Summary failed] [Chris Sanders]: Hey, christian.\n[Christian Liebenow]: Hey, Chris. How are you?\n[Chris Sanders]: Good.\n[Christian Liebenow]: Awesome, man.\n[Chris Sanders]: Your audio sounds a little maybe like. Yeah,",
+      "summary": "Anastasiia (customer) discussed evaluating GrowthBook for product analytics, noting that the current module feels too technical and that",
       "host": "Christian Liebenow",
       "participants": 3
     },
@@ -19,7 +19,7 @@
       "title": "Impromptu meeting",
       "date": "2026-05-04",
       "duration_minutes": 26,
-      "summary": "[Summary failed] [James Shannon]: I appreciate it and I can share this with you guys after Tao. And thank you so much for joining. How are both of you? We haven't spoken in a few months. Everything is okay on your sid",
+      "summary": "James Shannon (GrowthBook sales) discussed deployment architecture options (managed warehouse vs. warehouse native) and AI capabilities for experimentation assistance and cost monitoring with Lan Ha (automotive vertical) and Thao Nguyen (real estate vertical). Pain points included per-seat pricing limiting accessibility and the need for open feature support for easy vendor migration. Next steps: James will use the gathered info to strengthen the RFP proposal and will follow up with procurement manager Monica on migration details and pricing.",
       "host": "James Shannon",
       "participants": 3
     },
@@ -29,7 +29,7 @@
       "title": "Impromptu meeting",
       "date": "2026-06-15",
       "duration_minutes": 23,
-      "summary": "[Summary failed] [Daniel Wathne]: I figured it out. Sorry, I had a troubleshoot live here. So yeah, as I was saying, GrowthBook is really focused on enabling experimentation and feature flagging at the warehouse level",
+      "summary": "Daniel Wathne (GrowthBook sales) discussed the platform's warehouse-native feature flagging and A/B testing capabilities, addressing Vivek Sadhineni and Anudeep AAsolutions' (both technical leads) pain points around integrating with a custom SDK for targeted user rollouts on a CMS platform, data security, and potential white-label usage. Next steps include Daniel following up on SDK feasibility, setting up a Slack support channel, and arranging a separate partnership discussion.",
       "host": "Daniel Wathne",
       "participants": 3
     }

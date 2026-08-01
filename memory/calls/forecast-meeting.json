@@ -1,7 +1,7 @@
 {
   "company": "Forecast Meeting",
   "slug": "forecast-meeting",
-  "last_etl_date": "2026-08-01T10:41:40.140671",
+  "last_etl_date": "2026-08-01T12:26:09.593718",
   "calls": [
     {
       "id": "69c5666a33b6ef0011879443",
@@ -9,7 +9,7 @@
       "title": "Forecast Meeting",
       "date": "2026-03-26",
       "duration_minutes": 60,
-      "summary": "[Summary failed] [Cary Rakin]: Yeah, she's open to it. She. I gave her, like, a couple options just to be safe, and she said del Frisco. Sounds good, so.\n[Jake Heier]: Nice.\n[Ryan McGurk]: Cool. How's it going, guys?\n",
+      "summary": "The sales team discussed planning executive dinners in San Francisco (with potential expansion to New York or Berlin) to engage customers and prospects, and reviewed individual deal forecasts for GrowthBook’s experimentation platform, including competitive battles with Unleash (feature flagging) and wins over Optimizely and Statsig. Key participants included Ryan McGurk (",
       "host": "",
       "participants": 8
     },

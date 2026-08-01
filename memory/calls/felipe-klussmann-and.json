@@ -1,7 +1,7 @@
 {
   "company": "Felipe Klussmann and",
   "slug": "felipe-klussmann-and",
-  "last_etl_date": "2026-08-01T10:41:40.148426",
+  "last_etl_date": "2026-08-01T12:26:09.604484",
   "calls": [
     {
       "id": "6986357333a8ba001d78ff96",
@@ -9,7 +9,7 @@
       "title": "Felipe Klussmann and Jake Heier",
       "date": "2026-02-06",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [Sara Cruz]: Okay.\n[Jake Heier]: It. Chris, what's up? Not much. Thanks for hopping on last minute.\n[Felipe Klussmann]: Yeah, for sure.\n[Jake Heier]: They just noticed a bunch of people getting added ",
+      "summary": "Jake Heier (GrowthBook account lead) and Chris Sanders (solutions engineering) demoed their open-source experimentation platform, focusing on integrated feature flags and A/B testing to address the prospect's pain points: blind feature launches, lack of reliable ROI measurement, and reliance on pre/post analysis. Key participants from the prospect included Felipe Klussmann, Sara Cruz, Thiago Cunha, Ágata Marinho, and Saraiva Rita, who raised concerns about Salesforce Commerce Cloud (Rhino JS) integration and performance impact. Next steps: Jake will send a",
       "host": "Jake Heier",
       "participants": 7
     }

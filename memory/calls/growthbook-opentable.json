@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> OpenTable",
   "slug": "growthbook-opentable",
-  "last_etl_date": "2026-08-01T10:41:40.126409",
+  "last_etl_date": "2026-08-01T12:26:09.582245",
   "calls": [
     {
       "id": "69de6935c1f9eb0011fa27dc",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> OpenTable - Intro ",
       "date": "2026-04-14",
       "duration_minutes": 33,
-      "summary": "[Summary failed] [Daniel Wathne]: Reporting in progress. Hey, how's it going?\n[Federico Maffei]: Hello.\n[Daniel Wathne]: There you go. How you doing? Yeah, I'm good.\n[Federico Maffei]: Give me one second. I never use ",
+      "summary": "GrowthBook’s Daniel Wathne (with solutions engineer Logan) spoke with Federico Maffei, engineering manager at OpenTable, about replacing their outdated, internally-built A/B testing tool. Pain points included a cluttered UI, a two-week test window limit, disconnected feature flags, and minimal maintenance from a slim data team. Next steps: Federico will share requirement docs, and a larger working-group demo is scheduled for Thursday to evaluate GrowthBook’s warehouse-native integration with Snowflake and self-service metrics.",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -19,7 +19,7 @@
       "title": "GrowthBook <> OpenTable - Intro ",
       "date": "2026-04-16",
       "duration_minutes": 66,
-      "summary": "[Summary failed] [Daniel Wathne]: Reporting in progress. Hey logan.\n[Logan Bates]: Hello.\n[Lon-London]: Hey. Hello Erica.\n[Daniel Wathne]: How you doing?\n[Lon-London]: I'm good. How's it going? Can you hear me?\n[Danie",
+      "summary": "",
       "host": "Daniel Wathne",
       "participants": 7
     },
@@ -29,7 +29,7 @@
       "title": "Growthbook <> OpenTable - Intro/Recap ",
       "date": "2026-04-23",
       "duration_minutes": 51,
-      "summary": "[Summary failed] [Webflow Demo]: Hey, Dan.\n[Daniel Wathne]: How you doing?\n[Matthew Du Pont]: So well.\n[Lon-Graffiti]: How about you?\n[Daniel Wathne]: Yeah, doing great. Thanks for asking. Excited for the call today?\n",
+      "summary": "GrowthBook (Daniel, Logan, CEO Graham) demoed their experimentation platform to OpenTable (Justin, Chris, Federico) to replace their decade-old internal tool. Key pain points included poor self-service, frequent experiment misconfigurations, data delays, and lack of a unified view. Next steps: OpenTable will design a POC, coordinate with their data team, complete a security review, and schedule follow-up to scope timelines.",
       "host": "Daniel Wathne",
       "participants": 7
     },
@@ -39,7 +39,7 @@
       "title": "Growthbook <> OpenTable - Pricing Sync ",
       "date": "2026-05-14",
       "duration_minutes": 48,
-      "summary": "[Summary failed] [Daniel Wathne]: Good morning.\n[Federico Maffei]: Hello.\n[Daniel Wathne]: Yeah, I'm all right. How's it going? I can't hear you for some reason. Still not coming through. I don't know.\n[Federico Maffe",
+      "summary": "We need to summarize the call in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and their roles, next steps/action items.\n\nFrom transcript: Federico Maffei (OpenTable, engineering manager) and Daniel Wathne (GrowthBook sales). Discussed GrowthBook vs StatSig/OpenTable's internal tool. Pain points: internal tool is low priority, costly to maintain; StatSig's recent acquisition by Amplitude creates uncertainty. Federico wants pricing proposal to present to execs. Next steps: Daniel to prepare pricing deck by Monday night, review with Federico and team (Forest, Sarah) on Tuesday; Federico has exec presentation next Thursday, PoC planned for Q3 2026; Federico going on paternity leave June 3rd, wants to get PoC started before then.\n\nSummary: Federico Maffei (OpenTable engineering manager) and Daniel Wathne (GrowthBook sales) discussed replacing OpenTable's internal experimentation tool with GrowthBook, focusing on pricing and the competitive threat from StatSig (now acquired by Amplitude). Key pain points included the internal tool's low priority and high maintenance costs, as well as uncertainty around StatSig's future. Next steps: Daniel will provide a pricing proposal by Monday night; a follow-up call with key stakeholders (Forest, Sarah) is set for Tuesday to review before Federico presents to execs on Thursday, aiming to kick off a PoC in Q3",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -49,7 +49,7 @@
       "title": "Growthbook <> OpenTable - Pricing Review ",
       "date": "2026-05-19",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey, Federico, how you doing?\n[Federico Maffei]: Hey, how's it going?\n[Daniel Wathne]: Yeah, it's going great back in the mainland.\n[Federico Maffei]: Can you.\n[Daniel Wathne]: Is the",
+      "summary": "GrowthBook (Daniel Wathne and CRO Ryan McGurk) presented a pricing review to OpenTable (Forrest Rice, Federico Maffei, Amazasp Shaumyan, Rahul Bhatia), comparing their platform to Statsig—highlighting concerns about Statsig’s Amplitude acquisition and the higher cost of usage-based pricing. Key pain points included the high internal cost of maintaining a custom system (~$400K/year) and the need to scale experimentation across the broader Diner team (50–200+ users). Action items: GrowthBook will deliver a pricing matrix",
       "host": "Daniel Wathne",
       "participants": 7
     },
@@ -59,7 +59,7 @@
       "title": "Growthbook <> OpenTable - Check in ",
       "date": "2026-05-26",
       "duration_minutes": 28,
-      "summary": "[Summary failed] [Daniel Wathne]: Reporting.\n[Federico Maffei]: It.\n[Daniel Wathne]: Hey, Dan.\n[Federico Maffei]: Sorry I'm late.\n[Daniel Wathne]: Yeah, no worries, man. How you doing?\n[Federico Maffei]: Yeah, I'm rig",
+      "summary": "Daniel Wathne (GrowthBook) and Federico Maffei (OpenTable) discussed GrowthBook’s A/B testing platform, addressing OpenTable’s pain points around transitioning from their current tool, data team resource constraints, and concerns about GrowthBook’s focus on Anthropic. Federico is handing off to Forest (senior data analytics) and Chris (his manager) as he goes on paternity leave. Next steps: schedule a meeting for next Tuesday with Forest, Chris, and Rahul to align on a two-month POC starting in June, with GrowthBook providing a scoped list of minimal time requirements to ease implementation.",
       "host": "Daniel Wathne",
       "participants": 2
     },

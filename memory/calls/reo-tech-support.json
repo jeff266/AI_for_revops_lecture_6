@@ -1,7 +1,7 @@
 {
   "company": "Reo Tech Support",
   "slug": "reo-tech-support",
-  "last_etl_date": "2026-08-01T10:41:40.146015",
+  "last_etl_date": "2026-08-01T12:26:09.601285",
   "calls": [
     {
       "id": "69989b9d1bc23a001d8774a3",
@@ -9,7 +9,7 @@
       "title": "Reo Tech Support",
       "date": "2026-02-20",
       "duration_minutes": 34,
-      "summary": "[Summary failed] [Sanjana Devireddy]: One thing is. So this is for the product usage API, correct.\n[Ashley Stirrup]: You know, we should have Graham on for this. Let me just ping him. He's supposed to join. Thought he",
+      "summary": "During the call, Graham (developer from Growth Book) detailed pain points with Reo’s product usage API, including confusing documentation, unclear product IDs, and an invalid API key when trying to integrate server-side Node.js tracking for sign-in events. Sanjana (Reo customer success), Ashley (Reo sales), and Amey (Reo technical support) clarified that the correct server-side approach uses the product usage API rather than the client-side NPM package, and explained how email/IP enrichment maps users to accounts. Next steps: Amey will provide Graham with detailed implementation steps and fix the documentation, and Graham will proceed with the product usage API,",
       "host": "Ashley Stirrup",
       "participants": 4
     },

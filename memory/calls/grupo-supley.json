@@ -1,7 +1,7 @@
 {
   "company": "Grupo Supley +",
   "slug": "grupo-supley",
-  "last_etl_date": "2026-08-01T10:41:40.145777",
+  "last_etl_date": "2026-08-01T12:26:09.600967",
   "calls": [
     {
       "id": "699f5549eb32120011f3c90f",
@@ -9,7 +9,7 @@
       "title": "Grupo Supley + GrowthBook",
       "date": "2026-02-25",
       "duration_minutes": 63,
-      "summary": "[Summary failed] [Chris Sanders]: Hey, christian. Hey, matthews. Am I saying your name? Matthews?\n[Matheus Antunes]: Yes, yes. Materials. We call. You call here.\n[Chris Sanders]: Nice. Christian is.\n[Matheus Antunes]:",
+      "summary": "In the call, Chris Sanders (GrowthBook solution architect) discussed GrowthBook's feature flag and experimentation platform with Guilherme Magalhães, Matheus Antunes, and Claudio Gonçalves of Grupo",
       "host": "Christian Liebenow",
       "participants": 4
     },

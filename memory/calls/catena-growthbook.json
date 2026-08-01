@@ -1,7 +1,7 @@
 {
   "company": "Catena + GrowthBook",
   "slug": "catena-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.144988",
+  "last_etl_date": "2026-08-01T12:26:09.600037",
   "calls": [
     {
       "id": "69a73935caf947001d86a8a9",
@@ -9,7 +9,7 @@
       "title": "Catena + GrowthBook",
       "date": "2026-03-03",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [Colton Rybus]: Sam. Guys, how's it going?\n[Chris Sanders]: Hey, Colton.\n[Christian Liebenow]: Hey, Colton. How are you?\n[Colton Rybus]: Pretty good.\n[Christian Liebenow]: Awesome. How was. How was yo",
+      "summary": "Colton Rybus (customer from an affiliate/gambling company) discussed GrowthBook’s visual editor, edge experimentation, and LLM-powered features with Christian Liebenow and Chris Sanders (GrowthBook sales and technical leads). Key pain points included reliance on a small dev team, concerns about edge caching permutations for their dynamic toplist tool, and the need to increase testing velocity without waiting on developers. Next steps: Christian will set up a Slack channel, and once Colton’s dev team has bandwidth (likely",
       "host": "Christian Liebenow",
       "participants": 3
     },

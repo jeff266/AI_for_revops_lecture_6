@@ -1,7 +1,7 @@
 {
   "company": "Polymarket<>GrowthBook",
   "slug": "polymarket-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.140798",
+  "last_etl_date": "2026-08-01T12:26:09.594060",
   "calls": [
     {
       "id": "69a8657cd0698d000df78541",
@@ -9,7 +9,7 @@
       "title": "Polymarket<>GrowthBook - Experimentation Discussion",
       "date": "2026-03-04",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Luke Sonnet]: Recording.\n[Nick Riabov]: It's.\n[Luke Sonnet]: It.\n[Cris Dizon]: Hey,\n[Jake Heier]: glad you can join.\n[Cris Dizon]: Yeah, no problem.\n[Jake Heier]: Sorry it was a little last minute,\n[",
+      "summary": "Polymarket's principal economist Nick Riabov and head of data Kai discussed using GrowthBook for marketplace experimentation at the event/market level (not user-level) due to spillover effects, requiring custom randomization handled externally and GrowthBook as an analysis layer. Pain points included handling high-frequency liquidity data via coarsening and integrating feature flagging for policy rollout. Next step: schedule a follow-up call with GrowthBook and Polymarket engineering to discuss integration with their API.",
       "host": "Jake Heier",
       "participants": 4
     },
@@ -19,7 +19,7 @@
       "title": "Polymarket<>GrowthBook - Engineering Discussion",
       "date": "2026-03-06",
       "duration_minutes": 24,
-      "summary": "[Summary failed] [Jake Heier]: So Luke was able to give you kind of a rundown of what they're trying to do?\n[Bryce Fitzsimons]: Yeah, I mean it's. It's fairly complex as I understand it. It's a little bit outside of m",
+      "summary": "Polymarket (Nick Riabov, business/engineering) discussed their need for an experimentation platform, particularly for switchback experiments and backend feature flag integration with their Clickhouse warehouse. GrowthBook (Jake Heier, sales; Bryce Fitzsimons, engineering; Luke Sonnet, science) explained switchback is on the roadmap, demonstrated metric and CUPED capabilities, and outlined push/pull SDK models for secure flag delivery. Next steps: GrowthBook will send relevant documentation; Polymarket will finalize vendor evaluation in 1–1.5 weeks and follow up.",
       "host": "Jake Heier",
       "participants": 4
     },
@@ -29,7 +29,7 @@
       "title": "Polymarket<>GrowthBook - Onboarding and Implementation Discussion",
       "date": "2026-03-25",
       "duration_minutes": 3,
-      "summary": "[Summary failed] [Jake Heier]: Hey, how's it going? Doing well.\n[Max “Primo” Mershon]: Hey, Chris. Hey, guys.\n[Jake Heier]: We're just waiting on\n[Jake Heier]: Nick.\n[Jake Heier]: Doesn't look like Kai's gonna join.\n[",
+      "summary": "The call primarily consisted of off-topic banter about recording tools (Apollo vs. Firefly) and data surveillance concerns, with no substantive discussion of the product, features, or pain points. Key participants were Jake Heier (likely from Polymarket), Max “Primo” Mershon, Chris Sanders, and Nick (who joined late). No next steps or action items were identified.",
       "host": "Jake Heier",
       "participants": 3
     }

@@ -1,7 +1,7 @@
 {
   "company": "Canceled",
   "slug": "canceled",
-  "last_etl_date": "2026-08-01T10:41:40.142213",
+  "last_etl_date": "2026-08-01T12:26:09.595861",
   "calls": [
     {
       "id": "69bda301a1cf3b0019faf66a",
@@ -9,7 +9,7 @@
       "title": "Canceled: GrowthBook Demo for englishgurukul",
       "date": "2026-03-20",
       "duration_minutes": 7,
-      "summary": "[Summary failed] [Daniel Wathne]: I'm good. I, I didn't expect you to be joining. It's. It's got to be quite late in India right now.\n[Rahul Martin]: Yeah. Yeah. Okay.\n[Daniel Wathne]: Okay. Well, it's, it's nice to m",
+      "summary": "Daniel Wathne (GrowthBook) discussed the missing Unity SDK, explaining they can use the C# SDK instead, while Rahul Martin (from englishgurukul) shared their pain point of inconsistent Firebase data and desire for GrowthBook's better analytics dashboard. They agreed to reschedule for Tuesday with their respective engineers (Samir and Poornima) to demo the platform, show BigQuery integration, and walk through the documentation.",
       "host": "Daniel Wathne",
       "participants": 2
     }

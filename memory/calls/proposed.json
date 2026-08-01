@@ -1,7 +1,7 @@
 {
   "company": "Proposed",
   "slug": "proposed",
-  "last_etl_date": "2026-08-01T10:41:40.148706",
+  "last_etl_date": "2026-08-01T12:26:09.604796",
   "calls": [
     {
       "id": "6984af724770980015c9ea10",
@@ -9,7 +9,7 @@
       "title": "LeoVegas + GrowthBook (Proposed)",
       "date": "2026-02-05",
       "duration_minutes": 24,
-      "summary": "[Summary failed] [Christian Liebenow]: Hello.\n[Mark Pace]: I'm Mark. Good, I'm good. How are you today?\n[Christian Liebenow]: Doing well, doing well, doing well.\n[Mark Pace]: Awesome. How's the, how's the weather wher",
+      "summary": "Christian Liebenow (LeoVegas) and Mark Pace (GrowthBook) discussed LeoVegas’s ongoing migration from LaunchDarkly to GrowthBook, with pain points including a forced one-year renewal with LaunchDarkly and the need for manual migration. They covered GrowthBook’s pricing structure (flat fee plus per-user cost) and the potential need to scale from ~90 to 200 users. Next steps: Christian will finalize user counts after access requests, Mark will prepare a tiered rate table for additional users, and they will arrange a support call to upskill LeoVegas’s",
       "host": "Christian Liebenow",
       "participants": 2
     }

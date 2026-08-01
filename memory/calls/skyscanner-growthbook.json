@@ -1,7 +1,7 @@
 {
   "company": "Skyscanner + GrowthBook",
   "slug": "skyscanner-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.112390",
+  "last_etl_date": "2026-08-01T12:26:09.551753",
   "calls": [
     {
       "id": "6995e94e2982f50021ff2a92",
@@ -9,7 +9,7 @@
       "title": "Skyscanner + GrowthBook",
       "date": "2026-02-18",
       "duration_minutes": 61,
-      "summary": "[Summary failed] [Christian Liebenow]: Hey, jeremy. Good morning.\n[BCN-L5 Suez]: Hey.\n[Gareth Moger]: Hello.\n[Growthbook Dorn]: How are you?\n[Shridar Suriya Moorthy]: Not too bad.\n[Growthbook Dorn]: How about you?\n[Ch",
+      "summary": "During the call, the Skyscanner team (led by Sridhar, engineering manager for experimentation, alongside data science managers John and Erkam) discussed their need for a hybrid experimentation platform that integrates with their Databricks warehouse while allowing them to keep their own Bayesian statistics engine and business logic for revenue trade-offs. GrowthBook (represented by account manager Christian, co-founder/CTO Jeremy, and solutions engineer Logan) demonstrated their feature",
       "host": "Christian Liebenow",
       "participants": 7
     },
@@ -19,7 +19,7 @@
       "title": "Skyscanner + GrowthBook",
       "date": "2026-02-24",
       "duration_minutes": 27,
-      "summary": "[Summary failed] [Christian Liebenow]: Sam.\n[David Gregory]: Sorry I'm late.\n[Christian Liebenow]: Hey, David. Not at all. How's your day? Wrapping up?\n[David Gregory]: Good. Busy week? Always busy around here. Yeah. ",
+      "summary": "Christian Liebenow (GrowthBook) and David Gregory (Skyscanner) discussed Skyscanner's need to improve experiment velocity and scalability by moving from in-house tools (Dr. Jekyll/Wise) to a hybrid model with GrowthBook, focusing on CX experimentation and open-source vs. enterprise features. David highlighted pain points around capacity, consistency, and a long-term",
       "host": "Christian Liebenow",
       "participants": 2
     },
@@ -29,7 +29,7 @@
       "title": "Skyscanner + GrowthBook",
       "date": "2026-02-26",
       "duration_minutes": 58,
-      "summary": "[Summary failed] [Christian Liebenow]: Zoltan.\n[David Gregory]: Hi, Gareth.\n[Gareth Moger]: Hey, Chris. How you doing?\n[Christian Liebenow]: Doing quite well.\n[David Gregory]: How are you?\n[Gareth Moger]: Yeah, not to",
+      "summary": "GrowthBook (Christian Liebenow and Jeremy) presented their open-core experimentation platform to Skyscanner (led by Gareth Moger and David Gregory), focusing on hybrid deployment, enterprise features (e.g., visual editor, query optimization), and integration with Skyscanner's existing Dr. Jekyll system and custom revenue modeling. Key pain points included scaling experimentation for non-technical teams, maintaining hybrid architecture,",
       "host": "Christian Liebenow",
       "participants": 9
     },
@@ -51,7 +51,7 @@
       "title": "Skyscanner + GrowthBook",
       "date": "2026-03-17",
       "duration_minutes": 34,
-      "summary": "[Summary failed] [Christian Liebenow]: How you doing?\n[Christian Liebenow]: Yeah, doing well. It's been, it's been a little while. How have you been?\n[Christian Liebenow]: Yeah, we've, yeah, there's a lot going on int",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on: what was discussed (product, features, pain points), key participants and roles, next steps/action items. \n\nKey participants: Christian Liebenow (GrowthBook sales), Gareth Moger (Skyscanner, main buyer), David (BCN-L5 Suez? Possibly a colleague), Shridar Suriya Moorthy (Skyscanner team). \n\nDiscussion: GrowthBook pricing model (platform fee + per user cost, $100k platform fee, $1250 full user, $500 read-only). Pain points: Skyscanner wanted clarity on platform fee tiers and enterprise support; they are in a compliance-driven holding pattern, delaying POC timelines. Also discussed self-hosting vs cloud, and need for sandbox environment. \n\nNext steps: Gareth will email user numbers and experiment counts; Christian will provide a detailed Year 1 proposal including platform fee specifics and SLAs; Skyscanner will finalize evaluation criteria for POCs later.\n\nSummary: Christian Liebenow from GrowthBook discussed their pricing model—a $100k annual platform fee plus per-user costs ($1,250 full, $500 read-only)—with Gareth Moger and David from Skyscanner, who sought clearer tiering and SLAs. Skyscanner is in a compliance-driven pause but plans to shortlist vendors for POCs. Next steps: Gareth will share user/exper",
       "host": "Christian Liebenow",
       "participants": 4
     },
@@ -145,7 +145,7 @@
       "title": "Skyscanner + GrowthBook",
       "date": "2026-07-29",
       "duration_minutes": 24,
-      "summary": "[Summary failed] [logan]: David.\n[David Gregory]: Hey, Christian.\n[Gareth Moger]: How are you?\n[David Gregory]: Doing?\n[David Gregory]: Well.\n[David Gregory]: And how about you?\n[David Gregory]: Good, good. Winding do",
+      "summary": "GrowthBook’s account manager David Gregory and solutions engineer Logan presented their experimentation platform to Skyscanner’s Gareth Moger and incoming product manager Megan Crothers, focusing on replacing Skyscanner’s existing Dr. Jekyll tool for content experimentation and feature flagging on web, with planned future support for app and ad platform use cases. Key next steps include a phased POC evaluation (dev historical data comparison in August, followed by production AA/A/B tests in Q4), a",
       "host": "Christian Liebenow",
       "participants": 4
     }

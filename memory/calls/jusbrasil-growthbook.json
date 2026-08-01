@@ -1,7 +1,7 @@
 {
   "company": "Jusbrasil + GrowthBook",
   "slug": "jusbrasil-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.126942",
+  "last_etl_date": "2026-08-01T12:26:09.583219",
   "calls": [
     {
       "id": "6a0e1942a7055700143246c4",
@@ -9,7 +9,7 @@
       "title": "Jusbrasil + GrowthBook",
       "date": "2026-05-20",
       "duration_minutes": 27,
-      "summary": "[Summary failed] [Christian Liebenow]: Hi, Cristiano.\n[Cristiano Santos]: Christian. How are you?\n[Christian Liebenow]: Doing well, how are you?\n[Cristiano Santos]: I'm good as well. So just wait for Vitor. Vitor is o",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on discussed topics (product, features, pain points), key participants and roles, and next steps/action items.\n\nKey participants: Christian Liebenow (GrowthBook sales), Logan Bates (GrowthBook technical colleague), Cristiano Santos (Jusbrasil, likely decision-maker), Vitor Azevedo (analytics engineer), Eduardo (data and analytics manager, mentioned but not speaking).\n\nDiscussed: Jusbrasil is using self-hosted GrowthBook but needs enterprise features for scaling to 200 users. Must-have features: experiment table query optimization (BigQuery performance/cost), experiment fields and launch checklist for governance, webhooks/JavaScript hooks for naming standards, single sign-on. Nice-to-have: incremental refresh, holdouts, advanced metrics, decision frameworks. Also discussed pricing model (platform fee + per-user pricing, discounts for volume), self-hosting vs cloud, and MCP server for agentic workflows. Pain points: scaling from 30 to 200 users, managing legacy internal platform, BigQuery costs, governance.\n\nNext steps: Christian to set up Slack channel for communication, Cristiano will present pricing to finance/executives, Vitor to estimate BigQuery cost savings to justify ROI. Potential joint marketing case study for discount.\n\nSummary: Jusbrasil (Cristiano Santos, Vitor Azevedo, Eduardo) discussed migrating from self-hosted GrowthBook to enterprise",
       "host": "Christian Liebenow",
       "participants": 4
     },

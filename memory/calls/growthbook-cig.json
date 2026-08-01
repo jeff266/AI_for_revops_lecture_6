@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> CIG",
   "slug": "growthbook-cig",
-  "last_etl_date": "2026-08-01T10:41:40.132142",
+  "last_etl_date": "2026-08-01T12:26:09.588838",
   "calls": [
     {
       "id": "69d7cd5569f49c0021d47098",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> CIG - Product Meeting ",
       "date": "2026-04-09",
       "duration_minutes": 61,
-      "summary": "[Summary failed] [Dorine Moland-Segura]: Recording in progress.\n[Daniel Wathne]: Hey, Sam. How you doing? Hello.\n[Logan Bates]: Doing great.\n[Samuel Seguin]: How are you guys?\n[Daniel Wathne]: I'm great. Awesome. Are ",
+      "summary": "The sales call discussed GrowthBook's open-source experimentation platform, including feature flagging, A/B testing, visual editing, and integration with GA4 and data warehouses. Key pain points included the current internal system being developer-heavy and not user-friendly, with a need for greater autonomy in running experiments. Next steps involve a technical follow-up with Martin, a pricing discussion with Dorine, and a potential trial setup.",
       "host": "Daniel Wathne",
       "participants": 6
     },
@@ -19,7 +19,7 @@
       "title": "Growthbook <> CIG - Technical Demo ",
       "date": "2026-04-20",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey, Logan. Hello. We can call ourselves a family company now.\n[Martin Le Bas]: We'll see.\n[Daniel Wathne]: Very exciting.\n[Martin Le Bas]: Hey.\n[Daniel Wathne]: Hey.\n[Martin Le Bas]:",
+      "summary": "We need to summarize the transcript in 2-3 sentences, focusing on discussed product/features/pain points, key participants and roles, and next steps. \n\nProduct: GrowthBook (feature flagging and experimentation platform). Pain points: Current system is heavy on technical resources, low self-service for PM/marketing, integrating badging system across microservices/monolith, need centralized way to handle user attributes (badges) for feature flags. Participants: Daniel Wathne (GrowthBook sales/account exec), Logan Bates (GrowthBook technical/solutions), Martin Le Bas (CIG technical lead/architect), Jocelyn Menard (CIG), Emilien Pierru (CIG). Next steps: Martin to discuss with CTO, planned trial starting May 4 (self-hosted or enterprise), set up Teams channel, share documentation, potential use case during upcoming sales event. \n\nDraft: Daniel Wathne and Logan Bates (GrowthBook) demonstrated the platform to Martin Le Bas, Jocelyn Menard, and Emilien Pierru (CIG), addressing pain points around integrating a centralized feature flagging and experimentation system with CIG's existing badging system across microservices. Key technical concerns included passing user attributes (badge data) to GrowthBook SDKs and self-hosting options for GDPR compliance. Next steps involve a trial starting May 4, with a Teams channel for follow-up, and plans to test GrowthBook on an upcoming sales event",
       "host": "Daniel Wathne",
       "participants": 5
     }

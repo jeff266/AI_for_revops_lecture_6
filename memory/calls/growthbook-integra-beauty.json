@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Integra Beauty",
   "slug": "growthbook-integra-beauty",
-  "last_etl_date": "2026-08-01T10:41:40.135102",
+  "last_etl_date": "2026-08-01T12:26:09.590145",
   "calls": [
     {
       "id": "69bc1de42d8387001d547bb7",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> Integra Beauty - Intro",
       "date": "2026-03-19",
       "duration_minutes": 46,
-      "summary": "[Summary failed] [Daniel Wathne]: Logan. Hey, good morning, Luke. What's going on?\n[Luke Sonnet]: Hello.\n[lera.rastsiazhenka@integrabeauty.com Rastsiazhenka]: Hello.\n[Daniel Wathne]: How you doing? Vera, how you doing",
+      "summary": "GrowthBook (Daniel Wathne, Luke Sonnet, Logan Bates) discussed their warehouse-native experimentation platform with Integra Beauty (David, Lera, Wojciech), who are frustrated with Statsig’",
       "host": "Daniel Wathne",
       "participants": 6
     },
@@ -19,7 +19,7 @@
       "title": "Growthbook <> Integra Beauty - Demo ",
       "date": "2026-03-27",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [lera.rastsiazhenka@integrabeauty.com Rastsiazhenka]: Recording.\n[Daniel Wathne]: Hey.\n[Integra Beauty]: Hello.\n[Daniel Wathne]: How you doing?\n[Wojciech.Malinowski@Integrabeauty.Com Malinowski]: Pret",
+      "summary": "GrowthBook (Daniel Wathne and Logan Bates) demoed their experimentation platform to Integra Beauty (Wojciech Malinowski, Lera Rastsiazhenka, and Dave). The discussion focused on integrating GrowthBook with Integra's existing Snowflake data warehouse to replace Statsig, addressing pain points around",
       "host": "Daniel Wathne",
       "participants": 5
     },
@@ -29,7 +29,7 @@
       "title": "Growthbook <> Integra Beauty - Pricing Sync",
       "date": "2026-04-09",
       "duration_minutes": 28,
-      "summary": "[Summary failed] [Daniel Wathne]: Recording.\n[Integra Beauty]: Hey, dad.\n[Daniel Wathne]: What's going on?\n[Integra Beauty]: Not much, Dan. How are you?\n[Daniel Wathne]: Oh, pretending I'm in paradise today. Yeah, I n",
+      "summary": "Daniel Wathne (GrowthBook) discussed pricing options—Pro ($40/user/month) vs. Enterprise (~$20k/year)—with the Integra Beauty representative, who shared positive results from a PDP test with trust badges but noted challenges with a subscription test and metrics setup. The customer, leaning toward Pro due to budget constraints with their CTO, agreed to move forward on the self-service Pro plan after the trial ends next Friday. Next steps include switching from Statsig to GrowthBook for traffic exposure, with Daniel providing a migration guide, and the customer will add a credit card and manage user billing.",
       "host": "Daniel Wathne",
       "participants": 2
     }

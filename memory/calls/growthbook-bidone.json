@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> BidOne",
   "slug": "growthbook-bidone",
-  "last_etl_date": "2026-08-01T10:41:40.117004",
+  "last_etl_date": "2026-08-01T12:26:09.560131",
   "calls": [
     {
       "id": "6a555928df8d74000c47a8a0",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> BidOne - Demo/Pricing Sync",
       "date": "2026-07-13",
       "duration_minutes": 0,
-      "summary": "[Summary failed] [Daniel Wathne]: Hi. Just a moment. Can you hear us?",
+      "summary": "We need to summarize the transcript in 2-3 sentences based on the given call title and the single line of transcript. However, the transcript provided is only the first line: \"[Daniel Wathne]: Hi. Just a moment. Can you hear us?\" That's insufficient to extract product, features, pain points, key participants, roles, next steps. The call title mentions Growthbook and BidOne, demo/pricing sync. Likely the summary should be based solely on the title and the one line? That seems impossible. Possibly the user intended to provide a full transcript but only pasted the first line. As an AI, I must work with what's given. The instruction says \"summarize this sales call transcript\" but the transcript is incomplete. I should note the limitation. However, the user said \"Provide only the summary, no preamble.\" So I need to output a summary based on available info. The only info: Call title \"Growthbook <> BidOne - Demo/Pricing Sync\" and participant Daniel Wathne greeting. No discussion of product, features, pain points, other participants, next steps. I could infer that the call involves a demo and pricing discussion between Growthbook and BidOne, with Daniel Wathne as a participant. But roles unknown. I might state that the transcript only shows the beginning and no substantive discussion was captured. But that violates \"summarize\" expectation. Better to produce a concise summary based on the title: The",
       "host": "Daniel Wathne",
       "participants": 1
     },

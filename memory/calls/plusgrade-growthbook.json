@@ -1,7 +1,7 @@
 {
   "company": "Plusgrade<>GrowthBook",
   "slug": "plusgrade-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.142909",
+  "last_etl_date": "2026-08-01T12:26:09.596820",
   "calls": [
     {
       "id": "69b478431b9b68001d5721c6",
@@ -9,7 +9,7 @@
       "title": "Plusgrade<>GrowthBook - Sagemaker Discussion",
       "date": "2026-03-13",
       "duration_minutes": 48,
-      "summary": "[Summary failed] [Bryce Fitzsimons]: Oh, okay.\n[Kerem Ataman]: That was the recorder. That's new. I haven't seen that before.\n[Jake Heier]: Oh, yeah, it follows me around on my. It shows up on these calls. I'm happy t",
+      "summary": "GrowthBook (Jake Heier, account team; Bryce Fitzsimons, engineer) demonstrated how their platform supports Plusgrade’",
       "host": "Jake Heier",
       "participants": 7
     },
@@ -19,7 +19,7 @@
       "title": "Plusgrade<>GrowthBook - Data Science Discussion",
       "date": "2026-03-19",
       "duration_minutes": 45,
-      "summary": "[Summary failed] [Lori.Livadariu@Plusgrade.Com Livadariu]: Take.\n[Jake Heier]: Hey, jake.\n[Luke Sonnet]: Hey, jake.\n[Lori.Livadariu@Plusgrade.Com Livadariu]: Hey luke.\n[Jake Heier]: How you doing?\n[Luke Sonnet]: Good,",
+      "summary": "GrowthBook (Luke Sonnet, Head of Experimentation) and Jake Heier presented their bandit solution to Plusgrade’s data science team (Lori Livadariu, Nikhil Vemgal, Kerem Ataman). They discussed GrowthBook’s non-contextual batched bandit, integration via SDK with warehouse-native metric tracking, and addressed pain points like delayed rewards and logging complexities.",
       "host": "Jake Heier",
       "participants": 6
     },

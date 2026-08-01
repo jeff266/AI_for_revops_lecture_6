@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook <> Coreflow",
   "slug": "growthbook-coreflow",
-  "last_etl_date": "2026-08-01T10:41:40.124994",
+  "last_etl_date": "2026-08-01T12:26:09.576891",
   "calls": [
     {
       "id": "6a1a14919927cb0014765369",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> Coreflow - Intro ",
       "date": "2026-05-29",
       "duration_minutes": 4,
-      "summary": "[Summary failed] [Justin Phu]: Hey,\n[Daniel Wathne]: Justin. Hey,\n[Justin Phu]: Dan. How you doing? Good to meet you.\n[Daniel Wathne]: Yeah, good to meet you too. Where are you calling from?\n[Daniel Wathne]: I'm calli",
+      "summary": "The call between Justin Phu (GrowthBook) and Daniel Wathne (Coreflow) was cut short due to poor audio and connectivity issues, preventing any discussion of product, features, or pain points. No next steps or action items were established.",
       "host": "Daniel Wathne",
       "participants": 2
     },

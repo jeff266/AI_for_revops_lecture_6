@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Kiosk",
   "slug": "growthbook-kiosk",
-  "last_etl_date": "2026-08-01T10:41:40.125837",
+  "last_etl_date": "2026-08-01T12:26:09.581535",
   "calls": [
     {
       "id": "6a109b80da4632001c39c73c",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> Kiosk - Technical Demo Part 2 ",
       "date": "2026-05-22",
       "duration_minutes": 67,
-      "summary": "[Summary failed] [Daisy Stinson]: Hi.\n[Daniel Wathne]: Hi, Daisy.\n[Roger Webb]: How you doing?\n[Daniel Wathne]: Good.\n[Daisy Stinson]: How are you?\n[Daniel Wathne]: I'm doing great.\n[Roger Webb]: Happy Friday.\n[Daisy ",
+      "summary": "Daniel Wathne and Graham (GrowthBook) demoed their experimentation platform to Kiosk team members Roger Webb, Mark Nelson, and Daisy Stinson, addressing pain points like Optimizely's cost, manual segmentation, and the need for visual A/B testing without dev cycles. Features covered include visual editor, multi-armed bandits, BigQuery/GA4 integration, multi-org support for self-hosted, and AI-powered analysis. Next steps: a pricing discussion with Mark on Tuesday, a potential proof of concept by early July, and further",
       "host": "Daniel Wathne",
       "participants": 5
     },
@@ -19,7 +19,7 @@
       "title": "Growthbook <> Kiosk - Pricing Chat",
       "date": "2026-05-26",
       "duration_minutes": 23,
-      "summary": "[Summary failed] [Daniel Wathne]: Protecting. Hey, Mark.\n[Mark Nelson]: Very good. How you doing?\n[Daniel Wathne]: Yeah, doing, Doing well. How was your weekend?\n[Mark Nelson]: I was pretty good. Had a nice long weeke",
+      "summary": "In this call, Daniel Wathne (GrowthBook sales) discussed pricing and deployment options with Mark Nelson (Kiosk, a marketing agency), addressing pain points around high costs and underutilization that led Kiosk’s client to drop Optimizely. Key features highlighted include multi-organization support, a revamped visual editor, and contextual bandits. Next steps: schedule a call for the following week to demo the visual editor and contextual bandits, scope a trial, and Daniel will provide pricing proposals for both self-hosted and managed solutions.",
       "host": "Daniel Wathne",
       "participants": 2
     },

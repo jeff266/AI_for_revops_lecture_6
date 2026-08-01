@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Cape",
   "slug": "growthbook-cape",
-  "last_etl_date": "2026-08-01T10:41:40.125171",
+  "last_etl_date": "2026-08-01T12:26:09.577198",
   "calls": [
     {
       "id": "69e902afef59cb0011651790",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> Cape - Intro ",
       "date": "2026-04-22",
       "duration_minutes": 17,
-      "summary": "[Summary failed] [Logan Bates]: Hey, how's it going?\n[Daniel Wathne]: Hey Kenzie, how you doing?\n[Kense Ning]: Doing well, doing well.\n[Daniel Wathne]: Thanks for taking the time to chat with us.\n[Kense Ning]: Of cour",
+      "summary": "Kense Ning (Cape engineering) discussed their need for a self-hosted feature flagging",
       "host": "Daniel Wathne",
       "participants": 3
     },
@@ -31,7 +31,7 @@
       "title": "Growthbook <> Cape - POC Scoping ",
       "date": "2026-05-19",
       "duration_minutes": 23,
-      "summary": "[Summary failed] [Daniel Wathne]: I'm muted. How you been?\n[Kelcey Damage]: Good, good. Still waiting for Kenzie.\n[Daniel Wathne]: Yeah, I'll give folks a couple minutes to join in here. I like that locker setup in th",
+      "summary": "In this POC scoping call, Daniel Wathne (Growthbook sales) and Logan Bates (Growthbook support) discussed feature flagging and experimentation product requirements with Kense Ning (Cape product/engineering lead) and Kelcey Damage (Cape infrastructure/security). Key pain points included secure mobile feature releases, server-side SDK evaluation, data warehouse (Redshift) integration, SSO, and anonymous IDs. Next steps: Daniel will share documentation and set up a Growth",
       "host": "Daniel Wathne",
       "participants": 4
     },
@@ -41,7 +41,7 @@
       "title": "GrowthBook <> Cape - Pricing Discussion",
       "date": "2026-05-21",
       "duration_minutes": 21,
-      "summary": "[Summary failed] [Daniel Wathne]: Yeah. Long time to chat. How's. How's getting the account set up? Easy.\n[Kense Ning]: Yeah. So no problems there? Looks good. I'm still waiting on Kelsey to like set up some of the ot",
+      "summary": "Daniel Wathne (GrowthBook sales) discussed the company's seat-based pricing model and full platform access (A/B",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -51,7 +51,7 @@
       "title": "Growthbook <> Cape - Pricing Review ",
       "date": "2026-05-27",
       "duration_minutes": 12,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey Nathan, how's it going?\n[Nathan Mayer]: Good. Yeah.\n[Daniel Wathne]: Doing, doing great. Thanks for joining in. Nice to meet you.\n[Nathan Mayer]: Good to meet you as well, man.\n[D",
+      "summary": "GrowthBook's Daniel Wathne and Cape's Nathan Mayer reviewed GrowthBook's pricing model (flat platform fee plus per-seat cost, no usage limits) and discussed potential seat discounts, but Nathan declined co-marketing due to security concerns. Nathan, the key decision-maker (with Kenzie as another stakeholder), noted the cost was unbudgeted and requested any discount to simplify approval. Next steps: Daniel will discuss with Kenzie about possibly starting with 25 seats for a volume discount, and Nathan will loop back internally.",
       "host": "Daniel Wathne",
       "participants": 2
     },

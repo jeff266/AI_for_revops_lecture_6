@@ -1,7 +1,7 @@
 {
   "company": "KBX + GrowthBook",
   "slug": "kbx-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.131529",
+  "last_etl_date": "2026-08-01T12:26:09.588185",
   "calls": [
     {
       "id": "01KNYXQAABPSYXPSRW59ZMW53B",
@@ -33,7 +33,7 @@
       "title": "KBX + GrowthBook",
       "date": "2026-04-22",
       "duration_minutes": 0,
-      "summary": "[Summary failed] [Christian Liebenow]: Hey, sam. Hey, Christian. Can you hear me? I can hear you. How are you? Okay, good. How are you?",
+      "summary": "The call consisted only of brief greetings between Christian Liebenow and Sam, with no discussion of product, features, pain points, roles, or next steps. The transcript contains no substantive sales conversation.",
       "host": "Christian Liebenow",
       "participants": 1
     },

@@ -1,7 +1,7 @@
 {
   "company": "Anna Barnett and",
   "slug": "anna-barnett-and",
-  "last_etl_date": "2026-08-01T10:41:40.148095",
+  "last_etl_date": "2026-08-01T12:26:09.604081",
   "calls": [
     {
       "id": "698b62ab1c9ecd0015500a5b",
@@ -9,7 +9,7 @@
       "title": "Anna Barnett and Jake Heier",
       "date": "2026-02-10",
       "duration_minutes": 24,
-      "summary": "[Summary failed] [Jake Heier]: Hello. How are you?\n[Yael Farhy-Pöllmann]: I'm good. How are you doing?\n[Jake Heier]: I'm doing well. Thanks for joining.\n[Yael Farhy-Pöllmann]: What time is it over there?\n[Jake Heier]:",
+      "summary": "Jake Heier (GrowthBook account team) and Logan Bates (solutions engineer) discussed replacing EPO (pain point: diminished support post-acquisition) with GrowthBook",
       "host": "Jake Heier",
       "participants": 4
     }

@@ -1,7 +1,7 @@
 {
   "company": "AI Engineer World's",
   "slug": "ai-engineer-world-s",
-  "last_etl_date": "2026-08-01T10:41:40.119583",
+  "last_etl_date": "2026-08-01T12:26:09.562913",
   "calls": [
     {
       "id": "6a4d4cebae87ca00184b3efe",
@@ -9,7 +9,7 @@
       "title": "AI Engineer World's Fair Post-Event Debrief ",
       "date": "2026-07-07",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Lyndsie Berens]: Hey, ashley.\n[Ashley Stirrup]: Hi there. How you doing? Good.\n[Liz Fox]: How are you? How was the show last week?\n[Ashley Stirrup]: I would call it solid.\n[Liz Fox]: Yeah. Nice.\n[Ash",
+      "summary": "The sales team debriefed the AI Engineer World's Fair, discussing GrowthBook's product (experimentation and feature flags). Key pain points included confusing booth messaging around agentic workflows, lower traffic due to booth location, and an audience more interested in feature flags than experiments. Key participants were Lyndsie Berens (organizer), Ashley Stirrup",
       "host": "Lyndsie Berens",
       "participants": 5
     }

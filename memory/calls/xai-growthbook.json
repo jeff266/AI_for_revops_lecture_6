@@ -1,7 +1,7 @@
 {
   "company": "xAI<>GrowthBook",
   "slug": "xai-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.147803",
+  "last_etl_date": "2026-08-01T12:26:09.603717",
   "calls": [
     {
       "id": "698ce62f94be3c001d8f3feb",
@@ -9,7 +9,7 @@
       "title": "xAI<>GrowthBook - Discussion",
       "date": "2026-02-11",
       "duration_minutes": 27,
-      "summary": "[Summary failed] [Jake Heier]: Hey, Sam.\n[Samuel Nathanson]: Hey, Jake. How's it going?\n[Jake Heier]: Going well. How are you?\n[Samuel Nathanson]: Good. Doing great today. Are you over on the West Coast?\n[Jake Heier]:",
+      "summary": "xAI (Samuel Nathanson, Gurshan Ghumman, dedwards) discussed using GrowthBook (Jeremy Dorn, Chris Sanders, Jake Heier) to manage feature flags for a GovCloud deployment with no public internet access. The key pain point was syncing flag data from a commercial GrowthBook instance to GovCloud while",
       "host": "Jake Heier",
       "participants": 6
     }

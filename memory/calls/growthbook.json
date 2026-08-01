@@ -1,7 +1,7 @@
 {
   "company": "Growthbook",
   "slug": "growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.136019",
+  "last_etl_date": "2026-08-01T12:26:09.591705",
   "calls": [
     {
       "id": "01KGHY46Z2XRQ494JJYXYSJ57B",
@@ -33,7 +33,7 @@
       "title": "Dmitry + Christian (GrowthBook)",
       "date": "2026-02-20",
       "duration_minutes": 11,
-      "summary": "[Summary failed] [Пользователь Zoom]: Hello. Christian.\n[Christian Liebenow]: Dimitri.\n[Пользователь Zoom]: Hello, nice to meet you. Sorry for the last time I was disturbed by another meeting.\n[Christian Liebenow]: Th",
+      "summary": "Dmitry, head of an Uzbekistan-based classified platform with 6M MAU, discussed migrating from an internal AB testing platform to GrowthBook’s on-premises enterprise solution. Key features addressed included server/client-side capabilities, traffic splitting, authentication, and cost management for scaling to 20M users. Next steps: Dmitry will first evaluate GrowthBook’s open-source version, with potential enterprise adoption (10 users at $1,000/user/year) to be discussed later.",
       "host": "Christian Liebenow",
       "participants": 2
     },
@@ -55,7 +55,7 @@
       "title": "Growthbook - Integra - POC Check In",
       "date": "2026-04-03",
       "duration_minutes": 26,
-      "summary": "[Summary failed] [Logan Bates]: Endpoint to record the page time if you're able to do it like on your website. So have a timer kind of keep track of when a user is on the page. We do some automatic data collection. Me",
+      "summary": "The call discussed Integra Beauty's need to measure page engagement time as a key K",
       "host": "Daniel Wathne",
       "participants": 5
     },

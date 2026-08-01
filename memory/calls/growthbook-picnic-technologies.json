@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook <> Picnic Technologies",
   "slug": "growthbook-picnic-technologies",
-  "last_etl_date": "2026-08-01T10:41:40.127447",
+  "last_etl_date": "2026-08-01T12:26:09.584650",
   "calls": [
     {
       "id": "6a0c8792e9acc5000c927ac0",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> Picnic Technologies - Intro",
       "date": "2026-05-19",
       "duration_minutes": 53,
-      "summary": "[Summary failed] [Logan Bates]: Hello.\n[Daniel Wathne]: He settled back in off of island time.\n[Logan Bates]: Oh yeah, Yeah. I went golfing the day after we got back because we got back at like 6am and then I went gol",
+      "summary": "Daniel Wathne (GrowthBook sales) and Logan Bates (solutions engineering) demoed Growth",
       "host": "Daniel Wathne",
       "participants": 4
     }

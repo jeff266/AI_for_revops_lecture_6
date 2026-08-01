@@ -1,7 +1,7 @@
 {
   "company": "Nick Presentation",
   "slug": "nick-presentation",
-  "last_etl_date": "2026-08-01T10:41:40.145576",
+  "last_etl_date": "2026-08-01T12:26:09.600729",
   "calls": [
     {
       "id": "69a202b81ca8c1000ddc5d79",
@@ -9,7 +9,7 @@
       "title": "Nick Presentation",
       "date": "2026-02-27",
       "duration_minutes": 45,
-      "summary": "[Summary failed] [Nick Fitzsimmons]: How y' all doing?\n[Ashley Stirrup]: All right, we got the. The show. Let's see. So Nick, I think you've met Ryan and Graham but not Jeremy.\n[Nick Fitzsimmons]: Yeah, that's true. I",
+      "summary": "Nick Fitzsimmons presented his demand gen strategy for GrowthBook, focusing on capturing displacement demand from competitors (Statsig, EPO) due to data control concerns, and building a dual motion (PLG and enterprise) with content like newsletters and podcasts. Key participants included Nick (candidate), Ashley Stirrup (hiring manager), and Jeremy (co-founder/CTO). Next steps: Ashley will conduct reference checks and follow up on another candidate recommendation before deciding on a final conversation.",
       "host": "Ashley Stirrup",
       "participants": 5
     },

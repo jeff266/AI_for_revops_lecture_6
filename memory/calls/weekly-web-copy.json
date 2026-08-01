@@ -1,7 +1,7 @@
 {
   "company": "Weekly Web Copy",
   "slug": "weekly-web-copy",
-  "last_etl_date": "2026-08-01T10:41:40.141929",
+  "last_etl_date": "2026-08-01T12:26:09.595634",
   "calls": [
     {
       "id": "6998e82525f25d0019871a52",
@@ -9,7 +9,7 @@
       "title": "Weekly Web Copy Review",
       "date": "2026-02-20",
       "duration_minutes": 60,
-      "summary": "[Summary failed] [Karen Henke]: Great. And so I think the three pages we wanted to go over today are the warehouse native that's such critical messaging. And I know Jeremy brought that up a few times, making sure that",
+      "summary": "The team (Karen Henke, Ashley Stirrup, Growthbook Dorn, and a sales rep) discussed updating web copy for GrowthBook’s “Warehouse Native” and “Why GrowthBook” pages, focusing on clarifying key benefits like trust, security, cost, and flexibility versus competitors. Dorn provided technical corrections, noting that warehouse native’s real advantages are data security, single source of truth, and cost savings—not speed or ease of use. Next steps include rewriting headlines and body copy to reflect these points, with plans to continue weekly reviews.",
       "host": "Ashley Stirrup",
       "participants": 4
     },
@@ -31,7 +31,7 @@
       "title": "Weekly Web Copy Review",
       "date": "2026-02-27",
       "duration_minutes": 65,
-      "summary": "[Summary failed] [Karen Henke]: Feature flags, Product analytics and manage warehouse page. And then we will be pretty much through the platform and product pages, which are kind of the key pages for the next wave of ",
+      "summary": "In this weekly web copy review, the team—including Karen Henke (content lead), Ashley Stirrup (product/marketing), Growthbook Dorn (product expert), and Webflow Demo (design/development)—discussed copy for GrowthBook’s feature flags and product analytics pages. Key points included refining feature flag messaging around developer experience, enterprise readiness, AI-native capabilities, and competitive differentiation (e.g., vs. LaunchDarkly), while product analytics copy needed to emphasize reusable metrics, user understanding, and AI integration.",
       "host": "Ashley Stirrup",
       "participants": 4
     },
@@ -53,7 +53,7 @@
       "title": "Weekly Web Copy Review",
       "date": "2026-03-06",
       "duration_minutes": 60,
-      "summary": "[Summary failed] [Karen Henke]: Pardon me?\n[Ashley Stirrup]: Like, oh, this is the Jeremy Graham meeting. That's why we have more note takers.\n[Karen Henke]: Yes. For the data science page. I do have the meeting with ",
+      "summary": "The weekly web copy review involved Karen Henke (content lead) and Ashley Stirrup (manager) presenting developed pages (homepage experiments, engineering) to Jeremy and Graham (Growthbook/Webflow) for feedback. Key pain points included alignment and padding issues, broken community signup links, and unclear targeting of the Managed Warehouse page. Next steps include fixing design issues, updating legal URLs to canonical, redirecting community invite links, rethinking the Managed Warehouse page as a getting-started guide, and continuing CMS migration.",
       "host": "Ashley Stirrup",
       "participants": 4
     },
@@ -75,7 +75,7 @@
       "title": "Weekly Web Copy Review",
       "date": "2026-03-13",
       "duration_minutes": 43,
-      "summary": "[Summary failed] [Ashley Stirrup]: Jeremy's usually so timely.\n[Karen Henke]: Yes,\n[Ashley Stirrup]: I'll give them another minute and then we'll bug him.\n[Karen Henke]: Oh my God.\n[Ashley Stirrup]: What's that?\n[Kare",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences focusing on: what was discussed (product, features, pain points), key participants and roles, next steps/action items.\n\nParticipants: Ashley Stirrup (likely GrowthBook employee? Actually from transcript: Ashley Stirrup, Karen Henke, Growthbook Dorn – Jeremy is likely Jeremy? Actually Growthbook Dorn is the participant name? In transcript, \"Growthbook Dorn\" appears as speaker. Possibly Jeremy is the same person? The call title is \"Weekly Web Copy Review\" – so this is an internal review of web copy for GrowthBook. Participants: Karen Henke (likely marketing/content), Ashley Stirrup (maybe product or marketing), and Growthbook Dorn (likely Jeremy, a product leader or engineer). They discuss MCP Server page and AI software solution page copy. Pain points: need to convey value to developers, feature flag automation, stale flag cleanup, safe rollouts. Next steps: Karen will work on refinements, Ashley will research open source downloads and URLs, Jeremy gave a link. \n\nSummary: In this weekly web copy review, Karen Henke and Ashley Stirrup (marketing/content) discussed refining GrowthBook's MCP Server and AI software solution pages with product leader Growthbook Dorn (Jeremy). They focused on messaging for developers, including automatic feature flag creation, stale flag cleanup, and safe rollouts, while comparing competitor copy from Statsig. Next steps include Karen making",
       "host": "Ashley Stirrup",
       "participants": 3
     },
@@ -97,7 +97,7 @@
       "title": "Weekly Web Copy Review",
       "date": "2026-03-20",
       "duration_minutes": 13,
-      "summary": "[Summary failed] [Karen Henke]: Hello. Hello. I am just looking for. I thought we will go over the pricing page, the architecture diagram, and we can take a look at the homepage as well. And maybe if Graham or Jeremy ",
+      "summary": "During the weekly web copy review, Karen Henke led a discussion with Ashley Stirrup about revising the pricing page, architecture diagram, homepage, and product managers page, noting pain points around image cropping issues and the need to rework the ideal customer profile (ICP) created by Scott. Key participants were Karen (review lead) and Ashley (feedback provider), with Graham and Jeremy mentioned as absent stakeholders. Next steps include Karen tightening meeting notes from Lubo and posting them to Jeremy, Graham, and Kari; Ashley will reach out if the",
       "host": "Ashley Stirrup",
       "participants": 2
     },

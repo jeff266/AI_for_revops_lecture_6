@@ -1,7 +1,7 @@
 {
   "company": "Review Copy for",
   "slug": "review-copy-for",
-  "last_etl_date": "2026-08-01T10:41:40.146701",
+  "last_etl_date": "2026-08-01T12:26:09.602463",
   "calls": [
     {
       "id": "698fadb919e73f000d124ce2",
@@ -9,7 +9,7 @@
       "title": "Review Copy for Key Web Pages",
       "date": "2026-02-13",
       "duration_minutes": 61,
-      "summary": "[Summary failed] [Karen Henke]: Sorry, they're all here.\n[Ashley Stirrup]: They're all here now.\n[Karen Henke]: That's right, yeah. So we're looking at. Oh, hi, Jeremy. Great to see you. So just to kind of give you. U",
+      "summary": "The call focused on reviewing website copy for key pages (experimentation and engineering), covering pain points like the need to highlight warehouse-native capabilities, SQL flexibility, and scalability for experimentation programs. Key participants included Karen Henke (marketing/website lead), Ashley Stirrup (product/marketing), Jeremy Dorn (engineer/CTO providing copy feedback), and Webflow Demo (Graham, likely a demo engineer). Next steps involve incorporating feedback to refine copy, deciding on page length versus deep-dive pages, and scheduling a separate session to craft visuals from product demos.",
       "host": "Ashley Stirrup",
       "participants": 4
     },

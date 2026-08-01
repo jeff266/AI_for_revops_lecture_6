@@ -1,7 +1,7 @@
 {
   "company": "IKEA + GrowthBook",
   "slug": "ikea-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.146418",
+  "last_etl_date": "2026-08-01T12:26:09.601809",
   "calls": [
     {
       "id": "698cae56bb6310001d184aac",
@@ -9,7 +9,7 @@
       "title": "Ikea + GrowthBook",
       "date": "2026-02-11",
       "duration_minutes": 29,
-      "summary": "[Summary failed] [Jelmer Timmer]: Hey. Morning.\n[Ryan McGurk]: How's it going?\n[Christian Liebenow]: Doing well. How are you?\n[Jelmer Timmer]: Doing well. Doing well.\n[Ryan McGurk]: Good.\n[Christian Liebenow]: Hi, Jel",
+      "summary": "Jelmer Timmer, an engineer at IKEA handling infrastructure and cost optimization, discussed IKEA’s pain points with their current vendor Optimizely—high costs (~$1-1.5M/year platform fee plus expensive support), difficult user experience, and a desire to scale experimentation. Ryan McGurk (CRO) and Christian Liebenow (Sales) from GrowthBook presented their engineer-centric platform with simple seat-based pricing, promising potential 50% savings. Next steps include IKEA running a BigQuery proof of concept to determine data costs, Cecilia (product owner",
       "host": "Christian Liebenow",
       "participants": 3
     },
@@ -19,7 +19,7 @@
       "title": "IKEA + GrowthBook",
       "date": "2026-02-11",
       "duration_minutes": 52,
-      "summary": "[Summary failed] [mitchell.kuin]: Justice.\n[Justus Ragnarsson]: Hello. How are you?\n[Christian Liebenow]: Doing really well. How are you?\n[mitchell.kuin]: I'm good.\n[Justus Ragnarsson]: I. I didn't catch the last demo",
+      "summary": "The IKEA team (including Cecilia, engineer Justus Ragnarsson, and Jel",
       "host": "Christian Liebenow",
       "participants": 6
     },
@@ -41,7 +41,7 @@
       "title": "IKEA + GrowthBook",
       "date": "2026-02-17",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Cecilia Jeppsson]: Hello.\n[Christian Liebenow]: Hi, Cecilia.\n[Cecilia Jeppsson]: Hi, how are you? Yeah, good. I have some, some problems to log in, but was asking me for a passcode, but it's all good",
+      "summary": "Cecilia Jeppsson (IKEA) and Christian Liebenow (GrowthBook) discussed IKEA’s evaluation of experimentation platforms, with pain points including scaling issues, technical challenges with Optimizely, and the need for a clear AI/agentic AI vision. Christian agreed to provide a written summary of GrowthBook’s market differentiation and AI direction, and to arrange a customer reference call (potentially without an NDA). Cecilia will continue internal assessments and demos over the next month, then build a business case.",
       "host": "Christian Liebenow",
       "participants": 2
     },

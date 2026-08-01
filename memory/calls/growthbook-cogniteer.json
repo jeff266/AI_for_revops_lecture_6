@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Cogniteer",
   "slug": "growthbook-cogniteer",
-  "last_etl_date": "2026-08-01T10:41:40.126292",
+  "last_etl_date": "2026-08-01T12:26:09.581990",
   "calls": [
     {
       "id": "6a15e0203d8dc30020545445",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> Cogniteer - Demo ",
       "date": "2026-05-26",
       "duration_minutes": 56,
-      "summary": "[Summary failed] [Daniel Wathne]: Just added it in now. So yeah, I'll make sure to get that sent over to you.\n[Fabian Hans]: Okay.\n[Logan Bates]: It's always fun to regurgitate. So at a high level I'll talk through li",
+      "summary": "GrowthBook (Logan Bates and Daniel Wathne) demoed their product to Fabian Hans of Cogniteer, covering feature management, experimentation, and analytics on top of a data warehouse. Fabian’s clients are marketing-focused and rely on tools like GA4 and Adobe Target, so the discussion emphasized SQL-based metric creation, AI capabilities (MCP server, upcoming visual editor with AI, agentic workflows), and flexible pricing (usage‑based or warehouse‑native). Next steps include Daniel sending call recordings and the new visual editor video, with Fabian potentially introducing clients for further conversations.",
       "host": "Daniel Wathne",
       "participants": 3
     },

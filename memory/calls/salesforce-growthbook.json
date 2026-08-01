@@ -1,7 +1,7 @@
 {
   "company": "Salesforce<>GrowthBook",
   "slug": "salesforce-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.147505",
+  "last_etl_date": "2026-08-01T12:26:09.603310",
   "calls": [
     {
       "id": "698e46521769df001569a62d",
@@ -9,7 +9,7 @@
       "title": "Salesforce<>GrowthBook - Onboarding",
       "date": "2026-02-12",
       "duration_minutes": 29,
-      "summary": "[Summary failed] [Jake Heier]: Hey Chris. Hey Naomi.\n[Salesforce, Inc.]: Hello.\n[Jake Heier]: How are you?\n[So-Young Nam]: Good, how are you doing?\n[Jake Heier]: Well, thanks for joining.\n[So-Young Nam]: I think we ne",
+      "summary": "The call focused on onboarding GrowthBook, a feature flag and experimentation platform, for Salesforce’s internal ML platform team. Key pain points included deploying GrowthBook on AWS EKS with DocumentDB, setting up role-based access control (RBAC) with Okta SSO and SCIM, multi-tenancy for multiple teams, and service accounts for API access. Jake Heier and Chris Sanders from GrowthBook joined Harsha Illuri, So-Young Nam, and Ishan from Salesforce (ML platform team). Next steps: Jake to provide an air-gap license key and create a Slack channel for async support; Salesforce to finalize deployment, define",
       "host": "Jake Heier",
       "participants": 5
     }

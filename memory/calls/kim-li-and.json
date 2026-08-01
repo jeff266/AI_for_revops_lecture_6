@@ -1,7 +1,7 @@
 {
   "company": "Kim Li and",
   "slug": "kim-li-and",
-  "last_etl_date": "2026-08-01T10:41:40.121070",
+  "last_etl_date": "2026-08-01T12:26:09.566248",
   "calls": [
     {
       "id": "6a303e1a5d87e3001c5fea6e",
@@ -9,7 +9,7 @@
       "title": "Kim Li and Ashley Stirrup + Scott Keller",
       "date": "2026-06-15",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Ashley Stirrup]: Hello?\n[Scott Keller]: Good.\n[Ashley Stirrup]: Hi, Cam.\n[Kim Li]: Hey. Can you guys hear me? Yeah. Okay.\n[Ashley Stirrup]: Yep, all good. Nice to see you again.\n[Kim Li]: Nice to see",
+      "summary": "GrowthBook's Ashley Stirrup, Scott Keller, and solutions engineer Logan Bates demonstrated their experimentation and feature flagging platform to Kim Li, Senior Manager for Online Experimentation at Home Depot. They highlighted AI-driven workflows, a visual editor, Contentful integration, and warehouse-native analytics as solutions to Home Depot's pain points with Adobe Target (cost, reliability, lack of innovation). Next steps: Kim will gather internal partners for a larger demo/lunch and learn; Scott will send documentation on Contentful and server-side SDKs plus a meeting follow",
       "host": "Ashley Stirrup",
       "participants": 4
     }

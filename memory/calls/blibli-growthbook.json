@@ -1,7 +1,7 @@
 {
   "company": "Blibli<>GrowthBook",
   "slug": "blibli-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.143936",
+  "last_etl_date": "2026-08-01T12:26:09.598307",
   "calls": [
     {
       "id": "69b232e9e032d100193179d4",
@@ -9,7 +9,7 @@
       "title": "Blibli<>GrowthBook - POC Prep Call",
       "date": "2026-03-12",
       "duration_minutes": 52,
-      "summary": "[Summary failed] [Kevin P]: Okay. Okay. Sorry, I think you're still on mute.\n[Jake Heier]: Oh, apologies. Can you hear me now?\n[Logan Bates]: Okay.\n[Kevin P]: Yeah.\n[Jake Heier]: Okay. Yeah, I was hoping maybe just up",
+      "summary": "We need to summarize the transcript in 2-3 sentences focusing on: discussed product/features/pain points, key participants and roles, next steps/action items.\n\nKey participants: Kevin P (likely from Blibli), Jake Heier (GrowthBook sales?), Logan Bates (GrowthBook engineer/technical), Amar Agrahari (Search PM from Blibli), Umesh Kribanandan (Blibli team), Jessica Banna (Blibli team). Roles: Kevin seems lead, Jake is sales/customer success, Logan is technical. Others are Blibli team members.\n\nDiscussed: GrowthBook for POC prep. Pain points: connecting BigQuery and GA4, mapping user IDs across data sources, real-time event targeting (search keyword) for experiment variant assignment. Features: join tables for ID mapping, sticky bucketing, visual editor, feature flags, experiment creation, custom reports, cross-platform experiments.\n\nNext steps: Kevin's team to sign up for GrowthBook free trial (cloud), then Jake will convert to enterprise trial, then team can start hands-on. They will also share documentation.\n\nSummary: Kevin's team (Blibli) discussed using GrowthBook for a POC, focusing on connecting BigQuery/GA4, mapping user IDs, and targeting experiments based on real-time search keywords. Logan (GrowthBook) demonstrated features like join tables, sticky bucketing, and visual editor, addressing pain points around user attribution and dynamic targeting. Next steps: Kevin's team will sign",
       "host": "Jake Heier",
       "participants": 6
     }

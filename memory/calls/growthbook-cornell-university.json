@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook <> Cornell University",
   "slug": "growthbook-cornell-university",
-  "last_etl_date": "2026-08-01T10:41:40.141027",
+  "last_etl_date": "2026-08-01T12:26:09.594392",
   "calls": [
     {
       "id": "69c40304c16e5b001d68758a",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> Cornell University - Intro ",
       "date": "2026-03-25",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Federico Raimondi Slepoi]: In on color.\n[Daniel Wathne]: Hello again.\n[Logan Bates]: Hello.\n[Daniel Wathne]: Hello. Dude, the pizza boys want to sign a contract.\n[Logan Bates]: Yeah, I saw that. Cong",
+      "summary": "GrowthBook's Daniel Wathne (sales) and Logan Bates (solutions engineer) introduced their open-source experimentation platform to Federico Raimondi Slepoi (behavioral economics researcher at Cornell/Harvard and consultant). They discussed using GrowthBook for A/B testing in field experiments and e-commerce collaborations, addressing pain points around data sovereignty (European partners wary of US storage) and a past technical issue with user assignment overlap. Next steps: Federico will connect GrowthBook with his partner companies; Daniel will send a product overview and a trial account, with potential referral incentives.",
       "host": "Daniel Wathne",
       "participants": 3
     }

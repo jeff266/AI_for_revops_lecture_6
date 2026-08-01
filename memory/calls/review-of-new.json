@@ -1,7 +1,7 @@
 {
   "company": "Review of new",
   "slug": "review-of-new",
-  "last_etl_date": "2026-08-01T10:41:40.123458",
+  "last_etl_date": "2026-08-01T12:26:09.572602",
   "calls": [
     {
       "id": "6a22f925b8037d001888bf85",
@@ -9,7 +9,7 @@
       "title": "Review of new AI messaging on home page",
       "date": "2026-06-05",
       "duration_minutes": 12,
-      "summary": "[Summary failed] [Elyse Fox]: Do we. Do we have a skill or a prompt that we can run that does that?\n[Scott Bailey]: We do actually now have a skill for the ramp schedules. So part of the idea here was to make sure tha",
+      "summary": "The team discussed updating the homepage to better highlight AI capabilities, specifically using screenshots of safe rollouts and ramp schedules to provide visual proof. Key participants included Elyse Fox (facilitating), Scott Bailey (engineering/taking screenshots), Growthbook Dorn (product feedback), and Karen Henke (marketing/copy). Next steps: Scott will create and edit a screenshot of a safe rollout prompt, Karen will update product analytics copy and customer stories (including Khan Academy and Fixer), and the live site’s broken feature flag screenshot will be fixed.",
       "host": "Ashley Stirrup",
       "participants": 4
     },

@@ -1,7 +1,7 @@
 {
   "company": "ShiftKey + GrowthBook",
   "slug": "shiftkey-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.127259",
+  "last_etl_date": "2026-08-01T12:26:09.584363",
   "calls": [
     {
       "id": "6980d3524bb522001d30d24b",
@@ -9,7 +9,7 @@
       "title": "ShiftKey + GrowthBook",
       "date": "2026-02-02",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [Adam Zajac]: Hi.\n[Tomasz Zaczek]: Hello.\n[Christian Liebenow]: How are you doing today?\n[Adam Zajac]: Thank. Fine. And how are you today?\n[Christian Liebenow]: Good, doing well.\n[Adam Zajac]: Great.\n",
+      "summary": "During the call, Christian Liebenow (GrowthBook), Tomasz Zaczek (architect), and Adam Zajac (engineer) from ShiftKey discussed replacing LaunchDarkly and Optimize with GrowthBook as a unified feature flag and experimentation platform. Key pain points included Mixpanel’s lack of PHP and .NET support, the need to support multiple tech stacks (PHP, .NET, mobile, frontend), and making experimentation accessible for product managers. Next steps",
       "host": "Christian Liebenow",
       "participants": 4
     },
@@ -19,7 +19,7 @@
       "title": "ShiftKey + GrowthBook",
       "date": "2026-02-17",
       "duration_minutes": 43,
-      "summary": "[Summary failed] [Tomasz Zaczek]: Hello. Good morning.\n[Adam Zajac]: Oh.\n[Christian Liebenow]: Hey Adam. How's it going?\n[Adam Zajac]: Thank you. Fine, fine, fine.\n[Tomasz Zaczek]: Good.\n[Adam Zajac]: It's only Tuesda",
+      "summary": "The call focused on ShiftKey's evaluation of GrowthBook to unify feature flagging and experimentation, replacing homegrown tools and LaunchDarkly. Key pain points included data source auto-refresh from Segment to Snowflake, gradual rollouts with facility/team grouping requirements, and experiment metric setup. GrowthBook (Christian Liebenow, Logan Bates, Jeremy) agreed to provide guidance on pre-bucketing and data refresh frequency, while ShiftKey",
       "host": "Christian Liebenow",
       "participants": 6
     },
@@ -29,7 +29,7 @@
       "title": "ShiftKey + GrowthBook",
       "date": "2026-03-03",
       "duration_minutes": 21,
-      "summary": "[Summary failed] [Christian Liebenow]: I was.\n[Tomasz Zaczek]: Hey logan,\n[Christian Liebenow]: How are y'?\n[Tomasz Zaczek]: All? Thanks. Good,\n[Christian Liebenow]: Good.\n[Tomasz Zaczek]: Hi, Jeremy.\n[Christian Liebe",
+      "summary": "In the call, GrowthBook (Christian Liebenow and Dorn) addressed ShiftKey’s pain point of needing team-based feature rollouts (rather than facility-level) to support their trunk-based development goal and migration from LaunchDarkly. Key Shift",
       "host": "Christian Liebenow",
       "participants": 5
     },
@@ -87,7 +87,7 @@
       "title": "ShiftKey + GrowthBook",
       "date": "2026-05-19",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Christian Liebenow]: Hey, Tyler. Hey, Clark.\n[Tyler.Reber@Shiftkey.Com Reber]: How are you doing?\n[Christian Liebenow]: Doing well. How are you all today? Good. Wonderful.\n[Anthony Clayton]: How are ",
+      "summary": "ShiftKey (Clark Finley, engineering manager; Tyler Reber, software engineer; Anthony Clayton, director of engineering) is migrating from LaunchDarkly to GrowthBook for feature flags and experimentation by end of June, facing tight timelines and pain points around real-time evaluation visibility, data source choice (",
       "host": "Christian Liebenow",
       "participants": 5
     },

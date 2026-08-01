@@ -1,7 +1,7 @@
 {
   "company": "Walentin Widgren and",
   "slug": "walentin-widgren-and",
-  "last_etl_date": "2026-08-01T10:41:40.144711",
+  "last_etl_date": "2026-08-01T12:26:09.599722",
   "calls": [
     {
       "id": "69a9aacce067cf001dcd6174",
@@ -9,7 +9,7 @@
       "title": "Walentin Widgren and Jake Heier",
       "date": "2026-03-05",
       "duration_minutes": 10,
-      "summary": "[Summary failed] [Walentin Widgren]: It. Hey, Jeremy. Hey, how you doing? Good.\n[Jake Heier]: Thanks for doing this.\n[Walentin Widgren]: Yeah. Hello. Hello. How are you? Good. How are you guys doing well. Good.\n[Jake ",
+      "summary": "Walentin Widgren (customer) discussed connecting Google Analytics to GrowthBook via BigQuery, clarifying that GA data must first sync to BigQuery before GrowthBook can read it. GrowthBook Dorn and Jake Heier (GrowthBook team) explained the setup, including self-hosting on GCP as an option to simplify approvals. Next steps: Walentin will determine if self-hosting is preferred and update the GrowthBook team via Slack, while Jake noted they can quickly provide a new license key if needed.",
       "host": "Jake Heier",
       "participants": 3
     }

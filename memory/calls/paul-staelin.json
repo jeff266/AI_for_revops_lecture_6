@@ -1,7 +1,7 @@
 {
   "company": "Paul Staelin",
   "slug": "paul-staelin",
-  "last_etl_date": "2026-08-01T10:41:40.134439",
+  "last_etl_date": "2026-08-01T12:26:09.589399",
   "calls": [
     {
       "id": "69e14c639e2761001d244628",
@@ -9,7 +9,7 @@
       "title": "Paul Staelin - CS Mentor",
       "date": "2026-04-16",
       "duration_minutes": 22,
-      "summary": "[Summary failed] [Webflow Demo]: How did you do on Time Guesser? Ashley?\n[Ashley Stirrup]: I. I said I'm going to work on creating this HubSpot report.\n[Webflow Demo]: Fair enough.\n[Ashley Stirrup]: I got a. I wasn't ",
+      "summary": "Ashley Stirrup and Graham (Webflow Demo) discussed their company’s need to better structure customer success roles, define account ownership, and implement a scalable tracking cadence, as their two CS personnel lack CS backgrounds and an account manager feels",
       "host": "Ashley Stirrup",
       "participants": 3
     },

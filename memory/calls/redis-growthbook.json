@@ -1,7 +1,7 @@
 {
   "company": "Redis<>GrowthBook",
   "slug": "redis-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.144618",
+  "last_etl_date": "2026-08-01T12:26:09.599612",
   "calls": [
     {
       "id": "69a9cbb3955aad0011e8c8b1",
@@ -9,7 +9,7 @@
       "title": "Redis<>GrowthBook - Discussion",
       "date": "2026-03-05",
       "duration_minutes": 26,
-      "summary": "[Summary failed] [Keith Nyberg]: Yeah, I'm happy to go through the history books for you and just give you guys like the full, full context into like where we're at, why, why we're having this conversation, et cetera.",
+      "summary": "Keith Nyberg (Redis, demand gen) and Scott Weaver (engineer) discussed their need to replace Mutiny with a server-side AB testing solution integrated with Sanity and GA4, highlighting pain points around marketer usability and cost. Jake Heier (GrowthBook sales) and Ashley Stirrup (GrowthBook) demoed the open-source platform’s feature flags",
       "host": "Jake Heier",
       "participants": 4
     }

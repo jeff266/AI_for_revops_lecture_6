@@ -1,7 +1,7 @@
 {
   "company": "Harper Concierge +",
   "slug": "harper-concierge",
-  "last_etl_date": "2026-08-01T10:41:40.144172",
+  "last_etl_date": "2026-08-01T12:26:09.598634",
   "calls": [
     {
       "id": "69b02416ce19e9001d2b36c2",
@@ -9,7 +9,7 @@
       "title": "Harper Concierge + GrowthBook",
       "date": "2026-03-10",
       "duration_minutes": 1,
-      "summary": "[Summary failed] [Christian Liebenow]: What's up? How are you? I'm good. How you doing? Good.",
+      "summary": "We need to summarize the given transcript. The transcript is extremely short: just a greeting exchange. No discussion of product, features, pain points, participants beyond names (Christian Liebenow), no next steps. But the call title mentions \"Harper Concierge + GrowthBook\" which suggests the call was about those products/companies. However, the transcript provided is incomplete. The user only gave the first few lines. Possibly a mistake? The instruction says \"Summarize this sales call transcript\" and then gives a very brief snippet. I must work with what's given. Since no substantive discussion occurred, the summary would note that only greetings were exchanged, no product discussion or next steps. But that might be too trivial. Alternatively, assume the transcript is cut off? The user explicitly provided that text. I'll create a summary based on available information: Only a greeting between Christian Liebenow and another party (not named). No product, features, pain points, or next steps discussed. However, the call title suggests a meeting about Harper Concierge and GrowthBook. I'll state that the call began with introductions but no substantive discussion occurred yet. But the instruction says \"summarize this sales call transcript\" - I must stick to the transcript.\n\nGiven the absurdity, I'll produce a minimal summary: The transcript only contains a brief greeting exchange between Christian Liebenow and an unidentified participant. No product details, pain points, or action items were discussed. Next steps are",
       "host": "Christian Liebenow",
       "participants": 1
     },

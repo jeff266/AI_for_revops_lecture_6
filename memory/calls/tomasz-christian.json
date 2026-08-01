@@ -1,7 +1,7 @@
 {
   "company": "Tomasz / Christian",
   "slug": "tomasz-christian",
-  "last_etl_date": "2026-08-01T10:41:40.145466",
+  "last_etl_date": "2026-08-01T12:26:09.600605",
   "calls": [
     {
       "id": "69a5ab43f5d48700155f1841",
@@ -9,7 +9,7 @@
       "title": "Tomasz / Christian",
       "date": "2026-03-02",
       "duration_minutes": 23,
-      "summary": "[Summary failed] [Tomasz Zaczek]: Sam. Hello.\n[Christian Liebenow]: Hey, Thomas, how are you?\n[Tomasz Zaczek]: Hi. I'm great. After the weekend, refreshed and ready to attack new challenges.\n[Christian Liebenow]: Oh, ",
+      "summary": "In the call, Tomasz Zaczek (engineering lead) discussed GrowthBook’s feature flags and experimentation capabilities, highlighting pain points",
       "host": "Christian Liebenow",
       "participants": 2
     },

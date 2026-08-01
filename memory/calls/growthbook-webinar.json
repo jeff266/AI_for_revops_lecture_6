@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook Webinar",
   "slug": "growthbook-webinar",
-  "last_etl_date": "2026-08-01T10:41:40.119941",
+  "last_etl_date": "2026-08-01T12:26:09.563218",
   "calls": [
     {
       "id": "6a315f7bc9f6b00014652f0c",
@@ -9,7 +9,7 @@
       "title": "GrowthBook Webinar - Content Flow Sync",
       "date": "2026-06-16",
       "duration_minutes": 22,
-      "summary": "[Summary failed] [Lyndsie Berens]: It.\n[Ashley Stirrup]: Hey, Ben.\n[Ben Fanning]: Hello. How you doing, Ashley?\n[Ashley Stirrup]: I'm doing great. I'm excited to see the slides coming together like they are.\n[Ben Fann",
+      "summary": "The call was a prep session for a GrowthBook webinar, where Ashley Stirrup (host) and Lyndsie Berens (coordinator) reviewed slides with Ben Fanning (customer/presenter from Fixer). They discussed Ben’s experimentation stack, including specific wins (e.g., paywall flip, gamified referrals) and automation via Slack and Cursor agents linked to GrowthBook, highlighting pain points around rigorous testing and learnings databases. Next steps: share slides with Leia (colleague) for her segment, hold a 15-minute rehearsal the next day, and launch the webinar on Thursday.",
       "host": "Lyndsie Berens",
       "participants": 3
     },
@@ -31,7 +31,7 @@
       "title": "GrowthBook Webinar - Content Prep Session",
       "date": "2026-07-06",
       "duration_minutes": 15,
-      "summary": "[Summary failed] [Ashley Stirrup]: Hello. Hello. Hey.\n[Lyndsie Berens]: How are you?\n[Ashley Stirrup]: Good. What was your opposite experience?\n[Lyndsie Berens]: We had like one or two people every time and then it st",
+      "summary": "The team—Ashley Stirrup, Lyndsie Berens, Luke Sonnet, and Ronnie (Fireflies.ai notetaker)—prepared for a GrowthBook webinar on trustworthy experiments, focusing on false positive risks, peaking",
       "host": "Lyndsie Berens",
       "participants": 4
     }

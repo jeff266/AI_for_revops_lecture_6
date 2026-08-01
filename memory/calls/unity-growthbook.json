@@ -1,7 +1,7 @@
 {
   "company": "Unity<>GrowthBook",
   "slug": "unity-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.124621",
+  "last_etl_date": "2026-08-01T12:26:09.576351",
   "calls": [
     {
       "id": "69c1509c68981e0011de976d",
@@ -9,7 +9,7 @@
       "title": "Unity<>GrowthBook - Experimentation Overview Session",
       "date": "2026-03-23",
       "duration_minutes": 39,
-      "summary": "[Summary failed] [Logan Bates]: Hey, Daniel. I'm good.\n[Sarel Matza]: How are you?\n[Jake Heier]: Doing well, thanks for joining.\n[Logan Bates]: Thank you. Other than.\n[Shachar Sasson]: Hi, Jake.\n[Maya Tugendreich]: Go",
+      "summary": "Logan Bates (GrowthBook Solutions Engineer) and Jake Heier (GrowthBook Sales) demonstrated the enterprise experimentation platform, focusing on analytical features like Bayesian/frequentist analysis, activation metrics, Cupid sequential testing, and power calculators. The Unity team (Maya Tugendreich, Sarel Matza, Shachar Sasson) discussed pain points around importing data without using GrowthBook for assignment, namespace management, and statistical test details. Next steps include completing the NDA, scheduling a two-week evaluation access, setting up a Slack channel, and coordinating a kickoff session.",
       "host": "Jake Heier",
       "participants": 5
     },
@@ -43,7 +43,7 @@
       "title": "Unity<>GrowthBook - AB Testing Configurations",
       "date": "2026-06-01",
       "duration_minutes": 61,
-      "summary": "[Summary failed] [Bryce Fitzsimons]: Hello, thanks for joining Sorrel.\n[Sarel Matza]: Hey Jack, how are you doing?\n[Jake Heier]: Well, how are you?\n[Sarel Matza]: I'm fine, I'm fine. Taking this from home today.\n[Dani",
+      "summary": "GrowthBook (Logan Bates, Bryce Fitzsimons, Jake Heier) met with Unity (Sarel Matza, Daniel Cohen, Tlv-13-Tokyo) to discuss a pain point: Unity needs the ability to add “force rules” within a variant (e.g., time delays or user segmentation by language) to avoid running multiple tests, but GrowthBook currently only supports rules at the experiment level. After explaining their use cases, GrowthBook engineers suggested alternatives like prerequisites or client",
       "host": "Jake Heier",
       "participants": 7
     }

@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Pizza Express",
   "slug": "growthbook-pizza-express",
-  "last_etl_date": "2026-08-01T10:41:40.141650",
+  "last_etl_date": "2026-08-01T12:26:09.595201",
   "calls": [
     {
       "id": "69b047b6b61eaa001570cc66",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> Pizza Express - Intro ",
       "date": "2026-03-10",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey, Jason, how you doing?\n[Pizzaexpress (Restaurants) Ltd]: Hi, Dan. Good, thanks.\n[Ross Pyres]: How are you?\n[Daniel Wathne]: Yeah, doing all right. Thanks for taking an evening cal",
+      "summary": "GrowthBook's Daniel Wathne and Logan Bates introduced their experimentation and feature flagging platform to Pizza Express's Ross Pyres (customer technology director), Stephen Clay (technical product manager), and Jason (product ops and analytics). The team discussed replacing their expensive Optimizely contract with GrowthBook’s warehouse-native integration with Snowflake, its flexibility for both developer-coded and visual editor experiments, and the need to reduce costs while improving developer experience during their replatforming. Next steps include upgrading their existing free trial to an enterprise instance, connecting Snowflake, and coordinating with the data warehouse team before a follow-up call.",
       "host": "Daniel Wathne",
       "participants": 5
     },
@@ -19,7 +19,7 @@
       "title": "Growthbook <> Pizza Express - Commercial Review ",
       "date": "2026-03-23",
       "duration_minutes": 19,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey,\n[Ross Pyres]: how you doing?\n[Stephen Clay]: How you doing?\n[Daniel Wathne]: I'm doing great. How are you?\n[Stephen Clay]: I'm good. I'm good. Loving the background.\n[Daniel Wath",
+      "summary": "GrowthBook's Daniel Wathne presented enterprise and pro pricing options to Pizza Express, addressing their need to replace Optimizely while controlling costs and handling high CDN request volumes. Key participants were Daniel (GrowthBook sales), Ross Pyres (decision-maker), and Stephen Clay (technical user). Next steps: Daniel will send a revised enterprise proposal near $29,600 and standard terms; Ross will review internally and respond within 24 hours.",
       "host": "Daniel Wathne",
       "participants": 3
     }

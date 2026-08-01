@@ -1,7 +1,7 @@
 {
   "company": "LeoVegas + GrowthBook",
   "slug": "leovegas-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.140280",
+  "last_etl_date": "2026-08-01T12:26:09.593347",
   "calls": [
     {
       "id": "01KKA37CPKWZM183EVR65490MW",
@@ -21,7 +21,7 @@
       "title": "LeoVegas + GrowthBook",
       "date": "2026-03-30",
       "duration_minutes": 8,
-      "summary": "[Summary failed] [Daniel Jansson]: Hi man.\n[Christian Liebenow]: How are you?\n[Daniel Jansson]: I'm fine. How are you?\n[Christian Liebenow]: Wonderful. You have a nice weekend?\n[Daniel Jansson]: Yeah, been skiing and ",
+      "summary": "Daniel Jansson (LeoVegas) and Christian Liebenow (GrowthBook) discussed adding licenses to an existing contract, with Daniel wanting to bypass the lengthy legal process by having a colleague, Caroline, sign directly so an invoice could be sent. They also addressed contract end dates and the need",
       "host": "Christian Liebenow",
       "participants": 2
     },

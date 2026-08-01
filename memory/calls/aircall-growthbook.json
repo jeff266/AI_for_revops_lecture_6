@@ -1,7 +1,7 @@
 {
   "company": "Aircall + GrowthBook",
   "slug": "aircall-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.143020",
+  "last_etl_date": "2026-08-01T12:26:09.597038",
   "calls": [
     {
       "id": "69baadc3f746c100157cdf67",
@@ -9,7 +9,7 @@
       "title": "Aircall + GrowthBook",
       "date": "2026-03-18",
       "duration_minutes": 21,
-      "summary": "[Summary failed] [Christian Liebenow]: Hello, how are you?\n[Nestor]: Hi, Christian. Good, good. How about you?\n[Christian Liebenow]: Yeah, doing well, doing well. Good week so far.\n[Nestor]: Yeah, that's every other w",
+      "summary": "Christian Liebenow (GrowthBook sales) and Logan (solutions engineer) discussed with Nestor (engineering director at ercol) the",
       "host": "Christian Liebenow",
       "participants": 3
     },
@@ -31,7 +31,7 @@
       "title": "Aircall + GrowthBook",
       "date": "2026-03-19",
       "duration_minutes": 58,
-      "summary": "[Summary failed] [logan]: Hello. Hi, Christian.\n[Christian Liebenow]: How are you today doing?\n[logan]: I'm doing good, thanks. Awesome.\n[Christian Liebenow]: You? Yeah, everything's great, thank you. Where, where do ",
+      "summary": "GrowthBook’s Logan and Christian demonstrated feature flagging, safe rollouts, role-based access control, and experiment analysis to Aircall’s growth team (Nestor, Hannah, Joel,",
       "host": "Christian Liebenow",
       "participants": 3
     },

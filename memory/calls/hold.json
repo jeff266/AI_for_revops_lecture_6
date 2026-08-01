@@ -1,7 +1,7 @@
 {
   "company": "Hold",
   "slug": "hold",
-  "last_etl_date": "2026-08-01T10:41:40.146117",
+  "last_etl_date": "2026-08-01T12:26:09.601414",
   "calls": [
     {
       "id": "69979ad51286e00021f4bf0d",
@@ -9,7 +9,7 @@
       "title": "Hold:  Scott Bailey Presentation",
       "date": "2026-02-19",
       "duration_minutes": 49,
-      "summary": "[Summary failed] [Ashley Stirrup]: Ryan won't be able to. Sorry, say it again.\n[Scott Bailey]: Wait, let me just say we have some beautiful weather here, like 70 degrees.\n[Ashley Stirrup]: Oh, nice.\n[Scott Bailey]: Ye",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and roles, next steps/action items.\n\nFrom transcript: Key participants: Ashley Stirrup (moderator, likely leader), Scott Bailey (candidate for technical product marketing role), Graham (Growthbook? Actually \"Growthbook Dorn\" in transcript - likely Graham Dorn, co-founder?), Jeremy (probably Jeremy? Actually \"Growthbook Dorn\" says \"Yeah, I have one question\" - so that's Graham Dorn? Wait: In transcript, after Scott's presentation, Ashley says \"Jeremy Graham, you want to...\" and then \"Growthbook Dorn\" responds. So likely Jeremy is also there, but \"Growthbook Dorn\" is a participant? Might be Graham Dorn, co-founder. Actually careful: Transcript line: \"[Growthbook Dorn]: Yeah, I have one question.\" So the speaker label is \"Growthbook Dorn\". That's probably a participant named Dorn from Growthbook. Then later Ashley says \"Jeremy Graham\" - so Jeremy and Graham are two different people? Actually Ashley says \"Jeremy, Graham, you want to?\" So Jeremy and Graham are two people. Then \"Growthbook Dorn\" responds - that might be Dorn (maybe a last name). So participants: Ashley Stirrup (likely hiring manager), Scott Bailey (candidate), Graham (co",
       "host": "Ashley Stirrup",
       "participants": 3
     },

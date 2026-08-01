@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> FirstTable",
   "slug": "growthbook-firsttable",
-  "last_etl_date": "2026-08-01T10:41:40.129390",
+  "last_etl_date": "2026-08-01T12:26:09.587197",
   "calls": [
     {
       "id": "69b31f0805401b001542135f",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> FirstTable - Pricing Sync ",
       "date": "2026-03-12",
       "duration_minutes": 14,
-      "summary": "[Summary failed] [Jay Jana]: Because the RAM prices are so high, you can't even, like, build anything new anymore.\n[Daniel Wathne]: Yeah, man, it's so crazy. I. Dude, I got a PC like this last year actually, and it's ",
+      "summary": "Daniel Wathne (GrowthBook) presented Jay Jana (FirstTable) with a discounted, fixed annual pricing model (platform fee + per-seat) that includes the managed data warehouse, addressing Jay's need for predictable costs and avoiding usage-based pricing like PostHog's. Jay noted his team is still evaluating between GrowthBook and PostH",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -19,7 +19,7 @@
       "title": "Growthbook <> FirstTable - Technical Demo ",
       "date": "2026-04-28",
       "duration_minutes": 44,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey team, how's it going?\n[Frans Waal]: Hello.\n[Logan Bates]: Hello.\n[Daniel Wathne]: Good to see you all. Okay. I know we've got quite a few folks today. Hey Jay, how you doing? Hey,",
+      "summary": "GrowthBook's Daniel Wathne and Logan Bates demoed feature flags, safe rollouts, experiment metrics, health checks (e.g., sample ratio mismatch), and MCP server capabilities to FirstTable's engineering team (led by Frans Waal, with CTO Ben, product lead Jack, and others). Key pain points included manual JSON property extraction for metrics and interest in automated kill switches via safe rollouts. Next steps: Daniel will share",
       "host": "Daniel Wathne",
       "participants": 3
     }

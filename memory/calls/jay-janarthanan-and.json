@@ -1,7 +1,7 @@
 {
   "company": "Jay Janarthanan and",
   "slug": "jay-janarthanan-and",
-  "last_etl_date": "2026-08-01T10:41:40.129136",
+  "last_etl_date": "2026-08-01T12:26:09.586940",
   "calls": [
     {
       "id": "69f299f746d87a0021f82306",
@@ -9,7 +9,7 @@
       "title": "Jay Janarthanan and Dan Wathne",
       "date": "2026-04-29",
       "duration_minutes": 22,
-      "summary": "[Summary failed] [Daniel Wathne]: Glad we could reconnect. How's the, how's the morning starting so far?\n[Jay Jana]: Yeah, it's always busy but it's, it's foggy though so I got a lot done.\n[Daniel Wathne]: It's good t",
+      "summary": "Jay Janarthanan (buyer) and Daniel Wathne (GrowthBook sales) discussed upgrading from Pro to Enterprise plan, highlighting key enterprise features like auto-rollback and managed warehouse inclusion that better fit Jay’s usage and budget. Jay raised pain points around pricing justification internally, a potential 20% price increase if not signed by quarter-end, and currency challenges for their New Zealand business. Next steps",
       "host": "Daniel Wathne",
       "participants": 2
     }

@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook and MediaHub",
   "slug": "growthbook-and-mediahub",
-  "last_etl_date": "2026-08-01T10:41:40.128656",
+  "last_etl_date": "2026-08-01T12:26:09.586477",
   "calls": [
     {
       "id": "69fa15131b68620021cdabf7",
@@ -9,7 +9,7 @@
       "title": "GrowthBook and MediaHub",
       "date": "2026-05-05",
       "duration_minutes": 34,
-      "summary": "[Summary failed] [Jake Stangl]: Hey, Dan.\n[Daniel Wathne]: Good morning.\n[Jake Stangl]: Morning. How are you? I'm doing good, doing good. It's an early one for you, right? 8:30?\n[Daniel Wathne]: Yeah, that's not that ",
+      "summary": "GrowthBook’s Daniel Wathne (sales) and Logan Bates (solutions engineering) discussed their experimentation platform with MediaHub’s Anas Ahmed, who manages media experiments. Key pain points included reliance on ad hoc R/Python scripts, a rigid existing platform, and data integration challenges. Next steps: Anas will share documentation and a demo recording with his head of analytics, James, and Daniel will follow up via email.",
       "host": "Jake Stangl",
       "participants": 4
     }

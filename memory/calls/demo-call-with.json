@@ -1,7 +1,7 @@
 {
   "company": "Demo Call with",
   "slug": "demo-call-with",
-  "last_etl_date": "2026-08-01T10:41:40.117747",
+  "last_etl_date": "2026-08-01T12:26:09.561132",
   "calls": [
     {
       "id": "01KVQXF41EXDVS8JGZYMQR0H74",
@@ -45,7 +45,7 @@
       "title": "Demo Call with Cristian Vrabie from Fixter ",
       "date": "2026-06-26",
       "duration_minutes": 34,
-      "summary": "[Summary failed] [Fiona Nematbakhsh]: The main limitation we found with them, and correct me if I'm wrong, Christian, is we couldn't do any price testing with them at a very. And we were paying them quite a high rate.",
+      "summary": "James Shannon (GrowthBook sales) demoed to Cristian Vrabie and Fiona Nematbakhsh of Fixter. Key pain points with their current vendor (Chameleon) were extra charges for server-side price testing, lack of native Google Analytics/BigQuery integration, and excessive engineering involvement for simple tests. Next steps: Fixter will review their experiment volume and costs, then coordinate a full demo and discuss pricing (Pro vs Enterprise).",
       "host": "Jake Stangl",
       "participants": 3
     },
@@ -103,7 +103,7 @@
       "title": "Demo Call with Claire Diepenbrock from Extra Space Storage ",
       "date": "2026-07-07",
       "duration_minutes": 27,
-      "summary": "[Summary failed] [Scott Keller]: There we go.\n[Claire Diepenbrock]: Awesome. Really fast. If you want just, we can really quickly do intros. Obviously we want to send the bulk of this time here on the product. I'm Cla",
+      "summary": "Scott Keller (GrowthBook sales) demoed their enterprise AB testing platform to Claire Diepenbrock (web optimization lead",
       "host": "Scott Keller",
       "participants": 4
     },
@@ -137,7 +137,7 @@
       "title": "Demo Call with Dmitrii Podshivalov from  ",
       "date": "2026-07-09",
       "duration_minutes": 19,
-      "summary": "[Summary failed] [Dmitrii Podshivalov]: And the reason is we want to keep our data in our infrastructure. So we already self hosted open source version of drostbook. We tried to import existed experiment. So now we ju",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on discussed product/features/pain points, key participants and roles, and next steps/action items.\n\nKey participants: Dmitrii Podshivalov (customer, from company evaluating GrowthBook), Vitaly Pimenov (customer, also from company), Evgenii Poliakov (customer), Christian Liebenow (GrowthBook sales rep).\n\nDiscussed: GrowthBook enterprise pricing (platform fee + per user), features like self-hosting, data pipelines, sticky bucketing, migration support from LaunchDarkly. Pain points: need for self-hosted data (cannot use LaunchDarkly because no self-hosted version), disjoint tools for experiments (Mixpanel, Metabase, Jupyter), desire for unified experiment results and standardized metrics. Also using LaunchDarkly for feature flags and experiments but want to replace or complement with GrowthBook.\n\nNext steps: Christian will create a Slack channel to continue support; customer to share LaunchDarkly budget later; they are early in evaluation, imported experiments but had issues; Christian offered migration help.\n\nSummary: Dmitrii, Vitaly, and Evgenii from a company evaluating GrowthBook discussed replacing LaunchDarkly due to lack of self-hosting and disjoint experiment tools. Christian Liebenow from GrowthBook presented enterprise pricing (platform fee + per user) and features like data pipelines and migration scripts. Next steps: Christian will set up a Slack channel for support, and the",
       "host": "Jake Stangl",
       "participants": 4
     },

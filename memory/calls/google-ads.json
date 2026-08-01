@@ -1,7 +1,7 @@
 {
   "company": "Google Ads",
   "slug": "google-ads",
-  "last_etl_date": "2026-08-01T10:41:40.115439",
+  "last_etl_date": "2026-08-01T12:26:09.556824",
   "calls": [
     {
       "id": "6a230225bca91500203ef36d",
@@ -9,7 +9,7 @@
       "title": "Google Ads",
       "date": "2026-06-05",
       "duration_minutes": 36,
-      "summary": "[Summary failed] [Lyndsie Berens]: Hey, how are you?\n[Tatevik Torabyan]: Hi. Well, how are you guys?\n[Ashley Stirrup]: Good, Doing well.\n[Tatevik Torabyan]: Okay. Sorry I haven't been working on as much this week. Lik",
+      "summary": "Tatevik Torabyan (Google Ads specialist) discussed LaunchDarkly landing page copy and messaging angles based on search data, Google Ads campaign performance for GrowthBook (branded vs. non-branded, feature flags, experimentation), and conversion tracking issues across HubSpot and GA4. Key participants also included Lyndsie Berens (manager) and Ashley Stirrup (product/marketing). Next steps include: Tatevik to collaborate with Karen",
       "host": "Ashley Stirrup",
       "participants": 3
     },
@@ -31,7 +31,7 @@
       "title": "Google Ads",
       "date": "2026-06-12",
       "duration_minutes": 22,
-      "summary": "[Summary failed] [Ashley Stirrup]: Just to make sure I understood what you just said. So you're saying we went to the new AI Max, we got a ton more traffic. We don't necessarily know if it's good traffic or not yet, b",
+      "summary": "Tatevik (PPC specialist) reported on Google Ads performance for GrowthBook, noting improved traffic and lower CPC from the new AI Max campaign but concerns about non-branded conversion quality and high costs. Key pain points included the need to optimize non-branded campaigns, refine ad copy experimentation (technical vs. enterprise language), and decide on geotargeting strategy for the LaunchDarkly competitor campaign. Next steps: Tatevik will prepare a three",
       "host": "Ashley Stirrup",
       "participants": 3
     },
@@ -41,7 +41,7 @@
       "title": "Google Ads",
       "date": "2026-06-18",
       "duration_minutes": 34,
-      "summary": "[Summary failed] [Lyndsie Berens]: We now have plenty of AI.\n[Tatevik Torabyan]: Yeah. Okay, well starting from AI, right?\n[Lyndsie Berens]: Starting from where\n[Tatevik Torabyan]: should we start from? AI campaign.\n[",
+      "summary": "Tatevik Torabyan (Google Ads specialist) presented analysis to Lyndsie Berens (marketing) on GrowthBook's AI campaign challenges: broad match and AI max keywords are driving non-relevant traffic, hindering scale without losing relevance. They reviewed competitors (Optimizely, Amplitude, PostHog, LaunchDarkly) and discussed strategy for a dedicated AI campaign. Next steps include Tatevik sharing keyword lists and ad copy drafts, Lyndsie providing AI event content and a one-pager, and collaborating on a LaunchDarkly comparison landing page and geotargeted",
       "host": "Ashley Stirrup",
       "participants": 2
     },
@@ -63,7 +63,7 @@
       "title": "Google Ads",
       "date": "2026-06-25",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Ashley Stirrup]: Get started.\n[Tatevik Torabyan]: Yeah, I just checked campaign at 10 conversions this week. Actually Google Ads is showing 11 but Google Analytics is showing like 10. 2 of it is an e",
+      "summary": "Tatevik Torabyan (Ads specialist) led the call discussing Google Ads performance, including conversion tracking discrepancies, high CPCs for non-brand campaigns, and the need to update AI messaging and landing pages for competitor campaigns like LaunchDarkly. Ashley Stirrup and Lyndsie Berens (marketing managers) advised against budget increases until tracking fixes are made, and suggested pausing non-strategic podcast ad groups. Next steps include fixing conversion value tracking with Chris, developing a LaunchDarkly landing page, reviewing AI campaign keywords, and getting approval before adding new ad groups.",
       "host": "Ashley Stirrup",
       "participants": 3
     },
@@ -85,7 +85,7 @@
       "title": "Google Ads",
       "date": "2026-07-09",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Ashley Stirrup]: Conf the conference was good. It's not exactly our icp. There were a lot of people there just trying to figure out their AI strategy but then there were enough people there that like",
+      "summary": "Tatevik Torabyan presented Google Ads performance for GrowthBook, a feature flag and A/B testing tool, highlighting branded campaigns driving most deals and discussing keyword optimization (e.g., shifting from open-source to transactional terms) and competitor targeting (Unleash vs Flagsmith). Key participants: Ashley Stirrup (product/marketing lead) and Lyndsie Berens (marketing) reviewed ad copy inaccuracies and suggested more positive messaging. Next steps include Tatevik sharing ad copies for review, updating internal stats, and coordinating a landing page with Chris.",
       "host": "Ashley Stirrup",
       "participants": 3
     },
@@ -107,7 +107,7 @@
       "title": "Google Ads",
       "date": "2026-07-17",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Tatevik Torabyan]: Hello. Hi. Sorry, I. I had some troubles yesterday with my notebook. I had to erase it and set up from scratch. I have gone through all campaigns this week. Seems low season, but i",
+      "summary": "Tatevik Torabyan (Google Ads specialist) discussed restructuring campaigns by focusing on high-intent keywords, removing low-performing ad groups and age groups, and adjusting ad scheduling to improve non-branded traffic and reduce costs for Ashley Stirrup and Lyndsie Berens (stakeholders). Pain points included expensive keywords, low click-through rates on non-branded campaigns, and need for updated ad copies. Next steps: Tatevik will share updated ad copies for review and a competitive analysis of AB Tasty’s strategy.",
       "host": "Ashley Stirrup",
       "participants": 3
     },

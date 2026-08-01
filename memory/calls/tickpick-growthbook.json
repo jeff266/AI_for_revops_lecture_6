@@ -1,7 +1,7 @@
 {
   "company": "TickPick + GrowthBook",
   "slug": "tickpick-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.118818",
+  "last_etl_date": "2026-08-01T12:26:09.562101",
   "calls": [
     {
       "id": "01KV8YRQ1AT49RRKWAFJRQV5QX",
@@ -21,7 +21,7 @@
       "title": "TickPick + GrowthBook",
       "date": "2026-07-08",
       "duration_minutes": 1,
-      "summary": "[Summary failed] [Christian Liebenow]: Hello. Hi, Christian. Hey, Matt. How are you? Pretty good. Yourself? Good, yeah. Doing well up in the Northeast, I think. You're. You're somewhere in the Northeast as well, right",
+      "summary": "The call consisted solely of introductory small talk between Christian Liebenow and Matthew Ellis, with no discussion of product, features, pain points, or next steps. No action items were established.",
       "host": "Christian Liebenow",
       "participants": 2
     },

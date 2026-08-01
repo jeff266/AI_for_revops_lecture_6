@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Rappi",
   "slug": "growthbook-rappi",
-  "last_etl_date": "2026-08-01T10:41:40.127050",
+  "last_etl_date": "2026-08-01T12:26:09.583376",
   "calls": [
     {
       "id": "6a0cbd80cb75350020c9fb80",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> Rappi - Demo ",
       "date": "2026-05-19",
       "duration_minutes": 44,
-      "summary": "[Summary failed] [Jaime Sempertegui]: Hey there.\n[Daniel Wathne]: Hey, Amy. How you doing?\n[Jaime Sempertegui]: Everything fine and you?\n[Daniel Wathne]: Yeah, things are good.\n[Jaime Sempertegui]: Ben.\n[Daniel Wathne",
+      "summary": "Daniel Wathne and Logan Bates (GrowthBook) demoed their product to Jaime Sempertegui (Rappi's lead on advanced statistics/experimentation), addressing Rappi's pain points: low Statsig adoption (90% experiments bypassed), metric fragmentation across pods, single points of failure (only three experts can run experiments),",
       "host": "Daniel Wathne",
       "participants": 3
     }

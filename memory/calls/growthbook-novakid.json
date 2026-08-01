@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> NovaKid",
   "slug": "growthbook-novakid",
-  "last_etl_date": "2026-08-01T10:41:40.148887",
+  "last_etl_date": "2026-08-01T12:26:09.605007",
   "calls": [
     {
       "id": "69821fe238715c00111656f3",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> NovaKid - Intro ",
       "date": "2026-02-03",
       "duration_minutes": 15,
-      "summary": "[Summary failed] [Vyacheslav Ryabukhin]: Also use the growth book experiments and rules of experiment rules of the features. I found some caveats there already in our setup and much more. Recently we encountered a pro",
+      "summary": "NovaKid (Vyacheslav Ryabukhin, technical lead, and Michael Lisovski, manager) discussed their need for advanced GrowthBook features like prerequisite feature dependencies and sticky buckets, which are missing in their current self-hosted setup. GrowthBook reps Daniel Wathne and Ryan McGurk explained enterprise pricing ($83/user/month + 20% platform fee) and proposed a tiered model with power and light users for the ~25-30 NovaKid team members. Next steps: Daniel will send a proposal with different user tier",
       "host": "Daniel Wathne",
       "participants": 4
     }

@@ -1,7 +1,7 @@
 {
   "company": "Purple<>GrowthBook",
   "slug": "purple-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.128109",
+  "last_etl_date": "2026-08-01T12:26:09.585476",
   "calls": [
     {
       "id": "6a02359b1ce14e001147b93e",
@@ -9,7 +9,7 @@
       "title": "Purple<>GrowthBook - Product Analytics Demo",
       "date": "2026-05-11",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Ishan Supanekar]: Hello.\n[Logan Bates]: Hey. How's it going?\n[Logan Bates]: Good.\n[Logan Bates]: How are you doing well.\n[Ishan Supanekar]: Happy Monday.\n[Logan Bates]: Happy Monday.\n[Ashley Seguin]:",
+      "summary": "GrowthBook (Logan Bates) demoed its product analytics capabilities, including funnel analysis, user journey, and AI analyst features, to Purple (Ishan Supanekar and Ashley Seguin), who seek to consolidate A/B testing and analytics tools while ensuring repeatable dashboards and error tracking. Key pain points included data governance and custom metric definitions",
       "host": "Jake Heier",
       "participants": 3
     }

@@ -1,7 +1,7 @@
 {
   "company": "Prodigy + GrowthBook",
   "slug": "prodigy-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.148520",
+  "last_etl_date": "2026-08-01T12:26:09.604594",
   "calls": [
     {
       "id": "69860ec5aa1794001d8dfbfe",
@@ -9,7 +9,7 @@
       "title": "Prodigy + GrowthBook",
       "date": "2026-02-06",
       "duration_minutes": 25,
-      "summary": "[Summary failed] [Christian Liebenow]: Hi, Ben.\n[Ben Johnson]: Hello. How are you doing?\n[Christian Liebenow]: Well, how are you this morning?\n[Ben Johnson]: I'm okay. Things are busy here. I was not really expecting.",
+      "summary": "Christian Liebenow (GrowthBook sales) discussed with Ben Johnson (CTO) and Eddy Lee (Prodigy) the need to expand from 90 to 110 GrowthBook seats to give more users view-only access, driven by pain points around cost constraints after layoffs and employees demanding access to experiment results. They also covered feature requests for pre-launch checklists and governance. Next steps: Christian will propose a flat or slightly increased spend for 110 seats with a mix of full and viewer licenses, sending an order form and email by early next week",
       "host": "Christian Liebenow",
       "participants": 3
     }

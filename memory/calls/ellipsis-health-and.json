@@ -1,7 +1,7 @@
 {
   "company": "Ellipsis Health and",
   "slug": "ellipsis-health-and",
-  "last_etl_date": "2026-08-01T10:41:40.119354",
+  "last_etl_date": "2026-08-01T12:26:09.562738",
   "calls": [
     {
       "id": "6a4d69dc0b9276001015278c",
@@ -9,7 +9,7 @@
       "title": "Ellipsis Health and GrowthBook",
       "date": "2026-07-07",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Christian Liebenow]: Aspen Acres fire.\n[Logan Bates]: Yeah, look it up. It's pretty bad. To our south of us.\n[Amitesh Dwivedi]: Hey, everyone.\n[Christian Liebenow]: Hey, Amitesh.\n[Logan Bates]: Chris",
+      "summary": "During the call, GrowthBook (Christian Liebenow, account manager; Logan Bates, solutions engineer) demonstrated their feature flagging and experimentation platform to Ellipsis Health’s product manager Amitesh Dwivedi and engineering director Irene Tong. They addressed Ellipsis Health’s pain points of having no unified feature flagging system for their voice AI agent, needing soft launches, ramp-ups, and automated rollbacks, while also exploring future A/B testing. Next steps: Ellipsis Health will create a free GrowthBook cloud account to test the platform, and GrowthBook will set up a",
       "host": "Jake Stangl",
       "participants": 4
     }

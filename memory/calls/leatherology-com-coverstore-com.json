@@ -1,7 +1,7 @@
 {
   "company": "Leatherology.com & Coverstore.com",
   "slug": "leatherology-com-coverstore-com",
-  "last_etl_date": "2026-08-01T10:41:40.142805",
+  "last_etl_date": "2026-08-01T12:26:09.596672",
   "calls": [
     {
       "id": "69bc4fedfa7f32001247d962",
@@ -9,7 +9,7 @@
       "title": "GrowthBook Demo for DC International (Leatherology.com & Coverstore.com)",
       "date": "2026-03-19",
       "duration_minutes": 36,
-      "summary": "[Summary failed] [Christian Liebenow]: Sa.\n[Ryan Donovan]: Hello, Christian. Are you doing great? Are you able to hear me? Good. I was having some connection issues here. Don't normally use Zoom for our team, so had t",
+      "summary": "Christian Liebenow (GrowthBook) demoed the warehouse-native experimentation platform to Ryan Donovan (Digital Growth Analyst at DC International, parent of Leatherology and",
       "host": "Christian Liebenow",
       "participants": 2
     },

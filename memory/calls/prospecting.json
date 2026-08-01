@@ -1,7 +1,7 @@
 {
   "company": "Prospecting",
   "slug": "prospecting",
-  "last_etl_date": "2026-08-01T10:41:40.147989",
+  "last_etl_date": "2026-08-01T12:26:09.603937",
   "calls": [
     {
       "id": "698b9779933cf400156a6c18",
@@ -9,7 +9,7 @@
       "title": "Prospecting ",
       "date": "2026-02-10",
       "duration_minutes": 38,
-      "summary": "[Summary failed] [Matthew Du Pont]: Hey, Ryan, how's the CRO treating you today?\n[Ryan McGurk]: You're coming out of a sec? Yeah.\n[Matthew Du Pont]: Busy life of a CRO.\n[Ryan McGurk]: Yeah, man, it's busy. It's good. ",
+      "summary": "Matthew Du Pont (BDR), Ryan McGurk (CRO), and Jake Stangl (BDR)",
       "host": "",
       "participants": 3
     },

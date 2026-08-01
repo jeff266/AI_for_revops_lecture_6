@@ -1,7 +1,7 @@
 {
   "company": "MAF<>Brillmark<>GrowthBook Discussion",
   "slug": "maf-brillmark-growthbook-discussion",
-  "last_etl_date": "2026-08-01T10:41:40.145371",
+  "last_etl_date": "2026-08-01T12:26:09.600480",
   "calls": [
     {
       "id": "69a5adc19051d10015175d4e",
@@ -9,7 +9,7 @@
       "title": "MAF<>Brillmark<>GrowthBook Discussion",
       "date": "2026-03-02",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Tom Kassis]: And I'm currently working for Carrefour. So the grocery shopping store that is really big in the UAE and we're developing a bit everywhere, continuing our growth in every country in the ",
+      "summary": "Brillmark discussed helping Majid Al Futtaim/Carrefour (represented by Tom Kassis and Shahryar Sherafati) implement and manage the GrowthBook enterprise A/B testing tool, as their internal team lacks the expertise to set it up and run tests. Key participants included Neha Bisht, Deepak Singh, and KM Abdullah Maroof from Brillmark, along with Jake Heier from GrowthBook, who offered hands-on support for the implementation. Next steps: Brillmark will send a proposal with hourly and FTE pricing, a company bio, and portfolio; Shahryar will conduct internal discussions",
       "host": "Jake Heier",
       "participants": 6
     }

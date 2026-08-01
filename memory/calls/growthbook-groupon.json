@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Groupon",
   "slug": "growthbook-groupon",
-  "last_etl_date": "2026-08-01T10:41:40.132001",
+  "last_etl_date": "2026-08-01T12:26:09.588695",
   "calls": [
     {
       "id": "69e650a20bd5d30019d4771e",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> Groupon - Pro Sync ",
       "date": "2026-04-20",
       "duration_minutes": 13,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey Michael, how you doing?\n[Michal Pekarcik]: Hey guys. Good. How are you doing?\n[Daniel Wathne]: Good, thanks for taking the time.\n[Michal Pekarcik]: Sure.\n[Daniel Wathne]: You're b",
+      "summary": "In this call, GrowthBook’s Daniel Wathne (sales) and Logan (solutions engineer) discussed Groupon’s usage of GrowthBook with Michal Pekarcik (experimentation lead, leaving at month-end). Pain points included previous underbilling due to a November pricing model change and Groupon’s need to control costs by limiting seats; Daniel proposed an enterprise plan (~$50k/year) with unlimited users, SSO, RBAC, and dedicated support. Next steps: Daniel will create a proposal,",
       "host": "Daniel Wathne",
       "participants": 2
     },
@@ -19,7 +19,7 @@
       "title": "Growthbook <> Groupon - Pricing Call ",
       "date": "2026-04-21",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Daniel Wathne]: Reporting in progress.\n[Ryan McGurk]: Good. How are you?\n[Daniel Wathne]: Yeah, yeah, Good. Early morning. Appreciate you hopping on.\n[Ryan McGurk]: Yeah, absolutely.\n[Daniel Wathne]:",
+      "summary": "GrowthBook's Daniel Wathne and CRO Ryan McGurk discussed upgrading Groupon from Pro to Enterprise due to expanding usage (68 users) and the need for governance features like approval flows and role-based access control. Key participants included Groupon's product director Michal Zachar and product operations lead Blanka Pauerova. Next steps: Blanka will audit user seats, with a follow-up meeting next week to finalize pricing; Bl",
       "host": "Daniel Wathne",
       "participants": 5
     }

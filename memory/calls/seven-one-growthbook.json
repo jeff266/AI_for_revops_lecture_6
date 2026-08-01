@@ -1,7 +1,7 @@
 {
   "company": "Seven.one<>GrowthBook",
   "slug": "seven-one-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.138002",
+  "last_etl_date": "2026-08-01T12:26:09.592245",
   "calls": [
     {
       "id": "69cd26ed7a160e00196afc01",
@@ -9,7 +9,7 @@
       "title": "Seven.one<>GrowthBook - Discussion on Unleash",
       "date": "2026-04-01",
       "duration_minutes": 8,
-      "summary": "[Summary failed] [Jake Heier]: Jeremy,\n[Growthbook Dorn]: thanks for joining. Did you see the prep talk? Yeah, I just have it\n[Jake Heier]: open now. Okay, cool. I'm not sure where he is. I just pinged him to see if h",
+      "summary": "The call between Jake Heier and Jeremy (Growthbook Dorn) was cut short when a third participant failed to join. No product, features, or pain points were discussed. They agreed to reschedule the meeting.",
       "host": "Jake Heier",
       "participants": 2
     },
@@ -19,7 +19,7 @@
       "title": "Seven.one<>GrowthBook - Conversation on Unleash",
       "date": "2026-04-02",
       "duration_minutes": 28,
-      "summary": "[Summary failed] [Gaurav Dani]: Hey, gaurav,\n[Jake Heier]: How are you?\n[Gaurav Dani]: Okay. Hi, Jake. How are you doing?\n[Jake Heier]: Well, appreciate you time. My CTO Jeremy should be on here momentarily.\n[Gaurav D",
+      "summary": "In the call, Gaurav Dani (Data Product Leader at Seven.One Entertainment Group) discussed his company's need to expand experimentation from recommendations to UX/content tests using GrowthBook, while facing internal pressure from an Italian counterpart who uses Unleash for feature flagging. Jeremy (GrowthBook CTO) addressed performance concerns, highlighting <1ms latency with local caching, SDK lightness, and a Contentful integration. Next steps include arranging a demo for the editorial team to boost GrowthBook adoption, with Jake Heier (GrowthBook sales) sending Contentful integration docs.",
       "host": "Jake Heier",
       "participants": 3
     }

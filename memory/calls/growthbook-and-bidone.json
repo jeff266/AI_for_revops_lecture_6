@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook and BidOne",
   "slug": "growthbook-and-bidone",
-  "last_etl_date": "2026-08-01T10:41:40.118503",
+  "last_etl_date": "2026-08-01T12:26:09.561720",
   "calls": [
     {
       "id": "6a4ec23377cb1b0014c7f4d8",
@@ -9,7 +9,7 @@
       "title": "GrowthBook and BidOne ",
       "date": "2026-07-08",
       "duration_minutes": 1,
-      "summary": "[Summary failed] [Jake Stangl]: Hey guys. How's it going? Oh, hi. Sorry.\n[Kalyan Ramaiah Asari]: Jake\n[Jake Stangl]: had a back to back meeting so we should. So we're waiting on one more person. I invited my account e",
+      "summary": "Jake Stangl and Daniel Wathne from GrowthBook’s sales team met with Kalyan Ramaiah Asari from BidOne to discuss GrowthBook (no specific features or pain points were covered in the introductory portion of the call). The call began with introductions and logistics, and they are waiting for a third participant, Trinity, to join before proceeding further. No concrete next steps or action items were identified.",
       "host": "Jake Stangl",
       "participants": 3
     },

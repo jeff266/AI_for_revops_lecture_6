@@ -1,7 +1,7 @@
 {
   "company": "Ágata Marques Marinho",
   "slug": "gata-marques-marinho",
-  "last_etl_date": "2026-08-01T10:41:40.140921",
+  "last_etl_date": "2026-08-01T12:26:09.594259",
   "calls": [
     {
       "id": "69bab6cfed62ac001d6bd1e8",
@@ -9,7 +9,7 @@
       "title": "Ágata Marques Marinho and Jake Heier",
       "date": "2026-03-18",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Jake Heier]: Hello? I can't hear you. I don't know.\n[Ágata Marinho]: Now surrounding. Let's see. Sara is going to join in a minute and then I think we will have Thiago with us at least because I need",
+      "summary": "Jake Heier (GrowthBook) discussed with Ágata Marinho, Sara Cruz, and Thiago Cunha (customer team) a proof-of-concept for AB testing syndicated content on PDPs, aiming to address their lack",
       "host": "Jake Heier",
       "participants": 4
     },
@@ -19,7 +19,7 @@
       "title": "Ágata Marques Marinho and Jake Heier",
       "date": "2026-03-25",
       "duration_minutes": 24,
-      "summary": "[Summary failed] [Jake Heier]: Hey jim.\n[Growthbook Dorn]: Hey,\n[Jake Heier]: thanks for joining.\n[Thiago Cunha Cunha]: Yeah,\n[Jake Heier]: Hello. How's it going?\n[Ágata Marinho]: On my side, I think Louise is also go",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on: discussed (product, features, pain points), key participants and roles, next steps/action items.\n\nKey participants: Jake Heier (sales?), Jeremy (Growthbook technical lead), Ágata Marinho (organizer, from customer side), Thiago Cunha Cunha, Osf Soares, Grein Augusto (developer team from customer side). Product: GrowthBook (feature flagging/experimentation platform). Pain points: SDK conflicts with Salesforce Commerce Cloud (Rhino environment), cache/flickering issues, need server-side rendering but SDK not compatible. Discussed alternative: fetch payload from CDN on server, embed JSON in page, use client-side SDK without network request. Also discussed metrics/data sources (managed warehouse vs external). Next steps: customer team will test implementation; need data-side person for follow-up call; Jake to resend Teams channel invites and provide trial license key. \n\nSummary: The call with GrowthBook (Jake Heier, Jeremy) and Ágata Marinho's team (Thiago, Osf, Grein) focused on SDK compatibility issues with Salesforce Commerce Cloud due to Rhino backend limitations. They proposed a workaround using server-side CDN payload fetching combined with a client-side SDK to avoid flicker and caching problems. Next steps include testing the approach, scheduling a follow-up with a data specialist, and Jake resending Teams invites and a",
       "host": "Jake Heier",
       "participants": 6
     }

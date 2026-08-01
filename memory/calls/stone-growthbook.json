@@ -1,7 +1,7 @@
 {
   "company": "Stone + GrowthBook",
   "slug": "stone-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.114522",
+  "last_etl_date": "2026-08-01T12:26:09.555398",
   "calls": [
     {
       "id": "698a4ac024ef3f00212b1f96",
@@ -9,7 +9,7 @@
       "title": "Stone + GrowthBook",
       "date": "2026-02-09",
       "duration_minutes": 26,
-      "summary": "[Summary failed] [Christian Liebenow]: Hey, Newton.\n[Newton Calegari]: Hello. How are you doing?\n[Christian Liebenow]: I'm doing well, how are you?\n[Newton Calegari]: I'm doing good, doing good. We had to reschedule f",
+      "summary": "Newton Calegari (data lead at Stone) informed Christian Liebenow and Chris Sanders (GrowthBook sales) that a CEO change and cost-cutting mandate have paused his plan to adopt GrowthBook, despite his preference for its data warehouse-native features, multi-method statistics, and governance reporting over existing Amplitude contracts. Key pain points include budget constraints and the need",
       "host": "Christian Liebenow",
       "participants": 3
     },
@@ -19,7 +19,7 @@
       "title": "Stone + GrowthBook",
       "date": "2026-05-18",
       "duration_minutes": 0,
-      "summary": "[Summary failed] [Logan Bates]: Order yourself some of that coffee, Christian. It's good. You should. I can send you a recommendation.",
+      "summary": "In this brief call, Logan Bates mentioned coffee to Christian, with no discussion of the Stone or GrowthBook product, features, or pain points. The only participants implied are Logan Bates and Christian. No next steps or action items were identified.",
       "host": "Christian Liebenow",
       "participants": 1
     },
@@ -41,7 +41,7 @@
       "title": "Stone + GrowthBook",
       "date": "2026-07-22",
       "duration_minutes": 39,
-      "summary": "[Summary failed] [Newton Calegari]: Are you good?\n[Christian Liebenow]: Good to see you. It's. It's been a while. How have you been?\n[Newton Calegari]: Yeah, it's been a while. Yeah. Life is sort of crazy. Literally b",
+      "summary": "Newton Calegari (CTO at Stone) discussed migrating from Amplitude to GrowthBook's warehouse-native experimentation platform, citing pain points like event-based pricing, lack of warehouse metric support, and recent Amplitude incidents impacting feature flags and tracking. Key participants included Newton, Christian Liebenow (GrowthBook sales), and GrowthBook engineers Logan and Graham (Webflow Demo), who highlighted GrowthBook's composable architecture, open-source flexibility, API-driven design, and support for identity resolution and custom front-ends. Next steps: Newton will test GrowthBook locally via Docker, Christian will connect him with the Neon team, and they plan to reconvene in two weeks to discuss enterprise licensing and implementation.",
       "host": "Christian Liebenow",
       "participants": 4
     },

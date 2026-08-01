@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook <> Cloud Imperium Games",
   "slug": "growthbook-cloud-imperium-games",
-  "last_etl_date": "2026-08-01T10:41:40.135801",
+  "last_etl_date": "2026-08-01T12:26:09.590871",
   "calls": [
     {
       "id": "69d404c2ff14df0015b34a1c",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> Cloud Imperium Games - Intro ",
       "date": "2026-04-06",
       "duration_minutes": 38,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey, Logan.\n[Logan Bates]: Oh, you're in the moon moon flyby spirit, huh?\n[Daniel Wathne]: Yeah, dude, I thought it'd be fair.\n[Logan Bates]: I got a streaming on my monitor, just on ",
+      "summary": "GrowthBook (Daniel Wathne, Solutions Engineer Logan Bates) demoed their feature flagging and experimentation platform to Cloud Imperium Games (Martin Le Bas, Jocelyn Menard, Emilien Pierru) to address CIG's pain point of lacking centralized AB testing and personalization—currently relying on an internal badge system without experimentation. Next steps include scheduling separate product-focused and technical integration calls, with Martin advocating internally to convince CTO and other stakeholders.",
       "host": "Daniel Wathne",
       "participants": 5
     }

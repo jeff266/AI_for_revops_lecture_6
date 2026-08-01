@@ -1,7 +1,7 @@
 {
   "company": "Usim + GrowthBook",
   "slug": "usim-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.120852",
+  "last_etl_date": "2026-08-01T12:26:09.565863",
   "calls": [
     {
       "id": "6a32bb37a288dc0020e73917",
@@ -9,7 +9,7 @@
       "title": "Usim + GrowthBook",
       "date": "2026-06-17",
       "duration_minutes": 20,
-      "summary": "[Summary failed] [Christian Liebenow]: Hey Muhammad.\n[Muhammed Zaulifqar]: Hey. How's it going?\n[Christian Liebenow]: I'm doing well, how are you?\n[Muhammed Zaulifqar]: Yeah, good, thank you.\n[Christian Liebenow]: Ver",
+      "summary": "Christian Liebenow (GrowthBook) and Muhammed Zaulifqar (fractional CPO at USIM) discussed USIM's need for feature flagging and experimentation to enable safe, phased rollouts of a major app redesign—avoiding risky all-at-once deployments—and eventually support A/B testing with minimal engineering involvement. Next steps: Christian will share a video of GrowthBook's GenAI visual editor and documentation on phased rollouts and the iOS SDK; Muhammed",
       "host": "Christian Liebenow",
       "participants": 2
     }

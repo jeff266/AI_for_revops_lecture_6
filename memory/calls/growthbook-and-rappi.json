@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook and Rappi",
   "slug": "growthbook-and-rappi",
-  "last_etl_date": "2026-08-01T10:41:40.128334",
+  "last_etl_date": "2026-08-01T12:26:09.586105",
   "calls": [
     {
       "id": "69fe17dc3e210e0019d16fcb",
@@ -9,7 +9,7 @@
       "title": "GrowthBook and Rappi",
       "date": "2026-05-08",
       "duration_minutes": 35,
-      "summary": "[Summary failed] [Daniel Wathne]: Recording in progress. Hey Jake.\n[Jaime Sempertegui]: Hey Dan.\n[Daniel Wathne]: How's it going? Good, how are you? Good. Hey Jaime, how you doing?\n[Jaime Sempertegui]: Hey, we can fin",
+      "summary": "GrowthBook account executive Daniel Wathne and solutions engineer Logan met with Jaime Sempertegui, an experimentation analytics lead at Rappi focused on search and personalization. They discussed Rappi’s challenges with low adoption of Statsig, inconsistent metric definitions across teams, and heavy manual analysis work, while GrowthBook offered easier experimentation, AI integration, verified metrics, and lower cost. Next steps: Daniel will send a calendar invite for a tailored demo on Tuesday, November 19th at 2pm Ecuador",
       "host": "Jake Stangl",
       "participants": 2
     }

@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Homa",
   "slug": "growthbook-homa",
-  "last_etl_date": "2026-08-01T10:41:40.147400",
+  "last_etl_date": "2026-08-01T12:26:09.603194",
   "calls": [
     {
       "id": "01KH1JAGF4R5AF9BTABKT7KKX7",
@@ -21,7 +21,7 @@
       "title": "Growthbook <> Homa - Demo ",
       "date": "2026-02-13",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Daniel Wathne]: Thanks for joining me this morning. Yeah, it looks like Jonah isn't able to join, but it's okay. Solo is gonna be hopping on.\n[Webflow Demo]: Should be here shortly.\n[Daniel Wathne]: ",
+      "summary": "In this demo call, Daniel Wathne (GrowthBook AE) and CEO Graham presented GrowthBook’s visual editor and experimentation platform to Goncalo Salazar (Homa’s experimentation lead). Key discussion points included the product’s ability",
       "host": "Daniel Wathne",
       "participants": 3
     }

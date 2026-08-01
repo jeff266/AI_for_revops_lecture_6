@@ -1,7 +1,7 @@
 {
   "company": "Nebenan + GrowthBook",
   "slug": "nebenan-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.142541",
+  "last_etl_date": "2026-08-01T12:26:09.596354",
   "calls": [
     {
       "id": "01KJD9FGF6GHE6S5RNV71541QZ",
@@ -21,7 +21,7 @@
       "title": "Nebenan + GrowthBook",
       "date": "2026-03-20",
       "duration_minutes": 49,
-      "summary": "[Summary failed] [Christian Liebenow]: Cynthia. Hey, Jose. Hey, Kate.\n[jose]: How are you\n[Christian Liebenow]: doing? Well, Happy Friday, everybody.\n[jose]: Yes, yes. It's a. I, I guess the morning over there here is",
+      "summary": "Jose (Head of Data) and analysts Cynthia and Kate from Nebenan (a German neighborhood social network) discussed their pain points with a custom experimentation tool—slow metric creation, ad hoc reporting, and lack of agility—and explored GrowthBook’s features like self-service metrics, Ruby SDK support for backend experiments, CUPED, and dimension slicing. Christian (Account Manager) and Logan (Solutions Engineer) from GrowthBook demonstrated the platform and addressed GDPR concerns. Next steps: Jose will run a trial; Christian will create a shared Slack channel and provision an enterprise trial (pending legal clearance).",
       "host": "Christian Liebenow",
       "participants": 3
     },

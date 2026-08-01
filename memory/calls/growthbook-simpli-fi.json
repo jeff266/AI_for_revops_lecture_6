@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Simpli.fi",
   "slug": "growthbook-simpli-fi",
-  "last_etl_date": "2026-08-01T10:41:40.135420",
+  "last_etl_date": "2026-08-01T12:26:09.590440",
   "calls": [
     {
       "id": "69d00e0de31b6100155f7a94",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> Simpli.fi - Intro ",
       "date": "2026-04-03",
       "duration_minutes": 29,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey Koi, how you doing?\n[Koy Eddleman]: Good. How are you doing?\n[Daniel Wathne]: Great. It's nice to meet you.\n[Koy Eddleman]: Nice to meet you too.\n[Daniel Wathne]: Where are you ba",
+      "summary": "GrowthBook (represented by Daniel Wathne, sales, and Logan, solutions engineering) discussed its open-source experimentation platform, emphasizing a visual editor and low-code setup for Simpli.fi’s headless WordPress website. The team (Koy Eddleman, creative director; Carlos Betanc",
       "host": "Daniel Wathne",
       "participants": 4
     },
@@ -19,7 +19,7 @@
       "title": "Growthbook <> Simpli.fi - Demo ",
       "date": "2026-04-07",
       "duration_minutes": 62,
-      "summary": "[Summary failed] [Koy Eddleman]: Good, good.\n[Daniel Wathne]: Awesome. Great to hear. Good to see you again, Coy. Some new folks on the call, everybody. Thanks for taking the time.\n[Logan Bates]: Awesome.\n[Daniel Wath",
+      "summary": "GrowthBook demonstrated its feature flagging and experimentation platform to Simpli.fi's marketing and engineering team, focusing on low-code A/B testing for website optimization and addressing pain points around limited engineering resources and integration with HubSpot data. Key participants included GrowthBook's Daniel Wathne (sales) and Logan Bates (solutions engineer), along with Simpli.fi's Koy Eddleman, Carson Rogers, Corbyn Cunningham, Ben Lobaugh, and Alexander Vyhmeister. Next steps",
       "host": "Daniel Wathne",
       "participants": 5
     }

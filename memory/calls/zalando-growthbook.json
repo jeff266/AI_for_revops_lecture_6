@@ -1,7 +1,7 @@
 {
   "company": "Zalando + GrowthBook",
   "slug": "zalando-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.149372",
+  "last_etl_date": "2026-08-01T12:26:09.605688",
   "calls": [
     {
       "id": "697a39d0d3ad08000d2d531a",
@@ -9,7 +9,7 @@
       "title": "Zalando + GrowthBook",
       "date": "2026-01-28",
       "duration_minutes": 31,
-      "summary": "[Summary failed] [Christian Liebenow]: Good morning, Ashley.\n[Webflow Demo]: Good morning.\n[Christian Liebenow]: How you doing?\n[Webflow Demo]: Great. How are you?\n[Nils Stotz]: I'm doing well. Is.\n[Webflow Demo]: Did",
+      "summary": "Nils Stotz from Zalando discussed their hybrid experimentation platform",
       "host": "Christian Liebenow",
       "participants": 3
     },

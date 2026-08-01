@@ -1,7 +1,7 @@
 {
   "company": "Sales Team Mtg",
   "slug": "sales-team-mtg",
-  "last_etl_date": "2026-08-01T10:41:40.142309",
+  "last_etl_date": "2026-08-01T12:26:09.595977",
   "calls": [
     {
       "id": "69bd7a6bcd185e0011ba11f1",
@@ -9,7 +9,7 @@
       "title": "Sales Team Mtg",
       "date": "2026-03-20",
       "duration_minutes": 48,
-      "summary": "[Summary failed] [Cary Rakin]: It's a lot of recorders.\n[Christian Liebenow]: Yes,\n[Ryan McGurk]: silly. I know.\n[Cary Rakin]: I had to start blocking when I do mine because I was getting like five at the same time on",
+      "summary": "The sales team discussed transitioning from seat-based to usage-based pricing for Pro and Enterprise customers by end of April, driven by board feedback to accelerate AI product messaging and the need to close larger deals. Key participants included Ryan McGurk (Sales Leader), Daniel Wathne (providing Statsig pricing insights), Cary Rakin (customer success, suggesting paid support tiers), and",
       "host": "",
       "participants": 8
     }

@@ -1,7 +1,7 @@
 {
   "company": "Perplexity + GrowthBook",
   "slug": "perplexity-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.147598",
+  "last_etl_date": "2026-08-01T12:26:09.603419",
   "calls": [
     {
       "id": "698d00e7a4227f0019f41a21",
@@ -9,7 +9,7 @@
       "title": "Perplexity + GrowthBook",
       "date": "2026-02-11",
       "duration_minutes": 50,
-      "summary": "[Summary failed] [Christian Liebenow]: I'd take more if we can get more at retreat. I'll always take swag.\n[Webflow Demo]: Yeah, you can just ask for more money to the store. We have quite a lot.\n[Christian Liebenow]:",
+      "summary": "GrowthBook (represented by co-founder Graham and sales rep Christian) demonstrated its open-source experimentation platform to Alexis, a design/experimentation lead at Perplexity, highlighting features like warehouse-native flags, multi-dimensional analysis, AI integrations, and VS Code MCP support. Key pain points discussed were Perplexity's frustrations with Eppo's slowed innovation after acquisition, stability issues, and engineer complaints about feature flag loading. Next steps: Alexis will explore GrowthBook's demo environment, and the team will reconvene in two weeks to discuss potential migration, with Growth",
       "host": "Christian Liebenow",
       "participants": 2
     },

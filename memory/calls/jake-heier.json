@@ -1,7 +1,7 @@
 {
   "company": "Jake Heier",
   "slug": "jake-heier",
-  "last_etl_date": "2026-08-01T10:41:40.148981",
+  "last_etl_date": "2026-08-01T12:26:09.605122",
   "calls": [
     {
       "id": "697cf8d8717165000d8b2ea2",
@@ -9,7 +9,7 @@
       "title": "30 min with Karen (Jake Heier)",
       "date": "2026-01-30",
       "duration_minutes": 20,
-      "summary": "[Summary failed] [Jake Heier]: No, no, I think a lot of that stuff doesn't matter as much to them once they actually get in and start exploring the platform. Some other areas I'm hearing of concern are static. Has def",
+      "summary": "Jake Heier (sales) and Karen Henke (product marketing) discussed GrowthBook's competitive advantages over Statsig, focusing on pain points like pricing (cheaper at scale but per-seat cost for broad access), open-source flexibility, transparency (SQL queries for credibility), and lack of an AI story. They also covered security/self-hosting, rapid implementation, and white-glove support. Next steps: Karen will draft a stronger security page and revamp industry pages, while Jake suggested a blog on handling billions of events; he also offered to connect Karen with internal experts (Bryce, Jeremy, Graham) for implementation",
       "host": "Karen Henke",
       "participants": 2
     }

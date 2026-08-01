@@ -1,7 +1,7 @@
 {
   "company": "The Philadelphia Inquirer",
   "slug": "the-philadelphia-inquirer",
-  "last_etl_date": "2026-08-01T10:41:40.129621",
+  "last_etl_date": "2026-08-01T12:26:09.587450",
   "calls": [
     {
       "id": "69eba8b47fc842001da16755",
@@ -9,7 +9,7 @@
       "title": "The Philadelphia Inquirer and GrowthBook",
       "date": "2026-04-24",
       "duration_minutes": 30,
-      "summary": "[Summary failed] [Matthew Du Pont]: Hey, Jake. Hey, man. How's it going? Pretty good. Good, good. Definitely not gonna be rusty at all. Excited? I'm sure you'll be good. I'm sure it'll be something I'm excited to see.",
+      "summary": "In this call, Matthew Du Pont (GrowthBook sales) discussed with Carrie Bolton (Digital Product, The Philadelphia Inquirer) challenges around low experimentation velocity due to a lack of analysts and friction in building metrics, which hinders their focus on subscription retention and engagement. Carrie highlighted that product managers avoid testing because it takes too long, while Matthew offered to connect with product leader Becky Bowers to address this bottleneck and also assist with hiring a junior analyst. Next steps include Matthew speaking with Alex about metric setup, sending a follow-up with job description advice, and later exploring a Vanguard introduction.",
       "host": "Jake Stangl",
       "participants": 2
     }

@@ -1,7 +1,7 @@
 {
   "company": "Hims & GrowthBook",
   "slug": "hims-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.135683",
+  "last_etl_date": "2026-08-01T12:26:09.590742",
   "calls": [
     {
       "id": "69d54fb6486f3c0021177e15",
@@ -9,7 +9,7 @@
       "title": "Hims & GrowthBook - AI Capabilities",
       "date": "2026-04-07",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [Ashley Stirrup]: Had a little bit about the call we had with Dropbox earlier. Yeah, we're doing a lot of these AI interviews. Not a lot, but some.\n[Eric Sokolov]: Jeremy. Hey, Eric.\n[Ashley Stirrup]:",
+      "summary": "Eric Sokolov (Hims, experimentation platform lead) discussed building an internal AI agent to address the pain point of searching and summarizing past experiments, using Claude code, SQL queries, and vector search. GrowthBook’s team (Ashley Stirrup, Scott Bailey, and CTO Jeremy) shared their AI investment focus, including an MCP server and API improvements",
       "host": "Cris Dizon",
       "participants": 5
     },

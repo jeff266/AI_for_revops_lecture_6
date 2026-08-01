@@ -1,7 +1,7 @@
 {
   "company": "Puspita Rini Simamora",
   "slug": "puspita-rini-simamora",
-  "last_etl_date": "2026-08-01T10:41:40.146320",
+  "last_etl_date": "2026-08-01T12:26:09.601665",
   "calls": [
     {
       "id": "69952a6f2e3dd0001dfe2fed",
@@ -9,7 +9,7 @@
       "title": "Puspita Rini Simamora and Jake Heier",
       "date": "2026-02-18",
       "duration_minutes": 57,
-      "summary": "[Summary failed] [Jake Heier]: Puspita, sebelum kita berbicara, ada satu pertanyaan untuk Anda. Saya tahu di daftar Anda, salah satu hal yang ingin Anda tanyakan adalah salt, bukan? Sebagai referensi.\n[Puspita Simamor",
+      "summary": "The call discussed GrowthBook, a feature flag and experimentation platform, for self-hosted deployment on AWS. Key pain points included the need for an additional local partner reference beyond SALT, sizing questions (minimum 2GB memory, 1 vCPU, and whether three worker nodes are mandatory), and architectural guidance on CDN vs proxy, persistent storage, and S3 bucket usage. Key participants were Puspita Simamora, her manager Rendhika, and colleague Dede (system integrator), along with Jake Heier (GrowthBook sales)",
       "host": "Jake Heier",
       "participants": 5
     }

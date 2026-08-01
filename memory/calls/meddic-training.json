@@ -1,7 +1,7 @@
 {
   "company": "MEDDIC Training",
   "slug": "meddic-training",
-  "last_etl_date": "2026-08-01T10:41:40.135903",
+  "last_etl_date": "2026-08-01T12:26:09.590999",
   "calls": [
     {
       "id": "69cff1ec3fe5a2000d9b19d6",
@@ -9,7 +9,7 @@
       "title": "MEDDIC Training - 'I' (Identifying & Quantifying Pain)",
       "date": "2026-04-03",
       "duration_minutes": 53,
-      "summary": "[Summary failed] [Daniel Wathne]: Recording tools in all this conversation.\n[Ryan McGurk]: I don't know, qualify that pain.\n[Daniel Wathne]: Pick your poison here. We got a lot of options. That also seems like too man",
+      "summary": "The call was a MEDDIC training focused on identifying and quantifying pain points for GrowthBook, discussing strategies to tie product features (e.g., warehouse-native experimentation, ROI calculator) to customer metrics like revenue growth, efficiency, and cost savings. Key participants included Ryan McGurk (training lead), Brenton Holloway (sharing ROI tools), and sales reps Jake Heier, James Shannon, and Christian Liebenow, who shared real deal examples (e.g., Skyscanner, Automatic). Next steps involve leveraging the ROI calculator, crowds",
       "host": "",
       "participants": 8
     }

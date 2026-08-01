@@ -1,7 +1,7 @@
 {
   "company": "Webinar Content Sync",
   "slug": "webinar-content-sync",
-  "last_etl_date": "2026-08-01T10:41:40.121794",
+  "last_etl_date": "2026-08-01T12:26:09.569271",
   "calls": [
     {
       "id": "6a282eafca5e82000c5083c3",
@@ -9,7 +9,7 @@
       "title": "Webinar Content Sync ",
       "date": "2026-06-09",
       "duration_minutes": 46,
-      "summary": "[Summary failed] [Ben Fanning]: Sorry.\n[Ashley Stirrup]: Unless you already had stuff that you wanted to use as a starting point.\n[Ben Fanning]: I noted down just some stuff based on what we talked about last time aro",
+      "summary": "Ben Fanning (Growth Engineer at Fixer) and Ashley Stirrup (GrowthBook) discussed Fixer’s evolution from manual experimentation to automated AI-driven workflows, focusing on pain points like repetitive manual analysis, experiment cleanup, and scaling experimentation. Key features covered include GrowthBook integration, AI agents for cleanup and reporting, a power calculator, and a learnings database. Next steps: Ben will send Ashley a corporate deck, screenshots of cursor skills, an example experiment one-pager, and other wins, and will coordinate with",
       "host": "Lyndsie Berens",
       "participants": 2
     }

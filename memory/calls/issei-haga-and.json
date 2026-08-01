@@ -1,7 +1,7 @@
 {
   "company": "ISSEI HAGA and",
   "slug": "issei-haga-and",
-  "last_etl_date": "2026-08-01T10:41:40.138300",
+  "last_etl_date": "2026-08-01T12:26:09.592722",
   "calls": [
     {
       "id": "69cb173d085be0001df9e43e",
@@ -9,7 +9,7 @@
       "title": "ISSEI HAGA and GrowthBook",
       "date": "2026-03-31",
       "duration_minutes": 36,
-      "summary": "[Summary failed] [芳賀一生]: nicetomyu.\n[Hajime Akagi]: nicetomyu.\n[Ashley Stirrup]: Ranwilbejogusaswel. Hiourchiefrvnuocer. Unfotuately,G r a h a m i s o n a p l a\n[Ryan McGurk]: n e h omf r A u\n[Ashley Stirrup]: s t ral",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences, focusing on what was discussed (product, features, pain points), key participants and roles, and next steps/action items. The transcript is messy with translation issues, but we can extract key points.\n\nParticipants: \n- Issei Haga (representative of Unite Holdings / AppGo/Zost)\n- Hajime Akagi (translator)\n- Ashley Stirrup (from GrowthBook? Seems to be GrowthBook side)\n- Ryan McGurk (Chief Revenue Officer? From GrowthBook, noted as \"chiefrvnuocer\" likely Chief Revenue Officer)\n- Also mentioned: Hirakawa (CEO of AppGo), Ohnami (engineering lead). Graham from GrowthBook is absent.\n\nDiscussion: \n- Haga's company (Unite Holdings) has two subsidiaries: AppGo (comparison media/affiliate) and Zost (ad agency). They want to partner with GrowthBook (A/B testing platform) to offer it to their clients. Pain point: Japanese market lacks affordable A/B testing tools since Google Optimize ended; current tools like VWO are expensive. Need localization (Japanese language) and simplified UI for less technical users. GrowthBook is currently focused on US/Europe, not ready for Asia. \n- GrowthBook side (Ashley/Ryan) expresses that they are a small team (35 people) and cannot provide heavy support for Japan expansion now. They see potential but",
       "host": "Ashley Stirrup",
       "participants": 4
     },

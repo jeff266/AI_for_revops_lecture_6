@@ -1,7 +1,7 @@
 {
   "company": "MC Sonae<>GrowthBook",
   "slug": "mc-sonae-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.126636",
+  "last_etl_date": "2026-08-01T12:26:09.582493",
   "calls": [
     {
       "id": "69e8e9e4648de5001dd01e6c",
@@ -9,7 +9,7 @@
       "title": "MC Sonae<>GrowthBook - AI Roadmap and Q&A",
       "date": "2026-04-22",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Osf Soares]: Hey, graham.\n[Jake Heier]: Hey, how you doing?\n[Osf Soares]: Okay.\n[Webflow Demo]: Getting a notification of something. It's a beeping sound I don't recognize\n[Jake Heier]: in your house",
+      "summary": "The call focused on MC Sonae's successful implementation of GrowthBook's hybrid architecture (CDN + SDK) for feature flags and AB testing, along with questions about self-hosting on Azure and a request to extend the free trial due to a code freeze until late May. Key participants included Jake Heier (GrowthBook sales), Graham (co-founder, who presented the AI roadmap with tools like MCP server and AI data analyst), and Ágata Marinho and Thiago Cunha (MC Sonae leads). Next steps: Ágata will send weekly updates; Jake will extend the trial and share",
       "host": "Jake Heier",
       "participants": 5
     },
@@ -19,7 +19,7 @@
       "title": "MC Sonae<>GrowthBook - Discussion",
       "date": "2026-05-21",
       "duration_minutes": 20,
-      "summary": "[Summary failed] [Jake Heier]: How are you? Oh, I'm fine.\n[Logan Bates]: Can you hear me?\n[Jake Heier]: Well, I like that background. Yeah, I might have cut out for a second, I think. But yeah, I like your background.",
+      "summary": "GrowthBook team (Jake Heier and Logan Bates) discussed with Ágata Marinho of MC Sonae an A/B test plan for placing brand content between conversion carousels on PDPs, worrying it might hurt conversion. They agreed to run an ABC test (control + two positions) instead of a two-phase test for better statistical validity, and addressed GDPR and data privacy concerns regarding GrowthBook’s managed warehouse. Next steps: Ágata will obtain a go-live date from her project manager, finalize baselines and targets, and",
       "host": "Jake Heier",
       "participants": 3
     }

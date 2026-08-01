@@ -1,7 +1,7 @@
 {
   "company": "Starttech Ventures +",
   "slug": "starttech-ventures",
-  "last_etl_date": "2026-08-01T10:41:40.128435",
+  "last_etl_date": "2026-08-01T12:26:09.586246",
   "calls": [
     {
       "id": "69fde7f7b3e7f10015544134",
@@ -9,7 +9,7 @@
       "title": "Starttech Ventures + GrowthBook",
       "date": "2026-05-08",
       "duration_minutes": 26,
-      "summary": "[Summary failed] [Christian Liebenow]: Hello.\n[Aristeidis Kypriotis]: Hello\n[Christian Liebenow]: Aristides. How are you?\n[Aristeidis Kypriotis]: How are you? Fine, I'm fine. How are you?\n[Christian Liebenow]: Yeah, d",
+      "summary": "Christian Liebenow (GrowthBook sales) demoed GrowthBook to Aristeidis Kypriotis (Startech Ventures, a venture builder supporting 3-4 portfolio companies). Aristeidis needs an affordable replacement for Google Optimize with Bayesian statistics, visual editor, Google Analytics integration, and multi-tenant separation. Next steps: Christian will email documentation on Google Analytics integration and organization-based separation (since Pro lacks projects), with a follow-up call after his Hawaii trip.",
       "host": "Christian Liebenow",
       "participants": 2
     }

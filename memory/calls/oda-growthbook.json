@@ -1,7 +1,7 @@
 {
   "company": "Oda + GrowthBook",
   "slug": "oda-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.141277",
+  "last_etl_date": "2026-08-01T12:26:09.594789",
   "calls": [
     {
       "id": "69c29eee993f7d0011e35f07",
@@ -9,7 +9,7 @@
       "title": "Oda + GrowthBook",
       "date": "2026-03-24",
       "duration_minutes": 25,
-      "summary": "[Summary failed] [Fredrik Jørgensen]: Sam,\n[Christian Liebenow]: Everyone today\n[Fredrik Jørgensen]: I'm good.\n[Christian Liebenow]: Everything.\n[Fredrik Jørgensen]: How are you?\n[Christian Liebenow]: Yeah, yeah, life",
+      "summary": "Christian Liebenow (GrowthBook sales) presented an enterprise proposal to Fredrik Jørgensen (Oda customer), highlighting features like self-hosting, sticky bucketing, pre-exposure analysis, and AI capabilities. Fredrik expressed that Oda’s tight budget and minimal need for support made the $50k annual platform fee too high, hoping for a lower-cost option without support. Next steps: Christian will share the deck via email, and Fredrik will discuss with his CTO; they will follow up to see if a lower price is feasible.",
       "host": "Christian Liebenow",
       "participants": 2
     },

@@ -1,7 +1,7 @@
 {
   "company": "Rakuten + GrowthBook",
   "slug": "rakuten-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.145881",
+  "last_etl_date": "2026-08-01T12:26:09.601090",
   "calls": [
     {
       "id": "699e3fac13b5c400193ff7c1",
@@ -9,7 +9,7 @@
       "title": "Rakuten + GrowthBook",
       "date": "2026-02-25",
       "duration_minutes": 17,
-      "summary": "[Summary failed] [Christian Liebenow]: Hello.\n[Nour Shreim]: How are you?\n[Christian Liebenow]: I'm very good, thanks. Are you?\n[Nour Shreim]: Yeah, doing well. Busy, busy day. But. But things are exciting here.\n[Chri",
+      "summary": "Nour Shreim (GrowthBook) discussed with Christian Liebenow (Rakuten) why Rakuten chose Statsig over GrowthBook for experimentation. Key pain points included Statsig’s proactive POC support, custom feature shipping (e.g., Roku tracker), and advanced statistical features like layers, while GrowthBook lacked these and never shared pricing. No immediate next steps were set, but Christian left the door open for future consideration.",
       "host": "Christian Liebenow",
       "participants": 2
     }

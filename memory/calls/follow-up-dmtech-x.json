@@ -1,7 +1,7 @@
 {
   "company": "Follow-Up dmTECH x",
   "slug": "follow-up-dmtech-x",
-  "last_etl_date": "2026-08-01T10:41:40.148613",
+  "last_etl_date": "2026-08-01T12:26:09.604696",
   "calls": [
     {
       "id": "6985fb3463768a000d20e9c0",
@@ -9,7 +9,7 @@
       "title": "Follow-Up dmTECH x Growthbook",
       "date": "2026-02-06",
       "duration_minutes": 0,
-      "summary": "[Summary failed] [Christian Liebenow]: Hi, Yannick. Hi, Christian. Hey. Hey. How are you both? Very good. A little confused. There's a recorder in the car. Oh, yeah, I can. I can boot that out if. If that's helpful. I",
+      "summary": "Christian Liebenow and Yannick opened the call with technical confusion about a recorder, but no product, features, pain points, or next steps were discussed. The transcript contains only greetings and a brief attempt to remove a recording device, with no substantive sales conversation.",
       "host": "Christian Liebenow",
       "participants": 1
     }

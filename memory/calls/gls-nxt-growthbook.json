@@ -1,7 +1,7 @@
 {
   "company": "GLS/NXT + GrowthBook",
   "slug": "gls-nxt-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.144879",
+  "last_etl_date": "2026-08-01T12:26:09.599905",
   "calls": [
     {
       "id": "69a85580a4a37500211c13ab",
@@ -9,7 +9,7 @@
       "title": "GLS/NXT + GrowthBook",
       "date": "2026-03-04",
       "duration_minutes": 53,
-      "summary": "[Summary failed] [Christian Liebenow]: Hi Naughty.\n[Growthbook Dorn]: Hello,\n[Christian Liebenow]: how are you?\n[Noah]: Good, good, how are you?\n[Christian Liebenow]: Very good, thank.\n[Growthbook Dorn]: You.\n[Mathias",
+      "summary": "GrowthBook demoed its experimentation platform, including feature flags, a visual editor for no-code changes, and warehouse-native analytics connecting to BigQuery, addressing GLS/NXT's pain points of lacking A/B testing and needing faster iterations with",
       "host": "Christian Liebenow",
       "participants": 8
     },

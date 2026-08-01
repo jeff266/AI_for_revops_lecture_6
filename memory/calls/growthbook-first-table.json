@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> First Table",
   "slug": "growthbook-first-table",
-  "last_etl_date": "2026-08-01T10:41:40.144286",
+  "last_etl_date": "2026-08-01T12:26:09.598992",
   "calls": [
     {
       "id": "698e6ff380b3860019e631ae",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> First Table - Intro ",
       "date": "2026-02-13",
       "duration_minutes": 27,
-      "summary": "[Summary failed] [Daniel Wathne]: Okay. Hey, Jay, can you hear me?\n[Jay Jana]: Yeah, I can hear you.\n[Daniel Wathne]: Oh, nice to meet you. How you doing?\n[Jay Jana]: Good. Nice to meet you as well. I'm great. Are you",
+      "summary": "Daniel Wathne (GrowthBook) and solutions engineer Logan Bates introduced",
       "host": "Daniel Wathne",
       "participants": 3
     },
@@ -19,7 +19,7 @@
       "title": "GrowthBook<>First Table - Working Session",
       "date": "2026-02-17",
       "duration_minutes": 36,
-      "summary": "[Summary failed] [Jake Heier]: Nice to meet you.\n[Jay Jana]: Yeah, nice to meet you. Where are you based?\n[Jake Heier]: I'm in Austin, Texas.\n[Jay Jana]: Ah, okay.\n[Jake Heier]: Okay. You guys are. Where are you at?\n[",
+      "summary": "First Table (product manager",
       "host": "Jake Heier",
       "participants": 4
     },
@@ -29,7 +29,7 @@
       "title": "Growthbook <> First Table - Scoping Sync ",
       "date": "2026-03-09",
       "duration_minutes": 25,
-      "summary": "[Summary failed] [Daniel Wathne]: Doing good.\n[Jay Jana]: How's.\n[Daniel Wathne]: How's the last couple weeks been?\n[Jay Jana]: Yeah, it's been busy, but I've actually just launched our apps and market, so iOS app is ",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences focusing on what was discussed (product, features, pain points), key participants and roles, and next steps/action items.\n\nKey participants: Daniel Wathne (GrowthBook account executive? Sales?), Logan Bates (GrowthBook engineer/technical?), Jay Jana (First Table - likely product/tech lead?).\n\nDiscussed: GrowthBook's experimentation platform. Jay's company (First Table) already has SDKs implemented. They want to use APIs/CLI for automated experiment creation via AI (Cursor). Pain points: need guardrails/kill switches for safe rollouts, managed data warehouse (they don't have own yet, considering Snowflake later). Key features: MCP server for AI integration, safe rollouts with guardrail metrics, managed warehouse (Clickhouse), ability to analyze metrics retrospectively. Pricing: enterprise tier around $20-30k, need justification for CFO.\n\nNext steps: Daniel will provide order form, comparison of pro vs enterprise for business case, documentation on managed warehouse. Logan will share docs on MCP server and warehouse. Jay will add data lead (Samuel) to Slack. Goal: sign agreement in March.\n\nSummary: Jay Jana (First Table) and GrowthBook's Daniel Wathne and Logan Bates discussed using GrowthBook for experimentation, leveraging existing SDKs and AI-driven experiment creation via APIs/MCP server, with need for guardrails and a managed warehouse (with potential later migration to Snow",
       "host": "Daniel Wathne",
       "participants": 3
     },

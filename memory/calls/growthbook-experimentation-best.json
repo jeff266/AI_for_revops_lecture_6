@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook Experimentation Best",
   "slug": "growthbook-experimentation-best",
-  "last_etl_date": "2026-08-01T10:41:40.149077",
+  "last_etl_date": "2026-08-01T12:26:09.605242",
   "calls": [
     {
       "id": "697cd22399ef60000d921cf4",
@@ -9,7 +9,7 @@
       "title": "GrowthBook Experimentation Best Practices",
       "date": "2026-01-30",
       "duration_minutes": 46,
-      "summary": "[Summary failed] [Jake Heier]: Hello.\n[Growthbook Dorn]: Hi, Jake, how are you?\n[12 C9]: Very good.\n[Sebastian.Pazirai@Eqtpartners.Com Pazirai]: How are you?\n[Jake Heier]: I'm doing well. Hey, Jeremy. Hello. I believe",
+      "summary": "GrowthBook (Jake Heier, AE, and Jeremy Dorn, co-founder/tech lead) demoed their experimentation platform to the EQT team (Sebastian, Eric, Simon) who are evaluating it to optimize UX on their Sanity/Next.js website before a summer campaign. Key pain points include building a new experimentation program from scratch, low traffic (~1.5M sessions/year), and the need to connect GA4 data to BigQuery for metrics. Next steps: GrowthBook will enable enterprise features and a Slack support channel; the customer will share",
       "host": "Jake Heier",
       "participants": 5
     }

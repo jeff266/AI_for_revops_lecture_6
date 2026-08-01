@@ -1,7 +1,7 @@
 {
   "company": "Marketing Team Meetings",
   "slug": "marketing-team-meetings",
-  "last_etl_date": "2026-08-01T10:41:40.113836",
+  "last_etl_date": "2026-08-01T12:26:09.554017",
   "calls": [
     {
       "id": "01KGAQX200F3FCHJMSYE898TZD",
@@ -177,7 +177,7 @@
       "title": "Marketing Team Meetings",
       "date": "2026-06-01",
       "duration_minutes": 70,
-      "summary": "[Summary failed] [Scott Bailey]: Any of the individual features as separate focused launches outside of the tagged release. That's something that Elise and I have talked about a good bit. We need to talk with Jeremy a",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: what was discussed (product, features, pain points), key participants and their roles, next steps/action items.\n\nThe call is a marketing team meeting, not a sales call per se, but it's about marketing launches. Key participants: Scott Bailey (marketing), Ashley Stirrup (marketing lead), Elyse Fox (marketing), Karen Henke (web marketing, leaving), Chris Newton (web/ops), Emmy Sharp (content/customer stories), Lyndsie (events/demand gen). Discussed: 4.4 launch performance, skills repo (beta), follow-up webinars/AMAs, website relaunch, compare pages, pricing changes, events, videos, SEO, etc. Next steps: Scott to lead skills repo launch in ~2 weeks, organize demo environment; Lindsay to manage webinars; Chris to take over web projects; pricing changes meeting tomorrow; various follow-ups on videos, case studies, SEO.\n\nNeed to condense to 2-3 sentences covering product/features/pain points, key participants, next steps. Pain points: difficulty gauging launch impact, need for feedback loops, gaps in attribution, need for better demos and content. Product: skills repo, 4.4 features, visual editor, etc. Key participants: Scott, Ashley, Elyse, Karen, Chris. Next steps: launch skills repo with AMA/webinar in",
       "host": "Ashley Stirrup",
       "participants": 7
     },
@@ -187,7 +187,7 @@
       "title": "Marketing Team Meetings",
       "date": "2026-06-08",
       "duration_minutes": 32,
-      "summary": "[Summary failed] [Ashley Stirrup]: Yeah, that sounds fine. It'd be good if we just had. If there was some easy list we could look at to go. Okay, I know where things are at. You know, like, sometimes they turn into th",
+      "summary": "The marketing team discussed website optimization, MQL process rollout, and pricing for GrowthBook 5.0, with pain points around Bright Scout's buggy work and the need for an EU data center. Key participants included Ashley Stirrup (lead), Chris Newton (manager), Scott Bailey (technical), Emmy Sharp (content), and Lyndsie Berens",
       "host": "Ashley Stirrup",
       "participants": 6
     },
@@ -221,7 +221,7 @@
       "title": "Marketing Team Meetings",
       "date": "2026-06-22",
       "duration_minutes": 58,
-      "summary": "[Summary failed] [Elyse Fox]: I have not seen that.\n[Ashley Stirrup]: All right. Just put it in the slide. I gave him a couple little pieces of feedback. Like there's a section where it's kind of accordion and it, you",
+      "summary": "We need to summarize the sales call transcript in 2-3 sentences. Focus on: product, features, pain points; key participants and roles; next steps/action items.\n\nThe call is a marketing team meeting, not a sales call per se, but the instruction says \"sales call transcript\". However, the content is about product marketing, website updates, events, etc. Key participants: Elyse Fox (marketing), Ashley Stirrup (marketing lead?), Scott Bailey (product?), Chris Newton (web?), Lyndsie Berens (marketing ops?), Alyssa Nicoll (devrel?), Emmy Sharp (content). They discuss visual editor page, early access sign-up, docs for beta, AI World Fair, social posts, etc. Pain points: confusing event page for early access, fast accordion rotation, low registration for skills office hours. Next steps: get visual editor page live with updated hero and nav, fix docs for beta release, promote skills office hours via social, finalize UTMs, etc.\n\nSummary: The marketing team discussed updating the AI Visual Editor page and early access sign-up, addressing pain points like confusing event-based landing pages and low registration for a skills demo. Key participants included Elyse Fox, Ashley Stirrup, Scott Bailey, Chris Newton, Lyndsie Berens, Alyssa Nicoll, and Emmy Sharp. Next steps involve launching the updated page, shipping beta docs, promoting the skills office hours via social media, and finalizing",
       "host": "Ashley Stirrup",
       "participants": 7
     },
@@ -243,7 +243,7 @@
       "title": "Marketing Team Meetings",
       "date": "2026-06-29",
       "duration_minutes": 49,
-      "summary": "[Summary failed] [Scott Bailey]: Or about this. Okay, well, Omar is generally the one responsible for the CLI MCP server. AI Assistant, AI data analyst. Yeah, I'll tell them about that.\n[Ashley Stirrup]: But I think y",
+      "summary": "The call discussed GrowthBook's 5.0 release, including AI assistant tools (CLI, MCP server, Slack app), Skills, and product analytics. Key participants were Scott Bailey (product), Ashley Stirrup (marketing), Lyndsie Berens (events), Elyse Fox (marketing), Alyssa Nicoll (video/tickets), and Emmy Sharp (content). Pain points included unclear positioning of product analytics vs. competitors like PostHog/Amplitude and the need for a compelling narrative for",
       "host": "Ashley Stirrup",
       "participants": 6
     },
@@ -253,7 +253,7 @@
       "title": "Marketing Team Meetings",
       "date": "2026-07-06",
       "duration_minutes": 39,
-      "summary": "[Summary failed] [Scott Bailey]: I don't have a date. Lilia didn't have a date yet on when that's going to be ungated. Right now it's behind a flag and we're not even able to for sure.\n[Alyssa Nicoll]: It's not for su",
+      "summary": "The marketing team discussed upcoming product launches including Session Replay (basic, non",
       "host": "Ashley Stirrup",
       "participants": 6
     },
@@ -263,7 +263,7 @@
       "title": "Marketing Team Meetings",
       "date": "2026-07-13",
       "duration_minutes": 60,
-      "summary": "[Summary failed] [Scott Bailey]: Next week. So there's. There's quite a few bits of it. There's sort of five days of blog posts and related social that we're going to work on. We sketch this out in terms of the sort o",
+      "summary": "The team, led by Scott Bailey and Ashley Stirrup, discussed the launch plan for GrowthBook 5.0, featuring daily blog posts on agentic experience, visual editor, product analytics, feature flag governance, and faster experiments. Key participants included Scott (planning), Ashley (marketing oversight), Elyse Fox (content), Alyssa Nicoll (office hours and videos), Lyndsie Berens (webinar logistics), and Chris Newton (website and case studies). Next steps include confirming launch readiness with Jeremy, moving the office hours to the week after launch, finalizing social posts and email drafts, and pursuing",
       "host": "Ashley Stirrup",
       "participants": 7
     },
@@ -297,7 +297,7 @@
       "title": "Marketing Team Meetings",
       "date": "2026-07-27",
       "duration_minutes": 76,
-      "summary": "[Summary failed] [Elyse Fox]: It was actually a. A friend's 40th birthday. So it was like a pedal boat we all went on. It's not a speedboat. It was pedal power. Yeah, but it was good. It was good just getting outside ",
+      "summary": "The marketing team (led by Ashley Stirrup, with Scott Bailey, Chris Newton, Emmy Sharp, Elyse Fox, Alyssa Nicoll, and Lyndsie Berens) reviewed the 5.0 launch, discussed distribution challenges, website updates, CLI improvements, and YouTube analytics. Key action items include sending a dedicated office hours email, prioritizing a new demo video, scheduling a Mintlify migration meeting, and exploring Reddit automation for content repurposing.",
       "host": "Ashley Stirrup",
       "participants": 7
     },

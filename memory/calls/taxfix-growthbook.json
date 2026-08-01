@@ -1,7 +1,7 @@
 {
   "company": "Taxfix<>GrowthBook",
   "slug": "taxfix-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.134854",
+  "last_etl_date": "2026-08-01T12:26:09.589895",
   "calls": [
     {
       "id": "69dd0d4f0d5066001d29bab8",
@@ -9,7 +9,7 @@
       "title": "Taxfix<>GrowthBook - AI & MCP Overview",
       "date": "2026-04-13",
       "duration_minutes": 35,
-      "summary": "[Summary failed] [Logan Bates]: Hello.\n[Jake Heier]: How's it going? Hey, Anna.\n[Anna Barnett]: Hello.\n[Jake Heier]: How was your weekend?\n[Anna Barnett]: It was nice. There's one day of sun, so it always gets very ex",
+      "summary": "GrowthBook's co-founder Graham showcased their AI and MCP capabilities to Taxfix's Anna, Andre, Laura, and Julia, focusing on automating experiment creation, exporting results to Slack/Notion, and end-to-end automation with minimal human intervention. Jake will follow up on next steps and a metric dashboard issue.",
       "host": "Jake Heier",
       "participants": 7
     }

@@ -1,7 +1,7 @@
 {
   "company": "Dmitry / Christian",
   "slug": "dmitry-christian",
-  "last_etl_date": "2026-08-01T10:41:40.141168",
+  "last_etl_date": "2026-08-01T12:26:09.594592",
   "calls": [
     {
       "id": "69c2a579cd3bac001574ef91",
@@ -9,7 +9,7 @@
       "title": "Dmitry / Christian",
       "date": "2026-03-24",
       "duration_minutes": 23,
-      "summary": "[Summary failed] [Christian Liebenow]: Hey, how are you?\n[Dmitriy Lakhvich]: Fine. So I had a update. So recently a CPO joined to our company. He told me about a B experiments and that he wants to provide 10 experimen",
+      "summary": "Dmitriy Lakhvich (potential customer evaluating A/B testing platforms) and Christian Liebenow (GrowthBook sales) discussed GrowthBook’s enterprise offering, focusing on its open-source base, self-hosting capability, SLAs, support, and competitive pricing versus Three Sigma and LaunchDarkly. Key pain points included the need for an on-premises solution, pricing clarity, and addressing a CPO’s concerns about UI/UX and support speed. Next steps: Christian will send materials (pricing matrix, enterprise deck) for Dmitriy to build a competitor matrix; Dmit",
       "host": "Christian Liebenow",
       "participants": 2
     },

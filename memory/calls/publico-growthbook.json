@@ -1,7 +1,7 @@
 {
   "company": "Publico + GrowthBook",
   "slug": "publico-growthbook",
-  "last_etl_date": "2026-08-01T10:41:40.121685",
+  "last_etl_date": "2026-08-01T12:26:09.569052",
   "calls": [
     {
       "id": "6a2831b3f753a80014ff1928",
@@ -9,7 +9,7 @@
       "title": "Publico + GrowthBook",
       "date": "2026-06-09",
       "duration_minutes": 23,
-      "summary": "[Summary failed] [Webflow Demo]: The right time.\n[Christian Liebenow]: Yeah, yeah, we can show the visual editor and then you know, Victor and team, if what you're seeing you think is interesting, then we can get into",
+      "summary": "We need to summarize the transcript in 2-3 sentences, focusing on: what was discussed (product, features, pain points), key participants and their roles, and next steps/action items. The call title is \"Publico + GrowthBook\". Participants: Christian Liebenow (GrowthBook? Actually Christian seems to be from GrowthBook, since he talks about pricing and enterprise), Webflow Demo (multiple speakers labeled Webflow Demo – likely from Publico? Actually the transcript labels are confusing: \"Webflow Demo\" appears as speaker, but they are probably from Publico, as they ask questions and demo. Also Pedro Vasques and Lino (Lunar?) are mentioned. Christian Liebenow appears to be from GrowthBook. The transcript shows Webflow Demo speaking about GrowthBook features. Possibly Webflow Demo is a person from Publico? Or maybe it's a placeholder for multiple people. But key participants: Christian Liebenow (GrowthBook), Pedro Vasques (Publico), and Webflow Demo (maybe a Publico team member). The discussion covered GrowthBook's visual editor (AI-first, multi-language, image generation), Multi-Armed Bandits, experiment templates, feature flags with JSON validation, and remote configuration. Pain point: Publico wants to reduce costs compared to their current vendor Piano. Next steps: Christian to follow up with email detailing enterprise plan and pricing ($50k/yr starting), and possibility of creative pricing like case study/joint marketing. Pedro",
       "host": "Christian Liebenow",
       "participants": 3
     },

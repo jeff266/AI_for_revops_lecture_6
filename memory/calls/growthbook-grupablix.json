@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook <> GrupaBlix",
   "slug": "growthbook-grupablix",
-  "last_etl_date": "2026-08-01T10:41:40.138603",
+  "last_etl_date": "2026-08-01T12:26:09.593143",
   "calls": [
     {
       "id": "69cabc77fb830e001df3d9c8",
@@ -9,7 +9,7 @@
       "title": "GrowthBook <> GrupaBlix - Intro ",
       "date": "2026-03-30",
       "duration_minutes": 24,
-      "summary": "[Summary failed] [Grzegorz Stawarczyk]: Okay. Sorry about my camera being off, but I have poor Internet connection.\n[Daniel Wathne]: Yeah, that's fine. We can go cameras off. It doesn't. It's no issue for me.\n[Grzegor",
+      "summary": "Grzegorz Stawarczyk (backend team lead at GrupaBlix) discussed with Daniel Wathne and Logan (GrowthBook sales & solutions engineering) their need to expand from basic feature flags to experimentation, specifically measuring user retention and conversion on their free app using BigQuery. The key blocker is that retention metrics require GrowthBook’s enterprise plan. Next steps: schedule a demo next week with Grzegorz’s analytics team to showcase warehouse-native metrics, then offer a trial of enterprise access to evaluate value.",
       "host": "Daniel Wathne",
       "participants": 2
     }

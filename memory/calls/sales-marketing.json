@@ -1,7 +1,7 @@
 {
   "company": "Sales <> Marketing",
   "slug": "sales-marketing",
-  "last_etl_date": "2026-08-01T10:41:40.121257",
+  "last_etl_date": "2026-08-01T12:26:09.566596",
   "calls": [
     {
       "id": "01KPQQ45K217FYJM2D2Y5G20Z5",
@@ -33,7 +33,7 @@
       "title": "Sales <> Marketing Sync",
       "date": "2026-06-10",
       "duration_minutes": 40,
-      "summary": "[Summary failed] [David Dangelo]: And a lot of other great brands that have openly accepted demo opportunities with GrowthBook. And now we're just waiting for those, those deals to close. And we're excited to be a par",
+      "summary": "Okay, this is a request to summarize a sales call transcript. The user wants just the summary, no preamble, and they've given a specific structure: 2-3 sentences covering what was discussed (product, features, pain points), key participants and roles, and next steps/action items.\n\nLet me parse the transcript. The call is titled \"Sales <> Marketing Sync\" and involves team members from GrowthBook (Ashley Stirrup, Tanner Green, Ryan McGurk, etc.) and the Growth Wizards podcast team (David Dangelo, Geoffrey Lugli). The core discussion is about using the \"Experimentation Edge\" podcast as a lead generation tool. The key pain point is the sales team's low demo volume from podcast outreach. The proposed solution is a LinkedIn outreach playbook: send connection requests/InMails to ideal guests (e.g., Heads of Product/Experimentation at companies with 1M+ visitors), offering a podcast appearance as a hook, then funneling them to a prep call with Ashley and ultimately a GrowthBook demo. Key participants: Ashley Stirrup (GrowthBook marketing/sales) leads the sync, Geoffrey Lugli (Growth Wizards) presents the playbook, David Dangelo facilitates, and team members like Christian Liebenow share early success (e.g., 5 positive responses from 25 messages). Next steps: share the outreach doc and messaging templates, integrate the booking link with HubSpot via a webhook for auto-opportunity creation",
       "host": "Lyndsie Berens",
       "participants": 9
     },

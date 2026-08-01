@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> TSI",
   "slug": "growthbook-tsi",
-  "last_etl_date": "2026-08-01T10:41:40.148798",
+  "last_etl_date": "2026-08-01T12:26:09.604896",
   "calls": [
     {
       "id": "69824ac042d2500021a30b9b",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> TSI - Intro ",
       "date": "2026-02-03",
       "duration_minutes": 22,
-      "summary": "[Summary failed] [Jena Cline]: It. Hello?\n[Daniel Wathne]: Hey, Jenna. How you doing?\n[Jena Cline]: Hey. I'm doing well. How are you?\n[Daniel Wathne]: I'm great. Thanks for taking the time to meet with us.\n[Jena Cline",
+      "summary": "Jena Cline (marketing at TSI) discussed her team’s past",
       "host": "Daniel Wathne",
       "participants": 3
     }

@@ -1,7 +1,7 @@
 {
   "company": "Growthbook <> Cyera",
   "slug": "growthbook-cyera",
-  "last_etl_date": "2026-08-01T10:41:40.143841",
+  "last_etl_date": "2026-08-01T12:26:09.598187",
   "calls": [
     {
       "id": "69b2dbec35974700116363d0",
@@ -9,7 +9,7 @@
       "title": "Growthbook <> Cyera - Intro ",
       "date": "2026-03-12",
       "duration_minutes": 29,
-      "summary": "[Summary failed] [Daniel Wathne]: Hey y'. All, how you doing?\n[Barak Loudvinovsky]: Hi.\n[Daniel Wathne]: Hi back. How you doing?\n[Barak Loudvinovsky]: Good. Hello.\n[Daniel Wathne]: How you doing?\n[Logan Bates]: That's",
+      "summary": "GrowthBook (Daniel Wathne, sales; Logan Bates, solutions engineering; Graham, founder) met with Cyera (Barak Loudvinovsky, team lead; Asaf Hizki, software engineer) to discuss replacing Cyera’s internal Boolean-only feature flag solution. Cyera needs granular user-based targeting, SDKs, A/B testing, FedRAMP compliance, edge deployment for customer-cloud environments, and multiple data region support. Next steps: a demo call scheduled for Tuesday the 17th, and Daniel will follow up with documentation and pricing details.",
       "host": "Daniel Wathne",
       "participants": 5
     }

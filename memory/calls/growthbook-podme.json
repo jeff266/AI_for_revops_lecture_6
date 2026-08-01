@@ -1,7 +1,7 @@
 {
   "company": "GrowthBook & PodMe",
   "slug": "growthbook-podme",
-  "last_etl_date": "2026-08-01T10:41:40.126744",
+  "last_etl_date": "2026-08-01T12:26:09.582754",
   "calls": [
     {
       "id": "6a0eba587cf5fb00143619aa",
@@ -9,7 +9,7 @@
       "title": "GrowthBook & PodMe Catchup",
       "date": "2026-05-21",
       "duration_minutes": 14,
-      "summary": "[Summary failed] [Rami Daghlawi]: Yeah, no worries. No worries. So you're doing the evaluation on the SDK, is what I've gathered. And then you're sending anonymous data to. Or is that correct?\n[James Shannon]: That is",
+      "summary": "During the call, Rami Daghlawi (PodMe engineer) raised concerns about GrowthBook’s SDK regarding data privacy (hashing of user IDs), network/performance impact, vendor lock-in, and EU data residency. James Shannon (GrowthBook sales) addressed these by explaining the SDK’s local caching, open-source/open-feature interoperability, and self-hosting option. Next steps: PodMe opted for cloud deployment with a requested",
       "host": "James Shannon",
       "participants": 3
     }
