@@ -9,7 +9,7 @@ Reads:
 Outputs:
   - memory/calls/<company-slug>.json (one file per company with all calls)
 
-Apollo calls are summarized via Claude Haiku (transcript_text -> summary).
+Apollo calls are summarized via Deepseek V4 Flash on Fireworks (transcript_text -> summary).
 Fireflies calls use summary_text directly (already AI-generated).
 """
 
@@ -20,7 +20,7 @@ import argparse
 import re
 from pathlib import Path
 from datetime import datetime
-from anthropic import Anthropic
+from openai import OpenAI
 
 
 def slugify(company_name: str) -> str:
@@ -69,9 +69,12 @@ def extract_company_from_title(title: str) -> str:
     return ' '.join(words)
 
 
-def summarize_with_haiku(transcript_text: str, title: str) -> str:
-    """Summarize Apollo transcript text using Claude Haiku."""
-    client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+def summarize_with_deepseek(transcript_text: str, title: str) -> str:
+    """Summarize Apollo transcript text using Deepseek V4 Flash via Fireworks."""
+    client = OpenAI(
+        api_key=os.getenv("FIREWORKS_API_KEY"),
+        base_url="https://api.fireworks.ai/inference/v1"
+    )
 
     prompt = f"""Summarize this sales call transcript in 2-3 sentences. Focus on:
 - What was discussed (product, features, pain points)
@@ -85,13 +88,13 @@ Transcript Text:
 
 Provide only the summary, no preamble."""
 
-    response = client.messages.create(
-        model="claude-haiku-4-5-20251001",
+    response = client.chat.completions.create(
+        model="accounts/fireworks/models/deepseek-v4-flash",
         max_tokens=300,
         messages=[{"role": "user", "content": prompt}]
     )
 
-    return response.content[0].text.strip()
+    return response.choices[0].message.content.strip()
 
 
 def process_apollo_csv(csv_path: Path, calls_by_company: dict, total_summarized: list):
@@ -120,10 +123,10 @@ def process_apollo_csv(csv_path: Path, calls_by_company: dict, total_summarized:
         company = extract_company_from_title(title)
         slug = slugify(company)
 
-        # Summarize with Haiku
+        # Summarize with Deepseek
         print(f"   [{i}/{len(rows)}] Summarizing: {title[:50]}...")
         try:
-            summary = summarize_with_haiku(transcript_text, title)
+            summary = summarize_with_deepseek(transcript_text, title)
             total_summarized[0] += 1
         except Exception as e:
             print(f"      ✗ Error: {e}")
