@@ -8,7 +8,8 @@ class TokenTracker:
         self.usage_dir = memory_dir / 'token_usage'
         self.usage_dir.mkdir(parents=True, exist_ok=True)
 
-        costs_path = Path('config/model_costs.json')
+        # Use absolute path from script location (scripts/ -> repo root -> config/)
+        costs_path = Path(__file__).parent.parent / 'config' / 'model_costs.json'
         with open(costs_path) as f:
             self.model_costs = json.load(f)
 
