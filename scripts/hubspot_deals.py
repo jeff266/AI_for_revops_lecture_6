@@ -237,11 +237,11 @@ class HubSpotDealsClient:
         Extract structured scores from MEDDICC analysis markdown.
 
         Returns dict with:
-        - overall_score: 0-100
-        - status: red/yellow/green
+        - overall_score: 0-70 (sum of all 7 components)
+        - status: red/yellow/green (from ✅/⚠️/❌ symbols)
         - champion_score: 0-10
         - economic_buyer_score: 0-10
-        - summary: 2-sentence summary
+        - summary: 2-sentence summary from "Summary & Recommended Actions"
         """
         import re
 
@@ -253,33 +253,67 @@ class HubSpotDealsClient:
             'summary': 'Analysis pending'
         }
 
-        # Extract overall score (look for patterns like "Score: 15/100" or "Overall: 15")
-        score_match = re.search(r'(?:Score|Overall)[:\s]+(\d+)(?:/100)?', analysis_content, re.IGNORECASE)
-        if score_match:
-            scores['overall_score'] = score_match.group(1)
+        # Extract all component scores using "Score: N/10" pattern
+        component_scores = []
 
-        # Extract status (look for red/yellow/green)
-        if re.search(r'\b(red|critical|failing)\b', analysis_content, re.IGNORECASE):
+        # Component names to search for
+        components = [
+            'Metrics',
+            'Economic Buyer',
+            'Decision Criteria',
+            'Decision Process',
+            'Identify Pain',
+            'Champion',
+            'Competition'
+        ]
+
+        for component in components:
+            # Match "Component:\nScore: N/10" pattern (multiline)
+            pattern = rf'{re.escape(component)}[:\s]*.*?Score:\s*(\d+)/10'
+            match = re.search(pattern, analysis_content, re.DOTALL | re.IGNORECASE)
+            if match:
+                score = int(match.group(1))
+                component_scores.append(score)
+
+                # Save specific component scores
+                if component == 'Champion':
+                    scores['champion_score'] = str(score)
+                elif component == 'Economic Buyer':
+                    scores['economic_buyer_score'] = str(score)
+
+        # Calculate overall score as sum of all components (0-70)
+        if component_scores:
+            scores['overall_score'] = str(sum(component_scores))
+
+        # Extract status from symbols in overall summary
+        # Look for ✅ (green), ⚠️ (yellow), ❌ (red)
+        identified_count = len(re.findall(r'✅\s*Identified', analysis_content))
+        partial_count = len(re.findall(r'⚠️\s*Partial', analysis_content))
+        missing_count = len(re.findall(r'❌\s*Not Identified', analysis_content))
+
+        # Determine status based on component identification
+        if missing_count >= 4:  # Most components missing
             scores['status'] = 'red'
-        elif re.search(r'\b(green|strong|passing)\b', analysis_content, re.IGNORECASE):
+        elif missing_count >= 2 or partial_count >= 4:  # Some missing or many partial
+            scores['status'] = 'yellow'
+        elif identified_count >= 5:  # Most identified
             scores['status'] = 'green'
 
-        # Extract Champion score (look for "Champion: 7" or "Champion Score: 7/10")
-        champion_match = re.search(r'Champion[:\s]+(\d+)(?:/10)?', analysis_content, re.IGNORECASE)
-        if champion_match:
-            scores['champion_score'] = champion_match.group(1)
+        # Extract summary from "Summary & Recommended Actions" section
+        summary_match = re.search(
+            r'#+\s*Summary\s*&?\s*Recommended Actions[:\s]*(.*?)(?:\n#+|\Z)',
+            analysis_content,
+            re.DOTALL | re.IGNORECASE
+        )
 
-        # Extract Economic Buyer score
-        eb_match = re.search(r'Economic\s+Buyer[:\s]+(\d+)(?:/10)?', analysis_content, re.IGNORECASE)
-        if eb_match:
-            scores['economic_buyer_score'] = eb_match.group(1)
-
-        # Extract summary (first 2 sentences or first paragraph)
-        lines = [l.strip() for l in analysis_content.split('\n') if l.strip() and not l.strip().startswith('#')]
-        if lines:
-            # Get first non-header paragraph, limit to ~250 chars
-            summary_text = lines[0][:250]
-            scores['summary'] = summary_text
+        if summary_match:
+            summary_text = summary_match.group(1).strip()
+            # Get first two sentences
+            sentences = re.split(r'(?<=[.!?])\s+', summary_text)
+            if len(sentences) >= 2:
+                scores['summary'] = ' '.join(sentences[:2]).strip()
+            elif sentences:
+                scores['summary'] = sentences[0].strip()
 
         return scores
 
