@@ -1,0 +1,18 @@
+{
+  "company": "Hampus / Pedro",
+  "slug": "hampus-pedro",
+  "calls": [
+    {
+      "id": "01KPTMPFFB0NGKVB5EZSN8WQQ7",
+      "source": "fireflies",
+      "title": "Hampus / Pedro AB testing LLMs",
+      "date": "2026-04-24",
+      "duration_minutes": 52,
+      "summary": "Intercom's meeting highlighted their robust AB testing culture, having conducted over 1,000 tests since Pedro's arrival. Every change, including minor updates, undergoes AB testing with a focus on conversation outcomes, and tests last at least one week to capture seasonal variability. The team relies on AB tests rather than offline evaluations due to biases in sample sizes. To mitigate risks, tests are now randomized at the conversation level, ensuring high-value customers are protected. Customers can customize AI behavior through guidance and procedures, and the evaluation process involves a comprehensive set of metrics to make balanced decisions.",
+      "organizer": "hampus@growthbook.io",
+      "participants": 4,
+      "keywords": "AB testing, AI experimentation, offline evaluation, conversation-based testing, customer customization, resolution rate",
+      "action_items": "\n**Pedro Tabacof**\nCoordinate with leadership before sharing any AB testing methodology publicly or writing blog posts to ensure confidentiality and competitive advantage (51:10)\nContinue investing in improving the customer guidance and procedures writing experience to enhance AI behavior alignment in experiments (40:55)\n\n**Hampus Poppius**\nFollow up with Pedro Tabacof to obtain explicit permissions for any quotes or content intended for external use (02:35)\nFollow up with Pedro Tabacof to ensure explicit permissions are obtained before using any meeting content externally (51:40)\n\n**Scott Bailey**\nSynthesize insights from the discussion on AB testing and AI experimentation to create GrowthBook content focused on experimental design and validation of LLMs and AI models (00:00)\n"
+    }
+  ]
+}

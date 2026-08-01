@@ -1,0 +1,18 @@
+{
+  "company": "Growthbook Check-in",
+  "slug": "growthbook-check-in",
+  "calls": [
+    {
+      "id": "01KX3YTN5PKHRECH0JVFPZKRFP",
+      "source": "fireflies",
+      "title": "Growthbook Check-in",
+      "date": "2026-07-09",
+      "duration_minutes": 31,
+      "summary": "The team outlined a six-week Proof of Concept (PoC) aimed at implementing feature flags, conducting experimentation, and enhancing product analytics. The PoC is expected to start soon and will use a dedicated instance of GrowthBook for better visibility and support. Participants discussed the need for clear communication and coordination, proposing a dedicated Slack channel to streamline interactions. Additionally, the meeting addressed scalability concerns, data handling for experiments, and the ongoing support provided under the active enterprise agreement. The transition from a self-hosted to a cloud-based solution was a key consideration to enable better functionality and monitoring during the PoC.",
+      "organizer": "cary@growthbook.io",
+      "participants": 12,
+      "keywords": "feature flags, experimentation, GrowthBook, enterprise PoC, scalability, data integration",
+      "action_items": "\n**Cary Rakin**\nSet up a dedicated Slack channel for Block PoC communication and add Alyssa and relevant team members to facilitate focused coordination (29:41)\nSend GrowthBook enterprise fact sheet comparing product tiers and open source model to Alyssa and team after the meeting (14:24)\nWork offline with Alyssa to clarify PoC infrastructure choice between self-hosted and enterprise cloud deployment (30:00)\nContinue providing close support during the PoC and assist with transition to the GrowthBook enterprise model as needed (30:23)\n\n**Alyssa Ransbury**\nProvide GrowthBook team with a list of metrics and internal flag/existing configurations relevant for PoC data integration (04:27)\nMake a final decision on PoC architecture and requirements by the end of next week and coordinate with GrowthBook on architecture feedback (28:51)\n\n**GrowthBook Team**\nSupport Alyssa’s team during PoC with SDK integration and feature flag configuration to enable testing and evaluation (04:50)\nAssist in developing scalable audience evaluation solutions to overcome the 1MB audience list limitation as requested by Harvey (20:25)\nProvide demos or technical details on feature flag governance, lifecycle management, and scalability to support due diligence (09:40)\nRespond to further technical questions during the due diligence phase to ensure clarity and alignment (23:41)\n\n**Harvey Yang**\nShare specific scalability and audience size concerns with GrowthBook team and follow up for custom solutions (20:50)\n"
+    }
+  ]
+}

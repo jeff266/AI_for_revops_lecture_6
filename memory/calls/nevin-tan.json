@@ -1,0 +1,18 @@
+{
+  "company": "Nevin Tan",
+  "slug": "nevin-tan",
+  "calls": [
+    {
+      "id": "01KTM4H7T6F5QGEE8W5EH2A58D",
+      "source": "fireflies",
+      "title": "30 min with Scott (Nevin Tan)",
+      "date": "2026-06-08",
+      "duration_minutes": 37,
+      "summary": "The discussion revolved around enhancing technical product marketing led by Scott Bailey, focusing on realistic demos, AI integration, and a customer-driven roadmap influenced by major clients. The marketing team, transitioning from contractors to in-house staff, aims to experiment with different strategies to support enterprise customers. Nevin Tan highlighted the importance of balancing technical and customer perspectives in Developer Relations, promoting effective content and community engagement while addressing developer needs. The meeting also underscored the cautious use of AI tools to support productivity without risking knowledge decay, and emphasized the importance of concise, actionable developer content to improve access to solutions.",
+      "organizer": "scott@growthbook.io",
+      "participants": 2,
+      "keywords": "Developer Relations, AI-assisted coding, Developer content, Technical product marketing, Community engagement, Data quality tools",
+      "action_items": "\n**Nevin Tan**\nProvide Scott Bailey the link to the current tutorial documentation for Great Expectations’ OCR and data validation project (11:24)\n\n**Scott Bailey**\nMake available additional product marketing and developer content materials for collaborative work with DevRel (00:44)\nRespond to any follow-up questions from Nevin via email post-interview (35:22)\n"
+    }
+  ]
+}

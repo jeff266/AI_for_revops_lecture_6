@@ -1,0 +1,18 @@
+{
+  "company": "Alex & Ashley",
+  "slug": "alex-ashley",
+  "calls": [
+    {
+      "id": "01KJRJTPERXWVZZYWBQV7DK3YZ",
+      "source": "fireflies",
+      "title": "Alex & Ashley - GrowthBook Interview",
+      "date": "2026-03-04",
+      "duration_minutes": 47,
+      "summary": "GrowthBook's strategy leverages a product-led growth model to attract approximately 1,300-1,500 monthly signups, with minimal marketing. The sales efforts are currently centered on 250 high-potential accounts, responding primarily to inbound demo requests, while a new BDR is working on outbound prospecting. In the next 60-90 days, a formal sales and marketing operations function will be established. GrowthBook differentiates itself from competitors like Adobe and Microsoft by targeting product and engineering teams, using a modern architecture that integrates well with developer workflows. Additionally, AI integration is enhancing the experimentation process, and there are plans for a comprehensive product analytics feature to drive revenue growth and disrupt the market.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, marketing engine, sales strategy, AI integration, product analytics, enterprise sales",
+      "action_items": "\n**Ashley Stirrup**\nContinue developing marketing and sales process alignment with sales ops and marketing ops contractors (15:05)\nTrack early outcomes and success metrics for new Sales AE onboarding with input from Ryan (15:53)\n\n**Alexander Ferre**\nFollow up conversation with Ryan on specifics about sales role expectations and success metrics (17:22)\n\n**Ryan McGurk**\nEngage with Ashley and new hires to clarify definitions for MQL, SAL, and lead qualification process (12:58)\nProvide detailed 90-day success goals and onboarding expectations for new Sales Account Executives (15:50)\n"
+    }
+  ]
+}

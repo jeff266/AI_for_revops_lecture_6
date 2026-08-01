@@ -1,0 +1,18 @@
+{
+  "company": "PÚBLICO + GrowthBook",
+  "slug": "p-blico-growthbook",
+  "calls": [
+    {
+      "id": "01KSG76THXKSXXEABFS7WW1530",
+      "source": "fireflies",
+      "title": "PÚBLICO + GrowthBook",
+      "date": "2026-05-27",
+      "duration_minutes": 31,
+      "summary": "Publico aims to enhance its subscription management through a flexible tool that allows their team to run up to 20 experiments with a small group of about 10 users. They utilize the Piano platform but are seeking more control with fewer IT interventions, emphasizing the importance of reducing churn and increasing actual subscription sales. Christian from GrowthBook presented their visual editor, enabling non-technical users to conduct A/B tests independently after initial setup. The discussion also clarified GrowthBook's pricing structure, including a $100,000 annual fee and $1,250 per user for enterprise plans. Additionally, a seven-day trial was agreed upon for Publico to explore the platform's capabilities before making a purchase decision.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Visual Editor, subscription management, A/B testing, paywall, pricing model, API requests",
+      "action_items": "\n**Christian Liebenow**\nProvide additional details regarding Visual Editor’s Portuguese language support and paywall editing capabilities for non-technical users (26:00)\nArrange a seven-day trial of GrowthBook’s premium Pro version for Publico’s evaluation (29:50)\nSet up trial license linked to Publico’s official email and send related communications (30:12)\nFollow up with Publico by email to schedule a product demo and answer outstanding technical questions (30:30)\n\n**Victor Ferreira**\nProvide approximate API calls and usage stats to help assess CDN and bandwidth needs more precisely (15:50)\n"
+    }
+  ]
+}

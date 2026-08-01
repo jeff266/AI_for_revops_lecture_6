@@ -1,0 +1,18 @@
+{
+  "company": "Catena + GrowthBook",
+  "slug": "catena-growthbook",
+  "calls": [
+    {
+      "id": "01KJR91GST99F05TYMP3TPW0S5",
+      "source": "fireflies",
+      "title": "Catena + GrowthBook",
+      "date": "2026-03-03",
+      "duration_minutes": 40,
+      "summary": "The team discussed the feasibility of edge-based A/B testing for a dynamic toplist tool, addressing concerns about caching inefficiency due to multiple permutations. Low traffic and short cache durations were identified as limitations impacting cache hit rates, yet caching was deemed workable. The GrowthBook visual editor's flexibility allows for live changes without heavy development involvement, enhancing the testing process. AI advancements, particularly with the MCP server, are expected to automate experiment creation and hypothesis generation, catering to customer needs. The team also planned collaborative trials with flexible periods of two to four weeks, emphasizing the impact of a small development team on rollout timelines.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Visual Editor, Edge Experimentation, Growth Book, AI Integration, CDN Caching, Data Warehouse",
+      "action_items": "\n**Colton Rybus**\nCoordinate with internal dev team to provide a start date for testing Growth Book (33:08)\nAdd dev team members to the Slack channel once invitation is received (39:34)\nCompile a list of specific testing requirements, especially for the topless tool, to validate Growth Book compatibility (35:00)\n\n**Christian Liebenow**\nCreate and send a Slack channel invite to Colton for ongoing communication and support (33:12)\nProvision an enterprise trial environment for Growth Book once ready (33:25)\nProvide onboarding and implementation sessions for the client’s team, including connection to the data warehouse (33:40)\nShare relevant competitor names using Growth Book to support Colton’s internal advocacy (38:10)\nAssist with integration and technical support during trial period and beyond (29:53)\n\n**Chris Sanders**\nInvestigate and clarify details on AI-powered visual editor and prompt-driven experiment creation capabilities for Growth Book (25:30)\nBe available for follow-up technical questions from Colton and team post-meeting (32:02)\n"
+    }
+  ]
+}

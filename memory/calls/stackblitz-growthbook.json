@@ -1,0 +1,18 @@
+{
+  "company": "StackBlitz + GrowthBook",
+  "slug": "stackblitz-growthbook",
+  "calls": [
+    {
+      "id": "01KVNQYMG16VS1NAS6AB4Z7JYD",
+      "source": "fireflies",
+      "title": "StackBlitz + GrowthBook",
+      "date": "2026-06-23",
+      "duration_minutes": 4,
+      "summary": "The meeting focused on rescheduling due to Enrique's conflicting availability, with the new time set for the next day. Dan OBoyle confirmed Enrique's availability through a calendar check, while Christian Liebenow promptly agreed to the change. This adjustment aimed to ensure participation from all stakeholders and preserve project alignment by capturing Enrique's essential requirements. Additionally, preliminary introductions fostered rapport among participants, intending to streamline future collaboration. The discussion also highlighted a missed invite management issue, with Christian acknowledging the oversight regarding Enrique, establishing a commitment to improved invite management moving forward. Quick scheduling checks and proactive communication strategies were emphasized to enhance meeting efficiency and flexibility within the team dynamics.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "reschedule, DevOps, meeting coordination, scheduling conflict, implementation needs, participant availability",
+      "action_items": "\n**Dan O'Boyle**\nReschedule the meeting for the same time the following day when Enrique is available (02:55)\nEnsure Enrique’s requirements are captured in the upcoming meeting for proper implementation (03:12)\n\n**Christian Liebenow**\nParticipate in the rescheduled meeting and coordinate availability with Dan and Enrique (02:55)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Tanner / Ashley",
+  "slug": "tanner-ashley",
+  "calls": [
+    {
+      "id": "01KW037JV67AJMW2Y77EESZDR6",
+      "source": "fireflies",
+      "title": "Tanner / Ashley / Emmy",
+      "date": "2026-06-29",
+      "duration_minutes": 22,
+      "summary": "The team agreed on a streamlined social media posting process to enhance coordination and visibility. Over-communication via a dedicated Slack channel will keep all team members informed about social media tasks, with Tanner responsible for posting updates. Posting responsibilities were clarified, with Tanner managing LinkedIn, Emmy handling blogs, and Ashley overseeing Facebook and Twitter. They decided to use Buffer for scheduling and tagging to optimize multi-platform posting. Additionally, they reinforced a strict guest approval process with a seven-day turnaround and discussed technical needs for embedding episodes on the website. The team confirmed the importance of branding assets and established a schedule for newsletters and daily reels to maintain consistent audience engagement.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "social media posting, podcast episodes, reels, LinkedIn newsletter, content approval, Buffer scheduling, branding, CMS fields",
+      "action_items": "\n**Tanner Green**\nEnsure all episode approval emails include Ashley, Emmy, and Tanner in cc for transparency and coordination (02:33)\nBe over-communicative on Slack regarding social media post statuses and content readiness to keep the team informed (03:42)\nHandle posting of episode live announcements, newsletters, LinkedIn newsletters, reels, and social media posts for Facebook and Twitter (04:32)\nRemove shorts from the podcast playlist on YouTube to maintain channel organization (08:30)\nSchedule reels on Buffer for YouTube, Facebook, Twitter, and select posts for LinkedIn with accompanying text posts (11:34)\nInclude company branding consistently in all posts by always mentioning the guest’s company name for recognition and engagement (12:38)\nProvide two example CMS field outputs for episodes by end-of-day for team review and feedback to streamline data entry (19:40)\nContinue sending episode drafts to guests within a 7-day turnaround window for approval before publication (17:48)\nShare requested horizontal logo image of Experimentation Edge with the team for use in posts and branding (18:53)\n\n**Emmy Sharp**\nWrite blog posts for every podcast episode on the GrowthBook website to support content marketing efforts (13:29)\nCoordinate with Karen on embedding podcast episodes and UTM tracking integration on the website for better analytics (16:38)\nCommunicate with Tanner and Ashley regarding posting schedules and cross-posting responsibilities to ensure alignment (06:28)\n\n**Ashley Stirrup**\nProvide Tanner access to LinkedIn tracking app for analytics sharing to monitor post performance effectively (11:16)\nCoordinate crossposting guidelines with Tanner and Emmy, clarifying which platforms and posts to share for consistency (06:08)\nContinue managing guest communication regarding episode approval timelines to maintain smooth publishing workflow (20:25)\n"
+    }
+  ]
+}

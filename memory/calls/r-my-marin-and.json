@@ -1,0 +1,18 @@
+{
+  "company": "Rémy Marin and",
+  "slug": "r-my-marin-and",
+  "calls": [
+    {
+      "id": "01KQ7RKNMRW5AVYNVBB5STMV17",
+      "source": "fireflies",
+      "title": "Rémy Marin and James Shannon",
+      "date": "2026-04-28",
+      "duration_minutes": 31,
+      "summary": "The discussion centered on GrowthBook as a promising experimentation platform, particularly following the acquisition of competitor Statsig by OpenAI, which created opportunities for market share capture. Highlighting GrowthBook's open-source model, the meeting explored its appeal to developers and enterprise clients. The sales process revealed a strong 70% win rate in the proof of concept phase, underlining effective product-market fit. A major point was the necessity to hire a solutions engineer in Europe to enhance localized customer engagement. With leadership directly involved in recruitment, there was a clear emphasis on strategic growth in the EMEA region, aligning operational capabilities with the company's ambitious expansion goals.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B Testing, Growth Book, Solutions Engineering, Proof of Concept, Enterprise Sales, Open Source",
+      "action_items": "\n**James Shannon**\nSend Rémy an email summarizing the interview conversation and next steps including details about meetings with Logan, Ryan, role play, and CEO (29:07)\nCoordinate with Richard to propose available times for Rémy to meet with Logan and share scheduling options (29:45)\n\n**Rémy Marin**\nPrepare for follow-up technical discussions with Logan and the broader interview process including role play and leadership interviews (26:00)\nReview the emailed transcript and notes for reflection and clarity on discussion points (29:07)\n"
+    }
+  ]
+}

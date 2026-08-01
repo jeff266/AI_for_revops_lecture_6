@@ -1,0 +1,18 @@
+{
+  "company": "xom-djvy-pxr",
+  "slug": "xom-djvy-pxr",
+  "calls": [
+    {
+      "id": "01KJ5TWH2X49DJAJ2SBGK5EJT8",
+      "source": "fireflies",
+      "title": "xom-djvy-pxr",
+      "date": "2026-02-23",
+      "duration_minutes": 22,
+      "summary": "The team discussed several key improvements aimed at enhancing user experience and system performance. A unified global data source selector will replace local selectors to ensure relevant metrics, with safeguards against mismatched selections. Issues related to auto submission and metric mixing were identified, prompting the need for a global filter. The query explorer is nearing completion, with final touches on the group by UI and dashboard flow. Additionally, a dashboard block will dynamically fetch the latest analysis to simplify rendering. The team also addressed ongoing technical challenges, particularly with preview deployments and memory errors, as well as the importance of cross-team coordination for features like lazy loading filters.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 0,
+      "keywords": "data source selector, metric explorer, query runner, dashboard blocks, filter toggle, big number visualization",
+      "action_items": "\n**Omar Elshaikh**\nAttempt to pull latest main branch to fix failing preview deployment (03:00)\nContinue working on group by UI improvements (05:32)\nDiscuss with Michael Knowlton the dashboard implications of data source selector placement and behavior (06:34)\n\n**Jeremy Dorn**\nShare link to notion doc for UX improvement notes (01:24)\nMove data source selector position in UI according to new mockups (14:35)\nContinue work on query runner and dashboard integration but defer finishing query runner tasks due to time constraints (20:52)\n\n**Michael Knowlton**\nProgress dashboard exploration block implementation, especially handling last refreshed timestamps from query runner Mongo data (15:54)\nExplore storing config alongside analysis ID in blocks to keep dashboard sync (19:00)\nContinue to investigate big number visualization bugs with group by and multiple metrics (08:56)\n"
+    }
+  ]
+}

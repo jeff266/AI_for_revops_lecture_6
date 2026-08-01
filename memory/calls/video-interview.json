@@ -1,0 +1,42 @@
+{
+  "company": "Video interview",
+  "slug": "video-interview",
+  "calls": [
+    {
+      "id": "01KP7DGWRPYS97Z5GCGVHZ8V6X",
+      "source": "fireflies",
+      "title": "Video interview: Cong Cao <> Ashley Stirrup",
+      "date": "2026-04-15",
+      "duration_minutes": 30,
+      "summary": "Growth Book is experiencing rapid growth, having doubled its revenue from $4 million to $8 million last year, with a goal of reaching $16 to $20 million this year. This success is attributed to a shift from inbound to structured sales and the establishment of sales, marketing, and customer success teams. The company's unique warehouse-native analytics set it apart from competitors, allowing for better data transparency and ownership. The customer base consists of around 3,000 customers, with a significant portion of revenue driven by enterprise sales. New sales and marketing infrastructure is being implemented, including HubSpot CRM, while transitioning to dedicated full-time staff. Recent enterprise wins and operational improvements, such as a lead routing system and website redesign, are vital for further growth.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Growth Book, warehouse-native, demand generation, pipeline segmentation, digital marketing, ABM",
+      "action_items": "\n**Ashley Stirrup**\nSend calendar invite for follow-up meeting scheduled at 4:00 PM the same day (28:59)\nConfirm receipt of candidate’s email and complete scheduling of follow-up meeting (29:33)\n\n**Cong Cao**\nProvide email contact in chat to facilitate scheduling of follow-up meeting (29:29)\nPrepare for continuation of discussion in the scheduled follow-up meeting (29:54)\n"
+    },
+    {
+      "id": "01KNDKHEADP424PWSHFSCKHQ4T",
+      "source": "fireflies",
+      "title": "Video interview: Ashley Stirrup <> Jessica Martin",
+      "date": "2026-04-06",
+      "duration_minutes": 180,
+      "summary": "The meeting highlighted the company's impressive revenue growth, doubling its ARR to $8 million primarily through inbound sales and notable enterprise clients like Anthropic and Salesforce. Plans to at least double revenue again are in place, with a focus on building a comprehensive demand generation infrastructure. The marketing strategy involves targeted channels and partnerships, while the sales team is leveraging podcast outreach to secure demo opportunities. Improved attribution through HubSpot CRM integration and a new product release focusing on feature flagging were also discussed, aligning with a strategic vision in AI experimentation tools. Leadership emphasized collaboration, mentorship, and evolving team roles to strengthen the marketing and sales functions.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "Growth Book, demand generation, podcast marketing, A/B testing, marketing operations, developer marketing",
+      "action_items": "\n**Ashley Stirrup**\nSchedule a follow-up meeting between Ashley Stirrup and Jess Martin at 3:30 PM the next day to continue strategic discussions (00:32)\nSend podcast guest interview preparation materials and baseline ARR targets for demand generation to Jess Martin to align on expectations and strategy (02:34:00)\nTake ownership of tracking and managing the podcast guest pipeline jointly with Jake to ensure smooth coordination and follow-up (02:19:00)\nPursue meetings with Typeform and Ancestry teams identified as potential Growth Book customers from podcast leads to explore partnership and sales opportunities (02:19:00)\nShare the blog post titled \"Why Growth Book is a good alternative to LaunchDarkly\" with Jess Martin to support marketing content alignment (02:05:00)\nProvide Jess Martin and her team with email templates used for outreach to standardize and improve communication effectiveness (02:16:00)\nForward Khan Academy webinar information to Jess Martin for use in branded and experiment campaigns to enhance marketing efforts (01:58:00)\n\n**Jess Martin**\nReview and approve the new follow-up email template that emphasizes a LinkedIn share ask post-podcast to increase engagement (02:13:00)\nProvide LinkedIn outreach messaging samples and scripting to Jake and the marketing team to support podcast guest recruitment efforts (02:09:00)\nAssist Jake with LinkedIn profile optimization and outreach training to improve effectiveness in podcast guest recruitment and lead generation (02:31:00)\nPrepare a competitor tactics report for the next meeting to inform strategic marketing decisions (02:04:00)\nDeliver LinkedIn and podcast guest briefing information for upcoming guests to ensure alignment and preparedness (02:34:00)\nMonitor Google Ads and HubSpot integration performance and propose a retargeting strategy to improve campaign effectiveness (01:55:00)\nShare outreach funnel math and tracking documentation, confirm guest ICP and experiment volume requirements to optimize podcast lead generation (02:21:00)\n\n**Jake**\nConduct LinkedIn outreach targeting product leaders, data scientists, and product managers according to the podcast ideal customer profile to generate warm leads (02:20:00)\nUpdate LinkedIn profile to reflect experimentation partnerships and podcast recruiting role to enhance personal branding and outreach success (02:30:00)\n\n**Christian**\nProvide input on podcast guest follow-up email and assist with guest tag team campaign to improve engagement and conversion (02:19:00)\nAdjust LinkedIn profile and campaign messaging for outreach to better align with podcast guest recruitment goals (02:36:00)\n\n**David**\nShare and operationalize podcast guest recruitment and demo scheduling plan to streamline pipeline management and maximize impact (02:09:00)\n"
+    },
+    {
+      "id": "01KNADJH1YW7ZG3STM7XZEW8Q8",
+      "source": "fireflies",
+      "title": "Video interview: Ashley Stirrup <> Lyndsie Berens",
+      "date": "2026-04-03",
+      "duration_minutes": 68,
+      "summary": "The meeting highlighted the company's rapid growth, doubling its revenue from $4 million to $8 million with approximately 3,000 customers, including 120 enterprise clients that contribute 75% of revenue. The firm positions itself against larger competitors by emphasizing engineering-focused products, filling market gaps left by others like Statsig. Lyndsie, a candidate for a director-level demand generation role, shared her experience in building ABM strategies and emphasized the importance of pipeline-focused marketing over MQL volume. The marketing operations team currently lacks dedicated personnel for integration and analytics. The sales cycle is short, averaging 30 to 60 days primarily due to inbound leads, with ambitions to expand outbound efforts through a newly enhanced sales team.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, demand generation, developer marketing, ABM, programmatic advertising, marketing ops",
+      "action_items": "\n**Ashley Stirrup**\nIntroduce Lyndsie Berens to GrowthBook CRO Ryan McGurk and CEO Graham for next interview rounds (01:03:21)\nSchedule interviews with GrowthBook leadership (Ryan McGurk and CEO Graham) on Monday and Tuesday at 2 PM Pacific (01:04:09)\nFollow up with GrowthBook leadership post-interviews to gather feedback and expedite the hiring process considering candidate’s timeline (01:07:20)\n\n**Lyndsie Berens**\nConfirm availability for scheduled interviews with GrowthBook leadership and provide feedback after meetings (01:03:54)\n"
+    }
+  ]
+}

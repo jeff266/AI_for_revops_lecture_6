@@ -1,0 +1,18 @@
+{
+  "company": "Alex Trost",
+  "slug": "alex-trost",
+  "calls": [
+    {
+      "id": "01KQ85NW7X4F2W3YM0VZ27JKQV",
+      "source": "fireflies",
+      "title": "30 min with Scott (Alex Trost)",
+      "date": "2026-04-27",
+      "duration_minutes": 42,
+      "summary": "The discussion highlighted the intersection of technical marketing and developer experience, with Scott Bailey emphasizing Growth Book's positioning through clear technical value articulation and tracking AI capabilities. Alex Trost outlined his role in promoting Prismic by creating educational content aligned with popular developer frameworks, utilising strategic keyword targeting to enhance visibility. The conversation also explored user-driven stack choices, with a focus on frameworks like Next.js, and cautious use of AI in coding practices. Credibility in developer content and community management was stressed by Alex, prioritizing honest assessments over hype. Additionally, Growth Book's competitive edge was discussed, particularly its warehouse-native architecture and compliance features aimed at attracting engineering-focused customers.",
+      "organizer": "scott@growthbook.io",
+      "participants": 3,
+      "keywords": "Product Marketing, Developer Experience, AI-assisted Coding, Warehouse Native, Community Building, Feature Flagging",
+      "action_items": "\n**Scott Bailey**\nShare the name or link of the AI YouTuber Alex referenced as an example of credible and honest AI content creation (20:03)\nContinue refining and managing the version control and updates of custom AI skills used for marketing automation, ensuring centralized management and team accessibility via cloud projects (17:52)\nProvide Alex Trost with contacts or introductions to other Growth Book team members such as Ashley or Elise for further collaboration or questions (41:29)\n\n**Alex Trost**\nFollow up with any additional questions or collaboration requests with Scott Bailey or the Growth Book team via email as discussed (41:29)\n"
+    }
+  ]
+}

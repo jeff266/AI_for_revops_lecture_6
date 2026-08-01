@@ -1,0 +1,18 @@
+{
+  "company": "Jake <> Brent weekly 1:1",
+  "slug": "jake-brent-weekly-1-1",
+  "calls": [
+    {
+      "id": "01KVE52A0WJQT9QVYSKQ1AM4HC",
+      "source": "fireflies",
+      "title": "Jake <> Brent weekly 1:1 - including discovery+demo",
+      "date": "2026-06-26",
+      "duration_minutes": 33,
+      "summary": "The team discussed strategies to enhance their sales outreach, emphasizing the importance of targeting high-value open source users and the Forbes Top 50 AI companies. They noted consistent lead generation from open source users, averaging one meeting per week, with a focus on companies with over 500 employees. Plans for outreach to the Forbes list will ramp up post-conference, excluding competitors like OpenAI. The team is enhancing contact data acquisition using Apollo and Dripify, with effective sequencing for multi-channel outreach. Additionally, a LinkedIn campaign was reviewed, showing good connection rates but low responses, necessitating follow-up efforts. The team's coordination and relationship-building activities during the forthcoming AI Engineer World conference were also highlighted to ensure focused outreach afterward.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 2,
+      "keywords": "AI Engineer Conference, Open Source Outreach, Forbes Top 50 AI List, Contact Enrichment, Apollo CRM, LinkedIn Dripify Sequencing",
+      "action_items": "\n**Jake Stangl**\nContinue outreach to webinar attendees and open source users to maintain at least one meeting per week (07:00)\nFilter Forbes Top 50 AI companies list to exclude current customers and companies with open opportunities before launching outreach sequence after July 6th (24:00)\nUpload filtered AI Top 50 contacts into Dripify and Apollo, enriching with emails and mobile numbers via Apollo (17:00)\nPause drip campaign sequence in Dripify after uploading contacts to delay messaging start by 14 days (29:30)\nFollow up with non-responding LinkedIn connections by adding them into Apollo outbound email sequences and phone call outreach (22:50)\nCoordinate with Ryan on outreach plans to avoid overlapping prospect contact and confirm messaging strategy for AI Top 50 campaign (19:00)\nSchedule and prepare for role play and demo session in week after next due to conference travel (26:40)\n\n**Brent Holloway**\nProvide follow-up support on LinkedIn and Apollo sequencing tools and filtering techniques (09:30)\nAssist with uploading and managing contact lists in Sales Navigator and Dripify (12:30)\nShare insights and best practices on multi-channel outreach and contact enrichment strategies (17:00)\nCoordinate potential in-person meeting with Jake and team during AI Engineer Conference week in San Francisco (02:30)\n"
+    }
+  ]
+}

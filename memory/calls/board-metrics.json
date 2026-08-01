@@ -1,0 +1,18 @@
+{
+  "company": "Board Metrics",
+  "slug": "board-metrics",
+  "calls": [
+    {
+      "id": "01KTT2GZ112ZEB62SM7878XF3F",
+      "source": "fireflies",
+      "title": "Board Metrics",
+      "date": "2026-06-11",
+      "duration_minutes": 16,
+      "summary": "The meeting focused on enhancing sales performance through improved pipeline hygiene, which corrected the win rate from a concerning 10% to a more accurate 45% after removing stale deals. Notably, Q1 saw record sales with 16 new business and 6 expansion deals closed, alongside a nearly 10% increase in average deal size to $40,000. The sales cycle duration was shortened from 98 to 81 days, indicating greater efficiency. However, concerns arose regarding weak visibility in the expansion pipeline for Q3, which may affect future forecasts. Data quality issues, including inconsistencies in seat counts and deal sources, were also highlighted as areas needing improvement to support strategy and sales efforts moving forward.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 2,
+      "keywords": "pipeline hygiene, win rate, deal size, sales cycle, expansion playbook, pipeline coverage",
+      "action_items": "\n**Jeff Ignacio**\nTighten enforcement of pipeline hygiene to prevent unqualified deals entering discovery, continuing with team collaboration (01:10)\nComplete and clean \"source type\" data field classification before next board meeting for improved inbound/outbound/partner distinction (02:58)\nExplore programmatic signals for expansion play detection to reduce manual oversight burden on Carrie (05:15)\nInvestigate reasons behind sales cycle acceleration and maintain tracking accuracy to understand sales motion improvements (10:58)\nPrepare any additional data investigations prior to next board meeting as requested by Ryan (15:03)\n\n**Ryan McGurk**\nSummarize meeting insights and draft report for Jeff’s feedback before next board meeting (14:47)\n"
+    }
+  ]
+}

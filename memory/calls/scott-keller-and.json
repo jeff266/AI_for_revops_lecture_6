@@ -1,0 +1,18 @@
+{
+  "company": "Scott Keller and",
+  "slug": "scott-keller-and",
+  "calls": [
+    {
+      "id": "01KGFWPETN5NPBGG3PYC0AQ61D",
+      "source": "fireflies",
+      "title": "Scott Keller and Ashley Stirrup",
+      "date": "2026-02-04",
+      "duration_minutes": 45,
+      "summary": "The meeting highlighted GrowthBook's strong market position, emphasizing its $8 million business model that focuses on product teams rather than marketers. Ashley Stirrup emphasized the importance of data-driven experimentation, noting that customers run five times as many experiments after adopting GrowthBook, which is crucial given that 7 out of 10 shipped features typically fail. The discussion further covered lead generation challenges, with 1,300 monthly signups converting into about 60-70 new self-serve customers, while the ideal customer profile targets larger companies for better experimentation opportunities. Scott Keller shared effective enterprise sales strategies, advocating for account expansion over new land deals. The importance of in-person events for building relationships and the emphasis on aligning sales and marketing efforts were also key points addressed in the conversation.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, Enterprise Sales, Marketing Strategy, Inbound Leads, Product Analytics, Multi-threaded Selling",
+      "action_items": "\n**Ashley Stirrup**\nExpand full-time marketing headcount, converting contractor roles into employees for demand generation, product marketing, and content creation (20:11)\nBuild outbound prospecting and event marketing infrastructure including webinars, conference participation, and outbound campaigns (20:00)\nUtilize Rio tool data to identify and outreach to key enterprise accounts based on behavior and intent signals (14:40)\nPlan GrowthBook conference participation, prioritize AWS re:Invent, and secure booth and speaking opportunities (42:53)\n\n**Scott Keller**\nFollow up with Ashley via email to continue discussion and explore opportunities (44:04)\nInvestigate and identify events/conferences with highest potential ROI for product-focused sales engagement (41:30)\n"
+    }
+  ]
+}

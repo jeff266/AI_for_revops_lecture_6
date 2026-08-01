@@ -1,0 +1,18 @@
+{
+  "company": "Jeremy & James",
+  "slug": "jeremy-james",
+  "calls": [
+    {
+      "id": "01KQ578PP127TQMX02H3A8NRWV",
+      "source": "fireflies",
+      "title": "Jeremy & James S",
+      "date": "2026-04-28",
+      "duration_minutes": 30,
+      "summary": "The meeting covered the EMEA market's unique growth potential, highlighted by a closed $25k gaming contract and a robust pipeline of around $630,000. Key insights showed that 33 unique inbound leads were established, primarily from e-commerce and fintech sectors, with a focus on marketing personas advocating for ease of use. Critical pain points affecting prospects included slow experiment velocity, indicating dissatisfaction with existing tools. Additionally, lead generation trends pointed to significant use of AI-based searches for discovering GrowthBook. Discussions on technical differentiation included advanced statistical methods that offer substantial competitive advantages, while the integration process is flexible, with setup times varying based on data complexity. The importance of clear communication tailored to both technical and non-technical stakeholders was emphasized.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Server-side rendering, cookie handling, visual editor, statistical rigor, data warehouse integration, experiment velocity",
+      "action_items": "\n**James Shannon**\nAdd Jeremy Dorn to the Slack channel that shares weekly transcript and pipeline data summaries to keep him updated on lead and pipeline status (02:18)\nFollow up with Jen to locate and review the recording of the initial GrowthBook setup presentation given by Jeremy Dorn for internal reference and training (28:53)\nInvestigate and clarify the availability and integration options of the Shopify SDK to better support no-code/low-code platform users and inform sales and technical teams (15:24)\n\n**Jeremy Dorn**\nShare the recorded presentation on initial GrowthBook setup and integration with James Shannon to support onboarding and enablement efforts (27:44)\n"
+    }
+  ]
+}

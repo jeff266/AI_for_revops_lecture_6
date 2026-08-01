@@ -1,0 +1,18 @@
+{
+  "company": "Strawberry.me and GrowthBook",
+  "slug": "strawberry-me-and-growthbook",
+  "calls": [
+    {
+      "id": "01KV6STTKDAMF9A82690VAYXWE",
+      "source": "fireflies",
+      "title": "Strawberry.me and GrowthBook",
+      "date": "2026-06-16",
+      "duration_minutes": 22,
+      "summary": "Strawberry is transitioning from manual and Amplitude-based experimentation to Growth Book to gather advanced metrics on retention, revenue, and feature adoption. Current methods are inefficient, relying on manual dashboards and lacking visibility. The Growth Book platform was positively received for its ease of use and flexibility, supporting diverse experimental designs. Strawberry has successfully connected its Snowflake data to improve integration. Dan Wathne emphasized Growth Book's unique open-source model and AI roadmap as differentiators from competitors. Recommendations included using both Growth Book’s SDK for experiment allocation and Amplitude’s for analytics to balance cost and performance. The focus for Strawberry is to start with a Pro plan for initial experiments, with ongoing support from Growth Book to ensure successful transitions and metric unification.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 5,
+      "keywords": "Growth Book, Amplitude, Experimentation Platform, Data Warehouse, KPI Comparison, Experiment SDK",
+      "action_items": "\n**Dan Wathne**\nFollow up with technical team to clarify how Growth Book handles allocation vs. exposure events compared to Amplitude (14:55)\nProvide best practice recommendations on integrating KPIs from both Amplitude and Growth Book for consistent experiment evaluation (18:40)\nSend follow-up email addressing technical questions raised during the meeting (20:30)\n\n**Eric**\nContinue hands-on testing with Growth Book demo account as part of proof of concept to evaluate platform capabilities (20:00)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook <-> ClickUp (Evan Gerdisch)",
+  "slug": "growthbook-clickup-evan-gerdisch",
+  "calls": [
+    {
+      "id": "01KY0B420J6ZM6GGF94ZYEMHX2",
+      "source": "fireflies",
+      "title": "GrowthBook <-> ClickUp (Evan Gerdisch) - AI and experimentation",
+      "date": "2026-07-22",
+      "duration_minutes": 39,
+      "summary": "The discussion centered around integrating AI tools with Growth Book to optimize experimentation processes. Evan Gerdisch showcased a workflow using ClickUp and Taylor AI that automates experiment orchestration. However, limitations arise due to the lack of OAuth MCP server support, which is expected to be released soon according to Jeremy Dorn, allowing for enhanced automation. The meeting also highlighted the use of Hex alongside Growth Book for analysis, with Growth Book providing initial results and Hex supporting deeper metric exploration. New features, including a visual editor and an experiment Brainstorm Skill, aim to enrich the experimentation experience. Additionally, the need for well-managed AI-generated product images was discussed, along with a focus on improving feature flag management and reducing manual workload through various AI aids.",
+      "organizer": "scott@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook, AI experimentation, feature flags, ClickUp integration, experiment automation, experiment analytics",
+      "action_items": "\n**Evan Gerdisch**\nProvide feedback on GrowthBook's new Visual Editor once access is granted to evaluate its AI features and usability (12:12)\nReview and experiment with GrowthBook skills available in Cursor to improve feature flag management and reduce manual PR and dev review workload (14:22)\nMaintain ongoing communication with GrowthBook team by sharing AI experimentation insights, blockers, and needs via Slack channel to facilitate continuous improvement (37:46)\n\n**GrowthBook team (Scott Bailey, Jeremy Dorn, Ashley Stirrup)**\nNotify Evan Gerdisch when the new OAuth MCP server release is live and share updates on new AI capabilities and integrations (38:01)\n\n**GrowthBook team (Scott Bailey, Ashley Stirrup)**\nContinue developing and refining AI-driven experiment recommendation and learnings library features, incorporating user feedback from Evan and others to enhance product roadmap (27:36)\n"
+    }
+  ]
+}

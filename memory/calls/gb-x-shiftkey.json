@@ -1,0 +1,18 @@
+{
+  "company": "GB x Shiftkey",
+  "slug": "gb-x-shiftkey",
+  "calls": [
+    {
+      "id": "01KX6QNV188KDB4V3H605HN3Y8",
+      "source": "fireflies",
+      "title": "GB x Shiftkey - Org Structure",
+      "date": "2026-07-14",
+      "duration_minutes": 23,
+      "summary": "The discussion focused on the organizational structure of ShiftKey, emphasizing the distinct operations of its SaaS and Marketplace units, which serve different customer segments while maintaining centralized leadership. A key strategic decision was made to create separate GrowthBook enterprises for these two businesses to ensure independent management and minimize operational risks. The SaaS team has implemented feature flags but is still early in its experimentation journey, while the Marketplace team is just beginning its experimentation efforts, primarily in proof of concept mode. Separate permissions, naming conventions, and the need for streamlined contract management were also highlighted, culminating in an agreement to swiftly clone the SaaS GrowthBook account for the Marketplace.",
+      "organizer": "chris@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, ShiftKey, SaaS, Marketplace, Feature Flags, Experimentation",
+      "action_items": "\n**Vicson Victor**\nConfirm any teams currently using GrowthBook on the Marketplace side and update if any active experiments exist by tomorrow latest (16:37)\nConfirm and share naming conventions for the two GrowthBook enterprises after internal project lead approval (21:41)\n\n**Adam Zając**\nCoordinate with GrowthBook team regarding Marketplace cloning and SDK reconfiguration responsibilities (16:27)\n\n**Cary Rakin**\nInternally verify if adding a second GrowthBook enterprise requires contract updates, aiming to avoid procurement delays (08:06)\nFollow up with Vicson and Adam regarding contract adjustments or commercial impacts (14:54)\nWork with Chris Sanders to begin setting up the new GrowthBook organization for Marketplace ASAP after contracting clarifications (14:54)\n\n**Chris Sanders**\nCoordinate the cloning of the existing SaaS GrowthBook enterprise to create a new Marketplace enterprise with appropriate SDK configurations (21:12)\nAssist ShiftKey with the organizational setup, access invites, and answering questions about GrowthBook cloud account management (16:13)\n"
+    }
+  ]
+}

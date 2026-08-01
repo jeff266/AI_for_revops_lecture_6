@@ -1,0 +1,18 @@
+{
+  "company": "Aditya Birla Fashion",
+  "slug": "aditya-birla-fashion",
+  "calls": [
+    {
+      "id": "01KXDX5C9WW18EFTZ59QW7P8FK",
+      "source": "fireflies",
+      "title": "Aditya Birla Fashion & Retail + GrowthBook",
+      "date": "2026-07-15",
+      "duration_minutes": 0,
+      "summary": "The discussion centered on establishing a data-driven A/B testing framework for Pantaloons, addressing the current lack of experimentation in their e-commerce platforms. Swapnil Petkar highlighted the importance of transitioning from guesswork to structured testing to enhance product decisions, suggesting a focus on small tests initially. Christian Liebenow explained how GrowthBook's platform aligns with Pantaloons’ needs, particularly via its self-hosted, lightweight SDKs that integrate with their AWS data environment. Emphasis was placed on the significance of learning from multiple experiments to inform product strategy. Initial plans included running three to four tests monthly and navigating budget constraints for a proposed enterprise pricing model while offering alternative trial options. The meeting concluded with commitments for further internal discussions and expert guidance from GrowthBook.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, warehouse-native experimentation, self-hosting, e-commerce, mobile app, product analytics",
+      "action_items": "\n**Swapnil Petkar**\nReview GrowthBook materials and website with internal team; familiarize team with basic A/B testing concepts (36:39)\nPresent GrowthBook information and commercial proposal to leadership for budget approval during October and December/January budgeting cycles (36:39)\n\n**Christian Liebenow**\nSend follow-up email with GrowthBook presentation decks, commercial details, case studies, and a conservative ROI business case (36:59)\nOffer free enterprise trial and invite Swapnil’s team for additional demos covering A/B testing fundamentals and technical setup as needed (37:18)\n"
+    }
+  ]
+}

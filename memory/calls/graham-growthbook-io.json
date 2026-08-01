@@ -1,0 +1,18 @@
+{
+  "company": "graham@growthbook.io",
+  "slug": "graham-growthbook-io",
+  "calls": [
+    {
+      "id": "01KXPHNWAH2Y7SMF2P4RTN92BE",
+      "source": "fireflies",
+      "title": "graham@growthbook.io - Thu, 16 Jul 2026 15:45:10 PDT - Untitled",
+      "date": "2026-07-16",
+      "duration_minutes": 11,
+      "summary": "The team discussed effective methods for measuring and visualizing the daily scaled impact of experiments, emphasizing a daily impact graph designed by Luke Sonnet which allows for immediate insights into experiment value. Challenges arose regarding the integration of holdout data due to structural differences, complicating visual comparisons. Key visualization issues were identified, especially concerning the misleading use of colors and line styles, prompting a need for clearer legends. Upcoming software version 5.0, aimed to enhance impact graphs, faces a backlog of pull requests needing review to accelerate deployment. The meeting also highlighted the importance of indicating uncertainty in experiment results to guide decision-making, along with a strategic vision for simplifying experiments and increasing their daily start rate.",
+      "organizer": "graham@growthbook.io",
+      "participants": 1,
+      "keywords": "scaled impact, holdouts, daily metrics, experiment analysis, PR review, contextual bandits",
+      "action_items": "\n**Graham McNicoll**\nContinue submitting pull requests related to the project, including the 5.0 update, and actively request reviews every few days to help progress despite limited engineering bandwidth (07:05)\n\n**Luke Sonnet**\nWork on making contextual bandits functional as planned (08:40)\n"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "company": "Growthbook <> Bidone",
+  "slug": "growthbook-bidone",
+  "calls": [
+    {
+      "id": "01KY0Z05VZZCEQHXFMG4PNRQX8",
+      "source": "fireflies",
+      "title": "Growthbook <> Bidone - Trial Scoping/Pricing Sync",
+      "date": "2026-07-22",
+      "duration_minutes": 28,
+      "summary": "The team discussed a three-week trial to test Growthbook's feature flagging and experimentation capabilities, emphasizing minimal AB testing and integration workflows as success criteria. Kalyan Ramaiah Asari confirmed the trial duration is adequate, while Dan Wathne outlined onboarding steps. A multi-tenant architecture is to be supported with environment and site separation, confirmed by Nevin Ma and Logan Bates. Pricing concerns arose as the proposed Enterprise license costs $50,000 annually plus $1,000 per user seat, which Kalyan highlighted as expensive compared to competitors like Posthog. Growthbook's positioning as a premium option with superior enterprise features was reiterated, along with a commitment to revisit pricing strategies. Future updates on managed warehouse options are expected by week’s end to accommodate budget expectations.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "multi-tenancy, trial setup, pricing discussion, self-hosted solution, enterprise license, infrastructure cost",
+      "action_items": "\n**Kalyan Ramaiah Asari**\nComplete and share trial success criteria with Growthbook team to define goals for the three-week trial period (05:11)\n\n**Bidone team (Nevin Ma and Kalyan Ramaiah Asari)**\nCreate a free Growthbook account to initiate the trial setup and share account details with Growthbook team for Enterprise trial upgrade (06:04)\n\n**Dan Wathne (Growthbook team)**\nProvision the Enterprise trial upgrade for Bidone's Growthbook account and create a Slack channel for ongoing support and communication (06:04)\nShare formal ballpark pricing figures with Bidone management to assist in evaluation and decision-making (24:09)\n\n**Logan Bates and Dan Wathne (Growthbook team)**\nVerify technical feasibility and details of supporting multi-tenancy with site ID fields within a single organization environment in Growthbook (03:18)\n\n**Dan Wathne and Logan Bates (Growthbook team)**\nInternally review pricing and infrastructure options to identify a more suitable pricing approach for Bidone and follow up with updated proposals (17:07)\n"
+    },
+    {
+      "id": "01KX9KAYB4HT8HCHGRJRWG9SB4",
+      "source": "fireflies",
+      "title": "Growthbook <> BidOne - Demo/Pricing Sync",
+      "date": "2026-07-13",
+      "duration_minutes": 60,
+      "summary": "The discussion centered on Growthbook's experimentation and feature flag platform, highlighting its ability to leverage Snowflake data warehouses for flexible metric creation and experimentation setups. The platform allows product managers to create metrics and dashboards quickly without requiring engineer assistance. It also includes detailed user targeting for feature flags using custom attributes, supporting multi-condition logic for precise scoping. The architecture emphasizes multi-tenant data isolation, with a recommendation for separate organizations per tenant. Managed warehouse options and self-hosting through Snowflake were discussed regarding data ingestion and event logging capabilities. Finally, the commercial model, trial setups, and ongoing support frameworks were outlined.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "feature flags, experimentation, multi-tenant architecture, data warehouse, SDK integration, pricing model",
+      "action_items": "\n**Dan Wathne**\nFollow up with engineering team regarding support for client's multi-tenant architecture and data isolation schemes (45:40)\nSend clarifying questions email about usage metrics for pricing determination, including event volume and number of experiments (47:22)\nProvide detailed pricing model information tailored to client’s self-hosted and managed cloud needs (54:45)\nCoordinate trial setup with client after defining success criteria and provide Slack channel for support (55:24)\nFollow up post meeting to provide recommendations and responses on multi-tenant capabilities and integration specifics (54:54)\n\n**Kalyan Ramaiah Asari**\nProvide Dan answers to clarifying questions on event traffic, experiment numbers, and migration timeline for pricing evaluation (47:05)\nScope internal success criteria for trial period and confirm testing priorities (56:18)\n\n**Logan Bates**\nSupport technical discussion and demo on SDK, feature flags, experimentation setup, and multi-tenant considerations during meeting (33:42)\nPossibly provide Terraform or API integration examples to assist client’s DevOps automation needs (33:42)\n"
+    }
+  ]
+}

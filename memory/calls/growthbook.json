@@ -1,0 +1,162 @@
+{
+  "company": "Growthbook",
+  "slug": "growthbook",
+  "calls": [
+    {
+      "id": "01KWFYFYAE8DER2YBR8WG8TRRG",
+      "source": "fireflies",
+      "title": "Growthbook - Senior Product Designer- Portfolio Meeting: Gabe Melean",
+      "date": "2026-07-02",
+      "duration_minutes": 51,
+      "summary": "The team discussed the strategy for creating a flexible onboarding platform designed to meet the diverse needs of enterprise insurance carriers. A fully configurable framework was prioritized based on insights from customer interviews with Globe Life, Hippo, and Lemonade, ensuring adaptability and scalability. Gabe led the project through a two and a half month timeline, ensuring cohesive execution and collaboration among product, engineering, sales, and leadership. The design emphasized transparency for producers and branding flexibility for customers, significantly reducing confusion and enhancing the onboarding experience. Notably, distinct user interaction models were adopted for producers and admins, leading to a reported 58% reduction in admin overhead. AI tools were leveraged for efficiency, affecting research, prototyping, and copywriting, while the team maintained a focus on balancing user needs and business priorities throughout the process.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "Agentsync, onboarding, insurance software, UI/UX design, AI tools, workflow configurability",
+      "action_items": "\n**Gabe Melean**\nShare portfolio website link with Graham and Kari for visual reference post-meeting (05:50)\nProvide a link to the Lean Data case study and possibly other project materials for further review (49:56)\nRespond to any follow-up questions post-meeting via email (50:03)\n\n**Kari Kay - GrowthBook**\nFollow up with Gabe for additional project materials and details if needed after review (50:08)\n"
+    },
+    {
+      "id": "01KW5C1M1RNVZRBQNN7T6HABJR",
+      "source": "fireflies",
+      "title": "Growthbook - Senior Product Designer- Portfolio Meeting: Craig Morris",
+      "date": "2026-06-29",
+      "duration_minutes": 62,
+      "summary": "The meeting discussed the redesign of Sabre's global payments configuration tool aimed at reducing costly user errors by simplifying complex settings across regions, channels, spending types, and payment options. Craig led a UX redesign that involved 11 user sessions revealing a need for granular control. The approach shifted to a rules-based system, improving stakeholder feedback and making configuration debugging clearer. Strategies for managing seasonal promotions were introduced to enhance rule reusability. AI's role in speeding development was acknowledged, though it raises design debt. The team favors an iterative design philosophy that emphasizes rapid experimentation based on user feedback, along with a test cart system for validating configurations before rollout to enhance user confidence.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "UX Design, Payment Configuration, Rules-Based System, User Research, AI Impact, Product Iteration",
+      "action_items": "\n**Craig Morse**\nFollow up with GrowthBook team via email with additional project links and relevant personal product demos (01:00:30)\n\n**Kari Kay**\nProvide email contact to Craig Morse for sharing and reviewing additional materials post-meeting (01:00:40)\n"
+    },
+    {
+      "id": "01KVTKJYCQ3SS3ZMY6B64FA5RD",
+      "source": "fireflies",
+      "title": "Growthbook - Senior Product Designer- Portfolio Meeting: Audrey Lewis",
+      "date": "2026-06-25",
+      "duration_minutes": 7,
+      "summary": "The meeting addressed coordination issues, particularly Graham McNicoll’s note taker duplication, which led to access conflicts delaying the start of formal discussions. Participants, including Audrey Lewis and Kari Kay, shared personal updates to create a casual tone. Gaps in tool access were identified, affecting Kari's ability to manage participants and highlighting a need for clearer role permissions. The discussion also touched on logistical challenges, including subscription barriers to event viewing, impacting team morale. Graham's proactive solution of providing access links showcased the desire for improved connectivity among team members. Overall, these discussions aimed at enhancing meeting readiness and team cohesion.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "World Cup, note taker, meeting host, Portland, Seattle, introductions",
+      "action_items": "\n**Graham McNicoll**\nRemove the automatic note taker from the meeting as requested to streamline the call (05:36)\n\n**Kari Kay**\nFacilitate and prompt introductions of meeting participants once technical hosting issues are resolved (05:54)\n"
+    },
+    {
+      "id": "01KTS1768FG0J5HCT8S2AB3QS5",
+      "source": "fireflies",
+      "title": "Growthbook - Stradivarius - Enablement Session (3)",
+      "date": "2026-06-22",
+      "duration_minutes": 61,
+      "summary": "The meeting addressed the underutilization of GrowthBook by the team and emphasized the need to explore advanced features like bandits, holdouts, and namespaces to enhance experimentation. Chris Sanders provided a detailed explanation of experiment result metrics, including confidence intervals and the importance of primary, secondary, and guardrail metrics. The discussion also covered managing a growing number of experiments, with Pablo raising concerns about navigating past decisions. Insights were shared on the integration of AI and a new Visual Editor, aimed at simplifying experiment setup and increasing adoption. Chris committed to supporting the team with ongoing training and resources to foster a data-driven experimentation culture.",
+      "organizer": "chris@growthbook.io",
+      "participants": 19,
+      "keywords": "Experimentation, GrowthBook, AI integration, Feature flags, Sample ratio mismatch, Visual Editor",
+      "action_items": "\n**Chris Sanders**\nSend the recording links of all sessions to all meeting attendees to ensure access to the discussed content (01:00:04)\nFollow up on the availability of GrowthBook AI features and the Visual Editor rollout for the Stradivarius account and plan a demonstration session for these tools (30:36)\nInvestigate and clarify the status of AI integration on the learning page and provide guidance on its practical usage to the team (28:36)\n\n**Arnau Comas Codina**\nProvide a specific example related to applying feature flags in layered UI components to receive tailored guidance from Chris (54:29)\n\n**Pablo Torrecillas Monasterio**\nUse the GrowthBook team channel to raise additional doubts and propose topics for future sessions to enhance learning and support (59:37)\n"
+    },
+    {
+      "id": "01KT9QWZA5DTSNESBKDFAA0A9N",
+      "source": "fireflies",
+      "title": "Growthbook - Stradivarius - Enablement Session (2)",
+      "date": "2026-06-10",
+      "duration_minutes": 66,
+      "summary": "The team discussed the implementation of feature flags to conduct A/B tests on carousel algorithms for product recommendations. They agreed on a controlled rollout with a 50/50 traffic split between control and variant groups to gauge the impact on key metrics such as add-to-cart, clicks, and impressions, sourced from Snowflake. Separate experiments will be run for iOS and web platforms to avoid data overlap, with distinct analytics tracking required. Discussion included user bucketing strategies to maintain consistency and considerations for running multiple concurrent tests. Additionally, the team planned future experiments, addressed technical challenges, and established communication protocols for ongoing collaboration and support from the data science team.",
+      "organizer": "chris@growthbook.io",
+      "participants": 19,
+      "keywords": "Feature flag, Experiment metrics, Add to cart, Traffic split, Experiment bucketing, Bayesian analysis",
+      "action_items": "\n**Pablo Torrecillas Monasterio**\nShare planning and detailed agenda for the next session including experiment creation steps and result analysis (01:04:33)\n\n**Marc Torrents Domenech**\nPrepare additional fact tables and metrics prior to the next session to support creating new experiments from scratch (01:01:10)\n\n**Dmitry Sopov**\nVerify whether user ID is being correctly set as attribute in SDK to ensure proper bucketing and revisit app group definitions (48:40)\n\n**Chris Sanders**\nProvide guidance on handling the fallback attribute in SDK to link pre-login anonymous sessions with identified user sessions for experiments (49:30)\nAdvise on uneven traffic splits use cases from data science team and share best practices for experiment design related to traffic allocation (58:20)\n\n**Entire Team**\nContinue running current A/B tests (e.g., iOS and web carousels) and monitor experiment data to assess statistical significance and decide when to stop tests (42:30)\n\n**Team**\nInvestigate missing country dimension data in experiment assignment query and ensure dimension data is sent from SDK events for slicing experiment results (33:50)\n"
+    },
+    {
+      "id": "01KT4FFMSZ4TZZWJDNB2BG1APZ",
+      "source": "fireflies",
+      "title": "Growthbook - Senior Product Designer - Portfolio Meeting: Magda Romero",
+      "date": "2026-06-04",
+      "duration_minutes": 6,
+      "summary": "The meeting began with all key participants, including CEO Graham McNicoll, promptly confirming their attendance to ensure a smooth discussion. Magda Romero presented her projects based on zero-to-one thinking, emphasizing innovation and autonomy without reliance on product managers or technical project managers. This approach combines technical needs with broader product strategies, highlighting a proactive stance on product development. Additionally, Magda's location in San Francisco was confirmed to optimize future scheduling and collaboration, reflecting an awareness of geographic influences on product design decisions.",
+      "organizer": "graham@growthbook.io",
+      "participants": 5,
+      "keywords": "zero to one thinking, solo project management, product design, technical user engagement, San Francisco Bay area, CEO auto-join",
+      "action_items": "\n**Magda Romero**\nPresent and discuss projects demonstrating zero to one product development and independent project management without a product manager or TPM (04:20)\n\n**Kari Kay**\nCoordinate removal of the note taker once the CEO joins and facilitate smooth meeting progression (03:58)\n\n**Graham**\nEngage actively in the interview, including verifying participant details such as location (05:00)\n"
+    },
+    {
+      "id": "01KT29ZMF8W3HTN122NZH92M3Z",
+      "source": "fireflies",
+      "title": "Growthbook - Senior Product Designer- Portfolio Meeting: Cody Morrow",
+      "date": "2026-06-03",
+      "duration_minutes": 7,
+      "summary": "The meeting revealed immediate technical challenges related to managing AI bot participation and host controls. An unintended AI note taker created confusion, prompting Kari Kay and Graham McNicoll to seek assistance from host Sarah for removal, highlighting the need for improved host rights and protocols. During the session, Cody aimed to enhance his upcoming presentation by using the meeting as a 'forcing function' for revisions. The discussion emphasized the importance of participants' equipment quality, particularly Graham's setup. Additionally, limitations in the conferencing platform were identified, particularly regarding participant management, necessitating clearer protocols. Graham's leadership and proactive approach contributed to resolving these challenges, fostering collaboration among participants.",
+      "organizer": "graham@growthbook.io",
+      "participants": 5,
+      "keywords": "AI note taker, Zoom meeting, Fireflies, presentation update, meeting owner, call management",
+      "action_items": "\n**Graham McNicoll**\nLog into the Zoom meeting as the owner to remove the Fireflies AI note taker from the call to stop it from auto-joining and causing disruption (06:48)\n\n**Sarah**\nDisable or adjust the auto-join setting for the Fireflies AI note taker to prevent it from automatically joining future meetings and causing disruptions (05:05)\n\n**Cody Morrow**\nProceed with redoing the presentation as a timely update or improvement as discussed (05:43)\n"
+    },
+    {
+      "id": "01KSQE4KV0S586DRRWH10VQAYA",
+      "source": "fireflies",
+      "title": "Growthbook - Stradivarius - Enablement Session",
+      "date": "2026-06-03",
+      "duration_minutes": 63,
+      "summary": "The meeting addressed the team's shift from basic feature flag usage to advanced experimentation with GrowthBook, a transition led by Stradivarius and Product Hackers since early 2023. The group has seen success with feature flags but aims to enhance A/B testing and leverage additional functionalities of GrowthBook. Cary Rakin and Chris Sanders were introduced to facilitate enablement sessions to close knowledge gaps. These sessions will include practical UI walkthroughs and analyses of real experiment results. The team utilizes GrowthBook's Visual Editor for faster deployments, avoiding reliance on developers. Statistical methods supported include Bayesian and Frequentist models, and the meeting concluded with plans for future training and collaboration to further the team's experimentation capabilities.",
+      "organizer": "chris@growthbook.io",
+      "participants": 19,
+      "keywords": "Growthbook, Experimentation, Feature Flags, Snowflake, A/B Testing, Statistical Analysis",
+      "action_items": "\n**Pablo Torrecillas Monasterio**\nPablo Torrecillas Monasterio to send examples of A/B tests from Stradivarius to Growthbook team for review and enablement preparation (01:01:00)\n\n**Cary Rakin**\nCary Rakin to schedule and send calendar invite for next Growthbook enablement session at the same time next week (01:00:50)\n\n**Chris Sanders**\nChris Sanders to consult with Growthbook data science team for definitive advice on whether starting a new experiment phase is required when expanding traffic to new markets, and communicate response (46:30)\nChris Sanders to prepare next session focused on UI walkthrough, including experiment configuration and reviewing Stradivarius’s current experiment results (01:00:20)\n"
+    },
+    {
+      "id": "01KT23QE0A6KPYBR7W360PDWVF",
+      "source": "fireflies",
+      "title": "Growthbook - Upstart Renewal Discussion ",
+      "date": "2026-06-01",
+      "duration_minutes": 33,
+      "summary": "The meeting addressed the upcoming contract renewal for Growth Book, highlighting a proposed pricing increase from $270,000 to $367,500 for the air gap site license, driven by platform growth and expanded features. Cary Rakin emphasized the necessity of the increase, backed by market comparisons where similar clients pay significantly more. Multi-year terms were discussed to ease short-term budget concerns, proposing a flat year-one price of $280,500 that spikes to approximately $385,000 in the second year. Different pricing models were considered, including a seat-based option. Additional conversations centered on user growth, with Upstart having 486 users and extensive experimentation activities. The complexity of the procurement process at Upstart was also highlighted, necessitating several stakeholder approvals.",
+      "organizer": "cary@growthbook.io",
+      "participants": 1,
+      "keywords": "Upstart, Growthbook, renewal pricing, air gap license, multi-year agreement, procurement process",
+      "action_items": "\n**Anna Chow**\nDiscuss proposed pricing increases and renewal options with internal Upstart team and procurement lead Aditya; provide feedback to Growthbook within one to two days (30:30)\n\n**Cary Rakin**\nVerify internal AWS partnership status and marketplace benefits relevant to Upstart with Growthbook team (12:49)\nShare presentation slides and renewal proposal materials with Anna Chow for internal distribution at Upstart (31:51)\nCoordinate with Upstart procurement lead Aditya to ensure alignment and support during renewal discussions (31:55)\nAdvocate internally within Growthbook to explore flexible pricing or alternatives based on Upstart’s feedback and budget constraints (30:45)\n"
+    },
+    {
+      "id": "01KST2CPHJV1S20GSSFM9WWYYM",
+      "source": "fireflies",
+      "title": "Growthbook - Crunchyroll - Tech Discussion",
+      "date": "2026-05-29",
+      "duration_minutes": 46,
+      "summary": "The meeting outlined the platform's robust features supporting experimentation, including SDKs for various environments, local evaluation to eliminate backend delays, and multiple experiments per feature flag designed for long-term retention. Emphasis was placed on user privacy, ensuring that user attributes used for filtering are not stored, thus complying with U.S. privacy laws. Team autonomy was facilitated through granular role-based access control, allowing custom roles and scoped permissions. A six-week pilot plan was discussed to evaluate vendor decisions, highlighted by dynamic seat management and educational resources for effective onboarding. Overall, the platform's design focuses on enhancing user experiences through intuitive UIs and efficient workflow integration.",
+      "organizer": "cary@growthbook.io",
+      "participants": 2,
+      "keywords": "feature flags, RBAC, SDK, experiment lifecycle, saved groups, safe rollout",
+      "action_items": "\n**Ryan Scott Brown**\nCreate a Growthbook account using Crunchyroll email to expedite pilot access (39:23)\nCoordinate with Slack administrators to establish a pilot Slack channel including Growthbook and internal teams (39:07)\nIdentify and assemble engineers and power users to participate in the pilot and demo sessions (39:55)\nProvide feedback to Growthbook team on any gaps or missing features discovered during pilot exploration (15:00)\nEngage product and infrastructure teams with educational materials provided by Growthbook to facilitate adoption (41:00)\n\n**Cary Rakin**\nSet up and manage Slack channel for the pilot involving Growthbook and Crunchyroll teams (37:00)\nProvide pilot pricing details based on seat count and confirm budget alignment with Crunchyroll (38:05)\nSource and share educational and explainer materials for technical and product users regarding experimentation methods (25:04)\nFacilitate scheduling of demo and onboarding sessions with Ryan and his team for next week (39:40)\nCoordinate availability of professional services and ongoing enablement sessions for Crunchyroll (43:20)\n\n**Logan Bates**\nDeliver demo of RBAC, feature flags, and saved groups functionality during onboarding sessions (11:18)\nShare documentation and examples for SCIM integration and role provisioning with Ryan's team (14:48)\nProvide detailed explanation and support related to tracking callback and exposure forwarding in the Growthbook SDK (34:40)\nParticipate actively in pilot Slack channel and respond promptly to technical questions from Crunchyroll team (37:00)\nCollaborate with Cary on providing educational resources and professional services support for Crunchyroll (43:00)\n"
+    },
+    {
+      "id": "01KKCHVTF9QDT50FB8EFFDNAQG",
+      "source": "fireflies",
+      "title": "GrowthBook - LI ads and Connection Growth (Ashley X Demandii)",
+      "date": "2026-03-12",
+      "duration_minutes": 46,
+      "summary": "The team discussed refining the content strategy to better align with business goals and accelerate lead generation. Challenges with content feedback were identified, prompting recommendations for specific reviews and the implementation of a problem-agitate-solve framework to improve the quality and clarity of Graham's content. Optimizing LinkedIn campaigns for targeted audience engagement was emphasized, with strategies for multi-stage advertising and efficient use of a monthly budget. Insights into the sales process highlighted the speed at which prospects demo and purchase the product, suggesting a need for effective messaging to facilitate enterprise transitions. Operational improvements focused on streamlining content approval workflows and enhancing the quality of output while maintaining a pace that reduces burden on creators.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, LinkedIn Advertising, Content Strategy, Assessment Offers, Problem-Agitate-Solve, Enterprise Sales",
+      "action_items": "\n**Ashley Stirrup**\nWork on creating assessment/audit-style offers as free, value-add entry points for prospects (09:53)\nFollow up with Dave to discuss content strategy and apply the problem-agitate-solve framework with Graham (27:56)\nCoordinate on putting direct response copy around demos and product features with Dave and Matthew (33:50)\nEvaluate shifting volume of content to fewer, higher-quality videos or posts with stronger call-to-actions (33:46)\n\n**Matthew Hunt**\nProvide example content offers from other clients for inspiration (44:09)\nPrepare and send meeting notes asynchronously to Ashley and participants (44:17)\nCollaborate with Dave and Ashley to refine content messaging and coach Graham on producing targeted, demo-driven content (32:24)\nAdvise on LinkedIn campaign audience building and retargeting tactics suited to GrowthBook’s budget and objectives (04:37)\n\n**Chris Newton**\nSchedule some review meetings with Graham to collaboratively assess content early stages to accelerate feedback (29:35)\nSupport Ashley and Dave in overcoming content approval challenges and improving workflows for quicker turnarounds (30:41)\n\n**Unassigned**\nFollow up brainstorming session with Graham to establish next batch of content aligned with agreed strategic framework (27:14)\n"
+    },
+    {
+      "id": "01KHH0Q18VDTRGP6PEFR58JK1T",
+      "source": "fireflies",
+      "title": "GrowthBook - PhonePe",
+      "date": "2026-02-17",
+      "duration_minutes": 20,
+      "summary": "The discussion revolved around addressing key blockers in scaling GrowthBook, specifically regarding the monitoring of ETL completion and the sequencing of data refresh. Koushik highlighted the need for a unified screen displaying ETL status across multiple experiments, while Luke suggested using API-triggered updates after ETL completes to ensure data readiness. Maintaining simultaneous experiment start times through API control was emphasized to preserve existing workflows. Additionally, issues like variability in query counts due to initial loads and the lack of built-in alerting for failed updates were acknowledged, with plans for improvements in these areas. Archiving inactive experiments to improve performance and establishing an upgrade process via Docker deployment were also outlined as critical steps moving forward.",
+      "organizer": "graham@growthbook.io",
+      "participants": 7,
+      "keywords": "GrowthBook, ETL, Incremental Load, API Integration, Query Failure Alerting, Hive Data Model",
+      "action_items": "\n**Koushik Roy**\nVerify Trino query layer capacity to monitor query failures and integrate GrowthBook failure notifications with Hive (16:00)\nConnect with internal engineer Abhishek for version upgrade context and support (18:59)\nConfirm receipt and review API documentation for scheduling GrowthBook experiment updates post-ETL (08:48)\n\n**Luke Sonnet**\nEmail API documentation for GrowthBook experiment update triggers including authentication and endpoints (08:48)\nInvestigate adding GrowthBook event emissions for experiment update success/failure status to enable alerting, expected within the week (16:25)\nExplore options to improve visibility and tracking of failed queries or experiment updates in GrowthBook UI (15:20)\nProvide follow-up on PhonePe team members responsible for GrowthBook upgrades and version control (18:50)\n"
+    },
+    {
+      "id": "01KGHY46Z2XRQ494JJYXYSJ57B",
+      "source": "fireflies",
+      "title": "GrowthBook - PhonePe",
+      "date": "2026-02-10",
+      "duration_minutes": 47,
+      "summary": "The team addressed significant data synchronization discrepancies in Growth Book, where user query counts showed a mismatch between 107 million and 14,000 in the UI, indicating a core issue. Luke Sonnet proposed that data arriving out of timestamp order might be the cause, leading to a discussion on verifying sequential data loading in Hive. Additionally, the inefficiency of the full load query, which currently takes 17 hours due to scanning legacy tables, was highlighted, prompting suggestions for consolidating metrics into a single fact table. The team also discussed the organization-level control of incremental updates and the need for dimension handling due to excess distinct values. Koushik Roy committed to sharing necessary queries and schema details for further review, prioritizing the resolution of the user count mismatch before broader data model enhancements.",
+      "organizer": "graham@growthbook.io",
+      "participants": 7,
+      "keywords": "Growth Book, incremental load, Hive data modeling, user deduplication, experiment validation, query optimization",
+      "action_items": "\n**Koushik Roy**\nShare incremental load and baseline count queries with Luke for detailed review (36:16)\nProvide table schemas and sample data rows to Luke for feedback on data model optimization (38:55)\nCoordinate internally (with Sharath) and compile queries and schema documentation by next day for Luke’s analysis (39:04)\n\n**Luke Sonnet**\nReview shared incremental load and baseline queries, provide annotated feedback asynchronously to explain query logic and identify issues (36:54)\nAdvise on optimal fact table schema design, including examples or dummy schema relevant to PhonePe’s use case (38:43)\n\n**Sharath Babu**\nAssist Koushik in collating schema and queries for sharing (38:55)\n\n**Unassigned**\nIdentify PhonePe organization admin with Growth Book permissions for viewing and managing auto update schedules (25:19)\nGrant necessary access to Koushik to view and manage auto update schedules in Growth Book UI (25:05)\n"
+    }
+  ]
+}

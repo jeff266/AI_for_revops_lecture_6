@@ -1,0 +1,18 @@
+{
+  "company": "Airspace Intelligence +",
+  "slug": "airspace-intelligence",
+  "calls": [
+    {
+      "id": "01KYF3N204KF4X1YVX13B0NPVQ",
+      "source": "fireflies",
+      "title": "Airspace Intelligence + GrowthBook",
+      "date": "2026-07-28",
+      "duration_minutes": 18,
+      "summary": "The discussion centered around pricing flexibility and contract timing, emphasizing the potential for cost reductions through limited onboarding support and early contract signing by the end of August. James Shannon confirmed that reducing ongoing access to customer success managers could result in significant cost savings. Growth Book was identified as a premium option due to its built-in AI and extensive onboarding documentation that adds value, while competitors like Flagsmith and Flipped were discussed as alternatives. Technical requirements included the need for two separate self-hosted instances for different environments, ensuring compliance with security mandates. The decision-making process is planned for the end of August, with security and legal reviews running concurrently. A tiered onboarding model aligned with the prospect's preference for minimal support was also proposed.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, feature flags, pricing negotiation, AI integration, self-hosted, air-gapped environment",
+      "action_items": "\n**Mikolaj Michalow**\nPresent pricing and options, including possible reduced onboarding support and licensing per organization, to internal team by end of August for decision-making (09:08)\nContinue testing GrowthBook, especially AI/CLAUDE features, over the next week (13:50)\nParticipate in a planned 15-minute follow-up meeting in mid-August to discuss decision status and provide feedback (16:34)\n\n**James Shannon**\nSend Mikolaj an adjusted, negotiated pricing email reflecting options to reduce onboarding/customer success costs and per organization licensing for two instances (14:54)\nPrepare and offer documentation to support Mikolaj during legal and security reviews in procurement (15:20)\nSchedule the mid-August follow-up meeting for week starting August 10th (16:36)\n"
+    }
+  ]
+}

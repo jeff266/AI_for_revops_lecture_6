@@ -1,0 +1,18 @@
+{
+  "company": "Growthbook <> FlowGPT",
+  "slug": "growthbook-flowgpt",
+  "calls": [
+    {
+      "id": "01KP6Z88AXTGRHW2R8GQ86C30X",
+      "source": "fireflies",
+      "title": "Growthbook <> FlowGPT - Sync",
+      "date": "2026-04-14",
+      "duration_minutes": 20,
+      "summary": "The meeting discussed the customer's need to reassess their experimentation platform due to high data volumes and the prohibitive costs of Statsig. With over 1 billion daily data exposures, Statsig's pricing and t+1 data latency are misaligned with the customer’s internal capabilities for real-time analysis, leading to a shift toward GrowthBook, which promises scalability and flexible integration. The customer seeks substantial savings from their Statsig contract renewal, exploring GrowthBook's lower pricing and advanced features while discussing integration with their StarRocks data warehouse. Overall, the meeting set the stage for a strategic partnership centered on reducing costs and improving functionality.",
+      "organizer": "dan@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, Statsig, experiment traffic allocation, data warehouse, agentic AI, conversation-based experiments",
+      "action_items": "\n**Dan Wathne**\nPrepare a detailed proposal outlining GrowthBook’s value proposition and potential cost savings compared to Statsig, emphasizing features attractive to high-scale customers (17:50)\nCoordinate internally with GrowthBook’s AI customer team to gather insights and validate use cases involving agentic AI and conversation-based experimentation (17:50)\nSchedule and send a meeting invite for a follow-up call with Henry Wang in mid-next week (Tuesday or Wednesday) to discuss plans and detailed presentation (19:00)\nPause current billing updates for Henry Wang’s GrowthBook pro account until next steps and contract details are finalized (19:50)\n\n**Henry Wang**\nReview GrowthBook’s upcoming proposal and presentation after return from Asia, expected in about one month (18:10)\nContinue internal evaluation of GrowthBook’s traffic allocation and experiment tools to identify value beyond existing internal data warehouse analytics (00:00)\nConfirm preferred communication method (email) and respond to follow-up scheduling and proposals (19:15)\n\n**Logan Bates**\nInvestigate potential native or JDBC connectivity between StarRocks data warehouse and GrowthBook platform to support integration (09:50)\nSupport integration plans related to agentic AI flows and experiment visualizations for high-volume data customers (12:24)\n"
+    }
+  ]
+}

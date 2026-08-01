@@ -1,0 +1,18 @@
+{
+  "company": "Friday One Off",
+  "slug": "friday-one-off",
+  "calls": [
+    {
+      "id": "01KMKD2NK0MHYBD94VMDFC6D4Z",
+      "source": "fireflies",
+      "title": "Friday One Off Check-in",
+      "date": "2026-03-27",
+      "duration_minutes": 18,
+      "summary": "The meeting addressed the initial complexities in the onboarding process, with Elyse Fox and Ashley Stirrup noting that early confusion was diminishing thanks to clearer explanations and plans for a cheat sheet on key statistical terminology. They also discussed competitive pricing strategies, emphasizing the importance of usage-based and modular pricing models. Ashley particularly highlighted insights from competitor pricing, such as PostHog's event-based costs, which served as a benchmark for their pricing model. Additionally, they explored flexible pricing that could accommodate AI usage spikes. Towards the end, a weekly marketing tracker was introduced to streamline communications and enhance cross-team awareness, ensuring that updates remain clear and engaging.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "onboarding, pricing strategy, usage-based pricing, experimentation, AI integration, competitive analysis",
+      "action_items": "\n**Elyse Fox**\nShare the competitive pricing analysis link and continue building out and refining the pricing breakdown with a focus on key modules and usage models (03:14)\nValidate the final breakdown of pricing categories with Ashley before completing the full analysis (12:13)\n\n**Ashley Stirrup**\nProvide a concise cheat sheet on statistical terminology (Bayesian vs. Frequentist) for internal and sales use (01:36)\nReview Elyse’s pricing category breakdown and offer feedback on relevance and strategic focus (11:30)\nSupport Elyse in estimating competitor pricing models based on event/experiment usage for comparison with internal models (07:30)\nImplement and maintain weekly marketing tracker updates for the extended marketing team and share notable accomplishments (16:40)\n"
+    }
+  ]
+}

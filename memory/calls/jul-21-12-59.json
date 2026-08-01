@@ -1,0 +1,18 @@
+{
+  "company": "Jul 21, 12:59",
+  "slug": "jul-21-12-59",
+  "calls": [
+    {
+      "id": "01KY2SWHW4BYDZX2RDH7CAM589",
+      "source": "fireflies",
+      "title": "Jul 21, 12:59 PM",
+      "date": "2026-07-21",
+      "duration_minutes": 0,
+      "summary": "The team addressed user invitation and login issues regarding Growth Book access, particularly concerning personal versus domain accounts. Teja Padani highlighted that personal user invites blocked account setup due to improper redirects, while domain invites functioned correctly. A live troubleshooting session led by Scott and Logan uncovered conflicts arising from existing user statuses and domain logins. They proposed resending personal invites and resolving session conflicts. Additionally, discussions on SSO setup revealed that configuration was incomplete, highlighting the need for proper redirect URLs to streamline authentication. The team established clear next steps for resolving the invitation issue and advancing SSO integration, emphasizing collaboration and user role clarification.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 1,
+      "keywords": "Growth Book, user invite, account setup, domain user, personal user, SSO configuration",
+      "action_items": "\n**Speaker 1**\nAttempt to accept the Growth Book invite using the personal account after signing out from the domain user session to avoid conflicts (05:13)\n\n**Speaker 2**\nResend the Growth Book invitation to the user's personal email after removing the previous invite to clear any conflicts (06:08)\nProvide the exact redirect URL needed for SSO configuration and assist with setting up the \"/oauth/callback\" path for Growth Book's OAuth callback (07:49)\n"
+    }
+  ]
+}

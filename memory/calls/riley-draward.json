@@ -1,0 +1,18 @@
+{
+  "company": "Riley Draward",
+  "slug": "riley-draward",
+  "calls": [
+    {
+      "id": "01KPRXJVSAGAK92R3NQX6BR912",
+      "source": "fireflies",
+      "title": "30 min with Scott (Riley Draward)",
+      "date": "2026-04-22",
+      "duration_minutes": 38,
+      "summary": "The discussion revealed a significant shift in developer workflows due to AI integration, primarily utilizing tools like Codex for coding and review, which allows developers to focus on oversight and quality control. AI agents are streamlining testing and QA tasks, enhancing efficiency and adapting quickly to UI changes. Community engagement remains a major opportunity, with emphasis on building active platforms for diverse user personas beyond simple channels. GrowthBook aims to double its annual recurring revenue by targeting large enterprise customers, despite facing challenges with limited market awareness and growing its community. The model promotes direct collaboration between marketing and engineering in product launches, while the tracking of user engagement metrics for free and enterprise segments continues as a priority.",
+      "organizer": "scott@growthbook.io",
+      "participants": 3,
+      "keywords": "Developer Relations, AI Agents, Educational Content, Marketing Strategy, Community Building, Product Development",
+      "action_items": "\n**Scott Bailey**\nUpdate and launch the new Growth Book website with improved architecture diagrams to better communicate product features (26:39)\nDevelop more educational content including short-form videos targeted at distinct user groups such as developers, data scientists, and product managers to lower the learning curve (26:34)\nCreate demo applications and sandbox environments with synthetic data to enhance hands-on user engagement and facilitate learning (28:45)\nEngage with engineering leads and CTO to prepare for the product launch of version 4.4, ensuring alignment on narrative and messaging (33:15)\nBuild and improve marketing and sales pipeline tracking and attribution systems to better measure impact and drive ARR growth (35:30)\nParticipate regularly in engineering standups and maintain documentation and automated code summaries using AI agents to stay synchronized with product development (32:05)\n\n**Riley Draward**\nContinue producing technical educational content, integrating AI agents for testing and coding efficiency to improve workflow (11:30)\nManage and guide social media efforts alongside team members to enhance community engagement and content reach (05:58)\nExplore and potentially apply AI agent workflows such as Playwright test generation to reduce monotonous development tasks and improve productivity (11:40)\n"
+    }
+  ]
+}

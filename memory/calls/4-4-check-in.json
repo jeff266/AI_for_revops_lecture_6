@@ -1,0 +1,18 @@
+{
+  "company": "4.4 check-in",
+  "slug": "4-4-check-in",
+  "calls": [
+    {
+      "id": "01KSGXDAAGWC1S6V467H0145H8",
+      "source": "fireflies",
+      "title": "4.4 check-in",
+      "date": "2026-05-26",
+      "duration_minutes": 28,
+      "summary": "The team discussed revisions to the product launch blog post, aiming to balance marketing narrative with technical details to appeal to various customer segments. Key changes include a lighter tone in the blog intro for better communication about AI integration and distinct styles for launch posts versus release notes. The inclusion of a founder’s note was agreed upon to add authenticity, while transparency about the release's complexity was emphasized alongside light humor. The release details three of the top five AI labs for credibility and plans to target a 'What’s New' section in-app for improved user access to updates. Additionally, commitments were made for completing a bug bash to ensure release stability and for using quantitative stats to illustrate the release's magnitude.",
+      "organizer": "elyse@growthbook.io",
+      "participants": 4,
+      "keywords": "AI experimentation, product launch, release notes, marketing collateral, Growth Book 4.4, customer communication",
+      "action_items": "\n**Scott Bailey**\nRevise the 4.4 blog post introduction to adopt a lighter tone, incorporate a founder's note, and clarify the product's AI positioning to better balance marketing and technical messaging (19:53)\nCalculate and include numerical statistics such as commit counts and lines of code changes to illustrate the size and impact of the 4.4 release in communications (24:40)\n\n**Elyse Fox**\nDraft and share an email version of the release communication for team feedback via a Slack thread (22:40)\nPrepare documentation and proposals to update the in-app 'docs' block to a 'resources' section that highlights new features and links to the 4.4 blog post, improving user awareness and onboarding (25:30)\n\n**Jeremy Dorn**\nContinue collaborating with Bryce to finalize outstanding release tasks and produce the product analytics video, aiming for completion later this week or early next week (22:23)\n\n**Jeremy Dorn and Graham McNicoll**\nProvide brief statements or recordings for inclusion as founder notes in the launch blog or email communications to add personality and credibility (22:04)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "[Internal] Website Planning",
+  "slug": "internal-website-planning",
+  "calls": [
+    {
+      "id": "01KH772VM14Q927PBGTD57JJDZ",
+      "source": "fireflies",
+      "title": "[Internal] Website Planning & Design Review Sync",
+      "date": "2026-02-12",
+      "duration_minutes": 60,
+      "summary": "The team discussed the crucial need for unified design and content feedback to prevent delays in website development and ensure a smooth launch. Karen Henke pointed out that uncoordinated feedback had previously created confusion and delays in Bright Scout's work. To address this, they decided to consolidate feedback into a single source before it reaches the development team. Ashley Stirrup suggested a prep session on Tuesdays to align feedback ahead of meetings. Additionally, the homepage design was refined, with a preference for a clearer hero option, and key stats strategically placed. They agreed on user-friendly messaging for deployment options, differentiating between cloud and self-hosted offerings. Visual elements were reviewed for consistency, and final content refinements were made to target product teams better. The team expressed optimism about their progress towards aggressive deadlines.",
+      "organizer": "kari@growthbook.io",
+      "participants": 3,
+      "keywords": "Website Design, Content Coordination, Deployment Options, Information Architecture, User Experience, Feedback Integration",
+      "action_items": "\n**Karen Henke**\nPrepare and finalize top priority page content, incorporating appropriate customer quotes and clearing outstanding comments for review (05:00)\nCoordinate sending priority page files to Graham for review and share via Slack for better visibility (05:00)\nSubmit updated body copy for homepage headline emphasizing 'experimentation, feature flags, and analytics platform for modern product development teams' (57:00)\n\n**Kari Kay**\nOwn and roll up all design feedback, consolidating with content input before sending unified feedback to Brightscout team (22:00)\nAvoid direct content changes without marketing approval to prevent confusion and ensure alignment with content strategy (27:00)\nSend video walkthrough of latest design updates to Ashley and respond to further comments to finalize tonight’s delivery to development team (58:00)\n\n**Ashley Stirrup**\nRefrain from sending uncoordinated feedback directly to Brightscout; collaborate closely with Kari to ensure consolidated design and content feedback (23:00)\nParticipate in prep session and alignment meeting proposed for Tuesday to better coordinate weekly feedback cycles (28:00)\nSupport refinement of homepage messaging and provide input on design and content interplay (32:00)\nFacilitate speedy delivery of updated design and content feedback to Brightscout to unblock development (58:00)\n"
+    }
+  ]
+}

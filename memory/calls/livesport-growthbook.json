@@ -1,0 +1,18 @@
+{
+  "company": "LiveSport + GrowthBook",
+  "slug": "livesport-growthbook",
+  "calls": [
+    {
+      "id": "01KXJW1SZSXRZAHTW7HYQSJ4E2",
+      "source": "fireflies",
+      "title": "LiveSport + GrowthBook",
+      "date": "2026-07-16",
+      "duration_minutes": 59,
+      "summary": "The discussion centered on the implementation of GrowthBook SDK to unify mobile and web experimentation, which aims to reduce engineering overhead and costs associated with maintaining separate tests. Key elements included managing high traffic efficiently with a predictable pricing model that contrasts with impression-based billing. The adoption of feature flags is expected to accelerate app experimentation cycles by decoupling tests from app release schedules. Unified user identification and data analytics integration will provide better cross-platform tracking and evaluation of experiments. Additionally, the team highlighted the importance of transparent metric definitions to satisfy business intelligence needs, supported by dedicated implementation resources to streamline the transition to GrowthBook.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, A/B Testing, Mobile SDK, Feature Flags, Data Warehouse, AI Integration",
+      "action_items": "\n**Tomáš Voves**\nCoordinate internal analysis of GrowthBook SDK implementation feasibility with engineering post-demo (07:04)\nSchedule follow-up meeting with James on August 29 or 30 to discuss pricing and contract details (57:41)\nPrepare cost and implementation requirements for presentation to CPO and developers (56:28)\n\n**Martin Nosek**\nReview compatibility of GrowthBook SDK with native Android and iOS apps and provide technical feedback (04:18)\nEvaluate how GrowthBook can support large-volume experimentation across multiple global markets (05:33)\nAssess and report on roll-out process improvements for reducing app release cycle impact on experiment deployment (29:20)\n\n**James Shannon**\nShare GrowthBook SDK documentation and integration materials for LiveSport engineering review (08:12)\nProvide details and document setup process for metrics creation, data sources, and BigQuery integration (36:55)\nDeliver explanation and demo of AI and visual editor capabilities with Figma integration (40:16)\nPrepare and send detailed pricing and implementation proposal before the next meeting (56:29)\n"
+    }
+  ]
+}

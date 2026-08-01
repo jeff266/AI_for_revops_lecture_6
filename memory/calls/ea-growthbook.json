@@ -1,0 +1,30 @@
+{
+  "company": "EA + GrowthBook",
+  "slug": "ea-growthbook",
+  "calls": [
+    {
+      "id": "01KXGK8QM85408VW930EWR2EHE",
+      "source": "fireflies",
+      "title": "EA + GrowthBook",
+      "date": "2026-07-21",
+      "duration_minutes": 33,
+      "summary": "The team discussed significant budget constraints, highlighting an inability to cover a $200k enterprise license due to current financial limitations and the necessity for SSO. Abhinav Kulshrestha emphasized that although the enterprise plan offers many features, they require a custom solution for security. The player experience team lacks allocated funds for feature flagging until new budget streams arise after December. Challenges with existing AWS flagging slowing release velocity were noted, prompting interest in improving DORA metrics. A demo of GrowthBook illustrated its environment inheritance and feature rollout capabilities, enabling complex configurations and integration with existing workflows. Controlled rollouts were discussed, including automatic rollback based on data, and the need for caching was highlighted to improve performance and stability. Team collaboration features were also examined, along with potential scalability.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "feature flags, budget constraints, single sign-on, environment inheritance, rollout ramp-up, caching strategies",
+      "action_items": "\n**Abhinav Kulshrestha**\nEvaluate GrowthBook demo insights and check for fit in other EA product lines or budget streams post-December budget cycle (09:27)\n\n**Christian Liebenow**\nMaintain contact with Abhinav for follow-up questions and potential future engagement regarding GrowthBook’s capabilities and pricing flexibility (31:20)\n\n**Logan Bates**\nProvide additional demos or technical details as requested and clarify caching, environment inheritance, and rollout scenarios for EA teams if needed (14:00)\n"
+    },
+    {
+      "id": "01KWYESH30ZK8R67QGX5H04SK5",
+      "source": "fireflies",
+      "title": "EA + GrowthBook",
+      "date": "2026-07-09",
+      "duration_minutes": 36,
+      "summary": "The meeting centered around EA's evaluation of GrowthBook as a replacement for AWS regarding feature management and configuration. The player experience team is testing GrowthBook for its ability to handle real-time feature toggling without the need for server restarts, which has been a limitation with AWS. The proof of concept (POC) involves around 80 users and aims to explore GrowthBook's enterprise features like SSO and environment inheritance. Pricing discussions revealed an annual fee structure and considerations for self-hosting versus SaaS options, highlighting security as a primary concern for EA. Next steps involve an internal review of pricing and features, with a follow-up call scheduled to address further inquiries.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "feature management, self-hosted, enterprise pricing, SSO, environment inheritance, AWS alternatives",
+      "action_items": "\n**Abhinav Kulshrestha**\nAnalyze GrowthBook pricing model and compare with other solutions internally at EA (33:44)\nPresent GrowthBook use case, pricing, and licensing options to EA’s review board for budget approval (13:08)\nPrepare for follow-up meeting with GrowthBook team to discuss pricing and technical concerns (34:10)\n\n**Christian Liebenow**\nShare detailed pricing information and SaaS vs. self-hosted differences with Abhinav (07:05)\nSet up Slack support channel with EA for quicker communication during POC (18:59)\nConfirm and provide information on CDN request protections such as WAF or DDoS shielding included in SaaS offering (29:14)\nCoordinate another call including technical colleague Logan to discuss licensing and multi-environment usage (31:10)\nPropose follow-up meeting time for the following Friday (34:43)\n\n**Logan Bates**\nClarify licensing terms for multiple environment instances and support per user fee rationale during follow-up meetings (31:30)\n"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "company": "Emmy/Ashley",
+  "slug": "emmy-ashley",
+  "calls": [
+    {
+      "id": "01KV943TPTZ56C2KRGTKK5FWMK",
+      "source": "fireflies",
+      "title": "Emmy/Ashley",
+      "date": "2026-06-18",
+      "duration_minutes": 24,
+      "summary": "The team discussed building a stronger content ecosystem by cross-linking podcast episodes, blog articles, and role pages to enhance engagement and SEO. Karen Henke emphasized the importance of creating a self-generating network of content, while automated content generation using AI will extract key insights for FAQs and summaries. The episode page design aims to enhance user experience with detailed metadata and easy navigation. Additionally, both sales and marketing coordination need to improve to support effective content promotion. The proposed amplification strategy includes automated linking and precise tracking through UTM parameters, aimed at increasing audience reach and converting casual listeners into subscribers.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Podcast episodes, content cross-linking, episode page design, FAQs generation, guest bios, newsletter subscription",
+      "action_items": "\n**Karen Henke**\nShare project plan including amplification strategy and UTM tracking details with team to support podcast episode promotion and traffic tracking (21:20)\nProvide guidance for AI on extracting relevant transcript sections for FAQs and key content areas such as guest bios and future trends in experimentation (07:04)\nCoordinate incorporating company logos on episode pages while monitoring feedback from companies and allowing opt-out if requested (11:08)\nFollow-up on podcast marketing issues and clearly define to sales team exact requirements for posting episode links on platforms like LinkedIn (22:43)\n\n**Emmy Sharp**\nDevelop detailed episode page and guest page designs incorporating features such as tabs for transcripts, FAQs, guest bios, key takeaways, and embedded audio/video players (02:29)\nImplement tab interface allowing toggling between audio (Transistor embed) and video (YouTube embed) on episode pages, with default view minimizing YouTube branding (17:13)\nCollaborate with Jack or tech team on automation of internal content cross-linking to reduce manual workload and increase content interconnectivity (21:20)\nPrepare for linking automation and content updates to reduce manual link addition efforts across podcast-related content (21:20)\n\n**Ashley Stirrup**\nProvide preview of podcast episodes to guests before publishing and request links to other content such as blogs or newsletters for promotion purposes (18:53)\nTrial adding company logos on episode pages and monitor reactions from companies to assess impact on credibility and attractiveness (11:23)\nAssist in defining key questions and content areas suitable for FAQs and guest bios to improve AI extraction accuracy and relevance (05:10)\nWork with marketing and sales teams to enforce protocol for including episode links in external posts such as LinkedIn to increase podcast traffic and engagement (20:01)\n"
+    },
+    {
+      "id": "01KT4VEV3XMA0DK2CNSR6RA773",
+      "source": "fireflies",
+      "title": "Emmy / Ashley",
+      "date": "2026-06-02",
+      "duration_minutes": 29,
+      "summary": "The team discussed various strategies to enhance content engagement, including diversifying formats from podcast episodes into reels and infographics while monitoring performance. Emmy proposed automated social media performance summaries to streamline reporting. They also brainstormed a microsite named 'Experimentation Edge' to host unique podcast-related content. The meeting highlighted SEO and user behavior analysis as key priorities for improving website traffic and conversion rates. Furthermore, the team is revising pricing models inspired by Statsig to better align with customer value. Enhancing their G2 profile through strategic investments was deemed crucial for improving brand credibility, alongside collaborative efforts for upcoming webinars to ensure impactful marketing.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "G2 presence, experiment tracking, webinar marketing, social media content, pricing strategy, microsite development",
+      "action_items": "\n**Ashley Stirrup**\nShare Claude’s research findings comparing website versus Substack formats with Emmy for her review (07:29)\nCoordinate a brainstorming session with Emmy to prioritize her tasks and define next steps, starting with the microsite specification (23:18)\nProvide Emmy with a detailed walkthrough of the new pricing strategy and the upcoming pricing presentation (24:23)\nSend meeting notes, example promotional videos including competitor videos, and materials about the experimentation awards program to Emmy for reference (27:01)\nReview and set up Growth Book email access for Emmy to increase transparency and integration with daily workflows (26:27)\n\n**Emmy Sharp**\nTest creating automatic social media post performance summaries and send initial reports to Ashley and self before wider sharing (07:56)\nResearch G2 service plans and content requirements to improve the company’s G2 presence and prepare for related growth projects (17:21)\nAssist with creating a short looping promotional video for events, using shared examples and AI tools to highlight company product value (20:06)\nSpec out requirements and features for the new \"Experimentation Edge\" microsite and communicate priorities to Ashley (23:28)\n"
+    }
+  ]
+}

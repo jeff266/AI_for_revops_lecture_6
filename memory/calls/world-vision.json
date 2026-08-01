@@ -1,0 +1,18 @@
+{
+  "company": "World Vision +",
+  "slug": "world-vision",
+  "calls": [
+    {
+      "id": "01KY3MF5Q134ZN9R3BTVP9N485",
+      "source": "fireflies",
+      "title": "World Vision + GrowthBook",
+      "date": "2026-07-23",
+      "duration_minutes": 36,
+      "summary": "World Vision's experimentation program is in its early stages, currently launching tests every four to six weeks, with an aim to expedite this to at least one experiment per month. A key challenge is the limited availability of full stack developers, causing a backlog of 12 to 15 experiments. Cultural barriers and cautious business partners are further hindering rapid experimentation. The contract with current platform Optimizely is due for renewal in October, leading to an evaluation of alternative platforms like Growth Book, which offers better alignment with developer needs, robust CI/CD support, and data ownership. The team is pursuing a modular experimentation strategy to support their evolving technology stack while fostering a culture of rapid, data-driven decision-making.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation, GrowthBook, Optimizely, Data Warehouse, CICD, Feature Flags",
+      "action_items": "\n**Nick Huang**\nNick Huang to conduct internal discussions with the head of engineering and business teams regarding GrowthBook demo and feature interest to align on next steps (32:56)\n\n**Christian Liebenow**\nChristian Liebenow to send a follow-up email with available times for a detailed GrowthBook demo session with World Vision’s development and engineering teams, targeting late next week (34:21)\nChristian Liebenow to provide additional information on GrowthBook pricing, including nonprofit pricing options and comparison to Optimizely’s pricing models (33:23)\n\n**Logan Bates**\nLogan Bates to prepare and conduct a detailed product demo focusing on GrowthBook’s Visual Editor, CICD workflows, warehouse-native data functionality, and AI agent workflows for the upcoming session with World Vision’s team (23:37)\n"
+    }
+  ]
+}

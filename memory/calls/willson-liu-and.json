@@ -1,0 +1,18 @@
+{
+  "company": "Willson Liu and",
+  "slug": "willson-liu-and",
+  "calls": [
+    {
+      "id": "01KP9EZCX8YG9F2Q1Y828GX8NE",
+      "source": "fireflies",
+      "title": "Willson Liu and Ashley Stirrup",
+      "date": "2026-04-17",
+      "duration_minutes": 29,
+      "summary": "The meeting aimed to improve prompt tracking and content generation for Ashley Stirrup's team. A curated list of 161 relevant prompts was developed, prioritizing AB testing and feature flags to align with product team needs. Ashley's monthly streaming plan was confirmed to cover 1400 prompts, ensuring sustainability. The discussions included a detailed look at a 17-step AI-driven content workflow that produces 40 articles monthly, alongside a proposal to pilot test this against Athena’s platform. Immediate data streaming was initiated for performance comparisons, while new features like Olympus for content influence visualization and Oracle for misinformation detection were introduced. Future collaborations and follow-up sessions were planned to refine workflows and explore case study opportunities.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Athena platform, AB testing, feature flags, content generation, Olympus visualization, AI agent",
+      "action_items": "\n**Willson Liu**\nSubmit a feature request to engineering to add adjustable column width for prompt viewing in the Athena platform (02:02)\nTag all relevant AB testing, experimentation, feature flagging, and warehouse native prompts for Ashley’s use case within Athena (11:04)\nInitiate immediate data streaming to capture current baseline data for comparison before Ashley’s website launch (12:31)\nSchedule a follow-up call with Ashley, her content lead Jack, and Athena’s product/engineering team to explore integration and A/B testing opportunities with Air Ops workflows (17:53)\nSend Ashley a post-meeting message summarizing key call details and next steps (28:22)\nProvide Ashley access to Ask Athena AI agent feature at enterprise level (24:23)\nConfirm and communicate estimated completion timeline for streaming data load to Ashley (28:39)\n\n**Ashley Stirrup**\nIdentify a relevant blog URL for a test case to evaluate Athena’s AI content workflow for A/B testing (14:26)\nCoordinate internally with Jack and product/engineering teams to join a follow-up meeting with Willson to discuss deeper product integration and feedback (17:53)\nMonitor streaming results once data processing completes and start comparing current versus previous datasets to evaluate impact of new SEO and AI-generated content (27:03)\n"
+    }
+  ]
+}

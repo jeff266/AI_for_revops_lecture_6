@@ -1,0 +1,18 @@
+{
+  "company": "Enablement",
+  "slug": "enablement",
+  "calls": [
+    {
+      "id": "01KQAKEWEXAP6KKEGV2MJ9XAWF",
+      "source": "fireflies",
+      "title": "Enablement: Feature Flags",
+      "date": "2026-05-06",
+      "duration_minutes": 30,
+      "summary": "The primary objective of the meeting was to enhance GrowthBook's feature flags as a standalone enterprise-class offering, distinct from experimentation, to address early-stage customer needs. The team discussed targeted sales enablement, creating impactful presentations to highlight GrowthBook's strengths, especially in light of positive feedback about competitors like LaunchDarkly being seen as overly expensive. Technical differentiators, such as GrowthBook's lightweight SDKs and extensive integration capabilities, were emphasized as key advantages. Migration challenges from LaunchDarkly were acknowledged, indicating that large flag counts complicate transitions for customers. The ongoing feedback loop was seen as vital for refining presentations and ensuring the sales narrative clearly articulates GrowthBook’s unique value proposition.",
+      "organizer": "scott@growthbook.io",
+      "participants": 13,
+      "keywords": "Feature Flags, LaunchDarkly, SDK Size, Migration, Developer Experience, Cost Efficiency",
+      "action_items": "\n**Scott Bailey**\nShare the feature flag slide deck with the sales team immediately, including both non-editable and Canva versions to improve accessibility and usability (27:21)\nEnable and provide an editable Google Slides version of the feature flag deck to unify sales materials and improve ease of customization (27:21)\n\n**Ashley Stirrup**\nCollect feedback from the sales team regarding objections, missing points, and overall effectiveness after using the new feature flag slides in sales calls (28:52)\nLead follow-up discussions and provide detailed walkthroughs of feature flag features and migration topics to support sales efforts and customer education (14:00)\nOversee the development of customer-facing migration stories and materials that explain the benefits and ease of switching from competitors like LaunchDarkly (25:30)\n\n**Logan Bates**\nEvaluate and propose improvements to migration scripts and tooling to reduce friction for customers migrating from LaunchDarkly to their feature flag platform (25:30)\n\n**Cary Rakin**\nGather examples and customer objections related to migration difficulty to help shape effective migration messaging and materials (23:50)\n\n**Dan Wathne**\nShare internal knowledge and migration tools, such as the LaunchDarkly migration script used at Statsig, as references to inform tooling improvements (23:15)\n\n**All Sales Team Members**\nEncourage all sales team members to use the new feature flag slides in sales calls and promptly report any objections or gaps to Ashley for continuous improvement (28:52)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook and Felt",
+  "slug": "growthbook-and-felt",
+  "calls": [
+    {
+      "id": "01KWYZD09XDCCM1CXQJAS75XN5",
+      "source": "fireflies",
+      "title": "GrowthBook and Felt",
+      "date": "2026-07-08",
+      "duration_minutes": 32,
+      "summary": "Felt's meeting focused on transitioning from Statsig to GrowthBook driven by dissatisfaction with Statsig's degraded quality and support. Matt Menzi highlighted performance issues, bugs, and dashboard shortcomings at Statsig, pushing for a more reliable option like GrowthBook. Dan Wathne praised GrowthBook's open-source model, emphasizing community support and scalability, critical for Felt’s data demands. GrowthBook offers warehouse-native solutions, enabling Felt to handle complex queries efficiently. The platform's experimentation capabilities, including feature flagging and streamlined migration from Statsig, align with Felt’s operational needs. A focus on security compliance, necessary for Felt's health tech context, and continuous product enhancements further solidified GrowthBook as a favorable choice.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 4,
+      "keywords": "experiment platform, data warehouse, migration, AB testing, feature flags, HIPAA compliance",
+      "action_items": "\n**Dan Wathne**\nSend follow-up email recapping discussion and asking clarifying questions for pricing proposal preparation (27:20)\nPrepare and send pricing proposal to Felt team for review by Friday 1:00 pm PT meeting (26:50)\nProvide BAA documentation to Felt for legal compliance prior to trial (25:50)\nVerify CDN request handling and event volume cost structure with CTO and report back to Felt post-call (23:30)\nSchedule and conduct Friday pricing and demo deep-dive session with Felt for further product exploration (26:50)\n\n**Felt Team (Matt Menzi and Joshua Tolman)**\nDecide on trial approach (clean slate vs. migrated data) and confirm requirements for BAA signing (25:30)\n"
+    }
+  ]
+}

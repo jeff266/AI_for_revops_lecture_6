@@ -1,0 +1,42 @@
+{
+  "company": "ayhan and Ashley",
+  "slug": "ayhan-and-ashley",
+  "calls": [
+    {
+      "id": "01KJZTN76RDWF1GDX6SQB78TB8",
+      "source": "fireflies",
+      "title": "ayhan and Ashley Stirrup",
+      "date": "2026-03-06",
+      "duration_minutes": 33,
+      "summary": "The team discussed enhancing their cold email outreach by shifting from broad solution-focused messaging to targeted approaches grounded in customer pain points. Ayhan emphasized the importance of utilizing anonymized case studies to make messaging more relevant and compelling. Through a new segmentation strategy, the campaign will focus on product-based targeting rather than industry, tailoring messages to specific personas such as product managers and engineers. Content assets will be sourced from existing customer evidence to increase case studies from six to fifteen, while detailed persona archetypes for engineers and product managers have been developed to address high-velocity experimentation challenges. Additionally, a multi-signal lead scoring model will identify high-potential accounts, ensuring effective outreach.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "experimentation, cold email campaigns, content assets, buyer personas, lead scoring, high-velocity testing",
+      "action_items": "\n**Ayhan K Isaacs**\nShare revised campaign messaging and segmented lists with Ashley and Scott for review (32:00)\nExport hypo segment from CRM, clean it on Clay, and prepare for outreach (17:10)\nAnalyze webinar transcripts and videos (Ron Kohavi webinar, Type Safe feature flags) to create content assets (05:40)\nUse LinkedIn profiles from 10–20 existing customers to build detailed buyer personas and refine targeting (26:45)\nProduce and share sample messaging targeted at differentiated experimentation personas (31:50)\nDeliver Rio-related exports and updates (32:15)\n\n**Ashley Stirrup**\nProvide updated Dropbox case study draft to Ayhan for content use (12:00)\nShare hypo account segment filters and lead scoring rules with Ayhan, clean CRM data as necessary (14:50)\nAdd Scott to communication channels like Crossroads for easy collaboration (32:10)\n\n**Scott Bailey**\nPull and share documentation on engineering pain points for personas differentiation (12:40)\nFurther research product/engineering personas and customer call transcripts for detailed pain points and language (18:40)\nAssist in identifying customer profile examples on LinkedIn to help build targeting criteria (23:50)\n"
+    },
+    {
+      "id": "01KHRWM4ZRWT12401RVA40EX9D",
+      "source": "fireflies",
+      "title": "ayhan and Ashley Stirrup",
+      "date": "2026-02-19",
+      "duration_minutes": 31,
+      "summary": "The team discussed strategies for targeting new high-value segments beyond FinTech and B2C, prioritizing EdTech and AI, while considering gaming and gambling for messaging. They emphasized targeting headless CMS-based e-commerce rather than traditional Shopify users, focusing on stores with at least 100,000 monthly visitors for experimentation. The media and publishing vertical was identified for content monetization efforts, emphasizing the importance of linking experimentation with business KPIs through data tools. Ongoing campaigns in FinTech and B2C are still in early phases as the team plans to launch an Adobe Target campaign leveraging asset materials. A focus on personalized outbound sales messaging is aimed at targeting product teams rather than marketing roles to enhance engagement and conversion.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Audience Targeting, Interactive Lead Magnet, Headless E-commerce, AI Readiness Quiz, Intent Data, Technographic Research",
+      "action_items": "\n**Ashley Stirrup**\nShare Adobe Target campaign asset once available (12:00)\nProvide access or share data from intent and technographic tool (rio.dev) to Growth Rhino team (27:30)\n\n**Pricila Reyes**\nPing Ayhan to join meeting initially (01:04)\nReview and process notes on targeting expansion and outbound strategy offline with Ayhan (30:30)\n\n**Ayhan K Isaacs**\nFollow up with Pricila to refine new audience targeting strategy and develop a new campaign game plan (30:15)\nEvaluate and develop new interactive lead magnet concepts beyond ebooks and Gamma assets (16:00)\nCoordinate with SDR team to utilize intent and technographic data for personalized outreach (27:50)\nManage access setup for Growth Rhino team to use Ashley’s account/data insights (28:30)\n"
+    },
+    {
+      "id": "01KG0YX6RB52MG7HA44RVTWYV8",
+      "source": "fireflies",
+      "title": "Ayhan and Ashley Stirrup",
+      "date": "2026-01-29",
+      "duration_minutes": 17,
+      "summary": "The meeting addressed the strategic shift towards three primary campaigns focusing on fintech, edtech, and high-traffic B2C sectors, moving away from B2B SaaS due to targeting challenges. Ashley Stirrup emphasized the importance of addressing real user pain points in messaging, particularly around A/B testing tools. Pricila Reyes will revise messaging to highlight Growth Book's self-hosting capabilities. The team agreed on a collaborative rollout process, with hands-on feedback loops to refine lists and assets while maintaining high-quality standards. A new Sales Development Representative (SDR) was introduced to convert leads, and there will be regular check-ins to enhance communication and adaptability in strategy execution, ultimately aimed at maximizing campaign effectiveness and market penetration.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Campaign Strategy, Messaging, Vertical Targeting, List Building, A/B Testing, Asset Approval",
+      "action_items": "\n**Pricila Reyes**\nProvide updated campaign lists based on Ashley’s feedback by tomorrow (00:40)\nMake messaging changes per discussion, focusing on testing pain points and self-hosting benefits as additional features, not lead messaging (05:36)\nBegin list building for AI (high traffic B2C) and FinTech campaigns while starting background work on Optimizely campaign (06:01)\nDebrief internally with Ayhan immediately after meeting to align on next steps (16:26)\n\n**Ashley Stirrup**\nProvide feedback and strategic direction on verticals and messaging to avoid inefficient targeting (01:12)\nReview all campaign asset names and messaging before client-facing use to protect brand image (09:40)\nShare comparison content and materials for Optimizely and Adobe Target for building campaigns (07:27)\n\n**Ayhan K Isaacs**\nOversee QA process on list building to avoid errors such as incorrect company segmentation (15:05)\nManage campaign workflow: test multiple campaigns in parallel, iterate rapidly, and collaborate with Ashley on asset development and messaging refinement (09:20)\nSchedule next check-in meeting for roughly one week later, preferably on Thursday, later in the day to suit Ashley’s availability (15:55)\nContinue coordination with Pricila and SDR for timely execution of campaigns and messaging approval (09:12)\n"
+    }
+  ]
+}

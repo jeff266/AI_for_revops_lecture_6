@@ -1,0 +1,30 @@
+{
+  "company": "Ashley / Alyssa",
+  "slug": "ashley-alyssa",
+  "calls": [
+    {
+      "id": "01KXGYNQTCG8HE8SCT763FCTG4",
+      "source": "fireflies",
+      "title": "Ashley / Alyssa 1:1",
+      "date": "2026-07-21",
+      "duration_minutes": 30,
+      "summary": "Key discussions included Alyssa's governance blog post awaiting metadata review and the development of a Visual Editor FAQ based on client feedback. A proposed 'anti wizard' onboarding tool was introduced to enhance user experience through a customizable flow. Plans for a Product Hunt post and Feature Flag blog in May were set, alongside efforts to standardize video branding and launch a YouTube series on the Visual Editor. Alyssa committed to following up with engineers for insights on the onboarding tool, while Ashley suggested direct calls for prompt feedback. Upcoming timelines included the launch of the governance post on Thursday and a status check on the Mintlify migration, with YouTube class videos slated for post-August.",
+      "organizer": "alyssa@growthbook.io",
+      "participants": 2,
+      "keywords": "governance blog, visual editor, onboarding wizard, branding strategy, YouTube series, conference CFPs",
+      "action_items": "**Alyssa Nicoll**  \nShare governance blog post with Ashley (01:08)  \nStar key Slack contacts (01:48)  \nFollow up on Mintlify migration status (03:51)  \nPing engineering for anti wizard feedback (05:29)  \nCreate branding video assets and guidelines (06:08)  \nCompile conference list for CFPs (08:37)  \nPair with Luke for technical blog post (12:56)  \nDocument PostHog onboarding findings (15:51)  \nPrepare webinar run-throughs with developers (18:30)  \nCreate Visual Editor redesign examples (22:41)  \nOutline YouTube GrowthBook setup class (24:29)  \nCoordinate video collaboration with Hampus (28:42)  \n\n**Ashley Stirrup**  \nSuggest direct calls with engineering for feedback (05:57)  \nDiscuss branding agency with Chris (11:47)  \nReview governance blog post (13:53)"
+    },
+    {
+      "id": "01KVZXPP67CY4E9GGRHWV3A5YR",
+      "source": "fireflies",
+      "title": "Ashley / Alyssa 1:1",
+      "date": "2026-06-25",
+      "duration_minutes": 23,
+      "summary": "During the meeting, the team addressed the complexity of onboarding, emphasizing the need for simplification to enhance user engagement and reduce drop-off rates. Ashley Stirrup presented a case study demonstrating that reducing setup time significantly boosts user satisfaction. Alyssa Nicoll committed to creating a Notion ticket for engineering efforts aimed at streamlining onboarding. Additionally, Alyssa will oversee updates to the public-facing product roadmap, ensuring community feedback is accurately represented. A focus on producing short demo videos to educate users on new features, particularly around experimentation, was highlighted. The integration of the beta event forwarder feature aimed at improving the analytics experience was also discussed, alongside the need to increase user interaction as current statistics indicated low engagement. Balancing immediate project demands with long-term improvements while awaiting key stakeholder input was emphasized as critical.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "AI onboarding, Visual Editor, event forwarder, roadmap communication, user engagement, product demos",
+      "action_items": "\n**Ashley Stirrup**\nForward Alyssa the email containing the article on PostHog’s AI onboarding improvements for further context (02:22)\nMonitor and guide prioritization of onboarding wizard work based on engineering and product team inputs and Jeremy’s direction (21:06)\n\n**Alyssa Nicoll**\nCreate a Notion ticket proposing onboarding improvement ideas and coordinate with engineering and Scott on what can be implemented independently ahead of time (03:03)\nReach out to Bryce or Luke to get access for testing the event forwarder beta feature supporting customer data warehouse integration (05:45)\nPrepare and record short product demo videos focusing first on feature flags and then experimentation, deliver to Elise and Scott for review by end of week (11:16)\nMaintain monitoring of the Visual Editor Slack channel and continue producing quick feature demo clips for internal and external sharing (14:44)\nUse Hex and chatbot tools to gather and analyze usage data on Visual Editor users to support engagement campaigns (15:26)\nAdd notes and documentation related to the onboarding wizard feature and update its status accordingly (20:50)\nAwait Jeremy’s return from vacation before publishing sensitive roadmap discussions publicly, especially product features and future plans (09:41)\n"
+    }
+  ]
+}

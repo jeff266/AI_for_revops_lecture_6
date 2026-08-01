@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook Onboarding Kickoff",
+  "slug": "growthbook-onboarding-kickoff",
+  "calls": [
+    {
+      "id": "01KXECX138ZW7DV5RKQH872K3F",
+      "source": "fireflies",
+      "title": "GrowthBook Onboarding Kickoff",
+      "date": "2026-07-15",
+      "duration_minutes": 0,
+      "summary": "The customer is transitioning feature flags from Dev Cycle to Growth Book, with six to eight teams involved. The migration requires custom scripts since no ready-made tool exists. Murray Writtle will lead configuration efforts, while enablement sessions are planned to assist developers and architects with setup and flag integration. The initial priority is getting feature flags operational before moving on to experimentation, which will add data warehouse integration later. Additionally, there are challenges with account setup and security configurations, including the need for Azure SSO and SCIM support. A shared Slack channel for real-time communication has been proposed to facilitate support during this transition.",
+      "organizer": "chris@growthbook.io",
+      "participants": 5,
+      "keywords": "Growth Book, feature flags, Open Feature, enablement session, Dev Cycle migration, SSO integration",
+      "action_items": "\n**Chris Sanders**\nFamiliarize with Open Feature integration with Growth Book SDK and prepare enablement session content (07:40)\nSend calendar scheduling link to Murray to coordinate enablement session timing for developer training (12:33)\nFacilitate shared Slack channel creation and coordinate with Jake for communication setup (10:00)\nAssist with Growth Book account access issues and password reset support for Murray (13:50)\nCoordinate with support team for SSO and SCIM integration once account and communication channels are established (15:05)\n\n**Murray Writtle**\nReset Growth Book account password and confirm account access (13:50)\nArrange internal developer and engineering team availability for enablement session and ongoing migration work (12:34)\nSet up shared Slack channel with Chris and Jake, naming it appropriately for clarity and collaboration (10:07)\nEngage internal teams to handle SSO configuration via Azure AD and prepare for upcoming Growth Book integration tasks (14:20)\n\n**Jake (Account Executive)**\nFinalize license provisioning for Murray and his teams to expedite setup process (14:00)\n"
+    }
+  ]
+}

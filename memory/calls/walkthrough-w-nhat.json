@@ -1,0 +1,30 @@
+{
+  "company": "Walkthrough w/ Nhat",
+  "slug": "walkthrough-w-nhat",
+  "calls": [
+    {
+      "id": "01KVBJTH1AEC89VX6JFDHWFA7A",
+      "source": "fireflies",
+      "title": "Walkthrough w/ Nhat",
+      "date": "2026-06-17",
+      "duration_minutes": 17,
+      "summary": "The team is working on improving chart and table visualizations for internal event tracking metrics. Key progress includes the near completion of event forwarder visualizations, which now track vital metrics with clear color-coded tooltips. UX challenges have been identified in custom date range comparisons, particularly regarding color schemes and length comparisons. Bar chart designs are also under review for better clarity between current and previous periods, with suggestions for offsets to enhance distinction. Additionally, a new big number display accommodates multiple metrics but requires alignment with product goals to avoid confusion. Efforts to resolve bugs and enhance user interaction and feedback are prioritized, with Figma mockups planned for prototyping improvements.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 2,
+      "keywords": "event forwarder, custom date range, bar chart, big number metrics, UX feedback, data visualization",
+      "action_items": "\n**Nhat Ho**\nVerify with Jeremy the intended behavior for displaying single or multiple big number metrics on dashboards and plan warnings for users switching modes (11:23)\nFix UI bugs related to date range selection, tooltip display issues, and highlighting the correct selected date ranges in custom selectors (13:45)\nInvestigate and potentially implement UI improvements such as linking bar chart elements and customizing legends based on Johnny’s upcoming design input (14:50)\n\n**Johnny Martinez**\nCreate and share Figma mockups addressing the custom date range UI and bar chart overlay options to improve UX for comparing current and previous periods (12:30)\nReview bar chart stacking and offset visualization to improve clarity and feedback on whether stacking all metrics into one bar makes sense (09:15)\nContinue development work using screenshots captured from the walkthrough and follow up with Nhat for clarifications or further demos (16:04)\n"
+    },
+    {
+      "id": "01KVBJRPABPBED1YW6RST2MC0K",
+      "source": "fireflies",
+      "title": "Walkthrough w/ Nhat",
+      "date": "2026-06-17",
+      "duration_minutes": 15,
+      "summary": "The team discussed numerous data visualization enhancements, emphasizing improvements in chart and table clarity and user interactivity. Changes included refining tooltip and opacity settings for line charts to enhance readability, addressing usability issues in custom date range selectors, and implementing clearer indicators in table views to distinguish current and previous metrics. The introduction of big number cards now allows for multiple metrics in a single display. Bar chart visuals need clearer differentiation between current and previous metrics to aid interpretation. The meeting also highlighted UI bug fixes, plans for warnings when switching metric counts, and collaborative design efforts to finalize improvements before release.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 2,
+      "keywords": "custom date range, big number metrics, bar chart visualization, line chart tooltip, UI/UX feedback, metric comparison",
+      "action_items": "\n**Nhat Ho**\nFix highlight bug in custom date range selector to properly show selected current range highlight (11:40)\nVerify design intent with Jeremy Sibit regarding allowing multiple big number metrics vs. single metric and propose warning/block UX for switching modes (08:50)\nInvestigate legend customization options for bar charts to improve clarity for multi-metric displays (12:55)\nModify big number card layout to support up to four metrics and handle responsive column stacking with minimal gaps (08:40)\n\n**Johnny Martinez**\nCreate Figma mockups for improved custom date range UI to address clarity and UX issues; share designs with Nhat for feedback (10:35)\nReview stacked bar and overlay offset chart visualizations for current vs. previous data comparison and test usability improvements (06:20)\nBegin implementation work using screenshots and walkthrough feedback provided to improve chart and table components (13:55)\n"
+    }
+  ]
+}

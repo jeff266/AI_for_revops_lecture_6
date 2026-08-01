@@ -1,0 +1,18 @@
+{
+  "company": "Finalize Approach to",
+  "slug": "finalize-approach-to",
+  "calls": [
+    {
+      "id": "01KSXA5WX27BCWZEZ4Y92CJ889",
+      "source": "fireflies",
+      "title": "Finalize Approach to Pricing",
+      "date": "2026-06-02",
+      "duration_minutes": 60,
+      "summary": "The team outlined a new strategy for open source usage, emphasizing broad access without user caps, limited to one project and two environments to encourage upgrades from free to paid plans. Open source is intended as a marketing tool rather than a fully-featured enterprise product, aiming to attract potential users. A significant shift towards event-based pricing was agreed upon for Pro and Starter plans, removing user limits and adapting the pricing structure to better reflect usage patterns. The team planned to grandfather existing users under the new caps to ease transitions. They also discussed a gradual rollout of these changes, particularly in the U.S., while addressing GDPR implications for European customers, and emphasized maintaining competitive positioning following competitor product changes.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 6,
+      "keywords": "open source, event-based pricing, managed warehouse, grandfathering, feature caps, GDPR compliance",
+      "action_items": "\n**Ashley Stirrup**\nConduct research on open source community pricing and gating strategies to finalize open source product limits and approach (17:46)\nEnsure website and pricing page clearly portray new pricing options to support the phased rollout plan (54:30)\nOversee rollout plan and coordinate with Jeremy Dorn for the 4.5 release scheduled mid-July (50:28)\n\n**Jeremy Dorn**\nAnalyze existing customer base to determine recommended caps on concurrent experiments and users in the Pro tier (18:55)\nUpdate pricing tables, Stripe configuration, and assign engineering resources for implementation of new pricing model (45:15)\nRoll out managed warehouse default availability and event forwarder setup while monitoring EU compliance requirements (48:40)\nCollaborate on grandfathering existing customers with high usage and devise upgrade approaches to smooth transition to new pricing (29:50)\nImplement open source version with no roles, unlimited users and flags, and cap projects/environments at one to reduce friction (47:00)\nDevelop phased pricing plan rollout starting with US market and delaying EU rollout until GDPR-compliant solution is ready (57:15)\nFacilitate shifting features between plan editions to strengthen differentiation between Pro and Enterprise tiers (55:10)\n\n**Dan Wathne**\nValidate pricing spreadsheet numbers for key customers like Groupon under the new event-based pricing model (27:40)\nSupport communications with enterprise prospects to drive upgrades and act as pricing subject matter expert (21:30)\nAssist in pricing scenarios and competitor analysis to support positioning of new pricing model (38:05)\n\n**Ryan McGurk**\nProvide user and experiment data to support analysis of pricing caps and identify top customers for grandfathering and upgrade outreach (29:05)\nMonitor metrics post-launch on conversions, churn, and upgrades to evaluate success of the new pricing model (44:40)\n\n**Graham McNicoll**\nSupport compliance considerations for managed warehouse in EU and implications for pricing rollout (50:05)\n"
+    }
+  ]
+}

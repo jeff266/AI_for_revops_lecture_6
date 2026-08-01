@@ -1,0 +1,114 @@
+{
+  "company": "Book Club",
+  "slug": "book-club",
+  "calls": [
+    {
+      "id": "01KP9X9YTKMH4396VKCP2ADGV9",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-04-23",
+      "duration_minutes": 0,
+      "summary": "The discussion centered on the importance of robust health checks and metrics for ensuring the integrity of experiment data and platform reliability. Adriel Vieira explained the risks of false positives and negatives in metrics, particularly the AA tests that help in establishing confidence in results. Luke Sonnet elaborated on SRM health checks, which monitor traffic distribution to catch major imbalances early. A gap in early-stage event validation was highlighted, emphasizing the need for improved diagnostic tools. The team considered interference challenges in experiments, particularly within social networks and marketplaces, and acknowledged the limitations of current solutions. They stressed the need for better user education on statistical uncertainty to enhance trust in experimentation outcomes and discussed prioritizing foundational improvements in the product roadmap.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 24,
+      "keywords": "Experimentation, Sample Ratio Mismatch, Interference, Switchback Testing, Health Checks, Cluster Randomization",
+      "action_items": "\n**Luke Sonnet**\nPresent the Sample Ratio Mismatch (SRM) health check and related platform features during the upcoming experimentation onboarding session (02:28)\nIncorporate real customer data and demonstrate experimental results in future demos for better practical understanding (21:14)\nExplore possibilities and implement support for experiment promotion across environments and targeting tiers once feature rule tagging is completed (08:04)\n\n**Adriel Vieira**\nReview and possibly improve engineering-level diagnostics to ensure event timing and correct experiment/control targeting during data collection pipeline stages (06:44)\n\n**Unassigned**\nDocument attrition rates and participant engagement for ongoing book club sessions (19:18)\n"
+    },
+    {
+      "id": "01KPBNBEKDDH7FVWKPY5EDJVX6",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-04-16",
+      "duration_minutes": 18,
+      "summary": "The team discussed the managed warehouse strategy as a significant product offering that can generate new revenue by facilitating event data handling. Luke Sonnet proposed that this approach simplifies client onboarding, as they can easily set up and eventually migrate their data. While the marketing focus remains unclear, aligning on priorities between managed and client-owned warehouses is crucial. The session also highlighted the importance of randomized experiments for unbiased effect estimation, as randomization breaks correlations that could introduce bias, enabling accurate treatment impact measurement. Additionally, a blog post about experiment estimands will help clarify what experiments measure for both internal teams and customers. Finally, plans for further team education, including product demos linked to conceptual learning, were discussed.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 22,
+      "keywords": "potential outcomes, randomization, causal inference, experimentation, managed warehouse, selection bias",
+      "action_items": "\n**Hampus**\nWrite a blog post explaining what experiments actually estimate, clarifying the causal inference concepts behind experimentation for users (14:59)\n\n**Luke Sonnet**\nPresent how experimental measures are implemented in the GrowthBook app, linking theoretical causal inference concepts to practical product features (17:36)\n"
+    },
+    {
+      "id": "01KN7JA7Y4YPK5CNVAAGS4RPNH",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-04-02",
+      "duration_minutes": 59,
+      "summary": "During the meeting, the team discussed the integration of qualitative user experience research (UXR) with experimental platforms such as GrowthBook. Luke Sonnet emphasized the rarity of directly merging UXR data with experiments, highlighting that qualitative insights reveal user behavior patterns absent in quantitative data. There was skepticism about AI-simulated users replacing real experiments, as both Luke and Ashley Stirrup noted the unpredictability of human behavior. The discussion underscored the importance of human creativity in idea generation, despite AI's role in processing large datasets. The group also examined the complexities of observational causal inference and how interleaved experiments could provide quicker insights but demand significant assumptions, ultimately calling for a balanced approach that values qualitative methods alongside experimental rigor.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 22,
+      "keywords": "Observational Causal Inference, User Experience Research, Synthetic Users, Interleaved Experiments, Natural Experiments, Experimentation Challenges",
+      "action_items": "\n**Luke Sonnet**\nPrepare or consider materials on statistical fundamentals to support future book club sessions and deepen understanding of experimental design and causal inference (17:27)\n\n**GrowthBook Team**\nExplore the feasibility of integrating qualitative user experience research data into the GrowthBook experimentation platform via metadata links or similar minimal methods (03:53)\nExplore customer interest and market opportunity for implementing interleaved experiments within GrowthBook, considering the technical and statistical complexities involved (31:31)\n\n**Unassigned**\nInvestigate the potential use of AI-generated synthetic user simulations as automated quality assurance tools rather than substitutes for real A/B testing (05:44)\nResearch and share case studies or references on natural experiments and regression discontinuity designs, especially related to educational outcome studies, to support data science work and experimental design understanding (54:29)\n\n**All Book Club Members**\nContinue reading assigned chapters and prepare thoughts for discussion in the next book club session to maintain engagement and deepen comprehension (58:37)\n"
+    },
+    {
+      "id": "01KMNDZ3D8QBHTXWSER9DY39PW",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-04-02",
+      "duration_minutes": 86,
+      "summary": "Participants discussed the limitations of AI-driven synthetic user testing, highlighting that it cannot fully substitute real human experiments due to inherent data gaps. Luke Sonnet expressed skepticism about synthetic users' predictive capabilities, emphasizing that while they may assist in identifying broken states, they lack the nuance of human behavior. Elyse Fox noted the possible benefits for small companies, though Luke remained doubtful of their added value. Additionally, the team explored the need for a hybrid approach combining human data with AI to enhance model accuracy, though this requires continuous calibration. They acknowledged the persistent challenges in generating effective experiment ideas, which demand significant human insight. Finally, the discussion covered significant pricing increases for managed warehouse services and the misalignment of customer metrics with platform capabilities, indicating areas needing improvement.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 23,
+      "keywords": "A/B testing, synthetic users, interleaved experiments, causal inference, pricing strategy, product analytics",
+      "action_items": "\n**Luke Sonnet**\nPrepare a stronger position and internal materials on interleaved experiments, focusing on marketplace use cases and their limitations as discussed (23:49)\n\n**Ashley Stirrup**\nInvestigate the impacts of Managed Warehouse and Warehouse Native pricing, including adding further dimensions and evaluating customer plan shifts (54:30)\nDevelop a release checklist template that includes documentation completeness to support engineering teams and reduce friction (01:22:00)\n\n**Scott Bailey**\nCollaborate on optimizing the job-to-be-done framework and clarify questions related to LLM testing and metrics in customer interviews (01:03:42)\nAssist with reviewing product documentation and identify areas for improvement to enhance clarity and completeness (01:23:28)\n\n**Unassigned**\nUse the product's own analytics tools internally to analyze web traffic data as a validation use case (01:18:14)\n"
+    },
+    {
+      "id": "01KMNHGJ8YFMDEGX822J8YYX5F",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-03-26",
+      "duration_minutes": 57,
+      "summary": "The discussion focused on aligning key metrics to enhance decision-making speed and autonomy among teams. Elyse Fox emphasized the need for clear alignment to drive efficiency, while Luke Smith suggested creating project-level goal metric templates. The group examined the risks of metric gaming and balancing short-term and long-term goals, exemplified by Luke Sonnet's insights on inflated conversion rates. The complexity of estimating customer lifetime value was highlighted, with larger companies utilizing historical data more effectively than most customers. Additionally, internal challenges in conducting rigorous experimentation were acknowledged due to limited user numbers. Ethical concerns surrounding engagement metrics and their societal impact were raised, stressing the need to balance engagement with user well-being. Lastly, the team explored the trade-offs in managing multiple metrics effectively.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 20,
+      "keywords": "metrics, experimentation, gameability, customer lifetime value, ethical considerations, organizational alignment",
+      "action_items": "\n**Luke Sonnet**\nShare next book club agenda in the learning channel and pin it for easy access (56:30)\n\n**All Participants**\nPrepare questions or topics for the next session focusing on observational studies and alternative data analysis tools (56:30)\n"
+    },
+    {
+      "id": "01KM5Z02V2TVM0D0WHPMFVZRWR",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-03-26",
+      "duration_minutes": 36,
+      "summary": "The meeting addressed the critical role of clear metric alignment in enhancing decision-making speed and team autonomy within organizations. Elyse Fox highlighted challenges in achieving full organizational buy-in, while Luke Sonnet emphasized the need for pre-set rules to help scale operations. The current limitations of platform metrics were discussed, emphasizing the need to elevate key metrics for better visibility. Questions surrounding the gaming of metrics, especially in creating misleading short-term success, were explored, with Scott Bailey distinguishing between intentional and unintentional gaming. The complexities involved in estimating Customer Lifetime Value (LTV) were also touched upon, alongside the importance of ethical considerations in experimentation, particularly in sensitive sectors.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 21,
+      "keywords": "Metric alignment, Gameability, Customer lifetime value, Experimentation platform, Causal graph, Ethical considerations",
+      "action_items": "\n**Luke Sonnet**\nPush for increased internal experimentation frequency at Growth Book to build intuition and improve metrics understanding despite scale challenges (30:50)\nContinue monitoring and analyzing the AI suggestions temperature experiment, focusing on key metrics like suggestion saves and persistent usage (33:03)\n\n**Unassigned**\nExplore ways to enhance platform support for advanced multi-metric guardrails, including subtraction or ratio metrics to balance revenue and costs (17:24)\nInvestigate customers’ roles and processes responsible for driving metric alignment to better understand organizational models and scale experimentation enablement (22:18)\nConsider integrating causal graph approaches and funnel metric expansions into experimentation platform to better support complex metric relationships and mediation (26:18)\n"
+    },
+    {
+      "id": "01KKHM66CXMKC40H3FR7Z2BPYF",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-03-19",
+      "duration_minutes": 52,
+      "summary": "During the meeting, participants discussed the varying levels of experimentation maturity across organizations, noting that growth teams tend to lead in experimentation practices, while other units lag behind. Cultural factors and the tools in use significantly affect the success of experiments, with customers acknowledging their maturity but struggling to identify the best paths to advancement. Centralized teams, such as Aircall’s, play a vital role in enhancing experimentation capabilities enterprise-wide. The board set priorities on event-based pricing, managed warehouse adoption, and building relationships with major accounts, while emphasizing the need for AI integration in development tools to simplify experimentation. Leadership buy-in is crucial for fostering a culture of experimentation, although quantifying its ROI poses challenges.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 20,
+      "keywords": "Experimentation Maturity, Feature Flagging, Build vs Buy, Multi-arm Testing, Post Stratification, Organizational Metrics",
+      "action_items": "\n**Christian Liebenow**\nUse insights on experimentation maturity differences to refine sales approach and communicate platform capabilities effectively (00:00)\n\n**Luke Sonnet**\nPrepare to discuss OECs and balancing metrics in next meeting (50:48)\nContinue working on improving phase metadata and experiment iteration visibility in the platform (39:20)\nFollow up with Sony team to explore use cases for post stratification and document benefits for possible case studies (46:50)\n\n**Ashley Stirrup**\nProvide feedback and coordinate on AI integration efforts with Anthropic and developer workflow enhancements (11:17)\n\n**Chris Sanders**\nShare findings from Wix conversation regarding build vs. buy considerations with sales and marketing teams (19:12)\n\n**Sales Team**\nManage pricing strategy carefully to avoid overshooting value perceptions and triggering customer defections to build solutions (21:30)\n\n**Product Team**\nInvestigate automating and smoothing post stratification feature adoption leveraging Managed Warehouse capabilities (47:27)\nConsider integration improvements with project management systems to track experimental dependencies and related workstreams (40:44)\n"
+    },
+    {
+      "id": "01KKHFY3ZWP72EMFG37QXK6NP2",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-03-12",
+      "duration_minutes": 59,
+      "summary": "The discussion centered on the enduring principles of experimentation—randomization, clear measurement, and statistical power—despite industry shifts favoring speed over complexity. Luke Sonnet highlighted that companies like Netflix and Spotify prioritize quick testing methods, often at the expense of thorough statistical analysis. Emerging trends favor simplicity, reducing cognitive load, while large-scale experiments show minimal interaction issues. Participants discussed the significance of balancing experiment duration with business needs, where shorter tests are common but longer experiments may be necessary for deeper insights. Additionally, the conversation underscored the importance of understanding biases and external validity in results, as well as the need for replication to validate surprising findings and ensure confidence in decision-making.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 19,
+      "keywords": "Experimentation, Randomization, Observational Study, Internal Validity, External Validity, Statistical Power",
+      "action_items": "\n**Christian Liebenow**\nShare customer insights on why customers prefer two-month experiments during POCs to inform sales strategy (20:00)\n\n**Ashley Stirrup**\nAssist in recruiting GrowthBook customers to participate in the multi-site study on design element replication led by Jacob Linkowski (52:00)\n\n**All participants**\nRead chapter four on experimentation tooling, infrastructure, and culture; prepare questions to facilitate discussion in next meeting (58:00)\n"
+    },
+    {
+      "id": "01KKCBCQTCM0NA3FANTRQWVXFA",
+      "source": "fireflies",
+      "title": "Book Club",
+      "date": "2026-03-12",
+      "duration_minutes": 55,
+      "summary": "The meeting addressed the evolution of experimentation methodologies, emphasizing core principles like randomization and measurement while noting a trend toward rapid testing over complex designs. Companies such as Netflix and Spotify are shifting focus to simpler, faster experiments that reduce cognitive load, prioritizing practical outcomes. A minimum experiment duration of two weeks was discussed to capture reliable data, although customer needs for longer proof-of-concept experiments were acknowledged. The team also examined challenges in interpreting experiment results, particularly issues of effect size and external validity, underscoring the importance of replicating experiments and sharing customer feedback to align with expectations. The meeting concluded with plans to discuss experimentation tooling in future sessions.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 18,
+      "keywords": "Experimentation, Randomized Controlled Trials, Internal Validity, External Validity, Observational Studies, Experiment Duration",
+      "action_items": "\n**Christian Liebenow**\nProvide more context on the recommended short experiment durations and customer requests for longer POCs (13:36)\n\n**Ashley Stirrup**\nSupport recruiting GrowthBook customers for replication studies on UI design effects, such as the blue button study (49:02)\n\n**All participants**\nPrepare for reading and discussion of chapter four focusing on experimentation tooling, infrastructure, and culture for next meeting (53:33)\nCome with questions for next session to avoid monologue and enhance discussion (53:40)\n"
+    }
+  ]
+}

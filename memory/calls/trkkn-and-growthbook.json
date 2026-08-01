@@ -1,0 +1,18 @@
+{
+  "company": "TRKKN and GrowthBook",
+  "slug": "trkkn-and-growthbook",
+  "calls": [
+    {
+      "id": "01KPWWAKSD0322V3WTRHP8476F",
+      "source": "fireflies",
+      "title": "TRKKN and GrowthBook",
+      "date": "2026-04-29",
+      "duration_minutes": 30,
+      "summary": "The discussion centered on GrowthBook’s unique strengths in the optimization and experimentation market, highlighting self-hosting, an experiment-based pricing model, and robust statistical models as key differentiators. Targeting mature engineering and data teams, particularly in gaming, finance, and retail, GrowthBook seeks alignment with organizations that have advanced data infrastructure. Potential partnerships with Tracken were explored, especially as Tracken expands into AI and cloud solutions. The inclusion of AI-powered features that allow non-technical users to create flags and variants was emphasized as a means to broaden GrowthBook’s appeal. Plans for an in-depth product demonstration were established, aiming to assess GrowthBook’s fit with Tracken’s evolving client needs and foster future collaborations.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Tracken, Conversion Rate Optimization, Self-hosting, Experiment-based Pricing, AI-powered MCP Server",
+      "action_items": "\n**Sebastian Bernhardt**\nCheck internally within Tracken to confirm availability of CRO or cloud team members for a detailed GrowthBook tool walkthrough and send potential scheduling times the next day (28:59)\n\n**James Shannon**\nPrepare and conduct a detailed GrowthBook tool demonstration for the Tracken team once scheduling is confirmed (28:33)\n"
+    }
+  ]
+}

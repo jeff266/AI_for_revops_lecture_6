@@ -1,0 +1,18 @@
+{
+  "company": "Company Meeting",
+  "slug": "company-meeting",
+  "calls": [
+    {
+      "id": "01KT20GKFHSANMKT4ZAE47GYSW",
+      "source": "fireflies",
+      "title": "Company Meeting",
+      "date": "2026-06-01",
+      "duration_minutes": 15,
+      "summary": "The team is targeting a mid-July launch for version 4.5, featuring Slack app integration, an App Assistant, and CLI updates to improve user efficiency. Product analytics will exit beta after resolving quality-of-life issues, ensuring broader adoption. Enhancements in the SDK will enable auto-capture of baseline events and maintain performance with prebuilt dashboards. Additionally, AI-driven features like the App Assistant with modular skills are being developed to streamline experimentation management. Onboarding improvements are in progress to reduce technical overhead for users, while compliance measures regarding vendor usage policies were also discussed.",
+      "organizer": "jeremy@growthbook.io",
+      "participants": 1,
+      "keywords": "GrowthBook, product analytics, session replay, error tracking, SDK integration, AI assistant",
+      "action_items": "\n**Jeremy Dorn**\nFinalize and submit the new visual editor to app stores after completing final fixes (04:50)\nContinue development and internal dogfooding of session replay and error tracking features on GrowthBook products (04:50)\nWork on integrating GrowthBook SDK within apps to simplify installation and onboarding experience (03:33)\n\n**Unassigned**\nEnsure compliance with Anthropic contract restrictions by avoiding use of SaaS tools involving OpenAI sub-processors without explicit permission for Anthropic-related work (10:05)\nReschedule next week’s meeting to avoid conflict with Ronnie’s class schedule (11:10)\n"
+    }
+  ]
+}

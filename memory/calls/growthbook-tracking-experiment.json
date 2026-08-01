@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook Tracking Experiment",
+  "slug": "growthbook-tracking-experiment",
+  "calls": [
+    {
+      "id": "01KS3XVE8FVFRHMJ17R5TF585E",
+      "source": "fireflies",
+      "title": "GrowthBook Tracking Experiment Training Session",
+      "date": "2026-05-29",
+      "duration_minutes": 61,
+      "summary": "The discussion centered on prioritizing full traffic exposure for quicker test results, with a prevalent method of 100% traffic and 50/50 split tests, as emphasized by Stacy Siso1. Luke Sonnet highlighted the efficiency of running tests at full traffic while addressing the intricacies of variation weight changes and their potential impacts. The meeting underscored the significance of implementing sticky bucketing to reduce data noise, enabling consistent user assignment amid traffic changes. Additionally, the conversation touched on the effective use of namespaces for managing parallel experiments and emphasized the tailoring of conversion windows for different experimental needs. GrowthBook's commitment to improving raw user-level data export capabilities for better analysis was also noted, supporting the ongoing refinement of experimentation strategies across teams.",
+      "organizer": "chris@growthbook.io",
+      "participants": 15,
+      "keywords": "Experimentation, Traffic Allocation, Conversion Windows, Sticky Bucketing, Metric Precision, Namespace Management",
+      "action_items": "\n**Luke Sonnet**\nReview and improve decimal place precision and rounding strategies for metric displays on dashboards, especially for conversion rates with small values (32:06)\nShare documentation about carryover bias and Sequential Randomization Method (SRM) with the team for better understanding (59:10)\n\n**Chris Sanders**\nFacilitate passing additional questions from the team to GrowthBook for responses, and coordinate potential follow-up sessions if requested (01:00:02)\n\n**Kyle Treman**\nCoordinate gathering of additional questions from the team and pass them on to GrowthBook team for answers (01:00:02)\nInvestigate and implement sticky bucketing for experiments to maintain consistent variation assignments (17:47)\n\n**Bobby Lin**\nCompile list of questions related to activation and checkout team tests and submit them in chat or follow-up communication for GrowthBook to address (05:37)\n\n**Stacy Siso1**\nPrepare product analytics related questions for discussion post session (07:22)\n"
+    }
+  ]
+}

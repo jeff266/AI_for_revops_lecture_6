@@ -1,0 +1,18 @@
+{
+  "company": "Sr Product Designer Interview",
+  "slug": "sr-product-designer-interview",
+  "calls": [
+    {
+      "id": "01KPTYRFFZ448PGSFHG2Y5ADW8",
+      "source": "fireflies",
+      "title": "Sr Product Designer Interview - Chris",
+      "date": "2026-04-22",
+      "duration_minutes": 45,
+      "summary": "The team presented a significant redesign of the legacy CPQ platform aimed at improving usability and supporting new customer acquisition. Key enhancements included a new drawer interface to streamline workflows and reduce loading times, alongside customizing features for flexibility. A unified visual system based on Material Design was established to ensure brand consistency across related pricing products. Close collaboration with international engineering teams was emphasized, with regular meetings and communication to align design with technical capabilities. The approach of rapid prototyping and early stakeholder engagement was adopted to deliver visible progress. The project navigated legacy backend constraints creatively, focusing on user interface improvements without extensive backend changes, highlighting an evolving design role that incorporates project management responsibilities.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 5,
+      "keywords": "CPQ platform, product design, SaaS transformation, user experience (UX), engineering collaboration, startup design roles",
+      "action_items": "\n**Chris Figat**\nShare design prototypes and documentation related to the CPQ redesign project as examples of work (16:48)\nProvide detailed notes and specs in Figma for handoff and iteration with engineering teams (24:26)\n\n**Graham McNicoll**\nContinue shaping Growth Book’s AI-driven product vision balancing current customer requests and future innovation (38:11)\n\n**Team at Growth Book**\nReflect on roles and processes designers need to succeed in Growth Book’s engineering-led startup environment; enable designer flexibility and support hybrid design/PM responsibilities (40:12)\n"
+    }
+  ]
+}

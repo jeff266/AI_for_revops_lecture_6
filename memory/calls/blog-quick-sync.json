@@ -1,0 +1,18 @@
+{
+  "company": "Blog quick sync",
+  "slug": "blog-quick-sync",
+  "calls": [
+    {
+      "id": "01KN9YDBBN34EPFSYQQ3QXVCZF",
+      "source": "fireflies",
+      "title": "Blog quick sync",
+      "date": "2026-04-03",
+      "duration_minutes": 10,
+      "summary": "The team discussed shifting to concise content that highlights key takeaways to enhance readability and engagement while reducing reader fatigue. They identified the need for better SEO coordination to avoid keyword cannibalization and agreed to engage SEO expert Jason for effective strategy and best practices. Additionally, uncertainty regarding the term 'advanced metrics' in the Enterprise product package was acknowledged, leading to a temporary hold on its usage until clarity is achieved. Throughout the meeting, there was a strong emphasis on open communication, respect for team workloads, and leveraging internal resources to strengthen collaborative efforts.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "blog content, SEO strategy, key takeaways, webinar summary, advanced metrics, marketing materials",
+      "action_items": "\n**Elyse Fox**\nAdjust blog content to focus on key takeaways from webinars instead of detailed quotes by speakers (01:01)\nConnect with Jason regarding SEO best practices and clarify SEO strategy and page optimization (03:11)\nReach out to Jeremy to clarify the meaning of \"advanced metrics\" on Enterprise packaging or decide to keep as marketing language temporarily (04:03)\nClose out comments on Enterprise and Pro Deck materials and revisit the “advanced metrics” topic in future packaging revisions (04:44)\n\n**Ashley Stirrup**\nAdd Elyse to the SEO Slack channel with Jason to facilitate direct communication and access to SEO expertise (02:53)\n"
+    }
+  ]
+}

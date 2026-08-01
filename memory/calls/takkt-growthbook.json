@@ -1,0 +1,30 @@
+{
+  "company": "Takkt & Growthbook",
+  "slug": "takkt-growthbook",
+  "calls": [
+    {
+      "id": "01KM5AZXN31FRF8AVBGWDYT8XS",
+      "source": "fireflies",
+      "title": "Takkt & Growthbook POC Scoping",
+      "date": "2026-03-24",
+      "duration_minutes": 59,
+      "summary": "The team is launching initial experiments on the product detail page (PDP) using three distinct feature zones controlled by JSON schemas for safe feature toggling and metrics tracking. The complexity of the PDP requires careful management to avoid issues seen with previous tools. Plans to launch the first AB test this week include parallel evaluation of a Visual Editor, which faces challenges for non-technical users due to technical limitations. Emphasis is placed on security with peer-reviewed changes before publishing. A structured four-week POC plan aims to demonstrate rapid setup and reliable outcomes while ensuring that integration with React components maintains stability and minimizes DOM manipulation risks.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "POC, Growthbook, Visual Editor, React Integration, Experiment Zones, Approval Workflow",
+      "action_items": "\n**Axel Winter**\nPing Johannes and Tim to confirm meeting acceptance and attendance (06:16)\nFix identified bugs in experiment setup and plan to launch the first AB test experiment by the following day (17:31)\nShare current POC frontend implementation and experiment setups for review (23:02)\nAttempt visual editor use via the browser extension and test its capabilities parallel to JSON configuration approach (56:33)\n\n**Johannes Schwarz**\nReview and provide input on current zone-based experiment approach and JSON-driven React component integration (27:08)\nEnsure marketing and business stakeholders' needs for self-service experiment setup while maintaining safety and governance (34:27)\nLead launch of first AB test and subsequent zones, validating end-to-end workflows and experiment data (57:37)\n\n**Tim Navrotskyy**\nCollaborate on testing visual editor in scoped conditions: empty slots, static components, and dynamic components (49:47)\nEvaluate React hydration and flickering issues in conjunction with experiment overlays (52:25)\n\n**James Shannon**\nProvide technical support and technical pre-sales expertise during POC, including experiment ideas and architecture review (07:21)\nClarify available audit logging and approval workflow features distinguishing Pro and Enterprise tiers (53:13)\nCoordinate with Johannes on further engagement and support plans tied to approval workflows and enterprise considerations post-POC (58:02)\n\n**Logan Bates**\nSupport technical evaluation, including demonstration of the visual editor capabilities and integration with client React architecture (31:48)\nProvide guidance and advise continuation with developer-controlled JSON approach over visual editor for now due to stability and security concerns (42:01)\nAssist in documentation delivery for visual editor and facilitate access via browser extension installation (56:23)\n"
+    },
+    {
+      "id": "01KKY2D89YSX1GR7SCQRY3DSR9",
+      "source": "fireflies",
+      "title": "Takkt & Growthbook Discussion",
+      "date": "2026-03-19",
+      "duration_minutes": 58,
+      "summary": "The meeting focused on exploring the necessity for a single experimentation tool to drive e-commerce growth by increasing testing speed and optimizing conversion rates. Key goals include enhancing trading and personalization capabilities while addressing the limitations of current multiple tools. The team emphasized the importance of core KPIs such as revenue per visitor and conversion rates, and discussed the limited number of users managing experiments. A proof of concept for GrowthBook was highlighted, assessing its integration with React and server-side rendering. The enterprise model's pricing, set between $30,000 and $50,000, was also noted, with an aim for a decision within two to three months. Ultimately, the team seeks to reduce the time to launch experiments, aiming to decrease lead time from five days to three hours.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, Experimentation, E-commerce, Feature Flagging, Data Warehouse Integration, A/B Testing",
+      "action_items": "\n**James Shannon**\nPropose and schedule a follow-up POC scoping meeting early next week to include multiple Takkt stakeholders (56:50)\nProvide technical documentation and integration details for BigQuery and Snowflake data warehouse connections (35:50)\nShare relevant use case white papers on combined server-side and client-side experimentation approaches (57:10)\nProvide pricing range and clarify license and seat-based models for Pro and Enterprise tiers (45:30)\nArrange further technical deep dive support with GrowthBook engineering resources post initial POC results (37:55)\nSend additional customer case studies highlighting conversion improvements and revenue impact from experimentation velocity (39:00)\n\n**Johannes Schwarz**\nLead internal evaluation and decision process for experimentation platform, coordinating input from technical and business stakeholders \nShare required Takkt user and use case details to finalize GrowthBook Enterprise license pricing discussions (46:00)\nCoordinate identification of key test areas for initial experiments with Steve and internal teams (55:40)\nEngage with James to plan efficient POC rollout and share current progress on GrowthBook test environment (51:30)\n\n**Steve Wighton**\nProvide feedback on ecommerce KPIs and desired outcomes for experimentation platform use (09:48)\nCollaborate internally to identify experiment candidates and contribute to technical POC evaluation (55:30)\nRequest and review documentation and case studies to assess GrowthBook’s fit for server- and client-side testing needs (57:00)\n"
+    }
+  ]
+}

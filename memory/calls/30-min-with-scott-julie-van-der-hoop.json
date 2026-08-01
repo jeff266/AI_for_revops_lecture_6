@@ -1,0 +1,18 @@
+{
+  "company": "30 min with Scott (Julie van der Hoop)",
+  "slug": "30-min-with-scott-julie-van-der-hoop",
+  "calls": [
+    {
+      "id": "01KSP4S4H0GEZDHG14ZSJRZC5K",
+      "source": "fireflies",
+      "title": "30 min with Scott (Julie van der Hoop) - AI and GrowthBook",
+      "date": "2026-05-28",
+      "duration_minutes": 33,
+      "summary": "Wikimedia's team discussed their careful exploration of AI integration in experimentation, highlighting the importance of cultural fit and community trust. Current AI adoption is minimal, with a reliance on manual workflows and a call for clear examples of value to drive adoption. They expressed a need for parameter-driven experimentation to automate testing and reduce human oversight, particularly in fundraising. The team also reviewed AI/ML features aimed at improving editor retention and content quality, while stressing the importance of thorough validation due to community concerns. Discussions included the significance of power analysis in experimentation design and usability challenges with GrowthBook's tools, leading to suggestions for enhanced presentations and real-time nudges to improve user experience.",
+      "organizer": "scott@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, AI experimentation, power calculation, Wikimedia, sample ratio mismatch, agentic tools",
+      "action_items": "\n**Scott Bailey**\nShare GrowthBook 4.4 release blog post and YouTube video highlighting AI and cloud code agent use cases with Julie for exploration when ready (31:00)\n\n**Julie van der Hoop**\nReview GrowthBook release notes and shared video content related to AI and experiment tooling to provide feedback (32:02)\n\n**Unassigned / GrowthBook team**\nConsider integrating power calculation tools directly into GrowthBook’s experiment creation flow to help experimenters set expectations and optimize sample sizes pre-launch (19:43)\nExplore UI improvements to ease interpretation of ABC test results, such as toggling variant comparisons or default views (26:05)\nInvestigate providing contextualized SRM alerts to differentiate between significant errors and small imbalances in very large samples (26:25)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Jeff & Ryan",
+  "slug": "jeff-ryan",
+  "calls": [
+    {
+      "id": "01KJXBXKMSCY1QRR4ZCXJXXMBF",
+      "source": "fireflies",
+      "title": "Jeff & Ryan",
+      "date": "2026-03-05",
+      "duration_minutes": 36,
+      "summary": "The team highlighted a significant revenue discrepancy between HubSpot and Stripe, with HubSpot reporting $3.8 million compared to Stripe's $5.8 million, revealing $2 million missing largely due to unlogged renewals. The average deal size has increased from $18k to $27k, with a goal of reaching $50k this year, and expansion revenue in Q4 reached $570k, indicating growth potential. However, pipeline hygiene issues persist, including old deals distorting metrics, necessitating a cleanup to accurately reflect sales performance. The current manual reconciliation of data between HubSpot and Stripe needs standardization to enhance systematic integration, particularly around recording renewals and expansions.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 2,
+      "keywords": "HubSpot, Stripe, Renewal, Expansion, ACV, Win Rate",
+      "action_items": "\n**Jeff Ignacio**\nContinue cleaning and updating HubSpot with missing renewals and renewals misclassified, aligning with Stripe order forms (28:27)\nCoordinate with Jennifer to get expense data from CFO needed for sales efficiency and CAC calculations (26:58)\nDocument renewal and expansion booking process and create training video/material for the team (34:30)\nFollow up with Jennifer on responses regarding missing or incomplete HubSpot data (27:33)\nInvestigate and potentially implement tracking of seats quantity at deal level to prevent double counting expansion deals (24:31)\n\n**Ryan McGurk**\nDiscuss data discrepancy and missing renewals with Jennifer and Jeremy, especially regarding $2 million in Stripe revenue not reflected in HubSpot (32:20)\nRequest Jennifer to provide Stripe auto-bill data download in Excel format for easier data reconciliation and faster updates (33:55)\nFrame and clarify issue in Slack for team alignment and next steps regarding revenue data integrity (34:21)\n"
+    }
+  ]
+}

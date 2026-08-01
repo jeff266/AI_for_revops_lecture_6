@@ -1,0 +1,18 @@
+{
+  "company": "Ryan / Matthew",
+  "slug": "ryan-matthew",
+  "calls": [
+    {
+      "id": "01KHPGT1NYGEN979TDTZJBZFA8",
+      "source": "fireflies",
+      "title": "Ryan / Matthew",
+      "date": "2026-02-18",
+      "duration_minutes": 23,
+      "summary": "The discussion focused on enhancing outreach strategies targeting former users and event-based leads to boost engagement and conversion rates. Specifically, the team is refining contact finder expansion to reach individuals who changed companies, implementing improved messaging tailored to product managers, and establishing a rapid meeting scheduling process to maximize conversions. They are also exploring targeted outreach towards heavy Pro users to facilitate upgrades to Enterprise accounts, acknowledging challenges with pricing and packaging. Additionally, the conversation highlighted significant data quality issues affecting outreach effectiveness, leading to plans for reviewing alternative data providers. Enhanced team coordination and transparency in documentation were emphasized to streamline processes and improve results.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Growth Marketing, Outbound Campaigns, Contact Finder, Pro to Enterprise Upgrade, Event Outreach, Data Quality",
+      "action_items": "\n**Matthew Du Pont**\nDeliver expanded contact finder with increased titles and contacts by next day for outreach use (20:57)\nWrite up detailed strategy and past successful tactics regarding conducting discovery and upgrade sessions/webinars for Enterprise customer conversion (17:17)\nInvestigate data quality issues in candidate email and phone number data, explore alternative data providers to reduce opt-out and bad data impact (19:24)\nRefine outreach campaigns for former Growthbook users and PM sequences during the current week (07:59)\nBuild scalable event outreach process targeting keynote/speaker lists and define follow-up steps depending on meeting interest levels (07:59)\n\n**Ryan McGurk**\nShare access and coordinate with Matthew and Jake on Pro to Enterprise user data sheets (09:21)\nProvide ongoing feedback on goals and strategy document for upcoming week’s work (20:41)\nGuide and assign Jake and Christian on calling heavy Pro users for upgrades, monitor early learnings (14:35)\n\n**Jake Stangl**\nEngage in calling assigned heavy Pro user accounts to attempt setting upgrade meetings and collect feedback (14:35)\nContinue using existing workflow while transitioning to expanded contact finder upon availability (21:09)\nUpdate team on response/meeting progress, including upcoming Thursday meeting cooperation (21:58)\n"
+    }
+  ]
+}

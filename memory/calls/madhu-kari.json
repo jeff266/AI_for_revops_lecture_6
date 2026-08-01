@@ -1,0 +1,18 @@
+{
+  "company": "Madhu / Kari",
+  "slug": "madhu-kari",
+  "calls": [
+    {
+      "id": "01KNN4CCN0N1PPT5CHTW0G866H",
+      "source": "fireflies",
+      "title": "Madhu / Kari",
+      "date": "2026-04-07",
+      "duration_minutes": 14,
+      "summary": "The meeting centered on enhancing namespace features through backend and UI improvements. Luke prioritized backend changes for multi-range namespaces, enabling finer user segmentation by incorporating hash attributes that allow overlapping ranges to be prevented during experiments. UI updates were identified as necessary by Bryce and Kari, aiming to modernize the design for better clarity and usability. Key updates include improved color contrast in the namespace visualization and refinements to user interfaces like the 'no changes' button. The team aims for a completion timeline by Friday and is coordinating with the Experimentation Squad to ensure consistency with ongoing product efforts, while also acknowledging potential scope creep in UI enhancements beyond initial backend focuses.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "namespace, hash attribute, multi-range, UX improvements, experiment targeting, UI design",
+      "action_items": "\n**Madhu Chavva**\nContinue backend implementation for multi-range namespace changes and stabilize current backend functionality (07:00)\nStart initial styling updates for the usage bars based on Kari’s December Figma file (13:40)\nConsult Jeremy after completing current updates to get feedback and approval on UX changes (12:30)\nPrepare to finalize backend and core changes by Friday (07:00)\n\n**Kari Kay**\nProvide updated modal design and styling consistent with December Figma mockup for namespace usage bars and make changes page (12:30)\nAddress UX issues including outdated “No changes” button and update experiment creation modal namespace configuration UI (11:10)\nComplete UI updates and styling work by Thursday before taking out of office Friday afternoon through Wednesday (12:35)\nCoordinate UX tweaks per Jeremy’s and Bryce’s feedback once updated design is provided (12:30)\n"
+    }
+  ]
+}

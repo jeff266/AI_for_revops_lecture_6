@@ -1,0 +1,30 @@
+{
+  "company": "Daniel Lin and",
+  "slug": "daniel-lin-and",
+  "calls": [
+    {
+      "id": "01KQ4M3XTJA5323VK66TPE2X4R",
+      "source": "fireflies",
+      "title": "Daniel Lin and August Allard",
+      "date": "2026-04-28",
+      "duration_minutes": 42,
+      "summary": "During the meeting, the team addressed a customer's problem with self-hosted GrowthBook data visibility in Google Analytics. Daniel Lin pinpointed three major failure points: missing user experiment entries, misconfigured tracking callbacks, and issues in data queuing to BigQuery. He planned to guide the customer step-by-step through the setup, acknowledging limitations in direct inspection due to the self-hosted environment. Kevin Chant clarified the ticket's scope, suggesting the issue was related to the SDK, while Daniel emphasized empathetic customer communication with tailored support. Collaboration between support and engineering was highlighted as vital for improving customer experiences, and a strong company culture that values employee autonomy and connection was affirmed, particularly regarding future market expansion in the APAC region.",
+      "organizer": "august@growthbook.io",
+      "participants": 5,
+      "keywords": "Growth Book, Google Analytics GA4, SDK integration, tracking callback, self-hosted setup, customer support",
+      "action_items": "\n**Daniel Lin**\nRespond to customer with observations about incorrect API host and tracking callback only logging to console, and offer help or a walkthrough call (08:46)\nResearch and review Growth Book and GA4 integration documentation, focusing on tracking callback best practices, especially in Python where he is most comfortable (11:14)\nConsult colleagues Natasha Lee and Kevin Chant for clarification about legacy tracking and best approach to sending experiment data to GA4 (17:18)\nSandbox and test recommended callback code before sending instructions to customer to ensure effectiveness (22:00)\nShare updated replies and documentation with customer, adapting messaging for technical or non-technical contacts (28:25)\n\n**Kevin Chant**\nProvide engineering insight and encouragement to Daniel, assist with questions about GA4 integration and SDK plugins (19:24)\nRecommend use of GA4 documentation and AI chatbot tool to facilitate Daniel’s research (21:21)\n\n**August Allard**\nFacilitate meeting flow and Q&A session, provide feedback on Daniel’s thoughtful customer approach (29:16)\nCommunicate to Daniel that feedback and follow-up will occur by early next week (41:42)\n\n**Natasha Lee**\nParticipate in Q&A and provide support knowledge where possible (17:18)\n"
+    },
+    {
+      "id": "01KPJKWRNGQC0CB6SX9JETXQF3",
+      "source": "fireflies",
+      "title": "Daniel Lin and August Allard",
+      "date": "2026-04-21",
+      "duration_minutes": 20,
+      "summary": "Growth Book is planning to expand its support team by hiring a senior support engineer in APAC to better manage rising enterprise demand and improve operational efficiency. This new hire will complement the existing engineers in the UK and Japan, focusing on distributing the ticket load and reducing escalations. Customer support performance remains strong, with 98% of tickets answered within an hour, thanks to collaborative access to engineering and data science teams. Daniel Lin is a strong candidate for this role, bringing nearly 10 years of experience in DevOps and customer relations across multiple APAC regions. Emotional intelligence is prioritized during hiring to maintain a collaborative culture. The hiring process includes assessments and interviews, emphasizing flexibility for candidates, and the support team operates effectively across global time zones.",
+      "organizer": "august@growthbook.io",
+      "participants": 3,
+      "keywords": "Growth Book, support engineer, APAC, technical account manager, emotional intelligence, interview process",
+      "action_items": "\n**August Allard**\nSend Daniel the writing assessment email immediately after the meeting and be available to answer any questions he may have about it (16:11)\n\n**Daniel Lin**\nComplete and submit the writing assessment within a few days or by early next week, and email August with any questions about the assessment or interview process (15:08)\n"
+    }
+  ]
+}

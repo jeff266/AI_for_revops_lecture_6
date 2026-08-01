@@ -1,0 +1,18 @@
+{
+  "company": "Scott / Ashley",
+  "slug": "scott-ashley",
+  "calls": [
+    {
+      "id": "01KJGDB8PTMW51EZWCHJKHMK1R",
+      "source": "fireflies",
+      "title": "Scott / Ashley 1:1",
+      "date": "2026-03-04",
+      "duration_minutes": 49,
+      "summary": "The team is preparing for Ryan's departure in two weeks, with Scott stepping in to take over his responsibilities. Key points of discussion include the need for Scott to engage with the Slack community and address gaps in documentation, particularly regarding data pipelines and debugging. Curriculum development is another focus, with Scott iterating on an existing document to separate feature flag basics from advanced topics, ensuring a progressive disclosure approach. The team is also advancing external marketing strategies, particularly through SEO-driven content and competitive positioning against companies like Optimizely. Moreover, GrowthBook's product release cycle, occurring every two months, was addressed alongside the need for improved visibility and documentation within product management. Continuous learning for Scott and plans for regular check-ins were discussed to enhance team collaboration.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Feature Flags, Curriculum Development, Product Marketing, Release Management, Community Engagement, Personas",
+      "action_items": "\n**Scott Bailey**\nSchedule and conduct handover meeting with Ryan to cover his work streams and triage plan for ongoing tasks (02:31)\nIterate on Ryan’s curriculum doc, separating feature flag and experimentation modules, and develop a modular structure with core and advanced content (09:34)\nCoordinate with Ashley to schedule meeting with Jacob from Good UI to finalize use case for curriculum (16:50)\nManage vendor approval and forms submittal for external comparison pages content (27:15)\nFollow up on GrowthBook partnership details with Lucia Vanden Brink and report back on referral program interest (30:29)\nMeet with Jeremy to understand release wrangling and product development cycles, and integrate into feature team meetings for product visibility (31:55)\nExplore Rio tool and product analytics data for open source user insights (35:35)\nCollaborate with Karen on AI product page content and branding consistency (37:20)\nContinue building experimentation domain expertise by progressing with Maven course and Kohavi book (38:50)\nTake lead on G2 review management and Slack community engagement before Ryan departs (41:50)\nReview and provide feedback on persona deck, collaborate with Ashley and Capitalist on refinement (44:27)\nSet recurring 1:1 meetings with Ashley twice a week to ensure alignment and support (47:40)\n\n**Ashley Stirrup**\nSchedule meeting with Jacob Lenowski from Good UI and copy Scott (16:50)\nProvide context and introductions as needed to assist Scott in vendor and partnership communications (27:00)\nContinue supporting Scott in understanding product and release process; share relevant Notion docs such as 4.4 release notes (32:04)\nFacilitate collaboration on persona brainstorming and campaign planning (44:27)\nSupport Scott with Open Claw config troubleshooting as needed (08:33)\nMaintain scheduled weekly check-ins and coordinate calendars to support Scott onboarding and workload management (47:40)\n"
+    }
+  ]
+}

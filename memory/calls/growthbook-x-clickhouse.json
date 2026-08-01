@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook x ClickHouse",
+  "slug": "growthbook-x-clickhouse",
+  "calls": [
+    {
+      "id": "01KX70987FSN8GYB6BSMWYGV48",
+      "source": "fireflies",
+      "title": "GrowthBook x ClickHouse — Experimentation & Feature Flag Enablement",
+      "date": "2026-07-16",
+      "duration_minutes": 60,
+      "summary": "The discussion revolved around key principles of user bucketing, emphasizing deterministic hashing for consistent variant assignments and the importance of using a traffic slider for safe rollout. Experimentation mechanics such as namespaces to prevent overlapping exposures were highlighted, along with GrowthBook’s data integration for analytics and flexible metric slicing. The group also examined handling complex use cases like conditional experiments and clustering across organizations, with emphasis on security provisions for feature flags and monitoring mechanisms. The meeting concluded with insights on internal team support, experiment tracking, and a commitment to addressing follow-up items for improved functionalities.",
+      "organizer": "chris@growthbook.io",
+      "participants": 6,
+      "keywords": "feature flags, experimentation, deterministic hashing, namespaces, cluster experiments, guardrail metrics",
+      "action_items": "\n**Chris Sanders**\nFollow up internally on best approaches for user-level impact attribution and audit trail related to feature flag rollouts versus experiments (54:00)\nProvide additional documentation and information about conversion windows and look-back windows to Ally Godine for conditional experiment analysis needs (33:50)\nAssist with further clarifications or demos on feature flag security options including encryption and remote evaluation per Allen’s questions (52:50)\n\n**Cris Dizon**\nShare documentation on guardrail metrics, ramp schedules, and monitoring features related to feature flag rollouts with ClickHouse team (56:20)\nExplore more on cluster experiments in detail with ClickHouse to address their multi-org user exposure concerns and help define consistent treatment assignment (40:50)\n\n**Allen Gilliland**\nCoordinate internally and possibly with GrowthBook on governance and role-based controls for feature flags to enable broader team access with appropriate permissions (51:30)\nConsider experimenting with Slack communication for quick issue resolutions and escalate to further calls if necessary for technical deep dives (52:00)\n\n**Dani Sandoval**\nHighlight internal use cases with feature flags and experimentation, especially around organizational targeting, to continue collaborative refinement with GrowthBook team (37:00)\n\n**Cary Rakin**\nOffer to schedule follow-up meetings if Slack communications are insufficient to answer ongoing feature flag and experimentation questions (58:00)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Teams Prep",
+  "slug": "teams-prep",
+  "calls": [
+    {
+      "id": "01KGG5HCNJ4SRKY01RVS9CR3EJ",
+      "source": "fireflies",
+      "title": "Teams Prep",
+      "date": "2026-02-03",
+      "duration_minutes": 47,
+      "summary": "The meeting addressed the new approach to team ownership and permission structures for asset management, emphasizing asset-level ownership rather than project-based. This allows multiple projects to share metrics while centralizing accountability within teams. Key contributions included Kari Kay's call for clear asset displays and Luke Sonnet's preference for filtering by team ownership. The integration of team roles with individual permissions was discussed to avoid conflicts, with an emphasis on explicit team assignments for accountability. Approval flows were simplified, allowing all team members to approve changes, while remaining linked to project-specific roles. The team acknowledged the complexity of the current permission model and committed to refining it with mockups and scenarios for better clarity and reduced confusion.",
+      "organizer": "luke@growthbook.io",
+      "participants": 4,
+      "keywords": "Permissions, Teams, Asset Ownership, Approval Flows, Metrics, Project Roles",
+      "action_items": "\n**Kari Kay**\nCreate mockups illustrating the team permission roles, asset ownership, and approval workflows to clarify abstract concepts (43:24)\n\n**Adriel Vieira**\nDevelop a document with permission flow scenarios, share it for review, and incorporate use cases to support team permission design discussion (44:03)\n\n**Luke Sonnet**\nContribute additional use cases and examples that clarify approval permission conditions and team-based workflows to the shared document (46:48)\n\n**all participants**\nReview and iterate asynchronously on the permission and approval design documentation before the deadline of end-of-day tomorrow to advance the feature design (45:26)\n"
+    }
+  ]
+}

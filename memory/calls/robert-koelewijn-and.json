@@ -1,0 +1,18 @@
+{
+  "company": "Robert Koelewijn and",
+  "slug": "robert-koelewijn-and",
+  "calls": [
+    {
+      "id": "01KP3J3NVZAHVCMP4YRP6C0CXS",
+      "source": "fireflies",
+      "title": "Robert Koelewijn and James Shannon",
+      "date": "2026-04-15",
+      "duration_minutes": 25,
+      "summary": "The meeting focused on launching simple A/B testing at the national blood bank using GrowthBook, enabling data-driven decisions for landing pages and CTAs. Robert Sanquin highlighted the need for user-friendly testing tools, while James Shannon discussed the integration via Google Tag Manager and GA4, ensuring minimal developer involvement. The visual editor showcased during the meeting allows non-engineers to easily manage tests. A $40/month Pro tier was identified as cost-effective, with a free tier available for initial trials. The blood bank is in the early stages of adopting data-driven methods, and starting with simple tests is aimed at building buy-in for future, more complex experiments.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B Testing, GrowthBook, Google Tag Manager (GTM), Blood Bank, Conversion Rate Optimization, Data-driven Decision Making",
+      "action_items": "\n**Robert Sanquin**\nReview the Google Tag Manager (GTM) integration documentation page to plan the implementation of Growth Book within the blood bank's systems (23:50)\nConsult with management about starting with the free Growth Book plan and upgrading to the Pro license after initial familiarization (24:15)\n\n**James Shannon**\nSend the GTM integration documentation link and related resources to Robert to facilitate Growth Book installation and avoid manual searching (23:50)\nFollow up with Robert after the meeting to provide additional support and address any questions regarding Growth Book implementation and usage (24:46)\n"
+    }
+  ]
+}

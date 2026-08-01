@@ -1,0 +1,30 @@
+{
+  "company": "Genius Sports +",
+  "slug": "genius-sports",
+  "calls": [
+    {
+      "id": "01KT9F681WBCGE03YZPHMWP4DM",
+      "source": "fireflies",
+      "title": "Genius Sports + GrowthBook",
+      "date": "2026-06-10",
+      "duration_minutes": 54,
+      "summary": "The meeting emphasized collaboration between Genius Sports and Legend, particularly on implementing A/B testing tools and enhancing fan engagement strategies. Key leaders such as Gregory Phipps, Saqib Mausoof, and Mike Patel discussed the evaluation of GrowthBook as a preferred platform, highlighting its open-source nature and adaptability for varied business goals. The technical capabilities of GrowthBook were explored, including its flexible deployment options and integration with existing data models. A clear governance structure was outlined for managing experimentation, supported by innovative workflow and reporting tools. Immediate next steps involved further meetings between the teams to align strategies and ensure smooth onboarding.",
+      "organizer": "christian@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook, experimentation, feature flags, Legend, self-hosting, Bayesian analysis",
+      "action_items": "\n**Gregory Phipps**\nConnect with Legend’s David Williams for deeper experimentation collaboration and coordination (51:45)\nConnect internally with Johan Nel regarding experimentation concerns and integration to ensure smooth collaboration (51:34)\nEngage Claudio for initial discussions about GrowthBook implementation post-acquisition to plan next steps (51:45)\nInvite Johan Nel to listen and participate in demo sessions to avoid redundant presentations and enhance collaboration (23:31)\n\n**Saqib Mausoof**\nCoordinate internally to track Legend’s usage and plans and ensure alignment with Genius Sports experimentation strategy (51:34)\nFacilitate introductions and ongoing communications with Legend’s experimentation leadership to support integration (20:07)\n\n**Christian Liebenow**\nShare GrowthBook documentation and relevant information in a follow-up email to Genius Sports team to support onboarding and usage (52:18)\n"
+    },
+    {
+      "id": "01KRS6WWJ3HJBVRH73KKX46YX0",
+      "source": "fireflies",
+      "title": "Genius Sports + GrowthBook",
+      "date": "2026-05-18",
+      "duration_minutes": 55,
+      "summary": "The meeting clarified key contacts and contract advancements, particularly establishing Sakib as the primary point for consent and CDP integration, with Gregory working to finalize the contract with David Williams. Important features of Growth Book were discussed, highlighting its unique open-source nature and compliance advantages for clients, particularly in the EU, with existing clients like Discord. The customer support model was noted for its responsiveness, providing dedicated access to engineers and rapid response times. Insights into the experimentation features showcased multi-armed bandits and AI analysis tools that enhance performance metrics. The internal dynamics at Genius regarding skepticism toward new software were a concern for further adoption, leading to a follow-up meeting to ensure internal consensus.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation, Feature Flags, Data Warehouse, Multi-Armed Bandits, Customer Support, Product Analytics",
+      "action_items": "\n**Gregory Phipps**\nConnect with David Williams regarding contract status and ongoing discussions to clarify current agreements and next steps (08:19)\nCoordinate with Sakib on the experimentation product ownership and plan further engagement to align on product responsibilities and collaboration (09:18)\nEngage with internal product managers to understand their preferences and future tooling directions to inform decision-making on experimentation and feature management tools (54:20)\n\n**Christian Liebenow**\nShare David Williams’s email with Gregory Phipps to facilitate direct communication and coordination (08:19)\nFollow up with David Williams to notify him about Gregory Phipps’s outreach and maintain communication flow (08:24)\nConfirm dinner invite status and extend invitations to relevant stakeholders such as Sakib to foster relationship building and collaboration (09:20)\nIntroduce Sakib as Gregory’s peer to the Genius Sports team and prepare for the follow-up meeting scheduled on Thursday to ensure smooth collaboration (52:12)\n\n**Logan Bates**\nPrepare and deliver a product demo focused on GrowthBook’s SDKs, feature flags, experimentation workflows, and metrics integration to showcase capabilities relevant to Genius Sports (12:18)\nIllustrate use of visual editor, server-side implementations, and multi-armed bandits during next discussions to demonstrate product flexibility and advanced experimentation techniques (40:30)\nEmphasize customer support and API capabilities that enable advanced integrations such as AI-driven analytics to highlight GrowthBook’s service quality and extensibility (19:00)\nProvide explanations on feature management flexibility, project structure, and metrics governance to support Genius Sports’ use cases and internal collaboration needs (33:30)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Website Sync",
+  "slug": "website-sync",
+  "calls": [
+    {
+      "id": "01KGN55WARMH9R1PER3JDV65VB",
+      "source": "fireflies",
+      "title": "Website Sync",
+      "date": "2026-02-04",
+      "duration_minutes": 62,
+      "summary": "The team discussed finalizing the design direction for the website, emphasizing solid colors and a clean aesthetic to cater to preferences expressed by key stakeholders. They acknowledged significant gaps in current content and committed to a comprehensive rewrite to enhance user engagement and clarity. A launch target of April 1 was set for the updated site, prioritizing core product pages for maximum impact. To streamline the design process, a modular template strategy was proposed, allowing for unique elements while maintaining efficiency. The need for improved collaboration and structured feedback loops was recognized to facilitate better project tracking and coordination among teams. Automation of asset creation was highlighted as a priority to enhance marketing efficiency and maintain visual consistency across materials.",
+      "organizer": "kari@growthbook.io",
+      "participants": 3,
+      "keywords": "Website Design, Content Strategy, User Experience, Product Pages, Marketing Assets, Interactive Elements",
+      "action_items": "\n**Kari Kay**\nCirculate feedback to design team after meeting and confirm final version direction (00:03)\nCreate light and dark versions of design elements and explore interactive scrolling effects in Figma for better assessment (03:39)\nCoordinate animation examples for stats section and gradient use, adjusting per stakeholder preference (10:36)\nAdjust testimonials section font sizes and layout options, possibly adding a few initial quotes from CMS (23:04)\nPrepare case study card variations with reduced size and clearer copy inclusion (29:15)\nFacilitate automation of marketing thumbnails and update image assets accordingly (33:01)\nWork on CTA banner animation refinements and ensure consistent messaging placement across pages (34:40)\nShare updated pages and design status with Karen and Ashley regularly to align feedback and changes (39:44)\nCoordinate with Karen to plan collaborative session on page list, wireframes, and components (58:50)\n\n**Karen Henke**\nLead content rewrite for homepage and major pages with Ashley, ensuring tight copy aligned to user intent (40:47)\nDevelop tracker and structured list of pages with unique content and design requirements (47:07)\nProvide input on messaging and page structure, particularly for integration and product pages, to reflect user research and decision-making context (49:54)\nCoordinate scheduling and availability for design and content collaboration sessions (59:20)\n\n**Ashley Stirrup**\nCollaborate with Karen on copywriting and content planning efforts (01:00:45)\nProvide feedback on visual elements, particularly testimonials and featured case studies (23:04)\n"
+    }
+  ]
+}

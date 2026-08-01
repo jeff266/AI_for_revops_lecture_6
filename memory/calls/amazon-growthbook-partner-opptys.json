@@ -1,0 +1,18 @@
+{
+  "company": "Amazon/GrowthBook Partner Opptys",
+  "slug": "amazon-growthbook-partner-opptys",
+  "calls": [
+    {
+      "id": "01KQVBWR1WNSNRQKRTV83YFV2P",
+      "source": "fireflies",
+      "title": "Amazon/GrowthBook Partner Opptys",
+      "date": "2026-05-06",
+      "duration_minutes": 31,
+      "summary": "Growth Book is a rapidly growing 40-person company specializing in feature flags, experimentation, and product analytics, collaborating with major clients like Anthropic and Salesforce. The meeting emphasized the importance of establishing a deeper partnership with AWS to accelerate enterprise sales through co-selling programs. Doug Cherry discussed the critical Foundational Technical Review (FTR) process needed for official AWS partnership, which will unlock more opportunities. Plans for marketing at AWS re:Invent were also outlined, including participation in an open-source event. Communication will be streamlined using Slack with a focused channel for collaboration with AWS representatives to ensure effective progress on next steps, which include completing the FTR registration and utilizing case studies from lighthouse customers to enhance their joint value proposition.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Growth Book, AWS Marketplace, Co-selling, Global Startup Program, Reinvent, Foundational Technical Review",
+      "action_items": "\n**Ashley Stirrup**\nComplete AWS Foundational Technical Review (FTR) within 2-3 weeks to enable co-selling enrollment (20:54)\nProvide Slack channel invitation to Doug Cherry for single-channel guest access to facilitate communication (23:56)\nShare phone number with Doug Cherry for alternate communications (29:46)\nSchedule a follow-up meeting for December 20th at 12:30 p.m. using calendly link (26:49)\n\n**Doug Cherry**\nInvestigate and verify Growth Book’s AWS partner account and registration details offline (14:48)\nProvide Ashley with Reinvent event information including booth details and sponsorship opportunities (15:19)\nAssist with crafting a strong, metric-driven partner plan for co-selling and securing a PDM from the Global Startup Program (11:57)\nShare Slack single-channel guest invite instructions and support communication setup (24:01)\nFollow up on Global Startup Program leader involvement post-FTR completion (22:23)\nPrepare to support co-sell strategy and coordinate with Ashley post-Hawaii trip (25:43)\n\n**Andry Pramana Tanusdjaja**\nSupport partnership engagement and cost portfolio management alongside Doug as needed (07:32)\n"
+    }
+  ]
+}

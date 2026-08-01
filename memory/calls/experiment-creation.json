@@ -1,0 +1,30 @@
+{
+  "company": "Experiment Creation /",
+  "slug": "experiment-creation",
+  "calls": [
+    {
+      "id": "01KJXHBBBWCE333MS7THXHZYC9",
+      "source": "fireflies",
+      "title": "Experiment Creation / Add FF",
+      "date": "2026-03-04",
+      "duration_minutes": 53,
+      "summary": "The team discussed centralizing feature flag value management on the experiment page to reduce user confusion and establish a clearer workflow. Luke Sonnet emphasized making the experiment page the 'source of truth,' facilitating better targeting and value settings. Bryce Fitzsimons highlighted the necessity for a unified approval process for changes affecting both experiment and feature settings to prevent redundancy. Adriel Vieira proposed linking feature flag lifecycles to those of experiments, ensuring consistent behavior during reversions. The team also acknowledged the need to simplify environment-specific configurations and emphasized the importance of notifying feature owners about any experiment-driven changes. Lastly, they prioritized fixing linked features data inconsistencies to improve reliability and user experience.",
+      "organizer": "luke@growthbook.io",
+      "participants": 7,
+      "keywords": "Feature Flags, Experiment Page, Approval Flow, Draft Revisions, Environment Configuration, Payload Management",
+      "action_items": "\n**Luke Sonnet**\nInvestigate and fix the discarded state issue caused by mismatches between linked features and feature drafts to prevent inconsistent UI states (00:41)\nImprove UI to clearly differentiate draft versus live states for feature flag values on the experiment page and provide ways to safely edit or bypass drafts (00:47)\nLook into removing or refactoring the linked features array to avoid synchronization issues and better align experiment-feature relations (00:45)\nPrepare to incorporate feature approval flows into the experiment page when experiment approval flows are introduced, ensuring single approval for payload affecting changes (00:40)\n\n**Bryce Fitzsimons**\nProvide final review and approval strategy input when feature approval integration with experiment changes is designed, staying out of daily details (00:51)\nStay informed of decisions impacting feature revisions or approval flow interactions stemming from experiment changes (00:51)\n\n**Adriel Vieira**\nCoordinate feedback and keep Bryce looped in as experiment page changes affect feature approval areas (00:51)\n"
+    },
+    {
+      "id": "01KJRAGN3XRW487SQQFEPS5B46",
+      "source": "fireflies",
+      "title": "Experiment Creation / Add FF",
+      "date": "2026-03-03",
+      "duration_minutes": 56,
+      "summary": "The team focused on improving the feature flag and variation management setup. They proposed consolidating variations and feature values into a unified table to enhance clarity and reduce context switching. Editable metadata will be integrated into the core interface while keeping additional details in a separate panel to minimize clutter. The design allows for managing multiple feature flags and emphasizes the experiment as the source of truth for active environments. Additionally, the introduction of a validation modal will confirm necessary configurations before starting an experiment, enhancing overall accuracy. The group also discussed integrating draft and live feature states, prioritizing visibility, and establishing an incremental approach to implementing these changes.",
+      "organizer": "kari@growthbook.io",
+      "participants": 6,
+      "keywords": "feature flags, experiment creation, variation configuration, traffic split, UI design, approval flow",
+      "action_items": "\n**Kari Kay**\nContinue prototyping table-based UI for variations and feature flags consolidating values and splits (28:36)\nExplore design treatments for variation screenshots integrated with metadata to improve visual appeal without disrupting table clarity (43:00)\nCoordinate the eventual iteration of overview page layout focusing on traffic allocation and targeting order relative to feature list (48:02)\n\n**Jeremy Dorn**\nShare spreadsheet visualizing proposed variation-feature table layout for collaborative design review (16:44)\nDevelop error validation flow for empty variation values that requires user override upon save attempt (21:00)\nLead implementation of variation improvements as standalone feature for quick delivery (53:00)\nAssist in defining experiment start flow modal that confirms targeting completeness (53:40)\n\n**Luke Sonnet**\nAssist in clarifying metadata fields versus implementation data and help define separation of concerns (15:00)\nSchedule follow-up meeting to discuss feature flag approval and modification integration into experiment UI (55:35)\nProvide guidance on approach to variation reordering and edge cases with multi-environment rules (22:40)\n\n**Bryce Fitzsimons**\nProvide user-centric feedback on visual design impact for marketers and PMs regarding screenshots and visual cues in the UI (43:08)\nParticipate in upcoming meeting to address feature flag approval/publish flow questions (54:40)\n\n**Adriel Vieira**\nSupport UI/UX considerations on integrating variations, metadata, and feature flag values to streamline user understanding of experiment setups (20:20)\n"
+    }
+  ]
+}

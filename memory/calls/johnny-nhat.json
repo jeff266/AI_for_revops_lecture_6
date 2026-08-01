@@ -1,0 +1,18 @@
+{
+  "company": "Johnny / Nhat",
+  "slug": "johnny-nhat",
+  "calls": [
+    {
+      "id": "01KWYXH7YSA450XQ4QTRFW0A6E",
+      "source": "fireflies",
+      "title": "Johnny / Nhat sync on designs",
+      "date": "2026-07-07",
+      "duration_minutes": 21,
+      "summary": "The team aimed to refine the user experience by enhancing the multi-select user interface with checkboxes for clarity, addressing badge size options to manage space, and improving the display of selected filters. They discussed separating metrics filters to prevent data conflicts while clarifying that project selections use 'AND' logic. Visual improvements included introducing consistent color palettes and shading for better data grouping in tables. The flexibility of dashboard components was a key topic, with suggestions for enabling resizing and improving drag-and-drop functionality. Additionally, feature requests such as clearer comparison functionality in charts and clarification on date filter implementation were noted for follow-up.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 2,
+      "keywords": "Design feedback, multi-select filters, UX improvements, metrics filter, drag-and-drop UI, chart color scheme, disabled states, date range filtering",
+      "action_items": "\n**Nhat Ho**\nUpdate the project filter to allow multiple selections with appropriate checkbox UI and spacing/styling changes in Figma based on Johnny’s feedback (08:43)\nAdd hover tooltip for disabled types to provide user feedback, ensuring it is clear why certain items are disabled (10:25)\nClarify with Luke how date range filters should function, specifically how comparisons work with start and end dates and whether multiple date filters are needed (18:50)\nAdjust chart color schemes to align better with the design system palette or approved color codes as advised by Johnny (16:28)\n\n**Johnny Martinez**\nProvide Nhat with a list of color codes or palettes from the design system to use for charts and badges to ensure consistent UI (16:50)\nScreenshot badge and header color examples from the design system and add them to the Figma file for reference (17:45)\nReview Nhat’s updated designs and color scheme changes once applied in Figma (00:00)\n"
+    }
+  ]
+}

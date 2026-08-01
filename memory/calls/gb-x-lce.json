@@ -1,0 +1,42 @@
+{
+  "company": "GB x LCE",
+  "slug": "gb-x-lce",
+  "calls": [
+    {
+      "id": "01KWFDE9EDYY6VK3V0FD76P3S7",
+      "source": "fireflies",
+      "title": "GB x LCE - Contract Dicussion ",
+      "date": "2026-07-01",
+      "duration_minutes": 53,
+      "summary": "The meeting focused on finalizing a contract for Little Caesars for 2026 that maintains a $20,000 budget and limits user seats to 20, while preparing for possible significant cost increases in 2027. Cary emphasized the need for a quicker agreement process to prevent financial risk. Andrew explained that the potential 2027 costs could be up to 10 times greater than 2026, necessitating a competitive review prior to commitment. The meeting also covered operational changes, such as reducing active users through login restrictions and the substantial impact of API request volumes and bandwidth as cost drivers. Both parties acknowledged the need for ongoing partnership, with Cary proposing enhanced training sessions and engagement incentives to deepen cooperation and improve A/B testing capabilities.",
+      "organizer": "cary@growthbook.io",
+      "participants": 2,
+      "keywords": "contract negotiation, user seat limits, API bandwidth usage, platform fees, competitive analysis, A/B testing enablement",
+      "action_items": "\n**Cary Rakin**\nPrepare two contract proposals for Little Caesars: a one-year 2026-only agreement aligned with current budget and a contingent two-year contract including 2027 terms for internal finance review and comparison. Send these proposals by Monday at the latest (40:52)\nReview historical API and CDN usage metrics for Little Caesars to understand costs but do not bill retroactively; use this data internally to inform contract discussions (38:30)\nInclude options for training sessions or enablement programs with Growth Book’s data scientists and engineers in contract proposals to increase adoption and value (47:45)\nOffer flexible billing options for 2026 contract to accommodate Little Caesars’ budget cycles and avoid financial strain (32:40)\nCoordinate quick turnaround meetings with Little Caesars to review contract feedback and next steps, offering phone or virtual calls to facilitate communication (44:52)\n\n**Andrew Smith**\nFinalize the list of users to restrict login access to 20 seats and coordinate with SSO and SRE teams to enforce this limit by end of day (03:12)\nEngage Little Caesars finance and procurement teams to conduct competitive analysis and prepare for 2027 contract pricing evaluation due to significant cost increases (10:30)\nEvaluate and propose temporary reductions in user seat count and CDN usage if necessary to stay within 2026 budget constraints (17:39)\nReview Cary’s contract proposals upon delivery, provide feedback, and negotiate key terms including billing frequency and training inclusions (44:52)\nContinue advocating internally for Growth Book while managing finance expectations around cost increases and contract formalization for 2026 and beyond (38:10)\n"
+    },
+    {
+      "id": "01KVTW0GQS3GAR1P4KVJP6PHTG",
+      "source": "fireflies",
+      "title": "GB x LCE - Contract Discussion",
+      "date": "2026-06-23",
+      "duration_minutes": 27,
+      "summary": "The discussion centered on securing a 2026 contract amid budget constraints, with a commitment of $20,000 for approximately 20 seats. Cary Rakin emphasized the importance of a signed agreement, as the prior contract did not auto-renew. Both parties agreed on a two-year contract structure, addressing user seat management issues caused by Single Sign-On functionality that inflated the seat count. Cary raised concerns about pricing escalations for 2027, projecting costs could rise to nearly $200,000 for 90 users, necessitating justification of added platform features. Next steps included Cary obtaining internal approvals by week's end and Andrew managing user seats to comply with contract stipulations.",
+      "organizer": "cary@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, platform cost, feature flagging, seats management, contract negotiation, budget constraints",
+      "action_items": "\n**Andrew Smith**\nReview and clean up existing Growth Book users, removing extraneous seats especially those auto-created via SSO (20:33)\nTighten internal processes to restrict feature flag management permissions to authorized roles only (20:33)\nContinue budget discussions internally for 2027 to allow for renegotiation and potential seat increase (23:53)\n\n**Cary Rakin**\nObtain internal approvals from leadership for proposed 20-seat commitment for 2026 and likely two-year contract arrangement (23:23)\nAdvocate for waiving platform costs for 2026 and negotiate tiered pricing structure for 2027 (16:15)\nProvide Andrew a cleaned-up list/report showing active user actions vs. seat counts for transparency and user management (20:02)\nFollow up with Andrew by Thursday or Friday this week to finalize contract terms and approvals (23:46)\n"
+    },
+    {
+      "id": "01KVRBKZM49XK26VZHTQG626P4",
+      "source": "fireflies",
+      "title": "GB x LCE - Support",
+      "date": "2026-06-22",
+      "duration_minutes": 23,
+      "summary": "The core problem discussed was the invalid API keys generating excessive calls, leading to throttling and significantly delayed response times from GrowthBook. Confirmed by Tim Somero and Chris Sanders, these faulty keys caused response times to escalate. An immediate fix involved replacing one critical key impacting online ordering, with ongoing efforts to identify additional invalid keys. It was noted that the GrowthBook SDK’s fallback behavior relies on waiting for remote responses, which exacerbated delays during the incident. Monitoring showed elevated error rates, prompting the need for further service restarts and invalid key tracking. The team agreed to continue focusing on identifying invalid keys while maintaining vigilance for stability as they move forward with technical resolutions.",
+      "organizer": "chris@growthbook.io",
+      "participants": 3,
+      "keywords": "Fallback, Invalid API Key, Throttling, GrowthBook SDK, Response Time, Error Rate",
+      "action_items": "\n**Martin**\nInvestigate and apply fixes for other two services exhibiting similar invalid key issues, including pushing pull requests and restarting necessary services (16:37)\n\n**Tim Somero**\nContinue internal coordination to locate and correct remaining invalid keys causing throttling. Monitor ongoing stability of services after fixes applied and ping GrowthBook contacts if new issues emerge (19:32)\n\n**Cary Rakin**\nSupport team communication and help facilitate involvement of technical team members (Jeremy or Bryce) if required. Provide logs and diagnostic information to GrowthBook technical personnel for further analysis (10:48)\n\n**Chris Sanders**\nValidate whether the slow response times were due to throttling and confirm technical details about rate limiting mechanisms. Provide confirmation on status of throttling and potentially deliver aggregated timeline information later. Stand by to support if additional issues arise after key fixes are applied (20:34)\n"
+    }
+  ]
+}

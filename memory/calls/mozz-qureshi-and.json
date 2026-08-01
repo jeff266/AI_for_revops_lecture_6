@@ -1,0 +1,18 @@
+{
+  "company": "Mozz Qureshi and",
+  "slug": "mozz-qureshi-and",
+  "calls": [
+    {
+      "id": "01KQ9SF4G09ASS7MHEN37E85FX",
+      "source": "fireflies",
+      "title": "Mozz Qureshi and August Allard",
+      "date": "2026-04-30",
+      "duration_minutes": 51,
+      "summary": "The meeting detailed a troubleshooting process for a vague customer support issue regarding GrowthBook’s self-hosted SDK. M Q outlined an initial diagnostic framework centered on flag evaluations and experiment hypotheses, identifying an incorrect SDK key as a root cause and guiding the customer to replace it. An 'invalid API host' error was resolved by correcting the API host configuration in the customer's Docker setup. Furthermore, the flow of user data from the SDK to Google Analytics 4 (GA4) and BigQuery was explored, revealing missing user-specific data despite experiment logs being visible. M Q emphasized a research-first approach to support, collaboration with colleagues, and a customer-oriented philosophy, while also discussing GrowthBook's hiring values and onboarding process.",
+      "organizer": "august@growthbook.io",
+      "participants": 5,
+      "keywords": "SDK troubleshooting, Experimentation, Google Analytics 4 (GA4), BigQuery integration, Customer support process, Onboarding experience",
+      "action_items": "\n**August Allard**\nProvide final feedback and decision to Moz by the end of next week after completing all technical screens (49:47)\nCoordinate final interviews with co-founders Graham and Jeremy after technical screens are complete (49:47)\n\n**M Q / Moz**\nDraft and send customer communication requesting JavaScript SDK version and initialization snippet for troubleshooting (08:06)\nReview customer's updated SDK snippet and advise correction of client key to proper client-side SDK key (13:19)\nRequest customer to provide API host configuration reference (docker-compose YAML) to resolve invalid API host error (20:00)\nRequest further details from customer on experiment creation, especially regarding user segmentation and traffic weighting (21:22)\nContinue troubleshooting GA4 data flow issues and confirm tracking callback firing with customer (48:27)\n\n**Kevin Chant**\nProvide input on local host accessibility and architectural data flow between SDK, GA4, BigQuery, and GrowthBook dashboard during troubleshooting (16:16)\n\n**Natasha Lee**\nAct as peer support during roleplay troubleshooting exercise and share relevant documentation and community tickets for onboarding (00:12)\n"
+    }
+  ]
+}

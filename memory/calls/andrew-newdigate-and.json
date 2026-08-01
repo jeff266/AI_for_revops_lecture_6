@@ -1,0 +1,18 @@
+{
+  "company": "Andrew Newdigate and",
+  "slug": "andrew-newdigate-and",
+  "calls": [
+    {
+      "id": "01KYFHEB9CZNC8SK861ENPCJ8N",
+      "source": "fireflies",
+      "title": "Andrew Newdigate and Jeremy Dorn",
+      "date": "2026-07-28",
+      "duration_minutes": 38,
+      "summary": "Andrew Newdigate discussed his near decade-long journey at GitLab, emphasizing his desire to return to a hands-on technical role in a smaller startup environment, influenced by GitLab's organizational changes. He expressed appreciation for open source values and self-managed infrastructure experience. Jeremy Dorn highlighted the company’s need for 3 to 5 full-stack engineers, mainly senior Typescript developers, to facilitate rapid growth. Andrew shared his involvement in substantial projects, including transitioning customers to a Kubernetes-based setup and developing a caching proxy that significantly improved performance. He also addressed GitLab’s AI tooling developments, outlining his usage of AI agents for automation. The discussion included team structures focusing on customer-driven priorities and the technical stack used in projects.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 4,
+      "keywords": "GitLab, Kubernetes, caching proxy, TypeScript, AI tooling, customer-driven development",
+      "action_items": "\n**Jeremy Dorn**\nJeremy Dorn to follow up with Andrew Newdigate after consulting with Graham to provide further information (28:26)\n\n**Andrew Newdigate**\nAndrew Newdigate to consider potential next steps or opportunities following this introductory discussion (00:00)\n"
+    }
+  ]
+}

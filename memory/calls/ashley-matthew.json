@@ -1,0 +1,18 @@
+{
+  "company": "Ashley / Matthew",
+  "slug": "ashley-matthew",
+  "calls": [
+    {
+      "id": "01KFYDTXDBJHHRR9JQ3TA0AP05",
+      "source": "fireflies",
+      "title": "Ashley / Matthew - outbound",
+      "date": "2026-01-28",
+      "duration_minutes": 36,
+      "summary": "The team is establishing a structured process to enhance lead management and boost sales efficiency. Matthew Du Pont aims to create a BDR playbook that automates lead prioritization and reduces manual effort, which is supported by Ashley Stirrup's efforts to integrate lead flows into HubSpot. The discussion also covered the early-stage Rio data integration, which has potential for improving lead scoring and marketing-sales workflows. Matthew assessed Growth Book's competitive positioning, noting its strengths in experimentation compared to competitors like LaunchDarkly. Additionally, Ashley is running multiple lead generation programs and targeting AI-driven companies to emphasize the importance of experimentation in product development. Internal coordination efforts are being made to improve communication between marketing and sales teams.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Lead Generation, BDR Playbook, Feature Flags, Experimentation, Rio Platform, Marketing Events",
+      "action_items": "\n**Matthew Du Pont**\nShare brainstormed lead generation ideas and prioritize with Ashley for execution (15:47)\nReview and analyze Rio platform data and lead scoring to identify actionable signals and coordinate with Ashley and Ryan on assignments (28:34)\nAssist in developing messaging and outreach focusing on top user re-engagement, competitors, and AI companies (27:02)\nProvide input on events list and recommend priority conferences to attend or target for outbound campaigns (13:31)\nInclude Ashley, Ryan, and Graham in weekly detailed updates on progress and plans (35:08)\n\n**Ashley Stirrup**\nShare Ryan’s updated event list with Matthew for review and input (14:38)\nPartner with Matthew on targeted Optimizely-related campaigns using Rio and contacts data (26:33)\nWork with Matthew to unlock and provide better access to user data for usage-based segment targeting (27:16)\nContinue evolving marketing experiments on Google Ads, LinkedIn content, podcasts, and AI-driven messaging; loop Matthew in for messaging refinement (33:22)\nCoordinate internally on Rio and lead handling processes to accommodate changes proposed by Matthew (30:58)\n"
+    }
+  ]
+}

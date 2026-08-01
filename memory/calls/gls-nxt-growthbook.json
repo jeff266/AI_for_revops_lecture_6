@@ -1,0 +1,18 @@
+{
+  "company": "GLS/NXT + GrowthBook",
+  "slug": "gls-nxt-growthbook",
+  "calls": [
+    {
+      "id": "01KJD9FHA6BS5K33M48QPHA63B",
+      "source": "fireflies",
+      "title": "GLS/NXT + GrowthBook",
+      "date": "2026-03-04",
+      "duration_minutes": 54,
+      "summary": "The GLSNext team evaluated GrowthBook as an experimentation platform to enhance product iterations and reduce dependencies on engineering resources. GrowthBook's features include flexible feature flags for simple toggling of new features, complex audience segmentation through targeting rules, and a safe rollout process that allows for gradual testing with automated rollback capabilities. The platform also offers advanced experiment result analysis tools like metric drilling by dimensions, real-time alerts, customizable dashboards, and seamless integration with BigQuery for data analytics. A significant emphasis was placed on enabling product teams to independently test hypotheses with low-code/no-code setups while maintaining GDPR compliance. The meeting concluded with plans for further collaboration and follow-up resources.",
+      "organizer": "christian@growthbook.io",
+      "participants": 7,
+      "keywords": "GrowthBook, A/B testing, feature flags, BigQuery integration, experimentation, product analytics",
+      "action_items": "\n**Christian Liebenow**\nSend demo recording and key documentation to GLS team via email and Slack (52:28)\nSchedule a short follow-up sync with Matthias Scholtysek early next week or possibly tomorrow before Matthias’s absence (53:04)\n\n**GLS team (especially Matthias)**\nReview demo recording and documentation internally and coordinate next steps (52:28)\n"
+    }
+  ]
+}

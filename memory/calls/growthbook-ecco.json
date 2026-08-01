@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook <> ECCO",
+  "slug": "growthbook-ecco",
+  "calls": [
+    {
+      "id": "01KWCKBKYHGKWYGFGFVRN398VD",
+      "source": "fireflies",
+      "title": "GrowthBook <> ECCO Technical Demo",
+      "date": "2026-07-06",
+      "duration_minutes": 0,
+      "summary": "The team is considering Growth Book as a cost-effective solution for scaling experimentation without the limitations of MTU-based billing, which currently affects usage of VWO at Ecco. Growth Book's ability to read data directly from Snowflake enhances data security and supports extensive experimentation. Integration concerns were addressed, highlighting Growth Book's flexibility with custom schemas and its support for existing data. The platform's feature flagging capabilities allow for targeted rollouts, requiring IT support for data handling. Budget discussions revealed that an enterprise tier is crucial for Ecco’s needs, with a plan to prepare a proposal for procurement. The team emphasized the importance of alignment and next steps, including a planned POC to validate integration and address stakeholder concerns.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Snowflake, experimentation, feature flagging, POC, Bloomreach",
+      "action_items": "\n**Scott Keller**\nPrepare and send a tailored pricing and capabilities deck for Echo's review and procurement contact Kelly, including enterprise tier explanations and clear feature/value breakdown (38:55)\nFollow up later in the week after sending materials to check on progress and readiness to start POC (43:27)\n\n**Giulio / Ecco**\nCoordinate internally with technical, CRM, and procurement teams regarding GrowthBook integration feasibility and budget review (20:27)\nObtain clarification from Bloomreach experts about whether data is exported to Snowflake for use by GrowthBook (20:18)\nReport and coordinate with Kelly from procurement once GrowthBook’s proposal is received (37:36)\nConnect dots internally after receiving GrowthBook materials and unblock necessary stakeholders for next steps (43:03)\n\n**Witold**\nConfirm details about current data flows, Snowflake integration, and involvement level of IT for implementation (11:22)\n\n**Logan Bates**\nProvide technical clarifications during and after POC regarding data schema inference, Snowflake integration, and feature flagging SDK implementation (08:23)\nSupport Echo team throughout POC period, including Slack channel technical assistance (29:17)\n"
+    }
+  ]
+}

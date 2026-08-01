@@ -1,0 +1,18 @@
+{
+  "company": "Team Permissions Flow",
+  "slug": "team-permissions-flow",
+  "calls": [
+    {
+      "id": "01KH9HXTCDRA4ZZNXY59FYK90C",
+      "source": "fireflies",
+      "title": "Team Permissions Flow",
+      "date": "2026-02-12",
+      "duration_minutes": 29,
+      "summary": "The meeting introduced a new metric ownership model where specific teams manage metrics, limiting edit permissions to team members and reducing reliance on global admins. This model addresses issues faced by companies like Dropbox and Square, which struggled with excessive official metrics and bottlenecks in editing. The distinction between team official metrics and org-wide official metrics was clarified, with team metrics not requiring approval flows, while org-wide metrics do. Updates to the permission system will ensure it recognizes team memberships for accurate edit permissions. An admin override permission was proposed to allow full editing capabilities for admins, addressing API key limitations. The foundation was laid for future approval flows while prioritizing a simplified approach to enhance usability and reduce complexity in metric management.",
+      "organizer": "adriel@growthbook.io",
+      "participants": 1,
+      "keywords": "Team Permissions, Official Metrics, Approval Flows, Manage Official Resources, Team Ownership, Permission Scoping",
+      "action_items": "\n**Adriel Vieira**\nFocus on building the 'managed by team' metric ownership and permissions model as outlined (26:59)\nReview and understand different permissioning strategies further, especially handling the mix of project and team permissions (18:54)\nInvestigate and implement required changes to the permissions class to support team membership awareness during permission checks (24:58)\nCoordinate on UI updates with Kari regarding 'team official' resource icon creation (25:50)\nExplore bulk action enhancements for metrics and coordinate with feature teams (27:49)\n\n**Jeremy Dorn**\nProvide guidance on permission checks, especially on defining 'edit metric' based on team membership and admin override (21:04)\nAssist with clarifying admin override permissions for team official metric edits and API key exceptions (17:18)\nSupport design clarification and offer foundational opinion on approval flows as a future step, ensuring 'managed by team' does not block them (26:30)\n\n**Luke Sonnet**\nGather relevant past input from customers like Dropbox and Square to ensure implementation addresses their use cases adequately (05:30)\nAssist in clarifying use case needs and convey feedback on approval flows and permission granularity (08:09)\nHelp evaluate UI/UX implications and permission interactions with IDP systems like Skim (23:56)\n"
+    }
+  ]
+}

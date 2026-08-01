@@ -1,0 +1,30 @@
+{
+  "company": "GrowthBook & Van",
+  "slug": "growthbook-van",
+  "calls": [
+    {
+      "id": "01KT70NJ1PXTKBXG6V6BXKHF03",
+      "source": "fireflies",
+      "title": "GrowthBook & Van De Velde Proposal",
+      "date": "2026-06-08",
+      "duration_minutes": 22,
+      "summary": "The discussion revolved around a revised proposal presented by James Shannon, which included a business case showcasing expected cost savings and operational improvements aimed at facilitating internal discussions led by Janne Vdv. The implementation timeline was confirmed for September due to ongoing technical rework, which required flexibility in contract start and invoicing. The meeting also compared the current A/B testing methods with Growthbook's capabilities, identifying potential benefits such as reduced reliance on external agencies. However, estimated cost savings were challenged by Janne, who highlighted ongoing agency costs and the importance of simpler solutions aligned with their budget. Ultimately, the conversation ended with an openness to revisit the proposal in August if client needs evolved.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, GrowthBook, feature flags, BigQuery, CRO agency, implementation timeline",
+      "action_items": "\n**James Shannon**\nSend revised proposal presentation slides to Janne for internal review (20:49)\nAttempt to find benchmarks on BigQuery query optimization cost savings for Van De Velde (16:38)\nRemain available for any future discussions or changes in Van De Velde’s requirements (20:36)\n\n**Janne Van Overberghe**\nContinue internal calculations on total cost of ownership and revisit GrowthBook evaluation later, possibly in August (17:53)\n"
+    },
+    {
+      "id": "01KT18T42AKFATK9NKW5Y9CH1S",
+      "source": "fireflies",
+      "title": "GrowthBook & Van De Velde Follow Up",
+      "date": "2026-06-01",
+      "duration_minutes": 59,
+      "summary": "The discussion highlighted the need for a straightforward, code-linked A/B testing solution to replace Dynamic Yield, focusing on ease of use and integration into the current tech stack. The team led by Janne noted gaps in their current experiment management due to inefficient manual analysis via Excel and emphasized simplifying the experiment setup. GrowthBook was identified as a potential solution with deep BigQuery integration, enabling flexible data analysis across multiple brands. The conversation also covered the modular approach of GrowthBook's features and the importance of cost-effective pricing aligned with Van de Velde's budget constraints. A decision is expected by the end of June, with a follow-up proposal scheduled for June 8th.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 1,
+      "keywords": "A/B testing, GrowthBook, BigQuery integration, feature flags, experiment analytics, multi-domain testing",
+      "action_items": "\n**James Shannon**\nPrepare and present a revised pricing proposal reflecting Van De Velde’s experiment volume and preferences, excluding paid training and support as they are not required (57:30)\nSchedule and conduct a follow-up meeting with Jane on June 8th at 13:30 CET for approximately 15 minutes to discuss the revised pricing proposal (58:14)\n\n**Janne Vdv**\nConfirm and finalize the internal decision on GrowthBook purchase by early June to align with pricing and timing requirements (55:13)\nCoordinate with legal department and executive approver if the pricing proposal exceeds €10,000 to obtain necessary approvals (56:10)\n\n**Shaun Janssens**\nReserve technical questions for later discussions as needed to ensure smooth evaluation process (18:01)\n\n**All Van De Velde Team**\nContinue evaluating GrowthBook demo and its fit for code-based A/B testing and analytics needs, and prepare for next steps discussion (59:08)\n"
+    }
+  ]
+}

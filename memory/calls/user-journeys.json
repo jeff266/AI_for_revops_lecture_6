@@ -1,0 +1,18 @@
+{
+  "company": "User Journeys",
+  "slug": "user-journeys",
+  "calls": [
+    {
+      "id": "01KK9W784F3CG2B7ZBER45RC8D",
+      "source": "fireflies",
+      "title": "User Journeys",
+      "date": "2026-03-09",
+      "duration_minutes": 53,
+      "summary": "The team discussed enhancing user journey visualization through simplified Sankey Diagrams to clarify paths and improve interactions. Key features to improve exploration include locking paths and hover states, while the need for clearer drop-off and cohort analysis tools was emphasized. The data model focuses on a single fact table for efficient querying and optimized SQL for performance. Additionally, an AI-powered chat interface is envisioned to facilitate natural language exploration and seamless interaction with analytics tools. The team aims to release user journeys this month, balancing speed and quality in development efforts.",
+      "organizer": "jeremy@growthbook.io",
+      "participants": 1,
+      "keywords": "User Journeys, Sankey Diagram, Event Tracking, AI Analyst, Product Analytics, SQL Queries",
+      "action_items": "\n**Jeremy Dorn**\nDevelop and optimize SQL queries to support user journey analysis with unique event identification and multi-step path expansion (09:28)\nExplore feasibility of client-side aggregation limits and implement techniques to improve performance and handle 'other' categories (16:45)\nImplement data source and event table selectors with pre-filled columns for event names in fact tables (35:20)\nCoordinate AI analyst integration research focused on chat interface and LLM tool usage for configurable dashboards and exploration (44:36)\nLead overall coordination for user journeys feature aiming for potential inclusion in month-end release (52:02)\n\n**Johnny Martinez**\nMock up UI concepts for AI chat interface including eject/escape to manual mode and dashboard widget visualizations consistent with company style guide (48:38)\nShare design proposal of AI prompt box with helper options to facilitate user interaction and exploration (42:32)\n\n**Omar Elshaikh**\nConduct research on AI analyst capabilities, particularly LLM interactions with config objects and tool-based querying (49:41)\nAssist implementation of frontend/backend user journey expansion and event grouping logic including multi-column event identification and filtering (06:56)\nInvestigate Statsig and similar platforms to improve loading performance and UI responsiveness (27:33)\n"
+    }
+  ]
+}

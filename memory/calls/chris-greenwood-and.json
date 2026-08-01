@@ -1,0 +1,18 @@
+{
+  "company": "Chris Greenwood and",
+  "slug": "chris-greenwood-and",
+  "calls": [
+    {
+      "id": "01KH2K3WVKZ7RKPMWNCNAE3024",
+      "source": "fireflies",
+      "title": "Chris Greenwood and Graham McNicoll + 4 others",
+      "date": "2026-02-12",
+      "duration_minutes": 57,
+      "summary": "The discussion revolved around the integration of anonymous and identified user data in Growth Book experiments to enhance analysis accuracy. Key strategies included linking user IDs, with Chris Sanders noting the importance of sticky bucketing for consistent user assignment. Issues with using hashed emails as IDs were highlighted by Graham McNicoll, advising against their use as primary identifiers. Integration with Google Analytics and BigQuery was explored, with Graham confirming the correct approach for data syncing. The team emphasized the importance of tracking exposure events accurately to avoid inflated conversion rates. They discussed best practices for conducting multiple concurrent experiments, managing user assignment effectively, and ensuring a seamless user journey. Lastly, feedback indicated challenges with technical setup and data delays, despite the product's strengths and rapid company growth.",
+      "organizer": "graham@growthbook.io",
+      "participants": 7,
+      "keywords": "GrowthBook, Google Analytics, BigQuery, experiment assignment, anonymous ID, user ID hashing",
+      "action_items": "\n**Chris Greenwood**\nDouble-check tracking callback setup in the SDK to ensure GA events fire properly on experiment exposure (13:22)\nShare screen and clarify current BigQuery join table query for user ID linkage (16:45)\nReview and possibly remove step overriding default ID with hashed email in favor of setting it as a separate attribute (38:32)\nInvestigate BigQuery intraday table option and enable faster sync if possible (47:20)\nConduct additional experiments testing multiple variants concurrently and consider using namespaces if necessary (27:07)\nContinue monitoring experiment data synchronization and eventual arrival of purchase events (29:26)\n\n**Chris Sanders**\nProvide GrowthBook documentation links for multiple ID support and sticky bucketing setup (17:42)\nCapture screenshot of user’s BigQuery join query for further internal review (24:39)\nCoordinate with Graham McNicoll to join call for detailed Google Analytics integration questions (29:45)\n\n**Graham McNicoll**\nValidate user ID and anonymous ID assignment handling in GrowthBook experiments and query configurations (32:07)\nRecommend changes to SDK configuration attributes for user_id to improve experiment assignment UI (39:39)\nReview Google Analytics BigQuery queries for logged-in and anonymous events and advise on timing and event firing issues (42:00)\nAdvise on proper filtering and metric setup in GrowthBook to align with user's specific IDs and events (55:00)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Zalando + GrowthBook",
+  "slug": "zalando-growthbook",
+  "calls": [
+    {
+      "id": "01KFKP4N6W58VEWRRSEFP1V54B",
+      "source": "fireflies",
+      "title": "Zalando + GrowthBook",
+      "date": "2026-01-28",
+      "duration_minutes": 32,
+      "summary": "Zalando's team discussed their hybrid experimentation platform strategy, combining in-house tools like Octopus with third-party analytics for improved reliability and innovation. Nils explained how this approach allows for better management of domain-specific features while outsourcing certain functionalities to external vendors. The team emphasized the importance of modularity in experimentation platforms to cater to diverse needs, with Christian and Graham raising concerns about the sustainability of hybrid systems. A vision for AI-driven synthetic users was presented to enhance experimentation by mimicking real users and identifying issues early, although concerns about bias were noted. Challenges in metrics standardization were highlighted, with the need for unified tools to enhance decision-making, while the shift toward integrated growth platforms for continuous product development was also discussed alongside knowledge management strategies.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "Hybrid Experimentation, Synthetic Users, Experimentation Platform, Metrics Standardization, Knowledge Repository, Datadog Acquisition",
+      "action_items": "\n**Nils Stotz**\nShare deeper insights and documentation on Zalando’s hybrid experimentation platform setup during follow-up meetings (06:00)\nDevelop internal knowledge repository for institutional experimentation knowledge in 2024 (29:40)\nContinue dialogue and share feedback with GrowthBook team post-meeting to challenge and refine ideas (31:05)\n\n**Graham McNicoll**\nAssist Zalando with migration tooling for transition to Datadog’s platform (30:22)\nPrepare to demonstrate GrowthBook’s advanced metric treatment and analysis features in future sessions (31:41)\n"
+    }
+  ]
+}

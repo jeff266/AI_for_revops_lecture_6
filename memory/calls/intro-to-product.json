@@ -1,0 +1,18 @@
+{
+  "company": "Intro to Product",
+  "slug": "intro-to-product",
+  "calls": [
+    {
+      "id": "01KPRXJA0887CAJ60C4E08VXAP",
+      "source": "fireflies",
+      "title": "Intro to Product Design team",
+      "date": "2026-04-21",
+      "duration_minutes": 32,
+      "summary": "The meeting highlighted the team's efforts to improve the onboarding experience for new design members, such as Lillia Jackson and Johnny Martinez, through effective rotation plans and manageable workloads. Jeremy leads the rotation in the product analytics squad, easing new hires into their roles, while Kari and Johnny emphasize the importance of open communication. The discussion also reflected on the importance of a self-managed work style, as exemplified by Johnny's positive experiences without a project manager (PM), fostering autonomy and efficient workflow. Additionally, the meeting noted the increasing demand in the features squad and stressed the significance of intentional hiring strategies to fill design resource gaps, thereby enhancing product development and promoting a collaborative team culture.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 3,
+      "keywords": "Claude Design, Product Analytics, Onboarding, Basketball Coaching, Homeownership, Team Collaboration",
+      "action_items": "\n**Lillia Jackson**\nContinue onboarding by building understanding of product flows and team workflows (28:03)\nPrepare to join the product analytics squad as initial assignment (28:03)\nReach out proactively to team members for questions and collaboration (30:48)\n\n**Kari Kay**\nSupport Lillia’s onboarding and integration into design processes (25:36)\nMonitor team needs and coordinate potential squad adjustments, especially for the heavily tasked features squad (29:42)\n\n**Johnny Martinez**\nAssist Lillia with onboarding and answer questions about managing work without a PM (25:36)\n"
+    }
+  ]
+}

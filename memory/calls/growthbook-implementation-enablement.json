@@ -1,0 +1,18 @@
+{
+  "company": "Growthbook Implementation Enablement",
+  "slug": "growthbook-implementation-enablement",
+  "calls": [
+    {
+      "id": "01KWYSDV6096X176MXV7WV0WZ8",
+      "source": "fireflies",
+      "title": "Growthbook Implementation Enablement",
+      "date": "2026-07-08",
+      "duration_minutes": 47,
+      "summary": "The meeting discussed the critical role of experimentation in validating product features, emphasizing that controlled tests replace guesswork, with only a third of features positively impacting metrics. The necessity of distinguishing between experimentation and feature flagging was highlighted, as misinterpretations can occur without controlled environments. GrowthBook's integration with client applications was detailed, demonstrating its use of SDKs for feature evaluation and deterministic user bucketing. A recommendation for a caching strategy to manage request limits was discussed, alongside governance mechanisms like role-based permissions and audit histories. Lastly, next steps involved investigating proxy usage and planning further sessions for experimentation training.",
+      "organizer": "chris@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, SDK, Experimentation, Data Warehouse, Proxy Server, Bucketing",
+      "action_items": "\n**Devin Laltoo**\nReach out to central infrastructure team for updates and access regarding GrowthBook cloud accounts and existing solutions (00:43)\nInvestigate use of GrowthBook proxy server for caching and evaluate existing edge worker solutions for multi-repo .NET sports coverage application (00:39)\nExplore implications of anonymous user ID persistence and bucketing strategy for non-authenticated users (00:27)\n\n**James March & Devin Laltoo**\nCoordinate and communicate with Chris Sanders on progress and questions as GrowthBook setup proceeds (00:46)\n\n**Unassigned**\nPlan follow-up experimentation enablement session focused on experiment creation, usage, and best practices distinct from this developer/data setup meeting (00:00)\n"
+    }
+  ]
+}

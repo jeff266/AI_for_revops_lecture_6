@@ -1,0 +1,30 @@
+{
+  "company": "Christine Heller and",
+  "slug": "christine-heller-and",
+  "calls": [
+    {
+      "id": "01KQR7ZNJ5EPQJCDFK25KDS0Q5",
+      "source": "fireflies",
+      "title": "Christine Heller and Ashley Stirrup",
+      "date": "2026-05-05",
+      "duration_minutes": 11,
+      "summary": "The purpose of the meeting was to clarify missed emails and reschedule follow-up steps to keep the project on track. Manish acknowledged sending materials after the last meeting, which Ashley did not receive, prompting a resend to facilitate team alignment. They agreed to hold a follow-up meeting on the 21st at 2:00 PM BSP time, during which Manish will provide materials in advance for thorough internal review. The subscription model was discussed, starting at $3,500 per month for 100 hours of work, with a three-month pilot phase to assess fit and scope. Ashley committed to circulating the materials for team feedback to secure internal buy-in, while Manish emphasized adaptability to client needs throughout the engagement.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "Subscription model, presentation materials, team feedback, ongoing support, web flow projects, meeting reschedule",
+      "action_items": "\n**Manish**\nResend the presentation and supporting materials to Ashley for team review (01:28)\nReschedule the next meeting for the 21st at 2:00 pm BSP time and send new calendar invite (03:48)\nProvide Ashley with necessary information prior to the next meeting for the team’s feedback (04:00)\n\n**Ashley Stirrup**\nForward the received materials to her team for feedback (03:02)\nParticipate in the rescheduled meeting on the 21st at 2:00 pm BSP time (03:41)\n"
+    },
+    {
+      "id": "01KQ3AHJTY9KX9WGHYFPVYTHPY",
+      "source": "fireflies",
+      "title": "Christine Heller and Ashley Stirrup",
+      "date": "2026-04-28",
+      "duration_minutes": 27,
+      "summary": "The meeting covered the early-stage growth of the marketing team aimed at high-volume B2C and B2B clients, spearheaded by Ashley Stirrup, who is establishing a demand generation function. The team recently expanded its expertise by hiring specialists, emphasizing a hands-on approach to execution. They aim to increase experimentation velocity, as highlighted by a case study with a client conducting 360 experiments in a year. Additionally, Tangents offers broad marketing execution services focused on content amplification and efficiency, utilizing an offshore model for cost reduction. Their subscription-based engagement allows for flexible project work, supported by project management tools like Basecamp. The conversation concluded with an interest in focusing on content repurposing and upcoming podcast projects.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "Demand generation, Content amplification, Creative services, Marketing automation, Podcast repurposing, Subscription pilot",
+      "action_items": "\n**Manish Mehta**\nSchedule a follow-up meeting with Ashley Stirrup and the Tangents account manager within one week to discuss specific projects and collaboration details (25:10)\nCoordinate with Christine to access Ashley Stirrup’s calendar for scheduling the follow-up meeting (25:20)\n\n**Ashley Stirrup**\nIdentify and consider specific projects for Tangents’ engagement, including podcast microsite development, scalable content repurposing, and extending the design system into decks and branded assets (24:22)\nProvide calendar availability to Christine or Heller to facilitate scheduling of the follow-up meeting (25:16)\n\n**Unassigned**\nInitiate a pilot subscription plan with Tangents to test their content and creative execution services, initially focusing on non-Webflow projects with potential to expand later (16:10)\n"
+    }
+  ]
+}

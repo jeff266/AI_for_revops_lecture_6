@@ -1,0 +1,18 @@
+{
+  "company": "Shannon Renz and",
+  "slug": "shannon-renz-and",
+  "calls": [
+    {
+      "id": "01KM3R321GR9S826RZMC4E20E9",
+      "source": "fireflies",
+      "title": "Shannon Renz and Ashley Stirrup",
+      "date": "2026-03-20",
+      "duration_minutes": 27,
+      "summary": "Growth Book is experiencing rapid scaling, having achieved $8 million in revenue with a lean sales team. The company aims for $20 million in the near term and $100 million in the long run, shifting from inbound to proactive outreach. Its customer base includes 2,900 clients, with strong revenue concentration in enterprise accounts. The company plans to broaden its marketing focus from engineering to include product management and data science professionals. Growth Book differentiates itself through an emphasis on experimentation rather than feature flagging, particularly in comparison to competitors like LaunchDarkly. Demand generation strategies led by Shannon Renz show promise, having successfully increased meeting bookings and pipeline value through targeted account-based marketing (ABM) efforts. The organizational culture prioritizes collaboration and flexibility, supporting a remote-first work environment.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, Demand Generation, ABM Strategy, Developer Marketing, Lead Scoring, LaunchDarkly",
+      "action_items": "\n**Ashley Stirrup**\nContinue interviewing additional candidates and coordinate next steps for the hiring process (26:20)\n\n**Shannon Renz**\nAwait feedback from GrowthBook regarding next steps post-interview (26:30)\n"
+    }
+  ]
+}

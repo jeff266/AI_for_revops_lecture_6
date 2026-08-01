@@ -1,0 +1,18 @@
+{
+  "company": "Cris / Kari",
+  "slug": "cris-kari",
+  "calls": [
+    {
+      "id": "01KQAEYGRH4Y474GBZ1086KP6A",
+      "source": "fireflies",
+      "title": "Cris / Kari",
+      "date": "2026-04-28",
+      "duration_minutes": 26,
+      "summary": "The team discussed setting up a standardized framework to classify customer maturity levels, utilizing program leads' insights on customer adoption stages. Cris Dizon is compiling customer meeting notes into HubSpot, enhancing the ability of squad leads and customer-facing staff to assess maturity during interactions. Quarterly CSAT surveys will be employed to gather customer sentiment and product feedback, designed with concise questions to boost participation. The use of email surveys is preferred to avoid past issues with in-app survey experiences. Additionally, the integration of various feedback mechanisms such as NPS and internal data will guide product prioritization while improving internal communication is essential for strategic planning and efficient coordination across teams.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "Customer maturity levels, CSAT surveys, NPS score, User research coordination, Feedback segmentation, Feature prioritization",
+      "action_items": "\n**Cris Dizon**\nDraft maturity levels for customer programs and share with squad leads for feedback to enable consistent customer classification (02:30)\nAdd maturity level dropdown field in HubSpot to standardize customer classification across teams (02:30)\nAlign with Ashley and marketing team about in-app survey efforts to coordinate and avoid overlapping or overwhelming customers with surveys (06:00)\nInitiate sending weekly Slack customer success updates summarizing key customer feedback and feature priorities to improve organizational awareness and alignment (13:00)\nEngage with Scott to discuss marketing’s survey plans and collaborate on CSAT survey rollout timeline aiming for launch within two weeks (17:00)\nOrganize logistics and strategy for survey deployment targeting launch within two weeks (18:30)\nReactivate dormant customer success Slack channel to facilitate sharing of key feedback topics and coordinate question dissemination among team members (24:00)\n\n**Kari Kay**\nPrepare a running list of user research questions to support gathering targeted feedback from customers for product squads (24:00)\n"
+    }
+  ]
+}

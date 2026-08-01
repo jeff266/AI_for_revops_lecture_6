@@ -1,0 +1,18 @@
+{
+  "company": "Reo OpenSource Telemetry",
+  "slug": "reo-opensource-telemetry",
+  "calls": [
+    {
+      "id": "01KQD1G6Y1CK0Z7QBHGWWTVC8J",
+      "source": "fireflies",
+      "title": "Reo OpenSource Telemetry Data",
+      "date": "2026-04-29",
+      "duration_minutes": 19,
+      "summary": "The team decided to track first-time telemetry data from self-hosted instances using Clickhouse, focusing on user and organization identification to enhance engagement with the open source product. Key data fields include user ID, organization ID, and IP address, all collected while respecting user privacy. They emphasized the importance of aggregating this data daily and integrating it with Rio for analysis, which will aid in outreach and understanding user intent. Additionally, metadata from user responses will help refine audience segmentation for marketing purposes. Responsibilities were clarified with Jeremy managing SQL queries and Graham integrating with Rio's API, ensuring operational efficiency and compliance with privacy standards.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "telemetry data, self-hosted, Clickhouse, Rio API, user tracking, feature flags",
+      "action_items": "\n**Jeremy Dorn**\nDevelop and run a periodic cron job to query Clickhouse for users' first telemetry events and forward this data daily to Graham for Rio integration (02:10)\nProvide Graham with guidance on where the telemetry data lives and how to push it to Rio API (02:50)\nExtract and share last year’s telemetry responses including user roles, use cases, company names, and owner emails with Ashley for pattern analysis (11:40)\nImplement filtering to exclude users lacking answers and add columns for user usage type and role in the telemetry data report (16:30)\nEnable pagination in query results with offsets of 1,000 rows for Ashley to access and explore multiple data sets (18:10)\nShare the dataset extracted and instructions with Ashley for her analysis and exploration (19:00)\n\n**Ashley Stirrup**\nCoordinate with Jeremy and Graham to clarify Rio API integration and requirements (02:40)\nUse Jeremy’s telemetry data to analyze user behavior, identify companies primarily using feature flags, and develop lookalike audience insights (11:10)\nReview data provided by Jeremy and utilize pagination features to analyze larger datasets by date or other parameters (18:50)\n"
+    }
+  ]
+}

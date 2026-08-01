@@ -1,0 +1,18 @@
+{
+  "company": "Review Pricing Changes",
+  "slug": "review-pricing-changes",
+  "calls": [
+    {
+      "id": "01KVEJW2852AW0F3N22450W3Q7",
+      "source": "fireflies",
+      "title": "Review Pricing Changes Project & Timeline",
+      "date": "2026-06-19",
+      "duration_minutes": 40,
+      "summary": "The team convened to prepare for the launch of the new pricing strategy, emphasizing clear ownership and technical requirements. Key discussions included the low-effort integration between Orb and Stripe, where enterprise usage plans will transition to Orb with minimal engineering changes. A feature-specific grandfathering strategy was established to manage legacy users effectively. The managed warehouse auto-provisioning is nearing completion, highlighting compliance with EU data residency laws. Plans for limiting projects and environments according to service tiers were debated, ensuring that free users face specific restrictions while retaining some functionality in Pro and Enterprise plans. The phased rollout approach was favored, with a target date set for early July, particularly mindful of EU compliance challenges.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "pricing launch, grandfathering, managed warehouse, event forwarder, EU data compliance, feature flagging",
+      "action_items": "\n**Jeremy Dorn**\nDiscuss upcoming bandwidth and assign developers for environment/project limits and grandfathering tasks with Guy and Bryce after this meeting (13:55)\nSocialize feature flag and advanced permission changes with Bryce and Guy post-meeting (17:03)\nDetermine and communicate the point person for the project during Jeremy's two-week absence, likely Guy (36:03)\nConsider transition approach and timeline for new pricing launch, especially for EU compliance and grandfathering, and come back with a proposed date (19:03)\nEvaluate competitor pricing structures (e.g., Datadog) for experimentation and product analytics billing and share insights (25:09)\n\n**Ashley Stirrup**\nAdd grandfathering column to pricing tasks and track changes for future discussion (03:19)\nUpdate the feature list by removing canceled or not-to-be-done features and organize accordingly (11:26)\nFollow up to schedule a check-in meeting for the week after Jeremy’s absence (35:49)\nCoordinate and track progress on onboarding screen options for managed warehouse and region consent (05:48)\n\n**Guy (and potentially Bryce)**\nImplement grandfathering, free environment/project limits, and related UI restrictions for free and Pro plans (09:43)\nConfirm capacity and timing for limitations on projects/environments and roles in upcoming sprints (13:55)\n"
+    }
+  ]
+}

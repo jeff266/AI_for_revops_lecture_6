@@ -1,0 +1,18 @@
+{
+  "company": "Kari / Teresa",
+  "slug": "kari-teresa",
+  "calls": [
+    {
+      "id": "01KH1YX3W9RKPNB5DD2N2YDM08",
+      "source": "fireflies",
+      "title": "Kari / Teresa",
+      "date": "2026-02-09",
+      "duration_minutes": 22,
+      "summary": "The team discussed improvements to attribute metadata visibility, emphasizing the implementation of tooltips for better clarity on attribute descriptions and tags. Teresa Yung introduced a tooltip feature that displays full descriptions on hover, helping users distinguish between similar attributes. The team agreed on shortening links in tooltips, ensuring they open in new tabs for user context retention. There was a consensus to standardize link handling in attribute descriptions with clear indicators to avoid UI clutter. Kari Kay highlighted the need to align UI components with modern design patterns, aiming to replace outdated elements for a consistent user experience. The design and QA workflow was confirmed, focusing on early design reviews to catch issues before development, ultimately aiming to enhance usability while minimizing disruption.",
+      "organizer": "teresa@growthbook.io",
+      "participants": 2,
+      "keywords": "attributes, tooltips, tags, link shortening, advanced select, UI/UX design",
+      "action_items": "\n**Teresa Yung**\nUpdate attribute tooltip to shorten links and show a 'view link' indicator instead of full URL for embedded links (05:20)\nChange links in tooltips to open in a new browser tab, not the same page (10:24)\nRemove tag display from immediate attribute selection view and replace with a 'plus X tags' label with hover tooltip, using the advanced select UI pattern (11:08)\nAvoid using the eye icon for tag hover indicators and instead show textual tag count (13:39)\nRemove 'Description' and 'Tags' labels from tooltip content to condense vertical space (19:30)\nShare updated screenshots and design iterations with Kari Kay for review (21:24)\n\n**Kari Kay**\nProvide feedback and guidance on UI design consistency, advanced select component usage, and tooltip behavior as needed during Teresa’s update process (00:00)\n"
+    }
+  ]
+}

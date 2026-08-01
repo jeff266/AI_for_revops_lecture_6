@@ -1,0 +1,30 @@
+{
+  "company": "Amar Bank &",
+  "slug": "amar-bank",
+  "calls": [
+    {
+      "id": "01KWF0FC3G3HQ4AZHTRGWCEAER",
+      "source": "fireflies",
+      "title": "Amar Bank & GrowthBook POC Check in",
+      "date": "2026-07-08",
+      "duration_minutes": 79,
+      "summary": "Amar Bank's team explored self-hosting solutions for feature flags to comply with data sovereign and regulatory requirements. They considered GrowthBook for its robust BigQuery integration and appropriate pricing structure, as their existing Statsig license ends on August 31. Infrastructure costs posed a concern as estimates exceeded their budget. Discussions included the capabilities of SDKs for local evaluations and complex rollout rules, along with governance features for experimental oversight. The team also sought multi-ID support for enhanced accuracy in experiments, distinguishing their approach from Statsig's single-ID limitation. A sense of urgency surrounded the decision-making timeline, with plans for potential early legal and security reviews for a smooth transition.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 10,
+      "keywords": "self-hosted feature flags, experiment setup, BigQuery integration, approval workflows, monitored ramp-up, cost estimation",
+      "action_items": "\n**Akbar Rizqi Luhur Pambudi**\nProvide detailed assumptions and breakdown of infrastructure costs including number of experiments, traffic, and required instances for more accurate cost analysis (01:13:41)\n\n**Febrina Valentina Sutanto**\nConsult internally about initiating legal and security review processes for GrowthBook ahead of decision (01:08:48)\nDiscuss further internally regarding how to optimize budget and licensing costs with Statsig or other vendors (01:12:55)\n\n**James Shannon**\nFollow up on questions about approval flows behavior and experiment stop approvals in GrowthBook, investigate and clarify configuration specifics (59:40)\nProvide documentation on multi-ID handling, SDK setup, experiment creation, and results analysis (01:16:04)\nAssist with any technical queries from Amar Bank’s data and engineering teams via agreed communication channels (01:16:30)\nReview and respond to infrastructure cost assumptions from Amar Bank with detailed guidance (01:16:04)\n\n**Karmaya Jozianna Ismuningsih**\nReview GrowthBook documentation on mutual exclusivity in experiments and provide feedback or further questions as needed (52:21)\n"
+    },
+    {
+      "id": "01KVT4HBMV7R8Z0A6PRMER8N12",
+      "source": "fireflies",
+      "title": "Amar Bank & GrowthBook",
+      "date": "2026-06-25",
+      "duration_minutes": 42,
+      "summary": "The meeting centered on Amarbank's exploration of moving from Statsig to GrowthBook for their experimentation and feature flagging needs. With a current reliance on Statsig, which is hosted externally, Amarbank is concerned about data privacy following Statsig's acquisition by OpenAI. The team highlighted the necessity for self-hosted feature flags with enterprise-grade controls and a culture of experimentation. Discussions included the compatibility of GrowthBook with existing infrastructure, specifically integration with Google BigQuery, and the advanced statistical capabilities it offers. The trial period for GrowthBook is planned to run through July, with final decisions expected by the end of the month, taking into consideration pricing models and technical requirements.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 6,
+      "keywords": "feature flagging, experimentation, self-hosted, data privacy, migration, pricing",
+      "action_items": "\n**Febrina Valentina Sutanto**\nShare feedback on GrowthBook trial and coordinate internal stakeholders, including engineering, research, and data teams for evaluation (38:13)\n\n**James Shannon**\nProvide GrowthBook trial access for 15-20 users until end of July; share SDKs, demos, and commercial/legal proposal documents (38:13)\nSchedule check-in meetings in early July to review Amarbank’s progress and provide additional support (39:50)\nArrange for ex-Statsig solutions engineer (Logan) to join the follow-up deep-dive technical sessions (40:23)\n\n**Gasim Alkaf**\nInitiate parallel internal review of GrowthBook’s commercial and legal proposals after trial assessment (40:35)\n"
+    }
+  ]
+}

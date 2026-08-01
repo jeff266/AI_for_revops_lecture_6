@@ -1,0 +1,18 @@
+{
+  "company": "30 minute meeting",
+  "slug": "30-minute-meeting",
+  "calls": [
+    {
+      "id": "01KM0WRMTPTEWS3WN9BZJWXQJP",
+      "source": "fireflies",
+      "title": "30 minute meeting - Clemens Bauer from Neuroth and Christian",
+      "date": "2026-03-23",
+      "duration_minutes": 25,
+      "summary": "The discussion centered on fulfilling data security requirements necessary for the adoption of GrowthBook at Neurot. Christian Liebenow committed to completing Neurot's mandatory data security questionnaire promptly, while Clemens emphasized the importance of using GrowthBook, which has been trusted for over three years at Deutsche Telekom. The initial user pilot will involve Clemens conducting A/B tests to demonstrate value before a broader rollout, with the objective of securing buy-in from other teams. Budget considerations were highlighted, indicating that Neurot's first-year funding is below the typical minimum annual cost for licenses, necessitating discussions on pricing flexibility. Additionally, Neurot prefers the cloud version of GrowthBook due to technical constraints, with open communication planned to facilitate seamless deployment.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Growth Book, Data Security Questionnaire, A/B Testing, Licensing Options, Budget Constraints, Trust Center",
+      "action_items": "\n**Christian Liebenow**\nComplete Growth Book data security questionnaire and send to Patrick at Neuroth (24:11)\nShare Trust Center access link with Neuroth’s legal/security teams for compliance review (16:30)\nHighlight Growth Book’s AI chat feature in email to assist with clarification questions (23:50)\nFollow up internally regarding pricing flexibility to accommodate Neuroth’s budget concerns (20:40)\n\n**Clemens Bauer**\nCoordinate internally with budget and purchasing team to evaluate Growth Book licensing and procurement (18:19)\nLead A/B test implementation pilots at Neuroth and advocate for Growth Book adoption across additional countries based on results (13:34)\n"
+    }
+  ]
+}

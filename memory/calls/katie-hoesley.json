@@ -1,0 +1,18 @@
+{
+  "company": "Katie Hoesley",
+  "slug": "katie-hoesley",
+  "calls": [
+    {
+      "id": "01KTM4H61GXZMXMSZHGE7BMVTP",
+      "source": "fireflies",
+      "title": "30 min with Scott (Katie Hoesley)",
+      "date": "2026-06-08",
+      "duration_minutes": 30,
+      "summary": "The discussion highlighted the evolving dynamics of technical product marketing, emphasizing the integration of developer experience and the use of AI to streamline workflows. Scott Bailey's expertise in technical marketing was showcased, particularly in documentation migration and demo development to enhance sales efforts. Katie Hoesley's role in developer support underscored the importance of solving developer challenges and fostering community engagement. AI's integration was illustrated through automation in documentation management, which allowed for significant efficiency improvements. The meeting also covered Growth Book's strong market position, driven by a stable product adopted by major companies like Sony and Dropbox, and its focus on maintaining a balanced company culture to promote employee productivity and engagement.",
+      "organizer": "scott@growthbook.io",
+      "participants": 2,
+      "keywords": "AI-driven documentation, developer experience, product marketing, Growth Book, developer content strategy, startup culture",
+      "action_items": "\n**Katie Hoesley**\nKatie Hoesley to follow up with Scott Bailey via email for any further questions or clarifications after the meeting (28:49)\n\n**Scott Bailey**\nScott Bailey to provide ongoing support and be available for follow-up questions from Katie via email (28:49)\n"
+    }
+  ]
+}

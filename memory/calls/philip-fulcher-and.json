@@ -1,0 +1,18 @@
+{
+  "company": "Philip Fulcher and",
+  "slug": "philip-fulcher-and",
+  "calls": [
+    {
+      "id": "01KQ3AHJV35A9D5QJ9SSKB06T4",
+      "source": "fireflies",
+      "title": "Philip Fulcher and Ashley Stirrup",
+      "date": "2026-04-28",
+      "duration_minutes": 26,
+      "summary": "During the meeting, Philip Fulcher presented his strong communication and technical skills, particularly in developer relations and productivity engineering. He emphasized effective collaboration between marketing, sales, and engineering, and discussed his work with NX, which enhances team collaboration and reduces friction in project completion. Philip detailed his experience with multiple frontend technologies, including Angular and React, and his contributions to educational content aimed at simplifying complex concepts. Growth Book's strategy on integrating AI while maintaining existing tools was discussed, along with the hiring process that involves further discussions and a strategic presentation by Philip to assess his fit with the company's goals.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "open source, developer relations, AI integration, monorepo architecture, technical marketing, product strategy",
+      "action_items": "\n**Philip Fulcher**\nPrepare for a follow-up technical discussion with Scott at Growth Book to further evaluate technical fit and alignment (25:19)\n\n**Ashley Stirrup**\nArrange a follow-up technical interview with Scott for Philip Fulcher and schedule a subsequent meeting with Jeremy after Scott's discussion (25:19)\n"
+    }
+  ]
+}

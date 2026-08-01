@@ -1,0 +1,18 @@
+{
+  "company": "James / Christian",
+  "slug": "james-christian",
+  "calls": [
+    {
+      "id": "01KJ54JMP9METRECCNGTJGRBWF",
+      "source": "fireflies",
+      "title": "James / Christian",
+      "date": "2026-02-23",
+      "duration_minutes": 26,
+      "summary": "Christian Liebenow emphasized the value of Growth Book's open-source and self-hosted model, particularly for European companies facing new data governance laws. Customer feedback has been overwhelmingly positive, with only one churn due to organizational decisions rather than product shortcomings. The current pricing model is based on seats, which is preferred by customers, though there is openness to exploring alternatives in the future. Christian outlined an informal sales process that encourages easy trials but emphasized the need for robust business value assessments to enhance deal closure. Competitive positioning reveals that Growth Book stands out against rivals like Statsig and LaunchDarkly, primarily through its self-hosting feature. The company receives a majority of its leads from Europe, though maintaining outbound efforts remains crucial for pipeline health.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, enterprise sales, open source, self-hosting, proof of concept, sales process",
+      "action_items": "\n**Christian Liebenow**\nShare LinkedIn outbound message example with James Shannon to support outbound efforts (25:01)\nRun data analysis on inbound lead demographics and volume to better understand current pipeline composition (23:49)\n\n**James Shannon**\nParticipate in onboarding with Ryan and weekly team meetings to integrate into GrowthBook processes (25:57)\nObserve and learn from Christian’s sales calls to accelerate ramp-up and adapt best practices (23:08)\n"
+    }
+  ]
+}

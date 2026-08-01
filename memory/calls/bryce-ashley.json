@@ -1,0 +1,18 @@
+{
+  "company": "Bryce/Ashley",
+  "slug": "bryce-ashley",
+  "calls": [
+    {
+      "id": "01KKG961XQQKGB4H0BGPXTYGSS",
+      "source": "fireflies",
+      "title": "Bryce/Ashley - Quick favor :)",
+      "date": "2026-03-12",
+      "duration_minutes": 15,
+      "summary": "The team discussed the importance of optimizing onboarding to enhance the Pro user base. Key strategies included implementing NPS surveys at various touchpoints to assess user satisfaction, with the aim to predict churn and engage users proactively. Collecting G2 reviews from satisfied customers was highlighted as a way to improve market presence. They noted existing signup pain points and planned to simplify complex onboarding steps. A structured experimentation framework will be utilized to test changes and measure their impact. Lastly, they acknowledged current marketing capacity challenges but believed that the volume of direct user contact would be manageable.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Onboarding optimization, NPS surveys, Pro user churn, Customer feedback, Marketing catch-up, User experience improvements",
+      "action_items": "\n**Ashley Stirrup**\nRefine and develop a detailed specification sheet for the NPS survey system including ideal timing and features like Calendly integration (12:32)\nContinue reviewing new customer signup experience documentation from Scott and provide feedback on pain points and potential improvements (13:01)\n\n**Bryce Fitzsimons**\nLead the development and implementation of the custom-built NPS and onboarding feedback system based on Ashley’s specs (15:01)\nEnsure the system respects privacy needs, particularly for open source users, possibly using feature flags to avoid marketing intrusions (09:28)\n"
+    }
+  ]
+}

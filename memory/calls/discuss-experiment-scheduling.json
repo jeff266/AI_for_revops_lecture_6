@@ -1,0 +1,18 @@
+{
+  "company": "Discuss experiment scheduling",
+  "slug": "discuss-experiment-scheduling",
+  "calls": [
+    {
+      "id": "01KGRRJDAH5FJYP794MEQSKV1T",
+      "source": "fireflies",
+      "title": "Discuss experiment scheduling and Payload for experiments",
+      "date": "2026-02-06",
+      "duration_minutes": 60,
+      "summary": "The meeting focused on Sony's experiment lifecycle and the integration with GrowthBook, emphasizing the need for clear start and end dates, simplified payload management, and streamlined experiment setups. Key discussions included the significance of a lightweight scheduling solution distinct from feature flags, the method of publishing experiments at 0% traffic for QA testing, and the necessity for a single-page interface for easy configuration. Conflict management strategies were addressed, including the use of namespaces to isolate overlapping configurations, while audience targeting and segment integration were highlighted as areas for improvement with GrowthBook's UI. Additionally, the need for stronger governance and validation workflows was identified to enhance the quality of experiments, alongside ongoing investigations into statistical validation methods for reliable experimentation.",
+      "organizer": "graham@growthbook.io",
+      "participants": 6,
+      "keywords": "Experiment Scheduling, Payload Configuration, Feature Flags, Audience Segments, Univex Platform, Statistical Validity",
+      "action_items": "\n**David Francis**\nDemonstrate Univex experiment setup flow and configuration details to GrowthBook team (00:19)\n\n**Jeremy**\nReview Sony’s input and use case around experiment scheduling and payload; develop potential short-term and long-term solutions aligned with Sony needs (00:48)\nExplore solutions for segment synchronization and UI enhancements to support Sony’s audience platform segments within GrowthBook (00:45)\nValidate GrowthBook’s statistical approach in comparison with Sony’s Monte Carlo simulation findings, collaborate with Sony analysts on experiment integrity (00:58)\n\n**Angela Borgman**\nEnsure new requests from Sony are documented in tracker sheet; update with recent tickets for visibility (00:54)\n\n**Jeremy/GrowthBook Team**\nProvide Sony with roadmap visibility including major feature development plans related to scheduling, segmentation, and permissions (00:51)\n\n**Nagaraju Ravi**\nCoordinate a follow-up, more detailed session to deep dive into end-to-end experiment flows and integration considerations between Univex and GrowthBook (00:46)\n\n**Angela Borgman & Sony Team**\nMaintain communication and tracking of open tickets and feature requests between Sony and GrowthBook (00:54)\n"
+    }
+  ]
+}

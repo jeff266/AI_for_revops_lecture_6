@@ -1,0 +1,18 @@
+{
+  "company": "Swag.live & GrowthBook",
+  "slug": "swag-live-growthbook",
+  "calls": [
+    {
+      "id": "01KTC8PJ3G8TM2NDMQETTTGB61",
+      "source": "fireflies",
+      "title": "Swag.live & GrowthBook",
+      "date": "2026-06-09",
+      "duration_minutes": 18,
+      "summary": "The discussion revolved around securing a 50% discount on pricing with a target close date of June 26th, as Bill emphasized urgency due to budget planning and internal evaluations. Bill suggested reducing the operational seats to 15 to align costs with actual usage, and James committed to revising the pricing options accordingly. The meeting also highlighted the benefits of upgrading to GrowthBook Enterprise, which would enhance operational efficiencies and reduce manual work costs through automation and support. Competing vendor evaluations added pressure to finalize a compelling offer promptly. Transparent communication built trust regarding pricing components and expectations, with plans for a follow-up meeting set for Thursday to finalize terms quickly.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, Enterprise Pricing, Feature Flags, Experimentation Platform, Discount Negotiation, Approval Flows",
+      "action_items": "\n**James Shannon**\nProvide revised pricing including option for 15 operational seats (16:58)\nEmail updated pricing details to Bill within a few hours after the meeting (16:58)\nSchedule and conduct follow-up meeting with Bill on Thursday at earlier time to review revised pricing and next steps (16:58)\n\n**Bill Hsiao**\nDiscuss revised 50% discount offer and seat count adjustment with his manager by Thursday (15:46)\nDecide on signing GrowthBook Enterprise agreement subject to final pricing and approval (09:29)\n"
+    }
+  ]
+}

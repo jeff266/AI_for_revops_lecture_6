@@ -1,0 +1,18 @@
+{
+  "company": "Chris Haire and",
+  "slug": "chris-haire-and",
+  "calls": [
+    {
+      "id": "01KMRE5GEF9Z4DP3KCKP5ZJVA8",
+      "source": "fireflies",
+      "title": "Chris Haire and Chris Sanders + Cary Rakin",
+      "date": "2026-03-27",
+      "duration_minutes": 37,
+      "summary": "The team discussed recent enhancements in feature flag stability, notably the caching feature that locks flags for the session to prevent mid-session changes that disrupt user experiences. Chris Sanders confirmed the successful release of this feature, which lowers cognitive load for developers. They also addressed past issues with flag changes causing unreliable customer experiences, particularly during onboarding, leading to a trust deficit in Growth Book's experimentation function. The team is committed to refining flag stability, which is crucial for restoring experimentation. Additionally, they reviewed a race condition that had caused crashes in earlier SDK versions, emphasizing ongoing collaboration to address this and improve the platform's reliability for users and developers alike.",
+      "organizer": "chris@growthbook.io",
+      "participants": 3,
+      "keywords": "feature flags, race condition, stable session mode, experimentation, Growth Book SDK, crash logs",
+      "action_items": "\n**Chris Haire**\nInvestigate crash logs and provide more detailed stack traces related to race condition errors (04:12)\nVerify exact SDK versions deployed to confirm when race condition fixes apply (19:32)\nTest newly released stable session/offline mode feature and report back on performance and stability improvements (20:09)\n\n**Chris Sanders**\nReview call stacks and error reports provided by client to identify missed issues or reproduction paths (16:20)\nShare Growth Book SDK code sections that implement locking mechanisms for feature flag access (11:30)\nCollaborate with Growth Book team to support feature development addressing client’s need for session stability and flag caching (29:38)\n\n**Cary Rakin**\nDevelop a partnership plan with client to help them ramp up usage of Growth Book for actual experimentation, beyond basic feature flagging (30:12)\nMaintain regular contact with client via Slack and scheduled check-ins to offer continuous support (35:27)\n"
+    }
+  ]
+}

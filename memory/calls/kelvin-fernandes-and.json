@@ -1,0 +1,18 @@
+{
+  "company": "Kelvin Fernandes and",
+  "slug": "kelvin-fernandes-and",
+  "calls": [
+    {
+      "id": "01KVKAT0A3Q3FTAQPH6YGWZKHW",
+      "source": "fireflies",
+      "title": "Kelvin Fernandes and Scott Keller + Logan Bates",
+      "date": "2026-06-22",
+      "duration_minutes": 0,
+      "summary": "The meeting highlighted GrowthBook’s unique open-source platform, supporting over 3,000 companies with flexibility for various tech stacks and avoiding vendor lock-in. It caters to startups and large enterprises, including AI companies, with deployment options like self-hosting and on-premises setups, essential for regulated industries to manage data privacy. AI-driven workflows enhance ease of use, automating feature flags and accelerating experimentation cycles. Key features include targeted rollouts with monitoring, support for multi-variant testing showing a 6.7% purchase rise, and strong compliance with SOC2 and SSO. Neologics expressed interest in partnership discussions, and the conversation involved examining referral models in conjunction with projects they are handling.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, experimentation, feature management, on-prem integration, product analytics, partnership",
+      "action_items": "\n**Scott Keller**\nInvestigate existing partner/referral structures and partnership models for GrowthBook to present options to Neologics (28:53)\nSchedule a follow-up deep-dive call with Kelvin Fernandes to discuss partnership details and technical aspects involving Neologics’ team (28:35)\nPackage and send an email summarizing partnership, training, and product information including support and SLA details to Kelvin Fernandes (33:24)\nOffer flexible call times to accommodate Kelvin’s schedule, including early morning options if needed (30:35)\n\n**Kelvin Fernandes**\nCheck calendar availability for follow-up calls, potentially including manager and technical lead for detailed discussion (30:40)\nSign up for a free GrowthBook account to self-explore product features and documentation (32:24)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Metrics Library",
+  "slug": "metrics-library",
+  "calls": [
+    {
+      "id": "01KR4G7NFD964BAXQW6MZJVAYZ",
+      "source": "fireflies",
+      "title": "Metrics Library",
+      "date": "2026-05-08",
+      "duration_minutes": 42,
+      "summary": "The discussion revolved around enhancing how customers interact with fact tables and metrics in GrowthBook, emphasizing simplification of onboarding processes and user experience. It was noted that most customers utilize around five fact tables, which aggregate key metrics, but the current system lacks guided recommendations, leading to a fragmented experience. Improving the initial setup with prompts and auto-generating SQL queries based on user input was highlighted as essential for lowering cognitive load. The meeting also addressed the importance of time series views to foster trust among users and proposed UI enhancements for prioritizing essential information. Future goals include integrating GrowthBook with business presentations to embed metrics, thus solidifying its role as a key analytics platform.",
+      "organizer": "kari@growthbook.io",
+      "participants": 3,
+      "keywords": "fact tables, metrics onboarding, data source connection, SQL auto-generation, metric dimensions, AI metric recommendations",
+      "action_items": "\n**Kari Kay**\nPrototype an improved onboarding flow that prompts users for identifier type, common table selection, and key metric columns to auto-generate fact table SQL (16:44)\nWork on creating a streamlined first-time user experience that guides through data source connection, fact table setup, metric creation, and recommended analysis options (32:42)\nExplore implementing AI-driven metric recommendations customized to users’ selected tables and columns for relevant initial metrics (23:59)\nInvestigate terminology improvements and adding explicit dimension fields during fact table creation to clarify slicing and dicing concepts (29:43)\nPlan quick-win improvements for onboarding flow to reduce cognitive burden and improve metric usage uptake (33:14)\n\n**Luke Smith**\nProvide Kari with sample, functioning fact table SQL examples and explain critical columns for prototype use (16:56)\nInvestigate current UI flow and metric slice recommendations to identify areas to improve usability and clarity (23:21)\nAssess the feasibility of fully or partially automating fact table and metric creation via API for enterprise users (32:33)\nExplore raising prominence of the \"run analysis\" feature on the metric detail page and making it a default or opt-out action to foster trust (34:06)\nWork on restructuring the metric detail page UI to prioritize core metric information and reduce advanced setting clutter for improved user experience (37:25)\n"
+    }
+  ]
+}

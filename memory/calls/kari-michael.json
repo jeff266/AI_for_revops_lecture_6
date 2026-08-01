@@ -1,0 +1,18 @@
+{
+  "company": "Kari / Michael",
+  "slug": "kari-michael",
+  "calls": [
+    {
+      "id": "01KVGNRB4JZ0FAGSCK0RZCD46Q",
+      "source": "fireflies",
+      "title": "Kari / Michael",
+      "date": "2026-06-19",
+      "duration_minutes": 17,
+      "summary": "The team discussed improvements to the traffic allocation interface by splitting it into two modals to enhance clarity and reduce confusion from prior design inconsistencies. Michael Samper provided insights on how breaking the single modal into parts caused confusion, while Kari Kay emphasized the importance of distinguishing between intentional changes and in-progress updates. The decision to maintain certain UI elements, such as the traffic slider and split preview, in both edit and add experiences was agreed upon, as was the need to minimize clutter in the UI. They also highlighted the significance of tracking user interactions and analyzing data to guide further simplifications, noting that overlapping UI changes can complicate impact analysis. Documentation of design decisions was deemed critical to avoid confusion and ensure alignment in future developments.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "traffic allocation, variation components, traffic split, feature flag editing, UI design updates, user tracking",
+      "action_items": "\n**Kari Kay**\nDocument notes accurately for design updates and decisions around traffic allocation and variation components, capturing what is intentional versus in-progress (00:00)\nProceed with keeping traffic split editable in both the main table and in modals initially, with a plan to revisit based on tracking data later (13:40)\nContinue refining the compactness and layout of variation components including description and image display options (14:50)\n\n**Michael Samper**\nMonitor and review tracking events associated with editing feature flag values, splits, and adding variations to analyze user behavior and decide on UI simplifications or changes (13:45)\n"
+    }
+  ]
+}

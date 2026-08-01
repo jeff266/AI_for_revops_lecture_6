@@ -1,0 +1,18 @@
+{
+  "company": "Fixter + Growthbook's",
+  "slug": "fixter-growthbook-s",
+  "calls": [
+    {
+      "id": "01KY0DPRW8G73B4DC4SHXK17PS",
+      "source": "fireflies",
+      "title": "Fixter + Growthbook's Visual Editor",
+      "date": "2026-07-22",
+      "duration_minutes": 17,
+      "summary": "The discussion highlighted several key areas, including experiment testing where a strikethrough feature was briefly tested and an HTML editing issue was resolved by reverting to previous changes. There were also concerns about A/B testing conflicts, with the Cameloon platform affecting HTML and styling. Challenges with pseudo-elements, particularly centering issues, were examined. The meeting covered selector issues, with a specific failure noted and a demonstration of manual element selection for bulleted lists. Furthermore, site performance was critiqued due to loading delays, with temporary fixes suggested. Finally, action items were assigned, with Fiona responsible for updating Christian and James for follow-up communication.",
+      "organizer": "alyssa@growthbook.io",
+      "participants": 5,
+      "keywords": "strikethrough, A/B testing, visual editor, pseudo-elements, HTML editing, promo display",
+      "action_items": "\n**Fiona Nematbakhsh**\nTest the strikethrough feature on a non-test page using the CMS to verify functionality outside of promo contexts (04:23)\nTry the live pseudo-element fix implemented by Graham to address styling issues with bullets and other pseudo-elements (07:15)\nProvide Christian with a final update on the current status of the strikethrough feature and related fixes (16:24)\n\n**Graham McNicoll**\nAdd the ability to apply strikethrough formatting within the system’s visual editor to support testing and promo needs (04:39)\nDemonstrate and explain the use of advanced selectors for targeting pseudo-elements in styling, to improve editor precision (10:26)\nFollow up on issues related to absolute positioning conflicts between CSS pseudo-elements and the visual editor’s positioning system (14:56)\n\n**James Shannon**\nFollow up with Fiona via email to coordinate updates and next steps regarding the strikethrough feature and editor fixes (16:33)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook POC Technical",
+  "slug": "growthbook-poc-technical",
+  "calls": [
+    {
+      "id": "01KS81ZJNZPX9P4DFS0J8N9057",
+      "source": "fireflies",
+      "title": "GrowthBook POC Technical Kickoff for Change.org",
+      "date": "2026-05-29",
+      "duration_minutes": 11,
+      "summary": "The team outlined plans for a Proof of Concept (POC) set to kick off during the week of June 15th, emphasizing the need for technical validation and legal reviews preceding its start. Key aspects included preparations for licensing, ensuring a well-structured communication approach through a Slack Connect channel, and addressing technical challenges related to Redshift schema compatibility. An AA test will be conducted to monitor data integrity, with support offered from Scott and Logan regarding Redshift expertise. Legal documentation is prioritized to avoid delays, while leadership has expressed endorsement for the evaluation of the tool’s functionality, focusing on compatibility over pricing in this initial phase.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 3,
+      "keywords": "POC, Redshift schema, enterprise license, GrowthBook, data pipeline, compliance",
+      "action_items": "\n**Scott Keller**\nCreate a Slack Connect channel by Monday to facilitate direct communication among legal, contract, and technical teams during the POC preparation and clearance phases (05:59)\nSend the Master Service Agreement (MSA), order form, and instructions for refreshing the enterprise license to Jeff Knight ahead of the POC kickoff to enable early legal review and contract redlining (06:25)\nCoordinate adding relevant members from GrowthBook and Change.org teams to the Slack channel as needed to support schema discussions, legal, and compliance collaboration (07:11)\n\n**Jeff Knight**\nLead the setup and spin-up of the POC environment starting mid-June after internal training and offsite events, coordinating with Change.org teams for technical preparation (08:16)\nReview and manage legal, infosec, and GDPR compliance requirements as a third-party vendor, involving Change.org stakeholders and GrowthBook; add relevant personnel to Slack channel after the offsite event (06:40)\nCollaborate with Change.org data science and site platform teams to understand Redshift schemas, Terraform updates, and data coverage to validate analytics during the POC (09:16)\nInitiate contract and order form review with legal and security teams to complete redlines promptly before technical work begins (10:38)\n\n**Logan Bates**\nSupport GrowthBook team efforts in schema setup, technical configuration, and experiment design; add team members to Slack channel for collaboration as needed (08:55)\nConfirm use of GrowthBook cloud instance for the POC to ensure speed and simplicity in initial testing phases (05:41)\n"
+    }
+  ]
+}

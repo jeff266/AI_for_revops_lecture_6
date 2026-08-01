@@ -1,0 +1,18 @@
+{
+  "company": "Discovery call w/",
+  "slug": "discovery-call-w",
+  "calls": [
+    {
+      "id": "01KH53T84PQ6JAERWVQ3QSBQFW",
+      "source": "fireflies",
+      "title": "Discovery call w/ GrowthBook and Gregory Event Services",
+      "date": "2026-02-13",
+      "duration_minutes": 27,
+      "summary": "The team discussed their event marketing strategy, emphasizing the need for competitor research before committing to sponsorships or participation in events. Ashley Stirrup raised concerns about the lack of competitor presence at Google Next, prompting Lisa Gregory to suggest analyzing competitor participation in key events to optimize spend and lead generation. The strategy-first approach aligns with client KPIs and DevRel goals, aiming to integrate event campaigns with broader marketing efforts. A phased approach was proposed to build a flexible event strategy, supported by a geographically diverse team in the US and Europe. The company boasts 2,800 users, including 150 enterprise clients, highlighting the potential for targeted marketing strategies. Immediate next steps include initiating research sessions and refining event strategies based on feedback and insights.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "Event Marketing, Sponsorship Strategy, Data Science Communities, Competitor Research, Tech Conferences, DevRel Engagement",
+      "action_items": "\n**Lisa Gregory**\nCoordinate with Kelsey on Monday afternoon to determine availability and timeline for initial strategy session and exhibit build for GrowthBook (20:02)\nOrganize internal resources and assign a lead and co-lead for GrowthBook account to manage strategy, logistics, and event execution (14:00)\nConduct competitor and event market research targeting GrowthBook’s sector and competitors (03:29)\nProvide recommendations for sponsorship and event 'dinners series' in partnership with other tech companies to maximize lead generation (21:52)\nHelp identify and plan participation in relevant community meetups and sponsorships, particularly in data science and product builder communities (16:39)\n\n**Kelsey Crowell**\nAssist Lisa in scheduling and coordinating initial strategy session for GrowthBook (20:02)\nGather information and links related to book signing events and notable industry thought leaders for GrowthBook’s marketing activities (25:57)\n\n**Ashley Stirrup**\nProvide DevRel contact to participate in upcoming strategy sessions (09:52)\nShare details about target communities and geographic priorities for event sponsorship, especially data science meetups with large membership bases (17:16)\nFollow up with the Gregory team via calendly or direct contact to clarify ongoing needs and scheduling (26:48)\n\n**Chris Newton**\nSupport Ashley as needed in event strategy planning and execution, remain engaged in meetings as per availability (20:22)\n"
+    }
+  ]
+}

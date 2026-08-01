@@ -1,0 +1,18 @@
+{
+  "company": "Kaito / Christian",
+  "slug": "kaito-christian",
+  "calls": [
+    {
+      "id": "01KKPTK6Z83AH59HZ7J8FXRJHH",
+      "source": "fireflies",
+      "title": "Kaito / Christian",
+      "date": "2026-03-16",
+      "duration_minutes": 27,
+      "summary": "The discussion centered on the team's preference for a unified experimentation and feature flagging tool, specifically Growthbook. Kaito Queiroz emphasized its advantages over competitors like LaunchDarkly and AB Tasty, highlighting its blend of developer and marketer features, while cautioning about pricing and strategic alignment. Initial estimates suggest around 20 users, with potential growth depending on feature adoption. Concerns about SiteSpec's high contract costs were raised, as the organization considers transitioning to Growthbook based on favorable pricing. The sports team’s unique requirements were acknowledged, noting integration challenges due to different engineering approaches. Transparency in pricing and strategy was deemed vital to ensure smooth procurement.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Growthbook, Feature Flagging, Pricing, Sports Team, User Licensing, Experimentation",
+      "action_items": "\n**Christian Liebenow**\nPrepare pricing proposal based on 25 total users, splitting 15 admin and 10 read-only, flexible for adjustments as usage grows (25:24)\nPresent the visual editor to the sports team in tomorrow’s call, aligning with their requirements (25:24)\nShare volume discount details with Legend team and clarify pricing model including service accounts (13:12)\nFollow up with Kaito after receiving updated user counts and strategic details to refine proposal by Friday (26:47)\n\n**Kaito Queiroz**\nGather and share detailed user numbers, strategy updates, and pricing requirements by Friday for accurate proposal building (25:24)\nCoordinate with sports team members Devin and James for tomorrow’s call and clarify their roles and requirements (20:14)\nProvide more detailed business and operational information regarding sports platform and experimentation status (21:35)\nMaintain transparency on licensing needs, pricing concerns, and strategic priorities for Growthbook adoption and feature flagging usage (24:42)\n"
+    }
+  ]
+}

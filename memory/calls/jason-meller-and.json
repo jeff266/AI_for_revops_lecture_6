@@ -1,0 +1,18 @@
+{
+  "company": "Jason Meller and",
+  "slug": "jason-meller-and",
+  "calls": [
+    {
+      "id": "01KJR60QVSETZ8F9PKGWFXFDR4",
+      "source": "fireflies",
+      "title": "Jason Meller and Ashley Stirrup",
+      "date": "2026-03-04",
+      "duration_minutes": 18,
+      "summary": "Jason Meller praised Nick's marketing leadership, noting how he translated strategic vision into effective campaigns at Kolide, achieving 10 to 15 times more marketing efficiency in lead generation compared to 1Password. The meeting discussed Kolide’s inbound marketing strategy, emphasizing events and content for clear lead generation, contrasting it with 1Password’s enterprise-focused outbound approach. While Nick's optimism energized the team, it sometimes led to impractical persistence. His strengths in content marketing and event logistics were highlighted, as well as the critical need for collaboration with sales leadership. Jason affirmed Nick’s potential as a long-term asset due to his marketing acumen and ability to meet high expectations.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Nick, Marketing Strategy, Inbound Marketing, Sales Integration, Content Marketing, Large Language Models",
+      "action_items": "\n**Ashley Stirrup**\nEstablish clear, quantitative marketing goals and definitions (such as SQLs) for Nick to pursue and measure success against (10:21)\nFacilitate strong integration between marketing (Nick) and sales teams to ensure information flow and collaboration (15:53)\nNavigate onboarding and process development for the expanding sales team to support rapid company growth (16:18)\nCollaborate closely with Nick to refine marketing strategies keeping in mind the evolving impact of LLMs and AI on content and SEO (12:38)\n"
+    }
+  ]
+}

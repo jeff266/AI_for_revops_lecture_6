@@ -1,0 +1,42 @@
+{
+  "company": "SDK Design Improvements",
+  "slug": "sdk-design-improvements",
+  "calls": [
+    {
+      "id": "01KTAE6N9SCTH0GNQDPBAXQ5E4",
+      "source": "fireflies",
+      "title": "SDK Design Improvements Kickoff",
+      "date": "2026-06-04",
+      "duration_minutes": 22,
+      "summary": "The team met to streamline the SDK page by merging connection details and improving clarity on connection status, as led by Guy Langford-lee and Kari Kay. The plan includes moving connection information to the page header for better visibility and collapsing settings based on connection status to enhance user experience. Johnny Martinez was guided on updating UI components through a phased approach, focusing first on outdated modals and main page elements. The discussion also emphasized the need for clear revision selectors and the combination of connection and revision statuses within the UI. Additionally, layout optimization was proposed to reduce wasted space and enhance metadata display, with Kari ensuring ongoing collaboration with Johnny for efficient onboarding.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 2,
+      "keywords": "SDK design, connection status, approval flow, modal rebuild, UI components, copyable snippets",
+      "action_items": "\n**Guy Langford-lee**\nSend Johnny screenshots of current SDK design sections for reference (02:53)\n\n**Johnny Martinez**\nReview screenshots and Figma designs shared by Kari and Guy to familiarize with current SDK design state (03:18)\nDecide on starting focus area for design rebuild, considering modals and main SDK page (04:55)\nWork on styling and layout improvements for SDK revision metadata, approval block, and status indicators (14:20)\n\n**Kari Kay**\nMock up a new main SDK page layout incorporating header, copyable snippets, connection details, and other key sections (06:26)\nMove related Figma drafts from draft to SDK folder and grant Johnny access for collaboration (21:10)\nAssist Johnny in task clarification and guidance during initial phase of redesign if needed (07:59)\n"
+    },
+    {
+      "id": "01KTAC57CZ3EKN2CV7PQNSWAMP",
+      "source": "fireflies",
+      "title": "SDK Design Improvements Kickoff",
+      "date": "2026-06-04",
+      "duration_minutes": 32,
+      "summary": "The team discussed strategies to simplify the SDK connection setup flow, including hiding advanced settings initially to lower cognitive load and speed up setup time. They emphasized the importance of clearer descriptions for payload security options, advocating for concise tooltips instead of lengthy tutorials. The need for better documentation links was identified to avoid clutter and enhance clarity during setup instructions. Additionally, breaking the large SDK connection modal into smaller panels was proposed for easier editing and improved user satisfaction. Visibility of connection scope details, such as environment and project information, was deemed essential for better user understanding, while plans for segregating webhook management settings and integrating approval workflows were also outlined.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 2,
+      "keywords": "SDK connections, payload security, remote evaluation, UI redesign, documentation, webhook approvals",
+      "action_items": "\n**Guy Langford-lee**\nShare updates and mockups of redesigned SDK connections UI, including smaller editable panels and tabbed interface for webhooks and connection settings (21:00)\nClarify placement and content of instructions for remote evaluation, replacing GitHub links with documentation and tidying up flow (10:35)\nIncorporate advanced SDK connection options either as hidden advanced dropdown or separate page according to team decision (05:47)\nSurface connection metadata visibly on detail page including environments and projects (19:50)\n\n**Kari Kay**\nPull out requirements and document redesign needs in Figma for SDK connection improvements, including references to existing patterns from experiment details (24:30)\nReview and help design concise tooltips for payload security and advanced settings to reduce tooltip overload (09:00)\nCollaborate with Guy and Johnny on improving instructions placement and documentation linking, ensuring user understanding without overloading the UI (10:35)\nEvaluate metadata placement options including whether SDK version and header information should be shown on SDK connection pages (29:50)\n\n**Johnny Martinez**\nProvide feedback on restructured multi-panel UI approach and help refine flow for SDK connection editing (21:00)\nVerify that tooltip and callout information are intuitive and help users select correct payload security options (06:00)\nAssist in integrating webhook approval components and workflows consistent with features and saved groups (26:30)\n"
+    },
+    {
+      "id": "01KT7YEF9AQ1ZD2VT6YN0TVGA0",
+      "source": "fireflies",
+      "title": "SDK Design Improvements Kickoff",
+      "date": "2026-06-04",
+      "duration_minutes": 55,
+      "summary": "The team discussed enhancing the SDK connection user experience by simplifying the connection page, particularly by hiding advanced settings that are rarely used. Guy Langford-lee highlighted the need to break the setup process into clear steps to reduce confusion, especially regarding payload security options. The group agreed to revise the existing instructions to link to internal documentation rather than external sources. Additionally, the design improvements included breaking the large connection modal into smaller, manageable sections to reduce cognitive load and clearly displaying connection statuses for better user awareness. Furthermore, webhooks will be organized into a dedicated tab to streamline the user interface. Finally, the team outlined next steps, including rebuilding modals with updated components for consistency.",
+      "organizer": "kari@growthbook.io",
+      "participants": 3,
+      "keywords": "SDK connection, payload security, remote evaluation, modal redesign, approval flow, webhook settings",
+      "action_items": "\n**Guy Langford-Lee**\nProvide screenshots of redesigned SDK connection page and sectioned layouts to Johnny Martinez to aid in redesign visualization (00:35)\nShare Figma drafts concerning SDK connection redesign with Johnny Martinez for collaborative review and implementation (00:36)\n\n**Kari Kay**\nPrototype main page mockup for SDK connection redesign including header with status and revision info, connection details, payload metadata, feature/experiment toggles, and webhook tab (00:39)\nClarify design for approval flows, draft, and connection statuses ensuring clear indication and color coding in the SDK connection UI (00:40)\nExplore usage of SDK type logos for quick identification in header with support for light and dark modes (00:46)\nModel copyable code snippet UI inspired by Firecrawl for improved setup instructions presentation (00:48)\nCoordinate with Johnny Martinez on rebuilding modals using updated components and modern modal sizes based on new designs and simplified user flows (00:37)\n\n**Johnny Martinez**\nReview shared screenshots and Figma files from Guy and Kari to gain familiarity with new SDK connection redesign concepts and prepare for modal rebuilding (00:35)\nParticipate in rebuilding modals with updated components and simplified user flows after receiving designs and guidance from Kari (00:37)\n"
+    }
+  ]
+}

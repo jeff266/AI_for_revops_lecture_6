@@ -1,0 +1,18 @@
+{
+  "company": "Elizabeth Gilbert",
+  "slug": "elizabeth-gilbert",
+  "calls": [
+    {
+      "id": "01KXS31T1RPKSV3T5NXR29RJ32",
+      "source": "fireflies",
+      "title": "GrowthBook Visual Editor Onboarding (Elizabeth Gilbert)",
+      "date": "2026-07-24",
+      "duration_minutes": 25,
+      "summary": "The meeting focused on the experimentation program's progress, highlighting that approval from Eli Lilly has shifted to emphasize feature changes, with initial low-impact tests deemed insufficient. Engineering constraints have emerged, leaving uncertainty regarding product or engineering limits, with more information expected soon. There is an increasing enthusiasm among project managers and stakeholders for knowledge sharing. The visual editor was showcased, featuring an AI mode for generating multiple image variants quickly and a manual mode for precise edits, along with a change list that tracks edits per variant. Challenges include SMS patient communication modifications requiring a feature flag and compliance considerations for UI changes. Clarifications on client-server interactions were requested, and the meeting concluded with roles and next steps, including ongoing development and security reviews.",
+      "organizer": "alyssa@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation program, Visual Editor, Client-side testing, Feature flags, Engineering capacity, AI-assisted editing",
+      "action_items": "**Alyssa Nicoll**  \nSend follow-up documentation including FAQs (22:13)  \n\n**Elizabeth Gilbert**  \nResubmit security review for Visual Editor extension (22:13)  \nProvide status update on security review progress (23:51)  \n\n**Elyse Fox**  \nReach out to Elizabeth Gilbert for feedback (23:36)"
+    }
+  ]
+}

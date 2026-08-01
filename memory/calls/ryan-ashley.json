@@ -1,0 +1,30 @@
+{
+  "company": "Ryan/Ashley",
+  "slug": "ryan-ashley",
+  "calls": [
+    {
+      "id": "01KH83PH688WEQXCEKX4Z1W96H",
+      "source": "fireflies",
+      "title": "Ryan/Ashley - Brainstorm - adding \"Latest News from GrowthBook\" section to Open Source edition",
+      "date": "2026-02-12",
+      "duration_minutes": 32,
+      "summary": "The team discussed strategies to boost user engagement and monetization within the open-source community by proposing an in-app messaging area to broadcast updates, such as webinars, and provide direct contact links to team members. They reviewed existing community sections and FAQ pages, recognizing that these areas do not effectively serve as landing pages for most users. A proposal for automated content integration via blog APIs was also considered to keep content fresh with minimal engineering effort required. Next steps included developing a prototype to visualize the in-app messaging feature and gain stakeholder buy-in, while further discussions focused on customer interactions for support and upselling opportunities, as well as challenges in customer data integration and content management.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Open Source, Monetization, In-App Notifications, Ghost CMS, GrowthBook Blog, User Engagement",
+      "action_items": "\n**Ryan Feigenbaum**\nPrototype the in-app news notification widget next week showing integration with GrowthBook blog or Ghost CMS to present to team for review (23:12)\nSend Ashley information about the external product for personalized notifications used by Purcell (30:10)\n\n**Ashley Stirrup**\nCollaborate with Ryan to look up Dutch company contact and confirm details for customer support handoff to Rudger (11:54)\nProvide Ryan with feedback after prototype review and coordinate next steps with Jeremy once prototype is ready (23:24)\n"
+    },
+    {
+      "id": "01KGJXF0DHDSE3D7H6BM179PHQ",
+      "source": "fireflies",
+      "title": "Ryan & Ashley - Making AI Smarter",
+      "date": "2026-02-06",
+      "duration_minutes": 44,
+      "summary": "The meeting focused on key changes in webinar staffing, with Bryce replaced by Adriel, ensuring continuity in the upcoming event through a coordination meeting involving Luke and Bryce. Ryan and Ashley emphasized developing short-form videos targeting key product features to boost engagement on social media, aiming for effective storytelling. Additionally, Ryan is finalizing a comprehensive article on feature flags, seeking feedback to enhance clarity and depth for educational purposes. The team identified significant API and feature gaps in the MCP server to improve usability, while also analyzing competitive positioning to leverage GrowthBook's strengths in the market. Insights on open source user engagement were discussed, along with the introduction of new product analytics features aimed at enhancing user experience and driving revenue opportunities.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "MCP server, feature flag, AB testing, AI evals, product analytics, open source users",
+      "action_items": "\n**Ryan Feigenbaum**\nCoordinate with Adriel, Luke, and Bryce for next week’s webinar prep meeting (00:04)\nReview and provide feedback on the competitive analysis draft comparing Growth Book and LaunchDarkly to guide blog article (01:09)\nReach out to Gift Help’s AB testing lead and introduce her to Kelly for support and potential business (02:17)\nFinalize the feature flag article and share the draft with Jason for feedback before editing down (17:43)\nExplore implementing toggle flag on/off and flag update features in MCP server, assessing complexity and design considerations (19:39)\nInvestigate possibilities for improved MCP server telemetry, including capturing API header data to track usage (23:24)\nResearch SDK sizes and provide further insights (37:33)\nInvestigate architectural requirements and feasibility of AI evals integration (39:41)\nExamine competitor comparison pages and SEO presence to identify opportunities for growth (36:00)\n\n**Ashley Stirrup**\nForward competitive analysis content to Ryan and discuss content tone and positioning for blog article (01:09)\nFollow up on connecting Gift Help’s AB testing lead with Kelly and encourage collaboration (04:18)\nSupport brainstorming sessions and help define script/storyline guidelines to produce concise, engaging short videos (~1 minute) (08:46)\nCoordinate sharing videos on LinkedIn and other social platforms to maximize reach and impact (16:49)\nShare feature flag article draft with Jason and incorporate feedback into final edits (18:05)\nEvaluate customer upgrade drivers and align marketing messaging, focusing on SSO, team licenses, product analytics, and safe rollouts (29:00)\nCollect and analyze data on open source user segmentation for upsell potential (25:22)\nAssist in assessing attractiveness and packaging of new features like safe rollouts and product analytics as upsell opportunities (31:33)\n"
+    }
+  ]
+}

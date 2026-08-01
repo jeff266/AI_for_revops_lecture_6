@@ -1,0 +1,18 @@
+{
+  "company": "ISSEI HAGA and",
+  "slug": "issei-haga-and",
+  "calls": [
+    {
+      "id": "01KMNXNAFYQF444CK3K7TBJ26G",
+      "source": "fireflies",
+      "title": "ISSEI HAGA and GrowthBook",
+      "date": "2026-03-31",
+      "duration_minutes": 35,
+      "summary": "The meeting provided an overview of AppGo Holdings, founded in April 2024, generating around 3.5 billion yen with 66 employees and two subsidiaries—apco in Tokyo and Zoost in Osaka. Apco focuses on comparison media and affiliate services for HR and finance, while Zoost, a top digital advertising agency, services over 3,000 clients. The dialogue emphasized the importance of localizing digital solutions for Japan and the Asian market, particularly through GrowthBook, which AppGo sees as a tool to enhance landing page quality. They are interested in reselling GrowthBook's platform and acknowledge the necessity for further product localization. AppGo, backed by Jafco, is positioned as a strong partner to help GrowthBook navigate Japan's complex market, recognizing the potential for future collaboration.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 6,
+      "keywords": "A/B Testing, Localization, Digital Advertising, Landing Pages, Japanese Market, Partnership",
+      "action_items": "\n**Hajime Akagi**\nShare detailed information and contacts related to local A/B testing competitors like Gaprise for GrowthBook’s review (32:00)\n\n**Ashley Stirrup**\nEvaluate GrowthBook’s current capacity and strategy to support partnerships involving significant local support for Asian market entry (24:00)\n\n**Ryan McGurk**\nClarify user profiles and potential technical integration needs for the Japanese market based on feedback from Hajime and team (17:15)\nContinue exploring technical localization and agency support models required for GrowthBook’s usability in Japan (17:15)\n"
+    }
+  ]
+}

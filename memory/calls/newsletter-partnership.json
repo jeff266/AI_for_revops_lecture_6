@@ -1,0 +1,18 @@
+{
+  "company": "Newsletter Partnership",
+  "slug": "newsletter-partnership",
+  "calls": [
+    {
+      "id": "01KXVZ93Z2FADM1BYQS37RFWPV",
+      "source": "fireflies",
+      "title": "Call with Superhuman AI (Newsletter Partnership)",
+      "date": "2026-07-20",
+      "duration_minutes": 28,
+      "summary": "The discussion addressed Growth Book's target market, emphasizing a focus on B2C high-traffic product teams with over 1 million monthly visitors across industries like fintech and e-commerce. Core buyers identified include product managers and data scientists, with an emphasis on experimentation over mere feature delivery. The meeting also explored current marketing efforts showing solid inbound lead generation, with 1,500 monthly free product signups, but challenges in converting demo requests. Advertising strategies were discussed, highlighting unique tutorial and spotlight ad formats. Transparency in audience demographics was deemed critical for effective targeting, and upcoming webinars will mainly focus on current customers as part of the ongoing marketing strategy.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "AB testing, feature flagging, lead generation, newsletter advertising, AI technology adoption, target audience",
+      "action_items": "\n**Diego Millares**\nPrepare and send detailed audience breakdown reports for both Superhuman AI and The Code newsletters including titles, seniority, and industry segments to Ashley (24:57)\nProvide media plan options with pricing in the $10,000 to $25,000 range reflecting bundling discounts and experimental budget considerations (23:59)\n\n**Ashley Stirrup**\nReview the audience breakdown data and evaluate whether the newsletters fit Growth Book’s ideal customer profile before committing to any advertising campaigns (25:39)\n"
+    }
+  ]
+}

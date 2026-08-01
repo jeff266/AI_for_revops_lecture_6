@@ -1,0 +1,42 @@
+{
+  "company": "Charlie Campo and",
+  "slug": "charlie-campo-and",
+  "calls": [
+    {
+      "id": "01KTF5ZN1YR8VV63NTYR60W5YE",
+      "source": "fireflies",
+      "title": "Charlie Campo and Ashley Stirrup",
+      "date": "2026-06-08",
+      "duration_minutes": 20,
+      "summary": "The discussion centered around identifying discrepancies in revenue data where Stripe transaction records did not match HubSpot client records, highlighting issues such as Sanity’s $130,000 Stripe entry lacking a HubSpot match. Churn data raised concerns about $358,000 at risk from expired enterprise contracts needing verification for real-time revenue health. The impact of discounts on revenue figures was a focal point, especially with large deals showing inflated numbers due to unaccounted discounts. Ongoing efforts to synchronize data between Stripe and HubSpot were emphasized to ensure all revenue-generating customers are accurately recorded. Adjustments to revenue models were also noted, aiming to enhance forecasting reliability and accurately represent growth opportunities and risks.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "HubSpot, Stripe, Discounts, Churn, Growth Book, Client Reconciliation",
+      "action_items": "\n**Ashley Stirrup**\nFollow up on Sanity client data discrepancies and confirm underlying contract details and discounts (02:00)\nShare flagged data tabs with relevant teams for review and reconciliation of Stripe vs HubSpot and renewal statuses (05:00)\nInvestigate churn cases totaling $358K to verify actual churn versus renewal statuses (10:00)\nRequest Jeremy to verify that all Growth Book tool customers expected to pay are accounted for and paying (19:19)\n\n**Charlie Campo**\nEmail Ashley a detailed list of clients and payment discrepancies found in Stripe vs HubSpot, including missing discounts considerations (05:00)\nReview and update previous Growth Book customer payment analysis with new data to identify unpaid accounts (15:30)\nContinue cross-referencing Retool data with other systems to identify gaps and correct licensing or subscription records (14:30)\nProvide Ashley access or visibility into updated internal databases or spreadsheets for further validation (16:30)\n"
+    },
+    {
+      "id": "01KR1QH7DQA5FJDDDT3PNHDQ72",
+      "source": "fireflies",
+      "title": "Charlie Campo and Ashley Stirrup",
+      "date": "2026-05-08",
+      "duration_minutes": 19,
+      "summary": "The team discussed the creation of a comprehensive master list of active and recent customers to enhance understanding of user engagement from 2025 onward, addressing data blind spots through sources like Growth Book and HubSpot. A structured renewal management process will be implemented with reminders starting 90 days prior to contract endings, aiming to recover $100k in missed renewals. Integration of key systems like HubSpot for automated data syncing was highlighted to eliminate manual errors and improve financial accuracy. Furthermore, ongoing communication and project planning were emphasized to ensure collaborative progress and maintain engagement, while the need for addressing current data inconsistencies affecting churn and ARR metrics was noted for better decision-making.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "HubSpot, Customer Data, Renewals, Integration, Free Plans, Process Automation",
+      "action_items": "\n**Ashley Stirrup**\nRequest a list of all active free plan customers and all 2025/2026 sign-ups, including those still active, from GrowthBook or relevant sources to better understand user engagement and churn (04:00)\nSend calendar invite for follow-up meeting on Friday the 15th at 12:15 Pacific / 2:15 Central to ensure all stakeholders are prepared and available (18:31)\n\n**Charlie Campo**\nReview and assemble a master customer list combining data from HubSpot, ORB, Retool, and other systems to identify gaps and reconciliation needs for accurate customer records and renewals (04:38)\nDevelop and document a comprehensive process map outlining manual versus automated steps, integration workflows, and milestones to ensure data cleanliness and accurate reporting (14:20)\nAnalyze seven customer scenarios from Ashley’s last email, preparing logic and mapping to system processes to handle cases like pro customers using products without payment (15:55)\nPrepare a list summarizing meeting points and action plans to share with Ashley for review before the next meeting to ensure alignment and clarity (18:40)\n"
+    },
+    {
+      "id": "01KMH95M0FH6M6R4ZPKFRPP4TY",
+      "source": "fireflies",
+      "title": "Charlie Campo and Ashley Stirrup",
+      "date": "2026-03-26",
+      "duration_minutes": 21,
+      "summary": "The team focused on auditing enterprise customer data to clarify subscription and payment statuses, targeting 100 to 120 customers that represent 75% of revenue. They highlighted the inconsistency of current data in various systems like HubSpot and Stripe, with the goal of confirming contracts and identifying lost customers. Following the enterprise audit, a review of self-serve channel billing will address issues like failed payments and mismatched user counts, emphasizing top revenue-generating accounts. HubSpot will serve as the central repository for customer information, with automation strategies to enhance renewal tracking. The integration of systems for revenue recognition is key, and engaging a sales ops expert will support strategic operational improvements.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Enterprise customers, subscription management, billing systems, HubSpot, renewal tracking, revenue recognition",
+      "action_items": "\n**Ashley Stirrup**\nConfirm with Ryan (Head of Sales/Customer Success) the appropriate participants for the initial kickoff meeting (18:39)\nSchedule kickoff meeting with Charlie Campo, Jennifer, one of the longer-tenured Chris’s, and Jeff after Ryan’s confirmation (19:02)\nProvide Charlie with access to relevant tools and systems before kickoff (15:00)\nCoordinate timing for initial meeting on Tuesday or Wednesday next week and communicate available time slots with Charlie (19:55)\n\n**Charlie Campo**\nSend Ashley available time slots for the kickoff meeting scheduled for Tuesday or Wednesday next week (19:47)\nConduct initial audit and analysis of current state enterprise customer data and associated systems after kickoff; document gaps and blockers (15:30)\nAssist with setting up HubSpot automation and renewal tracking following enterprise audit (10:50)\n"
+    }
+  ]
+}

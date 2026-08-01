@@ -1,0 +1,30 @@
+{
+  "company": "Unity<>GrowthBook",
+  "slug": "unity-growthbook",
+  "calls": [
+    {
+      "id": "01KRRJ0E947ZFSSSNSBXKR6NA2",
+      "source": "fireflies",
+      "title": "Unity<>GrowthBook - Configurations best practices",
+      "date": "2026-05-18",
+      "duration_minutes": 0,
+      "summary": "The team discussed the successful migration of multiple customer environments, ensuring configurations align to maintain production consistency. Key issues included gaps in boolean attribute handling during simulations, impacting testing efficiency. It was noted that the lack of API support for custom hooks limits automation, although JSON schema validations cover most scenarios. The group explored strategies for isolated developer environments, suggesting separate GrowthBook instances for testing with periodic syncing of configurations. They requested a trial extension to thoroughly evaluate premium features, showing positive engagement with the ongoing collaboration despite some identified gaps in the simulation user experience.",
+      "organizer": "jake@growthbook.io",
+      "participants": 7,
+      "keywords": "GrowthBook, migration, archetypes, simulation, environment inheritance, rate limits",
+      "action_items": "\n**Shalev Moyal**\nInvestigate setting up GitHub app permissions required for enabling the code references feature within GrowthBook (19:25)\nLook further into enabling and integrating the code references feature in GrowthBook UI to improve developer workflow (19:25)\n\n**Jeremy Dorn**\nRaise an issue with the GrowthBook development team to allow boolean feature attributes to be set as null in archetypes, enhancing simulation and testing flexibility (15:00)\nProvide updated details and instructions on how to override REST API rate limits via environment variables after the meeting (33:30)\nConsider implementing UI improvements such as tagging archetypes to specific environments and adding a checkbox in the simulator UI to toggle visibility of null or disabled values for better clarity (39:30)\nExtend the GrowthBook trial period for Unity by one week as requested to allow completion of premium feature testing and configuration validation (40:50)\n\n**Daniel Cohen**\nContinue testing GrowthBook features, especially archetype and simulation behaviors, and provide detailed feedback post-migration to help improve product fit for Unity's complex setup (14:50)\n\n**Unassigned**\nConsider scripting periodic synchronization processes from production environment to a separate GrowthBook instance used for testing and development to maintain environment isolation while keeping data reasonably up to date (30:00)\nEvaluate the feasibility of implementing proxy-based merge logic that combines production and development environment configurations, excluding rules or values, to create dev environment overlays for better isolation and flexibility (31:15)\n"
+    },
+    {
+      "id": "01KQQ2V3DKF33JQ91YZDP90PPP",
+      "source": "fireflies",
+      "title": "Unity<>GrowthBook - Configurations Session",
+      "date": "2026-05-05",
+      "duration_minutes": 0,
+      "summary": "The discussion revolved around the team's hierarchical, attribute-driven configuration platform which manages feature flags through a parent-child tree model, allowing granularity in customer configuration with overrides. Challenges related to version-dependent overrides complicating maintenance and user experience visibility were identified, alongside strict customer segmentation practices to prevent configuration bleed. The integration strategy for GrowthBook was reviewed, outlining how products would be structured as projects and customers as environments, with challenges on inheritance and rule sharing. Additionally, validation enhancements like JSON schema support and approval workflows were discussed to ensure quality control. The team also explored simulation capabilities and the need for improved holistic views on user experience changes across features, outlining their next steps and collaboration efforts.",
+      "organizer": "jake@growthbook.io",
+      "participants": 7,
+      "keywords": "Configuration Hierarchy, Feature Flags, Environment Model, JSON Schema Validation, Approval Workflow, GrowthBook Simulation",
+      "action_items": "\n**Daniel Cohen**\nContinue developing JSON schema validators for Unity’s feature flags and work on aligning data structures with GrowthBook schema validation (38:31)\nShare import scripts and propose GrowthBook project/environment setup for Unity’s different products and customers (25:45)\n\n**Jake Heier**\nShare GrowthBook documentation on prerequisites and approval workflows to Unity team (01:01:44)\nCoordinate Slack communication channel with Unity for questions and support during GrowthBook trial (01:03:58)\n\n**Unity Team (Saleh, Daniel)**\nBegin experimenting with GrowthBook configurations as per discussion, focusing on setting up projects and environments aligned to their current hierarchy and features (01:03:58)\n\n**Team**\nExplore using custom hooks in GrowthBook for enforcing advanced validations on feature flags, including potential extension to API-based management (46:27)\n\n**Unity team**\nEvaluate best approach for modeling customers as environments vs. attributes, considering rule duplication and inheritance limitations (28:41)\n\n**Unity and GrowthBook teams**\nPlan for possible follow-up training session or sync to review progress based on early GrowthBook usage experience (01:04:59)\n"
+    }
+  ]
+}

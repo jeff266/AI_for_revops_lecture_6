@@ -1,0 +1,18 @@
+{
+  "company": "FlowGPT Sync",
+  "slug": "flowgpt-sync",
+  "calls": [
+    {
+      "id": "01KP9A1QBM4MC4NJE7RVQTYDNC",
+      "source": "fireflies",
+      "title": "FlowGPT Sync",
+      "date": "2026-04-15",
+      "duration_minutes": 24,
+      "summary": "The team is strategizing to retain a significant AI customer by transitioning them from a $150k Statsig contract to a more cost-effective Growth Book deal valued at $80-90k. This involves offering bundled features like experimentation tools and governance capabilities that address the customer’s reliance on internal AI workflows for analysis. The customer uses an on-premise StarRocks data warehouse, necessitating the development of a custom connector to facilitate integration. Growth Book aims to stand out in the competitive market by becoming a backbone for AI-driven experimentation, emphasizing the importance of governance and improved efficiency in analysis. A follow-up call with the client is planned to gather insights and prepare for the upcoming contract renewal, ensuring that Growth Book remains a competitive option.",
+      "organizer": "dan@growthbook.io",
+      "participants": 3,
+      "keywords": "AI experimentation, feature flagging, data warehouse integration, assignment logic, customer workflow, contract negotiation",
+      "action_items": "\n**Dan Wathne**\nReach out to the customer with high-level ideas discussed and propose a call for Thursday evening next week to explore integration possibilities (18:32)\nFollow up on customer’s contract renewal timeline in August and plan for transition strategy (16:10)\nExplore opportunities to position GrowthBook as a cost-effective alternative with expanded value (assignment, governance) (14:47)\n\n**Luke Sonnet**\nParticipate in call with the customer next Thursday evening to understand their pain points and potential fit with GrowthBook’s capabilities (18:32)\nInvestigate the technical requirements to build a StarRocks connector and verify standard SQL compatibility for quick integration (14:19)\nContinue development towards enabling GrowthBook as a standardized skill that AI agents can use efficiently for experimentation workflows (17:54)\n\n**Logan Bates**\nAssist Dan in managing communication with the customer and share insights from previous discussions with their data team (10:33)\n"
+    }
+  ]
+}

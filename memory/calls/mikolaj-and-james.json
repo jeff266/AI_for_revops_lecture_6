@@ -1,0 +1,18 @@
+{
+  "company": "Mikolaj and James",
+  "slug": "mikolaj-and-james",
+  "calls": [
+    {
+      "id": "01KXZ1ZE7CQ0KZYDWKYPR7QC40",
+      "source": "fireflies",
+      "title": "Mikolaj and James Shannon",
+      "date": "2026-07-20",
+      "duration_minutes": 43,
+      "summary": "The discussion centered around the evaluation of GrowthBook as a unified, self-hosted feature flag backend to replace the existing systems of Unleash and Flipped, meeting the needs of both commercial and defense teams. Key decisions involve adopting the Open Feature SDK across most of the organization, while ensuring compliance with air-gapped on-prem solutions for defense. A total of about 50 developers require access to multiple GrowthBook instances, necessitating features like role-based access control and approval workflows for governance. The technical requirements include support for Python, Rust, and Typescript, along with GitOps capabilities. Pricing for GrowthBook's Enterprise tier is set at $30,000 annually plus $750 per user, aiming for deployment by September after a two-week evaluation trial.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "self-hosted, feature flags, Growth Book, Open Feature SDK, compliance, migration",
+      "action_items": "\n**Mikolaj Michalow**\nEvaluate Growth Book enterprise features using the provided two-week trial license to assess suitability for company needs (39:36)\nLead and prepare decision documents and recommendations for leadership approval by early August based on evaluation results (34:38)\nProvide feedback and questions during the mid-trial review meeting scheduled for July 28th at 11:00 AM local time (40:39)\n\n**James Shannon**\nSend Growth Book two-week enterprise trial license key for self-hosted deployment to Mikolaj Michalow (39:36)\nSet up Slack channel with Growth Book solutions team for ongoing technical support during evaluation (39:36)\nSchedule and host a mid-trial review meeting with Mikolaj on July 28th at 11:00 AM local time to discuss evaluation progress and address questions (40:39)\nProvide detailed documentation and assist with AI-enabled stale flag cleanup workflows and migration tools to support Mikolaj's evaluation (25:45)\nFollow up with email containing all discussed information including pricing, trial setup, and documentation links to ensure clear communication and support (41:13)\n"
+    }
+  ]
+}

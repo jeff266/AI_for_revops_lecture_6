@@ -1,0 +1,18 @@
+{
+  "company": "noon PST",
+  "slug": "noon-pst",
+  "calls": [
+    {
+      "id": "01KM11HXVXDB2B1WQ895JJRVAN",
+      "source": "fireflies",
+      "title": "Weekly Mastiff Software Meeting (noon PST)",
+      "date": "2026-03-18",
+      "duration_minutes": 33,
+      "summary": "The team discussed the need to improve Growth Book’s product narrative to differentiate it from typical enterprise SaaS offerings, aiming to connect with users of AI coding tools. They emphasized leveraging open-source contributions for product enhancement and favored an open marketplace model over exclusive partnerships. A strategy to convert small clients into larger accounts was outlined, alongside the need for a dedicated sales team focused on expansion and tailored pricing models. Additionally, improvements in lead scoring and potential micro acquisitions were considered to enhance Growth Book’s technology offerings and revenue strategy. The sales team is set to expand, with specific roles being filled to support these growth initiatives and increased market focus, particularly in Europe.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "Board meeting feedback, account expansion strategy, pricing model, sales hiring, lead scoring, micro acquisition",
+      "action_items": "\n**Ryan McGurk**\nContinue discussions with Pat regarding role suitability and timing; potentially schedule role play sessions in week after next or sooner if urgency arises (16:29)\nOversee expansion strategy development, particularly account-based marketing and upsell tactics with Jake and Carrie driving pipeline growth (07:49)\nDraft and post job description for sales engineer role; engage with Brent for candidate referrals and sourcing assistance (20:50)\nAssess utility and engagement model for contractor Matt Dupont, clarify revenue contribution or phase out (22:39)\nFacilitate discussions and decisions on potential micro acquisition, evaluating strategic fit and impact on Growth Book equity (27:01)\nCoordinate with Ashley on product marketing and lead scoring model implementation plans (23:57)\nCollaborate with Brent and sales leaders on hiring enterprise-level sellers and sales engineers, ensuring quality candidate pipeline (17:00)\n\n**Brent Holloway**\nSupport candidate sourcing for sales engineer role, including outreach to Harness, Cloud Bees, and industry contacts; help draft accurate JD (20:50)\nAssist with lead scoring model design and implementation phases, including enrichment tooling and integration advice (23:57)\nParticipate in candidate role plays and interviews where possible, especially for Pat if timing is urgent (16:22)\nProvide advisory support on expansion sales strategy, pricing model adjustments, and ABM campaign ideas (07:49)\nContinue engagement with Misha and follow up post scheduled call (16:22)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Cris/Ashley Intros",
+  "slug": "cris-ashley-intros",
+  "calls": [
+    {
+      "id": "01KH44Q3S59V78TGNFEDG1535Y",
+      "source": "fireflies",
+      "title": "Cris/Ashley Intros",
+      "date": "2026-02-11",
+      "duration_minutes": 23,
+      "summary": "The meeting outlined a new customer success role that merges traditional support with strategic consulting to boost customer engagement and growth. Cris Dizon emphasized the importance of adding structure to customer interactions to enhance retention and user adoption. Ashley Stirrup highlighted the urgent need for tracking customer health and engagement, pointing out inconsistencies in data that hinder proactive management. The team agreed on implementing repeatable engagement processes, such as quarterly business reviews, to strengthen relationships and uncover expansion opportunities. Additionally, they discussed the need for accurate customer data and feedback loops to align product development with customer needs, while leveraging industry contacts for mentorship and collaboration.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "customer success, onboarding metrics, subscription management, billing system, customer engagement, Quarterly Business Reviews",
+      "action_items": "\n**Cris Dizon**\nReview and utilize sales enablement resources shared by Ashley to get up to speed (01:28)\nBuild a shortlist of low-hanging fruit initiatives to structure customer engagement and improve customer success metrics early on (11:55)\nJoin Stripe and Orb Slack channels for real-time billing and subscription alerts (13:43)\nGain access and start assessing HubSpot data to understand customer status and renewals despite initial data chaos (20:10)\nDevelop customer engagement models and standards focusing on structured outreach, milestone tracking, and feedback prioritization (21:00)\nOrganize and participate in Quarterly Business Reviews (QBRs) for key customers like Sony PlayStation to address scaling and satisfaction issues (22:30)\n\n**Ashley Stirrup**\nProvide introductions to experienced customer success leaders for Cris to gain knowledge and best practices (12:05)\nAdd Cris to relevant Slack channels (Stripe and Orb) for billing and subscription monitoring (13:43)\nShare current onboarding and churn metrics and updates with Cris and provide ongoing context on billing and reporting tools (15:45)\nOffer support and co-participation in setting up QBRs and customer engagement process improvements (22:00)\nRemain available for advice and follow-up meetings to assist Cris’s onboarding and success in the role (23:10)\n"
+    }
+  ]
+}

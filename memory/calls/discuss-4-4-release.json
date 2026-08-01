@@ -1,0 +1,18 @@
+{
+  "company": "Discuss 4.4 release",
+  "slug": "discuss-4-4-release",
+  "calls": [
+    {
+      "id": "01KMX44K2P01JVQ1B4Z133DG3R",
+      "source": "fireflies",
+      "title": "Discuss 4.4 release & general questions",
+      "date": "2026-03-31",
+      "duration_minutes": 32,
+      "summary": "The team discussed the plans for the 4.4 release, targeting the week of April 13th. The main feature, AI Data Analyst, is nearing completion and will launch in beta. Usage limits and pricing strategies are under consideration, with Elyse Fox conducting competitive analysis to inform tiering. The release also includes a significant revamp of feature flags and ongoing improvements in product analytics. A multi-tiered communication strategy is planned to enhance user understanding, while engineering constraints impacting demos were acknowledged. The emphasis is on rapidly innovating and ensuring clear upgrade paths to strengthen the product's competitive positioning.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "4.4 Release, AI Data Analyst, Feature Flags, Beta Features, Pricing Strategy, Product Analytics",
+      "action_items": "\n**Elyse Fox**\nContinue gathering competitive data on AI token limits and pricing models to inform usage tier decisions (08:17)\n\n**Jeremy Dorn**\nFinalize and produce documentation for AI Data Analyst feature before release (14:43)\nFlesh out bullet points describing feature flag enhancements and approvals for more detailed communication (18:23)\nCheck with contributor from Anthropic about permission to credit their performance improvement contribution publicly (21:46)\nIdentify and coordinate with potential presenter(s) for AI Data Analyst and product analytics demos, including contacting Omar about possible participation (28:50)\nConfirm timing and ability to support feature flag demo presentations in relation to team members’ availability (29:20)\n\n**Ashley Stirrup**\nSchedule internal session on pricing differentiation between Pro and Enterprise tiers, seeking stronger upgrade paths leveraging AI features (09:06)\nCollaborate with Jeremy Dorn regarding monitoring AI token usage to avoid surprises and manage limits effectively (11:32)\nAssist in drafting blog content focusing on positive AI Data Analyst user stories and setting appropriate beta expectations (13:10)\nLead coordination to schedule recording sessions for demo videos after team members return from leave (29:50)\n\n**Scott Bailey**\nPrepare a summary document with recommendations on 4.4 release structure and prioritized feature narratives for leadership review (32:08)\nPlan YouTube and blog content strategy consisting of concise release notes with supporting deep-dive posts on key features like AI Data Analyst and feature flags (22:54)\nOrganize interviews with engineers to accelerate creation of technical blog content (25:06)\n"
+    }
+  ]
+}

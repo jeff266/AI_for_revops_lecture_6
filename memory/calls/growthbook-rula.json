@@ -1,0 +1,30 @@
+{
+  "company": "Growthbook <> Rula",
+  "slug": "growthbook-rula",
+  "calls": [
+    {
+      "id": "01KY5HJ0RH25VXAN5M3W5FEZNM",
+      "source": "fireflies",
+      "title": "Growthbook <> Rula - Demo/POC Kickoff Call",
+      "date": "2026-07-24",
+      "duration_minutes": 49,
+      "summary": "The team convened to discuss the implementation of a self-hosted Proof of Concept (POC) for GrowthBook, emphasizing data security and compliance needs. Jessica highlighted the security team's preference for self-hosting to maintain control over sensitive data, while Logan suggested it also simplifies deployment. They defined the POC's initial rollout to about 150 to 200 users, primarily in analytics and engineering, and discussed technical deployment considerations involving Kubernetes. Recent product updates were presented, including features in the latest versions aimed at improving user experience. The conversation also covered competitive positioning against other analytics tools, ensuring a phased approach for stakeholder buy-in and outlining ongoing support strategies and documentation processes.",
+      "organizer": "dan@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, self-hosting, experiment analytics, feature flagging, product roadmap, user journey",
+      "action_items": "\n**Jessica Higgins**\nPrepare and share a document outlining the POC success criteria and share GrowthBook account login details after signing up (05:24)\n\n**Dan Wathne**\nSend Slack channel invites for collaboration, follow up on onboarding questions, upgrade Rula's GrowthBook account after signup, prepare and send initial pricing proposal, share product analytics roadmap details, provide common debugging tips/resources, and verify BAA requirements for cloud hosting (31:45)\n\n**Logan Bates**\nProvide technical assistance via Slack on self-hosting and POC setup, respond to technical inquiries from Rula’s SRE and engineering teams, and address onboarding questions from Dan and Pallabi (06:28)\n\n**Pallabi Barua**\nShare examples of SLO/user journey tools for GrowthBook team review, compile and send onboarding questions to Dan and Logan, and continue internal stakeholder coordination for security review and POC buy-in (26:50)\n"
+    },
+    {
+      "id": "01KY2RP3G2179157XP0A77RHX8",
+      "source": "fireflies",
+      "title": "Growthbook <> Rula - Intro",
+      "date": "2026-07-22",
+      "duration_minutes": 0,
+      "summary": "The meeting centered on the evaluation of Growth Book, a potential tool to enhance Rula's experimentation framework. Led by Pallabi Barua, the discussions highlighted the significance of a self-hosted, warehouse-native model crucial for healthcare data compliance, with Dan Wathne underscoring its advantages over competitors like Optimizely. The technical capabilities of Growth Book include SDK-driven experiment management and AI integrations, which aim to support advanced analytics and experimentation. A phased proof of concept (POC) was structured to validate its analysis tools, followed by full experimentation features while ensuring support during setup. The team also recognized Growth Book's competitive edge and its potential to consolidate multiple tools within the experimentation landscape.",
+      "organizer": "dan@growthbook.io",
+      "participants": 3,
+      "keywords": "self-hosted, experimentation, GrowthBook, data warehouse, holdouts, POC",
+      "action_items": "\n**Jessica Higgins**\nPrepare a full list of anticipated experiment analysis and configuration success criteria with the analytics team for the trial kickoff call (28:40)\n\n**Dan Wathne**\nProvide detailed information about GrowthBook’s load impact on data warehouse or liaise with solutions engineer to respond to Jessica’s warehouse load concern (14:06)\nSchedule and hold a detailed trial kickoff call with Rula team and GrowthBook support engineers to review success criteria, setup, and documentation, proposed Friday morning 9:00–10:00 AM Pacific Time (26:24)\nSet up a dedicated Slack support channel for instant communication during the trial and ensure 24/7 support availability (25:38)\nSend follow-up email to coordinate next steps, trial window, and align on pricing discussions (29:00)\n\n**Pallabi Barua**\nCoordinate internally on trial timeline and stakeholder buy-in phasing; communicate trial phase focus on experiment analysis first, holdouts and bucketing later (18:24)\nParticipate in upcoming kickoff call, provide list of questions or issues during trial as needed (26:24)\n"
+    }
+  ]
+}

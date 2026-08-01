@@ -1,0 +1,18 @@
+{
+  "company": "Nick Finger and",
+  "slug": "nick-finger-and",
+  "calls": [
+    {
+      "id": "01KS3K5XF3AFVSW1MT2GBT5XCY",
+      "source": "fireflies",
+      "title": "Nick Finger and Graham McNicoll",
+      "date": "2026-05-27",
+      "duration_minutes": 31,
+      "summary": "The meeting discussed GrowthBook's role as a top open-source, warehouse-native experimentation platform tailored for enterprise flexibility. Key strengths include its self-hosting capacity, allowing significant customization for customers like Discord and Anthropic, and its support for both server-side experimentation and client-side feature flagging. The platform's modular design facilitates integration with existing systems, enabling analytics without disrupting workflows. Emphasis was placed on standardized experimentation practices, including tools like a power calculator to optimize test configurations. Insights on customer needs, such as Zocdoc's interest in integrating natural language analytics, underscored GrowthBook's commitment to evolving its offerings based on user feedback and enhancing product analytics capabilities.",
+      "organizer": "graham@growthbook.io",
+      "participants": 5,
+      "keywords": "Experimentation platform, Open source, Data analytics, Feature flagging, Causal inference, Semantic layer",
+      "action_items": "\n**Nick Finger**\nSync with internal Zocdoc stakeholders who are researching experimentation platforms and gather their feedback (28:25)\nFollow up with GrowthBook team once internal discussions are complete to explore further or clarify needs (28:25)\n\n**Christian Liebenow**\nProvide Nick with Luke’s demo video illustrating the GrowthBook experiment lifecycle and agent integration (29:42)\nSend supporting documentation and any relevant materials on GrowthBook’s platform and offerings to Nick (29:42)\nOffer to spin up a GrowthBook Enterprise trial for Zocdoc to explore full platform capabilities if there is interest (29:30)\n\n**Luke Sonnet**\nSupport Nick by addressing any follow-up technical questions or use case clarifications regarding GrowthBook’s integration, stats engine, and experiment design features (28:46)\n"
+    }
+  ]
+}

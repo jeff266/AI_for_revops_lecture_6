@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook AI",
+  "slug": "growthbook-ai",
+  "calls": [
+    {
+      "id": "01KVKCH0YXKK3GDV54Z13ENV8V",
+      "source": "fireflies",
+      "title": "GrowthBook AI",
+      "date": "2026-06-22",
+      "duration_minutes": 0,
+      "summary": "The discussion centered on evolving GrowthBook’s AI capabilities to automate and scale experimentation and feature flag management. Key highlights included the introduction of AI skills that streamline over 250 API endpoints, allowing users to run 100 to 200 experiments concurrently. The 'Experiment Brainstorm' skill utilizes historical data to suggest new experiments, supporting organizations with mature experimentation cultures. There was an emphasis on shared knowledge and collaboration across teams to enhance insights and decision-making. Additionally, concerns regarding pricing and token governance for customers like Change.org were addressed, along with the strategy to maintain a demo workspace that safely showcases these innovations while ensuring a seamless user experience.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook AI, feature flags, experiment brainstorming, API integration, token governance, demo workspace",
+      "action_items": "\n**Scott Bailey**\nMeet with Omar to discuss and finalize the demo workspace setup and manage weekly resets to ensure reliable demo performance (28:02)\nDevelop demo videos and documentation to enable the sales team on GrowthBook AI skills and demo flows (28:02)\nMonitor token usage and compute demands during experiments, especially for the experiment brainstorm skill, coordinating with Omar for performance insights (24:06)\n\n**Ryan McGurk**\nTest GrowthBook AI skills functionality and collaborate with Scott Bailey on follow-up calls for targeted skill exploration (28:47)\n\n**Scott Keller**\nUtilize and explore the demo workspace and example app cautiously for demos, avoiding disruptive live runs on production data (29:24)\n\n**Team**\nAddress pricing and licensing strategies tailored to customers with large engineering teams, considering token sharing and governance implications (14:30)\n"
+    }
+  ]
+}

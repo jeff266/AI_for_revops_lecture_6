@@ -1,0 +1,78 @@
+{
+  "company": "Legend + GrowthBook",
+  "slug": "legend-growthbook",
+  "calls": [
+    {
+      "id": "01KRD0NKPCFEYNBPD771Q4R3TG",
+      "source": "fireflies",
+      "title": "Legend + GrowthBook",
+      "date": "2026-05-18",
+      "duration_minutes": 44,
+      "summary": "The team discussed integrating GrowthBook with Snowflake by querying event and experiment data from their Adobe analytics setup, which avoids costly event forwarding options. The existing Adobe analytics pipeline stores relevant metrics in Snowflake, allowing for faster implementation without building a new API. Future plans include potentially exporting experiment results back into Snowflake for improved reporting. The team addressed data freshness by setting GrowthBook to poll Snowflake every 24 hours, ensuring minimal stale data querying. Optimizing query efficiency by pre-processing raw data into smaller tables was also emphasized. The roles of the experimentation and data engineering teams were defined, with the former responsible for identifying metrics and the latter for setting up and optimizing queries.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Snowflake, Experimentation Metrics, Data Integration, Event Forwarder, REST API",
+      "action_items": "\n**Kaito Queiroz**\nDefine the key metrics and events needed for experimentation to ensure proper data ingestion and query setup in Snowflake (34:16)\n\n**Liam Dando**\nProvide additional details on contract and pricing related to the event forwarder feature for clearer cost assessment (07:44)\n\n**Chris Sanders**\nVerify feasibility of scheduling exact query times in GrowthBook’s Snowflake polling and communicate findings (37:45)\n\n**Experimentation Team**\nIdentify experiment-relevant events and metrics to enable GrowthBook metric definitions and experiment configuration (31:13)\n\n**Integration Team**\nConfigure Snowflake as GrowthBook data source with appropriate read-only permissions and optimize queries based on polling frequency and data volume (32:17)\n\n**All Participants**\nContinue collaboration and testing of queries in Snowflake; escalate integration or data ingestion issues to GrowthBook support channel as needed (40:28)\n"
+    },
+    {
+      "id": "01KNYXQAACZ98Z2601K94FC4WE",
+      "source": "fireflies",
+      "title": "Legend + GrowthBook",
+      "date": "2026-04-13",
+      "duration_minutes": 25,
+      "summary": "The team decided to proceed with Growthbook as the sole vendor, simplifying procurement and onboarding while moving through legal and pricing negotiations. The pricing structure includes an initial quote for 60 seats, split between full and read-only users, and despite being higher than competitors, it is justified by Growthbook's scalability and features. The target implementation timeline aims for a mid-year go-live for covers.com and casino.org, carefully aligned with the expiration of the current SiteSpec contract. Growthbook's integrated workflow is highlighted as a competitive edge, minimizing unexpected costs tied to traffic-based pricing models. User adoption discussions indicate that while engineers may be familiar with feature flagging, other teams will require additional support to ensure effective usage of the new tools.",
+      "organizer": "christian@growthbook.io",
+      "participants": 2,
+      "keywords": "Vendor Review, Pricing Negotiation, Seat Allocation, Feature Flagging, Legal & Security Compliance, Onboarding Process",
+      "action_items": "\n**David Williams**\nFollow up internally with the team about seat allocation and user numbers and provide feedback on seat counts (15:30)\nIdentify and inform the Designated Responsible Individual (DRI) responsible for legal and negotiation processes, likely Simone or relevant lead (08:00)\nNudge procurement, legal, and engineering teams by midweek if no contact is made by GrowthBook to expedite next steps (24:40)\n\n**Christian Liebenow**\nAwait team feedback on seat numbers and vendor procurement progress (04:00)\nEngage with Simone and legal teams through vendor system automation for contract and security reviews once access is granted (07:00)\nShare pricing details and discuss discount levers including multi-year commitments and marketing collaboration opportunities (17:00)\nPrepare to support Legend’s teams in onboarding and feature flag education, focusing on product teams and leadership adoption (22:40)\nFollow up with David by Wednesday if no outreach from Legend’s internal team has occurred (24:30)\n"
+    },
+    {
+      "id": "01KMX44K2P03M57NVHBVKPX9EV",
+      "source": "fireflies",
+      "title": "Legend + GrowthBook",
+      "date": "2026-03-31",
+      "duration_minutes": 42,
+      "summary": "The meeting focused on improving experimentation strategies and growth goals, with a target to double the annual experiments from 500-600 to over 1,000. Key initiatives include promoting self-service experimentation and advanced analytics, alongside addressing knowledge gaps in teams. Leadership challenges highlighted the conflict between the necessity for speed and the requirement for rigorous measurement. The discussion also covered platform selection, with plans for a mid-year rollout of a new tool to maintain testing continuity. Cultural resistance, particularly among senior leaders, was acknowledged as a significant barrier, necessitating education and advocacy. Additionally, investments in AI tools are expected to accelerate the experimentation process, enhancing both velocity and quality.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation, Feature Flagging, Growth Book, Product Teams, Cost Management, Engineering Integration",
+      "action_items": "\n**David Williams**\nSync with Claudio to align on best experimentation and feature flagging tool choice by end of the current week (34:00)\nShare meeting insights on support responsiveness and cost considerations with internal teams (41:16)\n\n**Christian Liebenow**\nFollow up with David via Slack after Easter to check on alignment progress with Claudio and next steps (40:43)\nSend clarification note to Kaido and Jackie about one-year partnership options and potential pricing flexibility (39:20)\n"
+    },
+    {
+      "id": "01KKS2JKRVCF02FY9QQQTY555C",
+      "source": "fireflies",
+      "title": "Legend + GrowthBook",
+      "date": "2026-03-17",
+      "duration_minutes": 57,
+      "summary": "The meeting focused on assessing GrowthBook's capabilities in comparison to SiteSpec and AB Tasty for enhancing front-end experimentation and feature flagging. Key challenges discussed included the over-reliance on SiteSpec for sports experiments, leading to distrust in its data, while the need for fast experimentation and robust server-side flagging was emphasized for upcoming React Native app releases. GrowthBook's features like Boolean flags, automatic rollback, and integration with Snowflake for data analysis were highlighted. The team also discussed visual editing capabilities, reusable design elements, and the importance of minimizing engineering efforts. With the evaluation phase concluding, they aim to finalize vendor selection by the end of the week, considering how GrowthBook aligns with existing tools and user feedback.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "Feature Flagging, Experimentation, Visual Editor, Product Analytics, Snowflake Integration, Reusable Components",
+      "action_items": "\n**Logan Bates**\nDiscuss internally and assess effort to add HTML/component library feature for GrowthBook to support reusable components across experiments (33:00)\nProvide Legend team with follow-up on potential feature to upload or manage style/component presets in GrowthBook (33:00)\nSupport Legend with additional technical questions during evaluation and possible future calls (47:00)\n\n**Christian Liebenow**\nCoordinate with Engineering on feasibility of reusable component/HTML library feature based on Legend’s input (33:00)\nFacilitate communication between Legend and GrowthBook developer team and track notes from call (00:00)\n\n**Legend Team (James March, Devin L, Kaito Queiroz)**\nContinue evaluation including detailed review of cost data to inform final decision (54:00)\nProvide clarifications or additional requirements on reusable components or style library needs to GrowthBook (33:00)\n"
+    },
+    {
+      "id": "01KKETC80E93C43QHJN8H77ZH1",
+      "source": "fireflies",
+      "title": "Legend + GrowthBook",
+      "date": "2026-03-13",
+      "duration_minutes": 56,
+      "summary": "The team discussed the process of setting up experiments on the platform, emphasizing the importance of detailed configuration guidance. Kaito highlighted the roles of Claudia and James in running experiments, as they seek a clear run-through of procedures. Experiment data management was reviewed, noting that metrics are pushed to Adobe Analytics and then analyzed in Snowflake, with plans to link these metrics into Growth Book. Kaito and the others also examined feature flag capabilities and the integration of progressive rollouts. The quality of platform documentation was praised, along with the need for ongoing support through a dedicated Slack channel. Technical challenges, particularly around SDK integration and cost considerations for data warehousing, were acknowledged, with future collaboration confirmed to address these issues.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, Experiments, Feature Flags, Bandits, Managed Warehouse, Progressive Rollouts",
+      "action_items": "\n**James Berry**\nReview documentation on Cupid and post stratification features to understand how to improve experiment efficiency with limited traffic (32:10)\nEvaluate whether joining the visual editor session for the sports team on Tuesday is beneficial and confirm attendance (50:53)\n\n**Kaito Queiroz**\nCoordinate with Jeremy and GrowthBook team to discuss managed warehouse pricing and potential usage for plug-and-play experiment tracking (54:13)\nFollow up with Jeremy, Logan, and Christian for additional support on SDK integration and resolving Cloudflare caching issues (40:41)\nDecide on preferences and processes for manual vs automatic progressive rollouts and implement accordingly (43:07)\n\n**GrowthBook Team**\nProvide detailed documentation and support on Cupid and post stratification techniques to help the client optimize experimentation with small traffic volumes (53:37)\nProvide additional help and troubleshooting support on Cloudflare caching integration with GrowthBook SDK (40:41)\nDiscuss and possibly set up alerting system integrations (e.g., Slack webhooks) for guardrail metrics and experiment status notifications (47:37)\nAssist with API usage for automating feature flag management via CI/CD pipelines as needed (46:16)\nShare public pricing details on managed warehouse usage and event fees with the client (54:38)\n"
+    },
+    {
+      "id": "01KJWS8EN8K2AGW84WJWD0VCPH",
+      "source": "fireflies",
+      "title": "Legend + GrowthBook",
+      "date": "2026-03-04",
+      "duration_minutes": 30,
+      "summary": "The team confirmed the Proof of Concept (PoC) with Growthbook is set to start next week after completing the second vendor implementation, managed by Kaito. The experimentation and data teams will evaluate the tool post-implementation, ensuring effective integration. Emphasizing a warehouse-native approach, the strategy aims for a single data source, utilizing Snowflake over Adobe Analytics for improved security and cost savings. Additionally, edge experimentation will utilize low-latency SDKs to minimize flicker, with standard A/B tests being the initial focus. Growthbook will provide ongoing support via Slack and scheduled calls as different teams conduct their evaluations after the PoC.",
+      "organizer": "christian@growthbook.io",
+      "participants": 6,
+      "keywords": "Growthbook, Edge experimentation, warehouse-native, flicker mitigation, Multi Armed Bandits, Snowflake integration",
+      "action_items": "\n**Kaito Queiroz**\nComplete vendor flag implementation for second vendor by Friday and hand over to experimentation team for Growthbook evaluation (28:07)\nCommunicate any blockers or delays related to Growthbook implementation promptly to Growthbook team (28:07)\nCoordinate with the sports team to review Visual Editor documentation and consider if Growthbook suits their requirements; facilitate contact between Growthbook team and sports team for further technical discussions (21:55)\n\n**Data team**\nEngage with Growthbook team after PoC start to dive deeper into warehouse-native benefits, Snowflake data refresh configurations, and Adobe Analytics integration feasibility (16:17)\n\n**Growthbook team**\nProvide ongoing support via Slack and scheduled calls during Growthbook PoC and evaluation phases (27:29)\n\n**Sports team**\nConduct independent evaluation of Growthbook Visual Editor and related features for potential adoption (24:23)\n"
+    }
+  ]
+}

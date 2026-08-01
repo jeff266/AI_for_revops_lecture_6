@@ -1,0 +1,66 @@
+{
+  "company": "Google Ads",
+  "slug": "google-ads",
+  "calls": [
+    {
+      "id": "01KXGYNQSA568R7AHMS9BTNTP9",
+      "source": "fireflies",
+      "title": "Google Ads",
+      "date": "2026-07-17",
+      "duration_minutes": 31,
+      "summary": "The team discussed strategies to refine Google Ads campaigns aimed at enhancing traffic quality and budget efficiency, particularly during a low purchasing season. Key actions included narrowing campaigns to five to seven high-intent keywords under Tatev Torabyan's leadership, which involved pausing ad groups that had low performance despite impressions. An age group targeting experiment was undertaken to exclude non-contributing demographics, while ad scheduling was adjusted to better align with peak user activity in U.S. time zones. Campaign performance showed branded campaigns achieving stable traffic with a high click-through rate, contrasting with non-branded campaigns that provided valuable market insights despite lower volume and higher costs. The team also reviewed competitive strategies to identify opportunities for improvement and planned next steps focusing on ad copy updates and deeper analysis.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Google Ads, campaign optimization, keyword targeting, competitor analysis, advertising metrics, marketing strategy",
+      "action_items": "\n**Tatev Torabyan**\nShare Google Ads campaign data and competitor analysis, including AB Tasty’s strategies, with the team to inform ongoing marketing efforts (20:52)\nSend updated ad copies and assets for launchdarkly, feature flags, and experimentation campaigns to the team for review and feedback (26:44)\nContinue monitoring campaign performance over the next weeks to evaluate the impact of restructuring and the experiment with excluding certain age groups from targeting (09:34)\n\n**Ashley Stirrup**\nReview the updated ad copies once distributed and provide input to help refine campaign messaging and effectiveness (26:44)\n\n**Lyndsie Berens**\nReview the updated ad copies upon distribution and contribute feedback to improve campaign performance (26:44)\n"
+    },
+    {
+      "id": "01KWT0H3T35SAFRXRMNAT8PPXV",
+      "source": "fireflies",
+      "title": "Google Ads",
+      "date": "2026-07-09",
+      "duration_minutes": 29,
+      "summary": "The team reviewed the performance of current Google Ads campaigns, noting the acquisition of 46 new companies and discussing ways to optimize targeting and messaging. Key suggestions included shifting keyword focus from open source terms to more transactional terms and enhancing ad copy for better messaging accuracy. The importance of tracking ROI through the integration of Fibler with HubSpot was highlighted, along with concerns about budget allocation amid early campaign results. The strategy for competitor targeting, particularly against LaunchDarkly and Unleash, was also explored, aiming to position Growth Book as a viable alternative. Overall, the discussion emphasized improving data integration, ad quality, and budget monitoring to enhance marketing effectiveness.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Google Ads, branded campaigns, competitor targeting, open source, ad copy review, campaign attribution",
+      "action_items": "\n**Tatev Torabyan**\nShare AI-focused and Statsig ad copies with Ashley and Lyndsie for review after the call (17:00)\nReview and update all current branded campaign ad copies, particularly for numeric accuracy and messaging tone, then share updates for team review (22:30)\nFollow up with Chris via Slack, copying Ashley and Lyndsie, to get landing page development schedule update since his return from vacation (26:00)\nPrepare and share insights on Statsig advertising performance post-meeting (27:00)\n\n**Lyndsie Berens**\nShare document or Google Sheet for internal ad copy review to catch inaccuracies pre-launch (22:00)\n\n**Ashley Stirrup**\nContinue monitoring LinkedIn spend on Statsig and LaunchDarkly competitor campaigns, flagging budget concerns early (27:00)\n"
+    },
+    {
+      "id": "01KVTXY720J6V34W9XH9TX9VS1",
+      "source": "fireflies",
+      "title": "Google Ads",
+      "date": "2026-06-25",
+      "duration_minutes": 29,
+      "summary": "The team reviewed the advertising campaign performance, noting that the brand campaign achieved 10 conversions while discussing the need to consolidate campaigns with a proposed daily budget of $130 to enhance focus on high-intent keywords. Issues with conversion value tracking between HubSpot and Google Ads were highlighted, with plans to improve data syncing for better optimization. A competitor campaign was scrutinized for its lack of conversions despite significant spending, advocating for the creation of a dedicated landing page. New ad groups targeting AI and banking themes were added, and there were discussions on managing keywords directly related to competitors to improve ad quality scores. Finally, an Account-Based Marketing (ABM) initiative was introduced to specifically target AI companies, reflecting a strategic shift in marketing efforts.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Google Ads, conversion tracking, LaunchDarkly, campaign budget, AI messaging, competitor targeting",
+      "action_items": "\n**Tatev Torabyan**\nUpdate brand campaign messaging with AI-related keywords and improve experimental campaign messaging (00:46)\nWork with Chris to improve multi-stage contact syncing and conversion value tracking between HubSpot and Google Ads (05:50)\nShare wireframe/spec draft for LaunchDarkly dedicated landing page and coordinate with Chris for development to improve campaign measurement (08:47)\nPause non-strategic podcast-related ad groups until reviewed, especially Macram Mansour and unit test ones; send ad group addition proposals in Slack for approval before activation (11:36)\nInvestigate AI video editing tools and request access to Script for creating short video ads (18:03)\nShare new AI campaign ad groups and keywords in Slack for product review of keyword user intent (26:36)\nShare event-related campaign design elements and specifications soon (27:31)\n\n**Lyndsie Berens**\nReview conversion value tracking setup and ensure all conversions and values are correctly tracked across platforms (03:51)\nReview keywords used in LaunchDarkly campaigns and overall ad group structure regularly to optimize for quality and relevance (09:53)\nUpload and manage ABM shortlist targeting AI companies, help finalize target accounts (26:47)\n\n**Ashley Stirrup**\nProvide feedback on ad groups and keywords related to AI and conversion campaigns when shared on Slack (26:41)\nAdvise on creation and promotion of customer video ads and their alignment with brand campaigns to improve conversions (16:16)\n"
+    },
+    {
+      "id": "01KV8X5624NPQH4M29TPRTG6A2",
+      "source": "fireflies",
+      "title": "Google Ads",
+      "date": "2026-06-18",
+      "duration_minutes": 33,
+      "summary": "The team discussed strategies for scaling their AI experimentation campaign while tackling keyword targeting challenges that limit campaign growth. They highlighted issues related to non-relevant traffic from broad AI terms which affect conversion quality. Competitor analyses revealed varied keyword strategies, with Optimizely and LaunchDarkly identified as key players, each focusing on different market segments. The importance of clearly defined campaign metrics was emphasized alongside the need for targeted AI content, including video assets and competitor comparisons. Participants also addressed retargeting strategies using existing site visitor data to optimize conversions. An urgent requirement for better tracking and attribution methods was noted to enhance understanding of campaign impacts and optimize spending.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "AI campaign, keyword analysis, competitor strategy, retargeting, landing page, advertising performance",
+      "action_items": "\n**Tatev Torabyan**\nShare detailed competitor keyword analysis report, AI use cases, and campaign draft structure with team for feedback (05:00)\nAdd new AI-focused ad copies and relevant keywords to campaigns for next week (16:26)\nInvestigate and address traffic anomaly where LaunchDarkly keywords lead to Statsig ads, optimizing campaign targeting (17:14)\nCollaborate with Lyndsie post-event on retargeting strategy with real dev and HubSpot audience integration (18:18)\nConfirm best practices for short technical product videos and share guidance with team (23:25)\nProvide Lyndsie with ad creative size specifications to enable designer support for event campaign materials (25:05)\nWork with Chris starting next week to develop LaunchDarkly comparison landing page and AI competitor offer page (31:41)\n\n**Lyndsie Berens**\nSend over event trade show location and hotel addresses to Tatev for location-specific ad targeting (24:23)\nCoordinate with company designer to prepare event-related creative assets once ad size requirements received (25:05)\nCollaborate with Tatev after event to refine retargeting strategy using Rio audience data, focusing on users visiting pricing page and site re-engagement (19:39)\n\n**Ashley Stirrup**\nProvide Tatev with access to webinar recordings, AI use case videos, and other content resources helpful for AI campaign copy refinement (09:46)\nConfirm optimal landing page destination for AI campaign traffic, including AI page review and necessary adjustments (14:12)\nSupport building AI-focused competitor offer and landing page alongside Chris (31:41)\n"
+    },
+    {
+      "id": "01KT20HAH9M4TC6YA8WYPVG2CF",
+      "source": "fireflies",
+      "title": "Google Ads",
+      "date": "2026-06-05",
+      "duration_minutes": 35,
+      "summary": "The primary agenda was the development of the LaunchDarkly landing page, emphasizing messaging that underscores cost-effectiveness based on paid search data. The team discussed wireframe drafts and the importance of clear messaging to drive conversions. An integrated approach aligning AI messaging with the landing page was also suggested to enhance visitor engagement. Campaign performance analysis revealed that branded ads generated conversions, prompting the consideration of cost per acquisition bidding. Keyword strategies were refined to focus on software and product development, with insights on user behavior post-landing page indicating a need for improved retargeting strategies. The team also outlined plans to enhance reporting mechanisms for better decision-making.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Landing Pages, Google Ads, Conversion Tracking, Branded Campaigns, AI Messaging, Retargeting",
+      "action_items": "\n**Tatev Torabyan**\nCollaborate with Karen on Launch Darkly landing page wireframes to integrate designs and messaging (05:47)\nFinalize Google Ads conversion tracking integration with Nate and ensure Google Tag Manager events are properly linked to GA4 and Google Ads (20:10)\nAnalyze branded vs. non-branded search term traffic share and present findings for campaign strategy adjustment (10:46)\nShare keyword theme document with Ashley and product marketing for review and feedback (21:50)\nInvestigate experimentation landing page user flow and collaborate with Rio Dev team to map account-level visitor data for optimized retargeting (24:26)\nIncorporate funnel and site links conversion data into reporting for clearer insight on content engagement and funnel progression (26:55)\nUpdate reporting formats to a visually driven presentation style for senior stakeholders and detailed granular reports for internal reviews (30:40)\n\n**Lyndsie Berens**\nAdd Tatev to Google Ads chat with Nate and Chris, and coordinate to ensure smooth collaboration on event tracking and conversions setup (33:45)\nInitiate conversation with Elise about AI positioning and messaging for branded campaigns, include Karen in communications related to homepage revamp (12:36)\nInvestigate post-landing page user behavior and refine retargeting opportunities with assistance from Nathaniel’s work on user pathways (24:49)\nPrepare to launch webinar/event related to ads strategy to deepen LinkedIn and Google Ads integration and conversion funnel efforts (29:42)\nSupport refinement of reporting style with visual emphasis and help facilitate Ashley’s biweekly attendance for high level updates (31:20)\n\n**Ashley Stirrup**\nReview Tatev’s keyword theme document and provide feedback (21:41)\nJoin collaboration on AI messaging for branded campaigns and homepage redesign with Karen and Elise (13:02)\nSupport strategic discussions and data sharing for Rio Google Ads segment and account surges (29:33)\n"
+    }
+  ]
+}

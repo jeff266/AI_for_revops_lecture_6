@@ -1,0 +1,30 @@
+{
+  "company": "Luke/Ashley",
+  "slug": "luke-ashley",
+  "calls": [
+    {
+      "id": "01KME499JRT19NPSZQ721ZCYGD",
+      "source": "fireflies",
+      "title": "Luke/Ashley",
+      "date": "2026-03-23",
+      "duration_minutes": 30,
+      "summary": "The discussion centered on initiating a competitive and customer-driven AI market research effort aimed at shaping future product direction and better supporting AI workflows. Key points included documenting competitor offerings and gathering customer feedback on AI coding tools, balancing broad developer needs with niche LLM tooling, and the importance of engaging with key AI customers like Anthropic and Khan Academy. Concerns were raised regarding the growing demands from Anthropic on engineering resources and the need for clear commercial terms to manage costs effectively. Additionally, the need to consolidate experimentation data was emphasized to improve visibility and aid pricing model development based on detailed usage metrics from selected customers.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "AI market research, Anthropic partnership, feature prioritization, experiment analytics, managed warehouse billing, strategic roadmap",
+      "action_items": "\n**Luke Sonnet**\nGenerate and share a credible estimate of total experiment traffic/customers' experiment scale in billions to support marketing and strategic use (22:36)\nClean up and provide detailed experiment metrics and usage data to Ashley for pricing and analysis purposes (30:05)\n\n**Ashley Stirrup**\nCoordinate upcoming AI market research efforts; collect customer input on AI tooling and roadmap feedback, and notify leadership on participant selection (02:33)\nOrganize conversations with key stakeholders at Anthropic to address feature request volume, roadmap alignment, and contract terms involving sales leadership support (14:06)\nGather data on monthly events and experiments from a sample of customers to feed into pricing model evaluation (23:51)\nFollow up with Jeremy or James for clarity on billing data pipelines and managed warehouse event tracking (30:04)\n"
+    },
+    {
+      "id": "01KH54FH5TDMDDH2M7GWFB5VV6",
+      "source": "fireflies",
+      "title": "Luke/Ashley - Kohavi Webinar",
+      "date": "2026-02-14",
+      "duration_minutes": 31,
+      "summary": "The meeting centered on planning a webinar that explores decision-making in experimentation, balancing complexity and accessibility. Luke Sonnet proposed a dual presentation format with a moderated Q&A, emphasizing interactive engagement. He will refine a 23-slide deck to highlight key takeaways while ensuring coherence between his and Ronnie's contributions, who will discuss flat results in experiments and power analysis. The team identified key themes, including long-term vs. short-term optimization and the critical role of power analysis. They aim for a 40-minute session with a respectful, dynamic interaction between speakers, allowing for productive debate and audience engagement. The focus will be on actionable insights and nuanced metric design to capture long-term value while avoiding misleading signals from short-term data.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "experimentation, flat results, long-term optimization, AI metrics, decision making, webinar planning",
+      "action_items": "\n**Luke Sonnet**\nTighten and condense the slide deck to highlight clear key nuggets and main takeaways for a 10-minute presentation segment, targeting sharing draft by Tuesday (28:10)\nClarify value propositions in slides related to long-term vs. short-term goals and multi-objective decision-making (16:15)\nPropose a webinar structure to Ronnie ahead of the next meeting, including topics and Q&A format (29:13)\nPrepare potential Q&A questions to moderate and facilitate discussion during the webinar (29:38)\nCoordinate with Ashley on defining which two core topics to cover from the set discussed (29:08)\n\n**Ashley Stirrup**\nProvide Luke with bullet points/nuggets summarizing key messages for easier slide refinement (28:10)\nStructure and send Ronnie a pre-read document summarizing Luke’s tightened deck and proposed flow before next meeting (28:33)\nConfirm webinar duration logistics and share expected timing with presenters (27:15)\n"
+    }
+  ]
+}

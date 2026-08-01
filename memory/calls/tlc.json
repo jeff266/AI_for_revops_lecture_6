@@ -1,0 +1,18 @@
+{
+  "company": "TLC",
+  "slug": "tlc",
+  "calls": [
+    {
+      "id": "01KKWGBR9RS5WHX3XZVMM5VG4B",
+      "source": "fireflies",
+      "title": "TLC: The Haystack Paradox: What happens after AI creates a million ads with Juliana J",
+      "date": "2026-03-20",
+      "duration_minutes": 69,
+      "summary": "The meeting explored the significance of creative intelligence in marketing, highlighting that creative assets are crucial for campaign performance yet often under-measured. Reports indicate that creative drives 50% of performance, yet most companies reset learnings after each campaign. Traditional funnel models are deemed outdated and need a shift toward algorithmic and exploratory approaches. While multi-armed bandits are limited in understanding ad success, effective labeling and taxonomy are vital for measuring asset performance. AI-powered labeling, combined with human oversight, ensures quality, while historical data enables learning and compounding knowledge across campaigns. The emphasis shifted from mere optimization to embracing creative exploration for sustainable growth amidst changing media landscapes.",
+      "organizer": "graham@growthbook.io",
+      "participants": 2,
+      "keywords": "creative intelligence, generative AI, content labeling, response surface methodology, multi-armed bandit, campaign optimization",
+      "action_items": "\n**Juliana Jackson**\nShare sanitized version of her presentation slides as PDF for community distribution (01:05:31)\nRespond to any follow-up questions posted in TLC calls channel after the meeting (01:05:20)\n\n**TLC Kelly**\nShare the meeting recording within a few hours after processing completes (01:05:34)\nFollow up with panel invitees and speakers for upcoming panel series (01:06:10)\n\n**Unassigned**\nMonitor and manage Zoom meeting technical setups in future calls, including video layout and audio configuration troubleshooting as discussed early in the meeting (00:00)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Hampus / Luke",
+  "slug": "hampus-luke",
+  "calls": [
+    {
+      "id": "01KKYFJSC01YC37HV0AH39YBEQ",
+      "source": "fireflies",
+      "title": "Hampus / Luke",
+      "date": "2026-03-17",
+      "duration_minutes": 45,
+      "summary": "The discussion centered on Growth Book's two experimentation engines: the frequentist engine, which applies multiple comparison corrections using methods like Holm-Bonferroni and Benjamini-Hochberg only for gold metrics, and a Bayesian engine that currently does not utilize these corrections. Luke Sonnet and Hampus explored opportunities for improving data analytics, including conducting meta-analyses using stored customer experiment snapshots. They highlighted the significance of granular data and discussed the operational challenges customers face with feature flags, noting the necessity of cleaning up stale experiments. Future initiatives include setting up hands-on demos and better documentation for customer education, while also considering how to build a more complex Bayesian model informed by historical customer data.",
+      "organizer": "hampus@growthbook.io",
+      "participants": 2,
+      "keywords": "Multiple Hypothesis Correction, Bayesian Engine, Frequentist Engine, SEO Content Strategy, Experiment Snapshots, Feature Flags",
+      "action_items": "\n**Luke Sonnet**\nProvide Hampus with help setting up sample data and local environment for experimentation practice, ideally involving Scott for web setup (10:31)\nAdd support or documentation for unadjusted p-values display and adjustment methods in the demo experiment tool (09:02)\nDiscuss with Chris about scheduling customer call invites for Hampus within his agreed availability and inform Chris to avoid adding Hampus to irrelevant meetings (43:19)\nFollow up internally to clean up or automate stale experiment notifications and documentation around temporary rollouts (40:09)\n\n**Hampus Poppius**\nCompile a ranked list of potential SEO and other content topics from current topic lists to discuss prioritization and focus (05:10)\nContinue to explore and digest Growthbook capabilities and experimentation methods to identify relevant questions and improvement areas \nReach out to Luke on Slack with any follow-up questions and progress updates, targeting a Thursday session for deeper discussion (42:55)\n"
+    }
+  ]
+}

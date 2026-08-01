@@ -1,0 +1,18 @@
+{
+  "company": "Product Analytics AI",
+  "slug": "product-analytics-ai",
+  "calls": [
+    {
+      "id": "01KNMGPKNNCSG252MHJ73MXWCD",
+      "source": "fireflies",
+      "title": "Product Analytics AI Analyst Bug Bash",
+      "date": "2026-04-07",
+      "duration_minutes": 18,
+      "summary": "The team met to discuss enhancing AI model flexibility by allowing per-chat model selection alongside organizational defaults. Features like a feedback mechanism with a thumbs-up/down system and optional freeform input were also proposed to capture user sentiment effectively. Client-side search functionality for conversation titles and first messages was confirmed to improve efficiency, with pagination planned for better performance. An evaluation framework was established to validate AI outputs through unit-test style validations, while plans for launching the Explore feature in beta with user feedback integrations were discussed. Finally, clear responsibilities were assigned to team members, ensuring alignment on design and development tasks.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 4,
+      "keywords": "AI model selection, feedback mechanism, client-side search, AI eval tests, telemetry tracking, data source selector",
+      "action_items": "\n**Jeremy Dorn**\nAdd telemetry tracking for AI chat failures and errors before launch to monitor and improve system reliability (14:15)\nSupport integration of organization default data source selection in the Explore page code, ensuring fallback behavior and proper UI placement (10:26)\n\n**Omar Elshaikh**\nImplement thumbs up/down feedback mechanism on assistant message blocks with optional freeform input after thumbs down, and event tracking for feedback (03:11)\nContinue testing AI chat behavior across different models to identify bugs, clarify prompts, and document errors and model behavior for improvements (07:46)\nAdd instrumentation for error reporting in AI chat to enhance monitoring and debugging capabilities (14:19)\nPrepare to push the Explore feature live behind beta marking and token usage protections, with monitoring for internal and external user feedback (14:30)\n\n**Johnny Martinez**\nAdvise on optimal UI placement for data source selector and feedback controls within the Explore page to ensure usability and accessibility (09:57)\nCoordinate with Nhat Ho on the implementation and UI placement of the data source selector on the Explore page (10:26)\n\n**Nhat Ho**\nImplement the data source selector on the Explore page, ensuring it respects the organization's default setting with a fallback option (09:57)\nRemove deprecated AI models from the selection list to maintain up-to-date and reliable model options for users (16:35)\n\n**Michael Knowlton**\nTest AI chat functionality with different data sources and OpenAI models, documenting issues such as API hang-ups and performance problems (15:49)\nInvestigate OpenAI dashboard access for monitoring API status to proactively detect and respond to service issues (16:25)\n"
+    }
+  ]
+}

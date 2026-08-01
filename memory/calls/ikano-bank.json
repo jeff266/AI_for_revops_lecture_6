@@ -1,0 +1,18 @@
+{
+  "company": "Ikano Bank &",
+  "slug": "ikano-bank",
+  "calls": [
+    {
+      "id": "01KQQ34ARK32J47FX3M0YJPRGB",
+      "source": "fireflies",
+      "title": "Ikano Bank & GrowthBook Demonstration",
+      "date": "2026-05-05",
+      "duration_minutes": 47,
+      "summary": "Econo Bank is evaluating a feature flag platform aimed at consolidating multiple AWS setups into one flexible solution that supports various hosting options and accelerates product launches across different teams and countries. Led by Maulik Koshti, the architect team has outlined 15 technical criteria for evaluation, targeting a shortlist by year-end. Key discussions included a commitment to AWS cloud hosting in Europe, particularly in Stockholm or Frankfurt, and the potential for integrating robust API and automation tools. Future experimentation capabilities and metric integration with existing data warehouses were also emphasized as part of the growth strategy.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "Feature Flags, Experimentation, Digital Transformation, CI/CD Integration, AWS Redshift, SaaS European Hosting",
+      "action_items": "\n**Maulik Koshti**\nComplete evaluations of other feature flag platforms and submit a final report about the shortlist within the current week (45:24)\n\n**James Shannon**\nShare GrowthBook’s roadmap and timeline for European SaaS cloud hosting availability (10:48)\n\n**Logan Bates**\nProvide documentation and details regarding API usage for CI/CD pipeline integration, including possible GitHub Actions support (28:25)\n\n**GrowthBook team (James Shannon / Logan Bates)**\nRemain available for any follow-up questions, support, or further product demonstrations as requested by Ikano (46:00)\n"
+    }
+  ]
+}

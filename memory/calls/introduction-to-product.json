@@ -1,0 +1,30 @@
+{
+  "company": "Introduction to Product",
+  "slug": "introduction-to-product",
+  "calls": [
+    {
+      "id": "01KN7ZZ3790SNQG2XPANZVGJAX",
+      "source": "fireflies",
+      "title": "Introduction to Product Design team",
+      "date": "2026-04-02",
+      "duration_minutes": 29,
+      "summary": "The team discussed efforts to create a more cohesive design system, involving cross-functional contributors including Kari Kay, Johnny Martinez, Omar, Teresa, Adriel, and Bryce. They are developing around 25 components that require refinement and governance for consistent UX. A need for effective Figma access for engineers was highlighted, particularly for Omar and Nhat Ho. The conversation included challenges with integrating frontend components due to unique selectors and ongoing troubleshooting. Additionally, product analytics with its inherited charting library faces readability issues, prompting Nhat to explore lighter alternatives. The meeting emphasized collaborative efforts to tighten code reviews and improve communication, as well as the importance of varying perspectives, particularly relating to accessibility needs due to Nhat's colorblindness.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 3,
+      "keywords": "Design system, Figma, Product analytics, Frontend development, Color accessibility, Charting library",
+      "action_items": "\n**Nhat Ho**\nFollow up with Michael Knowlton regarding the choice and potential alternatives for the charting library used in product analytics (11:40)\nReview and contribute to design system components, specifically focusing on frontend implementation and color issues (15:50)\nComment on UI issues such as alignment and colors in analytics charts and raise those for improvement (08:30)\n\n**Kari Kay**\nSend Figma design system file link to Nhat Ho (20:59)\nAdd Nhat Ho to upcoming design system cohort meetings after spring break when more team members return (28:15)\nPrepare for detailed discussion on component implementation and selector customization on coming Friday meeting (21:40)\n"
+    },
+    {
+      "id": "01KGJRB45GDSXP7F8DACQ99X1T",
+      "source": "fireflies",
+      "title": "Introduction to Product Design Team",
+      "date": "2026-02-03",
+      "duration_minutes": 39,
+      "summary": "The meeting highlighted the challenges and supportive culture surrounding the onboarding process, with Johnny Martinez and Teresa Yung discussing their initial difficulties in navigating the complex product environment. Johnny shared that despite having prior experience, the current platform's intricacies required time to understand fully, while Teresa noted confusion between features and experiments. The design team, led by Johnny and Kari, is agile and responsive, focusing on product analytics and design systems, which may necessitate future hiring. The company is experiencing steady growth, fostering a collaborative atmosphere, and team members balance their roles with personal commitments, enhancing community engagement and personal development. Geographic locations, such as Johnny's in Maple Valley and Teresa's in San Diego, contribute to their work-life balance and shared values around sports and community involvement.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 3,
+      "keywords": "Onboarding, Product Analytics, Basketball Coaching, Family Sports, Real Estate, Wildlife",
+      "action_items": "\n**Johnny Martinez**\nContinue collaborating with Kari on product analytics and design system projects (37:44)\nSupport Teresa by pointing her to resources and helping her onboard as needed (37:36)\n\n**Teresa Yung**\nContinue deepening understanding of feature/experiment distinctions and product interactions (02:40)\n"
+    }
+  ]
+}

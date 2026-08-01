@@ -1,0 +1,18 @@
+{
+  "company": "Jess Lin and",
+  "slug": "jess-lin-and",
+  "calls": [
+    {
+      "id": "01KNNAD3ANRXSTNGMY7F0PM09Z",
+      "source": "fireflies",
+      "title": "Jess Lin and Ashley Stirrup",
+      "date": "2026-04-10",
+      "duration_minutes": 28,
+      "summary": "GrowthBook reported doubling its revenue to $8 million in 2023, mainly from enterprise sales and self-serve models, with 75% of revenue coming from enterprises. Key wins include major clients such as Salesforce and Dropbox. The company is focusing on embedding AI into its workflows to automate feature testing and analytics, improving the accuracy of feature deployment. Marketing strategies are being enhanced to include traditional sales efforts, highlighted by a podcast initiative for lead generation. The developer advocacy role is evolving to engage the community through coding demos and feedback loops while improving documentation practices to facilitate better user onboarding.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, A/B testing, Developer Advocacy, Podcast, AI integration, Product Analytics",
+      "action_items": "\n**Ashley Stirrup**\nIntroduce Jess Lin to Scott Bailey, Technical Product Marketing Lead, via email to facilitate next steps in the recruitment process (28:15)\n\n**Jess Lin**\nPrepare for the next conversation with Scott Bailey following Ashley's introduction to discuss potential fit and role details further (28:21)\n"
+    }
+  ]
+}

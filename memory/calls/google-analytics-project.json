@@ -1,0 +1,30 @@
+{
+  "company": "Google Analytics Project",
+  "slug": "google-analytics-project",
+  "calls": [
+    {
+      "id": "01KPMKTF9K8XEF4TGM9G3PF5HC",
+      "source": "fireflies",
+      "title": "Google Analytics Project - Timothy",
+      "date": "2026-04-20",
+      "duration_minutes": 19,
+      "summary": "The team plans to shift from gtag to Google Tag Manager to enhance event tracking on their new Webflow website, enabling better management of tags for various platforms like Google Analytics and HubSpot. Key tracking goals include understanding user journeys, form submissions, and conversion funnels to guide content strategies. Custom event listeners will be incorporated to capture conversions from forms without thank you pages. The setup is estimated to take 3 to 4 days, with data collection beginning after 24 hours of activation. The Ad Specialist emphasized the importance of integrating paid ads with robust tracking to optimize performance, while also balancing paid traffic with organic growth strategies.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Google Tag Manager, GA4, Webflow, HubSpot forms, tracking events, digital ads",
+      "action_items": "\n**Ashley Stirrup**\nConfirm and provide admin access to Google Tag Manager, GA4, Google Ads accounts, and Webflow backend to enable installation of the Tag Manager container (04:29)\nShare updated documentation and specifications of desired tracked events and Call-To-Action (CTA) clicks to guide Google Tag Manager setup (08:27)\n\n**Karen Henke**\nFurther define and refine CTA clicks and conversion goals to support accurate tracking implementation and funnel creation (06:43)\nCollaborate on documentation and naming conventions for tracking events, potentially using Notion or spreadsheets to maintain consistency and scalability (15:30)\n\n**Ad Specialist**\nProvide instructions or a code snippet for Google Tag Manager container installation if full backend access is not granted (05:19)\nSet up Google Tag Manager events for form submissions, page visits, user journeys, scroll depth, and relevant cross-domain tracking as discussed (06:46)\nCreate Looker Studio dashboards for campaign and website performance reporting to provide client insights (14:22)\nMaintain ongoing communication with clients via Upwork or other agreed channels and manage project tracking tools like Notion or spreadsheets (14:37)\n"
+    },
+    {
+      "id": "01KPMKQC7N0MAQH7MMKCX3D3FK",
+      "source": "fireflies",
+      "title": "Google Analytics Project - Jordi",
+      "date": "2026-04-20",
+      "duration_minutes": 27,
+      "summary": "The team discussed the implementation of Google Analytics 4 (GA4) and Google Tag Manager (GTM) to enhance event tracking on their new Webflow-built website. They prioritized the integration of GA4 and GTM for monitoring custom events, moving beyond standard page views to capture specific user interactions like button clicks. Jordi emphasized validating Webflow's compatibility with GTM for effective event tracking. The initial implementation plan spans about 40 hours over two weeks, rolling out event tracking incrementally for data accuracy. They prefer using BigQuery for its easier integration with other marketing tools and decided to utilize Notion for task tracking and team collaboration. Immediate next steps include reviewing the Webflow setup and planning a follow-up meeting for alignment on project scope.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "GA4, Google Tag Manager, Webflow, BigQuery, Clickhouse, Event Tracking",
+      "action_items": "\n**Ashley Stirrup**\nProvide Jordi with access to the current Webflow website and live site URLs to assess GTM integration (21:00)\nShare the event tracking spreadsheet with Jordi for review (15:29)\nSchedule follow-up meeting with Jordi after initial review of website and event tracking spreadsheet (26:23)\n\n**Jordi Crespo**\nReview the event tracking spreadsheet and website URLs to assess how Webflow supports custom event tracking and GTM integration (19:52)\nInvestigate Webflow limitations on custom events and propose implementation plan (23:50)\nDevelop initial event tracking plan and create project tickets, prioritizing implementation phases (19:52)\nProvide cost and time estimates based on the scope of work for GA4, GTM, BigQuery or Clickhouse integration, and Looker dashboards (23:50)\nAdvise on whether orchestration tools (e.g., Google Cloud workflows, Airflow) are needed or can be installed for pipeline automation (10:48)\n\n**Karen Henke**\nCoordinate internal refinement of event tracking list and manage ticketing system setup in Notion for website tracking and other requests (15:42)\nDetermine internal discussions about technology choices BigQuery vs Clickhouse for data warehousing and integration (25:39)\n"
+    }
+  ]
+}

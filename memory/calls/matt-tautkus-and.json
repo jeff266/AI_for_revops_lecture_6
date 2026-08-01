@@ -1,0 +1,30 @@
+{
+  "company": "Matt Tautkus and",
+  "slug": "matt-tautkus-and",
+  "calls": [
+    {
+      "id": "01KPVZRBR4NDFM2F38C41GMACW",
+      "source": "fireflies",
+      "title": "Matt Tautkus and Ashley Stirrup",
+      "date": "2026-04-24",
+      "duration_minutes": 15,
+      "summary": "The team agreed to refine the data ingestion scope by focusing on high-value data sources like LinkedIn, Google Ads, HubSpot, GA4, and Growth Book signups, cutting costs almost in half. They chose an incremental approach to onboarding essential data, enhancing ROI through immediate actionable insights. A primary objective is linking ad impressions to resulting conversions despite the complexities of multi-visit customer journeys. To achieve accurate attribution, they emphasized integrating HubSpot CRM data with GA4 and paid social platforms. Growth Book data will initially focus on sign-up metrics, deferring in-depth product usage analytics to streamline processes. Finally, ClickHouse was selected as the data warehousing solution due to its familiarity and long-term viability, with a revised proposal expected soon to reflect these changes.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Data Warehousing, Attribution Analysis, Google Ads, HubSpot, Growth Book, ClickHouse",
+      "action_items": "\n**Matt Tautkus**\nSend a revised proposal with reduced scope and cost reflecting trimmed data sources and focus on critical datasets including paid ads, HubSpot, GA4, and limited Growth Book data (15:00)\nProvide recommendations on data warehousing tools and confirm suitability of ClickHouse with Ashley before finalizing the decision (13:30)\n\n**Ashley Stirrup**\nConfirm internal decision about continuing with ClickHouse for the data warehouse solution (14:45)\nReview the revised proposal once received from Matt and decide on next steps for project implementation (15:05)\n"
+    },
+    {
+      "id": "01KNSYW9AC10TT2ECP1E4GN4PV",
+      "source": "fireflies",
+      "title": "Matt Tautkus and Ashley Stirrup",
+      "date": "2026-04-10",
+      "duration_minutes": 28,
+      "summary": "The discussion centered on developing a scalable data integration and analytics framework, utilizing Clickhouse to set up a phased data warehouse. The initial phase involves daily raw data ingestion from various sources, followed by transformation and reporting enhancements. Recommendations included the use of ETL tools like Rivery and Fivetran to facilitate smooth data ingestion from platforms such as HubSpot and Google Analytics. The importance of a universal customer identifier, specifically HubSpot ID, was emphasized for accurate attribution and customer journey tracking. Finally, a milestone-driven approach was proposed for project planning, alongside considerations for data privacy as the volume of data grows.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Data Warehousing, Marketing Analytics, Phased Implementation, Customer Attribution, ETL Tools, Scalable Data Infrastructure",
+      "action_items": "\n**Ashley Stirrup**\nShare the prioritized list of data sources and notes from this meeting with Matt to facilitate proposal development and alignment (26:57)\nCoordinate with Tim to discuss and refine the company’s overall data strategy before proceeding with detailed project execution (26:46)\nSend meeting notes and relevant documentation through Granola to Matt to support proposal preparation and project clarity (27:10)\n\n**Matt Tautkus**\nReview the shared prioritized list of data sources and investigate available connectors, focusing on third-party ETL tools like Rivery and Fivetran to plan efficient data ingestion (26:53)\nDraft and send a phased project proposal outlining key milestones for data ingestion, transformation, and reporting layers to establish clear deliverables and timelines (25:46)\n"
+    }
+  ]
+}

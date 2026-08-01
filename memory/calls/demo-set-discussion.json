@@ -1,0 +1,18 @@
+{
+  "company": "Demo Set Discussion",
+  "slug": "demo-set-discussion",
+  "calls": [
+    {
+      "id": "01KSHXH58HTEGFWVCJ8N8HY2NQ",
+      "source": "fireflies",
+      "title": "Demo Set Discussion",
+      "date": "2026-05-28",
+      "duration_minutes": 0,
+      "summary": "The meeting addressed the successful launch of version 4.4 as a significant milestone, with plans for continuous feature rollouts to support marketing and sales. Key discussions included the development of sales enablement materials and the creation of a high-quality, vertical-specific demo environment with realistic data. The team's demo strategy is shifting to emphasize AI-driven experimentation, catering to customer maturity and needs. Improved observability features and insights are being integrated into the platform to enhance demo impact. Collaboration on demo infrastructure and scripting is ongoing, with engineering support essential for data management and automation, ensuring effective demos.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 7,
+      "keywords": "Demo environment, AI integration, Vertical targeting, Sales demos, Feature flags, Experiment dashboards",
+      "action_items": "\n**Scott Bailey**\nCollaborate with Luke and engineering to build out the demo environment and acquire enterprise licensing (29:49)\nPrioritize vertical-focused demo projects and gather sample data and experiment types for these verticals (29:49)\nAssist in refining and merging demo flow scripts created by sales with the demo infrastructure (30:54)\n\n**Luke Sonnet**\nManage demo data creation, setup, and refresh mechanisms for the demo environment (29:49)\nCoordinate with sales and engineering on experiment data and demo flow specifications (29:49)\nEnsure demo environment cleansing and purging processes are implemented and maintained weekly (30:32)\n\n**Sales Team (Jake Heier, Dan Wathne, Logan Bates)**\nDevelop and script demo flows, especially AI-first and output-oriented demo narratives (30:54)\nProvide input on which customer verticals and use cases should be reflected in the demo data setup (24:08)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Ashley / Kari",
+  "slug": "ashley-kari",
+  "calls": [
+    {
+      "id": "01KH5VAYTMPVRDTJ62BCQ2QACJ",
+      "source": "fireflies",
+      "title": "Ashley / Kari",
+      "date": "2026-02-11",
+      "duration_minutes": 14,
+      "summary": "The team convened to finalize the website design, emphasizing a balance between modern aesthetics and practical constraints. Key decisions included locking in design elements to prevent delays, exploring light and dark modes for optimal user engagement, and incorporating animations for enhanced interactivity. Participants, including Kari and Ashley, discussed the importance of maintaining a clear design vision while addressing stakeholder feedback and vendor capabilities. They aimed to streamline visual components to improve user experience and planned for gradual enhancements despite resource limitations. The urgency to finalize the homepage design was highlighted, with preparations for stakeholder reviews to ensure alignment before proceeding to additional pages.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "website design, dark mode, light mode, animation, user engagement, design feedback",
+      "action_items": "\n**Kari Kay**\nContinue working with the design team to finalize the animation and design treatments for components, ensuring reductions in excessive revisions (04:00)\nProvide clear visual guidance and mockups for the design team to lock in the approach, especially relating to dark mode vs. light mode treatments and animation specifics (10:30)\nCoordinate with Karen to ensure all content updates and design changes are communicated to the team, maintaining alignment at every step (13:55)\nEnsure the design components are flexible to support both light and dark modes for upcoming webpage builds (12:50)\nManage pressure on design resources and avoid doing too much of the work intended for the design team; advocate for more independent delivery (10:20)\n\n**Ashley Stirrup**\nReview and provide final feedback on the preferred animation style for the hero section, leaning towards either a single animation or multiple tabs, to enhance user engagement (05:25)\nMonitor the evolving design work and provide input on dark vs. light mode preferences and graph animation styles as the iterations proceed (11:30)\n"
+    }
+  ]
+}

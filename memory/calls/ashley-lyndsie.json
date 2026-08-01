@@ -1,0 +1,30 @@
+{
+  "company": "Ashley / Lyndsie",
+  "slug": "ashley-lyndsie",
+  "calls": [
+    {
+      "id": "01KX3XFHMGHE5D04AJSQK2H8M9",
+      "source": "fireflies",
+      "title": "Ashley / Lyndsie - DG Role",
+      "date": "2026-07-10",
+      "duration_minutes": 0,
+      "summary": "The team discussed ongoing challenges in finding a suitable candidate for the Director of Growth position, noting that none of the interviewed candidates felt like a strong fit. Lyndsie Berens expressed her concerns about aligning her expectations with the current market conditions influenced by layoffs, emphasizing the importance of taking time to find the right fit. The conversation also highlighted the mismatch between candidates' preferences for strategic versus execution roles, along with suggestions to improve interview techniques. Furthermore, the team considered shifting focus from Account-Based Marketing (ABM) to nurturing existing accounts based on product usage data for better ROI. Ashley Stirrup shared insights on using AI tools to enhance email personalization, while the cultural fit and execution expectations were stressed as critical factors in hiring.",
+      "organizer": "lyndsie@growthbook.io",
+      "participants": 2,
+      "keywords": "hiring challenges, candidate interview, strategy vs execution, ABM, AI outreach, internal pay structure",
+      "action_items": "\n**Lyndsie Berens**\nContinue providing detailed feedback to Amelia after each candidate interview to refine candidate pool and hiring criteria (02:08)\nMove forward with Redis candidate for the DG role and coordinate next steps regarding title and pay discussions with Ashley’s support (11:02)\nReassess time spent on ABM activities, focus more on nurturing existing accounts in the system and prioritize higher potential leads over cold outreach (12:07)\n\n**Ashley Stirrup**\nAssist Lyndsie with navigating internal pay and title structures during candidate offer discussions (11:20)\nContinue exploring and refining AI-assisted personalized outreach via Rio tool to improve targeting and messaging quality (13:15)\n"
+    },
+    {
+      "id": "01KS3K8R6C61N54NZMFAVEMKH6",
+      "source": "fireflies",
+      "title": "Ashley / Lyndsie",
+      "date": "2026-05-22",
+      "duration_minutes": 21,
+      "summary": "The discussion centered around strategies for improving lead generation and account engagement, particularly through a podcast initiative led by Ashley Stirrup. Aiming for 20 podcasts monthly, the program faces challenges in converting listeners to demos, necessitating a more nuanced outreach strategy. Emphasis was placed on utilizing podcasts as Account-Based Marketing (ABM) assets to connect with diverse stakeholders within target companies. Key content themes were identified, including AI adoption and scaling experimentation, with workshops suggested to encourage idea generation. Additionally, plans for webinars and conference speaking opportunities were discussed to enhance visibility and brand engagement, alongside ongoing efforts to refine CRM tools for improved sales and marketing alignment.",
+      "organizer": "lyndsie@growthbook.io",
+      "participants": 2,
+      "keywords": "Lead Generation, Account-Based Marketing, Podcast Promotion, AI Adoption, Experimentation Workshops, Sales Scoring",
+      "action_items": "\n**Ashley Stirrup**\nIntroduce Lyndsie to Ford Credit podcast lifecycle and lead generation process to ensure smooth onboarding and understanding of current initiatives (00:55)\nEmail Ben at Fixer to confirm the chosen webinar date and attempt to include Leia, his head of product or product growth, as co-presenter for joint webinars (09:09)\nAdd Lyndsie to Athena HQ tool and Rio Slack channel to improve project involvement and communication (11:17)\nFollow up on Athena HQ data issues and refine AI visibility prompts with the customer success team to enhance marketing segmentation and targeting (13:11)\n\n**Lyndsie Berens**\nEmail Ronnie to confirm webinar details and coordinate Luke’s participation, including checking Luke’s availability and topics to discuss (08:49)\nLearn Apollo and Rio segments, investigate ICP and configurations to support marketing and sales scoring efforts effectively (09:55)\nMonitor and support customer IO email campaign to ensure timely delivery amid busy product launch schedules (07:25)\nContinue product learning and contribute to AI and conference preparation including collaboration with Chris on OP Methods meeting (09:30)\n"
+    }
+  ]
+}

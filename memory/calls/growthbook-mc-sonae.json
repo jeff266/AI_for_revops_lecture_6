@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook<>MC Sonae",
+  "slug": "growthbook-mc-sonae",
+  "calls": [
+    {
+      "id": "01KVNRBCG2TE7JA330ZHBYQXBY",
+      "source": "fireflies",
+      "title": "GrowthBook<>MC Sonae",
+      "date": "2026-06-23",
+      "duration_minutes": 0,
+      "summary": "The discussion focused on forming a strategic partnership between MC Sonae and Growth Book, highlighting a phased procurement plan that begins with a small user base for initial validation before scaling up. Cesar proposed a tiered pricing model with a $12,500 platform fee for the first year and $500 per user up to 50 users, addressing budget constraints around standard enterprise pricing. Ryan confirmed the suitability of Growth Book's offerings but acknowledged the need for pricing adjustments while seeking user growth estimates for tailored proposals. Both parties stressed the importance of pilot programs for validating the product's business impact before wider adoption, alongside a desire for long-term collaboration and success metrics. The meeting concluded with a commitment to finalizing agreements by the end of July to align with fiscal timelines.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, feature flags, enterprise licensing, procurement, pricing negotiation, long-term partnership",
+      "action_items": "\n**RIBEIRO Cesar Vieira**\nShare user ramp estimation spreadsheet with GrowthBook team to support pricing and rollout planning (33:20)\nConsult colleagues to provide best possible user growth estimates over 3, 6, and 12 months to inform pricing and adoption strategy (29:48)\n\n**Christian Liebenow**\nCollaborate with MC Sonae’s experimentation team to validate prior A/B test results and confirm realistic KPI improvement estimates for ROI alignment (15:18)\n\n**Ryan McGurk**\nReview MC Sonae’s proposed tiered pricing and payment options; prepare and present multiple pricing scenarios reflecting payment schedules and user growth paths (31:47)\n"
+    }
+  ]
+}

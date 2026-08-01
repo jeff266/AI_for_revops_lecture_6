@@ -1,0 +1,18 @@
+{
+  "company": "Sync with Kelli",
+  "slug": "sync-with-kelli",
+  "calls": [
+    {
+      "id": "01KGGA1N73M10707AFFFN8A0XT",
+      "source": "fireflies",
+      "title": "Sync with Kelli",
+      "date": "2026-02-03",
+      "duration_minutes": 37,
+      "summary": "Khan Academy has rebuilt its experimentation platform by adopting Growth Book to address scale, cost, and integration challenges, following the deprecation of its legacy AB testing platform in 2019. The choice of Growth Book was influenced by its open-source nature, cost efficiency, and compatibility with existing data pipelines, supported by funding from the Gates Foundation. The platform allows simultaneous experiments and supports feature flags, enhancing engineering flexibility. Additionally, Khan Academy leverages AI-driven evaluation for its generative AI tutor, Khanmigo, focusing on metrics like cognitive engagement and response latency while ensuring ethical governance in AB testing. The organization aims to prioritize learning outcomes and maintain a culture of data-driven decision-making, balancing innovation with ethical considerations in education.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Khan Academy, Growth Book, AB Testing, Generative AI, Khanmigo, Experimentation Culture",
+      "action_items": "\n**Kelli Hill**\nUpdate Khan Academy data and final slides before presentation, ensuring all figures are current before traveling (02:45)\nReview and possibly provide a tally of monthly experiments run within Khan Academy’s Growth Book instance (30:30)\nShare existing case study and consider updating it to reflect latest experimentation insights (31:50)\nProvide trimmed/light version of presentation for webinar or shorter customer sessions as needed (36:45)\nExplore involvement of Tushar and Bogdan in technical roundtables or webinars to share deeper expertise on Khan Academy’s experimentation technical practices (35:00)\n\n**Ashley Stirrup**\nCreate and distribute LinkedIn posts and tweets promoting Kelli’s Experimentation Island session, maintaining sensitive language around experimentation on children (30:50)\n\n**Growth Book team**\nSupport Kelli’s AI tutor quality team embedded engineer to maintain metrics fidelity within AB testing platform (29:30)\n"
+    }
+  ]
+}

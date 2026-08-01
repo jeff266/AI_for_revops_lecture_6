@@ -1,0 +1,18 @@
+{
+  "company": "Jeff Everhart",
+  "slug": "jeff-everhart",
+  "calls": [
+    {
+      "id": "01KNZRYY4RBVS96Q753A53PV8F",
+      "source": "fireflies",
+      "title": "30 min with Scott (Jeff Everhart)",
+      "date": "2026-04-13",
+      "duration_minutes": 42,
+      "summary": "The discussion highlighted Jeff Everhart's background, focusing on his recent project 'Collab IO' built with Next JS, Prisma, and SQLite for real-time benchmarking and ease of use. Jeff emphasized his approach of incorporating TypeScript for clarity while minimizing setup friction. He also noted the importance of using popular tools like Prisma for broader developer adoption. The conversation explored the shift toward AI-driven coding and Jeff's validation of this trend. Community engagement strategies were discussed, particularly the role of high-quality developer content, contrasting DevRel and technical product marketing roles. Additionally, growth strategies for Growth Book were outlined, noting its unique positioning as a warehouse-native, open-source tool catering to technical users.",
+      "organizer": "scott@growthbook.io",
+      "participants": 3,
+      "keywords": "Developer advocacy, Technical product marketing, Next.js, AI-assisted coding, Open source feature flags, Enterprise audience engagement",
+      "action_items": "\n**Jeff Everhart**\nProvide ongoing feedback on free/pro tier perceptions and upgrade path to Growth Book team (40:07)\n\n**Scott Bailey**\nRecruiter Ashley to follow up with Jeff about next steps in the hiring process (41:18)\nImplement upcoming pricing and packaging changes while incorporating user and community feedback (39:37)\n"
+    }
+  ]
+}

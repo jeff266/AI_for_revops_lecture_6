@@ -1,0 +1,18 @@
+{
+  "company": "Rob and James",
+  "slug": "rob-and-james",
+  "calls": [
+    {
+      "id": "01KM06D7S9BCWK480EXNQ7WMVN",
+      "source": "fireflies",
+      "title": "Rob and James Shannon",
+      "date": "2026-03-25",
+      "duration_minutes": 29,
+      "summary": "The team discussed adopting an experiment-based pricing model for large accounts, recognizing the challenges of fluctuating user numbers under seat-based pricing. Proposed pricing ranges from $150 to $300 per experiment, with discounts for higher volumes, and annual billing suggested for better management. Support strategies were also a focus, with the introduction of a UK-based GrowthBook team to improve regional support and a clear escalation path for customer issues. Additionally, insights from customer feedback highlighted GrowthBook's appeal due to its cost-effectiveness and cookie-less experimentation capabilities, which fostered high satisfaction and engagement. The meeting emphasized leveraging AI tools to streamline processes and boost Future GrowthBook adoption.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "experiment-based pricing, GrowthBook, feature flags, AI automation, Pro vs Enterprise plans, customer support",
+      "action_items": "\n**James Shannon**\nFollow up with Rob about setting up a session with customer success to explore MCP server and AI-enhanced capabilities (24:30)\nContinue to be a support escalation contact and resource for Rob and Which team (28:05)\n\n**Cary Rakin**\nAct as dedicated account manager for Which, maintaining open communication and support via Slack and escalation as needed (12:07)\nShare experiment-based pricing approach and collaborate with James and Rob on refining pricing models (03:04)\nMonitor and improve governance for Pro user/instance limitations with input from Sales and support teams (06:53)\n\n**Rob Aherne**\nProvide more context or feedback related to GrowthBook use and experimentation process at Which as needed (18:06)\nConsider engaging with GrowthBook on MCP server and AI use cases for operations and reporting (26:08)\n"
+    }
+  ]
+}

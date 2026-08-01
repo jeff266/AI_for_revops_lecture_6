@@ -1,0 +1,18 @@
+{
+  "company": "Elyse & Ashley",
+  "slug": "elyse-ashley",
+  "calls": [
+    {
+      "id": "01KM8XC6HRJKYSQ6JMZ5Q1GRQQ",
+      "source": "fireflies",
+      "title": "Elyse & Ashley",
+      "date": "2026-03-23",
+      "duration_minutes": 30,
+      "summary": "Elyse Fox's onboarding process was discussed, emphasizing her role in product marketing and how it intersects with Scott's responsibilities in technical marketing. The meeting outlined the structured collaboration between them, including scheduled meetings and shared resources. Elyse received early access to essential sales enablement materials and AI tools to support her integration. The discussion also highlighted the importance of familiarizing her with technical aspects and relevant team members for a cohesive work environment. Additionally, the meeting addressed the evolving customer success function and the need for strong collaboration across teams to enhance both marketing and sales enablement efforts.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Onboarding, Product Marketing, Sales Enablement, AI Tools, Customer Success, Terminal Usage",
+      "action_items": "\n**Elyse Fox**\nReview and familiarize with onboarding document and company tools sent by Ashley (03:35)\nMeet with Scott later the same day to discuss roles and technical onboarding (03:51)\nReach out to Jennifer regarding Rippling access lockout and retreat details, including spouse attendance logistics (06:27)\nCatch up on Ronnie Kohavi book club chapters and locate a recording of the first meeting (09:55)\nReview sales enablement materials in the marketing drive and sales deck shared by Ashley (20:09)\nTest Notion access and notify Ashley if higher plan upgrades are necessary (22:01)\nExplore terminal usage basics and Growth Book sandbox setup with Scott (26:41)\nPrepare a fun fact for the upcoming company all-hands meeting (29:22)\n\n**Ashley Stirrup**\nSend onboarding document and ensure Elyse has full access to shared drives and sales enablement folders (03:29)\nProvide Elyse access to Notion and monitor her need for plan upgrades (21:57)\nCoordinate with Scott to facilitate Elyse’s technical product marketing onboarding, including GitHub and terminal guidance (26:45)\nFollow up on AI content creation project and evaluate Elyse’s support needs on AI-based marketing tools (10:41)\nSupport Elyse in understanding customer success and sales enablement alignments (18:25)\nPrepare and share access to AI and call transcript tools and plan transition to Gong (23:45)\nArrange follow-up meetings around the company all-hands schedule (29:38)\n"
+    }
+  ]
+}

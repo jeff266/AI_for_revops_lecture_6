@@ -1,0 +1,18 @@
+{
+  "company": "Nhat & Johnny",
+  "slug": "nhat-johnny",
+  "calls": [
+    {
+      "id": "01KVBJWBEJJBK36480A1G3JE4K",
+      "source": "fireflies",
+      "title": "Nhat & Johnny",
+      "date": "2026-06-17",
+      "duration_minutes": 15,
+      "summary": "The team discussed key improvements in product visualization, notably in chart clarity and user interface for better data presentation. Significant enhancements were made to the line chart's opacity and tooltips, allowing for clearer comparison of current and previous values. Custom date range selection faced UX challenges, with discussions on color differentiation to reduce user confusion. There was a focus on bar chart visuals, analyzing overlay and offset techniques for clearer comparisons. Additionally, the big number display was expanded to allow multiple metrics, pending leadership input. Bugs in date input and legend customization were highlighted as needing resolution to maintain a smooth user experience. The meeting emphasized the prioritization of custom date range UX and bar chart improvements, along with plans for bug fixes and UI polishing.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 1,
+      "keywords": "custom date range, bar chart, tooltip, big number metrics, UX design, time comparison",
+      "action_items": "\n**Johnny Martinez**\nCreate and send Figma mockups for custom date range UI improvements to enhance user experience and address current UX challenges (10:20)\nCapture and share screenshots of the discussed charts and tables to serve as design references for ongoing iterations (13:55)\n\n**Nhat Ho**\nFix tooltip label display issues in custom date ranges where the selected range is not consistently highlighted, improving clarity (11:02)\nInvestigate and resolve bugs related to date range selection state resetting unexpectedly to ensure stable user interactions (12:09)\nConsult with Jeremy to confirm design constraints and intended behavior for big number metrics display, particularly regarding allowance of multiple metrics or enforcing single metric with warnings (09:14)\nRefine bar chart legend and tooltip behavior based on team feedback to improve clarity and user interaction (12:41)\n"
+    }
+  ]
+}

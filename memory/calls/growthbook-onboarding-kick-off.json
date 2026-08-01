@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook Onboarding Kick-Off",
+  "slug": "growthbook-onboarding-kick-off",
+  "calls": [
+    {
+      "id": "01KWD5E0THM7GJKQ4E28QZPVMX",
+      "source": "fireflies",
+      "title": "GrowthBook Onboarding Kick-Off",
+      "date": "2026-07-01",
+      "duration_minutes": 19,
+      "summary": "The team discussed the migration to GrowthBook, where 1,000 features are now actively used by 100,000 daily users, demonstrating solid readiness after three months. Emphasis was placed on the need for payload encryption for Enterprise use, a primary factor driving the upgrade to Enterprise features. Onboarding sessions were proposed to better guide the team, with Chris Sanders offering a detailed session. Additionally, Server-Sent Events are currently disabled to reduce hosting costs, and follow-up calls will be arranged to explore configurations to enable it at a lower cost. The Enterprise license key is pending, with team members encouraged to expedite communication via Slack for a timely resolution to unlock additional capabilities.",
+      "organizer": "chris@growthbook.io",
+      "participants": 5,
+      "keywords": "Feature Flags, Encryption, Enterprise License, Experimentation, Server-Sent Events (SSE), GrowthBook Support",
+      "action_items": "\n**Bill Hsiao**\nSend Slack message tagging James to request Enterprise license key delivery (13:28)\nDecide on need for formal experimentation onboarding call after reviewing documentation (17:06)\n\n**Chris Sanders**\nCoordinate with James for license key activation and ensure delivery by client's next business day (15:05)\nProvide ongoing support on Slack and assist with encryption or experimentation queries as necessary (08:23)\nPotentially schedule experimentation enablement call if client requests (16:14)\n\n**Ciao Chiang**\nFacilitate backend engineer’s communication with Chris Sanders about SSE cost issues via Slack, possibly set up a troubleshooting call (07:15)\n"
+    }
+  ]
+}

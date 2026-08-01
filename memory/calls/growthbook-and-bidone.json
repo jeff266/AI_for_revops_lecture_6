@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook and BidOne",
+  "slug": "growthbook-and-bidone",
+  "calls": [
+    {
+      "id": "01KWT071833J8V79V7839MK0TD",
+      "source": "fireflies",
+      "title": "GrowthBook and BidOne",
+      "date": "2026-07-08",
+      "duration_minutes": 34,
+      "summary": "BidOne is exploring alternatives to PostHog for feature flagging and experimentation due to rising costs and a need for self-hosting to comply with GDPR. GrowthBook was presented as a viable open-source option, emphasizing scalability and advanced experimentation features. The discussion included integration capabilities with various SDKs and APIs, essential for BidOne’s tech stack. Pricing comparisons showed similar costs between cloud and self-hosted options, and a preferred preference for self-hosting was noted. The team aims to finalize tool selection and begin technical onboarding in a timely manner, stressing the importance of detailed pricing and support for enterprise features to facilitate internal buy-in.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 6,
+      "keywords": "Feature flag, experimentation, self-hosting, AB testing, pricing, SDK integration",
+      "action_items": "\n**Dan Wathne**\nFollow up with BidOne team today with clarifying questions and resources regarding pricing and product (26:38)\nOrganize and schedule detailed technical demo session with solutions engineer for Tuesday at the same local time (24:53)\nPrepare a pricing proposal based on BidOne’s traffic, active users, and feature usage for review during Tuesday's technical demo (26:38)\nInclude pricing discussion and trial offer in technical demo to assist with commercial approval process (28:16)\n\n**Kalyan Ramaiah Asari**\nCoordinate internal preparation for pricing review and budget approval based on proposal expected after Tuesday demo (25:59)\nArrange to attend the technical deep dive demo and prepare technical questions especially related to DevOps integration and Datadog observability (23:12)\n\n**Srinivasan Arunachalam**\nProvide technical queries on SDK support, API integrations, multi-tenant feature flag management, and DevOps automation to GrowthBook team ahead of technical demo (19:54)\nParticipate in technical demo session on Tuesday to gain clarity on advanced product capabilities and integrations (25:52)\n\n**Nevin Ma**\nCollaborate with team to define metrics and experiment goals for GrowthBook integration on new platform (01:29)\nAssist in evaluating response time and configuration impact of feature flag rollouts and monitoring (15:50)\n"
+    }
+  ]
+}

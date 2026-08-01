@@ -1,0 +1,18 @@
+{
+  "company": "Office Hours with",
+  "slug": "office-hours-with",
+  "calls": [
+    {
+      "id": "01KXPHNDTD9RVX0ANWBB4ZQTQR",
+      "source": "fireflies",
+      "title": "Office Hours with Joey Mercado from Scale Venture Partners",
+      "date": "2026-07-20",
+      "duration_minutes": 6,
+      "summary": "The meeting emphasized the importance of direct user engagement for authentic feedback and building stronger customer relationships, highlighted by Edi Danalache's firsthand experience at a Formula One Grand Prix. Discussions included the collaborative approach of the team in capturing user insights and improving note-taking protocols for accountability. Graham McNicoll raised concerns about meeting host controls and note-taker permissions to streamline collaboration, while there was a suggestion to formalize participant roles to reduce interruptions. The informal sharing of personal experiences, such as Edi's attendance at the Grand Prix, contributed to a positive team culture, with Siddharth Ramakrishnan displaying leadership in engaging with team members' experiences, reinforcing a supportive environment for communication and innovation.",
+      "organizer": "graham@growthbook.io",
+      "participants": 2,
+      "keywords": "Formula One, Grand Prix, McLaren, Paris, event parking, meeting note taker",
+      "action_items": "\n**Graham McNicoll**\nManage the removal or control of the note taker feature in the meeting interface to ensure proper meeting flow (04:59)\n"
+    }
+  ]
+}

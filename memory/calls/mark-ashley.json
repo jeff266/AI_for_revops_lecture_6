@@ -1,0 +1,18 @@
+{
+  "company": "Mark/Ashley",
+  "slug": "mark-ashley",
+  "calls": [
+    {
+      "id": "01KM9HZHVBZJVEEH9N507H46P6",
+      "source": "fireflies",
+      "title": "Mark/Ashley",
+      "date": "2026-03-23",
+      "duration_minutes": 29,
+      "summary": "The meeting addressed crucial financial planning and strategic growth issues. Mark Beltran was brought on board to enhance financial visibility and establish a financial review cadence, with Ashley Stirrup advocating for quarterly reviews initially. Mark emphasized creating a financial model to inform hiring and marketing strategies, targeting better alignment with board expectations. The board encouraged the team to increase large customer accounts and transition to a usage-based pricing model amidst challenges like a 50% churn rate among Pro customers. Additionally, the team discussed the importance of data cleanup and accurate revenue recognition, led by a resource named Charlie for auditing systems. Improved communication and collaboration strategies, using Slack and direct meetings, were also planned to facilitate the projects.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "financial modeling, revenue cleanup, customer churn, usage-based pricing, runway planning, data systems integration",
+      "action_items": "\n**Mark Beltran**\nConnect Charlie with Ashley and coordinate initial discovery assessment on Retool, Stripe, HubSpot, and Orb systems (07:30)\nProvide Ashley with a proposal for quarterly CFO engagement and financial modeling services based on current company status (22:39)\nFollow up with Charlie to prepare mini proposal outlining estimated hours, budget, and initial project steps for leadership approval (19:36)\n\n**Ashley Stirrup**\nFacilitate system access for Charlie and coordinate with developers/owners (Michael, Jennifer, James, Ryan) to support the discovery phase (10:15)\nPresent Charlie’s mini proposal and budget recommendation to Graham to secure approval for initial cleanup engagement (19:10)\nShare full board meeting slides and hiring plans with Mark for context and planning (26:45)\nCreate Slack channel and invite Mark and Charlie for better communication and collaboration (20:50)\n"
+    }
+  ]
+}

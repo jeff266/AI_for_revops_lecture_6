@@ -1,0 +1,18 @@
+{
+  "company": "James/Kenneth",
+  "slug": "james-kenneth",
+  "calls": [
+    {
+      "id": "01KWEQQ2ZSP3XY8JJ4WM87V81B",
+      "source": "fireflies",
+      "title": "James/Kenneth",
+      "date": "2026-07-03",
+      "duration_minutes": 23,
+      "summary": "The meeting focused on establishing a clear and user-friendly workflow for integrating GrowthBook with Sanity, which is essential for brand teams to effectively run tests. Kenneth emphasized understanding how the tool fits into existing operations and proposed alternative workflows. Development plans include a deep-link feature to simplify experiment setup. Both participants discussed aligning testing focus with actual brand needs and leveraging GrowthBook’s UI for results reporting, potentially utilizing AI for summarization. The conversation also touched on the paid proof of concept model, legal alignments, and the crucial need for brand stakeholder engagement to drive adoption and successful rollout, all while acknowledging operational constraints from upcoming vacations.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, experimentation workflow, PoC, brand adoption, Claude AI, internal alignment",
+      "action_items": "\n**Kenneth Hvam Christiansen**\nProvide James with a shortlist of real test scenarios for initial experiments by Monday or Tuesday next week (08:31)\nAlign internally with brands and legal team regarding test case prioritization and legal approval before starting the PoC (15:52)\nPrepare internal briefing for brand representatives to showcase test approach and gather feedback (19:35)\n\n**James Shannon**\nReview and provide feedback on real test scenarios once Kenneth sends them (16:51)\nDevelop and share commercial model proposal including paid PoC details (18:08)\nSchedule and conduct a follow-up meeting on Thursday next week to discuss test ideas and commercial model (20:32)\nConsider future development of workflow enhancements such as deep linking between Claude, Sanity, and GrowthBook tools for improved user flow post-PoC (12:58)\n"
+    }
+  ]
+}

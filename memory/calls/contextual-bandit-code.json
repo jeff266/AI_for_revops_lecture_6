@@ -1,0 +1,18 @@
+{
+  "company": "Contextual Bandit Code",
+  "slug": "contextual-bandit-code",
+  "calls": [
+    {
+      "id": "01KT9TSJJSY6NA227KXCBHRX0Q",
+      "source": "fireflies",
+      "title": "Contextual Bandit Code Review",
+      "date": "2026-06-04",
+      "duration_minutes": 0,
+      "summary": "The team aimed to simplify data models by separating experiment rules from Contextual Bandit rules, enhancing clarity and avoiding legacy baggage. A hard cap of 14 context IDs was confirmed to manage complexity. Discussions included ensuring SDK payload generation is halted until full support is ready, as it could break existing functionalities. API adjustments are necessary to return contextual conditions alongside leaf weights, addressing frontend issues and legacy metrics for cleanup. Participants emphasized a cautious, phased rollout strategy to mitigate risks associated with incomplete features while prioritizing updates to improve type safety and separation of concerns in the implemented models.",
+      "organizer": "teresa@growthbook.io",
+      "participants": 4,
+      "keywords": "Contextual Bandit, Snapshot Model, Feature Rules, SDK Payload, Data Model, Experiment Revision",
+      "action_items": "\n**Teresa Yung**\nSend PR architecture and flow breakdown documents as needed to aid review (01:49)\nRemove obsolete snapshot settings such as seed and historical weights after confirmation (07:24)\nAdd comment clarifying context storage and referencing in contextual bandit events (14:39)\nClean up leftover AI-generated comments, ensuring unnecessary fields are removed (55:15)\nUpdate payload generation to temporarily return null to prevent breaking SDKs until full support is implemented (52:31)\nClarify and potentially refactor SDK handling for fallback leaf and old SDK version skipping (49:28)\n\n**Luke Sonnet**\nReview snapshot settings to verify which can be safely removed for simplification (07:24)\nValidate if legacy experiment rule types have been properly cleaned up or require reverting commits (15:55)\nConfirm usage and necessity of context IDs and SDK payload contents in feature rules (11:55)\nEvaluate and decide on simplifying/removing phases abstraction from contextual bandit model per discussion (35:46)\nAssist with cleaning AI comment clutter as necessary (55:15)\n\n**Jeremy Dorn**\nConduct line-by-line review of PR code, focusing on data model changes and SDK payload (03:14)\nProvide detailed comments on validators and data model design choices especially regarding context and weights (08:00)\nEnsure legacy experiment rules are marked or removed from codebase (16:17)\nPropose and comment on renaming variation fields for clarity in contextual bandit schema (40:49)\nSuggest disabling risky payload generation to avoid shipping broken features before SDK support (52:31)\nAdvise on database query safety best practices, adding safeguards around cross-organization querying (57:34)\nSubmit review comments by end of meeting (01:00:27)\n"
+    }
+  ]
+}

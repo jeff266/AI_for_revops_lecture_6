@@ -1,0 +1,18 @@
+{
+  "company": "Prep for Kohani",
+  "slug": "prep-for-kohani",
+  "calls": [
+    {
+      "id": "01KH8C63WCPAZ1ZKNAG1SPTBVA",
+      "source": "fireflies",
+      "title": "Prep for Kohani Webinar",
+      "date": "2026-02-18",
+      "duration_minutes": 46,
+      "summary": "The team collaborated on a webinar aimed at engaging a broad audience by balancing technical depth with accessibility. Ronny Kohavi will present on experimentation for 20 minutes, followed by Luke Sonnet discussing decision-making frameworks for 15 minutes, concluding with a live Q&A using Slido. Simplifying complex content was a priority to ensure clarity for product managers and newcomers. A dry run is scheduled for March 2nd, while strategies for customer engagement through workshops were discussed, including a raffle for training spots linked to Ronny's class. The team acknowledged the importance of enhancing customer relationships through case studies and proposed thorough preparations for technical and logistical aspects of the webinar.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation, Surrogate Metrics, Decision Trees, Webinar Preparation, Customer Engagement, Experimentation Class",
+      "action_items": "\n**Ronny Kohavi**\nCreate initial slide drafts for the webinar and share by Friday for feedback (23:37)\n\n**Ashley Stirrup**\nConvert Ronny’s slides into the standard purple background format and coordinate slide sharing (17:47)\nSchedule and organize a dry run on March 2nd at 4pm for testing Zoom and Slido (19:47)\n\n**Luke Sonnet**\nPrepare and share his slides about experimentation decision frameworks and metrics for Ronny and Ashley’s review by Friday (27:33)\nSupport Ashley in identifying and securing case study opportunities with key customers like Discord or Square by next week (45:10)\n"
+    }
+  ]
+}

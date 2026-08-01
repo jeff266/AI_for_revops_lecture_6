@@ -1,0 +1,18 @@
+{
+  "company": "David DAngelo and",
+  "slug": "david-dangelo-and",
+  "calls": [
+    {
+      "id": "01KJRJ8SKBWCP2FPNYKA39NR78",
+      "source": "fireflies",
+      "title": "David DAngelo and Ashley Stirrup",
+      "date": "2026-03-03",
+      "duration_minutes": 16,
+      "summary": "The team discussed strategies to enhance guest qualification for their podcast by concentrating on roles in product management and data science to gain valuable insights into A/B testing. Ashley highlighted the importance of engaging teams that are more involved in testing, as engineers typically prefer building to testing. The outreach language will emphasize A/B testing conversations, requiring guests to run at least five A/B tests. A structured vetting process led by Geoffrey will qualify potential guests, with existing ones also reviewed for their alignment with the podcast’s focus. The podcast format will become more flexible, simplifying the question framework to allow for natural discussions. Additionally, the team aims to prioritize US companies while selectively engaging European firms, coupled with plans for monthly updates on customer lists to prevent outreach overlap.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "AB testing, product management, podcast guest qualification, outreach strategy, interview preparation, customer pipeline",
+      "action_items": "\n**Ashley Stirrup**\nModify podcast guest scheduling link to allow 45-minute interview slots (08:33)\nProvide monthly updates of new customers to the outreach team to avoid targeting conflicts (15:22)\nInternally assess additional potential guests from existing contacts to identify those suitable for further steps (14:21)\n\n**David DAngelo**\nRevise outreach language to emphasize AB testing and include follow-up qualification questions (01:52)\nFollow up on scheduled guests to confirm their current AB testing practices and number of tests run (04:35)\nCoordinate email scheduling with YETI (Jenny Rocher) within 15 minutes to finalize guest appearance timing (14:04)\nFollow up with Robert McDonald to identify appropriate internal AB testing contacts (08:08)\n\n**Geoffrey Lugli**\nConduct preparatory qualification calls with all upcoming guests, using a checklist to vet AB testing relevance, and consult Ashley on uncertain cases (08:49)\nOrganize the run-of-show materials into a simplified, visual format with topics and follow-up questions to facilitate smooth interviews (11:19)\n\n**Tanner**\nInvestigate the audio dropout/noise cancellation issue on the Microsoft podcast recording and apply necessary post-production fixes (12:38)\n"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "company": "Connect",
+  "slug": "connect",
+  "calls": [
+    {
+      "id": "01KKSK03YVVV4A6M4GZ59P23RV",
+      "source": "fireflies",
+      "title": "Connect",
+      "date": "2026-03-17",
+      "duration_minutes": 27,
+      "summary": "The meeting thoroughly discussed payment and deposit handling, explaining that deposits convert to deal balances when early invoicing is enabled, and refunds occur to a client's bank when EORs leave. Billing credits were delineated as usable for admin fees only, not withdrawable to bank accounts. The bank guarantee process outlined a 5-step timeline and semi-annual reviews, contrasting it with the quicker early invoicing method. Pricing negotiations highlighted a current EOR fee and potential discounts for multi-year contracts. The team emphasized contractual transparency, noting auto-renewal clauses are negotiable. Jennifer raised regulatory concerns regarding DOJ news, which Allison addressed by assuring no current impact on business operations. A follow-up meeting was scheduled to finalize decisions.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 3,
+      "keywords": "Early Invoicing, Bank Guarantee, EOR Fees, Billing Credits, Multi-Year Contract, DOJ News",
+      "action_items": "\n**Allison Stitt**\nConfirm if deposits for existing EORs are refundable retroactively (00:00)\nProvide detailed list of items included in early invoicing (00:44)\nFollow up on contract/order form requirements for bank guarantee (12:33)\nInvestigate DOJ-related news and provide clarification to Jennifer (18:04)\nSend pricing proposals for 12- and 24-month contract options (22:46)\nSend Deal terms and service link for contract legal review (23:32)\nFollow up with Jennifer on deposit refund process and billing credit usage (09:28)\nRequest deeper discount approval from finance after receiving Rippling pricing from Jennifer (25:26)\n\n**Jennifer Pham-Le**\nReview and compare Rippling EOR seat fees with Deal pricing and share data with Allison (25:26)\nReview Deal's contract legal language via sent terms of service link (23:24)\nPrepare for follow-up meeting Friday after 1 PM Pacific to discuss onboarding and contract decisions (23:55)\n\n**Justin McGrane**\nConfirm bank guarantee contract/order form requirements and clarify the withdrawal process for deposits and billing credits (10:25)\nAssist Allison with clarifying bank guarantee steps and timing for onboarding (01:13)\n"
+    },
+    {
+      "id": "01KKF9DC8CT47JJV3KNEAW5GS4",
+      "source": "fireflies",
+      "title": "Connect",
+      "date": "2026-03-13",
+      "duration_minutes": 28,
+      "summary": "The discussion addressed the absence of a current contract with Deal for existing EOR employees, hindering potential benefits like deposit waivers. Justin proposed a one-year agreement with early invoicing that would allow monthly billing of estimated costs instead of upfront deposits, thus easing cash flow issues. Jennifer expressed interest in this agreement but requested detailed contract terms and its implications for existing employees. Planned hires include a software engineer in Canada with future needs in EMEA and APAC based on candidate quality. Concerns over declining support quality were raised, particularly regarding conflicting information from the AI chatbot and human support. Transparent communication was emphasized to foster trust and collaboration, with a follow-up call scheduled to address outstanding questions about the contract and pricing.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 3,
+      "keywords": "Employer of Record, Early Invoicing, International Hiring, Contract Agreement, Support Experience, Pricing Structure",
+      "action_items": "\n**Justin McGrane**\nSchedule a detailed follow-up meeting with Allison for Jennifer to clarify the contract, early invoicing, and its impact on multiple EOR employees (13:29)\nConfirm with Allison and commercial team details regarding seat commitments and pricing structure on the agreement (27:27)\nSend confirmation email outlining the next meeting’s agenda and ensure all relevant parties are aligned for Tuesday’s call (27:55)\nReview and provide detailed clarification of the early invoicing mechanism and contract benefits during the next call (15:43)\n\n**Jennifer Pham-Le**\nReview and compare Rippling and Deel pricing and deposit requirements for the Canadian software engineer hire (11:52)\nParticipate in the Tuesday call with Allison to evaluate contract terms and early invoicing options to decide the best solution for the team’s future hires (13:43)\nShare hiring manager feedback and timelines for potential hires in EMEA and APAC after evaluating Deel and Rippling offers (04:14)\n"
+    }
+  ]
+}

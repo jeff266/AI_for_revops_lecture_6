@@ -1,0 +1,18 @@
+{
+  "company": "Hawaii planning",
+  "slug": "hawaii-planning",
+  "calls": [
+    {
+      "id": "01KQT4DRYCXE1JATM4P3QE3A9T",
+      "source": "fireflies",
+      "title": "Hawaii planning",
+      "date": "2026-05-05",
+      "duration_minutes": 35,
+      "summary": "The meeting addressed the company's revenue performance, which is currently projecting $13-15 million, falling short of the $18-20 million target due to slipped deals. Discussion highlighted a significant drop in conversion rates after doubling the Pro product price, despite a $200,000 revenue increase. Customer churn, particularly among small buyers, was noted as a concern, emphasizing the need for dedicated ownership of retention metrics. The team also aims to grow self-serve business to 35% to minimize reliance on sales reps. Offsite planning included key workshops focused on product feedback and AI messaging, with a goal to streamline communication between sales, product, and engineering teams for improved alignment.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 2,
+      "keywords": "sales enablement, pro business retention, growth planning, AI messaging, product feedback, Hawaii planning",
+      "action_items": "\n**Ryan McGurk**\nDevelop a formal growth and revenue plan outlining targets for fiscal year 2023 (01:07)\nInitiate a prep document for the sales team to start populating product feedback insights ahead of Hawaii sessions (33:05)\nInvite sales and marketing team members to scheduled Hawaii sessions and manage any required prework (31:43)\nShare summarized win/loss analysis framework with his team to facilitate discussion preparation (31:43)\n\n**Ashley Stirrup**\nCoordinate with Elise, Scott, and others to organize a detailed enablement needs session during Hawaii trip (07:46)\nCollect and refine AI usage insights from Scott’s and Logan’s teams to prepare for AI-related workshops (09:14)\nReach out to Jennifer and confirm meeting space logistics and availability for Hawaii sessions (34:00)\nManage session scheduling around hiking and snorkeling activities to optimize engagement (18:12)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Demo reporting",
+  "slug": "demo-reporting",
+  "calls": [
+    {
+      "id": "01KQ89X6Z0PFRZNHWA5FDHYA3B",
+      "source": "fireflies",
+      "title": "Demo reporting",
+      "date": "2026-04-28",
+      "duration_minutes": 41,
+      "summary": "The team discussed the need for cleaning and standardizing demo and contact request data for reliable reporting and pipeline tracking. Significant noise in Contact Us submissions, often due to bot entries, complicates data quality and requires manual cleanup. Current demo request tracking is hindered by multiple inconsistent forms, leading to gaps in reporting. The average demo requests show seasonal variation, with efforts to improve lead qualification focusing primarily on demo requests and large company signups. Source attribution issues stemming from lost UTM parameters during signup integration were also highlighted as critical gaps. Finally, the team emphasized ongoing process improvements, such as implementing new website forms and Slack notifications, to enhance lead management and response times.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 2,
+      "keywords": "demo reporting, HubSpot forms, MQL assignment, UTM tracking, sales pipeline, form segmentation",
+      "action_items": "\n**Jeff Ignacio**\nBuild detailed demo reports based on contacts filtered by the updated demo segment and form submission data to reconcile discrepancies in demo tracking (24:55)\nPerform pipeline math analysis including average deal size, win rate, and conversion rates from meetings to demos to sales to inform sales targets and forecasting (18:42)\nAdjust HubSpot workflow filters to correctly capture demo forms with non-exact \"demo\" form names and escalate with Claude's help if needed to improve form submission reporting (39:10)\nJoin and monitor the sales response Slack channel for new demo alerts to stay updated on incoming leads and improve responsiveness (36:47)\n\n**Ashley Stirrup**\nContinue manual cleaning of gibberish test submissions from Contact Us forms monthly to improve data quality and reporting accuracy (05:25)\nMaintain and refine MQL assignment rules for demo requests and signups based on employee count and other filters to prioritize high-potential leads (28:31)\nInvestigate whether new site Captcha and form categorization reduce spam and improve lead quality for Contact Us and demo requests (25:20)\nCheck if Rio database tracks UTM parameters for signups and confirm with the data team to improve marketing attribution accuracy (32:10)\nCoordinate with Chris to clarify demo form changes, especially the move to HubSpot meeting links, and resolve related data tracking anomalies (41:10)\n\n**Jeremy**\nUpdate product signup integration to preserve original UTM parameters and pass them into HubSpot to avoid \"offline\" source tags and improve source attribution (27:54)\n\n**Chris**\nProvide clarifications on the switch to HubSpot meeting link for demo booking and resolve data tracking anomalies related to demo submissions (41:10)\n"
+    }
+  ]
+}

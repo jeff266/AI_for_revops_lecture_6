@@ -1,0 +1,18 @@
+{
+  "company": "Sales team demo",
+  "slug": "sales-team-demo",
+  "calls": [
+    {
+      "id": "01KY0TDRGM30288CPTF15VVWEV",
+      "source": "fireflies",
+      "title": "Sales team demo overview / Q&A",
+      "date": "2026-07-23",
+      "duration_minutes": 0,
+      "summary": "The meeting concentrated on shifting the demo strategy from a technical feature focus to clearly demonstrating business value, targeting a concise 15-minute format. Participants emphasized using pre-canned demo environments to streamline setup and engage customers by understanding their pain points. Introductions to ongoing technical training for sales reps were proposed, aiming to build confidence and enhance presentation skills. The narrative structure of demos was also discussed, prioritizing concise messaging and impactful talking points, while integrating continuous discovery questions to tailor the content to specific customer needs. Finally, a lightweight demo certification program aimed at ensuring structured presentations and fostering ongoing sales coaching was proposed to improve overall effectiveness.",
+      "organizer": "logan.bates@growthbook.io",
+      "participants": 11,
+      "keywords": "demo strategy, sales enablement, feature flagging, discovery questions, demo workspace, technical onboarding",
+      "action_items": "\n**Logan Bates**\nCreate and share a concise demo outline with simple, authentic talking points for each screen to aid consistent and repeatable demo delivery (37:51)\nDevelop and implement technical onboarding sessions for the sales team covering foundational concepts such as data warehouses, SDKs, and APIs to improve product knowledge and confidence (28:13)\nCoordinate with the sales team to enable integration of AI tools for dynamic demo data generation and customization linked to the demo workspace environment (19:06)\nEstablish bi-weekly office hours dedicated to demo and technical Q&A to support continuous learning and collaboration among the sales team (54:27)\nDesign and propose a light demo certification process involving individual demo walkthroughs and peer feedback reviews to enhance sales demo skills and effectiveness (54:38)\nWork with Scott Bailey to improve insights dashboard examples for demo use, emphasizing both positive and negative experiment impacts on business metrics to better illustrate product value (44:52)\n\n**Logan Bates & Scott Bailey**\nFinalize and document the use of the demo workspace environment with pre-canned, labeled feature flags and experiments; organize an enablement session to train sales on its usage (15:27)\n\n**Scott Bailey**\nLabel demo workspace projects clearly by vertical and use case to facilitate easy identification and tailoring of demos to client needs (17:33)\n\n**Cary Rakin**\nInvestigate AI assistant tools similar to Kaya for live technical question support during demos and share findings with the sales team to improve handling of technical queries (26:40)\n\n**Sales Team (General)**\nIncorporate discovery questions during demos to understand client current systems, pain points, and analytics workflows; defer complex technical questions to sales engineers while maintaining demo flow and client trust (05:05)\n\n**Sales Team**\nUse the pre-canned demo environment and examples instead of recreating demos from scratch to improve efficiency and reduce technical questions during sales presentations (13:03)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook POC",
+  "slug": "growthbook-poc",
+  "calls": [
+    {
+      "id": "01KM48304QJYNZJXMCH7J8DHFW",
+      "source": "fireflies",
+      "title": "GrowthBook POC",
+      "date": "2026-03-20",
+      "duration_minutes": 26,
+      "summary": "The team discussed the implementation of a POC plan, emphasizing the establishment of a clear framework to align resources effectively. Jake Heier highlighted the importance of clarifying use cases and involving product experts for workflow reviews to mitigate blockers. Collaboration on initial experiments was proposed by Charbel El Jalkh, with the expectation of receiving quick technical support. The integration into BigQuery was a priority for Andrew Boyton, who raised concerns about the data pipeline, while Jake agreed to involve data science experts. The team also discussed optimizing costs associated with BigQuery, mentioning strategies like batching data writes. Finally, Andrew highlighted the need for a culture shift toward data-driven experimentation, with success measured by product and data science feedback.",
+      "organizer": "jake@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, Feature Flags, BigQuery, Experimentation, SDK, Data Pipeline",
+      "action_items": "\n**Jake Heier**\nSend information about GrowthBook’s query optimization features for BigQuery (04:03)\nConsult with team and provide documentation on best practices for cost-efficient data writing to BigQuery from backend tests (09:34)\nProvide documentation explaining GrowthBook’s percentage rollout and safe rollout features with automatic rollback tied to metrics (18:44)\nAdd support engineers, solutions engineer, and head of customer success to Slack thread and facilitate introductions (20:53)\nSchedule and organize follow-up session with head of experimentation after initial POC experiment data is gathered (23:19)\nSend meeting recap summarizing discussions, next steps, and resource additions in Slack channel (25:09)\n\n**Charbel El Jalkh**\nContinue working on POC by setting up experiment to push data into BigQuery and validating Gradual rollout through GrowthBook (19:21)\nCoordinate with product managers to align on testing plans and involvement in review sessions (02:57)\nCommunicate promptly any blockers or issues encountered during POC setup (23:54)\n\n**Andrew Boyton**\nAlign data science and engineering on metrics and success criteria for experiments and data pipeline optimization (03:15)\nEvaluate GrowthBook in parallel with Optimizely using backend AA tests, focusing on metrics integration and analysis UX (04:54)\nDiscuss internal usage of feature flags and experimentation with teams to establish current adoption rates and cultural goals (12:07)\nPrepare feedback and success criteria from product and data science perspectives after initial experiment runs (10:53)\n"
+    }
+  ]
+}

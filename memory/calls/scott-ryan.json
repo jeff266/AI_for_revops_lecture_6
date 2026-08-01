@@ -1,0 +1,18 @@
+{
+  "company": "Scott & Ryan",
+  "slug": "scott-ryan",
+  "calls": [
+    {
+      "id": "01KTMBGKNRFSK9N0ZZPP4BE7C2",
+      "source": "fireflies",
+      "title": "Scott & Ryan",
+      "date": "2026-06-08",
+      "duration_minutes": 32,
+      "summary": "The team discussed the sales forecast, with Scott Keller confirming a pipeline of approximately $1.85M, anchored by the Change.org deal, expected to close at 110% of quota. Quarterly quotas were outlined, with Scott's ramped targets set at $200K total and specific monthly goals. Deal engagement strategies, especially for the Ryanair deal, were reviewed, emphasizing personalized outreach and leveraging partnerships. The upcoming Anthropic press release was highlighted as a key differentiator to enhance credibility in sales conversations. Scott also developed a custom pipeline document for tracking deal statuses, and the importance of accurate forecasting and clear compensation structures was underscored.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 1,
+      "keywords": "Sales Forecast, Pipeline Management, Travel Industry, Deal Engagement, Quota Ramp-up, Anthropic Partnership",
+      "action_items": "\n**Scott Keller**\nUpdate sales forecast to reflect 135k as committed revenue for current quarter (15:58)\nDraft re-engagement emails for slow-moving and unresponsive prospects; send drafts to Ryan for review via Slack before sending out (29:47)\nUtilize Anthropic partnership as a value lever in upcoming deal discussions to re-engage prospects, especially Ryanair and ups contacts (23:29)\nContinue multi-threading efforts in key accounts and escalate to Ryan’s involvement once deals move past preliminary stages (24:12)\n\n**Ryan McGurk**\nReview Scott’s re-engagement email drafts and provide feedback on messaging tone and content via Slack (29:47)\nSupport Scott by leveraging Anthropic partnership announcements in conversations and, if needed, directly reach out to stalled prospects (22:41)\nCoordinate with Jeff (forecast system builder) to provide additional training or walkthroughs on the forecast tool for Scott to ensure smoother pipeline management (15:14)\n"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "company": "GB Platform Onboarding",
+  "slug": "gb-platform-onboarding",
+  "calls": [
+    {
+      "id": "01KQ852RTR01295TDES3GQNHYG",
+      "source": "fireflies",
+      "title": "GB Platform Onboarding: Product Analytics",
+      "date": "2026-04-27",
+      "duration_minutes": 39,
+      "summary": "The meeting detailed the product analytics tool's multi-layered data interaction, allowing users to explore raw data through fact tables and metrics for flexible analysis. Upcoming features include User Journey Explorer, Funnel Exploration, and Session Replay, aimed at enhancing user insights into behaviors and product usage. The AI Data Analyst is evolving to offer proactive insights and automated problem detection. The product is positioned as a simpler alternative for companies focused on experimentation, targeting 5-10% usage compared to larger platforms like Amplitude. Additionally, performance insights reveal that managed warehouses deliver faster query results than BYOW setups, which can take significantly longer.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 0,
+      "keywords": "Product Analytics, Fact Tables, AI Data Analyst, User Journey Explorer, Session Replay, Funnel Exploration",
+      "action_items": "\n**August Allard**\nAdd specific event tracking for AI conversation usage to better measure product analytics adoption (16:22)\n\n**Jeremy Dorn**\nInvestigate availability and completeness of AI chat prompt data in MongoDB and AI conversation tables for marketing use cases (17:52)\nExplore direct database queries to analyze AI conversation message contents and usage patterns (18:57)\nMonitor and improve prompt tuning and data grouping functionality in the analyst tool (04:00)\nTrack and support upcoming delivery of User Journey Explorer and Funnel Exploration features by May/June and Session Replay by July (29:00)\nContinue development of AI Data Analyst API and share skill-building resources for companies creating custom agents (37:30)\n"
+    },
+    {
+      "id": "01KPQQ45K7F6HK4BWF95XYHN0M",
+      "source": "fireflies",
+      "title": "GB Platform Onboarding: Product Analytics",
+      "date": "2026-04-27",
+      "duration_minutes": 0,
+      "summary": "The meeting highlighted the product analytics platform's blend of AI-powered and manual tools, aimed at enabling accessible and actionable data insights. Key features include the launch of the AI Analyst for interactive data exploration and support for custom SQL queries, addressing the needs of users with varying data maturity. The team clarified the role of fact tables in improving data quality and usability, targeting smaller to mid-sized companies needing simplified analytics without competing directly against larger platforms. Upcoming features such as a User Journey Explorer and Funnel Exploration Tool are set for mid-2023, enhancing user insights and data-driven decision-making capabilities. Collaboration features like shared dashboards and ongoing UI improvements were also emphasized to support team communication and engagement.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 12,
+      "keywords": "AI Analyst, Product Analytics, User Journey Explorer, Funnel Exploration, Session Replay, Managed Warehouse",
+      "action_items": "\n**Jeremy Dorn**\nInvestigate deeper AI chat event tracking implementation to capture more comprehensive product analytics events (14:32)\nExplore capturing and analyzing AI chat prompt contents securely for marketing insights ensuring privacy compliance (16:25)\nSync with Omar Elshaikh regarding AI conversation message data availability and tracking in MongoDB (17:22)\nContinue tuning and improving AI Analyst prompt for better data query performance and user experience (03:00)\nWork on the roadmap development of User Journey Explorer, Funnel Exploration, and Session Replay features within the outlined timelines (21:51)\n\n**Omar Elshaikh**\nAdd missing event tracking for AI chat conversations to improve analytics and usage insights (15:09)\nProvide clarity on AI conversations data model and assist Jeremy with MongoDB data pull for AI conversation messages (16:51)\n\n**Unassigned**\nReview and fix minor bugs related to dashboard sharing permissions in the product analytics UI (12:54)\n"
+    },
+    {
+      "id": "01KPQQ45K6JBNF9NABW9WA9ZY8",
+      "source": "fireflies",
+      "title": "GB Platform Onboarding: Experiment Results/Dashboards",
+      "date": "2026-04-23",
+      "duration_minutes": 56,
+      "summary": "The session covered the experimentation lifecycle in Growth Book, detailing user roles in hypothesis formation, experiment management, and success measurement. It highlighted the platform's dual support for technical and non-technical users and the importance of managing experiment complexity and iterations. Insights into experiment creation flows and feature flag integration demonstrated Growth Book's flexibility in targeting user segments. The discussion addressed metrics analysis, the high volume of experiments primarily driven by Pro tier users, and the product strategy to balance usability with technical capabilities, alongside user interface feedback for potential improvements.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 13,
+      "keywords": "Experiment lifecycle, Feature flags, Metric configuration, Bayesian statistics, Data warehouse integration, Growth Book interface",
+      "action_items": "\n**Luke Sonnet**\nContinue working to streamline the experiment creation flow to reduce setup time and complexity (11:08)\nSupport customers in iterating experiments with improved change management flows (23:22)\nEnhance experiment cleanup features such as code references to assist engineers removing feature flag code after rollout (28:38)\nMaintain and improve backend query stitching and metrics calculation for enterprise data warehouses to optimize performance and cost (34:14)\nShare internal dashboards and telemetry data on experiment creation and usage with team to inform product improvements (08:18)\nFacilitate API improvements for customers to build tooling on top of Growth Book and simplify integrations (53:20)\n\n**Scott Keller**\nExplore and showcase real-world sophisticated customer instances and reverse demos to enable sales learning and customer understanding (52:21)\n\n**Augment Support Engineers**\nProvide ongoing assistance and onboarding to enterprise clients needing help with fact tables and metric configurations (48:44)\n"
+    },
+    {
+      "id": "01KPP3PKYWNTQKS27TXG3CNH3K",
+      "source": "fireflies",
+      "title": "GB Platform Onboarding: Creating Feature Flags & Configuring Experiments",
+      "date": "2026-04-22",
+      "duration_minutes": 0,
+      "summary": "The meeting provided a comprehensive overview of GrowthBook’s feature flagging platform, led by Bryce Fitzsimons, emphasizing its open-source, warehouse-native nature that fosters transparency, especially for privacy-sensitive clients. The architecture includes local SDK operations for efficient flag evaluations, and multiple integration points ensure flexibility across various technical landscapes. Feature flag management covers a variety of data types with environmental strategies for development stages and robust targeting rules. Integration with AB testing within flags allows for careful monitoring of user experience. Tools for real-time debugging and a strategic vision for future API development were also shared, aiming for automation to improve usability.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 13,
+      "keywords": "feature flags, SDK, experimentation, ramp-up rollout, remote evaluation, REST API",
+      "action_items": "\n**Bryce Fitzsimons**\nOffer follow-up detailed sessions on SDKs, integrations, proxies, and edge utilities for interested engineers (01:00:45)\n\n**Participants**\nProvide feedback on presentation altitude and depth for future refinement of feature flagging and experimentation training (02:28)\nProvide feedback on presentation altitude and depth for future refinement of feature flagging and experimentation training (01:00:45)\n\n**Engineering/Platform team**\nContinue enhancing LLM (MCP server) integration with REST API for feature flag and experiment automation (58:09)\n\n**Product/Engineering**\nInvestigate and improve visual editor experience, especially for mid-market and marketing teams (22:18)\n\n**Experimentation team**\nAdvise on detailed experiment metric setup and success criteria during next deeper experimentation walkthroughs (48:30)\n"
+    },
+    {
+      "id": "01KPH4GK2VGRGFHQGP5M0ZHG6K",
+      "source": "fireflies",
+      "title": "GB Platform Onboarding: Implementation/Onboarding of GB",
+      "date": "2026-04-20",
+      "duration_minutes": 0,
+      "summary": "The meeting outlined the advantages and challenges of using cloud versus self-hosted GrowthBook setups, highlighting that cloud setups are fast and easy to initiate while self-hosting suffers from significant delays due to bureaucratic processes. The SDK integration process was discussed, revealing that about 20 SDKs are available for popular programming environments, with varied setups based on the complexity of the language. The team also emphasized upcoming automation for Managed Warehouse onboarding, aiming to simplify data source addition and mitigate delays related to user-managed warehouses. Additionally, the conversation addressed the variety of metric types supported by GrowthBook, noting challenges in customer understanding, and discussed how ongoing sessions and support tools, like the AI widget and DevTools extension, could improve customer onboarding experiences.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 12,
+      "keywords": "GrowthBook onboarding, SDK integration, Managed Warehouse, Event Forwarder, Data Onboarding, Feature Flags",
+      "action_items": "\n**Cris Dizon**\nPost the calendar invite or announcement more broadly to people who expressed interest but may not have received it (00:27)\n\n**Jeremy Dorn**\nContinue running GrowthBook onboarding sessions, including the remaining two sessions this week and one next week, and incorporate feedback to improve the onboarding process (40:45)\n\n**Product/Engineering Team**\nComplete development and release of the event forwarder feature that enables customers to send events to GrowthBook and forward them to their own warehouse, improving real-time tracking and data pipeline efficiency (28:47)\n\n**Documentation Team**\nEnhance SDK documentation coverage for all supported SDKs, with a focus on backend and specialized SDKs to reduce integration complexity (20:10)\n\n**Data Team/Support**\nProvide better SQL query templates and guidance for experiment assignment queries tailored to common tracking libraries to reduce manual effort during data onboarding (31:50)\n"
+    }
+  ]
+}

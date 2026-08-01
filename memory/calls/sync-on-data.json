@@ -1,0 +1,18 @@
+{
+  "company": "Sync on data",
+  "slug": "sync-on-data",
+  "calls": [
+    {
+      "id": "01KYJZE2EH7T52695N0SD2K16P",
+      "source": "fireflies",
+      "title": "Sync on data",
+      "date": "2026-07-28",
+      "duration_minutes": 43,
+      "summary": "The meeting addressed significant data quality challenges impacting marketing segmentation, including inconsistencies in contact data such as missing first names and job titles. The team noted that about 11% of contacts logged in within the last 90 days, while 14,000 leads were identified in the recycle bin due to potential workflow issues. It was discussed that 53,000 contacts had a known Growth Book org ID, with about 14,700 active users in the last 180 days, highlighting unclear distinctions between customers and prospects. Plans were laid out for improving data enrichment, emphasizing the need for accurate job titles and company size data. The team agreed on transitioning active, clean contacts to marketing status after conducting a re-engagement email campaign targeting 40,000 non-marketing contacts to ensure engagement and list quality.",
+      "organizer": "lyndsie@growthbook.io",
+      "participants": 3,
+      "keywords": "contacts segmentation, data cleanup, marketing contacts, last login date, customer engagement, HubSpot enrichment",
+      "action_items": "\n**Lyndsie Berens**\nSend examples of contacts with unusual first names and missing last login dates to James for data review and cleanup, copying Ashley and Chris (10:00)\nCoordinate with James to validate whether missing last login dates and job titles are accurate or require correction (07:33)\nAssist in creating workflows or automation to enrich customer data fields such as job titles and company size for better segmentation (29:26)\nContinue collaboration with OP Methods team to clean up data and resolve contradictions between leads and customers in the database (31:23)\n\n**Ashley Stirrup**\nRequest from Hex a list of accounts with no user login activity in the last 90 days or six months to evaluate for cleanup or re-engagement (12:33)\nWork with Lyndsie to draft re-engagement email campaigns targeting inactive users once data accuracy is confirmed (11:37)\n\n**Chris Newton**\nReview contacts marked with “zero bounce” status but potentially invalid or catch-all emails to assess their eligibility for marketing contact status (23:53)\nCheck if HubSpot enrichment processes are correctly populating job titles and company information, and provide insights for improvements (28:30)\nValidate assumptions about shared logins affecting user counts and messaging, to improve billing accuracy and segmentation (25:26)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Ryan <> Sahil",
+  "slug": "ryan-sahil",
+  "calls": [
+    {
+      "id": "01KKY9CW7BR8CKP2PJ8CSYETYK",
+      "source": "fireflies",
+      "title": "Ryan <> Sahil Networking",
+      "date": "2026-03-19",
+      "duration_minutes": 28,
+      "summary": "The meeting highlighted Growth Book's rapid expansion, now employing 35 to 40 people, and its competitive positioning against Statsig following its acquisition by OpenAI. Key clients include Salesforce and three of the largest tech firms, benefitting from Statsig's deprioritization. The discussion emphasized the importance of building a robust customer success and sales teams to enhance product adoption and deepen organizational integration. Growth Book's product, primarily used for feature flagging by developers, is expanding into marketing functions. The partnership with Spiralize aims to complement Growth Book's offerings by utilizing a large database of test patterns to enhance AB testing performance. Plans for follow-up demos and webinars were also established to promote customer engagement and demonstrate joint value.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, Spiralyze, AB Testing, Experimentation, Prediction Engine, Customer Success",
+      "action_items": "\n**Ryan McGurk**\nSchedule a high-level demo of Growth Book’s product for Sahil after his marketing conference, either late next week or the following week (23:19)\nCoordinate with Sahil to find common customers who might benefit from combined Growth Book and Spiralyze services (24:42)\n\n**Sahil Patel**\nBook a time for a joint demo session with Ryan after his B2B marketing conference, preferably towards the end of the coming week or the following week (23:19)\nExplore and identify existing or prospective clients with latent or explicit needs for Spiralyze’s services to facilitate introductions or pilot conversations (23:19)\nPropose and potentially plan interactive webinars or workshops for mutual customers to provide actionable AB testing insights (26:17)\n"
+    }
+  ]
+}

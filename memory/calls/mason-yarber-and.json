@@ -1,0 +1,18 @@
+{
+  "company": "Mason Yarber and",
+  "slug": "mason-yarber-and",
+  "calls": [
+    {
+      "id": "01KQQMF57J9EY89W1Y0HAR8M0R",
+      "source": "fireflies",
+      "title": "Mason Yarber and Ashley Stirrup",
+      "date": "2026-05-05",
+      "duration_minutes": 17,
+      "summary": "The discussion centered on the challenges faced with current client enablement resources, primarily highlighting Roman’s insufficient pace and strategic direction, which hinder progress. Mason acknowledged this issue and pledged to take action, potentially replacing Roman to meet the ambitious growth target of 150%. Both Ashley and Chris pointed out the need for a strategic partner who can guide HubSpot integration while also facilitating broader marketing stack capabilities. Additionally, the team stressed the importance of accelerating delivery speed beyond weekly sessions, as current progress is slow. Finally, the necessity for clearer communication and task tracking was underscored, with Ashley creating a detailed spreadsheet that has yet to be updated, creating concerns about project momentum.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Client Enablement, HubSpot Implementation, Project Management, Marketing Growth, Strategic Roadmap, Resource Capacity",
+      "action_items": "\n**Mason Yarber**\nReview previous calls with Roman and assess progress and productivity to understand current project status and challenges (08:20)\nHave a candid conversation with Roman regarding the feedback about his passive approach and the slow project pace to clarify expectations and explore improvements (08:20)\nIdentify and assign a new implementation specialist to take over the project and accelerate completion of prioritized tasks, ensuring better capacity and momentum (14:45)\nProvide Ashley and Chris with a status update on the new resource assignment and next steps within the day to maintain transparency and client confidence (15:30)\n"
+    }
+  ]
+}

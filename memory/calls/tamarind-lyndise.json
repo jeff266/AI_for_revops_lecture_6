@@ -1,0 +1,18 @@
+{
+  "company": "Tamarind + Lyndise",
+  "slug": "tamarind-lyndise",
+  "calls": [
+    {
+      "id": "01KRVN7GS176KWSNT6A9GX6GFX",
+      "source": "fireflies",
+      "title": "Tamarind + Lyndise + Ashley",
+      "date": "2026-05-19",
+      "duration_minutes": 26,
+      "summary": "The team outlined a strategy for targeted LinkedIn campaigns aimed at Statsig and LaunchDarkly customers to enhance lead conversion. A list of 253 Statsig companies is ready for upload, and Jayson will enrich this list for better match rates. Campaigns will focus on bottom-of-funnel prospects, utilizing message ads and conversation ads to generate leads and drive demos. The budget for LinkedIn ads is proposed to be doubled to around $200 per day for broader outreach, accounting for an audience of 76K. Lead tracking mechanisms are established to capture data effectively, especially in light of potential customer concerns due to OpenAI's acquisition of Statsig, which offers an opportunity for GrowthBook.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Statsig, LaunchDarkly, LinkedIn Campaigns, Audience Targeting, Lead Generation, Budget Increase",
+      "action_items": "\n**Ashley Stirrup**\nProvide the full Statsig company list for LinkedIn audience upload to enable precise targeting (10:17)\nBuild the LaunchDarkly company list using tools like Apollo or BuiltWith and update the team on progress (18:50)\nShare any relevant sales insights or customer feedback regarding competitor transitions to inform campaign messaging (23:10)\n\n**Jayson Conway**\nUpload the received Statsig company list to LinkedIn, enrich it with job titles, functions, and seniority data, and analyze audience size within 1-2 days (19:14)\nBuild and upload the LaunchDarkly audience set to LinkedIn once the list is received (19:50)\nDevelop multiple ad copy and creative options focusing on competitor cost concerns and GrowthBook’s stability advantages; prepare a strategy deck for team review (21:42)\nTrack and report on campaign performance metrics and coordinate next steps for increasing the LinkedIn campaign budget (16:20)\nSchedule the next meeting for Thursday, 28th, and add Lindsay to the calendar invite (24:22)\n\n**Lyndsie Berens**\nAssist Ashley with accessing Apollo or BuiltWith tools to facilitate the LaunchDarkly list building process (03:39)\nReview shared Slack files and lists related to audience builds and follow up with any questions or clarifications (24:54)\n"
+    }
+  ]
+}

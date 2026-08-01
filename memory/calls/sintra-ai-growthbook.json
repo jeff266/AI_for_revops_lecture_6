@@ -1,0 +1,18 @@
+{
+  "company": "Sintra.ai & Growthbook",
+  "slug": "sintra-ai-growthbook",
+  "calls": [
+    {
+      "id": "01KR1KSEFETWJZXHMRPMQ6B6W6",
+      "source": "fireflies",
+      "title": "Sintra.ai & Growthbook",
+      "date": "2026-05-18",
+      "duration_minutes": 11,
+      "summary": "The discussion centered on the issuance of a two-week enterprise trial license to a client, allowing them to evaluate the software’s new features before committing to a purchase. James Shannon facilitated the trial despite the absence of the solutions engineer, ensuring the client could access features immediately via an emailed license key. The client, represented by Jurgis Petrauskas-Mittas, expressed the need to confirm the functionality and value of the enterprise features before making a financial commitment, particularly due to a significant price increase. Follow-up meetings were scheduled after June 5th to accommodate the client’s busy schedule, while transparent communication helped maintain a positive relationship despite the engineer’s unavailability.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 6,
+      "keywords": "enterprise license, pricing evaluation, trial testing, product features, scheduling, solutions engineer",
+      "action_items": "\n**James Shannon**\nProvide Sintra.ai with an enterprise trial license to test the software, including pre-align requisite features (00:07)\nEmail the license key to Sintra.ai later on the same day (03:08)\nSchedule a follow-up meeting with Sintra.ai after June 5th to review testing results and discuss next steps (02:58)\n\n**Jurgis Petrauskas-Mittas**\nCoordinate internally with leadership to evaluate the trial license features against current needs and pricing before making a final decision (01:36)\nConfirm availability for the meeting sometime after June 5th to discuss evaluation outcomes (02:44)\n"
+    }
+  ]
+}

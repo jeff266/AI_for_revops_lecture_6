@@ -1,0 +1,18 @@
+{
+  "company": "Podme x GB",
+  "slug": "podme-x-gb",
+  "calls": [
+    {
+      "id": "01KTM45CK9X3AW8GG3QC2FYS2V",
+      "source": "fireflies",
+      "title": "Podme x GB: Intros & Data Layer Implementation",
+      "date": "2026-06-12",
+      "duration_minutes": 53,
+      "summary": "The meeting outlined the project setup for the GrowthBook integration, clarifying team roles with Amin Ojani leading data and AI, Kate Zyrianova managing mobile SDK product management, and Sara Brändström overseeing data engineering. The GrowthBook team provided contact points for customer success, technical solutions, and commercial strategy. Initial phases focused on data ingestion from GA4 and MSQL into BigQuery, and parallel work on data layer queries and SDK setup was discussed. The architecture for experiment tracking emphasized user ID consistency and the importance of AA tests for validation. GrowthBook will offer licenses mainly for experimenters and noted the importance of IAM roles for BigQuery. Future support and enablement sessions were also discussed to ensure smooth progress.",
+      "organizer": "cris@growthbook.io",
+      "participants": 11,
+      "keywords": "Experimentation, GrowthBook SDK, Data Integration, BigQuery, Feature Flags, Metrics Setup",
+      "action_items": "\n**Amin Ojani**\nCoordinate Podme’s data layer integration, ensuring IAM roles are properly granted as per documentation and confirm clarity within Podme team regarding where to start data layer integration and address any open questions (51:20)\n\n**Kate Zyrianova**\nLead SDK integration efforts with engineering support, ensuring proper SDK setup for mobile apps (08:41)\n\n**Gianluca Di Benedetto**\nSupport data querying and metrics setup on BigQuery complying with GrowthBook experiment assignment and fact tables (51:11)\n\n**Sara Brändström**\nLead analytics engineering work, including writing queries for experiment assignments and metrics, integrating with GA4 and BigQuery data streams (09:27)\n\n**Chris Sanders**\nProvide technical enablement and guidance on GrowthBook SDK, data flows, queries setup, attributes handling, and deterministic user assignment hashing; schedule and conduct follow-up enablement session focused on experimentation and feature management once Podme completes data and SDK integration; offer support for MCP server and AI skills training as requested (51:40)\n\n**James Shannon**\nSupport license management clarifications and provide additional REST API onboarding support as needed (47:54)\n"
+    }
+  ]
+}

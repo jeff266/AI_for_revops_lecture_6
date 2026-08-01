@@ -1,0 +1,18 @@
+{
+  "company": "Ashely / Alyssa",
+  "slug": "ashely-alyssa",
+  "calls": [
+    {
+      "id": "01KWCS6JYS431ZE4VPYK77NZW0",
+      "source": "fireflies",
+      "title": "Ashely / Alyssa 1:1",
+      "date": "2026-07-06",
+      "duration_minutes": 22,
+      "summary": "The meeting evaluated the AI World event, which received a B grade and had the smallest buy-in level, indicating expectations for better ROI in future events. A Product Hunt post is set to be written by Alyssa and published by Graham. Discussions included the kickoff of the AI onboarding wizard with Omar and Scott to align the MVP, alongside Alyssa testing the Post Hog onboarding process. On documentation, ongoing migration with Mintlify involves fixing styles and engineering reviews. Video tutorials have been created, and a script retake for skills videos was requested. User engagement strategies included addressing inactivity in the visual editor Slack channel and proposing outreach to check user experience two weeks post-access. Lastly, updates on documentation migration were assigned to Alyssa, and in-app AI chat promotion was discussed.",
+      "organizer": "alyssa@growthbook.io",
+      "participants": 2,
+      "keywords": "AI onboarding, Product Hunt post, docs migration, Mintlify, visual editor videos, early access engagement",
+      "action_items": "\n**Alyssa Nicoll**\nAdd note to create a \"blocked\" column in the project board and consult with the team about its feasibility without disrupting others’ views (03:12)\nWrite draft of Product Hunt post and share with Ashley for review before Graham publishes it (04:50)\nContinue coordinating docs migration with Mintlify, Kari, and engineering; address branding inconsistencies and missing redirects (06:33)\nCreate a new ticket to transform docs migration feedback into reusable content or a blog post (08:33)\nProduce segmented, targeted videos on visual editor features per Elise’s request and coordinate content creation workflow with Elise and Scott (13:19)\n\"Dogfood\" the PostHog onboarding experience before further development of the onboarding wizard (10:30)\nSlack Jeremy with an update on docs migration status after the next Mintlify iteration and ask for guidance on final sign-off (12:21)\nFollow up with Scott on revisions needed for the skills video script (13:19)\nCheck in with Elise regarding early access program management and user engagement approach for the visual editor (15:26)\nInvestigate and request details from AppGuy about new in-app announcement features to boost AI skills feature visibility (19:37)\nMaintain compiling all videos, scripts, recordings, and GitHub demos on Notion tickets for easy team access and feedback (09:06)\n\n**Ashley Stirrup**\nProvide feedback on the Product Hunt draft post before publication by Graham (06:20)\nCheck with Elise on user outreach and early access engagement strategies for the visual editor (15:26)\nEncourage Alyssa to contact Jeremy regarding documents finalization and sign-off (12:44)\nShare information about new in-app UI announcement capabilities with Alyssa and AppGuy to support feature promotion (19:37)\n\n**Graham**\nPublish Product Hunt post once draft is ready and reviewed (04:50)\n"
+    }
+  ]
+}

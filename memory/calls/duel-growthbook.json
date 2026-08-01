@@ -1,0 +1,30 @@
+{
+  "company": "Duel + Growthbook",
+  "slug": "duel-growthbook",
+  "calls": [
+    {
+      "id": "01KMDQZ7YWFDD6AAZNP0FJ2T1V",
+      "source": "fireflies",
+      "title": "Duel + Growthbook Outlier Discussion",
+      "date": "2026-03-25",
+      "duration_minutes": 30,
+      "summary": "The meeting centered on developing an outlier detection strategy for gambling data, with a preference for the scaled interquartile range (IQR) method over fixed percentiles, as emphasized by Fraser Gray. This approach adapts to data distribution, addressing the non-normally distributed nature of gambling data. Luke Sonnet described GrowthBook's existing methods and limitations, specifically the absence of IQR support. Fraser proposed enhancements to the GrowthBook user interface, including the ability to toggle between raw and capped KPI versions. The team outlined plans for a trial starting in April, emphasizing the need for backend integration using the PHP SDK and ongoing technical support. Overall, the discussions highlighted the importance of nuanced statistical methods for making informed decisions in gambling marketing.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "Outlier Detection, Gambling Data, Bayesian Estimation, GrowthBook, Winsorizing, Experimentation",
+      "action_items": "\n**Fraser Gray**\nCoordinate architecture discussion with Edison to confirm feature flag integration approach for GrowthBook SDK use (26:15)\n\n**James Shannon**\nConfirm possibility of increasing seat licenses from 5 to 8 and communicate final decision via email (23:32)\nDraft and send contract/order form including conditional PoC agreement with clear success criteria for trial period (28:31)\nArrange support infrastructure for direct communication lines (e.g., Slack channel) between GrowthBook and Fraser’s team during setup (28:52)\nProvide clarity on rollout plan and coordinate with internal team (Logan, Luke) for support during onboarding process (28:43)\n\n**Luke Sonnet**\nAssist Fraser and team during setup and integration of GrowthBook features, particularly around outlier detection toggles and capped metrics implementation (13:30)\nSupport with technical clarifications on metric duplication and UI toggling features described during call (07:56)\n"
+    },
+    {
+      "id": "01KM06D7S9Q00HJFE31AG88YKA",
+      "source": "fireflies",
+      "title": "Duel & Growthbook Technical Discussion",
+      "date": "2026-03-23",
+      "duration_minutes": 63,
+      "summary": "The discussion focused on assessing Growth Book against Statsig for experimentation needs. Fraser Gray highlighted the necessity for a scalable, Bayesian-oriented tool with features like configurable outlier detection and seat-based pricing to support frequent experimentation. While Growth Book was praised for its comprehensive visualizations and real-time insights, Statsig's limitations in pricing and metrics were criticized. Integration features were also significant, minimizing performance disruptions. The team agreed on a 30-day trial with enterprise-level features to test Growth Book before full implementation, alongside dedicated training and a structured support plan, aiming to empower users within Dual and Empire.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "Bayesian analysis, Outlier treatment, Multi-armed bandit, Feature flags, Data lakehouse, Experimentation platform",
+      "action_items": "\n**Fraser Gray**\nConfirm definitive number of seats needed for Growthbook subscription (likely 8-10) (54:00)\nParticipate in follow-up 15-minute technical call with Growthbook’s head of data science regarding outlier detection methodology (scheduled before Thursday) (59:55)\nComplete evaluation of Statsig during upcoming call and communicate go/no-go decision by Thursday (59:45)\n\n**Edison Rama**\nReview Growthbook documentation and integration guides to assess architecture and SDK setup (including backend PHP SDK usage and front-end SDK necessity) (41:15)\nExamine potential conflicts or integration options regarding existing internal feature flag system versus Growthbook’s flags API (28:00)\nCoordinate internal discussion on trial readiness and resource allocation for setting up experiments in UAT/staging environment (42:50)\n\n**Logan Bates**\nProvide detailed explanation and examples on violin plot data grain and Bayesian statistics (12:00)\nConfirm with data science team about detailed outlier detection methods beyond absolute and percentile capping, such as interquartile or medcouple scalar (19:30)\nArrange access and provisioning of sandbox/staging environment and sample data for trial (42:25)\nClarify AWS Marketplace presence and payment options with Growthbook commercial team (46:30)\n\n**James Shannon**\nSummarize and distribute meeting recap and next steps including trial details, commercial terms, and technical follow-ups (01:02:15)\nFacilitate connection and scheduling of technical call between Fraser Gray and Growthbook’s head of data science (59:00)\nSupport commercial discussion and contract preparation for multi-org enterprise package (43:30)\n"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "company": "GrowthBook + Op",
+  "slug": "growthbook-op",
+  "calls": [
+    {
+      "id": "01KXBVFRX9NJZD421X2CYY5KEW",
+      "source": "fireflies",
+      "title": "GrowthBook + Op Methods HubSpot Automation and Process Overview",
+      "date": "2026-07-14",
+      "duration_minutes": 58,
+      "summary": "The team convened to optimize critical operational workflows, emphasizing the importance of campaigns like webinars and executive dinners while identifying outdated lead status processes for removal. A structured approach will be taken to organize workflows into folders for easier management. Sales engagement challenges due to fragmented notifications were discussed, proposing a streamlined notification system based on lead scoring. The transition to a lead object model aims to better align lead statuses with lifecycle stages, automating contact recycling post closed-lost deals. Data quality measures, such as honeypot fields and Zero Bounce validation, are set to enhance marketing lists. The meeting concluded with a focus on enforcing processes through training and improved follow-up task automation for events.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 6,
+      "keywords": "Lifecycle stage, Workflows, Lead status, Recycling contacts, Slack notifications, Lead scoring",
+      "action_items": "\n**Shawn Green**\nConduct a deep dive audit of contacts currently in the subscriber lifecycle stage to determine proper reclassification before removal or renaming of this stage (02:07)\nAdjust the recycling workflow to use 'last engagement date' instead of 'last activity date' to prevent incorrect recycling of contacts who are actively submitting forms (17:21)\nImplement automation to update lifecycle stages and recycle contacts and companies when a deal is closed-lost, enabling these contacts to re-enter the marketing funnel (13:33)\nOrganize all workflows into clear folders categorized as marketing, operational, and deprecated to improve auditability and management (51:18)\nSchedule auto turn-off for event-specific marketing drip workflows to prevent workflow clutter and accidental re-engagement (53:56)\nAdd validated honeypot fields on all web forms, such as webinar signups, to reduce bot entries and improve data quality (39:51)\nCoordinate with Jeff Ignacio on workflow classification and cleanup, especially regarding deprecated or unused workflows (51:18)\n\n**Chris Newton**\nShare detailed MQL workflows spreadsheet to assist in auditing and understanding workflow processes (06:17)\nReview and optimize ZeroBounce segmentation and validation approach for marketing contacts to efficiently manage credits and exclude invalid contacts (42:17)\nWork with sales leadership to define clear prioritization and accountability for lead follow-up, integrating Rio platform data and lead scoring hierarchy (31:16)\nAssess and train sales team on effective use of Slack notifications, encouraging accountability indicators such as read receipts or response markers (27:16)\nCollaborate with marketing to improve the process for task creation and sales follow-up on tiered events to reduce manual intervention (24:35)\n\n**Lyndsie Berens**\nCoordinate with Shawn and Chris to set up marketing folders for workflows and assist in workflow organization (52:10)\nProvide login credentials and explanation of the Rio platform to Shawn to facilitate improved integration and lead scoring discussions (30:21)\nContribute documentation on previous Zoom enablement sessions and assist in planning future webinar-based customer training formats (23:34)\n"
+    },
+    {
+      "id": "01KWYZG5GWQ9FDKKQAP10PHEBS",
+      "source": "fireflies",
+      "title": "GrowthBook + Op Methods GTM Lifecycle Workshop Part 2",
+      "date": "2026-07-09",
+      "duration_minutes": 42,
+      "summary": "The team discussed improvements to CRM lifecycle management and data automation to enhance sales data accuracy and reduce manual work. Key updates included automation of contact stage transitions based on sales activities, ensuring consistent tracking of contacts at both the individual and company levels. An intake channel audit was planned to verify accurate lead source tagging and prevent data overwrites from various integrations. The discussions emphasized deal ownership, assigning the deal owner as the primary contact to improve accountability, and proposed enhancements to nurture workflows to reduce email overlap and fatigue among marketing contacts. Additionally, the exploration of AI integration in support functions and the need for better access to analytics were addressed, highlighting gaps in system visibility.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 6,
+      "keywords": "hubspot, lifecycle stages, intake channels, deal ownership, marketing nurture, support automation",
+      "action_items": "\n**Shawn Green**\nAudit all intake channels and integration lead source mappings to ensure first and last touch lead sources are tagged correctly in HubSpot (03:05)\nInvestigate HubSpot chat integration to determine if chats are creating contacts and how they are tagged; explore AI support agent capabilities and ticket pipeline options for support efficiency (15:54)\nDevelop and deploy workflow to assign company and contact ownership automatically based on deal owner where ownership differs (26:56)\nPrepare for automation process overview session to review and optimize existing workflows, particularly data hygiene and MQL workflows (29:36)\nMonitor marketing nurture workflows and propose adjustments to prevent contacts signing up for webinars from entering generic nurture sequences prematurely (36:44)\n\n**Lyndsie Berens**\nProvide additional details on marketing contact segmentation and webinar signup management to coordinate with nurture workflow improvements (36:00)\n\n**Jeff Ignacio**\nReview Apollo import process and marketing contact setting for compliance with marketing consent standards (05:39)\n\n**Chris Newton**\nShare Google Analytics 4 access if feasible to assist in auditing event and paid channel data (32:49)\nContinue refining account assignment rules and data hygiene workflows to align with deal ownership and territory routing rules (20:50)\n"
+    },
+    {
+      "id": "01KWWPKHNPZAKPEKRJE71RZW69",
+      "source": "fireflies",
+      "title": "GrowthBook + Op Methods Lifecycle Workshop Part 1",
+      "date": "2026-07-08",
+      "duration_minutes": 61,
+      "summary": "The discussion emphasized the need to refine the current sales pipeline and deal stages, which involve both manual processes and some automation. Key issues included the established deal stages, such as meeting set, discovery, and negotiation, which require better hygiene and follow-up practices from sales reps. The renewal pipeline, primarily managed manually, was addressed, highlighting the challenges in tracking Annual Recurring Revenue (ARR) and the need for clearer definitions in contact and company lifecycle stages. The team recognized the potential for automation in moving deals through stages and improving lead scoring to enhance sales focus. Additionally, the role of sales engineers in the pipeline was discussed, along with the importance of collaboration among sales, marketing, and finance teams for accurate reporting and forecasting.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 6,
+      "keywords": "lifecycle stages, sales pipeline, MQL, deal qualification, renewal process, lead status",
+      "action_items": "\n**Shawn Green**\nReview the sales process spreadsheet and make recommendations for automations and lifecycle stage improvements (22:12)\nAudit recent automations implemented for lead status and lifecycle stage (44:50)\n\n**Jeff Ignacio**\nShare the sales process document and coordinate with Ryan for sign-off on updated pipeline and stages (11:51)\n\n**Lyndsie Berens**\nShare podcast campaign workflow for review related to lead status field usage (47:56)\n\n**Shawn Green and Jeff Ignacio**\nCollaborate on refining lead status and lifecycle stage definitions including recycling and disqualifying processes (44:50)\n\n**Jeff Ignacio, Chris Newton, Ashley, Ryan**\nDiscuss new sales mechanics for lead follow-up and prioritization improvements with team members (51:35)\n\n**Unassigned**\nInvestigate issue with account owner field not syncing correctly between contact and company in HubSpot (59:01)\nPlan follow-up meeting and further deep dive session to continue lifecycle stage definitions and reporting improvements (01:00:09)\n"
+    },
+    {
+      "id": "01KT7DMS83RXCGY1RPYJB8XGY3",
+      "source": "fireflies",
+      "title": "GrowthBook + Op Methods",
+      "date": "2026-06-05",
+      "duration_minutes": 29,
+      "summary": "The meeting outlined Methods' RevOps strategy, emphasizing a partnership model that offers both senior strategic and junior operational support to improve client outcomes. Key challenges identified include the lack of lead prioritization and efficient lifecycle management in the client's current CRM setup, which relies heavily on demo requests. Participants discussed improving data quality and tracking through HubSpot, and the urgency to scale outbound and nurturing processes due to a planned expansion of the sales team. A future audit phase was proposed to create a lifecycle framework and lead scoring system, while plans to consolidate tools were also discussed to enhance efficiency and data consistency.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "RevOps, HubSpot, Lead Scoring, Lifecycle Management, Data Cleansing, SaaS Growth",
+      "action_items": "\n**Eric Potter**\nPrepare and send a detailed proposal outlining the audit approach, timelines, pricing, and retainer for ongoing support by Monday (26:05)\nSchedule a follow-up meeting with Chris and Ashley on Tuesday for proposal review and kickoff discussion (26:32)\nProvide strategic recommendations and frameworks during the audit, including lifecycle and lead scoring workshops (17:17)\nAccept and review data cleanup files from Chris by Monday morning to include in proposal and audit scope (27:40)\n\n**Chris Newton**\nClean up the demo request and lead qualification dataset to reduce duplicates and improve clarity, then send to Eric by Monday (27:23)\nCoordinate with sales and BDR team to finalize lead scoring criteria and sales handoff processes in collaboration with Methods (10:56)\nFacilitate internal discussions and trainings regarding MQL workflows to accelerate adoption before full automation tasks (21:10)\n\n**Ashley Stirrup**\nProvide input on priorities and participate in workshops; emphasize urgency on lead conversion and nurture processes (03:30)\nSupport coordination for scheduling and internal alignment for workshops and proposal reviews (26:17)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Kari / Guy",
+  "slug": "kari-guy",
+  "calls": [
+    {
+      "id": "01KSXCPFV1R9F6PSZSN98W0KXY",
+      "source": "fireflies",
+      "title": "Kari / Guy SDK connections",
+      "date": "2026-06-02",
+      "duration_minutes": 28,
+      "summary": "The redesign of the SDK connections page aims to enhance key configuration visibility and streamline user management. Improved visibility of edited fields was introduced by Guy Langford-lee to allow users to track changes without needing to open modals. Webhooks have been separated into their own tab to clarify workflows and reduce confusion, while advanced settings in the creation and editing flows are now collapsed by default to emphasize essential options. The approval process for revisions will trigger upon second draft creation, aligning with existing protocols for features and saved groups. The anticipated release is within four weeks, highlighting the team's collaborative efforts in finalizing the design and functionality.",
+      "organizer": "guy@growthbook.io",
+      "participants": 2,
+      "keywords": "SDK connections, revisions, webhooks, UI redesign, remote evaluation, setup instructions",
+      "action_items": "\n**Guy Langford-lee**\nShare screenshots of the new SDK connections UI for review and feedback (12:30)\nConsult with Bryce about webhook revision handling and integration with SDK connections (24:36)\nCoordinate with Johnny to onboard him on webhook and SDK connection redesign tasks (24:30)\nIncorporate Kari’s modal design with the new draft revision selector once received (15:23)\nSet up a follow-up meeting for Friday to discuss design progress and next steps (26:23)\nImprove banner messages to provide clearer instructions for users setting up remote evaluation (19:29)\nRefine UI to reduce duplication (e.g., API host info) and create more concise summary views (20:35)\n\n**Kari Kay**\nProvide finalized modal design for revision draft selector to Guy for integration (15:23)\nReview screenshots and overall redesign concepts shared by Guy and provide design feedback (26:23)\nWork closely with Johnny on onboarding and quality assurance for SDK connections redesign to ensure alignment with broader product patterns (24:07)\n"
+    }
+  ]
+}

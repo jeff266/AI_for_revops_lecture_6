@@ -1,0 +1,18 @@
+{
+  "company": "Graham discussion",
+  "slug": "graham-discussion",
+  "calls": [
+    {
+      "id": "01KGTK5XHSPKY9KA4J2CKK5462",
+      "source": "fireflies",
+      "title": "Graham discussion",
+      "date": "2026-02-06",
+      "duration_minutes": 28,
+      "summary": "The team discussed strategies to enhance email campaign performance, emphasizing the importance of sender identity and subject line elements in driving open rates. Emails sent by Ryan achieved a notable 36% open rate compared to 28-29% for generic sender addresses. The use of emojis in subject lines yielded mixed results, leading to further testing on their effectiveness while maintaining brand consistency. Timing and time zone targeting were highlighted as critical factors for maximizing email engagement, with plans to improve automation for better delivery. The Ronnie webinar has garnered 250 registrations primarily through native signups, but the team aims to further expand reach through targeted outreach on LinkedIn and cross-promotion. They are also implementing structured A/B testing to refine email strategies, aiming to boost open and click rates by 15-20% next quarter.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "open rates, email marketing, webinar promotion, subject line testing, LinkedIn ads, time zone scheduling",
+      "action_items": "\n**Karen Henke**\nReview the last chance email test where variants were inconsistently sent and verify email campaign performance details (14:41)\nContinue posting about the Ronnie webinar next week and also promote office hours webinar through Customer IO channels to drive user engagement (18:37)\nFollow up on the promotion materials and LinkedIn ad details, including assessing if a proper ad is running beyond the boosted post (24:45)\n\n**Graham McNicoll**\nReview and analyze spread of open rates and subject line test results to formulate new hypotheses for email marketing (12:38)\nTake a look at documentation for Auth0 user data integration and explore adding relevant user events for segmentation (27:30)\n\n**Ashley Stirrup**\nResend or find and share the additional Auth0 documentation with Graham for user data integration (27:34)\nEnsure Ronnie’s webinar promotion crosses multiple channels including deduped HubSpot and Customer IO lists as well as sales team distribution (19:12)\nCoordinate with marketing/sales teams to verify LinkedIn ads, reposts by key people like Luke and Graham to boost webinar registration (20:19)\nConsider scheduling and testing email send times considering global audience time zones and improve subject line elements based on meeting conclusions (07:27)\n"
+    }
+  ]
+}

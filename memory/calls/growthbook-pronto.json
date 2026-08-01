@@ -1,0 +1,18 @@
+{
+  "company": "Growthbook <>  Pronto",
+  "slug": "growthbook-pronto",
+  "calls": [
+    {
+      "id": "01KVYZE9SK4Z4ACDZBCYAV3838",
+      "source": "fireflies",
+      "title": "Growthbook <>  Pronto - Intro",
+      "date": "2026-06-26",
+      "duration_minutes": 0,
+      "summary": "The company, a rapidly growing quick service startup in India, is experiencing significant demand evidenced by 40,000 daily orders and a valuation of $200 million, with a month-on-month growth rate of 20%. An app revamp is set for launch on July 24, targeting 1.6 to 2 million active users. The need for a scalable experimentation platform emerged as a priority to alleviate engineering workload, enabling the execution of over 10 monthly experiments, particularly in multivariate and dynamic pricing. Pricing for the platform is estimated between $60,000 and $80,000 annually, including a trial period offered in July, with the goal of smooth contract transition by August 1. Discussions also covered integration documentation, support resources, and financial alignment with budget estimates to ensure the project's success.",
+      "organizer": "dan@growthbook.io",
+      "participants": 3,
+      "keywords": "Experimentation Platform, Mobile App Revamp, Warehouse-Native Solution, Pricing Strategy, SDK Integration, Agile Release",
+      "action_items": "\n**Divishtha Malik**\nStart drafting a rough budget for the experimentation platform with the head of finance by Sunday for internal review (17:11)\nShare internal app walkthrough, SKU list, and experimentation plan during the scheduled demo (25:30)\nInitiate internal financial approval process promptly to meet the July 24 launch deadline (26:50)\n\n**Dan Wathne**\nOrganize and schedule a detailed demo early next week, accommodating time zone and travel constraints (15:50)\nProvide detailed pricing documentation and respond to Divishtha’s pricing match request upon receiving competitor’s offer in writing (23:59)\nFollow up with email summarizing meeting and next steps, including links to documentation and scheduling options (26:50)\n\n**Logan Bates**\nShare technical documentation on data warehouse connections and SDK integration for React Native (19:35)\nSupport demo preparation and address technical team’s questions about SDK size and server-side evaluation option (18:00)\n"
+    }
+  ]
+}

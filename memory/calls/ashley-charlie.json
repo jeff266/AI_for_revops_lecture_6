@@ -1,0 +1,18 @@
+{
+  "company": "Ashley/Charlie",
+  "slug": "ashley-charlie",
+  "calls": [
+    {
+      "id": "01KS3D79P685NPZ0KN8KMFHXSR",
+      "source": "fireflies",
+      "title": "Ashley/Charlie",
+      "date": "2026-05-22",
+      "duration_minutes": 30,
+      "summary": "The team is addressing discrepancies between revenue data sources, particularly between Stripe and investor figures, with significant mismatches observed in monthly recurring revenue (MRR). They are also reviewing approximately $700K worth of failed invoices to assess recoverable revenue and identify billing system issues. There is a need for clarification on the enterprise billing flow, as many customers still utilize Stripe for payments instead of the expected Orb system. Additionally, initial churn data lists for pro and enterprise customers have been created to manage customer retention more effectively. The team is also planning significant operational improvements to ensure data consistency and integrate various systems, with attention to upcoming meetings for continued progress.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Revenue reconciliation, failed invoices, enterprise billing, churn analysis, system integration, process redesign",
+      "action_items": "\n**Charlie Campo**\nReview and reconcile revenue data discrepancies between Stripe, Orb, HubSpot, and investor reports for April (02:06)\nUpdate and maintain consolidated spreadsheet including failed invoices from Stripe and Orb, and share the latest version with Ashley and Jennifer (03:53)\nCompile and send churn lists separated by Pro and Enterprise customers to Ashley and team for review (16:29)\nProvide Mark with raw data to start building a revenue waterfall, ensuring cross-referencing and flagging duplicates (17:39)\nVerify enterprise customer billing channels to confirm whether billed via Stripe or Orb and update records accordingly (09:15)\nSend updated workbook with all reconciled data, including failed invoices and churned customers, to Ashley and Jennifer for ongoing action (22:08)\nCoordinate with Jennifer on Orb and Stripe failed invoice follow-up and enterprise deal data entry updates in HubSpot (22:09)\nConfirm access needs and potentially get access to QuickBooks for reviewing billing data with support from Ashley (28:00)\n\n**Ashley Stirrup**\nFacilitate communication via Slack with Charlie and Jennifer to organize review and resolution of failed invoices and enterprise billing data (20:29)\nOversee Jennifer running down failed invoices, especially those from Orb and Stripe, ensuring no data is missed (03:28)\nSchedule a follow-up meeting on the Tuesday after Ashley’s absence to review progress and next steps (24:06)\nKeep monitoring odd billing cases such as Anywhere Works and escalate as needed (11:37)\nIdentify and support process redesign efforts to better connect billing systems, backend, and accounting, including coordinating with external accounting firm Fondue regarding QuickBooks (27:39)\nRemain available for questions and coordination via Slack while out next week (29:00)\n\n**Jennifer**\nReview and follow up on failed invoices lists for Orb and Stripe, including coordinating on collections or write-offs (03:28)\nAssist with data entry and updating HubSpot with missing enterprise deals and billing details (22:48)\n"
+    }
+  ]
+}

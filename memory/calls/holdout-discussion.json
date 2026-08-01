@@ -1,0 +1,18 @@
+{
+  "company": "Holdout Discussion",
+  "slug": "holdout-discussion",
+  "calls": [
+    {
+      "id": "01KPRKQQ4S8XDPCSBYYG6S4PG1",
+      "source": "fireflies",
+      "title": "Holdout Discussion",
+      "date": "2026-04-21",
+      "duration_minutes": 20,
+      "summary": "The team decided to shut down the current holdout experiment due to technical complexities and the need for better data integrity. A manual cleanup process for removing holdouts was detailed to ensure data continuity, with Luke Sonnet committing to provide a one-page guide for consistent execution. Improvements for future holdouts were proposed, focusing on clarifying opt-in/opt-out processes and developing new metadata frameworks to prevent accidental inclusion of unrelated experiments. The team discussed technical limitations affecting holdout management and emphasized the importance of communication for ensuring all stakeholders are informed about procedures and changes. Continuous support will be provided for effective implementation.",
+      "organizer": "luke@growthbook.io",
+      "participants": 4,
+      "keywords": "Holdout management, Experiment contamination, Feature flags, GrowthBook, CRM experiments, Holdout removal process",
+      "action_items": "\n**Guangyuan Yang**\nCoordinate with experiment owners to switch impacted experiments into draft status, remove holdout linkage, and restart experiments with accurate adjusted start dates to maintain data integrity (11:58)\n\n**Luke Sonnet**\nProvide a one-pager document outlining the safe, step-by-step process for removing holdouts from experiments to share with all relevant teams (14:50)\nFix the bug in the recent review and publish flow that currently blocks automated holdout removal workflows and metadata cleanup (10:40)\nContinue working on improved metadata and hierarchy solutions to enhance future holdout opt-in processes and reduce unintended experiment contamination (16:30)\n\n**Ripple Goyal**\nInform teams about the holdout removal process and help manage communication to ensure smooth coordination and understanding (18:35)\n\n**Guangyuan Yang & Ripple Goyal**\nPlan to retire the current running holdout after ongoing experiments complete and establish a new clean holdout to avoid future contamination (18:50)\n\n**All participants**\nMaintain open lines of communication with Luke Sonnet for troubleshooting, updates, and support regarding holdout management and related workflows (19:20)\n"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "company": "Ashley & Ryan",
+  "slug": "ashley-ryan",
+  "calls": [
+    {
+      "id": "01KP6EHFEW4JZP5C0AVTA3F327",
+      "source": "fireflies",
+      "title": "Ashley & Ryan",
+      "date": "2026-04-16",
+      "duration_minutes": 0,
+      "summary": "The meeting addressed several key areas including the recent webinar's success with 74 attendees and 324 registrants, indicating strong lead interest. Concerns were raised about demo request distribution among Account Executives (AEs) and the need to clean leads from 'contact us' sources. The team proposed weekly brainstorming sessions for enhanced collaboration and pipeline visibility. Discussions on a three-tier pricing strategy emphasized the need for clear differentiation among Starter, Pro, and Enterprise packages. Additionally, competitive positioning and integrated features of the product were highlighted as strengths, while requirements for a dedicated data warehouse to track conversions from open source to paid tiers were emphasized for improved data infrastructure.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 2,
+      "keywords": "Feature Flagging, Pricing Strategy, Sales Operations, Lead Management, Buyer Personas, Experimentation",
+      "action_items": "\n**Ashley Stirrup**\nConduct reference checks on candidate Lindsay to finalize hiring decision (05:04)\nSchedule pricing and packaging brainstorming session with Ryan and select AEs, excluding senior leadership for initial candid input (10:53)\nSearch for time to set up recurring weekly pipeline/brainstorming meetings, preferably Tuesday mornings (11:18)\nContinue building and refining account assignment and alert system in HubSpot for sales team notifications (24:30)\nIdentify and coordinate open source user tracking data integration into internal systems (26:07)\nPrepare for session to analyze pricing spreadsheet and identify highest potential prospects for better conversion targeting (28:08)\n\n**Ryan McGurk**\nReview lead volume and AE assignment data with Ashley to assess accuracy and workload distribution (01:29)\nSet up recurring weekly pipeline/brainstorming meetings to align prospecting efforts (06:56)\nCoordinate with Ashley and pricing stakeholders to develop packaging strategy and incorporate feedback from sales team and leadership (09:57)\nLead persona story development for marketing, product management, engineering, and feature flagging segments (17:51)\nAssist in establishing clear ICP definitions and value messaging for Starter, Pro, and Enterprise segments (11:46)\nPlan for recruitment of full-time revenue/sales operations support to improve data handling and reporting (29:06)\nOversee integration of demo scheduling and routing tools with Jeff and delegate demo scheduling process involvement to Chris (29:49)\n\n**Jeff**\nContinue implementation of demo scheduling tools and integration with HubSpot and calendly for routing by company size (29:49)\n"
+    },
+    {
+      "id": "01KK5C7N6B8H9XSP3T8SP1M6JA",
+      "source": "fireflies",
+      "title": "Ashley/Ryan",
+      "date": "2026-03-09",
+      "duration_minutes": 34,
+      "summary": "The meeting focused on defining clear goals for enhancing experimentation awareness and community engagement, particularly around A/B testing. Key strategies include creating a supportive community through speaking engagements, articles, and podcasts. The transition of the community support platform from Slack to Discourse was discussed, emphasizing improved engagement and better knowledge-sharing capabilities. Participants also reviewed plans for migrating content from Ghost to Webflow and examined social media strategies, including exploring new platforms like Mastodon and Blue Sky. Additionally, video content and G2 review initiatives were planned to attract new community members and gather user feedback, ensuring a comprehensive approach to community building and content management.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "A/B testing, Experimentation evangelism, Community platform, Discourse forum, Social media strategy, Content documentation",
+      "action_items": "\n**Ashley Stirrup**\nCollaborate on drafting the job description for Lucas; use the goals and activities discussed as a base (00:29)\nInstall Docker and attempt GrowthBook local setup using provided Notion documentation; reach out to Ryan for support if issues arise (19:10)\nSet up and manage GrowthBook social media accounts on Mastodon, Blue Sky, and others per Ryan’s transfers and instructions (26:27)\n\n**Ryan Feigenbaum**\nFollow up with Karen and Bright Scout about content API availability and integration for website/blog transition to Webflow (21:26)\nShare G2 review community outreach message with Scott and coordinate communication (23:32)\nComplete design sign-off needed for the updated news section in the app and stop development of the Ghost-based version (22:59)\nContinue transferring GrowthBook’s social media accounts and coordinate access with team members, including TikTok and Dev.to (32:49)\nPublish the strongest version of the experimentation video on YouTube as a short to drive engagement (24:11)\n"
+    },
+    {
+      "id": "01KJKBENCNYZBDC5SHPXT38DG8",
+      "source": "fireflies",
+      "title": "Ashley/Ryan",
+      "date": "2026-03-02",
+      "duration_minutes": 50,
+      "summary": "The meeting focused on Ryan Feigenbaum's departure from GrowthBook to join LiveKit, where he will shift from marketing to content engineering in AI technology. His offboarding is in progress, with Scott designated as his successor. Key discussions included Ryan's plans for knowledge transfer of the MCP project and the importance of refining GrowthBook's content strategy to better engage engineers. They also discussed ongoing initiatives like the G2 review incentive program and the Kahavi webinar preparations, where Ashley will lead while Ryan provides technical support. Future collaboration potential was highlighted, with Ryan offering to connect LiveKit to GrowthBook for possible partnerships.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "AI adoption, offboarding, DevRel role, feature flags, webinar management, G2 incentive",
+      "action_items": "\n**Ryan Feigenbaum**\nNotify Jeremy and Graham about his departure right after this meeting (12:18)\nDevelop and share an onboarding/offboarding checklist documenting all his responsibilities and transition plans (14:23)\nPrepare and send a draft communication outlining the G2 review incentive and raffle details to Ashley for review (44:34)\nShare the curriculum document with Scott to support class development and assist with planning the handoff (45:48)\nInform Ashley and leadership regularly about offboarding progress and any pertinent transition updates (49:23)\n\n**Ashley Stirrup**\nFollow up on the part-time experimentation DevRel role status starting soon (10:06)\nCoordinate with Ronnie and Luke on webinar slide decks and Slido poll integration for the upcoming Kohavi webinar (20:33)\nVerify compliance or legal considerations for running the G2 review raffle with swag and class prizes (43:42)\nManage and reboot systems as needed before the webinar due to technical issues encountered (45:24)\nWork with Ryan to strategize curriculum development, and plan alternative content delivery in case collaborators are unavailable (47:20)\n\n**Scott**\nTake over Ryan’s transitioned tasks including feature flag presentations and curriculum-related responsibilities (07:33)\n"
+    },
+    {
+      "id": "01KH8C63WBAX6M4RTAGM5ZCQMS",
+      "source": "fireflies",
+      "title": "Ashley/Ryan",
+      "date": "2026-02-18",
+      "duration_minutes": 46,
+      "summary": "The discussion centered on enhancing the MCP server's functionalities, including better management of feature flags, automating stale flag detection, and improving targeting through natural language commands. Participants reviewed the near-completion of a feature flag article, highlighting its balanced perspectives and SEO improvements. A new in-app notification sidebar was introduced to display the latest blog posts dynamically, pending further design refinements for platform migration. Moreover, the team explored the potential for AI to automate experimentation workflows, while addressing concerns over synthetic data reliability. Strategic presentations for clients, including Ikea, were also prepared to showcase AI capabilities and deeper integration with Anthropic for enhanced analytics.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "MCP server, feature flags, AI-driven experimentation, stale flags, Open Claw agent, Anthropic integration",
+      "action_items": "\n**Ryan Feigenbaum**\nRender and share the AI Smarter AI video with Ashley (00:23)\nFollow up with Jeremy on the unresolved technical point regarding draft article contents and notify Ashley when resolved (18:03)\nArrange a meeting with Jeremy to demo the new in-app notification feature and discuss API and design implications (27:05)\nInvestigate potential for more experimentation expertise and arrange calls with users to test MCP server prompts on real data (40:18)\n\n**Ashley Stirrup**\nTake another review spin on the feature flag article draft after Ryan’s final checks and coordinate turnaround for publication (23:25)\nPrepare AI roadmap presentation for Christian’s IKEA deal, leveraging insights from Ryan and Luke (42:33)\nRegister with Gmail for Zoom to avoid showing up in meeting numbers (45:24)\n"
+    },
+    {
+      "id": "01KGJXF0DD4GCYEGF1C9ZV3A0Z",
+      "source": "fireflies",
+      "title": "Ashley/Ryan",
+      "date": "2026-02-11",
+      "duration_minutes": 63,
+      "summary": "The team is launching a beginner-friendly class on experimentation, particularly A/B testing in e-commerce, collaborating with Jacob from Good UI. The course will cover fundamental skills such as creating feature flags, defining metrics, and designing experiments, using fake data for practical analysis without backend integration. Concerns about content quality were discussed, with support for Jacob's credibility from Ronnie Kohavi. Additionally, the meeting addressed Vercel's entry into the feature flags market and its implications for Growth Book, emphasizing the need to promote advanced experimentation features as a differentiator. The team also reviewed plans for an upcoming webinar, focusing on increasing attendance through expanded outreach and fixing Slack community access issues to enhance user engagement. Lastly, they discussed documentation improvements and potential AI integration for better user support.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Experimentation, Feature Flags, Webinar, E-commerce, Documentation, Slack Community",
+      "action_items": "\n**Ashley Stirrup**\nWork on expanding email outreach for webinar beyond org admins to all users to increase registrations (00:41)\nCoordinate with Karen and Chris to update Slack community invite links on the website and footer (00:57)\nFollow up with meetup groups for sponsorship opportunities to promote webinar (01:01)\nVerify and consolidate webinar registrant lists from LinkedIn and internal systems to enable attendee follow-up (01:02)\n\n**Ryan Feigenbaum**\nDevelop and finalize presentation slides for the Growth Book Office Hours webinar, submit for review by Ashley (00:38)\nPromote webinar via enterprise broadcast and social outreach to increase attendance (00:42)\nTroubleshoot Zoom webinar role and license assignments; participate as alternative host in rehearsal and live webinar (00:23)\nContinue development of 'type safe feature flags' video content targeting a 2.0 release with promotional support (00:47)\nInvestigate technical feasibility and security around Growth Book MCP server integration with Capa (00:49)\nImprove Growth Book documentation structure and leverage AI tools for enhanced doc quality and SEO (00:51)\nMonitor online conversations about Growth Book and competitors weekly to engage and provide support where relevant (00:44)\nConduct outreach to meetup groups promoting the Ronnie Kohavi webinar event (01:00)\n"
+    },
+    {
+      "id": "01KGDA9Q3WDQD4D75D3FWS99V9",
+      "source": "fireflies",
+      "title": "Ashley/Ryan",
+      "date": "2026-02-03",
+      "duration_minutes": 25,
+      "summary": "The meeting confirmed the 4.3 release is on track for today, with marketing communications scheduled for tomorrow morning. Ryan Feigenbaum finalized the release draft and collaborated with Karen on the announcement email, set to be sent at 8 AM, alongside LinkedIn and Twitter posts. A two-phase social media strategy was proposed to maintain user engagement. The team also discussed targeting enterprise users, specifically inviting Jamila Jordan from Eleris for experimentation discussions. Despite potential engagement challenges, the team aims to improve outreach and utilize community channels for updates. Technical discussions included API improvements and Slack integration challenges, which Ryan addressed through troubleshooting steps. The meeting concluded with plans for informal speaker nominations at an upcoming conference, emphasizing flexibility in content preparation.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Experimentation Island, Feature Flags, Growth Book, Customer IO, Slack Connector, AI Video",
+      "action_items": "\n**Ashley Stirrup**\nRecord feature flag meeting if she cannot attend due to timezone differences (01:30)\nCoordinate with Ryan to schedule a working session Friday at 1 PM to review AI Smarter video and improve engagement (14:59)\nContinue troubleshooting Slack connector on Claude platform based on discussed steps (24:37)\n\n**Ryan Feigenbaum**\nAdd additional details to blog post to align with GitHub releases after today’s 4.3 release (00:41)\nSend invitation to Jamila Jordan at Aleris Co. to participate in Experimentation Island under standard conditions (04:41)\nConfirm with Karen about social media posts to avoid duplication and create LinkedIn, Twitter, and carousel posts for 4.3 announcement (08:26)\nRevise and finalize the feature flag article focusing on the type-safe feature flags (14:16)\nShare marketing Notion doc skills files with Ashley and ensure installation for team content creation (21:42)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Kenneth & James",
+  "slug": "kenneth-james",
+  "calls": [
+    {
+      "id": "01KVQAFJGHV6D4EJDTWMEF7JN0",
+      "source": "fireflies",
+      "title": "Kenneth & James",
+      "date": "2026-06-22",
+      "duration_minutes": 21,
+      "summary": "The team is gearing up to launch the major brand Object, migrating from Contentful to Sanity, which marks a significant move in migrating brands from legacy systems. Kenneth highlighted the ongoing influx of tasks as the team prepares for launch, adopting a pragmatic 'go live and see what happens' approach. The launch schedule is influenced by peak season timing, with brands avoiding go-lives during busy periods. The rollout strategy initially targets about 10 bestseller brands with a dual fee model while allowing for future expansion through renegotiation. They aim to start setup and testing in summer 2023, with close vendor support prioritized in the initial phases. To secure internal buy-in, a strong ROI case is being developed based on analytics to measure performance improvements, with an emphasis on collaboration and in-person meetings to finalize agreements.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "product launch, brand onboarding, commercial structure, testing platform, peak season, partnership negotiation",
+      "action_items": "\n**James Shannon**\nPrepare and bring examples of usage, testing scenarios, and ROI cases to the Wednesday meeting to assist in building the business case (18:50)\nLead commercial and technical discussion on Wednesday to finalize partnership and product demonstration (04:26)\n\n**Kenneth Christiansen**\nProvide clearer ramp schedule and brand onboarding plan after assessing internal priorities and post-Wednesday discussions (05:59)\nFacilitate internal discussions post-demo session to confirm commitment and timeline for signing and starting setup (14:07)\nSupply current conversion and revenue data for benchmarking platform impact evaluation (18:10)\n"
+    }
+  ]
+}

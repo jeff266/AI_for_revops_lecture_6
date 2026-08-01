@@ -1,0 +1,18 @@
+{
+  "company": "Joe Taylor and",
+  "slug": "joe-taylor-and",
+  "calls": [
+    {
+      "id": "01KKEB5W96NJ81ZZTCXHTT7VF7",
+      "source": "fireflies",
+      "title": "Joe Taylor and James Shannon",
+      "date": "2026-03-17",
+      "duration_minutes": 17,
+      "summary": "The meeting addressed the onboarding process for World Sports' Growth Book, highlighting the introduction of dedicated EMEA support with James Shannon in London to foster timely assistance. Most product teams have installed Growth Book SDKs, shifting the focus to increasing active usage and integrating experimentation into workflows. A cultural shift is prioritized to embed experimentation as a core practice, with a structured enablement program proposed to upskill senior product managers. The enterprise cloud license was confirmed to provide full support amidst concerns over open-source limitations. Initial efforts will target small groups of PMs to enhance engagement and drive organizational behavior change based on pragmatic experiences.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 4,
+      "keywords": "Experimentation Culture, Enablement Sessions, Product Management, Feature Flagging, Enterprise Support, SDK Integration",
+      "action_items": "\n**Cary Rakin**\nCoordinate scheduling of enablement sessions with Joe Taylor for Growth Book’s head of customer success specialized in experimentation culture (15:47)\nFacilitate introduction and strategy roadmap discussions to support Growth Book adoption and ROI demonstration in Joe’s organization (10:21)\n\n**Joe Taylor**\nProvide available times to Cary for scheduling enablement and culture-building calls with Growth Book’s customer success lead (16:39)\n\n**Chris Sanders**\nCollaborate internally with Cary and other Chris to prepare and deliver tailored enablement sessions focusing on experimentation culture tailored to senior product teams (10:53)\n\n**James Shannon**\nAct as local EMEA support liaising point for Joe’s team for any time-zone aligned support and questions that arise (14:43)\n"
+    }
+  ]
+}

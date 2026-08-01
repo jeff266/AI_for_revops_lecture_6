@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook Safe Rollout",
+  "slug": "growthbook-safe-rollout",
+  "calls": [
+    {
+      "id": "01KKCD2DGBMSZ10EEP9QZ1J3VB",
+      "source": "fireflies",
+      "title": "GrowthBook Safe Rollout Issue",
+      "date": "2026-03-11",
+      "duration_minutes": 52,
+      "summary": "The team focused on resolving a persistent composite index error related to safe rollout features in GrowthBook’s self-hosted test environment. Manish Kumar identified an error that occurred when trying to view guardrail metrics, indicating missing order-by composite indexes in Cosmos DB. Despite verifying that composite indexes had been added as suggested, the issue only arose when safe rollout rules were applied. Cary Rakin highlighted difficulties in accessing detailed logs from Azure Cosmos DB, which complicated troubleshooting efforts. Chris Sanders planned to review GrowthBook's code to identify necessary collections and indexes, while communication roles were clarified to streamline support. The meeting concluded with an agreement on next steps, including continuing log investigations and potential offline reproductions of the issue.",
+      "organizer": "chris@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Safe Rollouts, Composite Index, CosmosDB, Guardrail Metrics, Azure Logs",
+      "action_items": "\n**Manish Kumar**\nShare application and CosmosDB logs related to the guardrail metric update errors if new relevant information is found (48:11)\n\n**Chris Sanders**\nInvestigate GrowthBook codebase to identify collections and indexes related to guardrail metrics update to determine which missing indexes may cause the error (50:30)\n\n**Cary Rakin**\nAssist in guiding Manish on querying Azure diagnostic logs and finding relevant Mongo request logs filtered by error codes and activity IDs (18:13)\n"
+    }
+  ]
+}

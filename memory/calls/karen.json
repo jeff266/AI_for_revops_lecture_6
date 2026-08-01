@@ -1,0 +1,18 @@
+{
+  "company": "Karen",
+  "slug": "karen",
+  "calls": [
+    {
+      "id": "01KKF5D5VTJ41YWR7SH84B84AD",
+      "source": "fireflies",
+      "title": "Karen - Web Review and Ashley Stirrup",
+      "date": "2026-03-13",
+      "duration_minutes": 22,
+      "summary": "The team discussed an e-commerce awareness campaign targeting 2-10 companies to collaborate on proven experiments, with Ashley leading outreach efforts. A password-protected Notion page will host curated content, with an emphasis on clear, user-focused messaging to attract participants. In addition, the pro flow feature is nearing completion and is expected to begin testing within 1-2 weeks, integrating Google Analytics 4 for effective tracking. Progress on industry-specific pages was noted, with FinTech completed and HealthTech and EdTech pending, while enhancements to the About Us page aim to build credibility through storytelling and metrics. Lastly, preparations for the upcoming meeting with Jeremy include reviewing AI content and ensuring legal compliance for the site launch.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "E-commerce experiments, awareness campaign, Growth Book, About Us page, GA4 tracking, content development",
+      "action_items": "\n**Ashley Stirrup**\nContinue refining and packaging e-commerce experiment outreach content and send related data visualizations for About Us page (17:38)\nCollaborate with Emmy on Unleash and Flagsmith research for comparison pages (11:01)\nProvide light mode design file version to Karen for Michael Knowlton (21:42)\n\n**Karen Henke**\nFinalize FinTech, HealthTech, and EdTech content pages by end of the day (11:01)\nPrepare and share homepage images with the team before meeting with Graham and Jeremy (21:42)\nManage legal content updates via Yusuf and coordinate with legal team for link reviews (08:24)\nInvestigate original blog content to retrieve narrative for About Us page rewrite (15:14)\nWork with Michael Knowlton to track ProFlow button clicks using GA4 and coordinate testing on current site (09:03)\nPotentially involve Scott in analytics reporting and dashboard creation for website goals (10:11)\nPrepare efficiently for upcoming Jeremy meeting covering AI content, MCP server, AI software page updates, and legal link progress (07:47)\n"
+    }
+  ]
+}

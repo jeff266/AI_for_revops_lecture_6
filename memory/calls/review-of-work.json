@@ -1,0 +1,18 @@
+{
+  "company": "Review of work",
+  "slug": "review-of-work",
+  "calls": [
+    {
+      "id": "01KKWGM89X0S6Q430FB5EAY00C",
+      "source": "fireflies",
+      "title": "Review of work to date",
+      "date": "2026-03-19",
+      "duration_minutes": 36,
+      "summary": "The meeting centered on optimizing BDR campaign initiatives focusing on targeted outbound strategies rather than broad experimentation. Key figures like Matthew Du Pont highlighted the importance of refining existing efforts, with significant tracking showing 112 hours devoted since January. The team identified Proto Enterprise and Rio signals as promising leads and plans to pursue OSS signals and former Growth Book customers. Event outreach revealed potential in engaging local DevOps meetups, while AI-driven content generation was emphasized for improving message drafting and workflow. Additionally, the strategy for transitioning to usage-based pricing for new customers was discussed, alongside market targeting for companies with high web traffic to enhance win rates. Overall, the focus is on maximizing effectiveness in BDR efforts and strategic pricing to support revenue growth.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 7,
+      "keywords": "AI-driven outreach, BDR productivity, former GrowthBook users, account-based marketing, event-based campaigns, usage-based pricing",
+      "action_items": "\n**Matthew Du Pont**\nEquip Jake with AI tools to independently perform advanced company and historical research without Matt’s involvement (08:03)\nImprove or discard Apollo contact loader tool to streamline Jake’s list-building process (09:21)\nImplement outreach workflow targeting former GrowthBook users now at new companies and continue model development to allow Jake to execute sequences (11:50)\nDevelop a short prioritized list of current customers and potential large accounts for focused sales expansion (33:33)\nDraft and share detailed priorities and goals for the upcoming week focused on finishing existing tasks (29:19)\nPut together models to determine staffing needs for hiring additional BDRs based on output baselines (35:46)\n\n**Jake Stangl**\nFocus on advancing current outreach sequences with clarity on priorities, especially prioritizing finishing existing experiments (26:54)\nCollaborate with Ashley to create webinar invitation messaging for outreach calls (29:15)\nPrepare to get certified on pitch and high-level demo for Pro to Enterprise closing next week (34:48)\n\n**Ashley Stirrup**\nProvide messaging blurbs to Jake for Khan Academy webinar outreach (23:55)\nArrange meeting with SimilarWeb to integrate monthly web traffic data for prospect qualification (24:15)\nIdentify and communicate recommendations for key conferences and events for GrowthBook presence in the second half of the year (25:43)\nWork on tracking downloads of open source GrowthBook versions and integrating data into CRM systems (24:15)\n\n**Ryan McGurk**\nCoordinate high-level sales strategy and board priorities communication including pricing, account expansion, and AI messaging focus (30:55)\nCollaborate with Matthew to identify and select key large accounts for ABM efforts (33:33)\nFacilitate certification and transition process for Jake on closing and demos (34:48)\n"
+    }
+  ]
+}

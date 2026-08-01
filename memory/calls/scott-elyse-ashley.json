@@ -1,0 +1,18 @@
+{
+  "company": "Scott / Elyse / Ashley",
+  "slug": "scott-elyse-ashley",
+  "calls": [
+    {
+      "id": "01KN6WZ47QWP83GXN53BKVFKKE",
+      "source": "fireflies",
+      "title": "Scott / Elyse / Ashley - 4.4 narrative",
+      "date": "2026-04-03",
+      "duration_minutes": 34,
+      "summary": "The team discussed the launch strategy for GrowthBook 4.4, aiming to integrate AI across products to enhance user experience. Key highlights include a focus on AI-driven features in product analytics, making data accessible without SQL knowledge through the new AI Data Analyst. The meeting emphasized a managed data warehouse as the default option to enhance onboarding experiences. Governance and rollout improvements in feature flagging were highlighted, enabling safer deployments. Additionally, an AI-driven demo is planned to showcase new capabilities. The discussion also addressed the refinement of documentation and launch coordination to ensure a smooth rollout and reduce onboarding friction for users.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook 4.4, AI Data Analyst, feature flagging, managed warehouse, product analytics, launch narrative",
+      "action_items": "\n**Scott Bailey**\nBuild and create a documentation skill for feature flags and coordinate with Jeremy for documentation development next week (04:25)\nTake notes and continue refining the launch narrative and blog post assets for the GrowthBook 4.4 release (29:57)\nShare meeting notes and recording related to the managed warehouse discussion with Ashley Stirrup and Elyse Fox (17:00)\nSync with Karen and Chris to allocate launch workload and confirm UTM preparations for the product launch (30:19)\nFollow up on acquiring customer quotes for feature improvements such as the Cupid performance enhancement (31:46)\n\n**Ashley Stirrup**\nMonitor and contribute to documentation efforts focusing on governance and rollout control features (04:07)\nCoordinate with Scott Bailey on launch checklist and marketing collateral including banners and office hours announcements (30:55)\nTrack weekly progress and update the internal little weekly tracker with finished or exciting deliverables to maintain focused company-wide communications (32:19)\nAdd pricing analysis documentation to sales resources and assist with pricing research related to competitive landscape and benchmarks (33:30)\n\n**Elyse Fox**\nAssist in validating and researching feature flagging governance and controlled rollout best practices with the team (22:00)\nProvide input on blog post structure and narrative focusing on safe rollout, governance maturity, and team consistency for the GrowthBook 4.4 launch communications (25:00)\n"
+    }
+  ]
+}

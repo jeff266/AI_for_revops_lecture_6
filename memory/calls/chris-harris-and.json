@@ -1,0 +1,18 @@
+{
+  "company": "Chris Harris and",
+  "slug": "chris-harris-and",
+  "calls": [
+    {
+      "id": "01KW9CCQN710P5GBBTG23S3ENA",
+      "source": "fireflies",
+      "title": "Chris Harris and Scott Keller",
+      "date": "2026-06-29",
+      "duration_minutes": 0,
+      "summary": "The discussion revolved around identifying a suitable split testing tool that supports feature flags and server-side experiments, emphasizing usability for non-engineering teams. Chris Harris highlighted the importance of a tool that can effectively support both agency and client teams, drawing from past experiences with tools like Statsig and Chameleon. Scott Keller presented Growth Book as a strong candidate, emphasizing its engineering roots, open-source nature, and adaptability across tech stacks, which has contributed to its adoption by over 3,000 enterprise customers, including notable fast-growth companies. The conversation also touched on the platform's new visual editor, recent enhancements for improved user experience, and flexible pricing models aimed at accommodating various client needs. A demo session was scheduled to further evaluate Growth Book's capabilities.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 2,
+      "keywords": "Split Testing, Growth Book, Experimentation Platform, Feature Flags, Pricing Models, Reseller Program",
+      "action_items": "\n**Scott Keller**\nSend Chris Harris an introductory overview deck covering platform features, pricing (including enterprise and pro plans), reseller referral agreements, and key points discussed (18:29)\nSchedule and send calendar invite for a 30-minute demo session on Thursday at 12 PM Atlanta time, focusing on experiment setup, analytics, visual editor, and AI features (19:59)\n\n**Chris Harris**\nReview the overview deck and prepare for demo session on Thursday, focusing on analytics and platform usability for client teams (21:26)\n"
+    }
+  ]
+}

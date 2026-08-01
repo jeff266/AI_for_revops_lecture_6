@@ -1,0 +1,18 @@
+{
+  "company": "Anita Krasińska and",
+  "slug": "anita-krasi-ska-and",
+  "calls": [
+    {
+      "id": "01KRRY12B6GA7C8EJSMET4DFPV",
+      "source": "fireflies",
+      "title": "Anita Krasińska and James Shannon",
+      "date": "2026-05-18",
+      "duration_minutes": 37,
+      "summary": "The team at Impose discussed the urgent need for a new A/B testing platform as Firebase was found to be unreliable and limited in scalability. With the intention to run multiple experiments simultaneously, they emphasized the importance of observability and transparency in experiment results. GrowthBook emerged as a potential solution, offering features such as seamless integration with Databricks for data analytics, dynamic user segmentation, and robust support for mobile-first experimentation. Pricing models that scale with experiment volume were explored, along with the necessity for a strong business case to secure budget approval. The meeting concluded with plans for a product demo scheduled for May 26th or 27th and a follow-up on pricing details needed for effective decision-making.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 6,
+      "keywords": "AB testing, Feature flags, Observability, Pricing, Databricks integration, Mobile SDK",
+      "action_items": "\n**James Shannon**\nPrepare and send detailed pricing rubric including different experiment volume brackets and cloud vs on-prem options (31:43)\nProvide comparison one-pager between GrowthBook and Firebase remote config focusing on features and reliability (10:59)\nShare case studies demonstrating business impact from AB testing to support InPost’s budget justification (31:43)\nSchedule a detailed product demo for InPost team, proposing May 26 or May 27 dates (35:42)\nFollow-up via email with pricing, case studies, and demo scheduling options (36:00)\n\n**Anita Krasińska**\nShare technical questions by email after meeting for further follow-up (31:51)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "PG discussion",
+  "slug": "pg-discussion",
+  "calls": [
+    {
+      "id": "01KGARFD57ZYFCCKD2ERC6CRHJ",
+      "source": "fireflies",
+      "title": "PG discussion",
+      "date": "2026-02-02",
+      "duration_minutes": 31,
+      "summary": "The team discussed refining their outbound sales strategy by prioritizing high-impact, low-effort activities, specifically targeting time-sensitive Rio signals to improve meeting success rates. Matthew Du Pont emphasized the importance of balancing meeting likelihood against effort, suggesting that traditional outbound efforts should be a fallback. Named leads with specific signals will be prioritized for outreach, while anonymous signals will guide account-level strategies. Basic outbound sequences are set to launch soon, aiming for rapid engagement with Rio leads. The group also highlighted the need for collecting critical customer information during outreach calls to inform future strategies and improve engagement, ultimately envisioning a more automated and personalized sales approach.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 6,
+      "keywords": "RIO signals, outbound sequences, lead prioritization, HubSpot optimization, personalized messaging, sales cadence",
+      "action_items": "\n**Matthew Du Pont**\nDevelop and share initial basic outbound sequences for use when no RIO signals are available by end of day tomorrow (10:25)\nRequest 5-10 account nominations from Dan, Christian, and Jake to guide outbound efforts without RIO signals (23:00)\nLead development and iteration of RIO outreach sequences and process improvements (19:45)\nCoordinate with Ryan and Jeff on HubSpot field structure improvements to better capture key data points (27:30)\n\n**Ryan McGurk**\nWork with Jeff on optimizing HubSpot record usability and field additions without over-engineering (27:27)\nManage assignment and distribution of RIO leads, initially manually then via automation/round robin (21:30)\nOrganize and facilitate short 15-minute huddles every other day with AE and BDR teams starting immediately (29:10)\nContinue monitoring RIO Slack channel and assign leads promptly; encourage Jake and Matt to engage leads from RIO channel (30:00)\n\n**Dan Wathne**\nProvide account nominations for outbound sequences targeting when no RIO signals exist (22:51)\nCollaborate with Matt and Jake on lead outreach and sequencing; coordinate tagging and prioritization for VP+ roles with personalized touch (16:30)\nWork with Ashley or relevant parties to create UTM tracking links integrated within outreach emails for performance measurement (23:30)\n\n**Christian Liebenow**\nProvide account nominations for outbound sequences for non-RIO signal targets (22:51)\nSupport and align on lead prioritization strategy, focusing lower-level RIO signals to BDRs per region/geography (11:40)\n\n**Jake**\nBegin making initial outreach to RIO leads by midweek and integrate feedback into sequencing (20:40)\nParticipate in upcoming recurring huddles for quick issue resolution and collaboration (29:10)\n"
+    }
+  ]
+}

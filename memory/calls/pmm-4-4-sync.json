@@ -1,0 +1,18 @@
+{
+  "company": "PMM 4.4 sync",
+  "slug": "pmm-4-4-sync",
+  "calls": [
+    {
+      "id": "01KN57NWP92X8YV68T87VE8BFM",
+      "source": "fireflies",
+      "title": "PMM 4.4 sync",
+      "date": "2026-04-01",
+      "duration_minutes": 27,
+      "summary": "The meeting outlined significant updates to feature flag management, including version control for enhanced auditability and safety, ramp-up rollout schedules for gradual feature releases, and approval workflows to govern production changes. The introduction of an AI chat interface aims to simplify data exploration for non-technical users, with a focus on security measures to protect sensitive information. Discussion also centered on aligning the product's messaging around these updates, emphasizing AI-driven features and safety enhancements, which appeal to enterprise customers. Finally, insights into development practices were shared, highlighting ongoing work on AI features and collaborative deployment strategies.",
+      "organizer": "scott@growthbook.io",
+      "participants": 1,
+      "keywords": "feature flags, ramp up rollout, AI chat, product analytics, approval flows, version control",
+      "action_items": "\n**Scott Bailey**\nBrainstorm and draft narrative language options for describing the scope and significance of the feature flag updates for marketing and communications (25:37)\nCoordinate with Ashley on narrative drafts to present for team feedback (26:05)\nInvestigate and clarify GrowthBook’s data handling and agreements for AI API keys in cloud to update trust center documentation (18:34)\nLeverage GrowthBook cloud account to perform product analytics testing and prepare for AI chat feature testing next week (22:19)\n\n**Jeremy Dorn**\nContinue debugging and finalizing AI data analyst feature and AI chat interface, including integration of API keys and MCP server capabilities (11:23)\nPrepare test environment or instance for internal team to try AI chat prompts and provide feedback by next week (22:19)\nPossibly create ramp-up rollout templates based on industry best practices like Meta’s increasing circles model for user communication (10:50)\n"
+    }
+  ]
+}

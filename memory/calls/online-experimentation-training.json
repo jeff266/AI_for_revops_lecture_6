@@ -1,0 +1,18 @@
+{
+  "company": "Online Experimentation Training",
+  "slug": "online-experimentation-training",
+  "calls": [
+    {
+      "id": "01KHVY447E86TD551HCGEAYV98",
+      "source": "fireflies",
+      "title": "Online Experimentation Training",
+      "date": "2026-02-20",
+      "duration_minutes": 50,
+      "summary": "The team discussed a plan to build a hub for experiment replications, focusing on pre-designed templates to facilitate quicker implementation, aiming to significantly increase the number of experiments conducted. Jakub Linowski emphasized the need for aggregated data for meta analysis while Ashley Stirrup highlighted the importance of user consent for participating companies and the option for anonymity. They also planned a beginner-friendly training course targeting new users of Growth Book, covering essential aspects of running experiments from setup to analysis. Additionally, the conversation included strategies for selecting impactful experiments and considerations for API integration to streamline data sharing, with the ultimate goal of enhancing customer engagement and brand visibility.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "A/B testing, experiment replication, meta-analysis, Growth Book, e-commerce, training course",
+      "action_items": "\n**Jakub Linowski**\nShare example experiments or patterns for replication and training course planning (39:54)\nContinue development on Good UI replication hub and coordinate community engagement plans (48:46)\nAssess customers’ interest and willingness for participation in replication projects and willingness to share experiment metrics (34:50)\nCollaborate with Growth Book team on potential Growth Book import functionality for replication experiments after example selection and feasibility assessment (49:05)\nProvide Ryan with proposed first AB test example or experiment concept for course design (41:46)\n\n**Ashley Stirrup**\nSlack Ryan to join meeting and coordinate discussion on training and replication ideas (00:31)\nCoordinate with Ryan to draft agenda for the training course focusing on first AA test (38:46)\nDiscuss with leadership and sales/marketing about sponsoring replication projects and publishing meta-analysis results to promote Growth Book brand (33:50)\nInclude Chris Dazon, the new technical hire, in future meetings related to experiment training and experimentation support (48:06)\n\n**Ryan Feigenbaum**\nDraft a backward-plan agenda for technical training course covering experiment setup and AA testing (39:00)\nProvide input on technical feasibility related to API integrations and import/export of experiments (37:28)\nCollaborate with Ashley and Jakub on defining course content and examples (41:54)\nAssist in evaluating customer roles and segmentation for training content relevance (41:58)\n"
+    }
+  ]
+}

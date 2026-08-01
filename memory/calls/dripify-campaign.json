@@ -1,0 +1,18 @@
+{
+  "company": "Dripify Campaign",
+  "slug": "dripify-campaign",
+  "calls": [
+    {
+      "id": "01KY83ZHB6C50V5BPXGYRW0MEN",
+      "source": "fireflies",
+      "title": "Dripify Campaign",
+      "date": "2026-07-23",
+      "duration_minutes": 22,
+      "summary": "The team discussed strategies to boost attendance for an upcoming event, setting a goal of 30 attendees with a 40% show rate, requiring around 50 invites. They introduced Dripify as a tool for automated LinkedIn outreach, capable of sending up to 500 invitations over 10 days, while highlighting the need to manage invites to avoid overlaps. The target audience consists of Bay Area VPs in engineering, product, and data science within companies with 500 to 10,000 employees, totaling approximately 1,500 prospects. Team roles were clarified, with each member responsible for specific segments to ensure effective outreach without duplication. The importance of adhering to LinkedIn’s limits on daily invites was also underlined to maximize campaign success.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Dripify, LinkedIn outreach, Sales Navigator, event attendance, ProSP AI, prospect nurturing",
+      "action_items": "\n**Ashley Stirrup**\nReview if Sales Navigator functionality exists within ProSP AI to leverage current automation tools (10:43)\nSubscribe to Sales Navigator temporarily to access targeted lists (18:45)\nLoad shared Sales Navigator filter screenshot into the system and prepare outreach lists (18:54)\nAnalyze and test embedding invitation text directly into LinkedIn connection requests for efficiency (19:03)\nResearch ProSP AI campaign setup to understand sender assignment and list management (20:07)\n\n**Ryan McGurk**\nTake responsibility for targeting and outreach to VP of Product segment with LinkedIn invites (09:53)\nCoordinate with Jake and Ashley in outreach efforts to drive event attendance and avoid duplicates (10:27)\n\n**Brent Holloway**\nProvide Ashley and Ryan with screenshots and details of Sales Navigator filters used for targeting (20:42)\nAssist with Dripify setup or alternative tool usage if required by the team (20:51)\nExport or share filtered prospect lists in Excel if required for alternative outreach platforms (07:45)\n"
+    }
+  ]
+}

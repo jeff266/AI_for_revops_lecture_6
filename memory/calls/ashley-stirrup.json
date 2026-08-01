@@ -1,0 +1,18 @@
+{
+  "company": "Ashley Stirrup",
+  "slug": "ashley-stirrup",
+  "calls": [
+    {
+      "id": "01KRJM8GNK1SPEE09WGQ21P2E2",
+      "source": "fireflies",
+      "title": "30-minute meeting (Ashley Stirrup)",
+      "date": "2026-05-18",
+      "duration_minutes": 34,
+      "summary": "Gwendal Vaz Nunes transitioned from Matillion to Meta Compliance as CTO, marking a strategic move into the cybersecurity sector. Meta Compliance, achieving $45 million in revenue with a 28% growth rate last year, emphasizes security awareness training and phishing simulations. The conversation highlighted the evolving challenges faced by Matillion, which is experiencing a plateau in growth despite surpassing $100 million in revenue, alongside weakened partner relationships, particularly with Snowflake. Insights into AI integration revealed a slow adoption rate among enterprise customers, especially in risk-averse sectors like healthcare and finance. Additionally, the meeting discussed Ashley's developer-friendly AB testing platform that has been instrumental in driving significant revenue increases for clients, emphasizing the need for structured testing approaches to balance feature velocity and quality.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Meta Compliance, Matillion, AI integration, AB testing, cybersecurity training, data integration market",
+      "action_items": "\n**Gwendal Vaz Nunes**\nSuggest catching up towards end of June to explore potential business opportunities after starting at new company (06:47)\nKeep updated on Ashley’s business progress and product offerings for future collaboration potential (06:07)\n\n**Ashley Stirrup**\nPlan for possible Europe trip to attend conferences and meet with European customers and partners (31:46)\nContinue building marketing and sales pipelines to expand company revenue and customer base (21:54)\nImplement pricing model changes shifting from per-user to event-based consumption pricing (30:26)\nAttend AI events such as upcoming Mr. AI event with CEO and sales team and engage with industry peers (31:47)\n"
+    }
+  ]
+}

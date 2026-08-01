@@ -1,0 +1,18 @@
+{
+  "company": "James Watts and",
+  "slug": "james-watts-and",
+  "calls": [
+    {
+      "id": "01KT32GY094P8WVRBPBD2D99FG",
+      "source": "fireflies",
+      "title": "James Watts and Scott Keller + Logan Bates",
+      "date": "2026-06-02",
+      "duration_minutes": 0,
+      "summary": "The discussion highlighted updates to GrowthBook's rollout automation tools, specifically the introduction of ramp schedules to replace safe rollouts. These ramp schedules allow for flexible, staged deployments with targeting rules and percentage allocations. Additionally, safe rollouts now feature automatic health checks and rollback triggers to ensure deployment stability. Customers can create custom metrics from connected data warehouses for tailored monitoring. The meeting also examined customer versioning, with the current customer using a grandfathered Pro subscription that lacks newer features. The potential upgrade to the Enterprise tier was discussed, emphasizing added support and governance features. Finally, integration strategies were reviewed, including webhook event capabilities for better synchronization with external systems.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, rollout automation, ramp schedules, feature flags, monitoring integration, self-hosted Pro subscription",
+      "action_items": "\n**Logan Bates**\nShare detailed webhook event payload documentation related to safe rollouts and ramp schedules to James Watts (24:19)\n\n**James Watts**\nEvaluate GrowthBook’s latest rollout plan and monitoring features, especially integration through Snowflake, and decide on potential upgrade path (30:01)\n\n**Scott Keller**\nProvide James with an enterprise license trial for scoped evaluation of new features and support benefits when James decides to explore upgrading (29:37)\n"
+    }
+  ]
+}

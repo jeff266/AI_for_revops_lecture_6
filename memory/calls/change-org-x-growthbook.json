@@ -1,0 +1,18 @@
+{
+  "company": "Change.org x GrowthBook",
+  "slug": "change-org-x-growthbook",
+  "calls": [
+    {
+      "id": "01KTP6634ZMHYKVY6P9K2YZ1AZ",
+      "source": "fireflies",
+      "title": "Change.org x GrowthBook — POC Kickoff",
+      "date": "2026-06-16",
+      "duration_minutes": 29,
+      "summary": "The team planned a pilot of GrowthBook for Q3, concentrating on technical integration, user experience, and comparisons with existing tools like Amplitude. They established a multi-week timeline to connect Redshift and run A/B tests to analyze results. Eric Steinle presented an evaluation framework with 15 criteria, while Chris Campbell emphasized limited initial integration to mitigate risks. Pricing discussions highlighted a transition from per-seat to experiment-based models, with a need to retain legacy pricing during the pilot. GrowthBook's AWS-hosted architecture supports secure data connections and flexible integrations. The group agreed on establishing dedicated communication channels and set a target to complete pilot setup within three weeks while maintaining flexibility in contract execution.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 5,
+      "keywords": "GrowthBook, pilot, pricing model, data warehouse integration, Amplitude, POC criteria",
+      "action_items": "\n**Scott Keller**\nSet up Slack channel for Change.org and GrowthBook teams to facilitate communication today (18:10)\nProvide confirmation on per-seat licensing versus CLI/API usage and seat charges, including clear pricing details by afternoon (23:34)\nShare relevant documentation and sales info related to pricing and terms with Eric Steinle ASAP (18:52)\nSupport contract process by supplying basic terms and ensuring pilot can proceed without signed contract (26:12)\n\n**Eric Steinle**\nDevelop and circulate final list of ~15 evaluation criteria for GrowthBook pilot within next few days (25:24)\nRoute any legal or contractual documents requiring review to himself and ensure timely processing (26:33)\nCoordinate with Jeff Knight and Chris Campbell to plan pilot timeline aimed at starting in July, allowing 3-4 week experimentation with feature squads (13:15)\n\n**Jeff Knight**\nCoordinate with legal regarding review and feedback on supplied GrowthBook documentation (26:22)\nClarify detailed usage scenarios concerning experiment creation via CLI/API vs seat licensing with GrowthBook team to ensure accurate budgeting and licensing (25:08)\n\n**Logan Bates**\nProvide technical details and documentation on secure data warehouse connection options including encryption and private link possibilities (06:23)\nAssist with integration details especially around Amplitude and Kafka pipeline compatibility during POC phase (10:19)\nParticipate in Slack channel to support technical queries and coordinate with data scientists as needed (11:58)\n"
+    }
+  ]
+}

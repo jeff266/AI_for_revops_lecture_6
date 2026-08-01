@@ -1,0 +1,18 @@
+{
+  "company": "Growthbook <> Coreflow",
+  "slug": "growthbook-coreflow",
+  "calls": [
+    {
+      "id": "01KSXTC2M3YF1KEJDKKHGTZH6K",
+      "source": "fireflies",
+      "title": "Growthbook <> Coreflow - Pricing Sync",
+      "date": "2026-06-01",
+      "duration_minutes": 19,
+      "summary": "The discussion focused on clarifying Growth Book's pricing structure, highlighting an annual cost of approximately $125,000 for 150 experiments, primarily due to a prominent platform fee of $80,000. The client, represented by Justin, expressed that this pricing exceeded their current spending with Posthog and sought detailed differentiation between Growth Book's licensing tiers, particularly concerning self-hosted and managed cloud versions. Flexible payment options were proposed to alleviate upfront costs. Moreover, the two parties discussed the features of Growth Book, emphasizing full access in enterprise plans without extra charges for modules. Justin outlined his company's rapid growth, reaching nine figures in revenue within 18 months, and a total of 100-150 planned experiments annually, all while highlighting the need for a collaborative approach to negotiated pricing.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook pricing, platform fee, experiment scale, PostHog comparison, product analytics, self-hosted vs cloud",
+      "action_items": "\n**Justin (coreflow.dev)**\nReview internal options including GrowthBook, open source, and PostHog, assessing technical fit and budget constraints (14:30)\nConsult with finance team and share a target budget number with Dan Wathne within the next few days to facilitate GrowthBook’s internal negotiation (16:45)\n\n**Dan Wathne (growthbook.io)**\nFollow up with GrowthBook leadership to negotiate platform fee reduction based on Coreflow’s target budget once received (12:45)\nOffer to schedule technical deep-dive sessions with GrowthBook’s data or engineering teams if Coreflow desires further analysis (17:45)\n"
+    }
+  ]
+}

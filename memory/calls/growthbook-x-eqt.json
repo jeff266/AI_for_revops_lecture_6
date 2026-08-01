@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook x EQT",
+  "slug": "growthbook-x-eqt",
+  "calls": [
+    {
+      "id": "01KKA38QKSVM8ERH2GEZDDTFZD",
+      "source": "fireflies",
+      "title": "GrowthBook x EQT IT Sec Team",
+      "date": "2026-03-11",
+      "duration_minutes": 15,
+      "summary": "The discussion focused on the current security setup for endpoint management and the ongoing compliance strategy. Without a formal mobile device management program, the company manages laptops via audits, ensuring they meet requirements for encryption, antivirus protection, and password policies. Data security relies on a cloud architecture, minimizing local data storage risks. Multi-factor authentication and rigorous code reviews are crucial for maintaining data integrity. Self-hosting further enhances client control over data security while continuous audits help monitor compliance with SOC2 requirements. Future plans include scaling management processes as the team grows, with a focus on enhancing security capabilities.",
+      "organizer": "jake@growthbook.io",
+      "participants": 5,
+      "keywords": "mobile device management, endpoint security, cloud-based architecture, device encryption, self-hosting, vendor security assessment",
+      "action_items": "\n**Ida Ek**\nComplete the vendor security assessment based on the information gathered in this meeting (14:18)\n\n**Simon Davidsson**\nFollow up with GrowthBook team and communicate next steps after assessment completion (14:31)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "GrowthBook Developer Training",
+  "slug": "growthbook-developer-training",
+  "calls": [
+    {
+      "id": "01KS0GJWTEXGH8PK4NZ0XN0ANM",
+      "source": "fireflies",
+      "title": "GrowthBook Developer Training Session",
+      "date": "2026-05-21",
+      "duration_minutes": 62,
+      "summary": "The team discussed a strategy to implement data-driven experimentation to make more informed product decisions and prevent ineffective feature rollouts. Chris Sanders highlighted that only a third of deployed features improve products, underscoring a shift from test-driven development to experimentation-driven development, which promotes launching MVPs and iterating based on results. The technical setup for integrating GrowthBook with data systems, particularly Snowflake, was detailed, covering aspects like SDK event tracking and experiment assignment queries. The importance of establishing robust governance through approval flows and audit history was emphasized to avoid unauthorized changes. Additionally, advanced methodologies like Cupid and post stratification were presented to enhance the accuracy of experimental results and reporting.",
+      "organizer": "chris@growthbook.io",
+      "participants": 25,
+      "keywords": "Feature Flags, Experimentation, Snowflake, SDK Integration, Data Warehouse, Metrics Reporting",
+      "action_items": "\n**Kyle Treman**\nCommunicate new metric creation needs to the SQL/analytics team when new experimental metrics are required to ensure proper setup in GrowthBook (24:47)\nCoordinate with internal teams on schema and dimensions for clickstream event data integration into Snowflake to support experiment slicing and reporting (33:52)\nContinue implementing the common SDK module and API for feature flags and experimentation to standardize development workflow (25:04)\nLead preparation and rollout of a recommendation test on the Harry and David brand using targeted dimensions for experiment segmentation and reporting (49:43)\n\n**Chris Sanders**\nAssist teams with troubleshooting SDK implementation and tracking callback setup to ensure accurate experiment exposure event reporting (27:54)\nSupport integration efforts with Snowflake and GrowthBook data sources, including fact tables and metrics setup, to enable efficient experiment analysis (15:22)\nProvide further enablement and support on experimentation best practices, including advanced data science techniques like CUPED and post-stratification, in upcoming training sessions (55:14)\nAdvise on approval flows and permissions to safely control feature flag changes and API/MCP server access, minimizing risk of unintended production impact (44:49)\nOffer follow-up training specifically for experimenters, including consultation with data scientists to deepen understanding of experimentation metrics and reporting (59:17)\n\n**Team Developers**\nImplement clickstream event tracking for experiments and feature flag exposures into Snowflake to enable accurate experiment data collection and analysis (24:47)\nParticipate in AA testing to validate SDK setup and tracking accuracy, ensuring unbiased traffic split and reliable experiment data (28:43)\nSet user attributes in SDK for correct targeting and filtering of feature flags and experiments to ensure proper enrollment and exposure (29:00)\n"
+    }
+  ]
+}

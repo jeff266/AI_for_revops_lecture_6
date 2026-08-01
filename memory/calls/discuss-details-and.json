@@ -1,0 +1,18 @@
+{
+  "company": "Discuss details and",
+  "slug": "discuss-details-and",
+  "calls": [
+    {
+      "id": "01KWZ6QMHJ0ZN7670F69HA8PMA",
+      "source": "fireflies",
+      "title": "Discuss details and marketing for new learnings feature",
+      "date": "2026-07-09",
+      "duration_minutes": 29,
+      "summary": "The discussion revolved around the development of the Insight Finder product, aimed at capturing and sharing insights from large-scale experimentation programs to minimize knowledge loss. Key themes included the importance of structured experiment hygiene to ensure reliable documentation of hypotheses and learnings, the need for collaboration across teams to avoid isolated insights, and the role of AI in pattern detection while requiring strong human oversight. The roadmap emphasized launching core features soon, such as insight discovery and status management, while planning to integrate further functionalities like idea backlogs to enhance the experimentation lifecycle.",
+      "organizer": "elyse@growthbook.io",
+      "participants": 3,
+      "keywords": "experiment learnings, Insight Finder, AI-assisted analysis, experimentation program, hypothesis validation, idea management",
+      "action_items": "\n**Graham McNicoll**\nFix the confidence score display bug in the Insight Finder product to ensure accurate presentation of automated insights (05:37)\nIntegrate the learnings feature into key user flows, particularly at the start and conclusion of experiments, to encourage user adoption and consistent documentation (19:49)\nCollaborate with Jeremy to finalize development and release of the “Ideas” feature, including assessing partnership opportunities with Slack integration for enhanced team collaboration (26:40)\n\n**Elyse Fox**\nDefine and clarify best practices for implementing and scaling the learnings feature within Growth Book’s customer base to maximize experimentation program value (27:33)\n\n**Ashley Stirrup**\nPromote cultural adoption of post-experiment review sessions as opportunities to curate and validate learnings, reinforcing data-driven decision making (12:31)\nEvaluate potential podcast guest content related to AI and experimentation to enhance Growth Book’s thought leadership and community engagement (27:46)\n"
+    }
+  ]
+}

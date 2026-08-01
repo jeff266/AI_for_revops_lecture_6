@@ -1,0 +1,18 @@
+{
+  "company": "Pictime & GrowthBook",
+  "slug": "pictime-growthbook",
+  "calls": [
+    {
+      "id": "01KW99ZST1R9P777G8BQTC5EEW",
+      "source": "fireflies",
+      "title": "Pictime & GrowthBook Proposal Discussion",
+      "date": "2026-07-02",
+      "duration_minutes": 49,
+      "summary": "The team discussed strategies to leverage GrowthBook for improving subscription conversions, particularly from free to the beginner paying tier, which currently has a 23% conversion rate among 7,000–8,000 monthly sign-ups. Amir emphasized the importance of optimizing user experience within the app, while James suggested running 10 to 20 experiments monthly to achieve a meaningful conversion lift of 0.5% to 6%. The integration of GrowthBook with Databricks was highlighted for automated analytics and metric tracking, facilitating real-time results without the need for manual analysis. Product managers will benefit from a visual editor and Figma integration, allowing independent experimentation without heavy engineering input. Finally, pricing options were discussed, proposing a no-cost proof of concept in July to assess the platform’s value before commitment.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 5,
+      "keywords": "A/B Testing, Experimentation, Databricks Integration, Product Analytics, Visual Editor, Conversion Optimization",
+      "action_items": "\n**Gill Matz**\nDevelop initial metrics in Databricks relevant to the experiments planned for the GrowthBook trial (46:00)\n\n**Tal Binyamini**\nCoordinate internal resources for experiment setup and participate in the Monday 11:00 AM kickoff call to align on metric setup and onboarding (46:00)\n\n**James Shannon**\nProvide product training and onboarding resources to PicTime team, schedule the follow-up kickoff call on Monday, and extend the free trial through the end of July (34:50)\n\n**Amir Karby**\nEvaluate GrowthBook platform during the trial period, discuss contract options with the team, and decide on commitment after proof of concept (33:20)\n\n**Tal Binyamini & Gill Matz**\nContinue building partial experiment integration and refine metrics to maximize effective use of GrowthBook features (28:40)\n"
+    }
+  ]
+}

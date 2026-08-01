@@ -1,0 +1,18 @@
+{
+  "company": "SEO edits on",
+  "slug": "seo-edits-on",
+  "calls": [
+    {
+      "id": "01KQ7C4CVDCTPQHY3JC5T0FEMB",
+      "source": "fireflies",
+      "title": "SEO edits on PO post",
+      "date": "2026-04-27",
+      "duration_minutes": 14,
+      "summary": "The team discussed strategies to balance strong SEO practices with the goal of maintaining appeal to their data science readership. Incorporating Jason's SEO feedback resulted in improved content quality while avoiding overly SEO-heavy language. They also preferred the term 'experimentation' over 'A/B testing' to position the brand as leaders in innovation, although they recognized the need for SEO concessions. Google Docs was chosen as the main collaboration tool despite its limitations, facilitating efficient content editing. The article is near completion, pending final revisions and image adjustments. Additionally, guidelines for image sizing were established to maintain professional aesthetics. The collaborative environment fostered trust and openness, supporting high-quality content production.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "SEO content, experimentation leadership, AB testing, Google Docs collaboration, image sizing, blog publishing",
+      "action_items": "\n**Hampus Poppius**\nIncorporate Jason’s SEO feedback into the article draft, balancing SEO requirements with the company’s voice, and finalize the updated version in Google Docs for review and publishing readiness (10:14)\nCreate a header image version adapted to the blog’s required rectangular dimensions once the exact size is provided (13:45)\n\n**Ashley Stirrup**\nProvide the exact image dimension requirements for the blog header to Hampus to ensure proper image adaptation (13:51)\nContinue addressing image size guidelines and provide instructions to writers for consistent visual standards across blog posts, especially during the transition from Ghost to Webflow platform (10:45)\n\n**Luke Sonnet**\nSupport and encourage the use of experimentation-focused branding language over just AB testing terminology in SEO content to align with company positioning (07:08)\n"
+    }
+  ]
+}

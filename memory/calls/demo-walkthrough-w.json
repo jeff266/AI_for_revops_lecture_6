@@ -1,0 +1,18 @@
+{
+  "company": "Demo Walkthrough w/",
+  "slug": "demo-walkthrough-w",
+  "calls": [
+    {
+      "id": "01KM8YJRB83DZTXFWBN3GGR64W",
+      "source": "fireflies",
+      "title": "Demo Walkthrough w/ Jake S",
+      "date": "2026-03-23",
+      "duration_minutes": 21,
+      "summary": "The meeting focused on the efficient creation and management of feature flags and experiments in Growth Book, emphasizing the use of various types such as boolean and JSON with flexible rules for safety and control. Experiment setup included attributes for user targeting and metrics tracking, ensuring comprehensive analysis. The discussion on the sales strategy highlighted a concise demo structure aimed at addressing customer pain points while differentiating between Pro and Enterprise offerings. A consultative approach was emphasized when engaging existing customers. Additionally, training support through practice sessions and available resources aimed to enhance demo effectiveness and overall sales readiness.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, feature flag, experiment setup, metrics, enterprise features, discovery questions",
+      "action_items": "\n**Jake Heier**\nProvide Jake Stangl with practice session and feedback on Growth Book demo, potentially Thursday afternoon (16:18)\nTake a soft consultative approach during Norse Atlantic Airways meeting, focusing on current usage, new features, and enterprise options (18:15)\nShare additional preparation notes or tips with Jake Stangl if remembered post-meeting (15:58)\n\n**Jake Stangl**\nBook practice session with Jake Heier for Thursday to rehearse demo and slide deck (16:18)\nPrepare for Norse Atlantic Airways meeting with understanding that they are current pro users, focusing on updates and enterprise introduction, not direct sales (16:36)\nReview video materials and prepare to incorporate discovery questions into meetings (20:27)\n"
+    }
+  ]
+}

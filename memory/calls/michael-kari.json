@@ -1,0 +1,54 @@
+{
+  "company": "Michael / Kari",
+  "slug": "michael-kari",
+  "calls": [
+    {
+      "id": "01KW0MKHCMZDX2C78EPGWJNXC3",
+      "source": "fireflies",
+      "title": "Michael / Kari",
+      "date": "2026-06-26",
+      "duration_minutes": 30,
+      "summary": "The meeting focused on refining the experiment creation process to enhance automation and clarity for users. Key enhancements included auto-selection of data sources to minimize manual steps, correcting SDK integration status in the checklist to reflect actual connections, and allowing analysis without SDK integration. Discussions on the pre-launch checklist clarified the distinction between hard and soft blockers, such as draft approval requirements. UI improvements were proposed to make the checklist less intrusive, including resizing, color adjustments, and better positioning. Additionally, the management of feature flag approvals was discussed to ensure checklist items remain visible and dynamic. Overall, the meeting emphasized improving user experience through better feedback and a simplified checklist design.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "sdk integration, experiment creation, pre-launch checklist, feature flag approval, UI design, data source selection",
+      "action_items": "\n**Michael Samper**\nUpdate checklist logic to mark SDK integration step as complete only when SDK connection is confirmed, not just when SDK exists in Growthbook (06:30)\nReview code handling feature draft approvals to confirm if checklist item disappearing after approval is an engineering limitation; assess possibility to keep item visible or dynamically update approval status (15:40)\n\n**Kari Kay**\nCoordinate with Johnny to adjust text size and explore checklist height variations to improve UI usability, ensuring it adapts with min/max heights and does not obstruct page content (27:30)\n"
+    },
+    {
+      "id": "01KVXWZKEHFJ9977JXRJZ8W2D9",
+      "source": "fireflies",
+      "title": "Michael / Kari",
+      "date": "2026-06-24",
+      "duration_minutes": 80,
+      "summary": "The team discussed several aspects of the interface, beginning with strict constraints on image sizes for variation cards to maintain proportions and eliminate awkward display issues. They agreed on a maximum width of 336 pixels and emphasized the need for proportional filling of image containers, allowing cropping while keeping full images accessible in lightbox views. The inconsistent modal systems for editing variations were also addressed, with proposals to consolidate them to improve user experience. Additionally, the distinction between buttons and link components was highlighted for clearer navigation, while challenges concerning the pre-launch checklist were reviewed, including usability in dark mode and managing displayed tasks. The overall goal is to design a cleaner interface capable of adapting to different user journeys.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "Image ratio, Variation edit modal, Prelaunch checklist, UI components, Traffic split, Experiment lifecycle",
+      "action_items": "\n**Kari Kay**\nProvide Michael with maximum height or ratio specifications for images and cards to guide development and ensure consistent image display behavior (15:40)\nFollow up with Johnny regarding the prelaunch checklist redesign and coordinate the design handoff to ensure alignment and progress (01:00:05)\nUpdate language and visuals in the prelaunch checklist to clarify approval steps and improve the visibility of the Start button when the checklist is complete (43:20)\nReschedule a design check-in meeting to ensure alignment on link versus ghost button usage and address prelaunch checklist contrast and sizing adjustments (01:17:30)\n\n**Michael Samper**\nInvestigate and resolve the padding issue under images that causes unexpected white space on cards (01:56)\nAdjust responsive breakpoints for card width shrink and collapse behavior to reduce layout jumpiness on narrow screens (02:30)\nReplace the plus icon with an upload icon on the image upload button and rearrange the image counter and upload UI elements for better clarity and visual coherence (04:00)\nAlign text sizes for image counter and button text, and update design system components to support appropriate small and medium metadata sizes (08:00)\nImplement image maximum height restrictions with proportional fill behavior inside cards to limit card height and avoid disproportionate images (15:50)\nConfirm variation edit modal behavior consistency between draft and running states and flag the new flow behind feature flags for testing and easy rollback if needed (22:30)\nReview and update link versus button component usage in the codebase to ensure UI consistency, particularly for link button usage on text-based actionable items (41:30)\nPrototype possible changes to prelaunch checklist tab coloring and visual hierarchy to improve accessibility and user experience, especially in dark mode (49:00)\nAnalyze usage data of manual prelaunch checklist items and consider UI compaction strategies to differentiate manual versus automatic tasks more clearly and reduce redundant descriptions (01:03:15)\n"
+    },
+    {
+      "id": "01KNSZF2GSVYF89G7T0GR2P3Z0",
+      "source": "fireflies",
+      "title": "Michael / Kari",
+      "date": "2026-04-09",
+      "duration_minutes": 16,
+      "summary": "The team engaged in refining the Visual Editor interface to enhance clarity and usability while addressing current design gaps and user workflows. Key updates included integrating URL targeting to provide full context for editors, rearranging edit controls for better user flow, and linking the URL header directly to launch the Visual Editor. Discussions also covered the lack of environment tracking and the need for follow-up enhancements. Although a major overhaul of the Visual Editor is needed, the team decided to focus on incremental improvements for the time being, while ensuring effective collaboration between product design and engineering to balance technical feasibility with user experience.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "Visual Editor, URL Targeting, Feature Flags, UI Design, Edit Button, Environment Data",
+      "action_items": "\n**Michael Samper**\nInvestigate presence of stray dots in include/exclude URL targeting badge text and clean UI display for consistency (09:30)\nImplement logic for extracting and displaying environment data for Visual Editor changes and URL redirects as a future enhancement (15:00)\nContinue work to finalize Visual Editor sections, integrating agreed UI changes such as inline Edit button placement and linking URL headlines to launch Visual Editor action (00:00)\nMonitor usability of new Visual Editor change layout and consider implementing accordion UI if multi-implementation scannability issues arise (12:00)\n\n**Kari Kay**\nConfirm and provide additional feedback on design treatment for URL targeting sections and Edit CTA positioning after initial implementation (00:00)\nDecide on URL header functionality to launch Visual Editor rather than linking to website and communicate this preference to Michael (07:00)\nReview sample experiments and URL targeting badge renderings for missing elements or UI inconsistencies (08:30)\n"
+    },
+    {
+      "id": "01KN2GTDSKDE3JVHT6ZNSA80FR",
+      "source": "fireflies",
+      "title": "Michael / Kari",
+      "date": "2026-03-31",
+      "duration_minutes": 18,
+      "summary": "The team discussed enhancements to the dialog component, concentrating on errors and the modal layout. Kari Kay presented a design pattern featuring error callouts and field highlights, while Michael Samper confirmed the handling of API errors with a custom component. They reviewed modal width and footer button consistency, deciding to standardize layouts and remove ambiguous close icons. The introduction of multi-step modals was proposed for handling complex workflows requiring revision selectors, differentiating single-feature edits from multi-feature scenarios. Discussions on evolving the design system highlighted the need for adaptable UI to minimize cognitive load, facilitating easier user navigation and decision-making.",
+      "organizer": "kari@growthbook.io",
+      "participants": 2,
+      "keywords": "dialog component, modal design, error states, multi-step modal, feature flags, revision selector",
+      "action_items": "\n**Michael Samper**\nContinue working on the dialog component, adding missing error treatments and multi-step support, and produce mock examples for review (04:48)\nInvestigate codebase to determine prevalence and implementation of modal footers having both cancel and close (X) buttons to avoid conflicts (09:33)\nCollaborate on designing suitable UI flow for feature revision selectors in modals, especially for multi-feature edits (10:29)\n\n**Kari Kay**\nClean up and organize modal and error state design files, including footer button variants and error call-outs (01:21)\nReview and possibly consolidate modal header and footer button variations for clarity and consistency (07:09)\nProvide feedback and further refinement of proposed multi-step modal UI and revision selector flows post meeting (18:15)\n"
+    }
+  ]
+}

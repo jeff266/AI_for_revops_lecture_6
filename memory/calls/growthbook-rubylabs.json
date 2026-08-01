@@ -1,0 +1,30 @@
+{
+  "company": "Growthbook <> RubyLabs",
+  "slug": "growthbook-rubylabs",
+  "calls": [
+    {
+      "id": "01KY7S1KSC5HKW79WD36YAJV53",
+      "source": "fireflies",
+      "title": "Growthbook <> RubyLabs - Pricing Follow Up",
+      "date": "2026-07-24",
+      "duration_minutes": 20,
+      "summary": "The meeting centered on finalizing a contract proposal valued at $110,000, which includes a 15% discount for signing in July. The contract covers a unified platform that consolidates multiple accounts into a single organization model, accommodating an increase from 70 to 75 user seats, with additional capacity for CDN requests and bandwidth. Current spending of around $80,000 confirms the new pricing is competitive, with the proposal set for leadership review. Support will be available through a private Slack channel, ensuring 24-hour assistance. The quick implementation timeline aims for internal documentation to be ready by Monday and seeks a contract signing by the following Friday to lock in terms and discounts, emphasizing clear communication throughout.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "Unified Billing, Pricing Proposal, CDN Usage, Platform Features, Support Services, Order Form",
+      "action_items": "\n**Dan Wathne**\nPrepare and send detailed order form and proposal deck to Daniil Lebedinskiy by end of day Friday for leadership review (06:03)\nSchedule a follow-up meeting Monday afternoon to discuss leadership feedback and next steps (06:51)\n\n**Daniil Lebedinskiy**\nReview pricing proposal and order form with RubyLabs leadership on Monday; revert for final decision or further discussion (05:09)\n"
+    },
+    {
+      "id": "01KY31XQWN7DXNDXW00BPJ8GSM",
+      "source": "fireflies",
+      "title": "Growthbook <> Rubylabs - Pricing Sync",
+      "date": "2026-07-23",
+      "duration_minutes": 0,
+      "summary": "The meeting addressed the goal of consolidating eight independent accounts into a unified organizational structure to enhance management and data access control. Daniil emphasized the need for restricted user access to maintain data isolation across distinct projects, while Dan proposed a single structure with specific user permissions. The cost analysis revealed that one account incurs significant expenses, with Ruby Labs spending around $80,000 annually. Discussions around the Enterprise plan highlighted its comprehensive features and support, while emphasizing the competitive pricing relative to current costs. A proposal will be developed based on precise CDN request data to ensure alignment with budget goals, aiming for quick review and approval to finalize the agreement within the quarter.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "organizational model, CDN requests, enterprise plan, pricing proposal, access control, account consolidation",
+      "action_items": "\n**Daniil Lebedinskiy**\nCollect and send total CDN request counts across Ruby Labs' accounts by end of day or next morning to assist in preparing the pricing proposal (08:59)\n\n**Dan Wathne**\nPrepare a formal pricing proposal based on the collected CDN requests and current spending, aiming to keep costs near $80,000 per year and include Enterprise plan benefits such as full feature access and private 24-hour support (07:09)\nSchedule and conduct a follow-up call with Ruby Labs to review the pricing proposal and finalize deal details (08:36)\n"
+    }
+  ]
+}

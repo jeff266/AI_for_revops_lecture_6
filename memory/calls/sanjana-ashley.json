@@ -1,0 +1,18 @@
+{
+  "company": "Sanjana / Ashley",
+  "slug": "sanjana-ashley",
+  "calls": [
+    {
+      "id": "01KJV722EA2XEKMNFNY08CET9X",
+      "source": "fireflies",
+      "title": "Sanjana / Ashley",
+      "date": "2026-03-04",
+      "duration_minutes": 22,
+      "summary": "The team focused on reducing excessive alert noise by refining automation triggers, particularly changing Slack notifications to target relevant onboarding alerts. Duplicate and irrelevant automations were deactivated to streamline notifications, ensuring alerts reach correct channels. The discussion also included tracking over 5,215 accounts for activity, aiming to measure high-intent segment growth. Plans for focused coaching sessions for the SDR team were laid out to enhance their usage of the Rio platform, while the importance of improving data handling and minimizing broad alerts was emphasized to foster better operational coordination.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Slack automations, hypo segment tracking, SDR team coaching, account territories, Rio platform, HubSpot integration",
+      "action_items": "\n**Ashley Stirrup**\nEdit and save updated Slack automation to filter alerts for new developers added instead of any activity (06:34)\nDeactivate redundant Slack automation to reduce noise from multiple dev activity alerts (08:26)\nReview and monitor direct message alerts to ensure receipt and correct setup (07:32)\nProvide feedback after follow-up session with Matt Dupont and SDR team on using Rio and coordinating plays (18:20)\nCollaborate with Ryan on cleaning up AE territory assignments to eliminate chaos and improve lead distribution (20:39)\n\n**Sanjana Devireddy**\nShare a monthly report spreadsheet summarizing new hypo segment accounts by month including activity dates to Ashley (17:30)\nFollow up directly with Matt Dupont to arrange working session and coaching discussions for SDR team (21:22)\nAssist Ashley with configuring filters and proper segment reporting in Rio to address tracking challenges (13:49)\n"
+    }
+  ]
+}

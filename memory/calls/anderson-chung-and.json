@@ -1,0 +1,18 @@
+{
+  "company": "Anderson Chung and",
+  "slug": "anderson-chung-and",
+  "calls": [
+    {
+      "id": "01KT6MJS8G877B6804MZ1TFH6W",
+      "source": "fireflies",
+      "title": "Anderson Chung and James Shannon",
+      "date": "2026-06-05",
+      "duration_minutes": 32,
+      "summary": "The meeting aimed to outline necessary enterprise-grade features for Growth Book's self-hosted setup. Key requirements included approval workflows for nearly 1,000 feature flags to enhance safety and efficiency, audit logs and encryption for accountability and security, and the need for role-based access control involving about 40 operational and 80 view-only seats. Additional discussions covered the necessity for multiple webhook connections to manage environment separation and seamless upgrade mechanisms for enterprise capacities. The team also addressed pricing concerns, with a preliminary estimate around $76,250 annually, while seeking a 50% discount to fit budget constraints. Experimentation expansions were highlighted, including anonymous user support and integration with data monitoring tools.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 6,
+      "keywords": "Feature flags, Approval workflows, Enterprise licensing, Experiment platform, Audit logs, Encryption",
+      "action_items": "\n**James Shannon**\nSend documentation on encrypted SDK payload to Anderson Chung to address security concerns (15:10)\nProvide specific pricing details for view-only seats and an updated quote including the requested discount to Swag team (28:49)\nSchedule and conduct a follow-up call on Tuesday to present revised pricing and discuss next steps with Swag team (30:25)\nExplore possibility of negotiating a 50% discount with Growth Book management contingent on contract signing before end of June (29:08)\n\n**Anderson Chung**\nReview pricing details and prepare internal case for budget approval based on productivity gains from enterprise features (16:25)\nConfirm internal readiness and timeline to decide on contract within one week (25:28)\nParticipate in scheduled follow-up call on Tuesday to review updated pricing and discuss next steps (30:39)\n"
+    }
+  ]
+}

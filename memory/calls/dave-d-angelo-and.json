@@ -1,0 +1,18 @@
+{
+  "company": "Dave D'Angelo and",
+  "slug": "dave-d-angelo-and",
+  "calls": [
+    {
+      "id": "01KQ2W8A3XQ1RW48W8SCF8QVSW",
+      "source": "fireflies",
+      "title": "Dave D'Angelo and Ashley Stirrup",
+      "date": "2026-04-27",
+      "duration_minutes": 29,
+      "summary": "The discussion emphasized building a centralized platform for podcast episode tracking, featuring a live status dashboard to improve guest management. Ashley highlighted her content creation workflow, advocating for the integration of AI while retaining her creative input. The platform team is expected to assist in editing clips and managing social media posts to ensure consistency. Scheduling improvements with dual calendars aim to streamline coordination for recordings and prep calls. Furthermore, there is a need for training sessions between Ashley and the platform editing team to ensure workflow handoffs are smooth. Lastly, performance monitoring metrics will be crucial to analyze content effectiveness across channels and support strategic decisions for future episodes.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Podcast workflow, content editing, scheduling tools, AI content generation, social media posting, clip selection",
+      "action_items": "\n**David DAngelo**\nBuild a podcast episode status tracking feature within the platform showing booking, recording, review, and live dates to improve visibility and reduce missed communications (01:25)\nReview Ashley's Claude AI skill and explore embedding her workflow and brand voice elements into the platform to complement and enhance content creation (19:15)\nCoordinate with Jeff to observe Ashley’s content workflow after a recording session and plan a knowledge transfer session to align clip editing and posting tasks (26:47)\nDecide on the scheduling tool for podcast preparation and recording sessions, and communicate any transition plans to Ashley to ensure team visibility and alert management (25:59)\nAssign Jeff to lead clip editing and social media post creation based on Ashley’s selected clips and guidance, ensuring consistent content quality and timely posting (21:46)\nInvestigate integration or delegation possibilities with Buffer for streamlined social media posting, including automatic YouTube link insertion when videos are uploaded (16:17)\nFollow up on Jeff’s availability for the workflow observation session and confirm next steps with all stakeholders (28:01)\n\n**Ashley Stirrup**\nProvide David and his team with the Claude AI skill developed by Ashley for podcast content extraction and social media post creation to facilitate integration and reuse (19:16)\nContinue selecting podcast clips for editing and provide specific direction to David’s team to ensure quality and alignment with the podcast’s story arc (28:14)\nShare documented content creation workflow and schedule a session with Jeff to walk through the process, enabling smoother collaboration and handoff (26:28)\nTest and validate the use of Calendly or transition to 'You Can Book Me' for scheduling podcast sessions, ensuring appropriate alerts and team visibility are in place (22:03)\n"
+    }
+  ]
+}

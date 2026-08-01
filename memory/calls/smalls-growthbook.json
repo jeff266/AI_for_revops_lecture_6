@@ -1,0 +1,18 @@
+{
+  "company": "Smalls & Growthbook",
+  "slug": "smalls-growthbook",
+  "calls": [
+    {
+      "id": "01KP3XHCCRSR8NJ2A33VGJ9ZRW",
+      "source": "fireflies",
+      "title": "Smalls & Growthbook ROI Discussion",
+      "date": "2026-04-20",
+      "duration_minutes": 10,
+      "summary": "The sales team addresses various challenges regarding deal progress, particularly with technical issues affecting momentum on key deals like Groupon’s proof of concept. They discuss upgrading 33 legacy accounts to enterprise plans to prevent revenue leakage caused by outdated pricing. The team emphasizes the importance of internal support to resolve client issues quickly, as clients face system-related challenges. The meeting reflects a positive team culture, with a focus on flexibility in scheduling and a collective adaptation to early calls. Additionally, there’s a strong focus on enforcing new pricing strategies to eliminate discounts and enhance the company's market position, thereby reflecting a shift towards valuing the product and the customers significantly.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "enterprise accounts, agency support, event forwarding, revenue leakage, legacy pricing, technical issues",
+      "action_items": "\n**Dan Wathne**\nIntroduce Dan Wathne via email to prospect John at Smalls to facilitate direct scheduling and engagement (03:37)\nManage follow-up meetings with the prospect and involve technical support team if necessary to address system issues (03:37)\nResolve event forwarding technical issues impacting current deal pipeline and prepare for upcoming call with Groupon (04:11)\n\n**James Shannon**\nAssist with revenue and account review to support outreach for enterprise account conversions and address revenue leakage due to legacy pricing (05:05)\nKeep Dan Wathne updated on developments related to pricing strategy and revenue leakage issues to support strategic sales efforts (07:35)\n"
+    }
+  ]
+}

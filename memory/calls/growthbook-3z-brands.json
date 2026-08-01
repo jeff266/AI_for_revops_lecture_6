@@ -1,0 +1,42 @@
+{
+  "company": "Growthbook <> 3Z Brands",
+  "slug": "growthbook-3z-brands",
+  "calls": [
+    {
+      "id": "01KVZQQBB99HA007431ZRS76KQ",
+      "source": "fireflies",
+      "title": "Growthbook <> 3Z Brands - Pricing sync",
+      "date": "2026-06-26",
+      "duration_minutes": 0,
+      "summary": "The meeting discussed the ongoing vendor selection process, with Jen L briefing leadership about the various options being considered, which include both client-side and server-side solutions. Leadership decisions are expected by mid to late August to align with contract notice deadlines. Growth Book's pricing proposal was highlighted, offering enterprise pricing around $60,000 annually for approximately 15 experiments per month, decreasing costs per experiment as volume increases. The platform's strengths include warehouse-native testing and direct technical support. A 30-day trial contingent on a PoC agreement was proposed, necessitating some legal review. The timeline emphasizes the importance of a decision by August to ensure a seamless transition before the contract's November expiration.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "enterprise pricing, vendor evaluation, trial period, warehouse-native experimentation, client-side/server-side testing, leadership approval",
+      "action_items": "\n**Jen L**\nDiscuss Growthbook free version trial option with Kathy and Ours to determine suitability for their evaluation process (23:51)\nContinue internal leadership discussions about vendor choice, budget, and contract approval timelines aiming for August decision milestone (06:33)\nFollow up with Dan Wathne on trial setup and next steps after internal review (24:00)\n\n**Dan Wathne**\nProvide detailed trial access arrangements and support for Growthbook free version usage including unlocking visual editor if needed (22:37)\nAwait confirmation from Jen regarding trial approach and timing to align on PoC agreement and contracting process (23:51)\n"
+    },
+    {
+      "id": "01KVEBY2S42V1TBEVYR5KP1R93",
+      "source": "fireflies",
+      "title": "Growthbook <> 3Z Brands - Demo",
+      "date": "2026-06-25",
+      "duration_minutes": 0,
+      "summary": "The team discussed transitioning from Optimizely to GrowthBook due to limitations like high costs, poor editor performance, and unresolved bugs. GrowthBook's strengths in multi-brand management and integration with Snowflake were highlighted, along with its competitive pricing being potentially 40% less than Optimizely. Additionally, the integration with existing data tools was emphasized, ensuring minimal maintenance from the data team. The flexibility in experimentation features, particularly for multi-page tests, was deemed critical. The meeting concluded with plans for trial onboarding and scheduling a pricing review to ensure alignment with the team's budget and needs.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "Optimizely, GrowthBook, experimentation, Snowflake, multi-page testing, Visual Editor",
+      "action_items": "\n**Dan Wathne**\nFollow up with Logan to address multi-page URL targeting and per-page CSS/JS injection feasibility and software updates (32:00)\nProvide a pricing proposal based on given experiment volume and user seats, include potential 40% discount contingent on Optimizely contract details (46:00)\nSchedule and hold the 15-minute pricing discussion call (tentatively 08:30 PT next day) and send calendar invite post-call (47:00)\nProvision trial accounts with 3Z Brands and set up Slack channels to initiate asynchronous support for initial testing phase (48:41)\n\n**Logan Bates**\nDeliver demo of GrowthBook platform focusing on data integration, feature flags, visual editor capabilities, multi-page test handling, and experiment results UI (11:48)\nCapture feedback from 3Z Brands on UI and functionality to prioritize requested features such as stored URL targeting groups and per-page customizations (27:00)\nProvide clear technical guidance and answers on integration and maintenance questions related to Snowflake and GA4 data ingestion (13:38)\n\n**3Z Brands Team**\nProvide Optimizely order form and detailed information on current experiment volume and usage patterns to assist GrowthBook’s pricing proposal (46:00)\nEngage in trial testing of GrowthBook platform and deliver feedback on features, especially around multi-page targeting and CSS/JS injection management (28:13)\n"
+    },
+    {
+      "id": "01KT7FBPM6JXT9V1R94KVM8CFH",
+      "source": "fireflies",
+      "title": "GrowthBook <>  3Z Brands - Intro",
+      "date": "2026-06-05",
+      "duration_minutes": 0,
+      "summary": "3Z Brands expressed significant dissatisfaction with Optimizely due to high costs and inefficiencies in their complex, multi-brand testing environment. The team requires backend testing tools that integrate with their CMS, aiming for implementation by year's end as they migrate to Content Stack CMS or Full Stack Shopify. Majority of testing is developer-driven, with a need for more flexible and efficient platforms. They seek to reduce testing costs considerably by about 60%, moving towards backend solutions and away from expensive frontend tools. The meeting introduced Growth Book as a potential solution, highlighting its developer-friendly features and integration capabilities with analytics services like Heap and Snowflake. Next steps involve setting up a trial environment and coordinating demos with Growth Book.",
+      "organizer": "dan@growthbook.io",
+      "participants": 5,
+      "keywords": "Optimizely, GrowthBook, A/B Testing, CMS Integration, Heap Analytics, Shopify",
+      "action_items": "\n**Dan Wathne**\nSend follow-up email summarizing meeting discussion and next steps with a booking link to schedule a detailed demo session (36:05)\nProvide rough pricing estimates based on 3Z Brands’ usage and event volume, including managed and self-hosted models (34:56)\nSet up a trial/sandbox environment for Aurys to test replicating complex existing tests (29:50)\n\n**Cathy Caron**\nWork with Aurys to evaluate GrowthBook demo and trial for fit with technical and business needs, especially regarding backend CMS integrations and developer-friendly testing features (20:00)\n\n**Aurys**\nTest complex JavaScript and CSS tests using GrowthBook’s sandbox environment once available to validate platform capabilities (29:50)\n\n**Jennifer Lesniak**\nCoordinate internal scheduling for demo session with GrowthBook, considering team’s New York summit and potential week-after availability (37:34)\nProvide contract renewal date clarity and corroborate discussion on budgeting and pricing with GrowthBook (31:27)\n"
+    }
+  ]
+}

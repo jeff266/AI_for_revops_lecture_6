@@ -1,0 +1,18 @@
+{
+  "company": "Dropbox / GrowthBook",
+  "slug": "dropbox-growthbook",
+  "calls": [
+    {
+      "id": "01KSN68J42VSJ67NYXKR77V3X4",
+      "source": "fireflies",
+      "title": "Dropbox / GrowthBook",
+      "date": "2026-05-27",
+      "duration_minutes": 54,
+      "summary": "The team explored enhanced strategies for segmenting and targeting feature flags, emphasizing tailored configurations for different client types, particularly on web, mobile, and desktop platforms. Nathan Keesling highlighted the need for diverse evaluation pathways, while Bryce Fitzsimons introduced the idea of using environments as a filtering system for better organization. The discussion included the significance of shadow environments for testing, plans for multi-tag systems to facilitate nuanced filtering, and improvements in UI and attribute management to reduce errors. The participants acknowledged existing challenges in exposure logging and agreed on the importance of ongoing collaboration and clear communication to optimize feature flagging experiences at scale.",
+      "organizer": "bryce@growthbook.io",
+      "participants": 11,
+      "keywords": "feature flagging, environments, shadow environment, SDK connections, attribute scoping, ramp schedules",
+      "action_items": "\n**Nathan Keesling**\nConsider whether a single development environment suffices or if multiple environments are needed, and reflect on environment/project abstraction needs for Dropbox (09:55)\n\n**Bryce Fitzsimons**\nScope UI designs for filtering and management of feature flag rules across projects and environments in GrowthBook (18:16)\nProvide Nathan Keesling and Dropbox team access or demo of GrowthBook’s new environments UI features and ramp schedules (20:04)\n\n**GrowthBook team**\nFollow up on supporting draft revisions for shadow environment evaluations and potential UI workflows for promoting features through environments (35:22)\nIntegrate stronger attribute selection guardrails and improve metadata and validation in the attribute picker UI in upcoming GrowthBook releases (48:52)\n\n**GrowthBook and Dropbox teams**\nExplore SDK-level context targeting and implications for shadow and project filtering with Dropbox team (40:26)\nMaintain open communication for deeper technical dives on exposure logging strategies and SDK implementation improvements (51:04)\n\n**Dropbox team**\nUpdate GrowthBook environment configuration based on discussed concepts from Dropbox (19:43)\n\n**Bryce Fitzsimons or GrowthBook team**\nProvide Fireflies meeting notes access to Dropbox team (53:02)\n"
+    }
+  ]
+}

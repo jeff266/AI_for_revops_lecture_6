@@ -1,0 +1,18 @@
+{
+  "company": "Casandra Campbell and",
+  "slug": "casandra-campbell-and",
+  "calls": [
+    {
+      "id": "01KK4VT5HAEMGPRG7XGM3KJH4M",
+      "source": "fireflies",
+      "title": "Casandra Campbell and Ashley Stirrup",
+      "date": "2026-03-09",
+      "duration_minutes": 26,
+      "summary": "GrowthBook targets product teams in high-traffic industries such as fintech, edtech, and e-commerce, focusing on product managers and engineers. With a strong emphasis on self-hosting for data privacy, they achieve higher win rates with accounts receiving over one million website visits. Customers are migrating from complex tools like Optimizely, seeking transparency and lighter integration. The company is investing in AI features to simplify experiment creation and plans to offer managed data warehouses to assist new customers. Content strategies will shift towards intermediate AB testing guides to enhance SEO and domain authority, while technical architecture supports deep SQL analysis. Support structures like a documentation chatbot receive positive feedback for their effectiveness.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, AB Testing, Product Teams, Self-Hosting, Data Warehouse, AI Integration",
+      "action_items": "\n**Casandra Campbell**\nReview and study ICP and customer case studies shared by Ashley to deepen understanding of GrowthBook’s positioning (01:20)\nReference credible industry experimentation standards where relevant in content creation, unless proprietary content is specified (11:00)\nWatch demo video of GrowthBook product shared by Jason to understand product features and user experience (15:10)\nExplore GrowthBook’s free account to review sample data and SDK integration for hands-on familiarity (14:50)\nAccess the 'Open Guide to Successful AB Testing' PDF authored by a founder and prepare to develop content accordingly (17:00)\nFollow up with Ashley via Slack for product updates or specific questions during content development (15:50)\nPrepare for the upcoming call with Brian Finnegan to clarify content details and gather insights from the original article author (16:40)\n\n**Ashley Stirrup**\nShare the ICP documentation and competitive analysis documents on Optimizely and Adobe Target to Casandra and the broader team (01:20)\nConfirm sharing and updating all relevant sales and product collateral in shared folders to keep the team aligned (14:00)\nProvide Slack access to Casandra to facilitate real-time communication and continuous onboarding support (15:55)\nHighlight recent product features such as post stratification and managed warehouse offering for Casandra’s awareness during content writing (09:00)\nAssist Casandra with specific technical or product questions related to GrowthBook as they arise \n"
+    }
+  ]
+}

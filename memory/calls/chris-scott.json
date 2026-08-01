@@ -1,0 +1,18 @@
+{
+  "company": "Chris / Scott",
+  "slug": "chris-scott",
+  "calls": [
+    {
+      "id": "01KMBBYDKYEM1MNXT9N27XST16",
+      "source": "fireflies",
+      "title": "Chris / Scott",
+      "date": "2026-03-24",
+      "duration_minutes": 37,
+      "summary": "The meeting highlighted significant priorities for Growth Book, including the urgent need for sales enablement tools like battle cards and pitch decks to counter competitors such as LaunchDarkly and Optimizely. It was noted that current sales collateral is outdated, creating inefficiencies during pre-sales and onboarding, with a push for centralized, targeted materials. Additionally, customer onboarding experiences vary widely based on user savviness, necessitating tailored support to enhance renewal success. Growth Book's headcount grew significantly within a short timeframe, heightening the demand for coordinated marketing and sales strategies. Participants emphasized a reactive product development roadmap driven by immediate customer requests and a growing focus on integrating AI meaningfully into the product landscape.",
+      "organizer": "chris@growthbook.io",
+      "participants": 2,
+      "keywords": "Technical PMM, Sales Enablement, Battle Cards, AI Roadmap, Customer Onboarding, Competitive Intelligence",
+      "action_items": "\n**Scott Bailey**\nCollaborate with Elise to establish a Notion database for logging and prioritizing marketing requests (13:03)\nFlag the urgency of creating battle cards and sales pitch decks for leadership (28:09)\nDevelop marketing content focused on AI capabilities, including customer research for AI roadmap (31:47)\nCoordinate with sales and Go-to-Market teams for workflow/process on request prioritization and execution (36:02)\nShare docs improvement suggestions for managed warehouse content (09:29)\nPrepare website assets showcasing MCP server integration with Claude code (35:20)\n\n**Chris Sanders**\nProvide examples of competitive issues and requests encountered in sales to inform battle card priorities (13:55)\nEngage in creating/improving sales enablement materials such as onboarding decks for developers and experimentation culture decks (21:37)\nContinue involvement in pre-sales and post-sales customer onboarding and enablement focusing on larger enterprise customers (17:28)\nCommunicate needs and gaps in existing decks and sales materials to marketing team (36:02)\n"
+    }
+  ]
+}

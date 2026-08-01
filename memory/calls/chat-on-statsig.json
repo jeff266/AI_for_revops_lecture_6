@@ -1,0 +1,18 @@
+{
+  "company": "Chat on StatSig",
+  "slug": "chat-on-statsig",
+  "calls": [
+    {
+      "id": "01KP9C4KAA7YAV5HDEJRBS7K7N",
+      "source": "fireflies",
+      "title": "Chat on StatSig",
+      "date": "2026-04-15",
+      "duration_minutes": 22,
+      "summary": "The discussion centered on the creation of realistic event-based pricing models specifically for contracts under $100K. Dan Wathne clarified the fee structure, highlighting that platform fees typically range between 20-40% of contract value, with flexibility based on client needs. Challenges in pricing for large enterprises, where platform fees often dominate due to high usage, were discussed, particularly in cases like Calcutti. Support costs, currently uncharged, may become a future revenue source. The team assessed competitive pricing against industry players like LaunchDarkly and Amplitude, aiming to keep prices about 10% lower. The importance of flexibility in pricing strategies and the need for simplified models for smaller contracts were emphasized as key takeaways.",
+      "organizer": "dan@growthbook.io",
+      "participants": 2,
+      "keywords": "Pricing Model, Platform Fee, Event-Based Pricing, Support Cost, Enterprise Contracts, Experiment Usage",
+      "action_items": "\n**Elyse Fox**\nComplete initial pricing model drafts for current customers across various usage scenarios and share the draft with Dan Wathne for review and feedback (21:20)\n\n**Dan Wathne**\nProvide additional insights, answers, and support to Elyse Fox during the pricing modeling process as needed (21:13)\n"
+    }
+  ]
+}

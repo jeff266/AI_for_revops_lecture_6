@@ -1,0 +1,18 @@
+{
+  "company": "Alyssa Ransbury and",
+  "slug": "alyssa-ransbury-and",
+  "calls": [
+    {
+      "id": "01KY0CRE9XGA55SM2JJFN11B3V",
+      "source": "fireflies",
+      "title": "Alyssa Ransbury and Cary Rakin",
+      "date": "2026-07-20",
+      "duration_minutes": 32,
+      "summary": "The discussion centered on using the cloud version of GrowthBook for scalability and risk reduction, supporting clients managing 8,000 active feature flags and millions of requests. Key features include Fastly edge caching for unlimited query capacity, and Alyssa emphasized the need to avoid local deployment delays. The SDK integration was detailed, requiring configuration for API and user attributes, with exposure events logged into Snowflake for data analysis. Participants discussed experiment management, linking feature flags, and flexible targeting rules. A 6-week timeline was established for the POC, with immediate experiment setup following cloud confirmation and minimal SDK changes necessary for migration.",
+      "organizer": "cary@growthbook.io",
+      "participants": 7,
+      "keywords": "feature flag, experiment, scalability, cloud vs internal, sticky bucketing, SDK configuration",
+      "action_items": "\n**Alyssa Ransbury**\nFollow up with procurement and GrowthBook team to finalize cloud addendum and initiate cloud environment setup (05:17)\nCoordinate next steps post-cloud setup strategy to enable SDK and experiment creation (10:12)\n\n**Cary Rakin**\nLead synchronization with Alyssa on cloud addendum sign-off and parallel setup progress (05:31)\nPrepare detailed feature flag setup walkthrough materials based on the discussion (09:52)\n\n**Chris Sanders**\nDeliver feature flag and experiment creation tutorial, including best practices on bucketing, targeting, and handling holdouts (09:52)\nProvide pointers/documentation for SDK setup, exposure event callbacks, and attribute configuration (12:25)\nShare documentation links and examples about attribute management and different identifiers handling for experiments (27:30)\n\n**Yasmine Dumouchel**\nContinue exploring sticky bucketing requirements across platforms, especially to confirm cross-channel persistence and segment reusability (08:50)\nClarify access and query of assignment data in Snowflake outside GrowthBook UI (26:06)\n\n**Wenjin Shao**\nClarify QPS and traffic considerations for server-side relay and caching in cloud usage (01:20)\nAssist in definition of unit identifiers and experiment granularity for merchant/location-level experiments (27:30)\n"
+    }
+  ]
+}

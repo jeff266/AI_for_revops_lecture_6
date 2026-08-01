@@ -1,0 +1,18 @@
+{
+  "company": "Ryan / Jake",
+  "slug": "ryan-jake",
+  "calls": [
+    {
+      "id": "01KHHYVP66QQR0V3NG299JK5ED",
+      "source": "fireflies",
+      "title": "Ryan / Jake",
+      "date": "2026-02-17",
+      "duration_minutes": 21,
+      "summary": "Strategies discussed include launching targeted customer campaigns aimed at enhancing outreach to existing growth accounts and event attendees, spearheaded by team members like Matt and Jake. A Q1 promotion offering 50% off user costs aims to drive upgrades from Pro to Enterprise, with messaging tailored to high-usage customers. The team also plans to leverage segmented target account lists within sectors like gaming and fintech for effective outreach, while integrating email, LinkedIn, and calls to improve lead management. The collaborative environment fosters swift problem-solving and alignment on priorities, with a focus on leveraging the upcoming Pandemonium event to create engagement opportunities.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 2,
+      "keywords": "Apollo credits, Pro to Enterprise upgrade, Customer growth campaigns, Target account outreach, Competitor intelligence, Messaging refinement",
+      "action_items": "\n**Jake Stangl**\nResume Apollo platform usage when credits renew and incorporate new sequences once messaging is finalized (01:42)\nDevelop own list of potential accounts for growth outreach in addition to Matt’s list, to apply dual approach (08:10)\nInitiate outreach cadences targeting the 'Pandemonium' event attendees and speakers once campaign details are finalized (08:33)\nPrioritize target accounts for outbound efforts focusing on gaming, fintech, and gambling sectors from shared list; add these to cadences incorporating email, LinkedIn, and calls (10:40)\nCapture and organize competitor insights from LinkedIn replies and other interactions into CRM; collaborate with Ryan and Matt on process and format (16:00)\nShare competitor response data promptly with Matt for messaging refinement (17:00)\nParticipate in upcoming strategic call with Matt and Ryan to assign top pro users and refine outreach talk tracks (12:20)\nAttend the scheduled call with Akko team to explore enterprise sales pitches (20:10)\n\n**Ryan McGurk**\nShare the Pro User Excel and target account lists with Jake and Matt via Slack; assign biggest accounts to Jake and Christian (04:00)\nCoordinate with Matt to finalize lists, messaging strategies, and campaign plans including the Q1 promotion details (05:40)\nDiscuss Apollo credit upgrade options with Matt during next call to avoid repeated credit exhaustion impacting outreach (13:30)\nCollaborate with Matt and Jake on cadence strategies and lead records creation in HubSpot to track competitor info (16:20)\nProvide Jake with competitor stats and messaging templates, particularly versus LaunchDarkly, Statsig, and Optimizely (17:50)\nSync with Matt on account assignments and prioritizations before Jake acts on Pro User list (12:20)\n\n**Matt**\nPurchase additional Apollo credits and assess need for bigger Apollo instance with Ryan (13:30)\nProvide Jake with lists of target accounts for existing customer growth campaigns and prioritize which are best (03:00)\nCollaborate with Ryan and Jake on refining messaging and outreach cadence for top pro users and competitor-focused responses (17:00)\nDiscuss and finalize lead management process with Ryan and Jake for logging competitor data (16:20)\n"
+    }
+  ]
+}

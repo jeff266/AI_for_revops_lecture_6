@@ -1,0 +1,18 @@
+{
+  "company": "[Client] Growthbook account",
+  "slug": "client-growthbook-account",
+  "calls": [
+    {
+      "id": "01KT57MJNS0YRCSZTDMHEG4WKK",
+      "source": "fireflies",
+      "title": "[Client] Growthbook account review",
+      "date": "2026-06-09",
+      "duration_minutes": 15,
+      "summary": "The team discussed maintaining flexible contracted hours to accommodate increased workload from August to November, with an expected rise from five to eight hours weekly to ensure adequate support for multiple events. They noted that turnkey event setups simplify logistics, particularly for AWS re:Invent, reducing overall hours required. The contract renewal process was clarified, ensuring continuity of support from July. Additionally, initial events will serve as a foundation for establishing key performance indicators, allowing for flexibility in goal setting based on early data. Limited booth sizes may restrict engagement strategies for now, but larger events hold potential for more expansive attendee interactions, all underpinned by a positive rapport between client and vendor.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 5,
+      "keywords": "contract hours, event logistics, turnkey booths, AI Engineer event, KPI tracking, contract renewal",
+      "action_items": "\n**Kelsey Crowell**\nUpdate the contract exhibit and prepare the Statement of Work (SOW) for contract renewal starting in July, then send the updated contract documents to Lyndsie by Thursday following the live event production (10:24)\n\n**Lyndsie Berens**\nReview the updated contract once received, obtain approval from Ashley, and proceed with signing the contract renewal (10:15)\n\n**Liz Fox**\nContinue managing the AI Engineer workload at 5 hours per week currently and monitor the fall event season demands to support the decision on increasing contract hours (02:08)\n\n**All involved (Lyndsie, Ashley, Liz)**\nTrack event KPIs including lead scans, deals from events, and HubSpot campaign metrics; prepare for detailed post-event debriefs to evaluate ROI and refine event strategy (08:47)\n"
+    }
+  ]
+}

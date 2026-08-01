@@ -1,0 +1,18 @@
+{
+  "company": "AI Messaging",
+  "slug": "ai-messaging",
+  "calls": [
+    {
+      "id": "01KT4PCEEK3BDC509WKGM5FD7V",
+      "source": "fireflies",
+      "title": "AI Messaging",
+      "date": "2026-06-03",
+      "duration_minutes": 33,
+      "summary": "The team convened to discuss revisions to the homepage and messaging, centering on enhancing clarity and impact. They decided to use the existing homepage structure, refining the messaging to emphasize safety and measurable growth instead of AI speed. Customer stories were prioritized for placement to build trust before pricing, which is proposed to be moved lower on the homepage. Visual enhancements and concise copy will improve readability, while feature flags will be highlighted as essential tools for safe, scalable shipping. Competitors' focus on speed prompted a shift for GrowthBook to market trust and measurable growth as key differentiators. Overall, results-oriented discussions aimed to finalize updates for a more effective homepage.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "AI native development, feature flags, homepage redesign, growth messaging, product analytics, customer stories",
+      "action_items": "\n**Karen Henke**\nConsolidate three hero heading variants into a set of three options for senior leadership review by Friday (32:00)\nCoordinate with Albert regarding capacity and tools to implement new hero visuals incorporating AI agent interactions (31:20)\n\n**Elise Fox**\nDevelop simplified AI agent prompt visuals in chat bubble style for the product analytics hero section using Figma or Canva (30:00)\n\n**Unassigned**\nConvert the Khan Academy AI blog content into a customer story entry within the CMS for homepage use (14:00)\n\n**Ashley Stirrup**\nVerify Albert’s access to Figma and provide a license if needed to enable updating hero visuals (31:20)\n\n**Team**\nPrepare to present consolidated hero messaging options to senior leadership (Jeremy and Graham) for feedback on Friday (32:26)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Suger/Growthbook",
+  "slug": "suger-growthbook",
+  "calls": [
+    {
+      "id": "01KGQA62MFGNYPX23E9J586GBC",
+      "source": "fireflies",
+      "title": "Suger/Growthbook - AWS Co-Sell Strategy",
+      "date": "2026-02-06",
+      "duration_minutes": 25,
+      "summary": "The team discussed building a structured AWS co-selling strategy to boost revenue from $8 million by doubling or tripling it through enhanced sales and marketing functions. Chris Newton highlighted the need for a formal sales operations team and emphasized the focus on managing renewals and leveraging AWS partnerships to attract enterprise customers. Kyle Heisner recommended assigning sales operations ownership to manage AWS integration and co-selling tools, suggesting the use of HubSpot CRM to track AWS commitments. The importance of completing the Foundational Technical Review (FTR) by June 17th was stressed to maintain AWS Marketplace compliance. The team also agreed to enhance HubSpot CRM with custom fields for better data tracking and proposed a two-step training approach for the sales team to improve co-selling effectiveness.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 7,
+      "keywords": "AWS co-sell, sales enablement, partner development, FTR, marketplace integration, HubSpot",
+      "action_items": "\n**Chris Newton**\nProvide list of past AWS-related wins to get them submitted into ACE system and start engaging AWS account managers (11:08)\nCoordinate with Kyle Heisner for scheduling the 'Characteristics of a Successful Seller' session and subsequent sales enablement training (20:27)\n\n**Ashley Stirrup**\nCreate a special field in HubSpot to track customer deployment environments (AWS, on-prem, etc.) for better AWS co-sell visibility (16:12)\nContinue working with engineering and GDNA on resolving Monte Cloud tool issues to complete FTR (21:44)\nManage sales team readiness to participate in upcoming enablement sessions (24:26)\n\n**Kyle Heisner**\nSend documentation and slide deck for 'Characteristics of a Successful Seller' session to Ashley and Chris for review before training (20:27)\nCoordinate introduction and potential presentations with AWS digital native business teams for pipeline development (12:56)\nProvide information about Symbiote partner development manager services and AWS funding options (09:49)\nAssist in creating AWS better together case studies and tracking MRR impact for Growth Book customers (13:30)\nOffer to join meetings between Growth Book and GDNA to facilitate faster FTR completion (22:58)\nSchedule and conduct follow-up reinforcement buyer enablement sessions to maintain sales momentum (24:29)\n"
+    }
+  ]
+}

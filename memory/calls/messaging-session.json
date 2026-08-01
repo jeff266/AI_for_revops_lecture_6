@@ -1,0 +1,18 @@
+{
+  "company": "Messaging session",
+  "slug": "messaging-session",
+  "calls": [
+    {
+      "id": "01KQWVNP2GGVJVDN6HPW8VZ6Z9",
+      "source": "fireflies",
+      "title": "Messaging session",
+      "date": "2026-05-07",
+      "duration_minutes": 55,
+      "summary": "The team prioritized key updates to web content for an upcoming launch, focusing on making necessary adjustments rather than striving for perfection. Minor edits were planned for the Feature Flag page, and the homepage and blog page creation represented significant content efforts, contingent on access. Additionally, a messaging deck was being developed to emphasize AI's role in product development changes. The team aimed to articulate a narrative that highlights faster, AI-driven processes, while also refining GrowthBook's market story around warehouse-native integration. Scott presented insights into competitive positioning, emphasizing integration gaps that needed addressing, while Elyse and Ashley focused on content and clarity. Overall, the meeting underscored collaboration and iterative refinement in both messaging and product updates.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "AI-driven product development, warehouse native integration, messaging framework, feature flagging, rapid iteration, market differentiation",
+      "action_items": "\n**Elyse Fox**\nCreate and refine a detailed specification for the messaging slides today to guide content development and design (00:02)\nFollow up on the request to upgrade the Google Slides package to support better design capabilities and AI platform logos integration (00:05)\nPrune and clarify slide content drafts to improve clarity and ease of animation, focusing on simplifying text and messaging (00:41)\nSend initial messaging slide drafts to designer Alberto, emphasizing speed over perfection to enable rapid iteration and refinement (00:54)\n\n**Ashley Stirrup**\nCoordinate with Jennifer to manage administrative permissions required for upgrading the Google Slides package (05:44)\nShare the working session and messaging training schedule with Scott and Elyse to align on upcoming collaboration and deadlines (17:25)\nContinue iterating on slide outlines and process flow visualization with Scott and Elyse, prioritizing quick delivery to the designer Alberto (00:54)\n\n**Scott Bailey**\nDevelop a narrative framework that ties warehouse native integration with AI-driven experimentation to clearly differentiate GrowthBook’s market position (00:10)\nArticulate detailed messaging explaining how GrowthBook supports the compressed product development process safely and effectively through experimentation and feature flagging (00:51)\nProvide content describing aspirational and current product development states, including challenges and GrowthBook’s solutions, for inclusion in the messaging slides (00:51)\n"
+    }
+  ]
+}

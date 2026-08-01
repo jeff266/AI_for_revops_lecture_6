@@ -1,0 +1,18 @@
+{
+  "company": "Managed warehouse discussion",
+  "slug": "managed-warehouse-discussion",
+  "calls": [
+    {
+      "id": "01KMZPHGKGC82G4QVHKB43BQHB",
+      "source": "fireflies",
+      "title": "Managed warehouse discussion",
+      "date": "2026-04-03",
+      "duration_minutes": 33,
+      "summary": "The meeting discussed the Managed Warehouse strategy, which will provide every new customer a default instance to simplify onboarding and enhance visibility of event data immediately upon integration. This approach reduces setup friction and is particularly beneficial for startups and smaller organizations. An event forwarder will support seamless migration to personal warehouses without reconfiguring SDKs, ensuring data integrity. Marketing efforts will highlight Managed Warehouse as user-friendly and essential for rapid adoption. Revenue potential is significant, with expectations to draw from existing customer bases akin to Successful models like Statsig and PostHog. To accommodate growth, infrastructure scaling is planned to support increased monthly signups.",
+      "organizer": "scott@growthbook.io",
+      "participants": 5,
+      "keywords": "Managed Warehouse, Event Forwarder, Warehouse Native, Data Onboarding, Pricing Strategy, Infrastructure Scaling",
+      "action_items": "\n**Jeremy Dorn**\nDevelop and start building the event forwarder to enable event replication from Managed Warehouse to customer warehouses (03:52)\nContinue working on Managed Warehouse infrastructure scaling to support thousands of active organizations and monitor table creation thresholds (26:04)\nCoordinate the launch of Managed Warehouse provisioning for all new organizations within the next few weeks (30:06)\nImplement retention policy for forwarded event data to maintain a short window for experiment monitoring (21:08)\nScope EU data center for Managed Warehouse to address data residency requirements (24:58)\n\n**Ashley Stirrup**\nMonitor and refine marketing messaging to clarify that Managed Warehouse is still fully warehouse native (11:37)\nCoordinate with the website team to ensure Managed Warehouse is prominently featured in the new Getting Started page and overall marketing materials (30:23)\nAssist with storytelling and blog content focusing on startup use cases and GrowthBook’s experimentation advantages (31:27)\n\n**Scott Bailey**\nReview and adjust sales decks and pitch materials to properly position Managed Warehouse as the default onboarding method while preserving awareness of bring-your-own-warehouse options (22:22)\nPlan and test language variations in paid ads and social channels around Managed Warehouse and warehouse native terminology (11:54)\nOversee alignment between sales quotas/compensation and promotion of Managed Warehouse to incentivize adoption (23:59)\n"
+    }
+  ]
+}

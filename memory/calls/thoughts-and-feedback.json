@@ -1,0 +1,18 @@
+{
+  "company": "Thoughts and feedback",
+  "slug": "thoughts-and-feedback",
+  "calls": [
+    {
+      "id": "01KMKPDDDKP5VAWRD0BPTTJ94R",
+      "source": "fireflies",
+      "title": "Thoughts and feedback on titles, companies and messages for prospecting",
+      "date": "2026-03-26",
+      "duration_minutes": 33,
+      "summary": "The meeting addressed multiple strategies to support Customer IO, which faces internal challenges due to a lack of expertise in experimentation. A focused team is offering guidance to help their program succeed, while efforts are being made to secure executive sponsorship to address resource gaps. Furthermore, the team is refining its podcast guest selection process to target director-level roles in high-traffic companies, aiming for better demo conversion rates. Outbound messaging is being optimized as current email campaigns show moderate engagement, necessitating refined messaging for improved bookings. The overall goal is to clarify Growth Book’s role as a specialized experimentation tool, avoiding the pitfalls of becoming a broad platform.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Customer IO, experimentation, podcast targeting, outbound messaging, prospect profiling, Sales Navigator",
+      "action_items": "\n**Dan Wathne**\nContinue supporting Customer IO with strategic advice and resources; escalate needs for extra support if issues arise (03:39)\nReach out to Customer IO champion to explore executive-level engagement and possible coordination with Ashley or Graham for sponsorship and advisory (06:52)\nProvide Ashley and vendor team with examples of effective cold email messaging and outbound sequences in a clean, shareable format (31:48)\nAssist Ashley with Sales Navigator searches and prospect list creation if requested (25:33)\nInvestigate and provide insights on Statsig competitor’s demo scheduling and support status to clarify current landscape (14:51)\n\n**Ashley Stirrup**\nLobby for executive-level focus and support for Customer IO account to improve outcome and secure case study potential (03:39)\nRefine target podcast guest list to include relevant personas (e.g., product directors or managers engaged in experimentation) to improve demo conversion (07:53)\nEvaluate Sales Navigator account purchase to improve prospect targeting and filtering capabilities (22:18)\nShare effective messaging templates from Dan with outbound vendor and instruct on adjusting campaigns accordingly (29:42)\nReview and utilize Dan’s outbound messaging document sent via Slack; request updated sequences if needed (32:59)\n"
+    }
+  ]
+}

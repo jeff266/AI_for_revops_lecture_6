@@ -1,0 +1,18 @@
+{
+  "company": "Pricing",
+  "slug": "pricing",
+  "calls": [
+    {
+      "id": "01KN38DJXDDKWB6TNXT4BM04H2",
+      "source": "fireflies",
+      "title": "Pricing",
+      "date": "2026-04-01",
+      "duration_minutes": 44,
+      "summary": "The team discussed refining the pricing model to address the challenges of balancing flat-rate discounts and usage-based pricing, aiming for consistency and clarity across product tiers. Dan Wathne proposed a flat 10% discount compared to Statsig’s pricing, introducing floor and ceiling pricing for platform fees. A debate regarding warehouse native access for Pro tier ensued, highlighting Jeremy's stance on its necessity for Pro customers. An analysis revealed that average spending for Pro customers could face significant increases under new models. The target for Pro customers was clarified as small teams running fewer than 50 experiments per year. Additionally, a competitive pricing audit is planned to benchmark GrowthBook against similar vendors while also modifying sales strategies to better align packages.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 4,
+      "keywords": "pricing strategy, warehouse native, pro plan, enterprise plan, per experiment pricing, sales enablement",
+      "action_items": "\n**Dan Wathne**\nCoordinate with Elise to audit competitor pricing models for experimentation, feature flags, and product analytics to develop a comprehensive competitive pricing view (36:40)\nFollow up with Jeremy on pricing proposals after consolidating data and preparing clear pricing scenarios (37:19)\nProvide a summary of competitor A/B testing pricing using Claude AI to benchmark GrowthBook’s pricing strategy (32:19)\nRest and recover to return fully productive for end-of-week pricing finalization efforts (38:05)\n\n**Ashley Stirrup**\nContinue refining pricing spreadsheets by filtering outliers and organizing data by plan types for clearer insights (39:33)\nWork with Chris Newton to create pivot tables to better segment pricing data and customer behavior by plan (38:31)\n\n**Chris Newton**\nCreate pivot tables and filter outliers in pricing spreadsheet to aid analysis on Pro vs Enterprise pricing impacts (38:31)\nMerge filtered and segmented pricing data back into the main spreadsheet to facilitate price comparison and analysis (39:37)\n\n**Ryan McGurk**\nConduct market research to determine industry average self-serve ACV deal sizes relevant to GrowthBook pricing strategy (21:48)\n"
+    }
+  ]
+}

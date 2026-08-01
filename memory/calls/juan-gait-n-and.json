@@ -1,0 +1,18 @@
+{
+  "company": "Juan Gaitán and",
+  "slug": "juan-gait-n-and",
+  "calls": [
+    {
+      "id": "01KPWK6ERNVYRXGPQMA37XGPAR",
+      "source": "fireflies",
+      "title": "Juan Gaitán and James Shannon",
+      "date": "2026-04-24",
+      "duration_minutes": 30,
+      "summary": "The discussion centered on Growth Book's competitive edge, primarily through exceptional customer support provided by dedicated engineers, which fosters user loyalty, particularly among European clients. The company faces challenges balancing self-serve and enterprise needs while onboarding larger clients and maintaining access to features for smaller users. Insights into the competitive landscape highlighted major players like Optimizely while emphasizing Growth Book's open-source nature. The sales approach underscores a customer-first philosophy that values empathy and technical knowledge, aiming for win-win outcomes. Additionally, the focus on hiring a tech-savvy sales engineer in Europe aims to enhance regional support and engagement, aligning with future market expansion efforts.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "GrowthBook, enterprise sales, customer success, technical support, AI integration, European market",
+      "action_items": "\n**James Shannon**\nConsult with sales leader Ryan and solutions engineer Logan to determine next steps in the hiring process and communicate outcomes to Juan Gaitán by Monday or Tuesday (18:33)\nCoordinate internally with Richard and communicate next steps to Juan regarding the recruitment process (25:59)\n\n**Juan Gaitán-Villamizar**\nAwait follow-up communication on next steps after James discusses internally (25:58)\n"
+    }
+  ]
+}

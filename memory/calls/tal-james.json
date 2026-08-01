@@ -1,0 +1,18 @@
+{
+  "company": "Tal & James",
+  "slug": "tal-james",
+  "calls": [
+    {
+      "id": "01KXZN3MGRA23CN54F0WA4MMJS",
+      "source": "fireflies",
+      "title": "Tal & James",
+      "date": "2026-07-22",
+      "duration_minutes": 12,
+      "summary": "The meeting discussed the successful setup of initial infrastructure to launch a live experiment aimed at validating product metrics. An initial ghost experiment confirmed system readiness and highlighted effective use of AI in implementing complex UI changes. The trial is set to run through July to gather meaningful data and includes multiple product owners to demonstrate broad utility. Additionally, there were discussions about finalizing a commercial agreement by July 31, with an emphasis on annual commitment and flexible payment terms. CEO Amir expressed the need for value proof before signing, leading to a scheduled meeting for further negotiations and preparations to ensure timely progress.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Growth Book, experiment setup, trial period, AI assistant, commercial agreement, annual commitment",
+      "action_items": "\n**Tal Binyamini**\nCoordinate with Amir and confirm the schedule for the commercial agreement discussion on Monday at 11:15 am (07:36)\nContinue running Growth Book experiments through the trial period to validate the platform's value (02:36)\n\n**James Shannon**\nSend Growth Book agreement template to Tal for review before the commercial discussion on Monday (10:20)\nPrepare to discuss flexible payment structures and annual commitment options with Tal and Amir during the Monday meeting (10:45)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Dessault & GrowthBook",
+  "slug": "dessault-growthbook",
+  "calls": [
+    {
+      "id": "01KTC8PJ3M7V90EEMRQK5TYTVS",
+      "source": "fireflies",
+      "title": "Dessault & GrowthBook",
+      "date": "2026-06-12",
+      "duration_minutes": 53,
+      "summary": "The discussion focused on GrowthBook’s capabilities in enhancing personalization and experimentation for Dassault, including insights from a proof of concept (POC) aimed at optimizing user journeys on 3DS.com. Participants emphasized the importance of understanding technical integration, particularly how user data links to experiment variants and backend interactions. Further, Dassault's reliance on BigQuery for analytics and the need for cost optimization in querying were highlighted, alongside a comparison of GrowthBook’s competitive advantages, such as its all-in-one licensing model. The team underscored the significance of empowering non-technical users to execute experiments independently and the added benefits of enterprise features, including governance and security. Next steps involved scheduling a demo to showcase usability and scaling capabilities and planning additional discussions on data architecture integration.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, Experimentation, Personalization, BigQuery, Data Warehouse, AI Features",
+      "action_items": "\n**Nicolas Coze**\nLead scheduling and coordination of the follow-up meeting for technical/demo discussion, ensuring the right stakeholders are invited (48:10)\n\n**James Shannon**\nPrepare and deliver a detailed demo focused on Dassault’s use cases including BigQuery integration and query optimization, share materials one day before meeting for preparation (50:20)\n\n**Olivier Leclair**\nProvide technical details about data infrastructure and clarify use cases for demo preparation; coordinate with internal teams to align on needs (43:14)\n\n**All Participants**\nShare relevant use cases and documentation ahead of the next meeting to facilitate targeted demo and technical deep dive (50:20)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "James Bond and",
+  "slug": "james-bond-and",
+  "calls": [
+    {
+      "id": "01KNFG6BFFAMFNEP65V1Y80CFM",
+      "source": "fireflies",
+      "title": "James Bond and Ashley Stirrup",
+      "date": "2026-04-07",
+      "duration_minutes": 19,
+      "summary": "The team discussed the potential consolidation of marketing tools, contemplating the elimination of Customer IO for HubSpot to enhance operational efficiency and reduce costs. During the meeting, Ashley highlighted issues with Customer IO’s integration and its misalignment with an open-source philosophy, while Chris noted the comparative costs of both platforms. Integration expenses were projected at $6,000 to $8,000, raising concerns about whether the savings from shedding Customer IO would justify the cost. The team also examined HubSpot’s pricing structure, which charges based on marketing contacts, highlighting challenges with data fragmentation affecting reporting capabilities. The conversation underscored the need for stronger vendor management and internal coordination to improve marketing operations moving forward.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 3,
+      "keywords": "Customer IO, HubSpot, Marketing Automation, Data Integration, Reporting & Attribution, Strategic Consulting",
+      "action_items": "\n**Ashley Stirrup**\nReach out to Graham to clarify the company's stance on continuing Customer IO or consolidating entirely on HubSpot (08:10)\nContact HubSpot representative to gather detailed pricing tiers based on expected marketing contact volume and request flexibility considerations (12:22)\nSend the meeting recording to James Bond for accurate note-taking (18:03)\n\n**James Bond**\nEngage with Mason from Unlimited to address strategic support issues and accelerate HubSpot enablement progress (07:51)\nStand down on the Customer IO to HubSpot integration project pending internal decisions (12:47)\nReview current progress and deliverables with Mason related to HubSpot setup, reporting, account assignments, and marketing processes (05:23)\nFollow up with Ashley and team with potential strategic paths and solutions post-discussion with Mason (18:27)\n\n**Chris Newton**\nContinue preparations and coordination with Ashley to optimize meetings and clarify asks for consulting support (07:08)\nAssist in implementing foundational workflows and attribution fixes in HubSpot, including adding missing hidden UTM parameter fields for better tracking (15:48)\n"
+    }
+  ]
+}

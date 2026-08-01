@@ -1,0 +1,18 @@
+{
+  "company": "Bi-weekly",
+  "slug": "bi-weekly",
+  "calls": [
+    {
+      "id": "01KYG79S38P8SDB1WH14X59KVV",
+      "source": "fireflies",
+      "title": "Bi-weekly:  Graham/Manish/Tiantian",
+      "date": "2026-07-28",
+      "duration_minutes": 8,
+      "summary": "Participants focused on ensuring robust communication during the meeting while addressing connectivity and location updates. Manish faced delays due to traffic in San Francisco but was close to Graham, who was located in Soma. This proximity suggested potential for follow-up discussions in person. Graham shared his ongoing pitching efforts to Notion, highlighting relevant business development activities. Manish proactively offered to switch to a phone call if connectivity worsened, demonstrating good communication management. Graham confirmed the connection quality was stable, which contributed to an uninterrupted dialogue. Casual location updates helped set context without affecting the flow of the meeting.",
+      "organizer": "graham@growthbook.io",
+      "participants": 2,
+      "keywords": "San Francisco, transit, office space, pitching Notion, meeting coordination, traffic",
+      "action_items": "\n**Manish**\nContinue coordinating with Graham regarding location and meeting logistics while in transit (05:06)\n\n**Graham McNicoll**\nFollow up on meetings pitching Notion and maintain office access arrangements in San Francisco (06:22)\n"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "company": "GB Social Time",
+  "slug": "gb-social-time",
+  "calls": [
+    {
+      "id": "01KPBYBF0JQV8F3K7RRP4HKBVN",
+      "source": "fireflies",
+      "title": "GB Social Time 🥳 ",
+      "date": "2026-04-16",
+      "duration_minutes": 41,
+      "summary": "The discussion covered declining airline service quality impacting customer satisfaction, highlighted by Dan Wathne's comparison of past and current airline experiences. Family travel strategies were shared by Adriel Vieira and Guy Langford-lee, focusing on securing better seating and addressing challenges with children on flights. The conversation also included insights on a new convenient Panama route linked to family travel. Team bonding activities like GeoGuessr were discussed, promoting camaraderie among participants despite some technical challenges. Upcoming company retreat logistics were clarified by Jennifer Pham-Le, noting expected attendees, including full-time employees and their guests. Safety in snorkeling experiences was emphasized with tips on handling local wildlife. Cultural observations regarding airport behavior in New Zealand and Australia marked the end of the meeting.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 2,
+      "keywords": "Airline Experience, Family Travel, Time Guesser Game, Maui Snorkeling, Australian Wildlife, Company Retreat",
+      "action_items": "\n**Guy Langford-lee**\nSend a screenshot of the Time Guesser game score for verification (22:16)\n\n**Jeremy Dorn**\nShare the link to the Time Guesser game in the chat for group participation (04:40)\n\n**All participants**\nSubmit Time Guesser game scores in the chat for comparison among participants (21:44)\n\n**Jennifer Pham-Le**\nMonitor and coordinate the attendee list for company retreat travel logistics (23:13)\n\n**Adriel Vieira**\nConfirm final travel arrangements and lodging details for the retreat with wife and notify the group as needed (38:33)\n\n**Dan Wathne**\nReview and share snorkeling safety tips and favorite sites in Maui as reference for retreat attendees interested in water activities (26:01)\n"
+    },
+    {
+      "id": "01KHVVEQZN8532V0DX6CADSMB2",
+      "source": "fireflies",
+      "title": "GB Social Time 🥳 ",
+      "date": "2026-02-19",
+      "duration_minutes": 45,
+      "summary": "The meeting focused on strengthening team engagement through fun activities like playing Scribble, which fostered camaraderie among participants. Insights from Johnny Martinez on basketball coaching illustrated leadership and emotional management, while Ashley Stirrup's updates on her daughter's success in college volleyball brought in discussions on sports and teamwork. The team delved into AI integration, particularly the capabilities of Open Claw for automating tasks and enhancing experimentation processes, balancing innovation with security concerns. The conversation highlighted the increasing demand from clients for AI-driven insights and the importance of maintaining fresh experiment data. Additionally, a chatbot prototype was discussed, emphasizing the need for refinement for efficient deployment, all while maintaining an informal and collaborative meeting atmosphere.",
+      "organizer": "johnny@growthbook.io",
+      "participants": 2,
+      "keywords": "Open Claw, AI experimentation, hypothesis generation, basketball coaching, volleyball championship, team bonding game",
+      "action_items": "\n**Graham McNicoll**\nShare the AI sales call recording discussing hypothesis generation and analytics with Ashley Stirrup for review (18:59)\n\n**Ashley Stirrup**\nContinue setup and exploration of Open Claw AI tools, advancing beyond initial menu confusion (08:16)\n\n**All Participants**\nEngage with Open Claw or similar autonomous AI systems cautiously, focusing on safe, limited tasks initially (08:26)\n\n**Team (unspecified)**\nInvestigate integrating past experiment results with AI to enhance hypothesis generation and experimentation automation (15:00)\n\n**Luke Sonnet & Jeremy Dorn**\nReview and maintain code references functionality in the GrowthBook app to support AI-driven experimental analysis (17:13)\n\n**Johnny Martinez**\nPost shared links on AI interfaces for voice-based data interaction to the team chat (20:35)\n\n**Meeting Organizer (unassigned)**\nSchedule follow-up discussions on AI's evolving role in experimentation and product analytics based on ongoing market interest (18:11)\n"
+    }
+  ]
+}

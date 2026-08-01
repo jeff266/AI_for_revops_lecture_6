@@ -1,0 +1,18 @@
+{
+  "company": "Alyssa Nicoll and",
+  "slug": "alyssa-nicoll-and",
+  "calls": [
+    {
+      "id": "01KS2YGEEBT472R9ND47R9QF3M",
+      "source": "fireflies",
+      "title": "Alyssa Nicoll and Ashley Stirrup",
+      "date": "2026-05-21",
+      "duration_minutes": 26,
+      "summary": "The meeting addressed the rapid expansion of the marketing and developer relations (DevRel) teams, highlighting the recent hiring of three internal marketers, which enhances collaboration across the 40-person organization. Ashley Stirrup emphasized the unique nature of DevRel roles, aiming to blend technical skills with community engagement, while Alyssa Nicoll's extensive experience in developer advocacy was noted as a strong fit for the role. The discussions also covered the importance of early adopter programs for user feedback, challenges in onboarding due to product complexity, and strategies for effective content creation to deepen community ties. Furthermore, the hiring process was outlined, including a three-step interview setup focused on strategic alignment and clear expectations.",
+      "organizer": "ashley@growthbook.io",
+      "participants": 2,
+      "keywords": "Developer Relations, Community Engagement, Early Adopter Program, Product Analytics, Customer Success, Technical Content",
+      "action_items": "\n**Ashley Stirrup**\nHave Scott, the technical product marketer, reach out to Alyssa to schedule the next interview step (24:42)\nArrange follow-up interviews with CTO Jeremy after Scott’s conversation with Alyssa (23:09)\nProvide Alyssa with details on the candidate presentation assignment about first-year focus and opportunities (23:09)\n\n**Alyssa Nicoll**\nSend links and examples of recent projects and demos, including the AI-powered UI generation FinTech dashboard, Elyra (07:18)\n"
+    }
+  ]
+}

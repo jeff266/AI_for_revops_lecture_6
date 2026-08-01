@@ -1,0 +1,18 @@
+{
+  "company": "Khan Academy’s Journey",
+  "slug": "khan-academy-s-journey",
+  "calls": [
+    {
+      "id": "01KP6TXSWEMKV1ASW62BD4KKAK",
+      "source": "fireflies",
+      "title": "Khan Academy’s Journey to Experimentation",
+      "date": "2026-04-16",
+      "duration_minutes": 56,
+      "summary": "Khan Academy is evolving its experimentation platform, starting from basic A/B testing to adopting GrowthBook to support nearly 1 million daily users with improved speed and flexibility. The focus is on offering a high-quality AI tutoring experience through Khanmigo, collecting metrics on cognitive engagement and math performance. Governance principles are established to ensure responsible experimentation that aligns with educational values, allowing for user opt-outs. Insightful studies on the math agent optimize latency while maintaining accuracy, demonstrating the delicate balance required in AI interactions. Additionally, a robust cognitive engagement metric is developed to evaluate the effectiveness of tutoring while maintaining ethical standards in research.",
+      "organizer": "jennifer@growthbook.io",
+      "participants": 1,
+      "keywords": "Khan Academy, experimentation, Khanmigo, cognitive engagement, generative AI, GrowthBook",
+      "action_items": "\n**Kelli Hill**\nObtain and share data on opt-out rates for Khanmigo experimentation users to better understand user participation and consent (45:15)\n"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "company": "Prospecting",
+  "slug": "prospecting",
+  "calls": [
+    {
+      "id": "01KH28DFBWFT3PS4ZD6ZMTHA8Q",
+      "source": "fireflies",
+      "title": "Prospecting",
+      "date": "2026-02-10",
+      "duration_minutes": 37,
+      "summary": "The team discussed strategies for enhancing sales outreach through automation and targeted messaging. Matthew Du Pont showcased an automated process for contact discovery that streamlines prospecting by identifying three relevant contacts per company, facilitating tailored messaging based on roles. Jake Stangl emphasized prioritizing Rio accounts, currently adding five contacts daily, but noted zero email responses, indicating a need for messaging improvement. The group agreed on upgrading messaging quality before expanding campaigns, with a focus on leveraging AI for analyzing lost deals to identify patterns and recover potential leads. Regular bi-weekly meetings were proposed for better communication, while strategies for coordinating outreach with India-based prospects were outlined to improve scheduling and attendance rates.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 4,
+      "keywords": "Apollo, Rio, Prospecting, Messaging, AI Agent, Closed-Lost Analysis",
+      "action_items": "\n**Matthew Du Pont**\nShare document summarizing current status and goals for one-on-one review with Ryan (06:00)\nPolish the N8N tool interface to streamline contacts import and sequence assignment (12:00)\nDevelop playbook and implement AI agent analysis for closed-lost deals to identify re-engagement opportunities (14:50)\nDiscuss sequence messaging improvements with Ashley for high-level personalization efforts (19:00)\nDraft direction document outlining effort allocation between scaling and short-term meeting goals (29:25)\nSchedule and set up recurring prospecting sync meetings for Ryan, Jake S., and himself (30:05)\nAssist and codify meeting handoff process to Jake H., including coordination across time zones (35:30)\n\n**Jake Stangl**\nContinue adding ~5 Rio leads per day into Apollo sequences and follow-up via calls and emails (16:00)\nTake lead on drafting outreach to Jake H. to clarify working hours and facilitate smooth handoff (35:10)\nSend meeting reminders to prospects 2-3 days in advance and communicate no-shows to AEs (36:30)\n\n**Ashley**\nCollaborate on improving messaging personalization for core sequences targeting specific personas (engineers, PMs, etc.) (19:15)\n"
+    }
+  ]
+}

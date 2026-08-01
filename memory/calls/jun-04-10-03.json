@@ -1,0 +1,18 @@
+{
+  "company": "Jun 04, 10:03",
+  "slug": "jun-04-10-03",
+  "calls": [
+    {
+      "id": "01KT9F4JF2MR33FW8ZWZGD15E5",
+      "source": "fireflies",
+      "title": "Jun 04, 10:03 AM",
+      "date": "2026-06-04",
+      "duration_minutes": 0,
+      "summary": "The team discussed deploying a proxy to ensure the scalability and efficiency of system integration for launching DALI. This infrastructure layer is deemed essential to manage CDN requests effectively. Recent API improvements aim to streamline automated workflows, aligning with operational needs. Due to low user volumes, A/B testing was rejected in favor of simpler feature flagging, leading to revised pricing that reflects this narrowed scope. The team is preparing for a vendor selection meeting targeting technical trials, with procurement planned between July and August to maintain momentum for project deadlines. An updated quote will be delivered promptly to support decision-making.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 1,
+      "keywords": "proxy, feature flagging, pricing adjustment, technical trial, vendor evaluation, API update",
+      "action_items": "\n**Samuel Logan**\nPresent vendor analysis to engineering leadership on Tuesday to select one or two vendors for technical trials (03:28)\nConduct call with launch DALI next week and update on progress with vendor decision (03:28)\nIncorporate received updated pricing into vendor evaluation materials (03:28)\nStart procurement process in July following vendor decision by July 24 (04:26)\n\n**Scott Keller**\nSend revised pricing quote reflecting feature flagging focus and adjusted cost after the call (01:48)\n"
+    }
+  ]
+}

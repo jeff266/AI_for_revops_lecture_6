@@ -1,0 +1,18 @@
+{
+  "company": "Jeff & George | Default Demo",
+  "slug": "jeff-george-default-demo",
+  "calls": [
+    {
+      "id": "01KPPEPFM3N8CS1F3JJJ1Q50B3",
+      "source": "fireflies",
+      "title": "Jeff & George | Default Demo: Revenue Grade Workflows",
+      "date": "2026-04-22",
+      "duration_minutes": 30,
+      "summary": "The meeting discussed the sales team's expansion and the need for a more precise lead segmentation and routing system. Key strategies include segmenting leads by company size and region to prioritize high-value enterprise leads and incorporating website traffic and industry data for better lead scoring. Current tools like Rio for lead scoring were acknowledged, and while initial focus is on inbound leads, outbound scenarios are also considered for future phases. Default's platform was highlighted for its built-in real-time enrichment and comprehensive workflow features that improve lead handling compared to competitors. A transparent pricing model was discussed, aligned with team growth, along with a five-day implementation timeline to ensure effective setup and ongoing support.",
+      "organizer": "jeff.ignacio@growthbook.io",
+      "participants": 5,
+      "keywords": "Lead Routing, Enrichment, Sales Workflow, HubSpot Integration, Calendly Replacement, Lead Scoring",
+      "action_items": "\n**Jeff Ignacio**\nCoordinate internally with Ashley and Chris on routing and enrichment strategy for sub-250 employee leads and hypo segments (25:33)\nDefine ideal flows in collaboration with Default for inbound routing and qualification (27:50)\n\n**George Harris**\nSend product information, screenshots, workflow examples, and pricing details to GrowthBook team (28:03)\nProvide support for workflow building workshops and coordinate deployment engineer involvement for implementation (27:50)\nPrepare for follow-up call to discuss outbound and self-serve use cases with GrowthBook (29:10)\n\n**Ryan McGurk**\nCollaborate on use case requirements including routing leads based on employee count and website visitors for AE assignment or self-serve flows (25:51)\nEvaluate the timing and readiness for tool selection and deployment within the coming week (29:01)\n"
+    }
+  ]
+}

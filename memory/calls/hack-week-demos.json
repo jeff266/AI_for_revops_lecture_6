@@ -1,0 +1,18 @@
+{
+  "company": "Hack Week Demos",
+  "slug": "hack-week-demos",
+  "calls": [
+    {
+      "id": "01KRQ3522CZH02MCAJSEH5YH3Q",
+      "source": "fireflies",
+      "title": "Hack Week Demos Part 2",
+      "date": "2026-05-16",
+      "duration_minutes": 126,
+      "summary": "The meeting highlighted several advancements in GrowthBook's capabilities, including a demonstration of a new integration for automating experiment creation, feature flag deployment, and analysis within Claude Desktop, which significantly reduces QA steps and allows for faster iterations. The introduction of the Open Experiment Standard (OES) aims to facilitate experiment portability across platforms using a universal JSON format. A new Slack bot was presented to improve enterprise customer support by automating query classification and PR creation while retaining human approval for accuracy. Additionally, a copy-paste feature for feature flags was proposed to streamline management between development and production environments. Enhancements to the super admin dashboard, real-time error tracking, and session replay features were also discussed to further improve organizational efficiency and product health.",
+      "organizer": "jeremy@growthbook.io",
+      "participants": 1,
+      "keywords": "GrowthBook, Experimentation, AI Skills, Open Experiment Standards, Slack Triage Bot, Session Replay",
+      "action_items": "\n**Luke Sonnet**\nFix bugs in the GrowthBook CLI and Claude skill workflow to enforce QA gates and improve authentication setup for experiment management (11:13)\nImprove and finalize the GrowthBook CLI, focusing on authentication and reliable command execution behind the scenes (15:55)\nPromote and refine the Open Experiment Standards (OES) specification; coordinate with other vendors and open-source communities to adopt and integrate the standard (29:11)\nDeploy the AI-powered Slack triage bot to enterprise customer support channels with a human approval gate to maintain service quality (38:54)\nEnhance Slack bot messaging capabilities with possible automated responses, respecting customer consent settings (38:54)\nFinalize and release the UI feature for copying feature flag configurations between separate development and production environments (41:41)\nContinue improving the Super Admin page by adding more filters, usage statistics, messaging capabilities, and enhanced access controls including a read-only super admin role (45:31)\nComplete UI cleanup and stabilization of the companion mode and safe rollout integration, including support for saving rollout templates for repeated use (51:49)\nDevelop and embed Simple Mode in the UI as a toggle to provide user-friendly, plain-English experiment result interpretations with AI integration (01:00:15)\nEnhance the experimentation program learnings library and implement scaffolding prompts or AI helpers to improve documentation quality and metadata capture during experiment setup (01:15:50)\nPush the GrowthBook error tracking plugin into production behind a feature flag and compare error fingerprinting accuracy against Sentry (01:27:04)\nAddress session replay SDK performance concerns and backend bottlenecks; explore session filtering on flags or experiment variants and AI-assisted session analysis (01:45:52)\n\n**GrowthBook Team**\nDesign a coordinated approach with vendors for open export/import experiment data tools based on the Open Experiment Standards to reduce vendor lock-in (29:11)\nConsider pricing models differentiating error-tracking events from normal events for managed warehouse customers to control costs (01:40:27)\nInvestigate the feasibility and impact of integrating mobile session replay capabilities (01:59:56)\n"
+    }
+  ]
+}
