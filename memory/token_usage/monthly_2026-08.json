@@ -2,12 +2,12 @@
   "month": "2026-08",
   "days": {
     "2026-08-01": {
-      "total_cost_usd": 0.043546,
-      "total_input_tokens": 7585,
-      "total_output_tokens": 2301
+      "total_cost_usd": 0.150822,
+      "total_input_tokens": 69140,
+      "total_output_tokens": 6962
     }
   },
-  "total_cost_usd": 0.043546,
+  "total_cost_usd": 0.150822,
   "by_model": {},
   "by_role": {}
 }
