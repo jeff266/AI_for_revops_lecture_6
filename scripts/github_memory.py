@@ -34,6 +34,7 @@ class GitHubMemory:
         self.issues_dir = self.memory_dir / "issues"
         self.rubric_obs_dir = self.memory_dir / "rubric_observations"
         self.meta_dir = self.memory_dir / "meta"
+        self.calls_dir = self.memory_dir / "calls"
 
         # Ensure directories exist (both local and GitHub Actions)
         self.learnings_dir.mkdir(parents=True, exist_ok=True)
@@ -42,6 +43,7 @@ class GitHubMemory:
         self.issues_dir.mkdir(parents=True, exist_ok=True)
         self.rubric_obs_dir.mkdir(parents=True, exist_ok=True)
         self.meta_dir.mkdir(parents=True, exist_ok=True)
+        self.calls_dir.mkdir(parents=True, exist_ok=True)
 
     # ─────────────────────────────────────────────────────────────────
     # Counter Management
@@ -332,6 +334,57 @@ class GitHubMemory:
         except Exception as e:
             print(f"Error creating PR: {e}")
             return None
+
+    # ─────────────────────────────────────────────────────────────────
+    # Call Cache Management
+    # ─────────────────────────────────────────────────────────────────
+
+    def load_call_cache(self, slug: str) -> Optional[dict]:
+        """Load call cache for a company slug."""
+        cache_path = self.calls_dir / f"{slug}.json"
+        if not cache_path.exists():
+            return None
+
+        try:
+            with open(cache_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"   ⚠️  Error loading cache {slug}.json: {e}")
+            return None
+
+    def save_call_cache(self, slug: str, cache_data: dict):
+        """Save call cache for a company slug."""
+        cache_path = self.calls_dir / f"{slug}.json"
+        cache_data['last_etl_date'] = datetime.now().isoformat()
+
+        try:
+            with open(cache_path, 'w', encoding='utf-8') as f:
+                json.dump(cache_data, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            print(f"   ⚠️  Error saving cache {slug}.json: {e}")
+
+    def load_deal_index(self) -> dict:
+        """Load deal index mapping deal_id -> company_slug."""
+        index_path = self.calls_dir / "_deal_index.json"
+        if not index_path.exists():
+            return {}
+
+        try:
+            with open(index_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"   ⚠️  Error loading deal index: {e}")
+            return {}
+
+    def save_deal_index(self, index: dict):
+        """Save deal index mapping deal_id -> company_slug."""
+        index_path = self.calls_dir / "_deal_index.json"
+
+        try:
+            with open(index_path, 'w', encoding='utf-8') as f:
+                json.dump(index, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            print(f"   ⚠️  Error saving deal index: {e}")
 
 
 def get_memory_manager(repo_root: Path = None) -> GitHubMemory:
