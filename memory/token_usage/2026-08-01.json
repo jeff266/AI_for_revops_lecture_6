@@ -1,0 +1,69 @@
+{
+  "date": "2026-08-01",
+  "summary": {
+    "total_cost_usd": 0.043546,
+    "total_input_tokens": 7585,
+    "total_output_tokens": 2301,
+    "total_calls": 3,
+    "by_model": {
+      "claude-sonnet-4-5-20250929": {
+        "input_tokens": 2633,
+        "output_tokens": 1919,
+        "cost_usd": 0.036684,
+        "calls": 1
+      },
+      "claude-haiku-4-5-20251001": {
+        "input_tokens": 4952,
+        "output_tokens": 382,
+        "cost_usd": 0.006862,
+        "calls": 2
+      }
+    },
+    "by_role": {
+      "generator": {
+        "input_tokens": 2633,
+        "output_tokens": 1919,
+        "cost_usd": 0.036684
+      },
+      "evaluator": {
+        "input_tokens": 4279,
+        "output_tokens": 254,
+        "cost_usd": 0.005549
+      },
+      "reflection": {
+        "input_tokens": 673,
+        "output_tokens": 128,
+        "cost_usd": 0.001313
+      }
+    }
+  },
+  "records": [
+    {
+      "timestamp": "2026-08-01T16:58:23.984782",
+      "model": "claude-sonnet-4-5-20250929",
+      "role": "generator",
+      "company": "PragerU",
+      "input_tokens": 2633,
+      "output_tokens": 1919,
+      "cost_usd": 0.036684
+    },
+    {
+      "timestamp": "2026-08-01T16:58:27.393985",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "evaluator",
+      "company": "PragerU",
+      "input_tokens": 4279,
+      "output_tokens": 254,
+      "cost_usd": 0.005549
+    },
+    {
+      "timestamp": "2026-08-01T16:58:28.970274",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "reflection",
+      "company": "PragerU",
+      "input_tokens": 673,
+      "output_tokens": 128,
+      "cost_usd": 0.001313
+    }
+  ]
+}
