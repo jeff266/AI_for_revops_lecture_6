@@ -121,17 +121,59 @@ def get_calls_for_company(company_name: str, contact_emails: list, since_date: d
 
     new_count = len(new_fireflies) + len(new_apollo)
 
-    if new_count > 0:
-        print(f"   ✨ Cache updated: {new_count} new calls ({len(new_fireflies)} Fireflies + {len(new_apollo)} Apollo)")
+    # Merge new calls with cached calls
+    all_calls_combined = list(cached_calls)  # Start with cached calls
 
-        # TODO: Merge new calls into cache and save
-        # For now, just return the new calls
+    if new_count > 0:
+        # Convert new API calls to cache format and add to combined list
+        existing_ids = {c.get('id') for c in cached_calls}
+
+        for call in new_fireflies:
+            if call.get('id') not in existing_ids:
+                all_calls_combined.append({
+                    'id': call.get('id'),
+                    'source': 'fireflies',
+                    'title': call.get('title', ''),
+                    'date': datetime.fromtimestamp(call.get('date', 0) / 1000).strftime('%Y-%m-%d') if call.get('date') else '',
+                    'duration_minutes': call.get('duration', 0),
+                    'summary': call.get('summary', {}).get('short_summary', ''),
+                    'organizer': call.get('organizer_email', ''),
+                    'participants': len(call.get('participants', [])),
+                    'keywords': ', '.join(call.get('summary', {}).get('keywords', []) or []),
+                    'action_items': ', '.join(call.get('summary', {}).get('action_items', []) or [])
+                })
+                existing_ids.add(call.get('id'))
+
+        for call in new_apollo:
+            if call.get('id') not in existing_ids:
+                all_calls_combined.append({
+                    'id': call.get('id'),
+                    'source': 'apollo',
+                    'title': call.get('topic', ''),
+                    'date': datetime.fromisoformat(call.get('start_time', '').replace('Z', '+00:00')).strftime('%Y-%m-%d') if call.get('start_time') else '',
+                    'duration_minutes': call.get('duration', 0) // 60 if call.get('duration') else 0,
+                    'summary': call.get('summary', ''),
+                    'host': call.get('host', ''),
+                    'participants': len(call.get('transcript', [])),
+                })
+                existing_ids.add(call.get('id'))
+
+        # Save updated cache
+        memory.save_call_cache(slug, {
+            'company': company_name,
+            'slug': slug,
+            'calls': all_calls_combined
+        })
+
+        print(f"   ✨ Cache updated: {new_count} new calls added")
     else:
         print(f"   ✓ Cache up-to-date: 0 new calls")
 
-    # Return all calls (cached + new)
-    # Note: This is a simplified version - proper implementation would merge and dedupe
-    return new_fireflies, new_apollo, new_count
+    # Split combined calls back into fireflies and apollo lists
+    all_fireflies = [c for c in all_calls_combined if c.get('source') == 'fireflies']
+    all_apollo = [c for c in all_calls_combined if c.get('source') == 'apollo']
+
+    return all_fireflies, all_apollo, new_count
 
 
 def build_deal_index(deals: list, memory):
