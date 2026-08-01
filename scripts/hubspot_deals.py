@@ -24,7 +24,9 @@ class HubSpotDealsClient:
 
     def __init__(self, api_key: str = None):
         """Initialize with API key."""
-        self.api_key = api_key or os.getenv("HUBSPOT_API_KEY", "pat-na1-7817798e-3dfc-426d-aaa9-f9ed91d90b32")
+        self.api_key = api_key or os.getenv("HUBSPOT_API_KEY")
+        if not self.api_key:
+            raise ValueError("HUBSPOT_API_KEY environment variable not set")
         self.session = requests.Session()
         self.session.headers.update({
             "Authorization": f"Bearer {self.api_key}",
