@@ -9,7 +9,7 @@ Reads:
 Outputs:
   - memory/calls/<company-slug>.json (one file per company with all calls)
 
-Apollo calls are summarized via Claude Haiku (transcript_preview -> summary).
+Apollo calls are summarized via Claude Haiku (transcript_text -> summary).
 Fireflies calls use summary_text directly (already AI-generated).
 """
 
@@ -69,8 +69,8 @@ def extract_company_from_title(title: str) -> str:
     return ' '.join(words)
 
 
-def summarize_with_haiku(transcript_preview: str, title: str) -> str:
-    """Summarize Apollo transcript preview using Claude Haiku."""
+def summarize_with_haiku(transcript_text: str, title: str) -> str:
+    """Summarize Apollo transcript text using Claude Haiku."""
     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
     prompt = f"""Summarize this sales call transcript in 2-3 sentences. Focus on:
@@ -80,8 +80,8 @@ def summarize_with_haiku(transcript_preview: str, title: str) -> str:
 
 Call Title: {title}
 
-Transcript Preview:
-{transcript_preview}
+Transcript Text:
+{transcript_text}
 
 Provide only the summary, no preamble."""
 
@@ -110,10 +110,10 @@ def process_apollo_csv(csv_path: Path, calls_by_company: dict, total_summarized:
 
     for i, row in enumerate(rows, 1):
         title = row.get('title', '')
-        transcript_preview = row.get('transcript_preview', '')
+        transcript_text = row.get('transcript_text', '')
 
         # Skip if no transcript
-        if not transcript_preview or len(transcript_preview) < 50:
+        if not transcript_text or len(transcript_text) < 50:
             continue
 
         # Extract company
@@ -123,11 +123,11 @@ def process_apollo_csv(csv_path: Path, calls_by_company: dict, total_summarized:
         # Summarize with Haiku
         print(f"   [{i}/{len(rows)}] Summarizing: {title[:50]}...")
         try:
-            summary = summarize_with_haiku(transcript_preview, title)
+            summary = summarize_with_haiku(transcript_text, title)
             total_summarized[0] += 1
         except Exception as e:
             print(f"      ✗ Error: {e}")
-            summary = f"[Summary failed] {transcript_preview[:200]}"
+            summary = f"[Summary failed] {transcript_text[:200]}"
 
         # Add to company dict
         if slug not in calls_by_company:
@@ -200,23 +200,51 @@ def process_fireflies_csv(csv_path: Path, calls_by_company: dict):
             print(f"   [{i}/{len(rows)}] Processed")
 
 
+def write_cache(slug: str, company: str, calls: list, cache_dir: Path):
+    """Write cache file, merging with existing data if present."""
+    path = cache_dir / f'{slug}.json'
+
+    # Load existing cache if present
+    existing_calls = []
+    if path.exists():
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                existing = json.load(f)
+                existing_calls = existing.get('calls', [])
+        except Exception as e:
+            print(f'     ⚠️  Could not read existing cache: {e}')
+
+    # Merge by id — new calls take precedence on conflict
+    existing_by_id = {c['id']: c for c in existing_calls}
+    for call in calls:
+        existing_by_id[call['id']] = call
+
+    merged = sorted(existing_by_id.values(),
+                    key=lambda c: c.get('date', ''))
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump({
+            'company': company,
+            'slug': slug,
+            'last_etl_date': datetime.now().isoformat(),
+            'calls': merged
+        }, f, indent=2, ensure_ascii=False)
+
+    return len(merged)
+
+
 def save_call_caches(calls_by_company: dict, output_dir: Path):
-    """Save one JSON file per company."""
+    """Save one JSON file per company, merging with existing caches."""
     print(f"\n💾 Saving call caches to {output_dir}/")
 
     output_dir.mkdir(parents=True, exist_ok=True)
 
     for slug, data in calls_by_company.items():
-        # Sort calls by date (newest first)
-        data["calls"].sort(key=lambda c: c.get("date", ""), reverse=True)
+        total_calls = write_cache(slug, data['company'], data['calls'], output_dir)
+        print(f"   ✓ {slug}.json ({total_calls} calls)")
 
-        output_path = output_dir / f"{slug}.json"
-        with open(output_path, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-
-        print(f"   ✓ {slug}.json ({len(data['calls'])} calls)")
-
-    print(f"\n✅ Created {len(calls_by_company)} company cache files")
+    print(f"\n✅ Processed {len(calls_by_company)} company cache files")
 
 
 def main():
