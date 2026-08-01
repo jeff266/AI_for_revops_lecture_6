@@ -53,12 +53,30 @@ jobs:
           python -m pip install --upgrade pip
           pip install anthropic openai requests PyGithub
 
+      - name: Update call cache (ETL)
+        id: run_etl
+        run: |
+          cd $GITHUB_WORKSPACE
+          python scripts/etl_calls.py --mode incremental
+        continue-on-error: false
+
       - name: Run MEDDICC agent
         id: run_agent
         run: |
-          cd scripts
-          python run_nightly.py
+          cd $GITHUB_WORKSPACE
+          python scripts/run_nightly.py 2>&1 | tee /tmp/run_output.txt
+          echo "Exit code: $?"
         continue-on-error: true
+
+      - name: Show run result
+        if: always()
+        run: |
+          echo "Run agent outcome: ${{ steps.run_agent.outcome }}"
+          echo "Run agent conclusion: ${{ steps.run_agent.conclusion }}"
+
+      - name: Show script output on failure
+        if: steps.run_agent.outcome == 'failure'
+        run: cat /tmp/run_output.txt
 
       - name: Check for errors
         if: steps.run_agent.outcome == 'failure'
