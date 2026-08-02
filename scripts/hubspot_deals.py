@@ -141,6 +141,59 @@ class HubSpotDealsClient:
 
         return all_deals
 
+    def get_deals_modified_since(self, since_date: str) -> List[dict]:
+        """
+        Fetch only deals modified after since_date.
+        Used for delta updates between CSV exports.
+
+        Args:
+            since_date: ISO format string e.g. '2026-08-01T02:00:00'
+
+        Returns:
+            List of deal objects with basic properties
+        """
+        endpoint = "/crm/v3/objects/deals/search"
+
+        body = {
+            'filterGroups': [{
+                'filters': [{
+                    'propertyName': 'hs_lastmodifieddate',
+                    'operator': 'GT',
+                    'value': since_date
+                }]
+            }],
+            'properties': [
+                'dealname',
+                'dealstage',
+                'pipeline',
+                'closedate',
+                'amount',
+                'incremental_arr',
+                'hubspot_owner_id',
+                'hs_lastmodifieddate'
+            ],
+            'limit': 100
+        }
+
+        all_deals = []
+        after = None
+
+        while True:
+            if after:
+                body['after'] = after
+
+            response = self._post(endpoint, body)
+            results = response.get('results', [])
+            all_deals.extend(results)
+
+            paging = response.get('paging', {})
+            after = paging.get('next', {}).get('after')
+
+            if not after:
+                break
+
+        return all_deals
+
     def get_deal_company(self, deal_id: str) -> Optional[dict]:
         """Get associated company for a deal."""
         endpoint = f"/crm/v3/objects/deals/{deal_id}/associations/companies"

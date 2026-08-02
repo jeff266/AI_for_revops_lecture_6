@@ -35,6 +35,7 @@ class GitHubMemory:
         self.rubric_obs_dir = self.memory_dir / "rubric_observations"
         self.meta_dir = self.memory_dir / "meta"
         self.calls_dir = self.memory_dir / "calls"
+        self.deals_dir = self.memory_dir / "deals"
 
         # Ensure directories exist (both local and GitHub Actions)
         self.learnings_dir.mkdir(parents=True, exist_ok=True)
@@ -44,6 +45,7 @@ class GitHubMemory:
         self.rubric_obs_dir.mkdir(parents=True, exist_ok=True)
         self.meta_dir.mkdir(parents=True, exist_ok=True)
         self.calls_dir.mkdir(parents=True, exist_ok=True)
+        self.deals_dir.mkdir(parents=True, exist_ok=True)
 
     # ─────────────────────────────────────────────────────────────────
     # Counter Management
@@ -385,6 +387,29 @@ class GitHubMemory:
                 json.dump(index, f, indent=2, ensure_ascii=False)
         except Exception as e:
             print(f"   ⚠️  Error saving deal index: {e}")
+
+    # ─────────────────────────────────────────────────────────────────
+    # Deals Index (CSV-built deal cache)
+    # ─────────────────────────────────────────────────────────────────
+
+    def load_deals_index(self) -> dict:
+        """Load deals index built from HubSpot CSV export."""
+        index_path = self.deals_dir / "index.json"
+
+        if not index_path.exists():
+            return {'deals': {}}
+
+        try:
+            with open(index_path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"   ⚠️  Error loading deals index: {e}")
+            return {'deals': {}}
+
+    def get_active_deals_from_index(self) -> list:
+        """Returns list of deal dicts from the CSV-built index."""
+        index = self.load_deals_index()
+        return list(index.get('deals', {}).values())
 
 
 def get_memory_manager(repo_root: Path = None) -> GitHubMemory:
