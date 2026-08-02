@@ -6,6 +6,9 @@ on:
     - cron: '0 1 * * *'
   workflow_dispatch:  # Allow manual trigger
 
+permissions:
+  contents: write  # Allow committing and pushing
+
 jobs:
   etl-deals:
     runs-on: ubuntu-latest
