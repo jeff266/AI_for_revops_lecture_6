@@ -264,34 +264,70 @@ def main():
     print(f"   Runs since rewrite: {counter['runs_since_rewrite']}")
     print(f"   Run type: {'FULL REWRITE' if is_full_rewrite else 'INCREMENTAL'}")
 
-    # Get active deals
-    print("\n3. Fetching active deals from HubSpot...")
-    deals = hubspot.get_active_deals()
+    # Load active deals from CSV-built index (no API calls)
+    print("\n3. Loading active deals from index...")
+    active_deals = memory.get_active_deals_from_index()
+
+    if not active_deals:
+        print('⚠️  Deal index is empty.')
+        print('   Run: python scripts/etl_deals.py')
+        print('   (requires data/hubspot_deals.csv export from HubSpot)')
+        return
+
+    print(f'📋 Loaded {len(active_deals)} active deals from index')
+
+    # Delta: fetch only deals modified since last nightly run
+    # to catch stage changes or new deals between CSV exports
+    last_run_date = counter.get('last_run_date', '')
+    if last_run_date:
+        try:
+            print(f'   Checking for deals modified since {last_run_date}...')
+            delta_deals = hubspot.get_deals_modified_since(last_run_date)
+            print(f'   Delta: {len(delta_deals)} deals modified since last run')
+
+            # Note: For now, we'll just log delta deals but not update the index
+            # Index updates happen when running etl_deals.py with fresh CSV export
+            if delta_deals:
+                print(f'   ⚠️  {len(delta_deals)} deals changed since last CSV export')
+                print('      Consider re-exporting and re-running etl_deals.py')
+        except Exception as e:
+            print(f'   ⚠️  Delta fetch failed: {e} — using index as-is')
 
     # Log first 10 deals for debugging
-    print(f"\n   First {min(10, len(deals))} deals:")
-    for idx, d in enumerate(deals[:10], 1):
-        deal_id = d.get('id')
-        deal_name = d.get('properties', {}).get('dealname', 'Unknown')
-        deal_stage = d.get('properties', {}).get('dealstage', 'Unknown')
-        print(f"   [{idx}] ID: {deal_id} | Stage: {deal_stage} | Name: {deal_name}")
+    print(f"\n   First {min(10, len(active_deals))} deals:")
+    for idx, d in enumerate(active_deals[:10], 1):
+        deal_id = d.get('deal_id')
+        deal_name = d.get('deal_name', 'Unknown')
+        deal_stage = d.get('stage', 'Unknown')
+        company_name = d.get('company_name', 'Unknown')
+        print(f"   [{idx}] ID: {deal_id} | Stage: {deal_stage} | {company_name}")
 
     # Filter/limit deals in test mode
     if test_mode and test_deal_id:
         # Filter for specific deal ID
-        deals = [d for d in deals if d.get('id') == test_deal_id]
-        if not deals:
+        active_deals = [d for d in active_deals if d.get('deal_id') == test_deal_id]
+        if not active_deals:
             print(f"   ⚠️  Deal ID {test_deal_id} not found in active deals")
             return
     elif test_mode:
         # Limit to first 5 deals
-        deals = deals[:5]
+        active_deals = active_deals[:5]
 
-    print(f"   Found {len(deals)} active deals")
+    print(f"   Processing {len(active_deals)} deals")
 
     # Build deal index (for O(1) lookup of deal_id -> company_slug)
     print("\n3a. Building deal index...")
     deal_index = {}
+    for deal in active_deals:
+        deal_id = deal.get('deal_id')
+        slug = deal.get('company_slug')
+        company_name = deal.get('company_name')
+        if deal_id and slug:
+            deal_index[deal_id] = {
+                'slug': slug,
+                'company_name': company_name,
+                'updated': datetime.now().isoformat()
+            }
 
     # Process each deal
     print(f"\n4. Processing deals...")
@@ -305,60 +341,43 @@ def main():
     analyses_written = 0
     learnings_written = 0
 
-    for i, deal in enumerate(deals, 1):
-        deal_id = deal.get('id')
-        deal_name = deal.get('properties', {}).get('dealname', 'Unknown')
+    for i, deal in enumerate(active_deals, 1):
+        deal_id = deal.get('deal_id')
+        deal_name = deal.get('deal_name', 'Unknown')
+        company_name = deal.get('company_name', '')
+        slug = deal.get('company_slug', '')
 
-        print(f"\n[{i}/{len(deals)}] {deal_name}")
+        print(f"\n[{i}/{len(active_deals)}] {deal_name}")
 
         try:
-            # Get deal context
-            deal_context = hubspot.get_deal_context(deal_id)
-            company = deal_context.get('company')
-
-            if not company:
-                print(f"   ⏭️  {deal_name}: skipped — no company associated")
-                skipped += 1
-                continue
-
-            company_name = company.get('properties', {}).get('name', '')
-
+            # Company info already in index - no API call needed
             if not company_name:
                 print(f"   ⏭️  {deal_name}: skipped — no company name")
                 skipped += 1
                 continue
 
-            # Update deal index
-            slug = slugify(company_name)
             if not slug:
-                print(f"   ⏭️  {company_name}: skipped — invalid company name (cannot slugify)")
+                print(f"   ⏭️  {company_name}: skipped — invalid company slug")
                 skipped += 1
                 continue
 
-            deal_index[deal_id] = {
-                'slug': slug,
-                'company_name': company_name,
-                'updated': datetime.now().isoformat()
-            }
-
             # Check last analysis date to filter for new calls only
-            last_analysis_date_str = deal.get('properties', {}).get('last_meddicc_analysis_date')
+            # Note: This field is not in CSV, so we'll get it from API if needed
+            # For now, analyze all calls (no since_date filter)
             since_date = None
 
-            if last_analysis_date_str:
-                try:
-                    since_date = datetime.fromisoformat(last_analysis_date_str)
-                    print(f"   Last analyzed: {last_analysis_date_str} - checking for new calls only")
-                except:
-                    print(f"   ⚠️  Invalid last_analysis_date format, fetching all calls")
-
-            # Get contact emails for better matching
-            contacts = deal_context.get('contacts', [])
-            contact_emails = [
-                c.get('properties', {}).get('email', '')
-                for c in contacts
-                if c.get('properties', {}).get('email')
-            ]
+            # Get contact emails for better call matching
+            # Still need to fetch contacts from API for email-based call matching
+            try:
+                contacts = hubspot.get_deal_contacts(deal_id)
+                contact_emails = [
+                    c.get('properties', {}).get('email', '')
+                    for c in contacts
+                    if c.get('properties', {}).get('email')
+                ]
+            except Exception as e:
+                print(f"   ⚠️  Could not fetch contacts: {e}")
+                contact_emails = []
 
             # Get calls from cache (with delta sync for new calls)
             print(f"   Searching for calls: {company_name}")
