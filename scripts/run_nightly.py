@@ -268,6 +268,14 @@ def main():
     print("\n3. Fetching active deals from HubSpot...")
     deals = hubspot.get_active_deals()
 
+    # Log first 10 deals for debugging
+    print(f"\n   First {min(10, len(deals))} deals:")
+    for idx, d in enumerate(deals[:10], 1):
+        deal_id = d.get('id')
+        deal_name = d.get('properties', {}).get('dealname', 'Unknown')
+        deal_stage = d.get('properties', {}).get('dealstage', 'Unknown')
+        print(f"   [{idx}] ID: {deal_id} | Stage: {deal_stage} | Name: {deal_name}")
+
     # Filter/limit deals in test mode
     if test_mode and test_deal_id:
         # Filter for specific deal ID
@@ -309,25 +317,29 @@ def main():
             company = deal_context.get('company')
 
             if not company:
-                print("   ⚠️  No company associated, skipping")
+                print(f"   ⏭️  {deal_name}: skipped — no company associated")
                 skipped += 1
                 continue
 
             company_name = company.get('properties', {}).get('name', '')
 
             if not company_name:
-                print("   ⚠️  No company name, skipping")
+                print(f"   ⏭️  {deal_name}: skipped — no company name")
                 skipped += 1
                 continue
 
             # Update deal index
             slug = slugify(company_name)
-            if slug:
-                deal_index[deal_id] = {
-                    'slug': slug,
-                    'company_name': company_name,
-                    'updated': datetime.now().isoformat()
-                }
+            if not slug:
+                print(f"   ⏭️  {company_name}: skipped — invalid company name (cannot slugify)")
+                skipped += 1
+                continue
+
+            deal_index[deal_id] = {
+                'slug': slug,
+                'company_name': company_name,
+                'updated': datetime.now().isoformat()
+            }
 
             # Check last analysis date to filter for new calls only
             last_analysis_date_str = deal.get('properties', {}).get('last_meddicc_analysis_date')
@@ -375,10 +387,11 @@ def main():
 
             # GUARD 1: No calls found for company
             if len(all_summaries) == 0:
-                print(f"   ⏭️  {company_name}: no calls found — skipping")
                 if since_date:
+                    print(f"   ⏭️  {company_name}: skipped — no new calls since {since_date.strftime('%Y-%m-%d')}")
                     skipped_no_new_calls += 1
                 else:
+                    print(f"   ⏭️  {company_name}: skipped — no calls found")
                     skipped_no_calls += 1
                 skipped += 1
                 continue
@@ -387,7 +400,7 @@ def main():
             if since_date:
                 last_call_date = get_most_recent_call_date(fireflies_calls, apollo_calls)
                 if last_call_date and last_call_date <= since_date:
-                    print(f"   ⏭️  {company_name}: most recent call ({last_call_date.strftime('%Y-%m-%d')}) already analyzed — skipping")
+                    print(f"   ⏭️  {company_name}: skipped — most recent call ({last_call_date.strftime('%Y-%m-%d')}) already analyzed")
                     skipped_no_new_calls += 1
                     skipped += 1
                     continue
