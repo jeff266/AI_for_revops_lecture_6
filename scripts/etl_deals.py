@@ -18,7 +18,11 @@ sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 DEALS_DIR.mkdir(parents=True, exist_ok=True)
 
-EXCLUDED_PIPELINES = ['renewal']  # Case-insensitive match
+# Exclude Renewal Pipeline (both by name and ID)
+EXCLUDED_PIPELINES = ['renewal', '866608541']
+
+# Exclude Disqualified stage
+DISQUALIFIED_STAGES = ['68509551']
 
 
 def slugify(name: str) -> str:
@@ -107,8 +111,9 @@ def main():
     print("\n4. Processing deals and fetching company info...")
     deals = {}
     skipped = {
-        'pipeline': 0,
+        'renewal_pipeline': 0,
         'meeting_set': 0,
+        'disqualified': 0,
         'no_company': 0,
         'no_slug': 0
     }
@@ -130,9 +135,14 @@ def main():
         if not deal_id:
             continue
 
-        # Filter: exclude Renewal pipeline
-        if pipeline and any(excl in pipeline.lower() for excl in EXCLUDED_PIPELINES):
-            skipped['pipeline'] += 1
+        # Filter: exclude Renewal pipeline (by ID or name)
+        if pipeline in EXCLUDED_PIPELINES or any(excl in pipeline.lower() for excl in EXCLUDED_PIPELINES if excl.isalpha()):
+            skipped['renewal_pipeline'] += 1
+            continue
+
+        # Filter: exclude Disqualified stage
+        if stage in DISQUALIFIED_STAGES:
+            skipped['disqualified'] += 1
             continue
 
         # Filter: exclude Meeting Set stages
@@ -182,6 +192,8 @@ def main():
         'total_deals': len(deals),
         'excluded_closed_stages': closed_stages,
         'excluded_meeting_set_stages': meeting_set_stages,
+        'excluded_disqualified_stages': DISQUALIFIED_STAGES,
+        'excluded_renewal_pipeline': EXCLUDED_PIPELINES,
         'deals': deals,
     }
 
@@ -191,7 +203,8 @@ def main():
 
     print(f'\n✓ Deal index built: {len(deals)} active deals')
     print(f'  Skipped breakdown:')
-    print(f'    {skipped["pipeline"]} Renewal pipeline')
+    print(f'    {skipped["renewal_pipeline"]} Renewal pipeline')
+    print(f'    {skipped["disqualified"]} Disqualified')
     print(f'    {skipped["meeting_set"]} Meeting Set stage')
     print(f'    {skipped["no_company"]} No company')
     print(f'    {skipped["no_slug"]} Invalid slug')
