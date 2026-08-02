@@ -15,6 +15,7 @@ import os
 import sys
 import json
 import re
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict
@@ -233,9 +234,14 @@ def get_most_recent_call_date(fireflies_calls: list, apollo_calls: list) -> date
 
 def main():
     """Main entry point for nightly MEDDICC analysis."""
+    # Start runtime tracking to prevent timeout
+    run_start = time.time()
+    MAX_RUNTIME_SECONDS = 90 * 60  # 90 minutes, leaves buffer before GitHub Actions timeout
+
     print("=" * 80)
     print("MEDDICC AGENT NIGHTLY RUN")
     print(f"Started: {datetime.now().isoformat()}")
+    print(f"Max runtime: {MAX_RUNTIME_SECONDS / 60:.0f} minutes")
     print("=" * 80)
 
     # Check for test mode
@@ -342,6 +348,14 @@ def main():
     learnings_written = 0
 
     for i, deal in enumerate(active_deals, 1):
+        # Check runtime limit before processing each deal
+        elapsed = time.time() - run_start
+        if elapsed > MAX_RUNTIME_SECONDS:
+            print(f'\n⏰ Runtime limit reached ({elapsed/60:.1f} min)')
+            print(f'   Processed {deals_processed} of {len(active_deals)} deals')
+            print(f'   Remaining deals will be processed tomorrow')
+            break
+
         deal_id = deal.get('deal_id')
         deal_name = deal.get('deal_name', 'Unknown')
         company_name = deal.get('company_name', '')

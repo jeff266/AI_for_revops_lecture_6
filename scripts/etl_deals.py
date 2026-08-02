@@ -24,6 +24,11 @@ EXCLUDED_PIPELINES = ['renewal', '866608541']
 # Exclude Disqualified stage
 DISQUALIFIED_STAGES = ['68509551']
 
+# Exclude Meeting Set stages (always filter these out)
+# 'appointmentscheduled' = Discovery in some views, but actually Meeting Set
+# '79653122' = Meeting Set (numeric ID)
+MEETING_SET_STAGES = ['appointmentscheduled', '79653122']
+
 
 def slugify(name: str) -> str:
     """
@@ -52,12 +57,13 @@ def get_meeting_set_stages(hubspot):
     Fetch pipeline stages and auto-detect Meeting Set stages.
     Returns list of stage IDs.
     """
+    # Start with hardcoded Meeting Set stages
+    meeting_set_stages = list(MEETING_SET_STAGES)
+
     try:
         endpoint = "/crm/v3/pipelines/deals"
         response = hubspot._get(endpoint)
         pipelines = response.get('results', [])
-
-        meeting_set_stages = []
 
         for pipeline in pipelines:
             stages = pipeline.get('stages', [])
@@ -65,15 +71,15 @@ def get_meeting_set_stages(hubspot):
                 stage_label = stage.get('label', '').lower()
                 stage_id = stage.get('id', '')
 
-                # Detect meeting set stages
-                if 'meeting set' in stage_label:
+                # Auto-detect additional meeting set stages by label
+                if 'meeting set' in stage_label and stage_id not in meeting_set_stages:
                     meeting_set_stages.append(stage_id)
 
         return meeting_set_stages
 
     except Exception as e:
         print(f"⚠️  Could not fetch stages: {e}")
-        return ['appointmentscheduled', '79653122']
+        return MEETING_SET_STAGES
 
 
 def main():
