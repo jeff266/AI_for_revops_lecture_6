@@ -19,8 +19,8 @@ class HubSpotDealsClient:
     SALES_PIPELINE = "default"
     RENEWAL_PIPELINE = "866608541"
 
-    # Closed stages to exclude
-    CLOSED_STAGES = ['closedwon', 'closedlost']
+    # Cache for closed stage IDs (fetched once per session)
+    _closed_stage_ids = None
 
     def __init__(self, api_key: str = None):
         """Initialize with API key."""
@@ -51,6 +51,37 @@ class HubSpotDealsClient:
         response.raise_for_status()
         return response.json()
 
+    def _get_closed_stage_ids(self) -> List[str]:
+        """
+        Fetch closed stage IDs from all pipelines.
+        Caches result in class variable.
+        Returns list of stage IDs where label contains 'Closed Won' or 'Closed Lost'.
+        """
+        if HubSpotDealsClient._closed_stage_ids is not None:
+            return HubSpotDealsClient._closed_stage_ids
+
+        endpoint = "/crm/v3/pipelines/deals"
+        response = self._get(endpoint)
+        pipelines = response.get('results', [])
+
+        closed_ids = []
+        for pipeline in pipelines:
+            pipeline_label = pipeline.get('label', '')
+            stages = pipeline.get('stages', [])
+
+            for stage in stages:
+                stage_label = stage.get('label', '').lower()
+                stage_id = stage.get('id', '')
+
+                if 'closed won' in stage_label or 'closed lost' in stage_label:
+                    closed_ids.append(stage_id)
+
+        # Cache for session
+        HubSpotDealsClient._closed_stage_ids = closed_ids
+        print(f"   Closed stage IDs excluded: {closed_ids}")
+
+        return closed_ids
+
     def get_active_deals(self) -> List[dict]:
         """
         Get all active deals (not Closed Won/Lost).
@@ -59,14 +90,20 @@ class HubSpotDealsClient:
         """
         endpoint = "/crm/v3/objects/deals/search"
 
-        # Build filter: exclude Closed Won and Closed Lost
+        # Get closed stage IDs dynamically from all pipelines
+        closed_stage_ids = self._get_closed_stage_ids()
+
+        # Build filter: exclude Closed Won and Closed Lost stages
+        filters = []
+        if closed_stage_ids:
+            filters.append({
+                'propertyName': 'dealstage',
+                'operator': 'NOT_IN',
+                'values': closed_stage_ids
+            })
+
         body = {
-            'filterGroups': [{
-                'filters': [
-                    {'propertyName': 'dealstage', 'operator': 'NEQ', 'value': 'closedwon'},
-                    {'propertyName': 'dealstage', 'operator': 'NEQ', 'value': 'closedlost'}
-                ]
-            }],
+            'filterGroups': [{'filters': filters}] if filters else [],
             'properties': [
                 'dealname',
                 'dealstage',
