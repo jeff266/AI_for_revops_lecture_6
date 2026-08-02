@@ -5,6 +5,11 @@
       "total_cost_usd": 0.150822,
       "total_input_tokens": 69140,
       "total_output_tokens": 6962
+    },
+    "2026-08-02": {
+      "total_cost_usd": 0,
+      "total_input_tokens": 0,
+      "total_output_tokens": 0
     }
   },
   "total_cost_usd": 0.150822,

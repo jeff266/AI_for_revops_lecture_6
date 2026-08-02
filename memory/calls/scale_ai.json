@@ -1,0 +1,19 @@
+{
+  "company": "Scale AI",
+  "slug": "scale_ai",
+  "calls": [
+    {
+      "id": "01JSNNRD57N6XMRC9TBJHD260P",
+      "source": "fireflies",
+      "title": "Sam Bartek and Graham McNicoll",
+      "date": "2025-04-25",
+      "duration_minutes": 29.959999084472656,
+      "summary": "During the Vendor Discussion meeting, Sam Bartek and Maria from Scale AI met with Graham McNicoll from Growth Book to explore the integration of Growth Book's open-source experimentation platform into Scale AI. They reviewed the enterprise tier features such as self-hosting, SSO, role-based access, and pricing structures, which can be seat-based or site licenses. The technical implementation details included using MongoDB and Snowflake for data storage, with a straightforward infrastructure setup. Support options highlighted included quick bug fixes and a shared Slack channel for enterprise customers. Action items included Graham sending detailed documentation and a trial license, while Sam would follow up on security requirements and gauge team interest in the enterprise tier.",
+      "organizer": "graham@growthbook.io",
+      "participants": 4,
+      "keywords": "Experimentation, Growth Book, Enterprise tier, Self-hosting, MongoDB, Snowflake",
+      "action_items": "\n, *, *, G, r, a, h, a, m,  , M, c, N, i, c, o, l, l, *, *, \n, S, e, n, d,  , P, D, F,  , w, i, t, h,  , E, n, t, e, r, p, r, i, s, e,  , t, i, e, r,  , f, e, a, t, u, r, e, s,  , t, o,  , t, h, e,  , S, c, a, l, e,  , A, I,  , t, e, a, m,  , (, 0, 6, :, 2, 2, ), \n, H, a, n, d, l, e,  , t, h, e,  , I, r, o, n, c, l, a, d,  , a, g, r, e, e, m, e, n, t,  , s, e, t, u, p,  , f, o, r,  , S, c, a, l, e,  , A, I,  , (, 1, 0, :, 2, 0, ), \n, S, e, n, d,  , m, o, r, e,  , a, c, c, u, r, a, t, e,  , c, o, s, t,  , p, r, o, j, e, c, t, i, o, n, s,  , o, n, c, e,  , S, c, a, l, e,  , p, r, o, v, i, d, e, s,  , e, s, t, i, m, a, t, e, d,  , n, u, m, b, e, r,  , o, f,  , s, e, a, t, s,  , (, 2, 6, :, 4, 0, ), \n, S, e, n, d,  , t, r, i, a, l,  , E, n, t, e, r, p, r, i, s, e,  , l, i, c, e, n, s, e,  , k, e, y,  , w, h, e, n,  , S, c, a, l, e,  , i, s,  , r, e, a, d, y,  , t, o,  , s, t, a, r, t,  , (, 2, 7, :, 3, 0, ), \n, \n, *, *, S, a, m,  , B, a, r, t, e, k, *, *, \n, E, m, a, i, l,  , G, r, a, h, a, m,  , a, b, o, u, t,  , I, r, o, n, c, l, a, d, /, s, e, c, u, r, i, t, y,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , r, e, q, u, i, r, e, m, e, n, t, s,  , (, 2, 6, :, 1, 7, ), \n, P, r, o, v, i, d, e,  , G, r, a, h, a, m,  , w, i, t, h,  , e, s, t, i, m, a, t, e, s,  , o, n,  , n, u, m, b, e, r,  , o, f,  , s, e, a, t, s,  , n, e, e, d, e, d,  , f, o, r,  , a, c, c, u, r, a, t, e,  , p, r, i, c, i, n, g,  , (, 2, 6, :, 4, 0, ), \n, D, i, s, c, u, s, s,  , w, i, t, h,  , t, e, a, m,  , a, b, o, u, t,  , a, p, p, e, t, i, t, e,  , f, o, r,  , E, n, t, e, r, p, r, i, s, e,  , t, i, e, r,  , a, n, d,  , t, i, m, e, l, i, n, e,  , (, 2, 7, :, 0, 2, ), \n"
+    }
+  ],
+  "last_etl_date": "2026-08-02T22:35:48.337895"
+}
