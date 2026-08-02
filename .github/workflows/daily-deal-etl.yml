@@ -1,0 +1,44 @@
+name: Daily Deal ETL
+
+on:
+  schedule:
+    # Run daily at 1 AM UTC (before nightly run at 2 AM)
+    - cron: '0 1 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  etl-deals:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run deal ETL
+        env:
+          HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
+        run: |
+          python scripts/etl_deals.py
+
+      - name: Commit updated deal index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add memory/deals/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update deal index [skip ci]"
+            git push
+          fi
