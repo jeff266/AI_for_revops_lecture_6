@@ -322,6 +322,8 @@ def main():
                 # Raw API calls need formatting
                 if 'formatted_summary' in call and call['formatted_summary']:
                     summary = call['formatted_summary']
+                elif 'summary' in call and call['summary']:
+                    summary = call['summary']
                 elif call.get('source') == 'fireflies':
                     summary = fireflies.format_summary_for_meddicc(call)
                 else:
