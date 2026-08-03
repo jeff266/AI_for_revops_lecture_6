@@ -408,10 +408,15 @@ def main():
                 skipped += 1
                 continue
 
-            # Check last analysis date to filter for new calls only
-            # Note: This field is not in CSV, so we'll get it from API if needed
-            # For now, analyze all calls (no since_date filter)
+            # Use last analysis date from deal index to skip
+            # deals with no new calls since last analysis
+            since_date_str = deal.get('last_analyzed')
             since_date = None
+            if since_date_str:
+                try:
+                    since_date = datetime.fromisoformat(since_date_str)
+                except:
+                    since_date = None
 
             # Get contact emails for better call matching
             # Still need to fetch contacts from API for email-based call matching
@@ -440,12 +445,18 @@ def main():
 
             # Format all call summaries
             all_summaries = []
+            for call in fireflies_calls + apollo_calls:
+                # Cache calls have pre-built formatted_summary
+                # Raw API calls need formatting
+                if 'formatted_summary' in call and call['formatted_summary']:
+                    summary = call['formatted_summary']
+                elif call.get('source') == 'fireflies':
+                    summary = fireflies.format_summary_for_meddicc(call)
+                else:
+                    summary = apollo.format_conversation_for_meddicc(call)
 
-            for call in fireflies_calls:
-                all_summaries.append(fireflies.format_summary_for_meddicc(call))
-
-            for call in apollo_calls:
-                all_summaries.append(apollo.format_conversation_for_meddicc(call))
+                if summary and summary.strip():
+                    all_summaries.append(summary)
 
             # Sort by date (should already be sorted, but ensure)
             # Note: This is approximate since summaries are strings
@@ -543,6 +554,9 @@ def main():
 
             print(f"   ✓ Saved to {output_file}")
             analyses_written += 1
+
+            # Update last_analyzed timestamp in deal index
+            deal['last_analyzed'] = datetime.now().isoformat()
 
             # Update HubSpot deal note
             print(f"   Updating HubSpot deal note...")
@@ -661,6 +675,26 @@ def main():
     if deal_index:
         memory.save_deal_index(deal_index)
         print(f"\n📇 Saved deal index: {len(deal_index)} deals mapped to company slugs")
+
+    # Save updated deals index with last_analyzed timestamps
+    if analyses_written > 0:
+        index_path = memory.deals_dir / "index.json"
+        if index_path.exists():
+            try:
+                # Reload index, update deals with last_analyzed, and save
+                full_index = memory.load_deals_index()
+                for deal in active_deals:
+                    deal_id = deal.get('deal_id')
+                    if deal_id and deal_id in full_index.get('deals', {}):
+                        # Update the last_analyzed field
+                        if 'last_analyzed' in deal:
+                            full_index['deals'][deal_id]['last_analyzed'] = deal['last_analyzed']
+
+                with open(index_path, 'w', encoding='utf-8') as f:
+                    json.dump(full_index, f, indent=2, ensure_ascii=False)
+                print(f"\n📇 Updated deals index with {analyses_written} last_analyzed timestamps")
+            except Exception as e:
+                print(f"\n⚠️  Failed to update deals index: {e}")
 
     print("\n" + "=" * 80)
     print(f"✓ Nightly run complete")
