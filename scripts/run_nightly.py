@@ -312,6 +312,24 @@ def main():
                 skipped += 1
                 continue
 
+            # Build deal_context dict for agent
+            deal_context = {
+                'deal': {
+                    'properties': {
+                        'dealstage': deal.get('stage', 'Unknown'),
+                        'closedate': deal.get('close_date', 'Unknown'),
+                        'incremental_arr': deal.get('arr', '0'),
+                        'dealname': deal.get('deal_name', company_name),
+                    }
+                },
+                'company': {
+                    'properties': {
+                        'name': company_name,
+                    }
+                },
+                'contacts': []
+            }
+
             # Use last analysis date from deal index to skip
             # deals with no new calls since last analysis
             since_date_str = deal.get('last_analyzed')
