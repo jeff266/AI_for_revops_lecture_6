@@ -72,6 +72,14 @@ def get_calls_for_company(company_name: str, contact_emails: list, since_date: d
         cached_calls = cache.get('calls', [])
         print(f"   📦 Cache hit: {slug}.json ({len(cached_calls)} cached calls)")
 
+        # If cache is empty AND deal was already analyzed,
+        # skip live API entirely — no new calls will have appeared
+        # in a source we can't find by company name
+        if not cached_calls and since_date:
+            print(f'   ⚠️  No cache for {company_name} and already '
+                  f'analyzed {since_date.date()} — skipping API calls')
+            return [], [], 0
+
         # Get most recent cached call date
         cache_dates = []
         for call in cached_calls:
@@ -92,6 +100,13 @@ def get_calls_for_company(company_name: str, contact_emails: list, since_date: d
     else:
         print(f"   📦 Cache miss: {slug}.json (will create)")
         cached_calls = []
+
+        # If no cache AND deal was already analyzed, skip API calls
+        if since_date:
+            print(f'   ⚠️  No cache for {company_name} and already '
+                  f'analyzed {since_date.date()} — skipping API calls')
+            return [], [], 0
+
         fetch_since = since_date
 
     # Fetch new calls from APIs (delta sync)
@@ -307,6 +322,24 @@ def main():
         deal_stage = d.get('stage', 'Unknown')
         company_name = d.get('company_name', 'Unknown')
         print(f"   [{idx}] ID: {deal_id} | Stage: {deal_stage} | {company_name}")
+
+    # Cache coverage check
+    print(f'\n📊 Cache coverage check:')
+    has_cache, no_cache = [], []
+    for deal in active_deals:
+        slug = slugify(deal.get('company_name', ''))
+        cache_path = memory.calls_dir / f'{slug}.json'
+        if cache_path.exists():
+            has_cache.append(deal.get('company_name'))
+        else:
+            no_cache.append((deal.get('company_name'), slug))
+
+    print(f'   With cache: {len(has_cache)} deals')
+    print(f'   No cache:   {len(no_cache)} deals')
+    if no_cache:
+        print(f'   Missing slugs (first 10):')
+        for name, slug in no_cache[:10]:
+            print(f'     {name!r} → {slug!r}')
 
     # Filter/limit deals in test mode
     if test_mode and test_deal_id:
