@@ -1,16 +1,16 @@
 {
   "date": "2026-08-03",
   "summary": {
-    "total_cost_usd": 2.88305,
-    "total_input_tokens": 524914,
-    "total_output_tokens": 212310,
-    "total_calls": 244,
+    "total_cost_usd": 2.886683,
+    "total_input_tokens": 525622,
+    "total_output_tokens": 212895,
+    "total_calls": 245,
     "by_model": {
       "claude-haiku-4-5-20251001": {
-        "input_tokens": 380161,
-        "output_tokens": 111602,
-        "cost_usd": 0.938171,
-        "calls": 193
+        "input_tokens": 380869,
+        "output_tokens": 112187,
+        "cost_usd": 0.941804,
+        "calls": 194
       },
       "claude-sonnet-4-5-20250929": {
         "input_tokens": 144753,
@@ -21,9 +21,9 @@
     },
     "by_role": {
       "context_builder": {
-        "input_tokens": 130098,
-        "output_tokens": 75507,
-        "cost_usd": 0.507633
+        "input_tokens": 130806,
+        "output_tokens": 76092,
+        "cost_usd": 0.511266
       },
       "generator": {
         "input_tokens": 144753,
@@ -2238,6 +2238,15 @@
       "input_tokens": 734,
       "output_tokens": 119,
       "cost_usd": 0.001329
+    },
+    {
+      "timestamp": "2026-08-03T18:35:56.100780",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Trade Me",
+      "input_tokens": 708,
+      "output_tokens": 585,
+      "cost_usd": 0.003633
     }
   ]
 }
