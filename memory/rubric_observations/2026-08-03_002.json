@@ -1,0 +1,8 @@
+{
+  "id": "2026-08-03_002",
+  "timestamp": "2026-08-03T06:53:33.478970",
+  "company": "Philo",
+  "criterion_fired": "Criteria #2: Cumulative state consistency",
+  "was_appropriate": true,
+  "suggested_change": "Add instruction: 'When cumulative MEDDICC state shows Identified status with concrete evidence (completed POC, stated preference), silence or lack of mention in a single call does NOT justify downgrading status. Carry forward Identified status and flag the silence as a specific investigation point requiring urgent clarification, not as evidence of status regression.'"
+}

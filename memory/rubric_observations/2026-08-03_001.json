@@ -1,0 +1,8 @@
+{
+  "id": "2026-08-03_001",
+  "timestamp": "2026-08-03T06:48:51.699673",
+  "company": "Oda",
+  "criterion_fired": "Criterion #1 Partial - Complete Coverage AND Criterion #5 Severe - No Claims Without Evidence",
+  "was_appropriate": true,
+  "suggested_change": "Add clarification: 'Complete coverage requires analyzing the recent call summary provided. If the recent call summary is about a different deal or contains no information about the target company, the analysis must halt, flag the mismatch explicitly, and request clarification before proceeding.'"
+}
