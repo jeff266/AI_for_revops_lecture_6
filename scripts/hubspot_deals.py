@@ -286,14 +286,14 @@ class HubSpotDealsClient:
             'Economic Buyer',
             'Decision Criteria',
             'Decision Process',
-            'Identify Pain',
+            'Identified Pain',
             'Champion',
             'Competition'
         ]
 
         for component in components:
-            # Match "Component:\nScore: N/10" pattern (multiline)
-            pattern = rf'{re.escape(component)}[:\s]*.*?Score:\s*(\d+)/10'
+            # Match "Component:\nScore: N/10" or "Component:\n**Score**: N/10" pattern (multiline)
+            pattern = rf'{re.escape(component)}.*?\*{{0,2}}Score\*{{0,2}}:\s*(\d+)/10'
             match = re.search(pattern, analysis_content, re.DOTALL | re.IGNORECASE)
             if match:
                 score = int(match.group(1))
@@ -309,19 +309,18 @@ class HubSpotDealsClient:
         if component_scores:
             scores['overall_score'] = str(sum(component_scores))
 
-        # Extract status from symbols in overall summary
-        # Look for ✅ (green), ⚠️ (yellow), ❌ (red)
-        identified_count = len(re.findall(r'✅\s*Identified', analysis_content))
-        partial_count = len(re.findall(r'⚠️\s*Partial', analysis_content))
-        missing_count = len(re.findall(r'❌\s*Not Identified', analysis_content))
+        # Determine status from numeric scores
+        if component_scores:
+            avg = sum(component_scores) / len(component_scores)
+            low_count = sum(1 for s in component_scores if s < 4)
+            high_count = sum(1 for s in component_scores if s >= 7)
 
-        # Determine status based on component identification
-        if missing_count >= 4:  # Most components missing
-            scores['status'] = 'red'
-        elif missing_count >= 2 or partial_count >= 4:  # Some missing or many partial
-            scores['status'] = 'yellow'
-        elif identified_count >= 5:  # Most identified
-            scores['status'] = 'green'
+            if low_count >= 4:
+                scores['status'] = 'red'
+            elif high_count >= 5:
+                scores['status'] = 'green'
+            else:
+                scores['status'] = 'yellow'
 
         # Extract summary from "Summary & Recommended Actions" section
         summary_match = re.search(
