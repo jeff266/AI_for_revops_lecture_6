@@ -1,23 +1,23 @@
 {
   "date": "2026-08-03",
   "summary": {
-    "total_cost_usd": 0.256093,
-    "total_input_tokens": 65433,
-    "total_output_tokens": 38132,
-    "total_calls": 56,
+    "total_cost_usd": 0.340058,
+    "total_input_tokens": 86988,
+    "total_output_tokens": 50614,
+    "total_calls": 74,
     "by_model": {
       "claude-haiku-4-5-20251001": {
-        "input_tokens": 65433,
-        "output_tokens": 38132,
-        "cost_usd": 0.256093,
-        "calls": 56
+        "input_tokens": 86988,
+        "output_tokens": 50614,
+        "cost_usd": 0.340058,
+        "calls": 74
       }
     },
     "by_role": {
       "context_builder": {
-        "input_tokens": 65433,
-        "output_tokens": 38132,
-        "cost_usd": 0.256093
+        "input_tokens": 86988,
+        "output_tokens": 50614,
+        "cost_usd": 0.340058
       }
     }
   },
@@ -525,6 +525,168 @@
       "input_tokens": 1062,
       "output_tokens": 684,
       "cost_usd": 0.004482
+    },
+    {
+      "timestamp": "2026-08-03T06:27:08.380001",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Oda",
+      "input_tokens": 1518,
+      "output_tokens": 700,
+      "cost_usd": 0.005018
+    },
+    {
+      "timestamp": "2026-08-03T06:27:15.429980",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Philo",
+      "input_tokens": 1455,
+      "output_tokens": 833,
+      "cost_usd": 0.00562
+    },
+    {
+      "timestamp": "2026-08-03T06:27:22.083556",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Picnic Technologies",
+      "input_tokens": 1539,
+      "output_tokens": 746,
+      "cost_usd": 0.005269
+    },
+    {
+      "timestamp": "2026-08-03T06:27:28.261628",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "BESTSELLER",
+      "input_tokens": 1185,
+      "output_tokens": 717,
+      "cost_usd": 0.00477
+    },
+    {
+      "timestamp": "2026-08-03T06:27:37.510980",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "mountain",
+      "input_tokens": 1420,
+      "output_tokens": 834,
+      "cost_usd": 0.00559
+    },
+    {
+      "timestamp": "2026-08-03T06:27:43.041922",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "BESTSELLER",
+      "input_tokens": 1185,
+      "output_tokens": 657,
+      "cost_usd": 0.00447
+    },
+    {
+      "timestamp": "2026-08-03T06:27:51.584601",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "OpenTable",
+      "input_tokens": 1499,
+      "output_tokens": 949,
+      "cost_usd": 0.006244
+    },
+    {
+      "timestamp": "2026-08-03T06:27:56.689840",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Trade Me",
+      "input_tokens": 708,
+      "output_tokens": 558,
+      "cost_usd": 0.003498
+    },
+    {
+      "timestamp": "2026-08-03T06:28:02.340206",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Notion",
+      "input_tokens": 874,
+      "output_tokens": 685,
+      "cost_usd": 0.004299
+    },
+    {
+      "timestamp": "2026-08-03T06:28:06.907276",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "KBX",
+      "input_tokens": 864,
+      "output_tokens": 585,
+      "cost_usd": 0.003789
+    },
+    {
+      "timestamp": "2026-08-03T06:28:11.385976",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "TickPick",
+      "input_tokens": 929,
+      "output_tokens": 617,
+      "cost_usd": 0.004014
+    },
+    {
+      "timestamp": "2026-08-03T06:28:18.578032",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Aircall",
+      "input_tokens": 1396,
+      "output_tokens": 770,
+      "cost_usd": 0.005246
+    },
+    {
+      "timestamp": "2026-08-03T06:28:22.771634",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Zalando",
+      "input_tokens": 740,
+      "output_tokens": 547,
+      "cost_usd": 0.003475
+    },
+    {
+      "timestamp": "2026-08-03T06:28:27.193846",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Taskrabbit",
+      "input_tokens": 1072,
+      "output_tokens": 568,
+      "cost_usd": 0.003912
+    },
+    {
+      "timestamp": "2026-08-03T06:28:36.373297",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Skyscanner",
+      "input_tokens": 2413,
+      "output_tokens": 867,
+      "cost_usd": 0.006748
+    },
+    {
+      "timestamp": "2026-08-03T06:28:42.296981",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Unity",
+      "input_tokens": 962,
+      "output_tokens": 688,
+      "cost_usd": 0.004402
+    },
+    {
+      "timestamp": "2026-08-03T06:28:46.484515",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "The Wellness Company",
+      "input_tokens": 734,
+      "output_tokens": 527,
+      "cost_usd": 0.003369
+    },
+    {
+      "timestamp": "2026-08-03T06:28:54.797884",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Stone",
+      "input_tokens": 1062,
+      "output_tokens": 634,
+      "cost_usd": 0.004232
     }
   ]
 }
