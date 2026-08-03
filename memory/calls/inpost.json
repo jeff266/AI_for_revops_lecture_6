@@ -1,7 +1,6 @@
 {
   "company": "InPost",
   "slug": "inpost",
-  "last_etl_date": "2026-08-01T13:58:05.985053",
   "calls": [
     {
       "id": "01KYF3N1Y970VYR4T4AACAAC8C",
@@ -15,5 +14,6 @@
       "keywords": "Feature Flags, Experimentation, Mobile Testing, Data Integration, GrowthBook, AI Assistant",
       "action_items": "\n**Anita Krasińska**\nDiscuss GrowthBook proposal internally and provide feedback by end of the week (59:24)\nArrange internal contact after departure on holiday or delegate communication (59:38)\n\n**James Shannon**\nShare meeting recording and transcript with InPost team (01:08)\nProvide documentation on feature namespaces to prevent experiment overlap (28:25)\nSupport InPost’s data team with setting up data models and metrics in Postgres/databricks during trial phase (52:20)\nProvide free trial access to GrowthBook and assist with implementation and onboarding if InPost decides to proceed (58:50)\n\n**Unassigned**\nEvaluate GrowthBook’s fit during trial period using demo and shared materials; discuss internally among product, engineering, data, and marketing teams (55:00)\n"
     }
-  ]
+  ],
+  "last_etl_date": "2026-08-03T03:06:28.716929"
 }
