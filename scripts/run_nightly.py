@@ -54,142 +54,30 @@ def slugify(name: str) -> str:
     return slug if len(slug) >= 3 else ''
 
 
-def get_calls_for_company(company_name: str, contact_emails: list, since_date: datetime,
-                          fireflies, apollo, memory) -> tuple:
+def get_calls_for_company(company_name: str, since_date, memory) -> tuple:
     """
-    Get calls for a company from cache first, then fetch only NEW calls from APIs.
-    Returns (fireflies_calls, apollo_calls, cache_updated_count).
+    Load calls from cache only. No live API calls.
+    ETL job handles cache freshness separately.
     """
     slug = slugify(company_name)
     if not slug:
-        print(f"   ⚠️  Could not generate slug for company: {company_name}")
         return [], [], 0
 
-    # Load from cache
     cache = memory.load_call_cache(slug)
+    if not cache:
+        print(f'   📭 No cache: {slug}.json')
+        return [], [], 0
 
-    if cache:
-        cached_calls = cache.get('calls', [])
-        print(f"   📦 Cache hit: {slug}.json ({len(cached_calls)} cached calls)")
+    cached_calls = cache.get('calls', [])
+    if not cached_calls:
+        print(f'   📭 Empty cache: {slug}.json')
+        return [], [], 0
 
-        # If cache is empty AND deal was already analyzed,
-        # skip live API entirely — no new calls will have appeared
-        # in a source we can't find by company name
-        if not cached_calls and since_date:
-            print(f'   ⚠️  No cache for {company_name} and already '
-                  f'analyzed {since_date.date()} — skipping API calls')
-            return [], [], 0
+    print(f'   📦 Cache hit: {slug}.json ({len(cached_calls)} calls)')
 
-        # Get most recent cached call date
-        cache_dates = []
-        for call in cached_calls:
-            call_date_str = call.get('date')
-            if call_date_str:
-                try:
-                    cache_dates.append(datetime.fromisoformat(call_date_str))
-                except:
-                    pass
-
-        most_recent_cached = max(cache_dates) if cache_dates else None
-
-        # Fetch only calls AFTER the most recent cached call
-        fetch_since = most_recent_cached if most_recent_cached else since_date
-
-        if most_recent_cached:
-            print(f"   🔄 Checking for calls after {most_recent_cached.strftime('%Y-%m-%d')}")
-    else:
-        print(f"   📦 Cache miss: {slug}.json (will create)")
-        cached_calls = []
-
-        # If no cache AND deal was already analyzed, skip API calls
-        if since_date:
-            print(f'   ⚠️  No cache for {company_name} and already '
-                  f'analyzed {since_date.date()} — skipping API calls')
-            return [], [], 0
-
-        fetch_since = since_date
-
-    # Fetch new calls from APIs (delta sync)
-    new_fireflies = []
-    new_apollo = []
-
-    try:
-        # Fireflies: Email-based + name-based matching
-        if contact_emails:
-            new_fireflies = fireflies.search_by_contact_emails(contact_emails, max_results=50, since_date=fetch_since)
-
-        fireflies_by_name = fireflies.search_by_company(company_name, max_results=50, since_date=fetch_since)
-
-        # Deduplicate
-        seen_ids = {c.get('id') for c in new_fireflies}
-        for call in fireflies_by_name:
-            if call.get('id') not in seen_ids:
-                new_fireflies.append(call)
-                seen_ids.add(call.get('id'))
-    except Exception as e:
-        print(f"   ⚠️  Fireflies API error: {e}")
-
-    try:
-        # Apollo: Name-based matching only
-        new_apollo = apollo.search_conversations_by_company(company_name, since_date=fetch_since)
-    except Exception as e:
-        print(f"   ⚠️  Apollo API error: {e}")
-
-    new_count = len(new_fireflies) + len(new_apollo)
-
-    # Merge new calls with cached calls
-    all_calls_combined = list(cached_calls)  # Start with cached calls
-
-    if new_count > 0:
-        # Convert new API calls to cache format and add to combined list
-        existing_ids = {c.get('id') for c in cached_calls}
-
-        for call in new_fireflies:
-            if call.get('id') not in existing_ids:
-                all_calls_combined.append({
-                    'id': call.get('id'),
-                    'source': 'fireflies',
-                    'title': call.get('title', ''),
-                    'date': datetime.fromtimestamp(call.get('date', 0) / 1000).strftime('%Y-%m-%d') if call.get('date') else '',
-                    'duration_minutes': call.get('duration', 0),
-                    'summary': call.get('summary', {}).get('short_summary', ''),
-                    'organizer': call.get('organizer_email', ''),
-                    'participants': len(call.get('participants', [])),
-                    'keywords': ', '.join(call.get('summary', {}).get('keywords', []) or []),
-                    'action_items': ', '.join(call.get('summary', {}).get('action_items', []) or [])
-                })
-                existing_ids.add(call.get('id'))
-
-        for call in new_apollo:
-            if call.get('id') not in existing_ids:
-                all_calls_combined.append({
-                    'id': call.get('id'),
-                    'source': 'apollo',
-                    'title': call.get('topic', ''),
-                    'date': datetime.fromisoformat(call.get('start_time', '').replace('Z', '+00:00')).strftime('%Y-%m-%d') if call.get('start_time') else '',
-                    'duration_minutes': call.get('duration', 0) // 60 if call.get('duration') else 0,
-                    'summary': call.get('summary', ''),
-                    'host': call.get('host', ''),
-                    'participants': len(call.get('transcript', [])),
-                })
-                existing_ids.add(call.get('id'))
-
-        # Save updated cache
-        memory.save_call_cache(slug, {
-            'company': company_name,
-            'slug': slug,
-            'calls': all_calls_combined
-        })
-
-        print(f"   ✨ Cache updated: {new_count} new calls added")
-    else:
-        print(f"   ✓ Cache up-to-date: 0 new calls")
-
-    # Split combined calls back into fireflies and apollo lists
-    all_fireflies = [c for c in all_calls_combined if c.get('source') == 'fireflies']
-    all_apollo = [c for c in all_calls_combined if c.get('source') == 'apollo']
-
-    return all_fireflies, all_apollo, new_count
+    ff = [c for c in cached_calls if c.get('source') == 'fireflies']
+    ap = [c for c in cached_calls if c.get('source') == 'apollo']
+    return ff, ap, 0
 
 
 def build_deal_index(deals: list, memory):
@@ -418,26 +306,10 @@ def main():
                 except:
                     since_date = None
 
-            # Get contact emails for better call matching
-            # Still need to fetch contacts from API for email-based call matching
-            try:
-                contacts = hubspot.get_deal_contacts(deal_id)
-                contact_emails = [
-                    c.get('properties', {}).get('email', '')
-                    for c in contacts
-                    if c.get('properties', {}).get('email')
-                ]
-            except Exception as e:
-                print(f"   ⚠️  Could not fetch contacts: {e}")
-                contact_emails = []
-
-            # Get calls from cache (with delta sync for new calls)
+            # Get calls from cache only (ETL handles freshness)
             print(f"   Searching for calls: {company_name}")
-            if contact_emails:
-                print(f"     Matching by {len(contact_emails)} contact email(s)")
-
             fireflies_calls, apollo_calls, new_count = get_calls_for_company(
-                company_name, contact_emails, since_date, fireflies, apollo, memory
+                company_name, since_date, memory
             )
 
             total_calls = len(fireflies_calls) + len(apollo_calls)
