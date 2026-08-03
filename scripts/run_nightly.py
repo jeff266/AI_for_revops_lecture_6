@@ -315,26 +315,30 @@ def main():
             total_calls = len(fireflies_calls) + len(apollo_calls)
             print(f"   Found {total_calls} calls ({len(fireflies_calls)} Fireflies, {len(apollo_calls)} Apollo)")
 
-            # Format all call summaries
+            # Combine and sort by date so all_summaries[-1] is
+            # the most recent call regardless of source
+            all_calls_sorted = sorted(
+                fireflies_calls + apollo_calls,
+                key=lambda c: c.get('date', ''),
+            )
+
             all_summaries = []
-            for call in fireflies_calls + apollo_calls:
-                # Cache calls have pre-built formatted_summary
-                # Raw API calls need formatting
+            for call in all_calls_sorted:
                 if 'formatted_summary' in call and call['formatted_summary']:
                     summary = call['formatted_summary']
                 elif 'summary' in call and call['summary']:
                     summary = call['summary']
                 elif call.get('source') == 'fireflies':
-                    summary = fireflies.format_summary_for_meddicc(call)
+                    summary = fireflies.format_summary_for_meddicc(call) if fireflies else ''
                 else:
-                    summary = apollo.format_conversation_for_meddicc(call)
+                    summary = apollo.format_conversation_for_meddicc(call) if apollo else ''
 
                 if summary and summary.strip():
-                    all_summaries.append(summary)
+                    all_summaries.append((call.get('date', ''), summary))
 
-            # Sort by date (should already be sorted, but ensure)
-            # Note: This is approximate since summaries are strings
-            # In production, you'd sort the original objects before formatting
+            # Sort by date ascending, extract just summaries
+            all_summaries.sort(key=lambda x: x[0])
+            all_summaries = [s for _, s in all_summaries]
 
             # GUARD 1: No calls found for company
             if len(all_summaries) == 0:
@@ -381,7 +385,7 @@ def main():
                 cumulative_state = build_cumulative_meddicc(historical_summaries, company_name, tracker)
 
             # GUARD 3: Most recent call is below minimum signal threshold
-            if len(recent_call_summary.strip()) < 200:
+            if len(recent_call_summary.strip()) < 100:
                 print(f"   ⏭️  {company_name}: most recent call summary too short ({len(recent_call_summary)} chars) — skipping")
                 skipped_short += 1
                 skipped += 1
