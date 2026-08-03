@@ -1,23 +1,23 @@
 {
   "date": "2026-08-03",
   "summary": {
-    "total_cost_usd": 0.002406,
-    "total_input_tokens": 601,
-    "total_output_tokens": 361,
-    "total_calls": 1,
+    "total_cost_usd": 0.004877,
+    "total_input_tokens": 1202,
+    "total_output_tokens": 735,
+    "total_calls": 2,
     "by_model": {
       "claude-haiku-4-5-20251001": {
-        "input_tokens": 601,
-        "output_tokens": 361,
-        "cost_usd": 0.002406,
-        "calls": 1
+        "input_tokens": 1202,
+        "output_tokens": 735,
+        "cost_usd": 0.004877,
+        "calls": 2
       }
     },
     "by_role": {
       "context_builder": {
-        "input_tokens": 601,
-        "output_tokens": 361,
-        "cost_usd": 0.002406
+        "input_tokens": 1202,
+        "output_tokens": 735,
+        "cost_usd": 0.004877
       }
     }
   },
@@ -30,6 +30,15 @@
       "input_tokens": 601,
       "output_tokens": 361,
       "cost_usd": 0.002406
+    },
+    {
+      "timestamp": "2026-08-03T05:49:25.976714",
+      "model": "claude-haiku-4-5-20251001",
+      "role": "context_builder",
+      "company": "Trade Me",
+      "input_tokens": 601,
+      "output_tokens": 374,
+      "cost_usd": 0.002471
     }
   ]
 }
