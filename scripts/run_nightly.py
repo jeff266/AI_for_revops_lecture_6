@@ -147,6 +147,22 @@ def main():
     print(f"Max runtime: {MAX_RUNTIME_SECONDS / 60:.0f} minutes")
     print("=" * 80)
 
+    # Test Sonnet API connectivity
+    print("\nTesting Sonnet API connectivity...")
+    try:
+        from anthropic import Anthropic
+        test_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
+        test_resp = test_client.messages.create(
+            model="claude-sonnet-4-5-20250929",
+            max_tokens=10,
+            messages=[{"role": "user", "content": "ping"}]
+        )
+        print(f"   ✓ Sonnet API OK: {test_resp.content[0].text}")
+    except Exception as test_error:
+        print(f"   ❌ Sonnet API FAILED: {type(test_error).__name__}: {test_error}")
+        print("   Nightly run cannot proceed without Sonnet — exiting")
+        sys.exit(1)
+
     # Check for test mode
     test_mode = os.getenv('TEST_MODE', 'false').lower() == 'true'
     test_deal_id = os.getenv('TEST_DEAL_ID', '').strip()  # Optional specific deal ID
@@ -393,13 +409,20 @@ def main():
 
             # Run MEDDICC agent
             print(f"   Running MEDDICC generator/evaluator loop...")
-            result = run_agent(
-                call_summary=recent_call_summary,
-                cumulative_state=cumulative_state,
-                deal_context=deal_context,
-                tracker=tracker,
-                company=company_name
-            )
+            try:
+                result = run_agent(
+                    call_summary=recent_call_summary,
+                    cumulative_state=cumulative_state,
+                    deal_context=deal_context,
+                    tracker=tracker,
+                    company=company_name
+                )
+            except Exception as agent_error:
+                print(f"   ❌ run_agent FAILED: {type(agent_error).__name__}: {agent_error}")
+                import traceback
+                traceback.print_exc()
+                skipped += 1
+                continue
 
             # Extract results
             analysis = result['draft']
