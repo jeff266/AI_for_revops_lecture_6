@@ -1,0 +1,8 @@
+{
+  "id": "2026-08-04_005",
+  "timestamp": "2026-08-04T05:51:09.749286",
+  "company": "Skyscanner",
+  "criterion_fired": "Champion",
+  "was_appropriate": true,
+  "suggested_change": "Champion scoring should distinguish between contact/POC (scores 1-3) and true champion (scores 7-10), with 4-6 reserved for partial champions. At scores 4-6, agent must propose specific internal-advocacy or resistance-handling questions for next call."
+}

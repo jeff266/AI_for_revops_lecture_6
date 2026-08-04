@@ -1,0 +1,8 @@
+{
+  "id": "2026-08-04_003",
+  "timestamp": "2026-08-04T05:39:33.303561",
+  "company": "Notion",
+  "criterion_fired": "Champion - partial status with low confidence",
+  "was_appropriate": false,
+  "suggested_change": "Champion criterion should require explicit evidence of internal advocacy (e.g., 'told my team', 'pushing internally') to distinguish engaged participant from active champion; 'partial' alone masks the gap."
+}
