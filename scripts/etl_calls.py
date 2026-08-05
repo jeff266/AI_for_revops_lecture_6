@@ -9,8 +9,15 @@ Modes:
 Outputs:
   - memory/calls/<company-slug>.json (one file per company with all calls)
 
-Apollo calls are summarized via Deepseek V4 Flash on Fireworks (transcript_text -> summary).
-Fireflies calls use summary_text directly (already AI-generated).
+Call Intelligence Adapters:
+  - Fireflies: summary_text directly (AI-generated)
+  - Apollo: summarized via Deepseek V4 Flash on Fireworks (transcript_text -> summary)
+  - Gong: basic metadata mode (title, date, duration, participants)
+    * To enable rich data (transcripts, topics, action items):
+      1. Contact Gong admin to enable transcript API access
+      2. Requires Technical Admin role
+      3. Set GongAdapter.ACCESS_LEVEL = 'rich' in code
+    * Or use CSV export mode for transcript ETL if API access unavailable
 """
 
 import os

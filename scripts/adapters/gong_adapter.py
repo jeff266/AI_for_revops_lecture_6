@@ -30,6 +30,18 @@ class GongAdapter:
     API docs: https://gong.app.gong.io/settings/api/documentation
     """
 
+    # API access level for this client
+    # basic: metadata only (title, date, duration, participants)
+    # rich: transcripts, topics, action items available
+    # Check with Gong admin: requires Technical Admin role
+    # and Transcription feature enabled on account
+    ACCESS_LEVEL = 'basic'
+
+    @classmethod
+    def enable_rich_access(cls):
+        """Enable rich data mode (transcripts, topics, action items)."""
+        cls.ACCESS_LEVEL = 'rich'
+
     def __init__(self):
         """Initialize Gong adapter with API credentials."""
         key = os.getenv('GONG_ACCESS_KEY')
@@ -53,24 +65,23 @@ class GongAdapter:
     def search_by_company(self, company_name: str,
                           since_date: Optional[datetime] = None) -> List[Dict]:
         """
-        Fetch calls mentioning this company name.
+        Fetch calls mentioning this company name with rich structured data.
 
-        Uses /v2/calls with date filter, then filters by company name
-        in title or parties.
+        Uses /v2/calls to get call list, then /v2/calls/extensive to batch
+        fetch rich data (topics, action items, talk time, etc.).
 
         Args:
             company_name: Company to search for
             since_date: Only return calls after this date
 
         Returns:
-            List of call dicts from Gong API
+            List of enriched call dicts with full Gong intelligence data
         """
+        # STEP 1: Get call list with basic metadata
         params = {}
         if since_date:
-            # Gong expects ISO 8601 format
             params['fromDateTime'] = since_date.isoformat()
 
-        # Fetch calls from Gong
         response = requests.get(
             f'{self.base_url}/calls',
             headers=self.headers,
@@ -81,15 +92,79 @@ class GongAdapter:
 
         calls = response.json().get('calls', [])
 
-        # Filter by company name in title
-        # Gong call titles vary by workspace settings but usually include company
+        # STEP 2: Filter by company name in title
         company_lower = company_name.lower()
         matched = [
             call for call in calls
             if company_lower in call.get('title', '').lower()
         ]
 
-        return matched
+        if not matched:
+            return []
+
+        # STEP 3: Batch fetch rich data using /v2/calls/extensive
+        # Max 20 calls per request
+        call_ids = [c['id'] for c in matched]
+        enriched = []
+
+        for i in range(0, len(call_ids), 20):
+            batch_ids = call_ids[i:i+20]
+
+            try:
+                extensive_resp = requests.post(
+                    f'{self.base_url}/calls/extensive',
+                    headers=self.headers,
+                    json={'filter': {'callIds': batch_ids}},
+                    timeout=30
+                )
+
+                if extensive_resp.status_code == 200:
+                    batch_calls = extensive_resp.json().get('calls', [])
+                    enriched.extend(batch_calls)
+            except Exception as e:
+                print(f'Warning: Failed to fetch extensive data for batch: {e}')
+                continue
+
+        # STEP 4: Merge basic metadata + rich data
+        rich_by_id = {
+            c.get('metaData', {}).get('id'): c
+            for c in enriched
+        }
+
+        results = []
+        for call in matched:
+            call_id = call['id']
+
+            if call_id in rich_by_id:
+                rich = rich_by_id[call_id]
+                content = rich.get('content', {})
+
+                # Flatten into format expected by format_summary_for_meddicc()
+                merged = {
+                    'id': call_id,
+                    'title': call.get('title', ''),
+                    'started': call.get('started', ''),
+                    'duration': call.get('duration', 0),
+                    'brief': content.get('brief', ''),
+                    'topics': [t.get('name', '') for t in content.get('topics', [])],
+                    'keyPoints': content.get('keyPoints', {}),
+                    'parties': rich.get('parties', []),
+                }
+                results.append(merged)
+            else:
+                # Fallback to basic data if extensive fetch failed
+                results.append({
+                    'id': call_id,
+                    'title': call.get('title', ''),
+                    'started': call.get('started', ''),
+                    'duration': call.get('duration', 0),
+                    'brief': '',
+                    'topics': [],
+                    'keyPoints': {},
+                    'parties': [],
+                })
+
+        return results
 
     def format_summary_for_meddicc(self, call: Dict) -> str:
         """
@@ -110,6 +185,25 @@ class GongAdapter:
         title = call.get('title', 'Untitled')
         started = str(call.get('started', ''))[:10]  # YYYY-MM-DD
         duration = round((call.get('duration') or 0) / 60, 1)  # Convert to minutes
+
+        if self.ACCESS_LEVEL == 'basic':
+            # Extract participant names from title if possible
+            # Gong titles are often "Prospect Name and Rep Name"
+            return (
+                f"# {title}\n"
+                f"Date: {started} | Duration: {duration}m\n\n"
+                f"## Note\n"
+                f"Full transcript not available via current "
+                f"API access level. Call recorded in Gong — "
+                f"contact Gong admin to enable transcript API "
+                f"access (Technical Admin role required).\n\n"
+                f"## Call Activity\n"
+                f"A {duration}-minute call took place on "
+                f"{started}. Participants visible in title: "
+                f"{title}."
+            )
+
+        # Rich path (when ACCESS_LEVEL = 'rich')
         brief = call.get('brief', '')
 
         # Extract Gong's structured insights
@@ -194,17 +288,19 @@ class GongAdapter:
 
     def get_calls(self, limit: int = 100, skip: int = 0) -> List[Dict]:
         """
-        Get recent calls with pagination.
+        Get recent calls with rich structured data.
+
+        Uses /v2/calls to get call list, then /v2/calls/extensive to batch
+        fetch rich data for all calls.
 
         Args:
             limit: Number of calls to return
             skip: Number of calls to skip (for pagination)
 
         Returns:
-            List of call dicts
+            List of enriched call dicts with full Gong intelligence data
         """
-        # Gong uses cursor-based pagination, not offset
-        # For now, implement basic fetching
+        # STEP 1: Get call list with basic metadata
         response = requests.get(
             f'{self.base_url}/calls',
             headers=self.headers,
@@ -213,4 +309,71 @@ class GongAdapter:
         )
         response.raise_for_status()
 
-        return response.json().get('calls', [])
+        calls = response.json().get('calls', [])
+
+        if not calls:
+            return []
+
+        # STEP 2: Batch fetch rich data using /v2/calls/extensive
+        # Max 20 calls per request
+        call_ids = [c['id'] for c in calls]
+        enriched = []
+
+        for i in range(0, len(call_ids), 20):
+            batch_ids = call_ids[i:i+20]
+
+            try:
+                extensive_resp = requests.post(
+                    f'{self.base_url}/calls/extensive',
+                    headers=self.headers,
+                    json={'filter': {'callIds': batch_ids}},
+                    timeout=30
+                )
+
+                if extensive_resp.status_code == 200:
+                    batch_calls = extensive_resp.json().get('calls', [])
+                    enriched.extend(batch_calls)
+            except Exception as e:
+                print(f'Warning: Failed to fetch extensive data for batch: {e}')
+                continue
+
+        # STEP 3: Merge basic metadata + rich data
+        rich_by_id = {
+            c.get('metaData', {}).get('id'): c
+            for c in enriched
+        }
+
+        results = []
+        for call in calls:
+            call_id = call['id']
+
+            if call_id in rich_by_id:
+                rich = rich_by_id[call_id]
+                content = rich.get('content', {})
+
+                # Flatten into format expected by format_summary_for_meddicc()
+                merged = {
+                    'id': call_id,
+                    'title': call.get('title', ''),
+                    'started': call.get('started', ''),
+                    'duration': call.get('duration', 0),
+                    'brief': content.get('brief', ''),
+                    'topics': [t.get('name', '') for t in content.get('topics', [])],
+                    'keyPoints': content.get('keyPoints', {}),
+                    'parties': rich.get('parties', []),
+                }
+                results.append(merged)
+            else:
+                # Fallback to basic data if extensive fetch failed
+                results.append({
+                    'id': call_id,
+                    'title': call.get('title', ''),
+                    'started': call.get('started', ''),
+                    'duration': call.get('duration', 0),
+                    'brief': '',
+                    'topics': [],
+                    'keyPoints': {},
+                    'parties': [],
+                })
+
+        return results
