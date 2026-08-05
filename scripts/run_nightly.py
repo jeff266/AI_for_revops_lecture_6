@@ -180,6 +180,16 @@ def main():
     memory = get_memory_manager()
     tracker = TokenTracker(memory.memory_dir)
 
+    # Initialize Supabase writer if configured
+    sb_writer = None
+    if os.getenv('SUPABASE_URL'):
+        try:
+            from supabase_client import SupabaseWriter
+            sb_writer = SupabaseWriter()
+            print('   ✓ Supabase connected')
+        except Exception as e:
+            print(f'   ⚠️  Supabase init failed: {e} — continuing without')
+
     # Check counter and determine run type
     print("\n2. Checking run type...")
     counter = memory.get_counter()
@@ -488,6 +498,24 @@ def main():
                 print(f"   ✓ HubSpot note updated")
             except Exception as hub_error:
                 print(f"   ⚠️  HubSpot note failed (analysis saved to file): {hub_error}")
+
+            # Write analysis to Supabase
+            if sb_writer:
+                print(f"   Writing to Supabase...")
+                try:
+                    from hubspot_deals import HubSpotDealsClient
+                    hs = HubSpotDealsClient.__new__(HubSpotDealsClient)
+                    scores = hs._extract_scores_from_analysis(analysis)
+                    sb_writer.insert_analysis(
+                        deal_id=str(deal_id),
+                        company_name=company_name,
+                        result=result,
+                        scores=scores,
+                        output_file=str(output_file.name)
+                    )
+                    print(f"   ✓ Supabase analysis written")
+                except Exception as e:
+                    print(f"   ⚠️  Supabase analysis write failed: {e}")
 
             # Build learning entry with reflection outcome
             learning = {

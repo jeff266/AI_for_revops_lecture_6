@@ -7,6 +7,7 @@ Auto-detects pipeline stages to exclude (closed won/lost, meeting set).
 """
 import json
 import sys
+import os
 from pathlib import Path
 from datetime import datetime
 import re
@@ -215,6 +216,27 @@ def main():
     print(f'    {skipped["no_company"]} No company')
     print(f'    {skipped["no_slug"]} Invalid slug')
     print(f'  Output: {out}')
+
+    # Write to Supabase if configured
+    if os.getenv('SUPABASE_URL'):
+        print(f'\n6. Writing to Supabase...')
+        try:
+            sys.path.insert(0, str(REPO_ROOT / 'scripts'))
+            from supabase_client import SupabaseWriter
+            sb = SupabaseWriter()
+            count = 0
+            for deal_id, deal in deals.items():
+                try:
+                    sb.upsert_deal(deal)
+                    count += 1
+                except Exception as e:
+                    print(f'  ⚠️  Supabase upsert failed for '
+                          f'{deal.get("company_name")}: {e}')
+            print(f'  ✓ Supabase: {count} deals upserted')
+        except Exception as e:
+            print(f'  ⚠️  Supabase write failed: {e}')
+    else:
+        print(f'\n  ⏭️  SUPABASE_URL not set — skipping Supabase write')
 
     # Print first 10 for verification
     print('\nFirst 10 active deals:')

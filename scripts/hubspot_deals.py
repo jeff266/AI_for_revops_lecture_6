@@ -272,38 +272,38 @@ class HubSpotDealsClient:
         scores = {
             'overall_score': '0',
             'status': 'yellow',
-            'champion_score': '0',
+            'metrics_score': '0',
             'economic_buyer_score': '0',
+            'decision_criteria_score': '0',
+            'decision_process_score': '0',
+            'pain_score': '0',
+            'champion_score': '0',
+            'competition_score': '0',
             'summary': 'Analysis pending'
         }
 
         # Extract all component scores using "Score: N/10" pattern
         component_scores = []
 
-        # Component names to search for
-        components = [
-            'Metrics',
-            'Economic Buyer',
-            'Decision Criteria',
-            'Decision Process',
-            'Identified Pain',
-            'Champion',
-            'Competition'
-        ]
+        # Component mapping to score keys
+        COMPONENT_MAP = {
+            'Metrics':            'metrics_score',
+            'Economic Buyer':     'economic_buyer_score',
+            'Decision Criteria':  'decision_criteria_score',
+            'Decision Process':   'decision_process_score',
+            'Identified Pain':    'pain_score',
+            'Champion':           'champion_score',
+            'Competition':        'competition_score',
+        }
 
-        for component in components:
+        for component, score_key in COMPONENT_MAP.items():
             # Match "Component:\nScore: N/10" or "Component:\n**Score**: N/10" pattern (multiline)
             pattern = rf'{re.escape(component)}.*?\*{{0,2}}Score\*{{0,2}}:\s*(\d+)/10'
             match = re.search(pattern, analysis_content, re.DOTALL | re.IGNORECASE)
             if match:
                 score = int(match.group(1))
                 component_scores.append(score)
-
-                # Save specific component scores
-                if component == 'Champion':
-                    scores['champion_score'] = str(score)
-                elif component == 'Economic Buyer':
-                    scores['economic_buyer_score'] = str(score)
+                scores[score_key] = str(score)
 
         # Calculate overall score as sum of all components (0-70)
         if component_scores:
