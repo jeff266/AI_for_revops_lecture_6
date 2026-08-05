@@ -1,7 +1,7 @@
 {
   "company": "Fireflies Demo Meeting",
   "slug": "fireflies-demo-meeting",
-  "last_etl_date": "2026-08-01T10:41:40.214297",
+  "last_etl_date": "2026-08-04T19:21:12.680619",
   "calls": [
     {
       "id": "01KSHX7749S0PDJ610VVT6GP3G",
@@ -14,6 +14,18 @@
       "participants": 1,
       "keywords": "Fireflies desktop app, Meeting detection, Live Assist panel, Note-taker bot, Real-time transcript, Meeting recording options",
       "action_items": "\n**Scott**\nDownload and install the Fireflies desktop app from the profile menu at fireflies.ai to enable automatic meeting detection and recording features (00:10)\nSet meeting preferences including language and auto-recording options within the app settings to customize meeting capture behavior (01:20)\nGrant microphone and system audio recording permissions to the Fireflies desktop app to ensure full meeting capture functionality (01:35)\nChoose the recording method for each meeting by either inviting the Fireflies note-taker bot for full features or using device audio recording for privacy (01:45)\nUse the Live Assist floating panel during meetings to monitor real-time transcript, AI-generated notes, and meeting prep context for enhanced engagement and productivity (02:45)\n"
+    },
+    {
+      "id": "01KZ3H1Y991PG846HT8P54WBTX",
+      "source": "fireflies",
+      "title": "Fireflies Demo Meeting",
+      "date": "2026-08-03",
+      "duration_minutes": 13.59000015258789,
+      "summary": "The desktop app auto-detects meetings, offering functionalities like live notes and real-time assistance with prep notes available per calendar meeting. Users can control meeting settings through options for capturing audio and video, setting meeting preferences like language and privacy, and managing notifications. Recording modes vary, with a bot participant enabling enhanced features like speaker labels and transcripts. The Live Assist Panel provides real-time functionality, including a transcript with speaker identification, AI-driven note capturing, and preparation context. Users can query past meetings and knowledge bases through the Ask Fred feature, while Sales Assist is accessible only with the note-taker bot in the call.",
+      "organizer": "remy@growthbook.io",
+      "participants": 1,
+      "keywords": "meeting capture, live notes, Fireflies app, transcript, AI assistance, Sales Assist",
+      "action_items": "*, *, U, n, a, s, s, i, g, n, e, d, *, *,  ,  , \n, D, o, w, n, l, o, a, d,  , a, n, d,  , i, n, s, t, a, l, l,  , F, i, r, e, f, l, i, e, s,  , d, e, s, k, t, o, p,  , a, p, p,  , (, 0, 0, :, 0, 1, ),  ,  , \n, C, o, n, f, i, g, u, r, e,  , m, e, e, t, i, n, g,  , c, a, p, t, u, r, e,  , p, r, e, f, e, r, e, n, c, e, s,  , (, 0, 0, :, 3, 9, )"
     }
   ]
 }

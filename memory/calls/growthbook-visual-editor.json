@@ -1,0 +1,19 @@
+{
+  "company": "GrowthBook Visual Editor",
+  "slug": "growthbook-visual-editor",
+  "last_etl_date": "2026-08-04T19:21:12.680176",
+  "calls": [
+    {
+      "id": "01KYZ12YHNYSADAR6XGVQT27RW",
+      "source": "fireflies",
+      "title": "GrowthBook Visual Editor + intergamma",
+      "date": "2026-08-03",
+      "duration_minutes": 11.989999771118164,
+      "summary": "During the meeting, participants addressed several critical issues surrounding the SDK integration. The SDK was reported not to be loading in production, leading to discussions about an added parameter and the connection of the Grant book extension. A visual editor experiment setup was reviewed, revealing variant changes in text and the pre-launch checklist. There was uncertainty regarding the SDK connection status, with confirmations that the URLs and relevant SDK information were logged. Access limitations to external URLs were noted, prompting a request to share these URLs in chat. Testing flags for the visual editor were enabled, while the distinction between client-side and server-side SDK deployments emerged as a concern. The group planned further investigation on the account side, with a commitment for updates early this week.",
+      "organizer": "alyssa@growthbook.io",
+      "participants": 6,
+      "keywords": "GrowthBook, SDK integration, Visual Editor, Next.js SDK, client-side SDK, troubleshooting",
+      "action_items": "*, *, T, h, o, m, a, s,  , M, i, e, n, t, j, e, s, *, *,  ,  , \n, V, e, r, i, f, y,  , e, n, a, b, l, i, n, g,  , G, r, o, w, t, h, B, o, o, k,  , S, D, K,  , i, n,  , p, r, o, d, u, c, t, i, o, n,  , (, 0, 2, :, 1, 5, ),  ,  , \n, \n, *, *, A, l, y, s, s, a,  , N, i, c, o, l, l, *, *,  ,  , \n, S, e, n, d,  , m, e, e, t, i, n, g,  , r, e, c, o, r, d, i, n, g,  , t, o,  , a, b, s, e, n, t,  , c, o, l, l, a, b, o, r, a, t, o, r,  , (, 0, 5, :, 2, 8, ),  ,  , \n, I, n, v, e, s, t, i, g, a, t, e,  , v, i, s, u, a, l,  , e, d, i, t, o, r,  , c, o, n, n, e, c, t, i, o, n,  , i, s, s, u, e,  , (, 0, 5, :, 4, 5, ),  ,  , \n, F, o, l, l, o, w,  , u, p,  , w, i, t, h,  , f, i, n, d, i, n, g, s,  , a, n, d,  , s, o, l, u, t, i, o, n, s,  , (, 0, 6, :, 0, 5, )"
+    }
+  ]
+}

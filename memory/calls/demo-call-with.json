@@ -1,7 +1,7 @@
 {
   "company": "Demo Call with",
   "slug": "demo-call-with",
-  "last_etl_date": "2026-08-01T12:40:38.740634",
+  "last_etl_date": "2026-08-04T19:21:12.663454",
   "calls": [
     {
       "id": "01KVQXF41EXDVS8JGZYMQR0H74",
@@ -308,6 +308,40 @@
       "participants": 3,
       "keywords": "A/B testing, split testing, anonymous visitor locking, GrowthBook SDK, server-side experiments, data warehouse integration",
       "action_items": "\n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, S, e, n, d,  , c, u, s, t, o, m, e, r,  , e, x, a, m, p, l, e, s,  , a, n, d,  , i, n, v, e, s, t, m, e, n, t,  , f, i, g, u, r, e, s,  , d, e, m, o, n, s, t, r, a, t, i, n, g,  , t, y, p, i, c, a, l,  , e, x, p, e, r, i, m, e, n, t,  , l, i, f, t,  , a, n, d,  , c, o, s, t, s,  , (, 1, 4, :, 3, 8, ), \n, P, r, o, v, i, d, e,  , t, e, c, h, n, i, c, a, l,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , o, n,  , s, e, r, v, e, r, -, s, i, d, e,  , S, D, K,  , a, n, d,  , a, r, c, h, i, t, e, c, t, u, r, e,  , (, 2, 8, :, 2, 3, ), \n, S, h, a, r, e,  , d, e, t, a, i, l, s,  , o, n,  , G, r, o, w, t, h, B, o, o, k, ’, s,  , o, p, e, n, -, s, o, u, r, c, e,  , v, s, .,  , e, n, t, e, r, p, r, i, s, e,  , t, r, i, a, l,  , o, p, t, i, o, n, s,  , (, 2, 8, :, 3, 1, ), \n, E, m, a, i, l,  , f, o, l, l, o, w, -, u, p,  , s, u, m, m, a, r, i, z, i, n, g,  , c, a, l, l, ,,  , s, e, n, d, i, n, g,  , r, e, s, o, u, r, c, e, s, ,,  , a, n, d,  , c, o, o, r, d, i, n, a, t, i, n, g,  , n, e, x, t,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, e,  , (, 2, 9, :, 4, 0, ), \n, \n, *, *, D, o, n, n, e, r,  , M, a, n, g, a, s, a, *, *, \n, C, o, n, f, i, r, m,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, e,  , f, o, r,  , f, o, l, l, o, w, -, u, p,  , v, i, a,  , e, m, a, i, l,  , (, 3, 0, :, 1, 4, ), \n"
+    },
+    {
+      "id": "6a70bb67794ebb00201d8d0e",
+      "source": "apollo",
+      "title": "Demo Call with Roland Hollis from Ziff Davis ",
+      "date": "2026-08-03",
+      "duration_minutes": 32,
+      "summary": "[Summary failed] [Unknown]: [['Hey,', 46170.0, 46370.0], ['Roland.', 46370.0, 46810.0]]\n[Unknown]: [['Hey', 46890.0, 47250.0], ['guys.', 47250.0, 47530.0], [\"How's\", 47530.0, 47850.0], ['it', 47850.0, 47970.0], ['goin",
+      "host": "Jake Heier",
+      "participants": 102
+    },
+    {
+      "id": "01KZ77H436GBZDTSZ10N2XDVHG",
+      "source": "fireflies",
+      "title": "Demo Call with Tomas Alberio from So Shall We ",
+      "date": "2026-08-04",
+      "duration_minutes": 26,
+      "summary": "The discussion centered on Social We's experimentation challenges, notably the inefficiencies arising from using multiple tools like Shopify, VWO, and GHL, which contribute to technical issues such as flicker and manual event setup complexity. Emiliano emphasized the need to consolidate testing platforms for improved efficiency and data consistency, while Scott highlighted Growth Book's advantages, such as built-in UTM filtering and server-side testing, which could eliminate flicker and simplify integration with modern platforms. Pricing insights revealed potential cost savings by consolidating tools, with Growth Book's Enterprise plan offering dedicated support and unlimited experiments. The team agreed on a path forward to schedule a technical assessment and follow-up meetings to evaluate Growth Book's fit for their needs.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 4,
+      "keywords": "A/B testing, flicker, server-side testing, Growth Book, Shopify integration, multi-tool consolidation",
+      "action_items": "\n, *, *, E, m, i, l, i, a, n, o,  , B, l, a, n, c, o, *, *, \n, C, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , T, o, m, a, s,  , t, o,  , c, o, n, f, i, r, m,  , a, v, a, i, l, a, b, i, l, i, t, y,  , f, o, r,  , a,  , f, o, l, l, o, w, -, u, p,  , t, e, c, h, n, i, c, a, l,  , i, m, p, l, e, m, e, n, t, a, t, i, o, n,  , m, e, e, t, i, n, g,  , n, e, x, t,  , w, e, e, k,  , (, 2, 3, :, 5, 6, ), \n, C, o, n, s, u, l, t,  , w, i, t, h,  , f, i, n, a, n, c, e,  , t, e, a, m,  , t, o,  , e, s, t, i, m, a, t, e,  , c, o, m, b, i, n, e, d,  , b, u, d, g, e, t,  , f, o, r,  , c, u, r, r, e, n, t,  , t, o, o, l, s,  , (, V, W, O, ,,  , S, h, o, p, i, f, y,  , I, n, t, e, l, l, i, g, e, n, c, e, ),  , t, o,  , e, v, a, l, u, a, t, e,  , G, r, o, w, t, h,  , B, o, o, k,  , a, f, f, o, r, d, a, b, i, l, i, t, y,  , (, 1, 8, :, 2, 0, ), \n, \n, *, *, S, c, o, t, t,  , K, e, l, l, e, r, *, *, \n, S, e, n, d,  , a,  , d, e, t, a, i, l, e, d,  , r, e, c, a, p,  , o, f,  , t, o, d, a, y, ’, s,  , d, i, s, c, u, s, s, i, o, n,  , a, n, d,  , o, u, t, l, i, n, e,  , n, e, x, t,  , s, t, e, p, s,  , t, o,  , E, m, i, l, i, a, n, o,  , (, 2, 4, :, 0, 4, ), \n, S, c, h, e, d, u, l, e,  , a, n, d,  , o, r, g, a, n, i, z, e,  , a,  , t, e, c, h, n, i, c, a, l,  , f, e, a, s, i, b, i, l, i, t, y,  , s, e, s, s, i, o, n,  , i, n, v, o, l, v, i, n, g,  , G, r, o, w, t, h,  , B, o, o, k, ’, s,  , s, o, l, u, t, i, o, n,  , e, n, g, i, n, e, e, r,  , a, n, d,  , S, o,  , S, h, a, l, l,  , W, e, ’, s,  , t, e, a, m,  , (, 2, 3, :, 1, 1, ), \n, P, r, o, v, i, d, e,  , E, m, i, l, i, a, n, o,  , w, i, t, h,  , c, a, l, e, n, d, a, r,  , l, i, n, k, s,  , a, n, d,  , p, l, a, c, e, h, o, l, d, e, r, s,  , f, o, r,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g, s,  , t, o,  , f, a, c, i, l, i, t, a, t, e,  , e, a, s, y,  , s, c, h, e, d, u, l, i, n, g,  , (, 2, 4, :, 4, 8, ), \n"
+    },
+    {
+      "id": "01KZ6JRX8JZMZP5A4S2ZHTH3KT",
+      "source": "fireflies",
+      "title": "Demo Call with Atif Husain from PlatinumRx ",
+      "date": "2026-08-04",
+      "duration_minutes": 30,
+      "summary": "Platinum Rx is transitioning from an internal minimal tool to test GrowthBook’s Pro version for multi-experiment management, onboarding around 10 users from the product and engineering teams. The decision reflects a cautious approach to validate the tool's features before considering an upgrade to the Enterprise version, which offers additional compliance capabilities. Scott Keller emphasized the self-serve model and flexible month-to-month pricing of the Pro version, along with its primary support via email and community Slack. Key technical features discussed include sticky bucketing, variant weight adjustments, and the optional GrowthBook proxy for enhanced performance. The integration with Clickhouse for real-time tracking and the community support structure were also highlighted as vital resources for smooth onboarding.",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 9,
+      "keywords": "GrowthBook, A/B testing, sticky bucketing, Pro version, variant scaling, feature flag proxy",
+      "action_items": "\n, *, *, N, a, m, a, n,  , R, a, n, k, a, *, *, \n, P, r, o, c, e, e, d,  , w, i, t, h,  , s, i, g, n, i, n, g,  , u, p,  , f, o, r,  , G, r, o, w, t, h, B, o, o, k,  , P, r, o,  , v, e, r, s, i, o, n,  , t, o,  , c, o, n, d, u, c, t,  , e, n, d, -, t, o, -, e, n, d,  , e, v, a, l, u, a, t, i, o, n,  , a, n, d,  , r, u, n,  , m, u, l, t, i, p, l, e,  , c, o, n, c, u, r, r, e, n, t,  , e, x, p, e, r, i, m, e, n, t, s,  , (, 2, 6, :, 2, 5, ), \n, \n, *, *, S, c, o, t, t,  , K, e, l, l, e, r, *, *, \n, P, r, o, v, i, d, e,  , S, l, a, c, k,  , c, o, m, m, u, n, i, t, y,  , l, i, n, k, s,  , a, n, d,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , r, e, s, o, u, r, c, e, s,  , i, n, c, l, u, d, i, n, g,  , A, I, -, p, o, w, e, r, e, d,  , h, e, l, p,  , t, o,  , P, l, a, t, i, n, u, m, R, x,  , (, 1, 7, :, 0, 3, ), \n, F, o, l, l, o, w,  , u, p,  , o, n,  , c, l, a, r, i, f, i, c, a, t, i, o, n, s,  , r, e, g, a, r, d, i, n, g,  , s, t, i, c, k, y,  , b, u, c, k, e, t, i, n, g,  , c, u, s, t, o, m, i, z, a, t, i, o, n,  , a, n, d,  , l, i, v, e,  , v, a, r, i, a, n, t,  , s, c, a, l, i, n, g,  , b, e, h, a, v, i, o, r,  , (, 2, 0, :, 3, 7, ), \n, S, u, p, p, o, r, t,  , P, l, a, t, i, n, u, m, R, x,  , w, i, t, h,  , a, n, y,  , e, m, a, i, l,  , q, u, e, r, i, e, s,  , d, u, r, i, n, g,  , t, h, e, i, r,  , P, r, o,  , t, r, i, a, l,  , p, h, a, s, e,  , (, 2, 7, :, 4, 8, ), \n, \n, *, *, U, n, a, s, s, i, g, n, e, d, *, *, \n, C, o, n, f, i, r, m,  , t, e, c, h, n, i, c, a, l,  , f, e, a, s, i, b, i, l, i, t, y,  , o, f,  , s, e, l, e, c, t, i, v, e, l, y,  , a, p, p, l, y, i, n, g,  , s, t, i, c, k, y,  , b, u, c, k, e, t, i, n, g,  , t, o,  , c, e, r, t, a, i, n,  , v, a, r, i, a, n, t, s,  , o, n, l, y,  , (, 2, 0, :, 3, 7, ), \n, C, o, n, f, i, r, m,  , i, f,  , e, x, i, s, t, i, n, g,  , u, s, e, r, s,  , c, a, n,  , b, e,  , f, o, r, c, e, d,  , t, o,  , s, w, i, t, c, h,  , v, a, r, i, a, n, t, s,  , w, h, e, n,  , s, c, a, l, i, n, g,  , w, e, i, g, h, t, s,  , m, i, d, -, e, x, p, e, r, i, m, e, n, t,  , w, i, t, h, o, u, t,  , d, i, s, a, b, l, i, n, g,  , s, t, i, c, k, y,  , b, u, c, k, e, t, i, n, g,  , (, 2, 2, :, 2, 8, ), \n"
     }
   ]
 }

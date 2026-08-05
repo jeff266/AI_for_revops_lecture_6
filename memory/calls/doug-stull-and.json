@@ -1,0 +1,19 @@
+{
+  "company": "Doug Stull and",
+  "slug": "doug-stull-and",
+  "last_etl_date": "2026-08-04T19:21:12.673630",
+  "calls": [
+    {
+      "id": "01KYJXR9WA5Y9F1P0CFEMVMNM5",
+      "source": "fireflies",
+      "title": "Doug Stull and Graham McNicoll",
+      "date": "2026-08-03",
+      "duration_minutes": 40.77000045776367,
+      "summary": "The discussion revolved around how GrowthBook can integrate with GitLab's existing experimentation framework, emphasizing GrowthBook's flexible SDKs and data integration capabilities that complement GitLab’s use of Flipper and Snowplow. Features like ramped rollouts, multi-arm bandits, and automated flag management were highlighted, along with options for self-hosted deployment. The session also addressed advanced user targeting methods, such as attribute-based targeting and cross-application variant consistency. GrowthBook aims to empower product managers with safe experiment controls through a user-friendly interface, while providing developers with tools for debugging and logging. Both parties acknowledged their cultural alignment and the strategic fit of GrowthBook within GitLab’s ecosystem, leading to plans for further evaluation in a follow-up session.",
+      "organizer": "graham@growthbook.io",
+      "participants": 3,
+      "keywords": "experimentation framework, feature flags, GrowthBook, Flipper, Snowplow, data warehouse, ramp rollout",
+      "action_items": "\n, *, *, D, o, u, g,  , S, t, u, l, l, *, *, \n, C, o, n, s, u, l, t,  , w, i, t, h,  , G, i, t, L, a, b,  , g, r, o, w, t, h,  , p, r, o, d, u, c, t,  , m, a, n, a, g, e, r,  , r, e, g, a, r, d, i, n, g,  , G, r, o, w, t, h, B, o, o, k,  , c, a, p, a, b, i, l, i, t, i, e, s,  , a, n, d,  , f, i, t,  , f, o, r,  , G, i, t, L, a, b, ’, s,  , e, x, p, e, r, i, m, e, n, t, a, t, i, o, n,  , f, r, a, m, e, w, o, r, k,  , a, n, d,  , c, o, o, r, d, i, n, a, t, e,  , n, e, x, t,  , s, t, e, p, s,  , f, o, r,  , p, o, t, e, n, t, i, a, l,  , d, e, m, o,  , o, r,  , d, e, e, p, e, r,  , t, e, c, h, n, i, c, a, l,  , d, i, s, c, u, s, s, i, o, n,  , (, 3, 7, :, 4, 6, ), \n, P, r, o, v, i, d, e,  , f, o, l, l, o, w, -, u, p,  , e, m, a, i, l,  , t, o,  , G, r, o, w, t, h, B, o, o, k,  , t, e, a, m,  , a, f, t, e, r,  , i, n, t, e, r, n, a, l,  , d, i, s, c, u, s, s, i, o, n,  , w, i, t, h,  , p, r, o, d, u, c, t,  , m, a, n, a, g, e, r,  , (, 3, 8, :, 0, 3, ), \n, \n, *, *, G, r, a, h, a, m,  , M, c, N, i, c, o, l, l, *, *, \n, S, u, p, p, o, r, t,  , p, o, t, e, n, t, i, a, l,  , i, n, t, e, g, r, a, t, i, o, n,  , d, i, s, c, u, s, s, i, o, n, s,  , a, r, o, u, n, d,  , A, P, I, s,  , a, n, d,  , f, e, a, t, u, r, e,  , f, l, a, g,  , m, a, n, a, g, e, m, e, n, t,  , t, a, i, l, o, r, e, d,  , t, o,  , G, i, t, L, a, b, ’, s,  , e, x, i, s, t, i, n, g,  , F, l, i, p, p, e, r,  , i, n, f, r, a, s, t, r, u, c, t, u, r, e,  , i, f,  , G, i, t, L, a, b,  , d, e, c, i, d, e, s,  , t, o,  , p, r, o, c, e, e, d,  , (, 1, 9, :, 2, 4, ), \n, \n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, P, a, r, t, i, c, i, p, a, t, e,  , i, n,  , f, o, l, l, o, w, -, u, p,  , s, e, s, s, i, o, n, s,  , o, r,  , d, e, m, o, s,  , i, f,  , s, c, h, e, d, u, l, e, d,  , b, y,  , G, i, t, L, a, b,  , f, o, l, l, o, w, i, n, g,  , i, n, t, e, r, n, a, l,  , r, e, v, i, e, w, s,  , (, 3, 8, :, 3, 0, ), \n"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "company": "Whatnot<>GrowthBook",
+  "slug": "whatnot-growthbook",
+  "last_etl_date": "2026-08-04T19:21:12.680919",
+  "calls": [
+    {
+      "id": "6a726186ed9552000cfe1db4",
+      "source": "apollo",
+      "title": "Whatnot<>GrowthBook - Discussion",
+      "date": "2026-08-04",
+      "duration_minutes": 32,
+      "summary": "[Summary failed] [Unknown]: [['Hey,', 22400.0, 22600.0], ['dude.', 22600.0, 22960.0]]\n[Unknown]: [['Hello.', 24000.0, 24640.0], ['I', 31050.0, 31290.0], ['slept', 31450.0, 31890.0], ['that', 31890.0, 32050.0], ['good?",
+      "host": "Jake Heier",
+      "participants": 121
+    }
+  ]
+}

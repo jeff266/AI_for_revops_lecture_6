@@ -1,0 +1,19 @@
+{
+  "company": "Fanatics Live +",
+  "slug": "fanatics-live",
+  "last_etl_date": "2026-08-04T19:21:12.667548",
+  "calls": [
+    {
+      "id": "01KYMBFXG4P15RPF5MHR0FF9E4",
+      "source": "fireflies",
+      "title": "Fanatics Live + GrowthBook",
+      "date": "2026-08-04",
+      "duration_minutes": 45.7400016784668,
+      "summary": "Fanatics Collectible discussed integrating experimentation and analytics tools to unify their fragmented systems. Growth Book was highlighted for its combined feature flagging, experimentation, and analytics solutions tailored to enhance decision-making speed and reduce operational complexity. The integration promises to simplify workflows while preserving existing analytics tools like Amplitude. The team explored AI-driven capabilities, including automation of flag management and experiment setups. Additionally, the platform offers real-time health checks and statistical support for experimentation workflows. Concerns over data security were addressed, confirming that all operations occur within Fanatics' data warehouse, ensuring compliance and privacy. The discussion emphasized strategic alignment with desired AI integrations and operational efficiencies.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "Feature Flags, Experimentation, Product Analytics, AI Integration, Data Warehouse, Behavioral Analytics",
+      "action_items": "\n, *, *, S, a, m, e, e, r,  , S, i, d, d, i, q, u, i, *, *, \n, E, x, p, l, o, r, e,  , t, h, e,  , p, o, t, e, n, t, i, a, l,  , u, s, e,  , o, f,  , G, r, o, w, t, h, B, o, o, k, ’, s,  , A, I, -, p, o, w, e, r, e, d,  , e, x, p, e, r, i, m, e, n, t, a, t, i, o, n,  , a, n, d,  , a, n, a, l, y, t, i, c, s,  , t, o, o, l, s,  , t, o,  , i, n, t, e, g, r, a, t, e,  , w, i, t, h,  , F, a, n, a, t, i, c, s,  , C, o, l, l, e, c, t, i, b, l, e, s,  , o, r, g, a, n, i, z, a, t, i, o, n, a, l,  , t, o, o, l, i, n, g,  , (, 0, 7, :, 3, 2, ), \n, \n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, C, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , A, n, t, h, r, o, p, i, c,  , p, a, r, t, n, e, r, s,  , f, o, r,  , s, e, t, t, i, n, g,  , u, p,  , k, n, o, w, l, e, d, g, e,  , s, h, a, r, i, n, g, ,,  , w, e, b, i, n, a, r, s, ,,  , a, n, d,  , b, e, s, t,  , p, r, a, c, t, i, c, e,  , s, e, s, s, i, o, n, s,  , r, e, l, a, t, e, d,  , t, o,  , A, I, -, d, r, i, v, e, n,  , r, e, l, e, a, s, e,  , w, o, r, k, f, l, o, w, s,  , (, 4, 3, :, 4, 5, ), \n, \n, *, *, L, o, g, a, n,  , B, a, t, e, s, *, *, \n, P, r, o, v, i, d, e,  , f, u, r, t, h, e, r,  , v, a, l, i, d, a, t, i, o, n,  , a, n, d,  , m, a, p, p, i, n, g,  , o, f,  , F, a, n, a, t, i, c, s, ’,  , t, o, p,  , A, m, p, l, i, t, u, d, e,  , u, s, e,  , c, a, s, e, s,  , a, g, a, i, n, s, t,  , G, r, o, w, t, h, B, o, o, k, ’, s,  , e, v, o, l, v, i, n, g,  , p, r, o, d, u, c, t,  , a, n, a, l, y, t, i, c, s,  , c, a, p, a, b, i, l, i, t, i, e, s,  , (, 3, 3, :, 5, 0, ), \n, F, o, l, l, o, w,  , u, p,  , w, i, t, h,  , F, a, n, a, t, i, c, s,  , o, n,  , a, d, v, a, n, c, e, d,  , f, e, a, t, u, r, e,  , f, l, a, g, g, i, n, g,  , a, n, d,  , e, x, p, e, r, i, m, e, n, t, a, t, i, o, n,  , s, u, p, p, o, r, t,  , f, o, r,  , i, O, S, -, s, p, e, c, i, f, i, c,  , t, a, r, g, e, t, e, d,  , r, o, l, l, o, u, t, s,  , a, n, d,  , c, o, m, p, l, e, x,  , u, s, e, r,  , a, t, t, r, i, b, u, t, e, s,  , (, 2, 2, :, 0, 0, ), \n, O, f, f, e, r,  , d, e, e, p, e, r,  , d, e, m, o, s,  , o, r,  , s, u, p, p, o, r, t,  , o, n,  , f, u, n, n, e, l,  , b, u, i, l, d, i, n, g, ,,  , s, e, s, s, i, o, n,  , r, e, p, l, a, y, ,,  , a, n, d,  , u, s, e, r,  , j, o, u, r, n, e, y, s,  , a, s,  , G, r, o, w, t, h, B, o, o, k,  , e, n, h, a, n, c, e, s,  , i, t, s,  , p, r, o, d, u, c, t,  , a, n, a, l, y, t, i, c, s,  , o, f, f, e, r, i, n, g, s,  , f, o, r,  , F, a, n, a, t, i, c, s,  , (, 3, 1, :, 0, 0, ), \n"
+    }
+  ]
+}

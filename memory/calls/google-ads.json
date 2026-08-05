@@ -1,7 +1,7 @@
 {
   "company": "Google Ads",
   "slug": "google-ads",
-  "last_etl_date": "2026-08-01T12:26:09.556824",
+  "last_etl_date": "2026-08-04T19:21:12.681260",
   "calls": [
     {
       "id": "6a230225bca91500203ef36d",
@@ -122,6 +122,16 @@
       "participants": 3,
       "keywords": "Google Ads, campaign optimization, keyword targeting, competitor analysis, advertising metrics, marketing strategy",
       "action_items": "\n**Tatev Torabyan**\nShare Google Ads campaign data and competitor analysis, including AB Tasty’s strategies, with the team to inform ongoing marketing efforts (20:52)\nSend updated ad copies and assets for launchdarkly, feature flags, and experimentation campaigns to the team for review and feedback (26:44)\nContinue monitoring campaign performance over the next weeks to evaluate the impact of restructuring and the experiment with excluding certain age groups from targeting (09:34)\n\n**Ashley Stirrup**\nReview the updated ad copies once distributed and provide input to help refine campaign messaging and effectiveness (26:44)\n\n**Lyndsie Berens**\nReview the updated ad copies upon distribution and contribute feedback to improve campaign performance (26:44)\n"
+    },
+    {
+      "id": "6a722861fd403800208931aa",
+      "source": "apollo",
+      "title": "Google Ads",
+      "date": "2026-08-04",
+      "duration_minutes": 28,
+      "summary": "[Summary failed] [Unknown]: [['Hello.', 10400.0, 10720.0]]\n[Unknown]: [['How', 12000.0, 12280.0], ['are', 12280.0, 12440.0], ['you?', 12440.0, 12720.0]]\n[Unknown]: [['Good.', 12960.0, 13280.0], ['How', 13280.0, 13480.",
+      "host": "Ashley Stirrup",
+      "participants": 89
     }
   ]
 }

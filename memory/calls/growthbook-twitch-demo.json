@@ -1,0 +1,17 @@
+{
+  "company": "GrowthBook/Twitch Demo",
+  "slug": "growthbook-twitch-demo",
+  "last_etl_date": "2026-08-04T19:21:12.681016",
+  "calls": [
+    {
+      "id": "6a726932de4e8700140fcb88",
+      "source": "apollo",
+      "title": "GrowthBook/Twitch Demo",
+      "date": "2026-08-04",
+      "duration_minutes": 70,
+      "summary": "[Summary failed] [Unknown]: [['And.', 480.0, 720.0], ['Yeah,', 5680.0, 6240.0], ['yeah,', 9440.0, 9880.0], [\"that's.\", 9880.0, 10280.0], [\"That's.\", 10280.0, 10640.0], ['Those', 10640.0, 10840.0], ['are', 10840.0, 109",
+      "host": "Ashley Stirrup",
+      "participants": 160
+    }
+  ]
+}
