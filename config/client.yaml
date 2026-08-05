@@ -171,6 +171,17 @@ models:
     max_tokens: 4000
 
 # ============================================================================
+# CALL INTELLIGENCE PLATFORM
+# ============================================================================
+# Configure which call recording platform to use for transcript extraction
+# Supported: fireflies, gong
+
+call_tools:
+  # Primary call intelligence platform
+  # Options: 'fireflies' (Fireflies.ai) or 'gong' (Gong.io)
+  primary: "fireflies"
+
+# ============================================================================
 # ETL CONFIGURATION
 # ============================================================================
 # Settings for nightly deal and call ingestion

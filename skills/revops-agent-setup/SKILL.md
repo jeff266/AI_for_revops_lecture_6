@@ -30,13 +30,36 @@ Format: starts with sk-ant-"
 Ask: "Paste your Anthropic API key:"
 Validate: must start with sk-ant-
 
-## Step 2 — Fireflies API Key
+## Step 2 — Call intelligence platform credentials
+
+First check config/client.yaml for the call_tools.primary setting.
+If it's 'gong', collect Gong credentials. Otherwise, collect Fireflies.
+
+### If using Gong (call_tools.primary = 'gong'):
 
 Tell the user:
-"Next is Fireflies — your call recording source.
+"You're configured to use Gong for call intelligence.
+To get your credentials:
+1. Go to: Gong → Settings → Company Settings → API
+2. Create a new Technical User or use existing
+3. You'll need: Access Key and Access Key Secret
+
+Gong API docs: https://gong.app.gong.io/settings/api/documentation"
+
+Ask: "Paste your Gong Access Key:"
+Store as: GONG_ACCESS_KEY
+
+Ask: "Paste your Gong Access Key Secret:"
+Store as: GONG_ACCESS_KEY_SECRET
+
+### If using Fireflies (call_tools.primary = 'fireflies' or not set):
+
+Tell the user:
+"You're configured to use Fireflies for call intelligence.
 To get it: app.fireflies.ai → Integrations → API → copy the key"
 
 Ask: "Paste your Fireflies API key (or SKIP):"
+Store as: FIREFLIES_API_KEY
 
 ## Step 3 — Apollo API Key
 
@@ -46,6 +69,7 @@ Note: this is the meeting recorder, not the sales intelligence tool.
 To get it: your Apollo workspace → Settings → API"
 
 Ask: "Paste your Apollo API key (or SKIP):"
+Store as: APOLLO_API_KEY
 
 ## Step 4 — HubSpot Private App Token
 
@@ -99,12 +123,14 @@ Then print the GitHub Secrets checklist:
 GitHub Secrets — Environment: Agent
 
 □ ANTHROPIC_API_KEY
-□ FIREFLIES_API_KEY     (blank if skipped)
-□ APOLLO_API_KEY        (blank if skipped)
+□ FIREFLIES_API_KEY         (blank if using Gong)
+□ GONG_ACCESS_KEY           (blank if using Fireflies)
+□ GONG_ACCESS_KEY_SECRET    (blank if using Fireflies)
+□ APOLLO_API_KEY            (blank if skipped)
 □ HUBSPOT_API_KEY
 □ SUPABASE_URL
 □ SUPABASE_SERVICE_KEY
-□ ZAP_RESPONSE_URL      (blank if skipped)
+□ ZAP_RESPONSE_URL          (blank if skipped)
 
 Fastest way to add them:
   gh secret set --env Agent --env-file .env

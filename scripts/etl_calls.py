@@ -19,6 +19,7 @@ import csv
 import json
 import argparse
 import re
+import yaml
 from pathlib import Path
 from datetime import datetime, timedelta
 from openai import OpenAI
@@ -28,6 +29,9 @@ REPO_ROOT = Path(__file__).parent.parent
 REVOPS_METRICS = REPO_ROOT.parent / 'revops-metrics'
 if REVOPS_METRICS.exists():
     sys.path.insert(0, str(REVOPS_METRICS))
+
+# Add local adapters to path
+sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 
 def slugify(company_name: str) -> str:
@@ -100,36 +104,76 @@ def get_last_cache_date(cache_dir: Path) -> datetime:
     return latest_date or (datetime.now() - timedelta(days=7))
 
 
-def fetch_fireflies_incremental(since_date: datetime, calls_by_company: dict):
-    """Fetch new Fireflies calls since date via API."""
-    try:
+def get_call_adapter():
+    """
+    Load call intelligence adapter based on config/client.yaml.
+
+    Returns:
+        Adapter instance (GongAdapter or FirefliesClient)
+    """
+    # Load config
+    config_path = REPO_ROOT / 'config' / 'client.yaml'
+    if not config_path.exists():
+        print("   ⚠️  config/client.yaml not found, defaulting to Fireflies")
+        call_tool = 'fireflies'
+    else:
+        with open(config_path) as f:
+            config = yaml.safe_load(f)
+            call_tool = config.get('call_tools', {}).get('primary', 'fireflies')
+
+    # Import and return appropriate adapter
+    if call_tool == 'gong':
+        from adapters.gong_adapter import GongAdapter
+        return GongAdapter()
+    elif call_tool == 'fireflies':
         from fireflies_client import FirefliesClient
-    except ImportError:
-        print("   ⚠️  fireflies_client not available, skipping Fireflies incremental fetch")
+        return FirefliesClient()
+    else:
+        raise ValueError(f"Unknown call tool: {call_tool}. Must be 'gong' or 'fireflies'")
+
+
+def fetch_call_intelligence_incremental(since_date: datetime, calls_by_company: dict):
+    """Fetch new calls from configured call intelligence platform (Gong or Fireflies)."""
+    try:
+        adapter = get_call_adapter()
+        adapter_type = type(adapter).__name__
+    except Exception as e:
+        print(f"   ⚠️  Could not load call adapter: {e}")
         return
 
-    print(f"\n🔥 Fetching new Fireflies calls since {since_date.strftime('%Y-%m-%d')}")
+    platform_name = "Gong" if adapter_type == "GongAdapter" else "Fireflies"
+    print(f"\n🎙️  Fetching new {platform_name} calls since {since_date.strftime('%Y-%m-%d')}")
 
-    client = FirefliesClient()
-
-    # Fetch calls in batches (Fireflies API limit=50)
+    # Fetch calls in batches
     skip = 0
     limit = 50
     total_new = 0
 
     while True:
         try:
-            batch = client.get_transcripts(limit=limit, skip=skip)
+            # Fireflies uses get_transcripts(), Gong uses get_calls()
+            if adapter_type == "GongAdapter":
+                batch = adapter.get_calls(limit=limit, skip=skip)
+            else:
+                batch = adapter.get_transcripts(limit=limit, skip=skip)
+
             if not batch:
                 break
 
             for call in batch:
-                # Parse date
-                call_date_ms = call.get('date')
-                if not call_date_ms:
-                    continue
-
-                call_date = datetime.fromtimestamp(call_date_ms / 1000).replace(tzinfo=None)
+                # Parse date (Gong uses 'started' ISO string, Fireflies uses 'date' ms timestamp)
+                if adapter_type == "GongAdapter":
+                    started_str = call.get('started')
+                    if not started_str:
+                        continue
+                    call_date = datetime.fromisoformat(started_str.replace('Z', '+00:00')).replace(tzinfo=None)
+                    duration_minutes = round((call.get('duration') or 0) / 60, 1)
+                else:
+                    call_date_ms = call.get('date')
+                    if not call_date_ms:
+                        continue
+                    call_date = datetime.fromtimestamp(call_date_ms / 1000).replace(tzinfo=None)
+                    duration_minutes = call.get('duration', 0)
 
                 # Skip if before cutoff
                 if call_date.date() <= since_date.date():
@@ -140,8 +184,6 @@ def fetch_fireflies_incremental(since_date: datetime, calls_by_company: dict):
                 company = extract_company_from_title(title)
                 slug = slugify(company)
 
-                summary_dict = call.get('summary', {}) or {}
-
                 if slug not in calls_by_company:
                     calls_by_company[slug] = {
                         "company": company,
@@ -149,18 +191,36 @@ def fetch_fireflies_incremental(since_date: datetime, calls_by_company: dict):
                         "calls": []
                     }
 
-                calls_by_company[slug]["calls"].append({
-                    "id": call.get('id'),
-                    "source": "fireflies",
-                    "title": title,
-                    "date": call_date.strftime('%Y-%m-%d'),
-                    "duration_minutes": call.get('duration', 0),
-                    "summary": summary_dict.get('short_summary', ''),
-                    "organizer": call.get('organizer_email', ''),
-                    "participants": len(call.get('participants', []) or []),
-                    "keywords": ', '.join(summary_dict.get('keywords', []) or []),
-                    "action_items": ', '.join(summary_dict.get('action_items', []) or [])
-                })
+                # Build call dict (different fields for Gong vs Fireflies)
+                if adapter_type == "GongAdapter":
+                    # Use Gong's format_summary_for_meddicc for structured summary
+                    summary = adapter.format_summary_for_meddicc(call)
+                    calls_by_company[slug]["calls"].append({
+                        "id": call.get('id'),
+                        "source": "gong",
+                        "title": title,
+                        "date": call_date.strftime('%Y-%m-%d'),
+                        "duration_minutes": duration_minutes,
+                        "summary": summary,
+                        "organizer": call.get('host', ''),
+                        "participants": len(call.get('parties', []) or [])
+                    })
+                else:
+                    # Fireflies format
+                    summary_dict = call.get('summary', {}) or {}
+                    calls_by_company[slug]["calls"].append({
+                        "id": call.get('id'),
+                        "source": "fireflies",
+                        "title": title,
+                        "date": call_date.strftime('%Y-%m-%d'),
+                        "duration_minutes": duration_minutes,
+                        "summary": summary_dict.get('short_summary', ''),
+                        "organizer": call.get('organizer_email', ''),
+                        "participants": len(call.get('participants', []) or []),
+                        "keywords": ', '.join(summary_dict.get('keywords', []) or []),
+                        "action_items": ', '.join(summary_dict.get('action_items', []) or [])
+                    })
+
                 total_new += 1
 
             if len(batch) < limit:
@@ -168,10 +228,10 @@ def fetch_fireflies_incremental(since_date: datetime, calls_by_company: dict):
             skip += limit
 
         except Exception as e:
-            print(f"   ✗ Error fetching Fireflies: {e}")
+            print(f"   ✗ Error fetching {platform_name} calls: {e}")
             break
 
-    print(f"   Found {total_new} new Fireflies calls")
+    print(f"   Found {total_new} new {platform_name} calls")
 
 
 def fetch_apollo_incremental(since_date: datetime, calls_by_company: dict, total_summarized: list):
@@ -514,7 +574,7 @@ def main():
             print(f"Auto-detected cutoff: {since_date.strftime('%Y-%m-%d')}")
 
         # Fetch from APIs
-        fetch_fireflies_incremental(since_date, calls_by_company)
+        fetch_call_intelligence_incremental(since_date, calls_by_company)
         fetch_apollo_incremental(since_date, calls_by_company, total_summarized)
 
     # Save results
