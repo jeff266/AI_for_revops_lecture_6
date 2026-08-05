@@ -11,7 +11,7 @@ Outputs:
 
 Call Intelligence Adapters:
   - Fireflies: summary_text directly (AI-generated)
-  - Apollo: summarized via Deepseek V4 Flash on Fireworks (transcript_text -> summary)
+  - Apollo: summarized via Claude Haiku (transcript_text → summary)
   - Gong: basic metadata mode (title, date, duration, participants)
     * To enable rich data (transcripts, topics, action items):
       1. Contact Gong admin to enable transcript API access
@@ -29,7 +29,6 @@ import re
 import yaml
 from pathlib import Path
 from datetime import datetime, timedelta
-from openai import OpenAI
 
 # Add revops-metrics to path for API clients
 REPO_ROOT = Path(__file__).parent.parent
@@ -301,10 +300,10 @@ def fetch_apollo_incremental(since_date: datetime, calls_by_company: dict, total
             company = extract_company_from_title(title)
             slug = slugify(company)
 
-            # Summarize with Deepseek
+            # Summarize with Claude Haiku
             print(f"   [{i}/{len(new_calls)}] Summarizing: {title[:50]}...")
             try:
-                summary = summarize_with_deepseek(transcript_text, title)
+                summary = summarize_apollo_transcript(transcript_text, title)
                 total_summarized[0] += 1
             except Exception as e:
                 print(f"      ✗ Error: {e}")
@@ -337,32 +336,40 @@ def fetch_apollo_incremental(since_date: datetime, calls_by_company: dict, total
             continue
 
 
-def summarize_with_deepseek(transcript_text: str, title: str) -> str:
-    """Summarize Apollo transcript text using Deepseek V4 Flash via Fireworks."""
-    client = OpenAI(
-        api_key=os.getenv("FIREWORKS_API_KEY"),
-        base_url="https://api.fireworks.ai/inference/v1"
+def summarize_apollo_transcript(transcript_text: str, title: str) -> str:
+    """Summarize Apollo transcript using Claude Haiku."""
+    if len(transcript_text) < 1500:
+        return transcript_text
+
+    from anthropic import Anthropic
+    client = Anthropic(api_key=os.getenv('ANTHROPIC_API_KEY'))
+
+    system = (
+        "Summarize this sales call for MEDDICC analysis. "
+        "Extract: attendees and titles, quantifiable outcomes "
+        "(metrics, ROI, time savings), budget authority signals, "
+        "technical requirements, decision process and timeline, "
+        "specific pain points, champion signals, competitors "
+        "mentioned, and next steps. "
+        "Write in past tense, 400-600 words. "
+        f"Start with: 'Call on [date] with [attendees].'"
     )
 
-    prompt = f"""Summarize this sales call transcript in 2-3 sentences. Focus on:
-- What was discussed (product, features, pain points)
-- Key participants and their roles
-- Next steps or action items
-
-Call Title: {title}
-
-Transcript Text:
-{transcript_text}
-
-Provide only the summary, no preamble."""
-
-    response = client.chat.completions.create(
-        model="accounts/fireworks/models/deepseek-v4-flash",
-        max_tokens=300,
-        messages=[{"role": "user", "content": prompt}]
-    )
-
-    return response.choices[0].message.content.strip()
+    try:
+        resp = client.messages.create(
+            model='claude-haiku-4-5-20251001',
+            max_tokens=800,
+            system=system,
+            messages=[{
+                'role': 'user',
+                'content': f'Title: {title}\n\nTranscript:\n'
+                           f'{transcript_text[:8000]}'
+            }]
+        )
+        return resp.content[0].text
+    except Exception as e:
+        print(f'     ⚠️  Haiku summarization failed: {e}')
+        return transcript_text[:2500] + '\n\n[Truncated]'
 
 
 def process_apollo_csv(csv_path: Path, calls_by_company: dict, total_summarized: list):
@@ -391,10 +398,10 @@ def process_apollo_csv(csv_path: Path, calls_by_company: dict, total_summarized:
         company = extract_company_from_title(title)
         slug = slugify(company)
 
-        # Summarize with Deepseek
+        # Summarize with Claude Haiku
         print(f"   [{i}/{len(rows)}] Summarizing: {title[:50]}...")
         try:
-            summary = summarize_with_deepseek(transcript_text, title)
+            summary = summarize_apollo_transcript(transcript_text, title)
             total_summarized[0] += 1
         except Exception as e:
             print(f"      ✗ Error: {e}")
