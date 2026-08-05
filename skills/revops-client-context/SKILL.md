@@ -83,20 +83,60 @@ Show proposed exclusion list and confirm.
 2. "Any instructions that should never be auto-removed?"
 3. "Who reviews the learning PRs?"
 
-## Phase 7 — Generate output files
+## Phase 7 — Generate and deploy config files
 
-Read all reference files in references/ before generating.
-Generate all four files fully populated — no placeholder text.
+Read all four reference files before generating anything.
 
-config/context.yaml
-config/client.yaml
-prompts/CLAUDE.md
-prompts/evaluator_rubric.md
+Generate all four files fully populated from the interview.
+No placeholder text anywhere.
 
-Write them directly to the repo.
+### If running in Claude Code (has file system access):
 
-Then show deployment checklist:
-□ python scripts/setup_supabase.py
-□ python scripts/etl_deals.py --mode active
-□ python scripts/etl_calls.py --fireflies data/... --apollo data/...
-□ Trigger nightly workflow manually to verify
+Write files directly — do not show as code blocks:
+
+1. Write config/context.yaml
+2. Write config/client.yaml with placeholder stage IDs
+3. Write prompts/CLAUDE.md
+4. Write prompts/evaluator_rubric.md
+
+Then run stage discovery:
+  python scripts/discover_stages.py
+
+Show the output and ask: "Which stages should be excluded?
+(Usually: Meeting Set, Closed Won, Closed Lost, any
+Renewal pipeline stages)"
+
+Update config/client.yaml with the real stage IDs from
+their answer.
+
+Commit everything:
+  git add config/ prompts/
+  git commit -m "Add [company] client context and config"
+  git push
+
+Tell the student: "Done. Config is live in the repo.
+Next step: add GitHub Secrets, then run the ETL."
+
+### If running in Claude.ai (no file system access):
+
+Present each file as a labeled code block:
+
+**config/context.yaml** — copy this to your repo
+[content]
+
+**config/client.yaml** — copy this to your repo
+[content]
+
+**prompts/CLAUDE.md** — copy this to your repo
+[content]
+
+**prompts/evaluator_rubric.md** — copy this to your repo
+[content]
+
+Then show the deployment checklist:
+□ Copy all four files into your forked repo
+□ Run: python scripts/discover_stages.py
+□ Update excluded_stages in config/client.yaml
+  with your real HubSpot stage IDs
+□ git add config/ prompts/ && git commit -m "Add client context"
+□ git push
