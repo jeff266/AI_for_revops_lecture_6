@@ -1,9 +1,5 @@
 anthropic>=0.40.0
-openai>=1.0.0
 requests>=2.31.0
 PyGithub>=2.1.1
 supabase>=2.0.0
 PyYAML>=6.0.0
-
-# Kimi K3 uses Fireworks AI via OpenAI SDK
-# Set FIREWORKS_API_KEY to enable Kimi hybrid mode
