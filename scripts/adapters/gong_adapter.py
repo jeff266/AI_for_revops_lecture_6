@@ -62,6 +62,10 @@ class GongAdapter:
         }
         self.base_url = 'https://api.gong.io/v2'
 
+        # Note required API scopes
+        print("Note: Gong adapter requires scopes api:calls:read:extensive "
+              "and api:calls:read:transcript")
+
     def search_by_company(self, company_name: str,
                           since_date: Optional[datetime] = None) -> List[Dict]:
         """
@@ -110,11 +114,32 @@ class GongAdapter:
         for i in range(0, len(call_ids), 20):
             batch_ids = call_ids[i:i+20]
 
+            # Build request body with contentSelector
+            request_body = {
+                'filter': {'callIds': batch_ids},
+                'contentSelector': {
+                    'exposedFields': {
+                        'parties': True,
+                        'content': {
+                            'brief': True,
+                            'topics': True,
+                            'keyPoints': True,
+                            'trackers': True,
+                            'outline': True
+                        },
+                        'interaction': {
+                            'speakers': True,
+                            'questions': True
+                        }
+                    }
+                }
+            }
+
             try:
                 extensive_resp = requests.post(
                     f'{self.base_url}/calls/extensive',
                     headers=self.headers,
-                    json={'filter': {'callIds': batch_ids}},
+                    json=request_body,
                     timeout=30
                 )
 
@@ -137,18 +162,21 @@ class GongAdapter:
 
             if call_id in rich_by_id:
                 rich = rich_by_id[call_id]
+                metadata = rich.get('metaData', {})
                 content = rich.get('content', {})
+                interaction = rich.get('interaction', {})
 
                 # Flatten into format expected by format_summary_for_meddicc()
                 merged = {
                     'id': call_id,
-                    'title': call.get('title', ''),
-                    'started': call.get('started', ''),
-                    'duration': call.get('duration', 0),
+                    'title': metadata.get('title', call.get('title', '')),
+                    'started': metadata.get('started', call.get('started', '')),
+                    'duration': metadata.get('duration', call.get('duration', 0)),
                     'brief': content.get('brief', ''),
                     'topics': [t.get('name', '') for t in content.get('topics', [])],
-                    'keyPoints': content.get('keyPoints', {}),
+                    'keyPoints': [kp.get('text', '') for kp in content.get('keyPoints', [])],
                     'parties': rich.get('parties', []),
+                    'speakers': interaction.get('speakers', []),
                 }
                 results.append(merged)
             else:
@@ -160,8 +188,9 @@ class GongAdapter:
                     'duration': call.get('duration', 0),
                     'brief': '',
                     'topics': [],
-                    'keyPoints': {},
+                    'keyPoints': [],
                     'parties': [],
+                    'speakers': [],
                 })
 
         return results
@@ -208,20 +237,25 @@ class GongAdapter:
 
         # Extract Gong's structured insights
         topics = call.get('topics', [])
-        key_points = call.get('keyPoints', {})
-        action_items = key_points.get('actionItems', [])
-        next_steps = key_points.get('nextSteps', [])
+        key_points = call.get('keyPoints', [])  # Now a list of strings
 
-        # Talk time analysis
+        # Talk time analysis - calculate percentages from speakers + parties
         parties = call.get('parties', [])
+        speakers = call.get('speakers', [])
+        total_duration_secs = call.get('duration', 0)
+
+        # Build speaker time map (speakers[].id maps to parties[].id, not speakerId)
+        speaker_time = {s.get('id', ''): s.get('talkTime', 0) for s in speakers}
+
         talk_time_lines = []
         for party in parties:
             name = party.get('name', 'Unknown')
-            affiliation = party.get('affiliation', '')
-            talk_time = party.get('talkTime', {})
-            talk_pct = talk_time.get('percentage', 0)
+            affiliation = party.get('affiliation', 'Unknown')
+            party_id = party.get('id', '')  # Match on party.id, not speakerId
+            secs = speaker_time.get(party_id, 0)
+            pct = (secs / total_duration_secs * 100) if total_duration_secs else 0
             talk_time_lines.append(
-                f'  {name} ({affiliation}): {talk_pct:.0f}%'
+                f'  {name} ({affiliation}): {pct:.0f}% ({secs:.0f}s)'
             )
 
         # Build formatted summary
@@ -237,13 +271,9 @@ class GongAdapter:
             sections.extend(['', '## Topics Discussed'])
             sections.extend([f'- {topic}' for topic in topics])
 
-        if action_items:
-            sections.extend(['', '## Action Items'])
-            sections.extend([f'- {item}' for item in action_items])
-
-        if next_steps:
-            sections.extend(['', '## Next Steps'])
-            sections.extend([f'- {step}' for step in next_steps])
+        if key_points:
+            sections.extend(['', '## Key Points'])
+            sections.extend([f'- {point}' for point in key_points])
 
         if talk_time_lines:
             sections.extend(['', '## Talk Time'])
@@ -322,11 +352,32 @@ class GongAdapter:
         for i in range(0, len(call_ids), 20):
             batch_ids = call_ids[i:i+20]
 
+            # Build request body with contentSelector
+            request_body = {
+                'filter': {'callIds': batch_ids},
+                'contentSelector': {
+                    'exposedFields': {
+                        'parties': True,
+                        'content': {
+                            'brief': True,
+                            'topics': True,
+                            'keyPoints': True,
+                            'trackers': True,
+                            'outline': True
+                        },
+                        'interaction': {
+                            'speakers': True,
+                            'questions': True
+                        }
+                    }
+                }
+            }
+
             try:
                 extensive_resp = requests.post(
                     f'{self.base_url}/calls/extensive',
                     headers=self.headers,
-                    json={'filter': {'callIds': batch_ids}},
+                    json=request_body,
                     timeout=30
                 )
 
@@ -349,18 +400,21 @@ class GongAdapter:
 
             if call_id in rich_by_id:
                 rich = rich_by_id[call_id]
+                metadata = rich.get('metaData', {})
                 content = rich.get('content', {})
+                interaction = rich.get('interaction', {})
 
                 # Flatten into format expected by format_summary_for_meddicc()
                 merged = {
                     'id': call_id,
-                    'title': call.get('title', ''),
-                    'started': call.get('started', ''),
-                    'duration': call.get('duration', 0),
+                    'title': metadata.get('title', call.get('title', '')),
+                    'started': metadata.get('started', call.get('started', '')),
+                    'duration': metadata.get('duration', call.get('duration', 0)),
                     'brief': content.get('brief', ''),
                     'topics': [t.get('name', '') for t in content.get('topics', [])],
-                    'keyPoints': content.get('keyPoints', {}),
+                    'keyPoints': [kp.get('text', '') for kp in content.get('keyPoints', [])],
                     'parties': rich.get('parties', []),
+                    'speakers': interaction.get('speakers', []),
                 }
                 results.append(merged)
             else:
@@ -372,8 +426,9 @@ class GongAdapter:
                     'duration': call.get('duration', 0),
                     'brief': '',
                     'topics': [],
-                    'keyPoints': {},
+                    'keyPoints': [],
                     'parties': [],
+                    'speakers': [],
                 })
 
         return results
