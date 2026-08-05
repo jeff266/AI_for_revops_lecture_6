@@ -23,27 +23,79 @@ sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 DEALS_DIR.mkdir(parents=True, exist_ok=True)
 
-# Exclude Renewal Pipeline (both by name and ID)
-EXCLUDED_PIPELINES = ['renewal', '866608541']
+# Default exclusions — these are HubSpot universal defaults only.
+# For your specific stage IDs, run: python scripts/discover_stages.py
+# and update config/client.yaml with your actual stage IDs.
+# Do NOT hardcode appointmentscheduled — it means different things
+# in different HubSpot pipelines.
 
-# Exclude Disqualified stage
-DISQUALIFIED_STAGES = ['68509551']
-
-# Exclude Meeting Set stages (always filter these out in active mode)
-# 'appointmentscheduled' = Discovery in some views, but actually Meeting Set
-# '79653122' = Meeting Set (numeric ID)
-MEETING_SET_STAGES = ['appointmentscheduled', '79653122']
-
-# Closed stage IDs for history mode deal_status tagging
-CLOSED_WON_STAGES = ['closedwon', '1297321623']
-CLOSED_LOST_STAGES = ['closedlost', '1297321624']
+EXCLUDED_PIPELINES_DEFAULT = []
+CLOSED_WON_STAGES_DEFAULT = ['closedwon']
+CLOSED_LOST_STAGES_DEFAULT = ['closedlost']
 
 
-def get_deal_status(stage: str) -> str:
+def get_excluded_stages() -> dict:
+    """
+    Load stage exclusions from config/client.yaml.
+    No hardcoded meeting_set stages — these vary by client.
+    Run discover_stages.py to find your org's stage IDs.
+    """
+    try:
+        import yaml
+        config_path = REPO_ROOT / 'config' / 'client.yaml'
+        if not config_path.exists():
+            print("  ⚠️  config/client.yaml not found")
+            print("     Run: python scripts/discover_stages.py")
+            print("     Then configure your stage IDs in client.yaml")
+            return {
+                'meeting_set': [],
+                'disqualified': [],
+                'closed_won': CLOSED_WON_STAGES_DEFAULT,
+                'closed_lost': CLOSED_LOST_STAGES_DEFAULT,
+                'excluded_pipelines': EXCLUDED_PIPELINES_DEFAULT,
+            }
+
+        with open(config_path) as f:
+            config = yaml.safe_load(f)
+
+        excluded = config.get('excluded_stages', {})
+
+        def get_ids(section):
+            stages = excluded.get(section, [])
+            if isinstance(stages, list):
+                return [s.get('id') for s in stages if s.get('id')
+                        and 'YOUR_' not in str(s.get('id', ''))]
+            return []
+
+        excluded_pipelines = []
+        for pipeline in config.get('pipelines', {}).get('excluded', []):
+            pipeline_id = pipeline.get('id', '')
+            if pipeline_id and 'YOUR_' not in str(pipeline_id):
+                excluded_pipelines.append(pipeline_id)
+
+        return {
+            'meeting_set': get_ids('meeting_set'),
+            'disqualified': get_ids('disqualified'),
+            'closed_won': get_ids('closed_won') or CLOSED_WON_STAGES_DEFAULT,
+            'closed_lost': get_ids('closed_lost') or CLOSED_LOST_STAGES_DEFAULT,
+            'excluded_pipelines': excluded_pipelines,
+        }
+    except Exception as e:
+        print(f"  ⚠️  Could not load client.yaml: {e}")
+        return {
+            'meeting_set': [],
+            'disqualified': [],
+            'closed_won': CLOSED_WON_STAGES_DEFAULT,
+            'closed_lost': CLOSED_LOST_STAGES_DEFAULT,
+            'excluded_pipelines': [],
+        }
+
+
+def get_deal_status(stage: str, excluded_stages: dict) -> str:
     """Determine deal status for history mode."""
-    if stage in CLOSED_WON_STAGES:
+    if stage in excluded_stages['closed_won']:
         return 'won'
-    if stage in CLOSED_LOST_STAGES:
+    if stage in excluded_stages['closed_lost']:
         return 'lost'
     return 'active'
 
@@ -82,13 +134,13 @@ def slugify(name: str) -> str:
     return slug if len(slug) >= 3 else ''
 
 
-def get_meeting_set_stages(hubspot):
+def get_meeting_set_stages(hubspot, excluded_stages: dict):
     """
     Fetch pipeline stages and auto-detect Meeting Set stages.
-    Returns list of stage IDs.
+    Returns list of stage IDs from config + auto-detected.
     """
-    # Start with hardcoded Meeting Set stages
-    meeting_set_stages = list(MEETING_SET_STAGES)
+    # Start with config-defined Meeting Set stages
+    meeting_set_stages = list(excluded_stages['meeting_set'])
 
     try:
         endpoint = "/crm/v3/pipelines/deals"
@@ -109,7 +161,7 @@ def get_meeting_set_stages(hubspot):
 
     except Exception as e:
         print(f"⚠️  Could not fetch stages: {e}")
-        return MEETING_SET_STAGES
+        return excluded_stages['meeting_set']
 
 
 def main():
@@ -137,6 +189,9 @@ def main():
     print(f"HUBSPOT DEALS ETL - MODE: {args.mode.upper()}")
     print("=" * 80)
 
+    # Load stage exclusions from config
+    excluded_stages = get_excluded_stages()
+
     # Initialize HubSpot client
     print("\n1. Connecting to HubSpot API...")
     try:
@@ -151,7 +206,7 @@ def main():
     if args.mode == 'active':
         # Auto-detect Meeting Set stages
         print("\n2. Auto-detecting Meeting Set stages...")
-        meeting_set_stages = get_meeting_set_stages(hubspot)
+        meeting_set_stages = get_meeting_set_stages(hubspot, excluded_stages)
         print(f"   Meeting Set stages: {meeting_set_stages}")
 
         # Fetch active deals only (excludes closed stages via dynamic filtering)
@@ -242,12 +297,13 @@ def main():
         # In active mode, apply stage filters. In history mode, include everything.
         if args.mode == 'active':
             # Filter: exclude Renewal pipeline (by ID or name)
-            if pipeline in EXCLUDED_PIPELINES or any(excl in pipeline.lower() for excl in EXCLUDED_PIPELINES if excl.isalpha()):
+            excluded_pipelines = excluded_stages['excluded_pipelines']
+            if pipeline in excluded_pipelines or any(excl in pipeline.lower() for excl in excluded_pipelines if excl.isalpha()):
                 skipped['renewal_pipeline'] += 1
                 continue
 
             # Filter: exclude Disqualified stage
-            if stage in DISQUALIFIED_STAGES:
+            if stage in excluded_stages['disqualified']:
                 skipped['disqualified'] += 1
                 continue
 
@@ -294,7 +350,7 @@ def main():
 
         # Add history-specific fields
         if args.mode == 'history':
-            deal_status = get_deal_status(stage)
+            deal_status = get_deal_status(stage, excluded_stages)
             deal_dict['deal_status'] = deal_status
             deal_dict['create_date'] = create_date
 
@@ -314,8 +370,8 @@ def main():
             'total_deals': len(deals),
             'excluded_closed_stages': closed_stages,
             'excluded_meeting_set_stages': meeting_set_stages,
-            'excluded_disqualified_stages': DISQUALIFIED_STAGES,
-            'excluded_renewal_pipeline': EXCLUDED_PIPELINES,
+            'excluded_disqualified_stages': excluded_stages['disqualified'],
+            'excluded_renewal_pipeline': excluded_stages['excluded_pipelines'],
             'deals': deals,
         }
 
