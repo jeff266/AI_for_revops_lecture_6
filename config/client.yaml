@@ -39,11 +39,12 @@ pipelines:
 
 excluded_stages:
   # Early stages (pre-discovery)
+  # NOTE: "Appointment Scheduled" (appointmentscheduled) is NOT Meeting Set
+  # in the default HubSpot pipeline - it's the Discovery stage.
+  # Only add your org's actual Meeting Set stage IDs here.
   meeting_set:
     - name: "Meeting Set"
       id: "YOUR_MEETING_SET_STAGE_ID"
-    - name: "Appointment Scheduled"
-      id: "appointmentscheduled"
 
   # Disqualified deals
   disqualified:

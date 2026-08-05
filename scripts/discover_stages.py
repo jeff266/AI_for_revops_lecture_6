@@ -97,8 +97,8 @@ def main():
                     annotation = "  # ← Closed Won stage"
                 elif is_closed_lost:
                     annotation = "  # ← Closed Lost stage"
-                elif 'meeting' in stage_label.lower() or 'appointment' in stage_label.lower():
-                    annotation = "  # ← Consider excluding (too early)"
+                elif 'meeting set' in stage_label.lower():
+                    annotation = "  # ← Consider excluding (pre-discovery)"
                 elif 'disqualified' in stage_label.lower():
                     annotation = "  # ← Consider excluding (disqualified)"
 
@@ -142,6 +142,9 @@ def main():
         # Suggest stages to exclude
         print("# Stages to exclude from active deal analysis:")
         print("excluded_stages:")
+        print("  # WARNING: Only add TRUE 'Meeting Set' stages here.")
+        print("  # 'Appointment Scheduled' in default HubSpot pipeline is Discovery, NOT Meeting Set.")
+        print("  # Only exclude stages that come BEFORE the first discovery call.")
         print("  meeting_set:")
 
         meeting_stages = []
@@ -149,7 +152,8 @@ def main():
             for stage in pipeline.get('stages', []):
                 label = stage.get('label', '')
                 sid = stage.get('id', '')
-                if any(keyword in label.lower() for keyword in ['meeting', 'appointment', 'scheduled']):
+                # Only suggest stages with "meeting set" as a phrase, not individual words
+                if 'meeting set' in label.lower():
                     if sid not in [s['id'] for s in meeting_stages]:
                         meeting_stages.append({'label': label, 'id': sid})
 
