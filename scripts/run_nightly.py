@@ -16,6 +16,7 @@ import sys
 import json
 import re
 import time
+import yaml
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict
@@ -28,6 +29,9 @@ from context_builder import build_cumulative_meddicc
 from meddicc_agent import run_agent
 from github_memory import get_memory_manager
 from token_tracker import TokenTracker
+
+# Repo root for config files
+REPO_ROOT = Path(__file__).parent.parent
 
 
 def slugify(name: str) -> str:
@@ -174,8 +178,24 @@ def main():
 
     # Initialize clients
     print("\n1. Initializing API clients...")
-    fireflies = get_fireflies_client()
-    apollo = get_apollo_client()
+
+    # Load call tools config
+    client_config_path = REPO_ROOT / 'config' / 'client.yaml'
+    call_tools = {}
+    if client_config_path.exists():
+        with open(client_config_path) as f:
+            call_tools = yaml.safe_load(f).get('call_tools', {})
+
+    primary_tool = call_tools.get('primary', 'fireflies')
+    secondary_tool = call_tools.get('secondary', None)
+
+    fireflies = get_fireflies_client() if primary_tool == 'fireflies' \
+                or secondary_tool == 'fireflies' else None
+    apollo = get_apollo_client() if primary_tool == 'apollo' \
+             or secondary_tool == 'apollo' else None
+
+    print(f"Call tools: primary={primary_tool}, secondary={secondary_tool}")
+
     hubspot = get_hubspot_deals_client()
     memory = get_memory_manager()
     tracker = TokenTracker(memory.memory_dir)
