@@ -44,6 +44,11 @@ class FirefliesClient:
                 duration
                 organizer_email
                 participants
+                meeting_attendees {
+                    displayName
+                    email
+                    name
+                }
                 summary {
                     keywords
                     action_items
