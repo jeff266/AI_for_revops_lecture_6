@@ -1,0 +1,212 @@
+# Client Configuration
+# This file contains organization-specific settings for the MEDDICC analysis system.
+# Students should update these values to match their organization's HubSpot setup.
+
+# ============================================================================
+# ORGANIZATION INFO
+# ============================================================================
+organization:
+  name: "GrowthBook"
+  crm: "HubSpot"
+  sales_methodology: "MEDDICC"  # Options: MEDDICC, MEDDPICC, MEDDIC
+
+# ============================================================================
+# HUBSPOT PIPELINE CONFIGURATION
+# ============================================================================
+# Use scripts/discover_stages.py to find your organization's stage IDs
+
+pipelines:
+  # Pipelines to include in active deal analysis
+  # Only deals in these pipelines will be analyzed nightly
+  included:
+    - name: "Sales Pipeline"
+      id: "default"
+
+  # Pipelines to exclude from active deal analysis
+  # Common: renewal pipelines, partner pipelines, marketing pipelines
+  excluded:
+    - name: "Renewal Pipeline"
+      id: "866608541"
+    # Add more pipelines here as needed
+    # - name: "Partner Pipeline"
+    #   id: "987654321"
+
+# ============================================================================
+# DEAL STAGE FILTERING
+# ============================================================================
+# Stages to exclude from active deal analysis
+# Common exclusions: too early (meeting set), too late (closed), or disqualified
+
+excluded_stages:
+  # Early stages (pre-discovery)
+  meeting_set:
+    - name: "Meeting Set"
+      id: "79653122"
+    - name: "Appointment Scheduled"
+      id: "appointmentscheduled"
+
+  # Disqualified deals
+  disqualified:
+    - name: "Disqualified"
+      id: "68509551"
+
+  # Closed deals (excluded in active mode, included in history mode)
+  closed_won:
+    - name: "Closed Won"
+      id: "closedwon"
+    - name: "Renewal Closed Won"
+      id: "1297321623"
+
+  closed_lost:
+    - name: "Closed Lost"
+      id: "closedlost"
+    - name: "Renewal Closed Lost"
+      id: "1297321624"
+
+# ============================================================================
+# STAGE PROGRESSION REQUIREMENTS
+# ============================================================================
+# Minimum MEDDICC component scores required to advance between stages
+# Used by evaluator to validate stage recommendations
+
+stage_progression:
+  discovery_to_scoping:
+    identified_pain: 5
+    champion: 4
+    minimum_stakeholders: 2
+
+  scoping_to_proposal:
+    metrics: 6
+    economic_buyer: 6
+    champion: 6
+    decision_criteria: 5
+
+  proposal_to_negotiating:
+    # All components must meet minimum
+    all_components_minimum: 6
+    decision_process: 7
+    competition: 6
+
+  negotiating_to_closed_won:
+    # All components must be strong
+    all_components_minimum: 8
+    decision_process: 7
+    # If using MEDDPICC:
+    # paper_process: 7
+
+# ============================================================================
+# ANALYSIS QUALITY THRESHOLDS
+# ============================================================================
+# Evaluator pass/fail criteria
+# Based on deliverable/rubrics/evaluator-pass-fail-criteria.md
+
+quality_thresholds:
+  # Evaluation mode
+  # strict: Reject if ANY criterion fails (recommended for initial rollout)
+  # standard: Reject if 2+ criteria fail (after 30+ approved analyses)
+  # lenient: Reject if 3+ criteria fail (not recommended)
+  evaluation_mode: "strict"
+
+  # Minimum quality score to approve (0-100)
+  # Calculated from 7 criteria, each weighted
+  minimum_quality_score: 70
+
+  # Evidence requirements
+  evidence:
+    minimum_quotes_for_high_score: 2  # Scores 8+ need 2+ quotes
+    maximum_hedging_words: 2  # Max uses of "seems", "appears", "probably"
+
+  # Score justification ranges
+  score_ranges:
+    strong_identified:  # 9-10: Crystal clear, multiple confirmations
+      min: 9
+      max: 10
+    identified:  # 7-8: Clear evidence, single confirmation
+      min: 7
+      max: 8
+    partial:  # 5-6: Partial info, needs clarification
+      min: 5
+      max: 6
+    weak:  # 3-4: Vague mention, significant gaps
+      min: 3
+      max: 4
+    unknown:  # 1-2: Not discussed or unknown
+      min: 1
+      max: 2
+
+# ============================================================================
+# DEAL HEALTH CALCULATION
+# ============================================================================
+# Rules for determining overall deal health status
+
+deal_health:
+  strong:
+    minimum_components_above_6: 5  # Need 5+ components scoring 6+
+    minimum_champion_score: 5
+
+  at_risk:
+    # Deal is at risk if ANY of these conditions are true
+    critical_components_below_5: ["champion", "economic_buyer"]
+    components_below_5_count: 3  # 3+ components below 5
+    champion_score_below: 5
+
+# ============================================================================
+# TOKEN BUDGET & MODEL SELECTION
+# ============================================================================
+# Control costs and performance
+
+models:
+  context_builder:
+    name: "claude-haiku-4-5-20251001"
+    base_tokens: 2000
+    tokens_per_call: 500  # Additional tokens per historical call
+    max_tokens_cap: 16000
+
+  generator:
+    name: "claude-sonnet-4-5-20250929"
+    max_tokens: 8000
+
+  evaluator:
+    name: "claude-sonnet-4-5-20250929"
+    max_tokens: 4000
+
+# ============================================================================
+# ETL CONFIGURATION
+# ============================================================================
+# Settings for nightly deal and call ingestion
+
+etl:
+  # Deal properties to fetch from HubSpot
+  # Add custom properties your organization uses
+  deal_properties:
+    - dealname
+    - dealstage
+    - pipeline
+    - closedate
+    - amount
+    - incremental_arr
+    - hubspot_owner_id
+    - createdate
+    - hs_lastmodifieddate
+    # Add your custom properties here:
+    # - custom_priority_score
+    # - industry_vertical
+
+  # Refresh frequency
+  active_deals_refresh: "nightly"  # How often to refresh active deal list
+  call_lookback_days: 90  # How far back to look for calls
+
+# ============================================================================
+# CUSTOMIZATION NOTES
+# ============================================================================
+#
+# To customize this for your organization:
+#
+# 1. Run scripts/discover_stages.py to get your HubSpot stage IDs
+# 2. Update pipelines.excluded with your renewal/partner pipelines
+# 3. Update excluded_stages with your organization's stage names and IDs
+# 4. Adjust stage_progression thresholds based on your sales process
+# 5. Set evaluation_mode to "strict" for initial rollout
+# 6. Add custom deal_properties you want to include in analysis
+#
+# See README.md for detailed setup instructions.
