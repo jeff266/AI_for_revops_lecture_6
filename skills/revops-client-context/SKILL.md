@@ -1,70 +1,102 @@
-# RevOps Client Context Skill
+---
+name: revops-client-context
+description: >
+  Onboard a new client by building their competitive, product, and
+  sales context. Use this skill when setting up a new deployment,
+  calibrating the MEDDICC agent for a specific client, or updating
+  context when the competitive landscape changes. Produces four files:
+  config/context.yaml, config/client.yaml, prompts/CLAUDE.md, and
+  prompts/evaluator_rubric.md. Triggers on: start client onboarding,
+  set up context, configure the agent, calibrate for my client,
+  update competitive context, who are our competitors, what are our
+  objections.
+---
 
-**NOTE**: This is a placeholder for the SKILL.md content.
+# RevOps Client Context Onboarding
 
-The actual skill content should be pasted here from the course materials.
+Build the context baseline that makes every intelligence layer accurate.
+Read references/context-schema.md before starting.
 
-This file should contain the complete context interview script that:
-1. Asks about the client's product and ICP
-2. Collects competitor information
-3. Identifies common objection categories
-4. Discovers feature gaps prospects mention
-5. Reviews HubSpot stage names and progression
-6. Sets learning preferences
-7. Writes four output files based on responses
+Six phases. Complete each before moving to the next.
 
-When Claude Code reads this file via the root CLAUDE.md instructions,
-it will run this interview inline to configure the agent for a specific client.
+## Phase 1 — Product and ICP
 
-## Expected Interview Flow
+Ask one at a time:
+1. "What does your product do in one sentence? Be specific."
+2. "Who is your ICP? Company size, industry, and buyer title."
+3. "What is your primary differentiator?"
+4. "What qualification methodology do you use?"
+5. "What does a good first call look like for your best reps?"
 
-The skill should ask about:
+Push back on vague answers. Ask for real examples.
 
-### Product & ICP
-- What does the product do?
-- Who is the ideal customer?
-- What industries do you serve?
+## Phase 2 — Competitive landscape
 
-### Competitors
-- Direct competitors (same category)
-- Indirect competitors (adjacent solutions)
-- Incumbent solutions (homegrown, manual processes)
+Ask them to name all competitors first, then go through each one:
+- Full name as it appears in prospect conversations
+- Type: direct / adjacent / internal_tool / status_quo
+- What prospects say when they mention this competitor
+- How the rep should respond
+- When you win vs lose against them
+- Any aliases (other names it appears as in transcripts)
 
-### Objections
-- Pricing objections and typical responses
-- Timing objections and how to handle them
-- Technical complexity concerns
-- Feature gap patterns
-- Stakeholder alignment challenges
+Prompt: "Any internal tools? Any build-vs-buy situations?"
 
-### Feature Gaps
-- High priority gaps (frequently requested, high deal impact)
-- Medium and low priority gaps
-- Workarounds for each gap
-- Roadmap status
+## Phase 3 — Objections
 
-### Value Metrics
-- Revenue metrics (conversion rate, ARPU)
-- Cost savings (failed releases, engineering efficiency)
-- Risk reduction (rollback time, deployment risk)
-- Velocity improvements (release frequency, time to value)
+For each objection (collect at least 5):
+1. "What are the actual words a prospect uses?"
+2. "Which stage does this typically appear at?"
+3. "What's the best rep response?"
+4. "Category: switching cost / budget / timing / technical /
+   internal politics / product gap / trust / other?"
 
-### Learning Preferences
-- Prompt update frequency
-- Minimum iterations before auto-update
-- Failure pattern tracking preferences
+Prompt: "What kills the most deals? What comes up earliest?"
 
-## Output Files
+## Phase 4 — Feature gaps and value metrics
 
-The skill should write:
+Feature gaps — for each:
+- The feature description
+- Exact language prospects use when asking about it
+- Roadmap item or genuine gap?
 
-1. **config/client.yaml** - Stage IDs, pipeline config, thresholds
-2. **config/context.yaml** - Competitors, objections, feature gaps, value metrics
-3. **prompts/CLAUDE.md** - Customized generator system prompt
-4. **prompts/evaluator_rubric.md** - Customized evaluation criteria
+Value metrics:
+"What quantifiable outcomes do champions use for the business case?"
 
-## To Complete This File
+## Phase 5 — HubSpot stage configuration
 
-Replace this placeholder content with the actual SKILL.md from:
-- Course materials → skills → revops-client-context → SKILL.md
-- Or from the skill package source files
+Tell the user to run: python scripts/discover_stages.py
+Ask them to paste the output.
+
+Parse it and identify stages to EXCLUDE:
+- Meeting Set equivalents (too early)
+- Closed Won stages
+- Closed Lost stages
+- Renewal pipeline stages
+
+Show proposed exclusion list and confirm.
+
+## Phase 6 — Learning preferences
+
+1. "How many companies must show a pattern before it becomes
+   a permanent instruction? (default: 2)"
+2. "Any instructions that should never be auto-removed?"
+3. "Who reviews the learning PRs?"
+
+## Phase 7 — Generate output files
+
+Read all reference files in references/ before generating.
+Generate all four files fully populated — no placeholder text.
+
+config/context.yaml
+config/client.yaml
+prompts/CLAUDE.md
+prompts/evaluator_rubric.md
+
+Write them directly to the repo.
+
+Then show deployment checklist:
+□ python scripts/setup_supabase.py
+□ python scripts/etl_deals.py --mode active
+□ python scripts/etl_calls.py --fireflies data/... --apollo data/...
+□ Trigger nightly workflow manually to verify

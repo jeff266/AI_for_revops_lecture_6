@@ -1,53 +1,115 @@
-# RevOps Agent Setup Skill
+---
+name: revops-agent-setup
+description: >
+  Collect all credentials and API keys needed to deploy the RevOps
+  MEDDICC agent. Use this skill when setting up a new client deployment,
+  when credentials need to be rotated, or when someone asks how to
+  configure the agent environment. Walks through each credential one at
+  a time, explains where to find it, validates the format, and outputs
+  a ready-to-paste .env file for Railway and a GitHub Secrets checklist.
+  Triggers on: set up the agent, configure environment, I need credentials,
+  where do I get my API keys, Railway setup, GitHub Secrets setup.
+---
 
-**NOTE**: This is a placeholder for the SKILL.md content.
+# RevOps Agent Environment Setup
 
-The actual skill content should be pasted here from the course materials.
+Walk through each credential in sequence. Explain where to find each one
+before asking. Validate format before proceeding. At the end, output two
+artifacts: the Railway .env file and the GitHub Secrets checklist.
 
-This file should contain the complete credential interview script that:
-1. Collects HubSpot API key
-2. Collects Fireflies API key
-3. Collects Apollo.io API key
-4. Collects Anthropic API key
-5. Collects Supabase URL and service key
-6. Writes all credentials to .env file
-7. Prints GitHub Secrets checklist
+Never ask for multiple credentials at once. One at a time keeps errors
+out and makes it easy to pause and come back.
 
-When Claude Code reads this file via the root CLAUDE.md instructions,
-it will run this interview inline to set up a fresh fork of the repo.
+## Step 1 — Anthropic API Key
 
-## Expected Interview Flow
+Tell the user:
+"First we need your Anthropic API key. This is what powers Claude.
+To get it: platform.anthropic.com → API Keys → Create Key
+Format: starts with sk-ant-"
 
-The skill should:
-- Introduce itself and explain what it will collect
-- Ask for each credential one at a time
-- Validate format where possible (e.g., API keys start with expected prefixes)
-- Explain what each credential is used for
-- Write the complete .env file
-- Print final checklist of GitHub Secrets to add
+Ask: "Paste your Anthropic API key:"
+Validate: must start with sk-ant-
 
-## Output Format
+## Step 2 — Fireflies API Key
 
-The skill should write a .env file in this format:
+Tell the user:
+"Next is Fireflies — your call recording source.
+To get it: app.fireflies.ai → Integrations → API → copy the key"
 
-```
-# HubSpot Configuration
-HUBSPOT_API_KEY=pat-na1-...
+Ask: "Paste your Fireflies API key (or SKIP):"
 
-# Call Transcript Sources
-FIREFLIES_API_KEY=...
-APOLLO_API_KEY=...
+## Step 3 — Apollo API Key
 
-# AI Model
-ANTHROPIC_API_KEY=sk-ant-...
+Tell the user:
+"Apollo is used for video call recordings.
+Note: this is the meeting recorder, not the sales intelligence tool.
+To get it: your Apollo workspace → Settings → API"
 
-# Supabase
-SUPABASE_URL=https://...supabase.co
-SUPABASE_SERVICE_KEY=eyJhbGci...
-```
+Ask: "Paste your Apollo API key (or SKIP):"
 
-## To Complete This File
+## Step 4 — HubSpot Private App Token
 
-Replace this placeholder content with the actual SKILL.md from:
-- Course materials → skills → revops-agent-setup → SKILL.md
-- Or from the skill package source files
+Tell the user:
+"HubSpot is your CRM. The agent reads active deals and writes
+MEDDICC scores back as deal properties.
+
+To get it:
+1. HubSpot → Settings → Integrations → Private Apps
+2. Required scopes: crm.objects.deals.read, crm.objects.deals.write,
+   crm.objects.contacts.read, crm.objects.companies.read,
+   timeline, timeline.read, timeline.write
+3. Copy the access token (starts with pat-na1-)
+
+Important: rotate this token if it was ever in a public repo."
+
+Ask: "Paste your HubSpot private app token:"
+Validate: should start with pat-
+
+## Step 5 — Supabase credentials
+
+Tell the user:
+"Supabase is the query database for the Slack agent.
+Go to: Supabase dashboard → your project → Settings → API
+You need two things: Project URL and service_role key (not anon)."
+
+Ask: "Paste your Supabase Project URL:"
+Validate: must start with https:// and end with .supabase.co
+
+Ask: "Paste your Supabase service_role key:"
+Validate: starts with eyJ
+
+## Step 6 — GitHub repository
+
+Ask: "Enter your GitHub repo (owner/repo-name):"
+Example: acme/AI_for_revops_lecture_6
+
+## Step 7 — Zapier catch hook URL
+
+Tell the user:
+"This is the Zap 2 catch hook URL — skip if not set up yet."
+
+Ask: "Paste your Zapier catch hook URL (or SKIP):"
+
+## Step 8 — Generate outputs
+
+Write a .env file to the repo root with all collected values.
+
+Then print the GitHub Secrets checklist:
+
+GitHub Secrets — Environment: Agent
+
+□ ANTHROPIC_API_KEY
+□ FIREFLIES_API_KEY     (blank if skipped)
+□ APOLLO_API_KEY        (blank if skipped)
+□ HUBSPOT_API_KEY
+□ SUPABASE_URL
+□ SUPABASE_SERVICE_KEY
+□ ZAP_RESPONSE_URL      (blank if skipped)
+
+Fastest way to add them:
+  gh secret set --env Agent --env-file .env
+
+Note: GITHUB_TOKEN and GITHUB_REPO are automatic — do not add them.
+
+Tell the user: "Credentials done. Now run the context onboarding:
+say 'start client onboarding'"
