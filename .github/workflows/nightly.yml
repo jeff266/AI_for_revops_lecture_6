@@ -55,7 +55,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install anthropic openai requests PyGithub
+          pip install -r requirements.txt
 
       # ETL step commented out - redundant with run_nightly.py delta fetching
       # The call cache is current. run_nightly.py handles delta fetching via
