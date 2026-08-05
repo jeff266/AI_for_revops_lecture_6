@@ -1,8 +1,0 @@
-{
-  "id": "2026-08-04_004",
-  "timestamp": "2026-08-04T05:44:42.238287",
-  "company": "TickPick",
-  "criterion_fired": "Champion - Partial (5/10)",
-  "was_appropriate": true,
-  "suggested_change": "When behavioral data (rapport, engagement quality) is present but not decisive, document it as 'incremental signal' rather than ignoring; flag if pattern shows momentum stall despite small-talk frequency"
-}

@@ -1,8 +1,0 @@
-{
-  "id": "2026-08-04_001",
-  "timestamp": "2026-08-04T05:22:30.391601",
-  "company": "Oda",
-  "criterion_fired": "Criterion #1 (Complete Coverage)",
-  "was_appropriate": true,
-  "suggested_change": "Refine to: 'Analysis must be based on a recent call summary for the correct company. If call data is absent or mismatched, request correct data rather than proceeding with historical state alone.'"
-}
