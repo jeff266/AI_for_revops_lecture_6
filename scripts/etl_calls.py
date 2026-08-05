@@ -39,13 +39,7 @@ if REVOPS_METRICS.exists():
 # Add local adapters to path
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
-
-def slugify(company_name: str) -> str:
-    """Convert company name to slug (e.g., 'Acme Corp' -> 'acme-corp')."""
-    slug = company_name.lower()
-    slug = re.sub(r'[^a-z0-9]+', '-', slug)
-    slug = slug.strip('-')
-    return slug
+from utils import slugify
 
 
 def extract_company_from_title(title: str) -> str:

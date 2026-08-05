@@ -29,33 +29,10 @@ from context_builder import build_cumulative_meddicc
 from meddicc_agent import run_agent
 from github_memory import get_memory_manager
 from token_tracker import TokenTracker
+from utils import slugify
 
 # Repo root for config files
 REPO_ROOT = Path(__file__).parent.parent
-
-
-def slugify(name: str) -> str:
-    """Convert company name to slug (e.g., 'Skyscanner + GrowthBook' -> 'skyscanner')."""
-    if not name:
-        return ''
-
-    # Split on " - " first to isolate company from session descriptors
-    parts = re.split(r'\s*[-–—]\s+', name, maxsplit=1)
-    company_part = parts[0]
-
-    # Remove GrowthBook references
-    company_part = re.sub(r'growthbook', '', company_part, flags=re.IGNORECASE)
-    # Remove connectors
-    company_part = re.sub(r'[+<>&/,]', ' ', company_part)
-    # Remove filler words
-    company_part = re.sub(
-        r'\b(and|the|with|vs|versus|for|at|in|of)\b',
-        '', company_part, flags=re.IGNORECASE)
-    # Clean and lowercase
-    company_part = re.sub(r'\s+', ' ', company_part).strip().lower()
-    company_part = re.sub(r'[^a-z0-9\s]', '', company_part)
-    slug = company_part.replace(' ', '_').strip('_')
-    return slug if len(slug) >= 3 else ''
 
 
 def get_calls_for_company(company_name: str, since_date, memory) -> tuple:
