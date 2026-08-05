@@ -520,6 +520,28 @@ def main():
     # Save results
     save_call_caches(calls_by_company, output_dir)
 
+    # Write to Supabase if configured
+    if os.getenv('SUPABASE_URL'):
+        print(f"\n📤 Writing to Supabase...")
+        try:
+            import sys
+            sys.path.insert(0, str(repo_root / 'scripts'))
+            from supabase_client import SupabaseWriter
+            sb = SupabaseWriter()
+            total = 0
+            for slug, data in calls_by_company.items():
+                calls = data.get('calls', [])
+                if calls:
+                    for c in calls:
+                        c['company_slug'] = slug
+                    n = sb.bulk_upsert_calls(calls, data['company'])
+                    total += n
+            print(f"  ✓ Supabase: {total} calls upserted")
+        except Exception as e:
+            print(f"  ⚠️  Supabase write failed: {e}")
+    else:
+        print(f"\n  ⏭️  SUPABASE_URL not set — skipping Supabase write")
+
     # Summary
     elapsed = (datetime.now() - start_time).total_seconds()
     total_calls = sum(len(c["calls"]) for c in calls_by_company.values())
