@@ -44,6 +44,26 @@ After that the agent runs every night at 2am UTC automatically.
 
 ---
 
+## Call intelligence platforms
+
+The agent supports two call recording platforms:
+
+**Fireflies** (default) — Fireflies.ai call transcripts
+- Most common for SMB/mid-market
+- Simple API key authentication
+- Set `call_tools.primary: "fireflies"` in config/client.yaml
+
+**Gong** — Gong.io enterprise call intelligence
+- Enterprise standard for larger sales teams
+- Provides richer structured data (topics, action items, talk time)
+- Requires Access Key + Access Key Secret
+- Set `call_tools.primary: "gong"` in config/client.yaml
+
+Claude Code will automatically detect your choice during setup
+and collect the right credentials.
+
+---
+
 ## What runs nightly
 
 ```
