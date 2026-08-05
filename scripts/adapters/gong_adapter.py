@@ -244,19 +244,7 @@ class GongAdapter:
         speakers = call.get('speakers', [])
         total_duration_secs = call.get('duration', 0)
 
-        # Build speaker time map (speakers[].id maps to parties[].id, not speakerId)
-        speaker_time = {s.get('id', ''): s.get('talkTime', 0) for s in speakers}
-
-        talk_time_lines = []
-        for party in parties:
-            name = party.get('name', 'Unknown')
-            affiliation = party.get('affiliation', 'Unknown')
-            party_id = party.get('id', '')  # Match on party.id, not speakerId
-            secs = speaker_time.get(party_id, 0)
-            pct = (secs / total_duration_secs * 100) if total_duration_secs else 0
-            talk_time_lines.append(
-                f'  {name} ({affiliation}): {pct:.0f}% ({secs:.0f}s)'
-            )
+        talk_time_lines = self._format_talk_time(parties, speakers, total_duration_secs)
 
         # Build formatted summary
         sections = [
@@ -280,6 +268,56 @@ class GongAdapter:
             sections.extend(talk_time_lines)
 
         return '\n'.join(sections)
+
+    def _format_talk_time(self, parties: List[Dict], speakers: List[Dict],
+                          total_duration_secs: int) -> List[str]:
+        """
+        Format talk time for each party, handling multiple ID mapping strategies.
+
+        External participants may not appear in speakers array or use different
+        ID formats. Try multiple fields: speakerId, id, userId.
+
+        Args:
+            parties: List of party dicts from Gong API
+            speakers: List of speaker dicts with talkTime
+            total_duration_secs: Total call duration in seconds
+
+        Returns:
+            List of formatted talk time strings
+        """
+        # Build lookup by multiple ID fields
+        speaker_time = {}
+        for s in speakers:
+            talk_time = s.get('talkTime', 0)
+            speaker_time[s.get('id', '')] = talk_time
+            speaker_time[s.get('userId', '')] = talk_time
+
+        lines = []
+        total_accounted = sum(speaker_time.values())
+
+        for p in parties:
+            # Try multiple ID fields to find matching speaker
+            secs = (speaker_time.get(p.get('speakerId', ''), 0) or
+                    speaker_time.get(p.get('id', ''), 0) or
+                    speaker_time.get(p.get('userId', ''), 0))
+
+            if total_duration_secs > 0:
+                pct = (secs / total_duration_secs * 100)
+            else:
+                pct = 0
+
+            name = p.get('name', 'Unknown')
+            affil = p.get('affiliation', '?')
+            title = p.get('title', '')
+            label = f"{name} ({title})" if title else name
+            lines.append(f"  {label} [{affil}]: {pct:.0f}% ({secs:.0f}s)")
+
+        # Add untracked time if significant
+        unaccounted = total_duration_secs - total_accounted
+        if unaccounted > 30:
+            lines.append(f"  [Untracked]: {unaccounted:.0f}s")
+
+        return lines if lines else ["Talk time unavailable"]
 
     def get_transcript(self, call_id: str) -> str:
         """
