@@ -6,7 +6,7 @@
 # ORGANIZATION INFO
 # ============================================================================
 organization:
-  name: "GrowthBook"
+  name: "YOUR_ORGANIZATION_NAME"
   crm: "HubSpot"
   sales_methodology: "MEDDICC"  # Options: MEDDICC, MEDDPICC, MEDDIC
 
@@ -26,7 +26,7 @@ pipelines:
   # Common: renewal pipelines, partner pipelines, marketing pipelines
   excluded:
     - name: "Renewal Pipeline"
-      id: "866608541"
+      id: "YOUR_RENEWAL_PIPELINE_ID"
     # Add more pipelines here as needed
     # - name: "Partner Pipeline"
     #   id: "987654321"
@@ -41,27 +41,27 @@ excluded_stages:
   # Early stages (pre-discovery)
   meeting_set:
     - name: "Meeting Set"
-      id: "79653122"
+      id: "YOUR_MEETING_SET_STAGE_ID"
     - name: "Appointment Scheduled"
       id: "appointmentscheduled"
 
   # Disqualified deals
   disqualified:
     - name: "Disqualified"
-      id: "68509551"
+      id: "YOUR_DISQUALIFIED_STAGE_ID"
 
   # Closed deals (excluded in active mode, included in history mode)
   closed_won:
     - name: "Closed Won"
       id: "closedwon"
     - name: "Renewal Closed Won"
-      id: "1297321623"
+      id: "YOUR_RENEWAL_CLOSED_WON_ID"
 
   closed_lost:
     - name: "Closed Lost"
       id: "closedlost"
     - name: "Renewal Closed Lost"
-      id: "1297321624"
+      id: "YOUR_RENEWAL_CLOSED_LOST_ID"
 
 # ============================================================================
 # STAGE PROGRESSION REQUIREMENTS
