@@ -18,31 +18,47 @@ def slugify(name: str) -> str:
         'Scale AI' -> 'scale-ai'
         'Notion Labs Inc' -> 'notion-labs-inc'
         'Skyscanner + GrowthBook' -> 'skyscanner'
+        'GrowthBook <> ClickHouse' -> 'clickhouse'
     """
     if not name:
         return ''
 
-    # Split on session descriptors before the dash
-    parts = re.split(r'\s*[-–—]\s+', name, maxsplit=1)
-    company_part = parts[0]
+    # Get vendor name from config
+    vendor = 'growthbook'  # Default
+    try:
+        import yaml
+        from pathlib import Path
+        config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
+        if config_path.exists():
+            config = yaml.safe_load(open(config_path))
+            org_name = config.get('organization', {}).get('name', '')
+            if org_name and 'YOUR_' not in org_name:
+                vendor = org_name.lower()
+    except Exception:
+        pass  # Use default if config fails
 
-    # Remove vendor name
-    company_part = re.sub(r'growthbook', '', company_part, flags=re.IGNORECASE)
+    # First: check if name contains vendor with connectors (vendor-first or vendor-last)
+    # Split on connector symbols AND dashes to get all parts
+    parts = re.split(r'\s*[-–—<>&+/]\s*|\s+and\s+', name, flags=re.IGNORECASE)
 
-    # Remove connectors
-    company_part = re.sub(r'[+<>&/,]', ' ', company_part)
+    # Remove the vendor/internal company name and empty parts
+    company_parts = [
+        p.strip() for p in parts
+        if p.strip() and vendor not in p.lower()
+    ]
 
-    # Remove filler words
-    company_part = re.sub(
-        r'\b(and|the|with|vs|versus|for|at|in|of)\b',
-        '', company_part, flags=re.IGNORECASE
-    )
+    # Use first non-vendor part, or first part if all contain vendor
+    if company_parts:
+        name = company_parts[0]
+    else:
+        name = parts[0] if parts else name
 
-    # Clean and lowercase
-    company_part = re.sub(r'\s+', ' ', company_part).strip().lower()
-    company_part = re.sub(r'[^a-z0-9\s]', '', company_part)
+    # Clean - remove filler words and session descriptors
+    name = re.sub(
+        r'\b(and|the|with|vs|versus|for|at|in|of|call|meeting|onsite|demo|kickoff|discovery|scoping)\b',
+        '', name, flags=re.IGNORECASE)
+    name = re.sub(r'\s+', ' ', name).strip().lower()
+    name = re.sub(r'[^a-z0-9\s]', '', name)
 
-    # Use hyphens (matches existing 905 cache files)
-    slug = company_part.replace(' ', '-').strip('-')
-
+    slug = name.replace(' ', '-').strip('-')
     return slug if len(slug) >= 3 else ''

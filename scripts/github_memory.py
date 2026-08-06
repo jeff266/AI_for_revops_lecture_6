@@ -353,10 +353,13 @@ class GitHubMemory:
                 print(f"   ⚠️  Error loading cache {slug}.json: {e}")
                 return None
 
-        # Fuzzy match: prefix matching only (NOT substring)
+        # Fuzzy match: prefix matching with vendor-first reversal
         matching_files = [
             f for f in self.calls_dir.glob("*.json")
-            if f.stem.startswith(slug + '-') or f.stem == slug
+            if f.stem == slug
+            or f.stem.startswith(slug + '-')
+            or f.stem == f'growthbook-{slug}'
+            or f.stem.startswith(f'growthbook-{slug}-')
         ]
 
         if len(matching_files) == 1:
@@ -378,10 +381,13 @@ class GitHubMemory:
 
     def save_call_cache(self, slug: str, cache_data: dict):
         """Save call cache for a company slug with fuzzy prefix matching."""
-        # Check for existing file with prefix match
+        # Check for existing file with prefix match (vendor-first reversal)
         matching_files = [
             f for f in self.calls_dir.glob("*.json")
-            if f.stem.startswith(slug + '-') or f.stem == slug
+            if f.stem == slug
+            or f.stem.startswith(slug + '-')
+            or f.stem == f'growthbook-{slug}'
+            or f.stem.startswith(f'growthbook-{slug}-')
         ]
 
         if len(matching_files) == 1:
