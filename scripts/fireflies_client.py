@@ -191,6 +191,23 @@ class FirefliesClient:
 
         return all_matches[:max_results]
 
+    def get_meeting_attendees(self, transcript_id: str) -> list:
+        """Fetch meeting_attendees for a specific transcript by ID."""
+        query = """
+        query Transcript($transcriptId: String!) {
+            transcript(id: $transcriptId) {
+                meeting_attendees {
+                    displayName
+                    email
+                    name
+                }
+            }
+        }
+        """
+        result = self._query(query, {"transcriptId": transcript_id})
+        transcript = result.get("data", {}).get("transcript") or {}
+        return transcript.get("meeting_attendees") or []
+
     def format_summary_for_meddicc(self, transcript: dict) -> str:
         """Format a transcript summary for MEDDICC analysis."""
         title = transcript.get('title', 'Untitled')
