@@ -162,19 +162,21 @@ def fetch_call_intelligence_incremental(since_date: datetime, calls_by_company: 
         return
 
     # Load internal domains from config for participant filtering
-    internal_domains = ['growthbook.io']  # Default
+    internal_domains = []  # Template default - no hardcoded domains
     try:
         config_path = REPO_ROOT / 'config' / 'client.yaml'
         if config_path.exists():
             with open(config_path) as f:
                 config = yaml.safe_load(f)
                 org_config = config.get('organization', {})
-                # Look for domain or email_domain field
-                domain = org_config.get('domain') or org_config.get('email_domain')
-                if domain:
-                    internal_domains = [domain]
+                # Read from internal_domains list
+                domains = org_config.get('internal_domains', [])
+                if domains and isinstance(domains, list):
+                    # Filter out placeholder values
+                    internal_domains = [d for d in domains
+                                       if d and 'YOUR_' not in str(d)]
     except Exception:
-        pass  # Use default if config load fails
+        pass  # Use empty list if config load fails
 
     platform_name = "Gong" if adapter_type == "GongAdapter" else "Fireflies"
     print(f"\n🎙️  Fetching new {platform_name} calls since {since_date.strftime('%Y-%m-%d')}")

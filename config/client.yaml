@@ -9,6 +9,11 @@ organization:
   name: "YOUR_ORGANIZATION_NAME"
   crm: "HubSpot"
   sales_methodology: "MEDDICC"  # Options: MEDDICC, MEDDPICC, MEDDIC
+  internal_domains:
+    - "YOUR_COMPANY_DOMAIN.com"
+    # Your reps' email domain — used to filter out
+    # internal attendees from participant matching
+    # Example: growthbook.io, acme.com
 
 # ============================================================================
 # HUBSPOT PIPELINE CONFIGURATION
