@@ -247,6 +247,90 @@ industries:
   #     - "High cost of errors in production"
 
 # ============================================================================
+# DISCOVERY QUESTIONS & OPPORTUNITY SIGNALS
+# ============================================================================
+# GrowthBook-specific questions that qualify deal strength
+# Used to detect strong vs weak opportunities in call transcripts
+
+discovery_signals:
+  # Key discovery questions to ask on first calls
+  qualification_questions:
+    - question: "How many teams are running experiments at the same time?"
+      why_it_matters: "One team = Pro conversation. Multiple teams = Enterprise only"
+      strong_answer_pattern: "Multiple teams|2+ teams|several teams"
+      weak_answer_pattern: "Just one team|single team"
+
+    - question: "Where does your data live today, and is there a mandate to keep it in your warehouse?"
+      why_it_matters: "Warehouse-first architecture is a core differentiator"
+      strong_answer_pattern: "Snowflake|BigQuery|Databricks|warehouse mandate|data stays in warehouse"
+      weak_answer_pattern: "don't know|no warehouse|send data out"
+
+    - question: "What's driving the evaluation right now? Are you on a contract renewal cycle?"
+      why_it_matters: "Active pain or contract renewal = urgency and budget allocated"
+      strong_answer_pattern: "contract up|renewal|vendor issues|pricing problems|switching from"
+      weak_answer_pattern: "just exploring|no timeline|researching"
+
+    - question: "Who else needs to be involved in a decision like this?"
+      why_it_matters: "Maps decision process and identifies economic buyer"
+      strong_answer_pattern: "names specific people|CFO|VP|CTO|director"
+      weak_answer_pattern: "not sure|just me|we'll figure it out"
+
+  # Strong opportunity signals (high win probability)
+  strong_signals:
+    - signal: "Multiple teams running experiments simultaneously"
+      component: "identified_pain"
+      why_strong: "Experiment Exclusion Groups become a hard requirement at scale"
+      evidence_keywords: ["multiple teams", "exclusion groups", "collision", "overlap"]
+
+    - signal: "SSO policy or 50+ users"
+      component: "decision_criteria"
+      why_strong: "Enterprise requirement, indicates large organization"
+      evidence_keywords: ["SSO", "Okta", "Azure", "SAML", "50 users", "100 users"]
+
+    - signal: "Compliance or audit log requirements"
+      component: "decision_criteria"
+      why_strong: "Enterprise security requirement, often blockers without it"
+      evidence_keywords: ["SOC 2", "HIPAA", "compliance", "audit log", "audit trail"]
+
+    - signal: "Pain around per-event pricing with current vendor"
+      component: "competition"
+      why_strong: "Active dissatisfaction with incumbent, budget already allocated"
+      evidence_keywords: ["Statsig pricing", "Optimizely cost", "Amplitude Experiment", "per-event", "usage pricing"]
+
+    - signal: "Warehouse-first mandate or active data migration"
+      component: "metrics"
+      why_strong: "Aligns with GrowthBook's core architecture advantage"
+      evidence_keywords: ["Snowflake migration", "BigQuery", "Databricks", "data warehouse", "warehouse-native"]
+
+    - signal: "Frustration with metric definitions outside experiment tool"
+      component: "identified_pain"
+      why_strong: "Specific product differentiator for GrowthBook"
+      evidence_keywords: ["metrics disconnect", "separate analytics", "definition drift", "metric consistency"]
+
+    - signal: "Champion who can name the economic buyer and has air cover for POC"
+      component: "champion"
+      why_strong: "Internal advocate with executive access and budget authority"
+      evidence_keywords: ["talked to [CFO/CTO]", "I can get approval", "budget owner", "POC approved"]
+
+  # Weak opportunity signals (low win probability)
+  weak_signals:
+    - signal: "Single team, small user base"
+      why_weak: "Pro tier conversation, low ARR potential"
+      evidence_keywords: ["one team", "small group", "few users", "pilot team"]
+
+    - signal: "No warehouse strategy or vendor lock-in concerns"
+      why_weak: "Missing core differentiator, commoditized feature comparison"
+      evidence_keywords: ["no warehouse", "vendor hosted", "don't care where data lives"]
+
+    - signal: "Just exploring, no active pain or timeline"
+      why_weak: "Low urgency, no budget, likely 6+ month sales cycle"
+      evidence_keywords: ["just looking", "researching", "no rush", "future project"]
+
+    - signal: "Can't name decision maker or budget owner"
+      why_weak: "No champion, no access to economic buyer"
+      evidence_keywords: ["not sure who decides", "need to find out", "don't know budget"]
+
+# ============================================================================
 # CHAMPION INDICATORS
 # ============================================================================
 # Signals that someone might be (or become) a champion
