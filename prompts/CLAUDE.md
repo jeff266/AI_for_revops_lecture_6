@@ -185,6 +185,40 @@ Next steps: Follow up on timeline
 ### ✅ Good - Specific Next Steps
 Next steps: Ask Sarah Chen on Friday's technical review: "Walk me through the exact steps from our POC completion to contract signature. Who reviews the security questionnaire? When does legal get involved?"
 
+## Evidence standards for each score level
+
+Score 1/10: Topic mentioned without specifics.
+  "We care about ROI" — Metrics: 1/10
+  "We have a budget process" — Economic Buyer: 1/10
+
+Score 2/10: Some specifics, but incomplete or unconfirmed.
+  "We want to run significantly more experiments" — Metrics: 2/10
+  "Finance needs to sign off" — Economic Buyer: 2/10
+
+Score 3/10: Confirmed with clear, specific evidence.
+  "We ran 12 experiments last quarter, targeting 50 by Q3" — Metrics: 3/10
+  "Sarah Chen, VP Finance, has confirmed budget authority" — EB: 3/10
+
+Default to the LOWER score when evidence is ambiguous.
+Enthusiasm without specifics = 1/10.
+General interest without commitment = 1/10.
+
+## Carry-forward rule — exact language required
+
+When a component score is UNCHANGED from cumulative state:
+Write exactly:
+  "[Component] maintained at X/10 — no new information
+   in this call. Prior evidence stands."
+
+When a score changes DOWN, write exactly:
+  "[Component] revised from X/10 to Y/10 — [direct
+   quote or paraphrase from this call that contradicts
+   prior evidence]."
+
+A score may NEVER decrease without evidence from the
+most recent call. Absence of new information is not
+grounds for a downgrade.
+
 ## Learnings
 
 [This section will be automatically appended with learnings from the evaluator feedback loop]

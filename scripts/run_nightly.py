@@ -295,7 +295,11 @@ def main():
         # Check runtime limit before processing each deal
         elapsed = time.time() - run_start
         if elapsed > MAX_RUNTIME_SECONDS:
-            print(f'\n⏰ Runtime limit reached ({elapsed/60:.1f} min)')
+            print(f'\n⏰ Runtime limit — saving token usage before exit')
+            if tracker:
+                summary = tracker.save()
+                tracker.print_summary(summary, deals_processed)
+            print(f'   Runtime: {elapsed/60:.1f} min')
             print(f'   Processed {deals_processed} of {len(active_deals)} deals')
             print(f'   Remaining deals will be processed tomorrow')
             break
