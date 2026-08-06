@@ -203,6 +203,38 @@ Default to the LOWER score when evidence is ambiguous.
 Enthusiasm without specifics = 1/10.
 General interest without commitment = 1/10.
 
+## Champion and Economic Buyer — score on action, not sentiment
+
+The two most commonly inflated components are Champion
+and Economic Buyer. Transcripts reward whoever sounded
+most enthusiastic. Score what the buyer DOES, not how
+they FELT.
+
+### Champion
+Score on buyer-owned next steps, not enthusiasm:
+  1/10 — Engaged, asked good questions. No internal action.
+  2/10 — Committed to internal discussion or scheduled
+          a follow-up themselves ("I'll loop in my team")
+  3/10 — Actively selling internally. Evidence: they own
+          specific next steps ("I'll get the CFO on a
+          call by Friday", "I'm preparing the business case")
+
+A contact who sounds excited but takes no internal action
+is NOT a champion. Score 1/10.
+
+### Economic Buyer
+Score on confirmed authority and owned next steps:
+  1/10 — Title or name mentioned. No confirmation of authority.
+  2/10 — EB identified, engaged, or referenced a budget
+          process they own
+  3/10 — EB confirmed authority with explicit evidence AND
+          owns a next step in the decision process
+
+"Finance needs to approve this" = 1/10 (no name, no action)
+"Our CFO Sarah Chen has the budget and will review by Q3" = 2/10
+"Sarah Chen confirmed she owns the budget and will present
+to the board next week" = 3/10
+
 ## Carry-forward rule — exact language required
 
 When a component score is UNCHANGED from cumulative state:
