@@ -6,6 +6,7 @@ Supports both local file operations and GitHub API for Actions environment.
 """
 import os
 import json
+import threading
 from pathlib import Path
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
@@ -46,6 +47,10 @@ class GitHubMemory:
         self.meta_dir.mkdir(parents=True, exist_ok=True)
         self.calls_dir.mkdir(parents=True, exist_ok=True)
         self.deals_dir.mkdir(parents=True, exist_ok=True)
+
+        # Thread safety locks for parallel processing
+        self._save_lock = threading.Lock()
+        self._counter_lock = threading.Lock()
 
     # ─────────────────────────────────────────────────────────────────
     # Counter Management
@@ -100,40 +105,42 @@ class GitHubMemory:
     # ─────────────────────────────────────────────────────────────────
 
     def save_learning(self, learning: dict) -> Path:
-        """Save a learning entry."""
-        # Generate ID
-        today = datetime.now().strftime('%Y-%m-%d')
-        counter = self.get_counter()
-        run_num = counter["runs_since_rewrite"] + 1
-        learning_id = f"{today}_{run_num:03d}"
+        """Save a learning entry. Thread-safe for parallel processing."""
+        with self._save_lock:
+            # Generate ID
+            today = datetime.now().strftime('%Y-%m-%d')
+            counter = self.get_counter()
+            run_num = counter["runs_since_rewrite"] + 1
+            learning_id = f"{today}_{run_num:03d}"
 
-        learning["id"] = learning_id
-        learning["timestamp"] = datetime.now().isoformat()
+            learning["id"] = learning_id
+            learning["timestamp"] = datetime.now().isoformat()
 
-        # Write file
-        learning_path = self.learnings_dir / f"{learning_id}.json"
-        with open(learning_path, 'w') as f:
-            json.dump(learning, f, indent=2)
+            # Write file
+            learning_path = self.learnings_dir / f"{learning_id}.json"
+            with open(learning_path, 'w') as f:
+                json.dump(learning, f, indent=2)
 
-        return learning_path
+            return learning_path
 
     def save_issue(self, issue: dict) -> Path:
-        """Save an issue entry (bugs, prompt_issue outcomes)."""
-        # Generate ID (same format as learning entries)
-        today = datetime.now().strftime('%Y-%m-%d')
-        counter = self.get_counter()
-        run_num = counter["runs_since_rewrite"] + 1
-        issue_id = f"{today}_{run_num:03d}"
+        """Save an issue entry (bugs, prompt_issue outcomes). Thread-safe for parallel processing."""
+        with self._save_lock:
+            # Generate ID (same format as learning entries)
+            today = datetime.now().strftime('%Y-%m-%d')
+            counter = self.get_counter()
+            run_num = counter["runs_since_rewrite"] + 1
+            issue_id = f"{today}_{run_num:03d}"
 
-        issue["id"] = issue_id
-        issue["timestamp"] = datetime.now().isoformat()
+            issue["id"] = issue_id
+            issue["timestamp"] = datetime.now().isoformat()
 
-        # Write file to issues directory
-        issue_path = self.issues_dir / f"{issue_id}.json"
-        with open(issue_path, 'w') as f:
-            json.dump(issue, f, indent=2)
+            # Write file to issues directory
+            issue_path = self.issues_dir / f"{issue_id}.json"
+            with open(issue_path, 'w') as f:
+                json.dump(issue, f, indent=2)
 
-        return issue_path
+            return issue_path
 
     def save_rubric_observation(self, observation: dict,
                                 company: str) -> Optional[Path]:
@@ -141,26 +148,28 @@ class GitHubMemory:
         Save a rubric observation only when criterion_fired is not null
         and suggested_change is not null.
         Observations with no criterion fired are not worth storing.
+        Thread-safe for parallel processing.
         """
         if not observation.get('criterion_fired'):
             return None
         if not observation.get('suggested_change'):
             return None
 
-        today = datetime.now().strftime('%Y-%m-%d')
-        existing = list(self.rubric_obs_dir.glob(f'{today}_*.json'))
-        idx = str(len(existing) + 1).zfill(3)
-        path = self.rubric_obs_dir / f'{today}_{idx}.json'
+        with self._save_lock:
+            today = datetime.now().strftime('%Y-%m-%d')
+            existing = list(self.rubric_obs_dir.glob(f'{today}_*.json'))
+            idx = str(len(existing) + 1).zfill(3)
+            path = self.rubric_obs_dir / f'{today}_{idx}.json'
 
-        data = {
-            'id': f'{today}_{idx}',
-            'timestamp': datetime.now().isoformat(),
-            'company': company,
-            **observation
-        }
-        with open(path, 'w') as f:
-            json.dump(data, f, indent=2)
-        return path
+            data = {
+                'id': f'{today}_{idx}',
+                'timestamp': datetime.now().isoformat(),
+                'company': company,
+                **observation
+            }
+            with open(path, 'w') as f:
+                json.dump(data, f, indent=2)
+            return path
 
     def get_todays_learnings(self) -> List[dict]:
         """Get all learning entries from today."""
