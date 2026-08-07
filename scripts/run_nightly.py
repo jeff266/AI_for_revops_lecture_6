@@ -17,9 +17,11 @@ import json
 import re
 import time
 import yaml
+import threading
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Dict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import agent components
 from fireflies_client import get_fireflies_client
@@ -279,49 +281,53 @@ def main():
                 'updated': datetime.now().isoformat()
             }
 
-    # Process each deal
-    print(f"\n4. Processing deals...")
-    learnings = []
-    errors = []
-    skipped = 0
-    skipped_no_calls = 0
-    skipped_no_new_calls = 0
-    skipped_short = 0
-    deals_processed = 0
-    analyses_written = 0
-    learnings_written = 0
+    # Parallel processing configuration
+    MAX_WORKERS = 3  # Conservative — respects Anthropic rate limits
+    estimated_minutes = (len(active_deals) / MAX_WORKERS) * 0.63  # ~38 seconds per deal
+    print(f"\n4. Processing deals in parallel ({MAX_WORKERS} workers)...")
+    print(f"   Estimated runtime: {estimated_minutes:.0f} min")
 
-    for i, deal in enumerate(active_deals, 1):
-        # Check runtime limit before processing each deal
+    # Filter deals by runtime limit BEFORE parallel processing
+    active_deals_to_run = []
+    for deal in active_deals:
         elapsed = time.time() - run_start
         if elapsed > MAX_RUNTIME_SECONDS:
-            print(f'\n⏰ Runtime limit — saving token usage before exit')
+            print(f'\n⏰ Runtime limit — will process {len(active_deals_to_run)} of {len(active_deals)} deals')
             if tracker:
                 summary = tracker.save()
-                tracker.print_summary(summary, deals_processed)
-            print(f'   Runtime: {elapsed/60:.1f} min')
-            print(f'   Processed {deals_processed} of {len(active_deals)} deals')
-            print(f'   Remaining deals will be processed tomorrow')
+                tracker.print_summary(summary, len(active_deals_to_run))
             break
+        active_deals_to_run.append(deal)
 
+    # Define per-deal processing function (uses closure for shared resources)
+    def process_deal(deal):
+        """Process one deal - returns result dict, no shared state modified."""
         deal_id = deal.get('deal_id')
         deal_name = deal.get('deal_name', 'Unknown')
         company_name = deal.get('company_name', '')
         slug = deal.get('company_slug', '')
 
-        print(f"\n[{i}/{len(active_deals)}] {deal_name}")
-
         try:
             # Company info already in index - no API call needed
             if not company_name:
-                print(f"   ⏭️  {deal_name}: skipped — no company name")
-                skipped += 1
-                continue
+                return {
+                    'status': 'skipped',
+                    'reason': 'no_company_name',
+                    'company': company_name or deal_name,
+                    'passed': False,
+                    'iterations': 0,
+                    'learning': None
+                }
 
             if not slug:
-                print(f"   ⏭️  {company_name}: skipped — invalid company slug")
-                skipped += 1
-                continue
+                return {
+                    'status': 'skipped',
+                    'reason': 'invalid_slug',
+                    'company': company_name,
+                    'passed': False,
+                    'iterations': 0,
+                    'learning': None
+                }
 
             # Build deal_context dict for agent
             deal_context = {
@@ -341,8 +347,7 @@ def main():
                 'contacts': []
             }
 
-            # Use last analysis date from deal index to skip
-            # deals with no new calls since last analysis
+            # Use last analysis date from deal index
             since_date_str = deal.get('last_analyzed')
             since_date = None
             if since_date_str:
@@ -352,16 +357,13 @@ def main():
                     since_date = None
 
             # Get calls from cache only (ETL handles freshness)
-            print(f"   Searching for calls: {company_name}")
             fireflies_calls, apollo_calls, new_count = get_calls_for_company(
                 company_name, since_date, memory
             )
 
             total_calls = len(fireflies_calls) + len(apollo_calls)
-            print(f"   Found {total_calls} calls ({len(fireflies_calls)} Fireflies, {len(apollo_calls)} Apollo)")
 
-            # Combine and sort by date so all_summaries[-1] is
-            # the most recent call regardless of source
+            # Combine and sort by date
             all_calls_sorted = sorted(
                 fireflies_calls + apollo_calls,
                 key=lambda c: c.get('date', ''),
@@ -387,27 +389,30 @@ def main():
 
             # GUARD 1: No calls found for company
             if len(all_summaries) == 0:
-                if since_date:
-                    print(f"   ⏭️  {company_name}: skipped — no new calls since {since_date.strftime('%Y-%m-%d')}")
-                    skipped_no_new_calls += 1
-                else:
-                    print(f"   ⏭️  {company_name}: skipped — no calls found")
-                    skipped_no_calls += 1
-                skipped += 1
-                continue
+                return {
+                    'status': 'skipped',
+                    'reason': 'no_new_calls' if since_date else 'no_calls',
+                    'company': company_name,
+                    'passed': False,
+                    'iterations': 0,
+                    'learning': None
+                }
 
             # GUARD 4: Most recent call already analyzed
             if since_date:
                 last_call_date = get_most_recent_call_date(fireflies_calls, apollo_calls)
                 if last_call_date and last_call_date <= since_date:
-                    print(f"   ⏭️  {company_name}: skipped — most recent call ({last_call_date.strftime('%Y-%m-%d')}) already analyzed")
-                    skipped_no_new_calls += 1
-                    skipped += 1
-                    continue
+                    return {
+                        'status': 'skipped',
+                        'reason': 'already_analyzed',
+                        'company': company_name,
+                        'passed': False,
+                        'iterations': 0,
+                        'learning': None
+                    }
 
-            # GUARD 2: Only one call exists (nothing to contextualize)
+            # GUARD 2: Only one call exists
             if len(all_summaries) == 1:
-                print(f"   ⚡ {company_name}: single call — skipping context builder, analyzing directly")
                 recent_call_summary = all_summaries[0]
                 historical_summaries = []
                 cumulative_state = {
@@ -426,32 +431,27 @@ def main():
                 historical_summaries = all_summaries[:-1]
 
                 # Build cumulative MEDDICC state
-                print(f"   Building cumulative state from {len(historical_summaries)} historical calls...")
                 cumulative_state = build_cumulative_meddicc(historical_summaries, company_name, tracker)
 
             # GUARD 3: Most recent call is below minimum signal threshold
             if len(recent_call_summary.strip()) < 100:
-                print(f"   ⏭️  {company_name}: most recent call summary too short ({len(recent_call_summary)} chars) — skipping")
-                skipped_short += 1
-                skipped += 1
-                continue
+                return {
+                    'status': 'skipped',
+                    'reason': 'too_short',
+                    'company': company_name,
+                    'passed': False,
+                    'iterations': 0,
+                    'learning': None
+                }
 
             # Run MEDDICC agent
-            print(f"   Running MEDDICC generator/evaluator loop...")
-            try:
-                result = run_agent(
-                    call_summary=recent_call_summary,
-                    cumulative_state=cumulative_state,
-                    deal_context=deal_context,
-                    tracker=tracker,
-                    company=company_name
-                )
-            except Exception as agent_error:
-                print(f"   ❌ run_agent FAILED: {type(agent_error).__name__}: {agent_error}")
-                import traceback
-                traceback.print_exc()
-                skipped += 1
-                continue
+            result = run_agent(
+                call_summary=recent_call_summary,
+                cumulative_state=cumulative_state,
+                deal_context=deal_context,
+                tracker=tracker,
+                company=company_name
+            )
 
             # Extract results
             analysis = result['draft']
@@ -461,11 +461,7 @@ def main():
             outcome = result['outcome']
             root_cause = result['root_cause']
 
-            print(f"   {'✓' if passed else '✗'} Analysis {'passed' if passed else 'failed'} after {iterations} iteration(s)")
-            print(f"   Reflection: outcome={outcome}, root_cause={root_cause}")
-
             # Save analysis to file
-            print(f"   Saving analysis to file...")
             output_dir = Path(__file__).parent.parent / "output"
             output_dir.mkdir(exist_ok=True)
 
@@ -482,27 +478,21 @@ def main():
                 f.write("---\n\n")
                 f.write(analysis)
 
-            print(f"   ✓ Saved to {output_file}")
-            analyses_written += 1
-
-            # Update last_analyzed timestamp in deal index
+            # Update last_analyzed timestamp in deal
             deal['last_analyzed'] = datetime.now().isoformat()
 
             # Update HubSpot deal note
-            print(f"   Updating HubSpot deal note...")
             try:
                 hubspot.upsert_meddicc_note(
                     deal_id=deal_id,
                     analysis_content=analysis,
                     calls_count=total_calls
                 )
-                print(f"   ✓ HubSpot note updated")
             except Exception as hub_error:
-                print(f"   ⚠️  HubSpot note failed (analysis saved to file): {hub_error}")
+                pass  # Silent fail - analysis already saved to file
 
             # Write analysis to Supabase
             if sb_writer:
-                print(f"   Writing to Supabase...")
                 try:
                     from hubspot_deals import HubSpotDealsClient
                     hs = HubSpotDealsClient.__new__(HubSpotDealsClient)
@@ -514,11 +504,10 @@ def main():
                         scores=scores,
                         output_file=str(output_file.name)
                     )
-                    print(f"   ✓ Supabase analysis written")
                 except Exception as e:
-                    print(f"   ⚠️  Supabase analysis write failed: {e}")
+                    pass  # Silent fail
 
-            # Build learning entry with reflection outcome
+            # Build learning entry
             learning = {
                 "company": company_name,
                 "deal_id": deal_id,
@@ -541,36 +530,81 @@ def main():
 
             # Conditional save based on outcome
             if outcome in ["observation", "candidate"]:
-                learnings.append(learning)
                 memory.save_learning(learning)
-                learnings_written += 1
-                print(f"   ✓ Learning saved (outcome={outcome})")
             elif outcome in ["bug", "prompt_issue"]:
                 memory.save_issue(learning)
-                learnings_written += 1
-                print(f"   ✓ Issue saved (outcome={outcome})")
-            else:
-                # no_learning - skip save entirely
-                print(f"   ✓ No learning generated (outcome={outcome})")
 
-            # Save rubric observation (runs regardless of outcome)
+            # Save rubric observation
             rubric_obs = result.get('rubric_observation', {})
             if rubric_obs:
-                saved = memory.save_rubric_observation(
-                    rubric_obs, company_name)
-                if saved:
-                    print(f"   ✓ Rubric observation saved")
+                memory.save_rubric_observation(rubric_obs, company_name)
 
-            deals_processed += 1
-            print(f"   ✓ Complete")
+            # Return success
+            return {
+                'status': 'analyzed',
+                'reason': None,
+                'company': company_name,
+                'passed': passed,
+                'iterations': iterations,
+                'learning': learning if outcome in ["observation", "candidate", "bug", "prompt_issue"] else None
+            }
 
         except Exception as e:
-            print(f"   ✗ Error: {e}")
-            errors.append({
-                "deal_id": deal_id,
-                "deal_name": deal_name,
-                "error": str(e)
-            })
+            import traceback
+            traceback.print_exc()
+            return {
+                'status': 'failed',
+                'reason': str(e),
+                'company': company_name,
+                'passed': False,
+                'iterations': 0,
+                'learning': None
+            }
+
+    # Execute deals in parallel
+    results = []
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {
+            executor.submit(process_deal, deal): deal
+            for deal in active_deals_to_run
+        }
+
+        for i, future in enumerate(as_completed(futures), 1):
+            try:
+                result = future.result()
+                results.append(result)
+                status_emoji = '✓' if result['status'] == 'analyzed' else '⏭️' if result['status'] == 'skipped' else '✗'
+                print(f"[{i}/{len(active_deals_to_run)}] {status_emoji} {result['company']}")
+            except Exception as e:
+                deal = futures[future]
+                company = deal.get('company_name', '?')
+                print(f"[{i}/{len(active_deals_to_run)}] ✗ {company}: {e}")
+                results.append({
+                    'status': 'failed',
+                    'reason': str(e),
+                    'company': company,
+                    'passed': False,
+                    'iterations': 0,
+                    'learning': None
+                })
+
+    # Aggregate counters in main thread (no concurrency)
+    deals_processed       = sum(1 for r in results if r['status'] == 'analyzed')
+    skipped               = sum(1 for r in results if r['status'] == 'skipped')
+    analyses_written      = sum(1 for r in results if r['status'] == 'analyzed' and r.get('passed'))
+    learnings_written     = sum(1 for r in results if r.get('learning') is not None)
+
+    # Collect learnings
+    learnings = [r['learning'] for r in results if r.get('learning') is not None]
+
+    # Count skip reasons
+    skipped_no_calls      = sum(1 for r in results if r.get('reason') == 'no_calls')
+    skipped_no_new_calls  = sum(1 for r in results if r.get('reason') in ['no_new_calls', 'already_analyzed'])
+    skipped_short         = sum(1 for r in results if r.get('reason') == 'too_short')
+
+    # Errors (failed status)
+    errors = [{'company': r['company'], 'error': r['reason']}
+              for r in results if r['status'] == 'failed']
 
     # Update counter
     print("\n5. Updating run counter...")
