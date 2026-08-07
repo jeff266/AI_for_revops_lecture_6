@@ -434,7 +434,7 @@ def main():
                 cumulative_state = build_cumulative_meddicc(historical_summaries, company_name, tracker)
 
             # GUARD 3: Most recent call is below minimum signal threshold
-            if len(recent_call_summary.strip()) < 100:
+            if not recent_call_summary or len(recent_call_summary.strip()) < 100:
                 return {
                     'status': 'skipped',
                     'reason': 'too_short',
@@ -816,6 +816,11 @@ Common reasons for iteration failures:
 
     updated_claude_md = current_claude_md + learnings_section
 
+    # Defensive check: ensure content is not None
+    if not updated_claude_md or not diff_content:
+        print(f"   ⚠️  Skipping PR creation: missing content (claude_md={bool(updated_claude_md)}, diff={bool(diff_content)})")
+        return
+
     # Create PR (if in GitHub Actions)
     branch_name = f"agent/learnings-{today}"
     title = f"chore: MEDDICC agent learnings — {today}"
@@ -918,6 +923,11 @@ Next full rewrite scheduled for: {(datetime.now() + timedelta(days=30)).strftime
 
     # Save version snapshot of OLD version
     memory.save_version(current_claude_md)
+
+    # Defensive check: ensure content is not None
+    if not new_claude_md or not changelog:
+        print(f"   ⚠️  Skipping PR creation: missing content (new_claude_md={bool(new_claude_md)}, changelog={bool(changelog)})")
+        return
 
     # Create PR
     branch_name = f"agent/rewrite-{today}"
