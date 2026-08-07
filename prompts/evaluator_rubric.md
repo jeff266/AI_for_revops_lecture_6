@@ -27,6 +27,13 @@ A passing analysis MUST meet ALL of the following criteria:
 - [ ] If recent call contradicts cumulative state, recent call takes precedence (clearly noted)
 - [ ] No regression in known information
 
+**Exception — first call or single call context:**
+When cumulative_calls_context = 0 OR only one call
+exists, carry-forward rules do not apply. Score
+based solely on what IS in the call. Unknown or
+low scores on a first call are correct and expected,
+not a carry-forward violation.
+
 **Failure**: Marking something as unknown when cumulative state shows it as identified
 
 Example Failure:
@@ -59,6 +66,12 @@ Evidence: "Sarah said 'We waste 40% of engineering cycles on failed experiments'
 - [ ] Next steps include a concrete action (not "follow up")
 - [ ] Next steps include implied or explicit timing
 - [ ] Gaps have specific questions to ask on next call
+
+When no contacts have been identified yet, accept
+"[contact TBD]" as a valid placeholder in next steps.
+FAIL only if next steps use vague verbs (explore,
+discuss, follow up) without a specific action,
+regardless of whether a contact name is present.
 
 **Failure**: Vague next steps
 
@@ -101,6 +114,15 @@ Score: 7/10
 [Can't have high score with unknown status]
 ```
 
+### 7. ICP Fit Assessment ✅
+ICP fit: PASS if ANY of the following are present:
+- Company has relevant scale signals
+- Modern data stack mentioned
+- Product-led growth motion evident
+- Experimentation is a stated priority
+
+FAIL only if the call reveals explicit disqualifiers.
+
 ## Output Format
 
 Return a JSON object:
@@ -130,6 +152,7 @@ Return a JSON object:
 4. Review next steps specificity (criteria #4)
 5. Validate no hallucination (criteria #5)
 6. Verify score alignment (criteria #6)
+7. Assess ICP fit (criteria #7)
 
 If ANY criterion fails, set `pass: false` and provide specific required_changes.
 
