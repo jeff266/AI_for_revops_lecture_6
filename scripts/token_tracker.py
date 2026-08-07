@@ -1,6 +1,7 @@
 from pathlib import Path
 from datetime import datetime
 import json
+import threading
 
 class TokenTracker:
 
@@ -16,6 +17,7 @@ class TokenTracker:
         self.today = datetime.now().strftime('%Y-%m-%d')
         self.month = datetime.now().strftime('%Y-%m')
         self.session_records = []
+        self._lock = threading.Lock()  # Thread-safety for concurrent recording
 
     def record(self, response, model: str, role: str,
                company: str = '') -> float:
@@ -23,20 +25,22 @@ class TokenTracker:
         Pass the raw Anthropic response object.
         Extracts usage, calculates cost, appends to session records.
         Returns cost in USD.
+        Thread-safe for concurrent calls.
         """
         input_tokens  = response.usage.input_tokens
         output_tokens = response.usage.output_tokens
         cost = self._cost(model, input_tokens, output_tokens)
 
-        self.session_records.append({
-            'timestamp': datetime.now().isoformat(),
-            'model':         model,
-            'role':          role,
-            'company':       company,
-            'input_tokens':  input_tokens,
-            'output_tokens': output_tokens,
-            'cost_usd':      cost,
-        })
+        with self._lock:
+            self.session_records.append({
+                'timestamp': datetime.now().isoformat(),
+                'model':         model,
+                'role':          role,
+                'company':       company,
+                'input_tokens':  input_tokens,
+                'output_tokens': output_tokens,
+                'cost_usd':      cost,
+            })
         return cost
 
     def _cost(self, model: str, inp: int, out: int) -> float:
