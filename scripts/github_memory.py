@@ -270,6 +270,21 @@ class GitHubMemory:
             print("⚠️  Missing GITHUB_TOKEN or GITHUB_REPO")
             return None
 
+        # Defensive checks for None values
+        if not branch_name or not title or body is None:
+            print(f"⚠️  Invalid PR parameters: branch_name={bool(branch_name)}, title={bool(title)}, body={body is not None}")
+            return None
+
+        if not files_to_commit:
+            print("⚠️  No files to commit")
+            return None
+
+        # Check for None values in file content
+        for file_path, content in files_to_commit.items():
+            if content is None:
+                print(f"⚠️  File '{file_path}' has None content")
+                return None
+
         try:
             import requests
 
