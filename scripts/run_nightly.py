@@ -606,17 +606,25 @@ def main():
     errors = [{'company': r['company'], 'error': r['reason']}
               for r in results if r['status'] == 'failed']
 
-    # Update counter
-    print("\n5. Updating run counter...")
-    counter = memory.update_counter(is_full_rewrite=is_full_rewrite)
+    try:
+        # Update counter
+        print("\n5. Updating run counter...")
+        counter = memory.update_counter(is_full_rewrite=is_full_rewrite)
 
-    # Generate PR
-    print("\n6. Creating GitHub PR...")
+        # Generate PR
+        print("\n6. Creating GitHub PR...")
 
-    if is_full_rewrite:
-        create_full_rewrite_pr(memory, learnings)
-    else:
-        create_incremental_pr(memory, learnings)
+        if is_full_rewrite:
+            create_full_rewrite_pr(memory, learnings)
+        else:
+            create_incremental_pr(memory, learnings)
+    finally:
+        # Always save token usage even if PR creation fails
+        if tracker:
+            print("\n7. Saving token usage...")
+            usage_summary = tracker.save()
+            tracker.print_summary(usage_summary,
+                                  deals_processed=len(learnings))
 
     # Print guard summary
     print(f"\n=== RUN SUMMARY ===")
@@ -626,12 +634,6 @@ def main():
     print(f"  Skipped (too short):{skipped_short}")
     print(f"  Analyses written:   {analyses_written}")
     print(f"  Learning entries:   {learnings_written}")
-
-    # Save and print token usage
-    print("\n7. Saving token usage...")
-    usage_summary = tracker.save()
-    tracker.print_summary(usage_summary,
-                          deals_processed=len(learnings))
 
     # Print summary
     print("\n" + "=" * 80)
@@ -710,9 +712,10 @@ def create_incremental_pr(memory: any, learnings: List[dict]) -> None:
         if learning.get('outcome') not in ['observation', 'candidate']:
             continue
 
-        instruction = learning.get('proposed_instruction', '').strip()
-        if not instruction:
+        proposed = learning.get('proposed_instruction')
+        if not proposed or not proposed.strip():
             continue
+        instruction = proposed.strip()
 
         # Check if already in CLAUDE.md
         if instruction in current_claude_md:
