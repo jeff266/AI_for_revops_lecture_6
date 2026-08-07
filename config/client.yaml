@@ -9,6 +9,7 @@ organization:
   name: "YOUR_ORGANIZATION_NAME"
   crm: "HubSpot"
   sales_methodology: "MEDDICC"  # Options: MEDDICC, MEDDPICC, MEDDIC
+  timezone: "America/New_York"  # Sales team timezone (e.g. America/Los_Angeles, Europe/London)
   internal_domains:
     - "YOUR_COMPANY_DOMAIN.com"
     # Your reps' email domain — used to filter out

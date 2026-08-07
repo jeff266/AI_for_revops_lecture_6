@@ -27,6 +27,9 @@ Ask one at a time:
 3. "What is your primary differentiator?"
 4. "What qualification methodology do you use?"
 5. "What does a good first call look like for your best reps?"
+6. "What timezone is your sales team primarily in?
+   (e.g. America/New_York, America/Los_Angeles, Europe/London)
+   This ensures HubSpot dates match your team's calendar."
 
 Push back on vague answers. Ask for real examples.
 
