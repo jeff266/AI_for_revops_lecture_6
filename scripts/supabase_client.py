@@ -13,6 +13,8 @@ import re
 from datetime import datetime, date
 from typing import Optional
 
+from utils import get_methodology
+
 FEATURE_GAP_KEYWORDS = [
     'feature gap', 'missing feature', "doesn't support", "can't do",
     'limitation', 'not able to', 'workaround', 'not supported',
@@ -111,37 +113,56 @@ class SupabaseWriter:
     def insert_analysis(self, deal_id: str, company_name: str,
                         result: dict, scores: dict,
                         output_file: str) -> None:
-        """Insert a new MEDDICC analysis row."""
-        self.client.table('analyses').insert({
+        """
+        Insert a new analysis row.
+
+        The seven legacy MEDDICC score columns are populated only when
+        the configured methodology is MEDDICC (else None). The
+        methodology-agnostic component_scores JSONB is always written and
+        holds every per-component score.
+        """
+        is_meddicc = get_methodology() == 'MEDDICC'
+
+        def legacy(key):
+            """Legacy MEDDICC column — only populated for MEDDICC."""
+            return _safe_int(scores.get(key)) if is_meddicc else None
+
+        component_scores = scores.get('component_scores') or {
+            k: v for k, v in scores.items()
+            if k.endswith('_score') and k != 'overall_score'
+        }
+
+        row = {
             'deal_id':                 str(deal_id),
             'company_name':            company_name,
             'overall_score':           _safe_int(
                                            scores.get('overall_score')),
             'status':                  scores.get('status', 'red'),
-            'metrics_score':           _safe_int(
-                                           scores.get('metrics_score')),
-            'economic_buyer_score':    _safe_int(
-                                           scores.get(
-                                               'economic_buyer_score')),
-            'decision_criteria_score': _safe_int(
-                                           scores.get(
-                                               'decision_criteria_score')),
-            'decision_process_score':  _safe_int(
-                                           scores.get(
-                                               'decision_process_score')),
-            'pain_score':              _safe_int(
-                                           scores.get('pain_score')),
-            'champion_score':          _safe_int(
-                                           scores.get('champion_score')),
-            'competition_score':       _safe_int(
-                                           scores.get(
-                                               'competition_score')),
+            'metrics_score':           legacy('metrics_score'),
+            'economic_buyer_score':    legacy('economic_buyer_score'),
+            'decision_criteria_score': legacy('decision_criteria_score'),
+            'decision_process_score':  legacy('decision_process_score'),
+            'pain_score':              legacy('pain_score'),
+            'champion_score':          legacy('champion_score'),
+            'competition_score':       legacy('competition_score'),
             'iterations':              result.get('iterations', 1),
             'passed':                  result.get('passed', False),
             'full_analysis_text':      result.get('draft', ''),
             'summary':                 scores.get('summary', ''),
             'output_file':             output_file,
-        }).execute()
+            'component_scores':        component_scores,
+        }
+
+        try:
+            self.client.table('analyses').insert(row).execute()
+        except Exception as e:
+            # Retry without component_scores if the column doesn't exist yet
+            if 'component_scores' in str(e):
+                row.pop('component_scores', None)
+                self.client.table('analyses').insert(row).execute()
+                print("⚠️  component_scores column missing — run migration 003")
+            else:
+                raise
 
     def bulk_upsert_calls(self, calls: list,
                           company_name: str) -> int:

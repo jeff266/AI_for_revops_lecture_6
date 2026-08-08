@@ -21,6 +21,7 @@ Create the next numbered file, e.g. `003_add_feature_flags.sql`, commit it to th
 |---|---|
 | `001_initial_schema.sql` | Core tables: deals, analyses, calls, objections, rep_performance |
 | `002_add_deal_history.sql` | Add deal_status, create_date, days_to_close for closed deal tracking |
+| `003_add_component_scores.sql` | Add methodology-agnostic `component_scores` JSONB (+ GIN index) to analyses |
 
 ## Getting your Supabase credentials
 
