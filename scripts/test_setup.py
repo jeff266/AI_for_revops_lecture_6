@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Diagnostic: Validates all credentials and API connections before first run
 """
 MEDDICC Agent Setup Validation
 
