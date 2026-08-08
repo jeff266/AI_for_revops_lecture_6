@@ -62,3 +62,46 @@ def slugify(name: str) -> str:
 
     slug = name.replace(' ', '-').strip('-')
     return slug if len(slug) >= 3 else ''
+
+
+METHODOLOGY_COMPONENTS = {
+    'MEDDICC': ['Metrics', 'Economic Buyer', 'Decision Criteria',
+                'Decision Process', 'Identified Pain',
+                'Champion', 'Competition'],
+    'MEDDPIC': ['Metrics', 'Economic Buyer', 'Decision Criteria',
+                'Decision Process', 'Paper Process',
+                'Identified Pain', 'Champion', 'Competition'],
+    'SPICED':  ['Situation', 'Pain', 'Impact',
+                'Critical Event', 'Decision'],
+    'BANT':    ['Budget', 'Authority', 'Need', 'Timeline'],
+}
+
+
+def load_client_config() -> dict:
+    import yaml
+    from pathlib import Path
+    p = Path(__file__).parent.parent / 'config' / 'client.yaml'
+    if not p.exists():
+        return {}
+    with open(p) as f:
+        return yaml.safe_load(f) or {}
+
+
+def get_methodology(config: dict = None) -> str:
+    if config is None:
+        config = load_client_config()
+    m = (config.get('methodology')
+         or config.get('organization', {}).get('sales_methodology')
+         or 'MEDDICC')
+    return str(m).upper()
+
+
+def get_components(config: dict = None) -> list:
+    return METHODOLOGY_COMPONENTS.get(
+        get_methodology(config), METHODOLOGY_COMPONENTS['MEDDICC'])
+
+
+def component_key(name: str) -> str:
+    """'Economic Buyer' -> 'economic_buyer';
+       'Identified Pain' -> 'identified_pain'"""
+    return name.lower().replace(' ', '_')

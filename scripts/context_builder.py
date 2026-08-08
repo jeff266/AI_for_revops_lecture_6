@@ -8,59 +8,85 @@ import json
 from typing import List, Dict
 from anthropic import Anthropic
 
+from utils import get_methodology, get_components, component_key
 
-def build_cumulative_meddicc(call_summaries: List[str], company: str, tracker=None) -> dict:
+
+# Per-component descriptions. MEDDICC components keep their original
+# descriptions; the remaining methodologies use methodology-agnostic
+# one-liners so the same builder works for SPICED, BANT, and MEDDPIC.
+COMPONENT_DESCRIPTIONS = {
+    # MEDDICC (descriptions preserved from the original prompt)
+    'Metrics': 'Quantifiable business outcomes the buyer cares about',
+    'Economic Buyer': 'Person with budget authority and final say',
+    'Decision Criteria': 'Technical and business requirements for selecting a solution',
+    'Decision Process': 'Steps, timeline, stakeholders involved in making the decision',
+    'Identified Pain': 'Specific business problem or challenge being solved',
+    'Champion': 'Internal advocate who will sell on your behalf',
+    'Competition': 'Other solutions being evaluated',
+    # Non-MEDDICC components
+    'Situation': 'Current state, tools, and context of the buyer',
+    'Pain': 'Specific business problem or challenge being solved',
+    'Impact': 'Business consequences of solving or not solving the pain',
+    'Critical Event': 'Deadline or forcing event driving a decision',
+    'Decision': 'How and when the buyer will decide',
+    'Budget': 'Funds identified and approved for this purchase',
+    'Authority': 'Person or group with power to approve',
+    'Need': 'The concrete problem the buyer must solve',
+    'Timeline': 'When the buyer intends to implement',
+    'Paper Process': 'Legal, security, procurement steps to signature',
+}
+
+
+def build_cumulative_state(call_summaries: List[str], company: str, tracker=None) -> dict:
     """
-    Build cumulative MEDDICC state from all historical call summaries.
+    Build cumulative qualification state from all historical call summaries.
 
     Args:
         call_summaries: List of formatted call summaries (excluding most recent)
         company: Company name
 
     Returns:
-        Structured MEDDICC state object with status, evidence, and scores
+        Structured qualification state object with status, evidence, and scores
     """
     # Use Claude Haiku for cost-effective structured extraction
     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
+    # Resolve the configured methodology and its components
+    methodology = get_methodology()
+    components = get_components()
+
+    # Build the component bullet list and JSON skeleton dynamically
+    component_bullets = "\n".join(
+        f"- {c}: {COMPONENT_DESCRIPTIONS.get(c, '')}" for c in components
+    )
+    component_json = ",\n".join(
+        f'    "{component_key(c)}": {{ "status": "identified|partial|unknown", '
+        f'"evidence": "Specific quote or detail from calls", "score": 1-10 }}'
+        for c in components
+    )
+
     # Build prompt
-    system_prompt = """You are a MEDDICC sales methodology analyzer.
+    system_prompt = f"""You are a {methodology} sales methodology analyzer.
 
-Your job is to review ALL historical call summaries for a company and extract the cumulative MEDDICC state across all conversations.
+Your job is to review ALL historical call summaries for a company and extract the cumulative {methodology} state across all conversations.
 
-For each MEDDICC component, determine:
+For each {methodology} component, determine:
 1. **Status**: identified (confirmed with specific evidence), partial (mentioned but not confirmed), or unknown (not discussed)
 2. **Evidence**: Direct quote or paraphrase from the calls that supports the status
 3. **Score**: 1-10 rating based on clarity and strength of evidence
 
-MEDDICC Components:
-- Metrics: Quantifiable business outcomes the buyer cares about
-- Economic Buyer: Person with budget authority and final say
-- Decision Criteria: Technical and business requirements for selecting a solution
-- Decision Process: Steps, timeline, stakeholders involved in making the decision
-- Identified Pain: Specific business problem or challenge being solved
-- Champion: Internal advocate who will sell on your behalf
-- Competition: Other solutions being evaluated
+{methodology} Components:
+{component_bullets}
 
 Output a JSON object with this exact structure:
-{
+{{
   "company": "CompanyName",
   "calls_reviewed": <number>,
-  "meddicc_state": {
-    "metrics": {
-      "status": "identified|partial|unknown",
-      "evidence": "Specific quote or detail from calls",
-      "score": 1-10
-    },
-    "economic_buyer": { ... },
-    "decision_criteria": { ... },
-    "decision_process": { ... },
-    "identified_pain": { ... },
-    "champion": { ... },
-    "competition": { ... }
-  },
+  "qualification_state": {{
+{component_json}
+  }},
   "key_context": "2-3 sentence summary of the overall deal context and stage"
-}
+}}
 
 CRITICAL RULES:
 1. Evidence MUST come from the call summaries - no inference
@@ -122,17 +148,22 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
             end = content.rfind('}') + 1
             content = content[start:end]
 
-        meddicc_state = json.loads(content)
+        result = json.loads(content)
 
-        # Validate structure
-        if "meddicc_state" not in meddicc_state:
-            raise ValueError("Missing meddicc_state key")
+        # Accept either the new "qualification_state" key or the legacy
+        # "meddicc_state" key, then normalize so both point to the same object.
+        state = result.get("qualification_state") or result.get("meddicc_state")
+        if state is None:
+            raise ValueError("Missing qualification_state key")
+
+        result["qualification_state"] = state
+        result["meddicc_state"] = state  # same object reference for migration
 
         # Add metadata
-        meddicc_state["company"] = company
-        meddicc_state["calls_reviewed"] = len(call_summaries)
+        result["company"] = company
+        result["calls_reviewed"] = len(call_summaries)
 
-        return meddicc_state
+        return result
 
     except json.JSONDecodeError as e:
         print(f"⚠️  Context builder parse error — running without cumulative context: {e}")
@@ -141,17 +172,22 @@ CRITICAL: Return ONLY a valid JSON object. Do NOT include any explanatory text, 
         # Return minimal state that treats recent call in isolation
         # Empty evidence allows generator to analyze recent call independently
         # rather than treating "Parse error" as confirmed unknown status
+        unknown_state = {
+            component_key(c): {"status": "unknown", "evidence": "", "score": 0}
+            for c in components
+        }
         return {
             "company": company,
             "calls_reviewed": 0,  # Signal no cumulative context available
-            "meddicc_state": {
-                k: {"status": "unknown", "evidence": "", "score": 0}
-                for k in ["metrics", "economic_buyer", "decision_criteria",
-                         "decision_process", "identified_pain", "champion", "competition"]
-            },
+            "qualification_state": unknown_state,
+            "meddicc_state": unknown_state,  # same object reference for migration
             "key_context": "Cumulative context unavailable — analyze recent call independently.",
             "error": str(e)
         }
+
+
+# Deprecation alias — old callers importing build_cumulative_meddicc keep working.
+build_cumulative_meddicc = build_cumulative_state
 
 
 if __name__ == "__main__":
@@ -189,18 +225,18 @@ SDK quality, visual editor, experimentation, SSO, SAML, budget approval
     print("Testing context builder...")
     print(f"Processing {len(test_summaries)} call summaries")
 
-    result = build_cumulative_meddicc(test_summaries, "Acme Corp")
+    result = build_cumulative_state(test_summaries, "Acme Corp")
 
     print("\n" + "=" * 80)
-    print("CUMULATIVE MEDDICC STATE")
+    print("CUMULATIVE QUALIFICATION STATE")
     print("=" * 80)
     print(json.dumps(result, indent=2))
     print("=" * 80)
 
     # Validate structure
-    assert "meddicc_state" in result
-    assert "metrics" in result["meddicc_state"]
-    assert "economic_buyer" in result["meddicc_state"]
+    assert "qualification_state" in result
+    assert "metrics" in result["qualification_state"]
+    assert "economic_buyer" in result["qualification_state"]
     assert result["calls_reviewed"] == 2
 
     print("\n✓ Context builder test passed")

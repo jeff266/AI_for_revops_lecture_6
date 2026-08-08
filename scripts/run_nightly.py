@@ -25,11 +25,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # Import agent components
 from adapters import get_call_adapter
 from hubspot_deals import get_hubspot_deals_client
-from context_builder import build_cumulative_meddicc
+from context_builder import build_cumulative_state
 from meddicc_agent import run_agent
 from github_memory import get_memory_manager
 from token_tracker import TokenTracker
-from utils import slugify
+from utils import slugify, get_methodology, get_components, component_key
 
 # Repo root for config files
 REPO_ROOT = Path(__file__).parent.parent
@@ -123,7 +123,7 @@ def main():
     MAX_RUNTIME_SECONDS = 90 * 60  # 90 minutes, leaves buffer before GitHub Actions timeout
 
     print("=" * 80)
-    print("MEDDICC AGENT NIGHTLY RUN")
+    print(f"{get_methodology()} AGENT NIGHTLY RUN")
     print(f"Started: {datetime.now().isoformat()}")
     print(f"Max runtime: {MAX_RUNTIME_SECONDS / 60:.0f} minutes")
     print("=" * 80)
@@ -401,14 +401,15 @@ def main():
             if len(all_summaries) == 1:
                 recent_call_summary = all_summaries[0]
                 historical_summaries = []
+                unknown_state = {
+                    component_key(c): {"status": "unknown", "evidence": "", "score": 0}
+                    for c in get_components()
+                }
                 cumulative_state = {
                     "company": company_name,
                     "calls_reviewed": 0,
-                    "meddicc_state": {
-                        k: {"status": "unknown", "evidence": "", "score": 0}
-                        for k in ["metrics", "economic_buyer", "decision_criteria",
-                                 "decision_process", "identified_pain", "champion", "competition"]
-                    },
+                    "qualification_state": unknown_state,
+                    "meddicc_state": unknown_state,  # same object reference for migration
                     "key_context": "First call on record — no prior context."
                 }
             else:
@@ -416,8 +417,8 @@ def main():
                 recent_call_summary = all_summaries[-1]
                 historical_summaries = all_summaries[:-1]
 
-                # Build cumulative MEDDICC state
-                cumulative_state = build_cumulative_meddicc(historical_summaries, company_name, tracker)
+                # Build cumulative qualification state
+                cumulative_state = build_cumulative_state(historical_summaries, company_name, tracker)
 
             # GUARD 3: Most recent call is below minimum signal threshold
             if not recent_call_summary or len(recent_call_summary.strip()) < 100:
@@ -452,10 +453,10 @@ def main():
             output_dir.mkdir(exist_ok=True)
 
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            output_file = output_dir / f"meddicc_analysis_{deal_id}_{timestamp}.md"
+            output_file = output_dir / f"{get_methodology().lower()}_analysis_{deal_id}_{timestamp}.md"
 
             with open(output_file, 'w') as f:
-                f.write(f"# MEDDICC Analysis: {company_name}\n\n")
+                f.write(f"# {get_methodology()} Analysis: {company_name}\n\n")
                 f.write(f"**Deal ID:** {deal_id}\n")
                 f.write(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
                 f.write(f"**Calls Analyzed:** {total_calls}\n")

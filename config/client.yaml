@@ -16,6 +16,20 @@ organization:
     # internal attendees from participant matching
     # Example: growthbook.io, acme.com
 
+# ============================================================
+# METHODOLOGY & PROPERTY MAPPING (optional)
+# ============================================================
+# sales_methodology above drives which components are analyzed:
+#   MEDDICC (default) | MEDDPIC | SPICED | BANT
+# HubSpot property names default to <methodology>_* .
+# Override any of them here:
+# hubspot:
+#   properties:
+#     score: spiced_score
+#     status: spiced_status
+#     last_analyzed: spiced_last_analyzed
+#     summary: spiced_analysis_summary
+
 # ============================================================================
 # HUBSPOT PIPELINE CONFIGURATION
 # ============================================================================
