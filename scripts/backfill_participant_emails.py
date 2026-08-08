@@ -21,7 +21,7 @@ from datetime import datetime
 REPO_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
-from fireflies_client import get_fireflies_client
+from adapters import get_call_adapter
 from github_memory import get_memory_manager
 
 
@@ -139,8 +139,9 @@ def main():
 
     # Initialize clients
     print("\n2. Initializing Fireflies client...")
+    print("   Note: this backfill only applies to Fireflies call data.")
     try:
-        ff_client = get_fireflies_client()
+        ff_client = get_call_adapter('fireflies')
     except Exception as e:
         print(f"   ❌ Failed to initialize Fireflies client: {e}")
         return
