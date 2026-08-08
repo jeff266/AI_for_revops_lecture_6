@@ -1,0 +1,39 @@
+{
+  "company": "Sales <> Marketing",
+  "slug": "sales",
+  "last_etl_date": "2026-08-08T17:27:26.407502",
+  "calls": [
+    {
+      "id": "01KZ98QPKB29KXS4KRBERN4YWF",
+      "source": "fireflies",
+      "title": "Sales <> Marketing Sync",
+      "date": "2026-08-05",
+      "duration_minutes": 1,
+      "summary": "",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 13,
+      "keywords": "",
+      "action_items": "",
+      "participant_domains": [
+        "growthbook.io",
+        "newtongrowth.com"
+      ]
+    },
+    {
+      "id": "01KYWK57JQ2NCJ54M2V0A95D2A",
+      "source": "fireflies",
+      "title": "Sales <> Marketing Sync",
+      "date": "2026-08-05",
+      "duration_minutes": 35,
+      "summary": "The team is enhancing its event strategy with a global focus on customer engagement and lead generation, highlighted by an upcoming Philadelphia Inquirer webinar, a biweekly live demo launched by Logan, an international event in the Netherlands, and a New York dinner targeted at Statsig customers. These initiatives aim to showcase cross-department collaboration, attract prospects interested in organizational scaling, and strengthen relationships with dissatisfied Statsig users. Concurrently, competitive positioning efforts are ramping up against Statsig's weaknesses by revamping marketing content and launching outbound campaigns. Sales follow-up strategies reveal mixed progress with key prospects, and insights from customer feedback emphasize potential growth areas for Growth Book’s offerings.",
+      "organizer": "lyndsie@growthbook.io",
+      "participants": 13,
+      "keywords": "Growth Book, Statsig, Conversion Hotel, Philadelphia Inquirer webinar, competitive outreach, live group demo",
+      "action_items": "\n, *, *, L, y, n, d, s, i, e,  , B, e, r, e, n, s, *, *, \n, C, h, e, c, k,  , o, p, t, i, o, n, s,  , a, n, d,  , p, o, s, s, i, b, l, y,  , s, e, c, u, r, e,  , s, p, e, a, k, i, n, g,  , s, e, s, s, i, o, n,  , o, r,  , v, o, l, u, n, t, e, e, r,  , s, l, o, t, s,  , f, o, r,  , G, r, o, w, t, h,  , B, o, o, k,  , a, t,  , C, o, n, v, e, r, s, i, o, n,  , H, o, t, e, l, ;,  , f, o, l, l, o, w,  , u, p,  , w, i, t, h,  , D, a, n,  , a, n, d,  , C, h, r, i, s, t, i, a, n,  , o, n,  , p, r, o, g, r, e, s, s,  , w, i, t, h,  , h, i, g, h,  , i, n, t, e, n, t,  , p, r, o, s, p, e, c, t,  , f, o, l, l, o, w, -, u, p, s, ;,  , c, r, e, a, t, e,  , a, n, d,  , d, i, s, t, r, i, b, u, t, e,  , o, n, e, -, p, a, g, e, r, s,  , c, o, m, p, a, r, i, n, g,  , G, r, o, w, t, h,  , B, o, o, k,  , v, s,  , S, t, a, t, s, i, g,  , a, n, d,  , L, a, u, n, c, h, d, a, r, k, l, y, ;,  , c, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , m, a, r, k, e, t, i, n, g,  , o, p, e, r, a, t, i, o, n, s,  , a, g, e, n, c, y,  , o, n,  , d, a, t, a,  , c, l, e, a, n, u, p,  , a, n, d,  , l, e, a, d,  , s, c, o, r, i, n, g,  , (, 0, 6, :, 1, 5, ), \n, \n, *, *, R, y, a, n,  , M, c, G, u, r, k, *, *, \n, W, o, r, k,  , w, i, t, h,  , D, a, n,  , a, n, d,  , L, o, g, a, n,  , t, o,  , c, o, n, s, o, l, i, d, a, t, e,  , a, n, d,  , u, p, d, a, t, e,  , l, i, s, t, s,  , o, f,  , S, t, a, t, s, i, g,  , c, u, s, t, o, m, e, r, s, ,,  , i, d, e, n, t, i, f, y,  , t, h, o, s, e,  , i, n,  , N, e, w,  , Y, o, r, k,  , f, o, r,  , t, a, r, g, e, t, e, d,  , d, i, n, n, e, r,  , i, n, v, i, t, e, s, ;,  , c, o, o, r, d, i, n, a, t, e,  , a, g, g, r, e, s, s, i, v, e,  , o, u, t, b, o, u, n, d,  , c, a, m, p, a, i, g, n,  , t, a, r, g, e, t, i, n, g,  , S, t, a, t, s, i, g,  , c, u, s, t, o, m, e, r, s,  , i, n, c, l, u, d, i, n, g,  , L, i, n, k, e, d, I, n,  , o, u, t, r, e, a, c, h,  , a, n, d,  , a, d,  , c, o, p, y, ;,  , e, x, p, l, o, r, e,  , h, o, s, t, i, n, g,  , a,  , d, i, n, n, e, r,  , e, v, e, n, t,  , f, o, c, u, s, i, n, g,  , o, n,  , t, a, r, g, e, t, i, n, g,  , S, t, a, t, s, i, g,  , c, u, s, t, o, m, e, r, s,  , f, o, r,  , O, c, t, o, b, e, r,  , 1, 4, t, h,  , i, n,  , N, e, w,  , Y, o, r, k,  , (, 1, 2, :, 5, 6, ), \n, \n, *, *, J, a, k, e,  , H, e, i, e, r, *, *, \n, R, e, v, i, e, w,  , S, t, a, t, s, i, g,  , c, o, m, p, e, t, i, t, o, r,  , c, a, s, e,  , s, t, u, d, y,  , c, u, s, t, o, m, e, r, s,  , a, n, d,  , s, u, p, p, o, r, t,  , c, o, m, p, e, t, i, t, i, v, e,  , m, a, r, k, e, t, i, n, g,  , c, o, n, t, e, n, t, ;,  , a, s, s, i, s, t,  , i, n,  , b, u, i, l, d, i, n, g,  , m, a, r, k, e, t, i, n, g,  , c, o, l, l, a, t, e, r, a, l,  , a, n, d,  , m, e, s, s, a, g, i, n, g,  , f, o, r,  , G, r, o, w, t, h,  , B, o, o, k,  , v, s,  , S, t, a, t, s, i, g,  , (, 0, 9, :, 4, 1, ), \n, \n, *, *, A, s, h, l, e, y,  , S, t, i, r, r, u, p, *, *, \n, A, s, s, i, s, t,  , w, i, t, h,  , c, r, e, a, t, i, n, g,  , n, e, w,  , d, e, d, i, c, a, t, e, d,  , w, e, b, s, i, t, e,  , p, a, g, e, s,  , f, o, r,  , G, r, o, w, t, h,  , B, o, o, k,  , v, s,  , S, t, a, t, s, i, g,  , c, o, m, p, a, r, i, s, o, n, s, ;,  , s, h, a, r, e,  , r, e, c, o, r, d, i, n, g,  , a, n, d,  , n, o, t, e, s,  , f, r, o, m,  , t, e, c, h, n, i, c, a, l,  , c, a, l, l, s,  , w, i, t, h,  , T, w, i, t, c, h,  , r, e, g, a, r, d, i, n, g,  , c, o, m, p, e, t, i, t, o, r,  , E, P, O,  , l, i, m, i, t, a, t, i, o, n, s, ;,  , c, o, n, t, i, n, u, e,  , s, e, n, d, i, n, g,  , d, a, i, l, y,  , s, a, l, e, s,  , S, l, a, c, k,  , s, u, m, m, a, r, i, e, s,  , w, i, t, h,  , l, e, a, d,  , a, n, d,  , s, i, g, n, u, p,  , a, l, e, r, t, s, ;,  , s, u, p, p, o, r, t,  , s, e, g, m, e, n, t,  , c, r, e, a, t, i, o, n,  , f, o, r,  , s, i, t, e,  , v, i, s, i, t, o, r, s,  , f, r, o, m,  , c, o, m, p, e, t, i, t, o, r,  , m, i, g, r, a, t, i, o, n,  , p, a, g, e, s,  , t, o,  , e, n, h, a, n, c, e,  , i, n, t, e, n, t,  , s, i, g, n, a, l,  , t, r, a, c, k, i, n, g,  , (, 1, 0, :, 5, 2, ), \n, \n, *, *, C, h, r, i, s,  , N, e, w, t, o, n, *, *, \n, V, e, r, i, f, y,  , s, t, a, t, u, s,  , o, f,  , w, e, b, s, i, t, e,  , c, o, m, p, a, r, i, s, o, n,  , a, n, d,  , o, f, f, e, r,  , p, a, g, e, s,  , r, e, l, a, t, i, n, g,  , t, o,  , S, t, a, t, s, i, g, /, c, o, m, p, e, t, i, t, o, r,  , c, o, n, t, e, n, t, ;,  , a, s, s, i, s, t,  , i, n,  , c, o, n, f, i, r, m, i, n, g,  , t, e, c, h, n, i, c, a, l,  , i, n, t, e, g, r, a, t, i, o, n,  , o, f,  , i, n, t, e, n, t,  , s, i, g, n, a, l, s,  , f, r, o, m,  , a, d,  , a, g, e, n, c, y,  , c, a, m, p, a, i, g, n, s,  , i, n, t, o,  , R, i, o,  , (, 1, 1, :, 3, 6, ), \n, \n, *, *, J, a, k, e,  , S, t, a, n, g, l, *, *, \n, F, o, l, l, o, w,  , u, p,  , w, i, t, h,  , h, i, g, h,  , i, n, t, e, n, t,  , p, r, o, s, p, e, c, t, s,  , i, n, c, l, u, d, i, n, g,  , O, p, t, y, m,  , a, n, d,  , S, i, n, g, a, p, o, r, e,  , g, o, v, e, r, n, m, e, n, t, ;,  , e, n, g, a, g, e,  , w, i, t, h,  , l, e, a, d, s,  , w, h, o,  , p, r, e, f, e, r,  , g, r, o, u, p,  , d, e, m, o, s,  , b, e, f, o, r, e,  , s, a, l, e, s,  , c, o, n, v, e, r, s, a, t, i, o, n, s,  , (, 0, 7, :, 5, 6, ), \n, \n, *, *, S, c, o, t, t,  , K, e, l, l, e, r, *, *, \n, F, o, l, l, o, w,  , u, p,  , o, n,  , Z, a, l, a, n, d, o,  , o, p, p, o, r, t, u, n, i, t, y,  , a, n, d,  , a, s, s, i, s, t,  , i, n,  , c, a, p, t, u, r, i, n, g,  , c, o, m, p, e, t, i, t, o, r,  , d, i, s, s, a, t, i, s, f, a, c, t, i, o, n,  , i, n, s, i, g, h, t, s,  , (, 1, 9, :, 5, 2, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "newtongrowth.com"
+      ]
+    }
+  ]
+}

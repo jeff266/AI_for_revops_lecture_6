@@ -1,0 +1,23 @@
+{
+  "company": "Growthbook <> Rula",
+  "slug": "rula",
+  "last_etl_date": "2026-08-08T17:27:26.406668",
+  "calls": [
+    {
+      "id": "01KZ7NN85TA4RFX9D42SKK9HY3",
+      "source": "fireflies",
+      "title": "Growthbook <> Rula - POC Sync",
+      "date": "2026-08-05",
+      "duration_minutes": 32.90999984741211,
+      "summary": "The team is actively engaged in validating GrowthBook’s experiment analytics capabilities through a proof of concept (POC), aiming for adoption decisions within weeks. This involves a self-hosted solution for data privacy, allowing analysts to define business metrics directly from their data warehouse. Key features demonstrated include flexible experiment configurations, customizable SQL queries, and manual or scheduled data refreshes. Security considerations are paramount, with a focus on role-based access controls and a business associate agreement (BAA) for compliance with health data regulations. Upcoming features include enhanced analytics tools and AI capabilities, while immediate next steps involve pricing discussions and expanding user access.",
+      "organizer": "dan@growthbook.io",
+      "participants": 9,
+      "keywords": "GrowthBook, Experiment Analysis, Data Privacy, Self-Hosting, SQL Queries, Audit Logs",
+      "action_items": "\n, *, *, J, e, s, s, i, c, a,  , H, i, g, g, i, n, s, *, *, \n, C, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , t, e, a, m,  , t, o,  , r, e, s, o, l, v, e,  , t, h, e,  , G, r, o, w, t, h, B, o, o, k,  , e, n, t, e, r, p, r, i, s, e,  , l, i, c, e, n, s, e,  , k, e, y,  , i, n, v, a, l, i, d, i, t, y,  , (, 1, 0, :, 5, 0, ), \n, E, x, p, l, o, r, e,  , l, o, n, g, -, t, e, r, m,  , s, t, o, r, a, g, e,  , o, p, t, i, o, n, s,  , a, n, d,  , p, o, t, e, n, t, i, a, l,  , u, s, e,  , o, f,  , w, e, b, h, o, o, k,  , l, o, g, s,  , f, o, r,  , a, u, d, i, t,  , a, n, d,  , m, o, n, i, t, o, r, i, n, g,  , (, 2, 4, :, 1, 0, ), \n, \n, *, *, D, a, n,  , W, a, t, h, n, e, *, *, \n, I, n, v, e, s, t, i, g, a, t, e,  , a, n, d,  , f, i, x,  , t, h, e,  , G, r, o, w, t, h, B, o, o, k,  , l, i, c, e, n, s, e,  , k, e, y,  , i, s, s, u, e,  , (, 1, 1, :, 0, 1, ), \n, R, e, v, i, e, w,  , R, u, l, a, ’, s,  , B, A, A,  , a, n, d,  , c, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , l, e, g, a, l,  , f, o, r,  , a, p, p, r, o, v, a, l,  , a, n, d,  , c, o, u, n, t, e, r, -, s, i, g, n, i, n, g,  , (, 1, 8, :, 2, 0, ), \n, S, c, h, e, d, u, l, e,  , a,  , p, r, i, c, i, n, g,  , d, i, s, c, u, s, s, i, o, n,  , c, a, l, l,  , w, i, t, h,  , R, u, l, a,  , w, i, t, h, i, n,  , a,  , w, e, e, k,  , (, 3, 0, :, 4, 4, ), \n, \n, *, *, E, r, i, n,  , S, a, f, i, r, *, *, \n, P, u, s, h,  , f, o, r,  , l, e, g, a, l,  , r, e, v, i, e, w,  , o, f,  , B, A, A,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , t, o,  , e, n, s, u, r, e,  , p, r, o, p, e, r,  , p, r, i, v, a, c, y,  , c, o, m, p, l, i, a, n, t,  , a, g, r, e, e, m, e, n, t,  , i, s,  , i, n,  , p, l, a, c, e,  , (, 1, 8, :, 3, 1, ), \n, \n, *, *, L, o, g, a, n,  , B, a, t, e, s,  , a, n, d,  , J, e, s, s, i, c, a,  , H, i, g, g, i, n, s, *, *, \n, V, e, r, i, f, y,  , w, h, e, t, h, e, r,  , G, r, o, w, t, h, B, o, o, k,  , a, n, n, o, t, a, t, e, s,  , q, u, e, r, i, e, s,  , w, i, t, h,  , u, s, e, r,  , m, e, t, a, d, a, t, a,  , f, o, r,  , a, u, d, i, t, i, n, g,  , p, u, r, p, o, s, e, s,  , a, n, d,  , c, o, n, f, i, r, m,  , w, i, t, h,  , R, e, d, s, h, i, f, t,  , (, 2, 3, :, 2, 3, ), \n, \n, *, *, R, u, l, a,  , a, n, a, l, y, t, i, c, s,  , t, e, a, m, *, *, \n, P, r, e, p, a, r, e,  , f, o, r,  , S, Q, L,  , q, u, e, r, y,  , r, e, w, r, i, t, i, n, g,  , n, e, e, d, e, d,  , d, u, r, i, n, g,  , S, n, o, w, f, l, a, k, e,  , m, i, g, r, a, t, i, o, n, ;,  , a, l, l, o, c, a, t, e,  , t, i, m, e,  , a, n, d,  , r, e, s, o, u, r, c, e, s,  , a, c, c, o, r, d, i, n, g, l, y,  , (, 2, 4, :, 3, 7, ), \n, \n, *, *, G, r, o, w, t, h, B, o, o, k,  , t, e, a, m, *, *, \n, C, o, n, f, i, r, m,  , F, u, n, n, e, l,  , B, u, i, l, d, e, r,  , s, u, p, p, o, r, t,  , o, n,  , S, n, o, w, f, l, a, k, e,  , a, n, d,  , s, h, a, r, e,  , r, o, a, d, m, a, p,  , u, p, d, a, t, e, s,  , r, e, g, a, r, d, i, n, g,  , a, n, a, l, y, t, i, c, s,  , f, e, a, t, u, r, e, s,  , a, n, d,  , A, I,  , c, a, p, a, b, i, l, i, t, i, e, s,  , (, 2, 6, :, 0, 0, ), \n, A, d, d,  , R, u, l, a,  , t, e, a, m,  , m, e, m, b, e, r, s,  , t, o,  , S, l, a, c, k,  , c, h, a, n, n, e, l,  , f, o, r,  , o, n, g, o, i, n, g,  , s, u, p, p, o, r, t,  , a, n, d,  , c, o, m, m, u, n, i, c, a, t, i, o, n,  , (, 3, 0, :, 1, 9, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "rula.com"
+      ]
+    }
+  ]
+}

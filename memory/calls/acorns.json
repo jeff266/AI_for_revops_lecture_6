@@ -1,0 +1,23 @@
+{
+  "company": "Acorns + GrowthBook",
+  "slug": "acorns",
+  "last_etl_date": "2026-08-08T17:27:26.402895",
+  "calls": [
+    {
+      "id": "01KZ6MCWMENZ4QKF3X6EN2PK2Z",
+      "source": "fireflies",
+      "title": "Acorns + GrowthBook",
+      "date": "2026-08-07",
+      "duration_minutes": 14.65999984741211,
+      "summary": "The meeting analyzed ongoing customer engagement and the sales pipeline for Growth Book, highlighting prospects like TaskRabbit, Sky Scanner, and Zorro, with TaskRabbit considering a switch from Optimizely. The discussions emphasized product differentiation through features like geo-targeted testing and a modular design, which are viewed as competitive advantages. Customer feedback indicated preference for Growth Book's flexibility and modularity over legacy platforms. The team underscored the importance of feeding customer requests back to product development while maintaining a collaborative company culture to enhance responsiveness and innovation. Overall, the session aimed to strengthen positioning against competitors like Statsig and Unleash.",
+      "organizer": "christian@growthbook.io",
+      "participants": 3,
+      "keywords": "GrowthBook, TaskRabbit, geo-testing, synthetic control, experimentation, customer feedback",
+      "action_items": "\n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, S, h, a, r, e,  , t, h, e,  , r, e, c, o, r, d, e, d,  , c, a, l, l,  , w, i, t, h,  , t, h, e,  , t, e, a, m,  , t, o,  , d, e, m, o, n, s, t, r, a, t, e,  , T, a, s, k, R, a, b, b, i, t, ’, s,  , f, e, e, d, b, a, c, k,  , a, n, d,  , c, o, n, s, i, d, e, r, a, t, i, o, n, s,  , r, e, g, a, r, d, i, n, g,  , l, o, n, g, -, t, e, r, m,  , s, o, l, u, t, i, o, n, s,  , (, 1, 2, :, 0, 7, ), \n, F, u, r, t, h, e, r,  , i, n, v, e, s, t, i, g, a, t, e,  , a, n, d,  , c, l, a, r, i, f, y,  , T, a, s, k, R, a, b, b, i, t, ’, s,  , g, e, o, -, t, e, s, t, i, n, g,  , a, n, d,  , s, y, n, t, h, e, t, i, c,  , c, o, n, t, r, o, l,  , m, e, t, r, o,  , r, e, q, u, i, r, e, m, e, n, t, s,  , (, 0, 8, :, 5, 1, ), \n, \n, *, *, G, r, a, h, a, m, *, *, \n, R, e, v, i, e, w,  , L, u, k, e, ’, s,  , n, o, t, e, s,  , o, n,  , g, e, o, -, t, e, s, t, i, n, g, ,,  , s, w, i, t, c, h, b, a, c, k, s, ,,  , a, n, d,  , e, x, p, e, r, i, m, e, n, t,  , m, e, t, h, o, d, o, l, o, g, i, e, s,  , t, o,  , b, e, t, t, e, r,  , u, n, d, e, r, s, t, a, n, d,  , T, a, s, k, R, a, b, b, i, t, ’, s,  , n, e, e, d, s,  , (, 0, 7, :, 0, 8, ), \n, E, x, p, l, o, r, e,  , t, h, e,  , f, e, a, s, i, b, i, l, i, t, y,  , a, n, d,  , d, e, v, e, l, o, p, m, e, n, t,  , p, l, a, n,  , f, o, r,  , s, u, p, p, o, r, t, i, n, g,  , g, e, o, -, t, a, r, g, e, t, i, n, g,  , f, e, a, t, u, r, e, s,  , i, n,  , G, r, o, w, t, h, B, o, o, k,  , b, a, s, e, d,  , o, n,  , c, u, s, t, o, m, e, r,  , r, e, q, u, e, s, t, s,  , (, 0, 8, :, 3, 8, ), \n",
+      "participant_domains": [
+        "acorns.com",
+        "growthbook.io"
+      ]
+    }
+  ]
+}

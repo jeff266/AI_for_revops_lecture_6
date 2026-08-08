@@ -1,0 +1,33 @@
+{
+  "company": "ASAPP + GrowthBook",
+  "slug": "asapp",
+  "last_etl_date": "2026-08-08T17:27:26.403826",
+  "calls": [
+    {
+      "id": "01KYFVVPTQQ731HF3CB77XEF64",
+      "source": "fireflies",
+      "title": "ASAPP + GrowthBook",
+      "date": "2026-08-07",
+      "duration_minutes": 20.559999465942383,
+      "summary": "The meeting outlined the current progress of the Proof of Concept (POC), emphasizing a successfully established test environment while awaiting production data connectivity due to a team member's vacation. The focus is on immediate needs for experiment analysis using Growth Book, while continuing to utilize Unleash for feature allocation. Plans to scale experimentation from fewer than 10 to dozens, including backend metrics, were laid out. The discussion also covered the importance of legal readiness, with NDA signing pending final approval for secure data sharing. Communication channels via Slack were confirmed, ensuring rapid troubleshooting support as the team navigates through the adoption of new tools.",
+      "organizer": "christian@growthbook.io",
+      "participants": 4,
+      "keywords": "GrowthBook, Unleash, Experimentation, Feature Flags, Data Warehouse, POC",
+      "action_items": "\n, *, *, I, v, a, n, *, *, \n, P, r, o, v, i, d, e,  , i, n, t, e, r, n, a, l,  , t, i, m, e, l, i, n, e,  , a, n, d,  , d, a, t, a,  , r, e, a, d, i, n, e, s, s,  , u, p, d, a, t, e,  , n, e, x, t,  , w, e, e, k,  , t, o,  , c, o, o, r, d, i, n, a, t, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , w, i, t, h,  , G, r, o, w, t, h, B, o, o, k,  , (, 1, 1, :, 3, 1, ), \n, R, e, a, c, h,  , o, u, t,  , o, n,  , S, l, a, c, k,  , f, o, r,  , s, c, h, e, d, u, l, i, n, g,  , n, e, x, t,  , t, e, c, h, n, i, c, a, l,  , c, o, l, l, a, b, o, r, a, t, i, o, n,  , o, n, c, e,  , p, r, o, d, u, c, t, i, o, n,  , d, a, t, a,  , i, s,  , l, i, v, e,  , a, n, d,  , P, O, C,  , i, s,  , e, s, t, a, b, l, i, s, h, e, d,  , (, 1, 0, :, 3, 1, ), \n, \n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, F, o, l, l, o, w,  , u, p,  , w, i, t, h,  , R, y, a, n,  , t, o,  , e, x, p, e, d, i, t, e,  , N, D, A,  , s, i, g, n, a, t, u, r, e,  , a, n, d,  , s, h, a, r, e,  , w, i, t, h,  , I, v, a, n, ’, s,  , t, e, a, m,  , (, 1, 2, :, 0, 5, ), \n, C, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , I, v, a, n,  , o, n,  , n, e, x, t,  , m, e, e, t, i, n, g,  , s, c, h, e, d, u, l, i, n, g,  , a, f, t, e, r,  , i, n, t, e, r, n, a, l,  , r, e, a, d, i, n, e, s, s,  , (, 1, 1, :, 4, 5, ), \n, \n, *, *, J, u, l, i, a, n,  , O, n, g, *, *, \n, E, n, g, a, g, e,  , G, r, o, w, t, h, B, o, o, k,  , v, i, a,  , S, l, a, c, k,  , f, o, r,  , a, n, y,  , i, m, m, e, d, i, a, t, e,  , t, e, c, h, n, i, c, a, l,  , q, u, e, s, t, i, o, n, s,  , o, r,  , c, l, a, r, i, f, i, c, a, t, i, o, n, s,  , d, u, r, i, n, g,  , P, O, C,  , (, 1, 8, :, 4, 9, ), \n, \n, *, *, C, h, r, i, s,  , S, a, n, d, e, r, s, *, *, \n, P, r, o, v, i, d, e,  , o, n, g, o, i, n, g,  , t, e, c, h, n, i, c, a, l,  , s, u, p, p, o, r, t,  , a, n, d,  , r, e, s, p, o, n, d,  , p, r, o, m, p, t, l, y,  , t, o,  , q, u, e, s, t, i, o, n, s,  , d, u, r, i, n, g,  , L, o, g, a, n, ’, s,  , a, b, s, e, n, c, e,  , v, i, a,  , S, l, a, c, k,  , (, 1, 8, :, 4, 9, ), \n",
+      "participant_domains": [
+        "asapp.com",
+        "growthbook.io"
+      ]
+    },
+    {
+      "id": "6a760f70d5d27200183be25b",
+      "source": "apollo",
+      "title": "ASAPP + GrowthBook",
+      "date": "2026-08-07",
+      "duration_minutes": 0,
+      "summary": "[Unknown]: [['Hey,', 3840.0, 4040.0], ['chris.', 4040.0, 4400.0]]",
+      "host": "Christian Liebenow",
+      "participants": 1
+    }
+  ]
+}

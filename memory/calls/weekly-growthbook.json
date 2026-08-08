@@ -1,0 +1,23 @@
+{
+  "company": "Weekly GrowthBook and",
+  "slug": "weekly-growthbook",
+  "last_etl_date": "2026-08-08T17:27:26.407090",
+  "calls": [
+    {
+      "id": "01KZ4KCK1KF61EEQACWG4FPEWZ",
+      "source": "fireflies",
+      "title": "Weekly GrowthBook and Mastiff Software Meeting",
+      "date": "2026-08-05",
+      "duration_minutes": 31,
+      "summary": "The meeting highlighted exceptional sales growth, with revenue doubling from $1 million to $2 million, while planning for $4 million, constrained by the current sales headcount. Discussions emphasized the success of the pipeline, including $500K in expansion revenue and $1.4 million from new logos. The team identified a need for more sales reps as deals were being missed due to capacity constraints. Hiring strategies were prioritized, with a focus on senior BDR roles, while addressing compensation concerns for existing reps. Insights into market positioning were provided, showcasing stronger B2C win rates and plans to target Statsuit customers with provocative content. Participant coordination included scheduling informal events and finalizing offer letters for new hires.",
+      "organizer": "ryan.mcgurk@growthbook.io",
+      "participants": 3,
+      "keywords": "sales capacity, BDR recruitment, ICP analysis, Q2 revenue, AI investment, enterprise sales",
+      "action_items": "\n, *, *, R, y, a, n,  , M, c, G, u, r, k, *, *, \n, F, o, l, l, o, w,  , u, p,  , o, n,  , o, u, t, s, t, a, n, d, i, n, g,  , r, e, f, e, r, e, n, c, e,  , f, o, r,  , c, a, n, d, i, d, a, t, e,  , A, n, d, y,  , a, n, d,  , f, i, n, a, l, i, z, e,  , o, f, f, e, r,  , l, e, t, t, e, r,  , o, n, c, e,  , f, e, e, d, b, a, c, k,  , i, s,  , r, e, c, e, i, v, e, d,  , (, 0, 8, :, 2, 6, ), \n, S, e, e, k,  , f, e, e, d, b, a, c, k,  , o, n,  , B, a, y,  , A, r, e, a,  , c, a, n, d, i, d, a, t, e,  , J, u, s, t, i, n,  , H, o, b, b, s,  , f, r, o, m,  , p, e, r, s, o, n, a, l,  , c, o, n, n, e, c, t, i, o, n, s,  , b, e, f, o, r, e,  , p, r, o, c, e, e, d, i, n, g,  , w, i, t, h,  , f, u, r, t, h, e, r,  , c, o, n, v, e, r, s, a, t, i, o, n, s,  , (, 1, 6, :, 4, 5, ), \n, S, h, a, r, e,  , V, C, -, r, e, l, a, t, e, d,  , A, I,  , c, o, n, t, e, n, t,  , i, n, s, i, g, h, t, s,  , w, i, t, h,  , B, r, e, n, t,  , H, o, l, l, o, w, a, y,  , t, o,  , i, n, f, o, r, m,  , s, t, r, a, t, e, g, i, c,  , d, i, s, c, u, s, s, i, o, n, s,  , (, 2, 6, :, 1, 8, ), \n, \n, *, *, B, r, e, n, t,  , H, o, l, l, o, w, a, y, *, *, \n, I, n, t, r, o, d, u, c, e,  , R, y, a, n,  , M, c, G, u, r, k,  , t, o,  , r, e, c, o, m, m, e, n, d, e, d,  , B, D, R,  , c, a, n, d, i, d, a, t, e,  , F, r, a, n, c, e, s, c, a,  , t, o,  , s, c, h, e, d, u, l, e,  , a,  , c, a, l, l,  , (, 1, 4, :, 4, 5, ), \n, H, a, v, e,  , a,  , c, a, l, l,  , w, i, t, h,  , t, h, e,  , B, D, R,  , c, a, n, d, i, d, a, t, e,  , f, r, o, m,  , G, r, a, f, a, n, a,  , L, a, b, s,  , a, n, d,  , r, e, p, o, r, t,  , b, a, c, k,  , a, b, o, u, t,  , i, n, t, e, r, e, s, t,  , a, n, d,  , f, i, t,  , (, 1, 8, :, 1, 1, ), \n, I, n, t, e, r, v, i, e, w,  , S, a, l, e, s, f, o, r, c, e, -, e, x, p, e, r, i, e, n, c, e, d,  , s, a, l, e, s,  , c, a, n, d, i, d, a, t, e,  , B, l, a, k, e,  , o, n,  , M, o, n, d, a, y,  , a, n, d,  , e, v, a, l, u, a, t, e,  , f, i, t,  , f, o, r,  , t, h, e,  , t, e, a, m,  , (, 1, 8, :, 3, 8, ), \n, C, o, n, t, i, n, u, e,  , r, e, c, r, u, i, t, i, n, g,  , e, f, f, o, r, t, s,  , a, n, d,  , a, d, j, u, s, t,  , h, i, r, i, n, g,  , v, o, l, u, m, e,  , a, s,  , n, e, e, d, e, d,  , b, a, s, e, d,  , o, n,  , s, a, l, e, s,  , p, i, p, e, l, i, n, e,  , a, n, d,  , c, a, p, a, c, i, t, y,  , (, 2, 0, :, 3, 2, ), \n, S, e, n, d,  , d, e, t, a, i, l, e, d,  , I, C, P,  , c, u, s, t, o, m, e, r,  , d, a, t, a,  , a, n, d,  , a, n, a, l, y, s, i, s,  , t, o,  , R, y, a, n,  , M, c, G, u, r, k,  , f, o, r,  , r, e, f, i, n, e, m, e, n, t,  , o, f,  , l, e, a, d,  , s, c, o, r, i, n, g,  , a, n, d,  , A, B, M,  , s, t, r, a, t, e, g, y,  , (, 2, 2, :, 2, 0, ), \n, P, r, e, p, a, r, e,  , f, o, r,  , d, e, t, a, i, l, e, d,  , Q, 2,  , d, a, t, a,  , u, p, d, a, t, e,  , d, i, s, c, u, s, s, i, o, n,  , c, o, v, e, r, i, n, g,  , p, e, r, f, o, r, m, a, n, c, e,  , a, n, d,  , c, u, s, t, o, m, e, r,  , a, n, a, l, y, t, i, c, s,  , i, n,  , n, e, x, t,  , w, e, e, k, ’, s,  , m, e, e, t, i, n, g,  , (, 3, 1, :, 0, 7, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "saassalesadvisors.com"
+      ]
+    }
+  ]
+}

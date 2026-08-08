@@ -1,0 +1,22 @@
+{
+  "company": "exp funnels round",
+  "slug": "exp-funnels-round",
+  "last_etl_date": "2026-08-08T17:27:26.406958",
+  "calls": [
+    {
+      "id": "01KZ723KSK3K16P94B50G7879R",
+      "source": "fireflies",
+      "title": "exp funnels round 2",
+      "date": "2026-08-05",
+      "duration_minutes": 44.77000045776367,
+      "summary": "The team discussed delivering a functional V1 funnel metrics feature by the month-end to fulfill Change.org's requirements. Kevin Nguyen stressed the importance of accurate metrics before contract signing. The V1 spec will be shipped behind a feature flag to ensure the broader 5.1 release is not delayed. Key technical tasks include SQL generation, primarily handled by Luke Sonnet with support from Lillia Jackson and Adriel Vieira. The funnel metrics will aggregate data at the user and variant level, displaying stepwise data as raw ratios. UI elements will present these metrics without complex visuals, prioritizing data availability over design polish. Coordinated efforts, including calendar blocking and regular sync meetings, are set to enhance focus and meet deadlines, addressing client needs and improving analytics capabilities.",
+      "organizer": "lillia@growthbook.io",
+      "participants": 3,
+      "keywords": "funnel_metrics, SQL_generation, GBStats, experiment_variants, funnel_model, time_series",
+      "action_items": "\n, *, *, L, i, l, l, i, a,  , J, a, c, k, s, o, n, *, *, \n, F, i, n, a, l, i, z, e,  , a, n, d,  , p, u, b, l, i, s, h,  , t, h, e,  , f, u, n, n, e, l,  , m, e, t, r, i, c,  , c, r, e, a, t, i, o, n,  , b, r, a, n, c, h,  , i, n, c, l, u, d, i, n, g,  , f, i, x, e, s,  , f, o, r,  , v, a, l, i, d, a, t, o, r,  , a, n, d,  , A, P, I,  , s, u, p, p, o, r, t,  , (, 4, 1, :, 4, 4, ), \n, C, o, n, t, i, n, u, e,  , w, o, r, k, i, n, g,  , o, n,  , f, u, n, n, e, l,  , m, e, t, r, i, c,  , m, o, d, e, l,  , a, n, d,  , c, o, l, l, a, b, o, r, a, t, e,  , w, i, t, h,  , L, u, k, e,  , o, n,  , S, Q, L,  , a, n, d,  , v, a, l, i, d, a, t, o, r,  , a, l, i, g, n, m, e, n, t,  , (, 2, 0, :, 4, 3, ), \n, \n, *, *, L, u, k, e,  , S, o, n, n, e, t, *, *, \n, T, a, k, e,  , o, w, n, e, r, s, h, i, p,  , o, f,  , S, Q, L,  , g, e, n, e, r, a, t, i, o, n,  , f, o, r,  , f, u, n, n, e, l,  , m, e, t, r, i, c, s,  , a, n, d,  , c, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , L, i, l, l, i, a,  , t, o,  , a, v, o, i, d,  , o, v, e, r, l, a, p,  , (, 2, 0, :, 4, 6, ), \n, A, s, s, i, s, t,  , w, i, t, h,  , c, l, a, r, i, f, y, i, n, g,  , d, a, t, a,  , s, t, r, u, c, t, u, r, e, s,  , r, e, l, a, t, e, d,  , t, o,  , c, o, l, u, m, n,  , r, e, f, e, r, e, n, c, e,  , a, n, d,  , v, a, l, i, d, a, t, e,  , n, a, m, i, n, g,  , s, t, a, n, d, a, r, d,  , t, o,  , a, l, i, g, n,  , S, Q, L,  , i, m, p, l, e, m, e, n, t, a, t, i, o, n, s,  , (, 3, 8, :, 2, 8, ), \n, \n, *, *, A, d, r, i, e, l,  , V, i, e, i, r, a, *, *, \n, S, u, p, p, o, r, t,  , s, c, o, p, e,  , d, e, f, i, n, i, t, i, o, n, ,,  , c, o, o, r, d, i, n, a, t, e,  , t, a, s, k,  , d, i, s, t, r, i, b, u, t, i, o, n, ,,  , a, n, d,  , c, o, n, t, i, n, u, e,  , s, y, n, c, i, n, g,  , o, n,  , U, I,  , i, m, p, l, e, m, e, n, t, a, t, i, o, n,  , a, n, d,  , r, e, s, u, l, t, s,  , v, i, e, w, i, n, g,  , a, p, p, r, o, a, c, h,  , (, 2, 2, :, 0, 3, ), \n, \n, *, *, U, n, a, s, s, i, g, n, e, d, *, *, \n, M, a, i, n, t, a, i, n,  , c, a, l, e, n, d, a, r,  , b, l, o, c, k, i, n, g,  , t, o,  , e, n, s, u, r, e,  , p, r, o, g, r, e, s, s,  , a, n, d,  , o, r, g, a, n, i, z, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , t, o,  , r, e, s, y, n, c,  , o, n,  , d, e, l, i, v, e, r, y,  , s, t, a, t, u, s,  , (, 4, 2, :, 3, 6, ), \n",
+      "participant_domains": [
+        "growthbook.io"
+      ]
+    }
+  ]
+}

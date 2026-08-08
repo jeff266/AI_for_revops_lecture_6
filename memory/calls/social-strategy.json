@@ -1,0 +1,23 @@
+{
+  "company": "Social Strategy +",
+  "slug": "social-strategy",
+  "last_etl_date": "2026-08-08T17:27:26.407230",
+  "calls": [
+    {
+      "id": "01KZ4EJNQV378JT1G52C9RE3CY",
+      "source": "fireflies",
+      "title": "Social Strategy + Alignment Workshop",
+      "date": "2026-08-05",
+      "duration_minutes": 58.790000915527344,
+      "summary": "The meeting revolved around key strategies to unify the social vision by defining fun content scopes, including post types like launches, events, and memes. Emphasis was placed on balancing humor with credibility, particularly for data scientists, while taking inspiration from Anthropic's brand voice. A red panda mascot, named 'Bandit', was proposed to enhance brand unity, along with pending design approval for plushies and pins. The group discussed content performance metrics, noting that engagement is primarily measured by likes, shares, and comments. It was mentioned that single fun images outperform videos on LinkedIn, which require higher production quality. Design team discussions revealed that while the current designer is quick, creativity needs improvement, prompting plans for introducing external designers and the need for consistent branding. Next steps involve approving 'Bandit’s design, scheduling a feedback call, and prioritizing LinkedIn as a focus.",
+      "organizer": "alyssa@growthbook.io",
+      "participants": 7,
+      "keywords": "social media strategy, brand consistency, engagement metrics, mascot design, humor in marketing, content performance",
+      "action_items": "*, *, L, y, n, d, s, i, e,  , B, e, r, e, n, s, *, *,  ,  , \n, G, e, t,  , B, a, n, d, i, t,  , m, a, s, c, o, t,  , d, e, s, i, g, n,  , a, p, p, r, o, v, a, l,  , f, r, o, m,  , l, e, a, d, e, r, s, h, i, p,  , (, 2, 3, :, 5, 4, ),  ,  , \n, O, r, d, e, r,  , B, a, n, d, i, t,  , m, a, s, c, o, t,  , m, e, r, c, h, a, n, d, i, s, e,  , (, 2, 4, :, 5, 7, ),  ,  , \n, S, c, h, e, d, u, l, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , w, i, t, h,  , b, r, a, n, d, i, n, g,  , a, n, d,  , s, o, c, i, a, l,  , l, e, a, d, s,  , (, 5, 5, :, 0, 3, ),  ,  , \n, \n, *, *, A, s, h, l, e, y,  , S, t, i, r, r, u, p, *, *,  ,  , \n, R, e, a, c, h,  , o, u, t,  , t, o,  , S, t, e, p, h, a, n, i, e,  , E, r, m, i, n, e, t, t, a,  , f, o, r,  , c, r, e, a, t, i, v, e,  , s, u, p, p, o, r, t,  , (, 5, 4, :, 4, 8, ),  ,  , \n, \n, *, *, A, l, y, s, s, a,  , N, i, c, o, l, l, *, *,  ,  , \n, P, r, o, v, i, d, e,  , L, i, n, d, s, e, y,  , w, i, t, h,  , C, a, n, v, a,  , t, e, m, p, l, a, t, e, s,  , a, n, d,  , C, h, a, t, G, P, T,  , r, e, s, o, u, r, c, e, s,  , (, 5, 4, :, 3, 5, )",
+      "participant_domains": [
+        "growthbook.io",
+        "newtongrowth.com"
+      ]
+    }
+  ]
+}

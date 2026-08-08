@@ -1,0 +1,22 @@
+{
+  "company": "Power + Metrics",
+  "slug": "power",
+  "last_etl_date": "2026-08-08T17:27:26.407826",
+  "calls": [
+    {
+      "id": "01KZ22BQ4H9YN5WA3BBF4K6RXT",
+      "source": "fireflies",
+      "title": "Power + Metrics on Experiment Creation",
+      "date": "2026-08-04",
+      "duration_minutes": 66.72000122070312,
+      "summary": "The meeting emphasized overhauling the experiment creation flow to enhance clarity and to better align goal metrics with power analysis and runtime calculations. Key issues included the separation of the power calculator from experiments, requiring manual transfers and complicating decision-making. There was a consensus on elevating the visibility of goal metrics within the user interface (UI) and linking them earlier in the process. Participants discussed the need for a more integrated approach to power calculations, suggesting it as a recommendation rather than a mandate. The meeting concluded with an agreement to prioritize making goal metric selection central in future designs while breaking down the larger project into smaller tasks for better management.",
+      "organizer": "gabe@growthbook.io",
+      "participants": 5,
+      "keywords": "goal metrics, power calculation, experiment scheduling, minimum detectable effect, experiment creation flow, decision framework",
+      "action_items": "*, *, K, a, r, i,  , K, a, y, *, *,  ,  , \n, D, e, s, i, g, n,  , i, t, e, r, a, t, i, o, n, s,  , o, n,  , a, n, a, l, y, s, i, s,  , s, e, t, t, i, n, g, s,  , p, a, n, e, l,  , (, 0, 3, :, 5, 3, ),  ,  , \n, A, s, s, i, s, t,  , i, n,  , d, e, l, i, n, e, a, t, i, n, g,  , u, s, e, r,  , s, t, a, t, e, s,  , a, n, d,  , w, o, r, k, f, l, o, w, s,  , (, 5, 6, :, 5, 9, ),  ,  , \n, \n, *, *, G, a, b, e,  , M, e, l, e, a, n, *, *,  ,  , \n, P, r, o, v, i, d, e,  , f, e, e, d, b, a, c, k,  , o, n,  , p, o, w, e, r,  , c, a, l, c, u, l, a, t, o, r,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , (, 0, 5, :, 3, 8, ),  ,  , \n, \n, *, *, L, u, k, e,  , S, o, n, n, e, t, *, *,  ,  , \n, E, x, p, l, o, r, e,  , c, e, n, t, r, a, l, i, z, i, n, g,  , g, o, a, l,  , m, e, t, r, i, c,  , a, n, d,  , a, s, s, i, g, n, m, e, n, t,  , t, a, b, l, e,  , (, 3, 2, :, 2, 6, ),  ,  , \n, L, e, a, d,  , e, n, g, i, n, e, e, r, i, n, g,  , d, e, s, i, g, n,  , t, o,  , i, n, t, e, g, r, a, t, e,  , p, o, w, e, r,  , c, a, l, c, u, l, a, t, i, o, n, s,  , (, 3, 3, :, 5, 8, ),  ,  , \n, D, e, f, i, n, e,  , p, u, r, p, o, s, e,  , a, n, d,  , s, c, o, p, e,  , f, o, r,  , g, o, a, l,  , m, e, t, r, i, c,  , p, r, o, m, i, n, e, n, c, e,  , (, 5, 1, :, 2, 9, ),  ,  , \n, P, r, e, p, a, r, e,  , s, c, o, p, e, d,  , p, r, o, p, o, s, a, l,  , f, o, r,  , r, e, d, e, s, i, g, n,  , a, n, d,  , i, n, t, e, g, r, a, t, i, o, n,  , (, 5, 2, :, 4, 8, ),  ,  , \n, F, o, l, l, o, w,  , u, p,  , w, i, t, h,  , r, e, f, i, n, e, d,  , t, a, s, k,  , b, r, e, a, k, d, o, w, n,  , a, n, d,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , (, 5, 4, :, 1, 9, ),  ,  , \n, \n, *, *, M, i, c, h, a, e, l,  , S, a, m, p, e, r, *, *,  ,  , \n, P, r, o, v, i, d, e,  , i, n, s, i, g, h, t, s,  , o, n,  , t, e, m, p, l, a, t, e,  , u, s, a, g, e,  , a, n, d,  , g, o, a, l,  , m, e, t, r, i, c, s,  , (, 4, 4, :, 5, 7, )",
+      "participant_domains": [
+        "growthbook.io"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "company": "BestSeller & GrowthBook",
+  "slug": "bestseller",
+  "last_etl_date": "2026-08-08T17:27:26.405597",
+  "calls": [
+    {
+      "id": "01KZ6XTV5R8W78K6SEB4WYJJHW",
+      "source": "fireflies",
+      "title": "BestSeller & GrowthBook",
+      "date": "2026-08-06",
+      "duration_minutes": 41.77000045776367,
+      "summary": "During the meeting, the team prioritized accelerating experimentation for the Selected brand to tackle revenue challenges, especially in the men's segment impacted by previous platform changes. A proof of concept (POC) was proposed to integrate GrowthBook, Sanity, and Claude for user-friendly experimentation setups. Pricing negotiations included a tiered model offering discounts for a 10-brand rollout, with a POC budget of 45,000. Operational support was highlighted as crucial for less data-driven brand teams to adopt these tools effectively. A 30 to 45-day POC timeline was established to validate usability and integration before considering broader implementation.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Experiments, Sanity integration, GrowthBook, Commercial model, POC, Brand tiering",
+      "action_items": "\n, *, *, K, e, n, n, e, t, h,  , C, h, r, i, s, t, i, a, n, s, e, n, *, *, \n, S, e, n, d,  , m, o, n, t, h, l, y,  , t, r, a, f, f, i, c, ,,  , s, e, s, s, i, o, n,  , e, s, t, i, m, a, t, e, s, ,,  , a, n, d,  , i, n, d, e, x,  , d, a, t, a,  , f, o, r,  , a, l, l,  , b, r, a, n, d, s,  , t, o,  , s, u, p, p, o, r, t,  , p, r, i, c, i, n, g,  , a, n, d,  , t, i, e, r, i, n, g,  , a, n, a, l, y, s, e, s,  , (, 3, 0, :, 5, 7, ), \n, C, o, n, d, u, c, t,  , i, n, t, e, r, n, a, l,  , d, i, s, c, u, s, s, i, o, n, s,  , w, i, t, h,  , t, e, a, m, s,  , t, o,  , a, s, s, e, s, s,  , o, p, e, r, a, t, i, o, n, a, l,  , a, p, p, r, o, a, c, h, e, s,  , a, n, d,  , u, s, e,  , c, a, s, e, s,  , f, o, r,  , e, x, p, e, r, i, m, e, n, t, a, t, i, o, n,  , P, O, C,  , (, 3, 7, :, 3, 0, ), \n, C, o, n, f, i, r, m,  , i, n, t, e, r, n, a, l,  , b, u, d, g, e, t,  , a, p, p, r, o, v, a, l,  , a, n, d,  , d, e, c, i, s, i, o, n,  , p, r, o, c, e, s, s,  , f, o, r,  , P, O, C,  , c, o, m, m, i, t, m, e, n, t,  , (, 3, 8, :, 5, 0, ), \n, \n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, S, e, n, d,  , s, l, i, d, e,  , d, e, c, k, s, ,,  , m, e, e, t, i, n, g,  , t, r, a, n, s, c, r, i, p, t, ,,  , a, n, d,  , r, e, v, i, s, e, d,  , c, o, m, m, e, r, c, i, a, l,  , m, o, d, e, l,  , t, o,  , K, e, n, n, e, t, h,  , f, o, r,  , r, e, v, i, e, w,  , (, 3, 5, :, 0, 1, ), \n, S, c, h, e, d, u, l, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , w, i, t, h,  , K, e, n, n, e, t, h,  , d, u, r, i, n, g,  , t, h, e,  , w, e, e, k,  , o, f,  , J, u, n, e,  , 2, 4, t, h,  , t, o,  , 2, 8, t, h,  , t, o,  , r, e, v, i, e, w,  , p, r, o, g, r, e, s, s,  , a, n, d,  , n, e, x, t,  , s, t, e, p, s,  , (, 3, 9, :, 5, 4, ), \n, I, n, c, o, r, p, o, r, a, t, e,  , K, e, n, n, e, t, h, ’, s,  , f, e, e, d, b, a, c, k,  , o, n,  , b, r, a, n, d,  , t, i, e, r, s,  , a, n, d,  , p, r, i, c, i, n, g,  , t, o,  , a, d, j, u, s, t,  , c, o, m, m, e, r, c, i, a, l,  , m, o, d, e, l,  , a, c, c, o, r, d, i, n, g, l, y,  , b, e, f, o, r, e,  , P, O, C,  , s, t, a, r, t,  , (, 2, 7, :, 5, 0, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "bestseller.com"
+      ]
+    }
+  ]
+}

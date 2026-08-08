@@ -1,0 +1,22 @@
+{
+  "company": "Onboarding + Growth",
+  "slug": "onboarding",
+  "last_etl_date": "2026-08-08T17:27:26.408367",
+  "calls": [
+    {
+      "id": "01KZ1W5Z5N8AD3CZX2YYSYTF4M",
+      "source": "fireflies",
+      "title": "Onboarding + Growth + Marketing",
+      "date": "2026-08-04",
+      "duration_minutes": 48.970001220703125,
+      "summary": "The discussion revolved around several key topics including the development of a zero-code onboarding flow that utilizes AI for auto-setup, along with CLI prompts guiding users through configurations for various personas such as engineering and data science. Emphasis was placed on improving retention for Pro users, particularly those with five or more accounts, by tracking detailed onboarding metrics and providing manual onboarding support. The complexity of experiment creation and execution was acknowledged, along with plans to enhance the visual editor for marketing purposes. Challenges with upselling Pro to Enterprise users were noted, with an intent to adopt usage-based pricing to address conversion issues. Finally, the importance of tracking user behavior during the onboarding funnel was highlighted to better correlate usage patterns with churn and upgrades.",
+      "organizer": "alyssa@growthbook.io",
+      "participants": 5,
+      "keywords": "onboarding, feature flag, experiment, retention, AI agent, signup flow",
+      "action_items": "*, *, G, u, y,  , L, a, n, g, f, o, r, d, -, l, e, e, *, *,  ,  , \n, C, o, n, d, u, c, t,  , e, n, g, i, n, e, e, r, i, n, g,  , c, h, e, c, k, -, i, n, s,  , (, 2, 2, :, 3, 9, ),  ,  , \n, C, o, m, p, l, e, t, e,  , t, e, s, t, s,  , a, n, d,  , d, e, p, l, o, y,  , N, P, S,  , p, o, p, u, p,  , (, 2, 4, :, 1, 3, ),  ,  , \n, A, d, d,  , A, s, h, l, e, y,  , S, t, i, r, r, u, p,  , a, n, d,  , t, e, a, m,  , t, o,  , o, n, b, o, a, r, d, i, n, g,  , c, h, a, n, n, e, l,  , (, 2, 4, :, 5, 5, ),  ,  , \n, P, u, l, l,  , c, h, u, r, n,  , s, u, r, v, e, y,  , d, a, t, a,  , f, r, o, m,  , M, o, n, g, o, D, B,  , (, 2, 6, :, 4, 4, ),  ,  , \n, S, h, a, r, e,  , o, n, b, o, a, r, d, i, n, g,  , f, l, o, w,  , v, i, d, e, o,  , d, e, m, o,  , (, 3, 6, :, 1, 8, ),  ,  , \n, \n, *, *, A, s, h, l, e, y,  , S, t, i, r, r, u, p, *, *,  ,  , \n, L, e, v, e, r, a, g, e,  , s, i, g, n, u, p,  , a, n, d,  , c, h, u, r, n,  , d, a, t, a,  , f, o, r,  , a, n, a, l, y, t, i, c, s,  , (, 2, 3, :, 2, 9, ),  ,  , \n, \n, *, *, A, l, y, s, s, a,  , N, i, c, o, l, l, *, *,  ,  , \n, R, e, s, e, a, r, c, h,  , A, m, p, l, i, t, u, d, e,  , A, I,  , o, n, b, o, a, r, d, i, n, g,  , w, i, z, a, r, d,  , (, 3, 3, :, 4, 9, )",
+      "participant_domains": [
+        "growthbook.io"
+      ]
+    }
+  ]
+}

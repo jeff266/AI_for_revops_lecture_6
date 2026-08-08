@@ -1,0 +1,23 @@
+{
+  "company": "MVF + GrowthBook",
+  "slug": "mvf",
+  "last_etl_date": "2026-08-08T17:27:26.405471",
+  "calls": [
+    {
+      "id": "01KZ1S17J5MMBB8KDTV1XRKFBQ",
+      "source": "fireflies",
+      "title": "MVF + GrowthBook Touch Base",
+      "date": "2026-08-06",
+      "duration_minutes": 11.720000267028809,
+      "summary": "The team agreed to conduct a limited-page trial of Growth Book to test its integration and data handling before full commitment. This initiative is driven by internal concerns about operational feasibility as emphasized by Billy Amps, who noted the necessity for practical results. The proof of concept includes a no-upfront-commitment structure, allowing the customer flexibility during the trial period with a timeline for internal readiness and legal review. The urgency is further heightened by the upcoming impression share renewal in October, creating a decision point for possibly switching platforms. The discussion highlighted the need for internal buy-in and engagement with Growth Book's engineering team, alongside the introduction of new team members to facilitate collaboration.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 3,
+      "keywords": "London, GrowthBook, proof of concept, trial, integration, contract approval",
+      "action_items": "\n, *, *, B, i, l, l, y,  , A, m, p, s, *, *, \n, C, o, n, f, i, r, m,  , i, n, t, e, r, n, a, l, l, y,  , w, i, t, h,  , d, i, r, e, c, t, o, r,  , a, n, d,  , l, e, g, a, l,  , t, e, a, m,  , t, o,  , a, p, p, r, o, v, e,  , t, h, e,  , p, r, o, o, f,  , o, f,  , c, o, n, c, e, p, t,  , t, r, i, a, l,  , a, g, r, e, e, m, e, n, t,  , a, n, d,  , i, d, e, n, t, i, f, y,  , t, h, e,  , r, i, g, h, t,  , M, V, F,  , p, a, r, t, i, c, i, p, a, n, t, s,  , f, o, r,  , t, h, e,  , t, r, i, a, l,  , (, 0, 5, :, 4, 4, ), \n, \n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, D, r, a, f, t,  , a, n, d,  , s, e, n, d,  , p, r, o, o, f,  , o, f,  , c, o, n, c, e, p, t,  , a, g, r, e, e, m, e, n, t,  , f, o, r,  , M, V, F, ’, s,  , r, e, v, i, e, w,  , (, 0, 6, :, 1, 5, ), \n, S, c, h, e, d, u, l, e,  , a, n, d,  , a, r, r, a, n, g, e,  , a,  , f, o, l, l, o, w, -, u, p,  , c, a, l, l,  , i, n,  , a, b, o, u, t,  , t, w, o,  , w, e, e, k, s,  , t, o,  , r, e, v, i, e, w,  , t, r, i, a, l,  , p, r, o, g, r, e, s, s,  , (, 0, 6, :, 4, 5, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "mvfglobal.com"
+      ]
+    }
+  ]
+}

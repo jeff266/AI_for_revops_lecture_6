@@ -1,0 +1,23 @@
+{
+  "company": "Jake Brent weekly",
+  "slug": "jake-brent-weekly",
+  "last_etl_date": "2026-08-08T17:27:26.405346",
+  "calls": [
+    {
+      "id": "01KZ75S689RYSMZW5T5ANZ7KGX",
+      "source": "fireflies",
+      "title": "Jake Brent weekly catchup",
+      "date": "2026-08-06",
+      "duration_minutes": 12,
+      "summary": "The meeting highlighted the sales team's strong performance with quarterly revenue reaching nearly $473K, contributing to a total of about $2 million in sales. Key discussions included the beneficial commission-splitting approach to foster team collaboration during absences, as demonstrated by Jake Heier's case during his paternity leave. Upcoming hires from Bay Area firms aim to enhance account management and sales capacity to support enterprise growth. The potential $300K+ Notion deal was identified as a key focus, necessitating engagement with internal champions to secure the deal, while strategic upselling opportunities were anticipated from significant service orders, like the $2 million deal with Anthropic. The emphasis on white glove support plays a critical role in winning complex customer transitions, ensuring commitment to quality and ongoing engagement.",
+      "organizer": "jake@growthbook.io",
+      "participants": 2,
+      "keywords": "quarterly sales, paternity leave coverage, sales pipeline, Notion deal, static replacement, case studies",
+      "action_items": "\n, *, *, J, a, k, e,  , H, e, i, e, r, *, *, \n, C, o, n, t, i, n, u, e,  , e, n, g, a, g, i, n, g,  , t, h, e,  , s, k, e, p, t, i, c,  , w, i, t, h, i, n,  , N, o, t, i, o, n,  , t, o,  , b, u, i, l, d,  , i, n, t, e, r, n, a, l,  , a, d, v, o, c, a, c, y,  , f, o, r,  , G, r, o, w, t, h, b, o, o, k,  , (, 0, 7, :, 0, 5, ), \n, C, h, e, c, k,  , w, i, t, h,  , C, a, r, r, i, e,  , r, e, g, a, r, d, i, n, g,  , A, n, t, h, r, o, p, i, c, ’, s,  , w, i, l, l, i, n, g, n, e, s, s,  , t, o,  , s, e, r, v, e,  , a, s,  , a,  , c, o, n, t, r, o, l, l, e, d,  , p, h, o, n, e,  , r, e, f, e, r, e, n, c, e,  , f, o, r,  , N, o, t, i, o, n,  , s, a, l, e, s,  , e, f, f, o, r, t, s,  , (, 0, 8, :, 2, 4, ), \n, P, r, e, p, a, r, e,  , t, o,  , d, i, s, c, u, s, s,  , N, o, t, i, o, n,  , d, e, a, l,  , s, t, r, a, t, e, g, y,  , a, n, d,  , n, e, x, t,  , s, t, e, p, s,  , w, i, t, h,  , B, r, e, n, t,  , n, e, x, t,  , w, e, e, k, ,,  , i, n, c, l, u, d, i, n, g,  , o, u, t, l, i, n, i, n, g,  , p, a, s, t,  , e, f, f, o, r, t, s,  , a, n, d,  , f, u, t, u, r, e,  , p, l, a, n, s,  , (, 1, 1, :, 4, 8, ), \n, \n, *, *, B, r, e, n, t,  , H, o, l, l, o, w, a, y, *, *, \n, S, u, p, p, o, r, t,  , J, a, k, e,  , b, y,  , p, r, o, v, i, d, i, n, g,  , a,  , s, e, c, o, n, d,  , s, e, t,  , o, f,  , e, y, e, s,  , o, n,  , t, h, e,  , N, o, t, i, o, n,  , d, e, a, l,  , s, t, r, a, t, e, g, y,  , d, u, r, i, n, g,  , n, e, x, t,  , w, e, e, k, ’, s,  , m, e, e, t, i, n, g,  , (, 1, 1, :, 4, 8, ), \n, L, e, v, e, r, a, g, e,  , p, e, r, s, o, n, a, l,  , e, x, p, e, r, i, e, n, c, e,  , t, o,  , h, e, l, p,  , i, d, e, n, t, i, f, y,  , a, n, d,  , c, o, n, v, e, r, t,  , i, n, t, e, r, n, a, l,  , s, t, a, t, i, c,  , c, h, a, m, p, i, o, n, s,  , a, t,  , N, o, t, i, o, n,  , t, o,  , a, d, v, o, c, a, t, e, s,  , f, o, r,  , G, r, o, w, t, h, b, o, o, k,  , (, 0, 6, :, 5, 1, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "saassalesadvisors.com"
+      ]
+    }
+  ]
+}

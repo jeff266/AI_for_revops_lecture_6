@@ -1,0 +1,22 @@
+{
+  "company": "Luke / Lillia",
+  "slug": "luke",
+  "last_etl_date": "2026-08-08T17:27:26.410266",
+  "calls": [
+    {
+      "id": "01KZ42JQXC98RQNGPKE111Z8MC",
+      "source": "fireflies",
+      "title": "Luke / Lillia - experiment funnels",
+      "date": "2026-08-03",
+      "duration_minutes": 52,
+      "summary": "The team discussed the operational capabilities of the incremental data aggregation infrastructure, which currently supports select engines but has limited dialect coverage. Luke Sonnet highlighted the complexities of incremental aggregation for funnel metrics, detailing the processes of partial and re-aggregation while addressing the challenges of caching and timestamp management. They also considered data model design to avoid retrospective data scans. Discussions focused on testing limitations, with Lillia Jackson emphasizing the need for better datasets for realistic testing. The team agreed on sharing resources like BigQuery access and sample tables. Efforts to align on SQL reuse were highlighted, as was the need for documentation updates and the scheduling of follow-up meetings to refine the incremental pipeline design.",
+      "organizer": "lillia@growthbook.io",
+      "participants": 2,
+      "keywords": "Incremental Aggregation, Funnel Metrics, SQL Dialects, Quantile Metrics, Conversion Windows, Experiment Data Model",
+      "action_items": "\n, *, *, L, i, l, l, i, a,  , J, a, c, k, s, o, n, *, *, \n, W, o, r, k,  , o, n,  , a, d, d, i, n, g,  , t, h, e,  , n, o, n, -, i, n, c, r, e, m, e, n, t, a, l,  , p, i, p, e, l, i, n, e,  , d, e, t, a, i, l, s,  , t, o,  , t, h, e,  , e, x, i, s, t, i, n, g,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , a, t,  , a,  , h, i, g, h,  , l, e, v, e, l,  , f, o, r,  , w, i, r, i, n, g,  , c, o, m, p, o, n, e, n, t, s,  , t, o, g, e, t, h, e, r,  , (, 2, 4, :, 1, 6, ), \n, P, u, t,  , t, o, g, e, t, h, e, r,  , a, n,  , u, p, d, a, t, e, d,  , v, e, r, s, i, o, n,  , o, f,  , t, h, e,  , c, u, r, r, e, n, t,  , d, o, c,  , r, e, f, l, e, c, t, i, n, g,  , d, i, s, c, u, s, s, i, o, n,  , i, n, s, i, g, h, t, s, ,,  , f, o, c, u, s, i, n, g,  , o, n,  , e, x, p, e, r, i, m, e, n, t,  , s, t, e, p, s,  , a, n, d,  , d, a, t, a,  , m, o, d, e, l, s,  , (, 3, 2, :, 5, 3, ), \n, S, c, h, e, d, u, l, e,  , a,  , t, e, n, t, a, t, i, v, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , w, i, t, h,  , L, u, k, e,  , a, n, d,  , A, d, r, i, e, l,  , f, o, r,  , d, e, e, p, e, r,  , w, a, l, k, t, h, r, o, u, g, h, s,  , a, n, d,  , c, o, m, m, e, n, t, s,  , o, n,  , t, h, e,  , d, o, c,  , (, 3, 3, :, 4, 0, ), \n, \n, *, *, L, u, k, e,  , S, o, n, n, e, t, *, *, \n, P, r, o, v, i, d, e,  , L, i, l, l, i, a,  , w, i, t, h,  , b, e, t, t, e, r,  , t, e, s, t,  , d, a, t, a,  , a, c, c, e, s, s,  , f, o, r,  , B, i, g, Q, u, e, r, y,  , e, n, v, i, r, o, n, m, e, n, t,  , t, o,  , s, u, p, p, o, r, t,  , t, e, s, t, i, n, g,  , (, 0, 6, :, 5, 7, ), \n, S, h, a, r, e,  , e, x, a, m, p, l, e, s,  , a, n, d,  , d, e, t, a, i, l, s,  , o, f,  , t, h, e,  , i, n, c, r, e, m, e, n, t, a, l,  , q, u, a, n, t, i, l, e, s,  , a, n, d,  , o, t, h, e, r,  , m, e, t, r, i, c,  , d, a, t, a,  , m, o, d, e, l, s,  , a, n, d,  , r, e, l, e, v, a, n, t,  , S, Q, L,  , m, e, t, h, o, d, s,  , f, o, r,  , L, i, l, l, i, a, ’, s,  , r, e, v, i, e, w,  , (, 2, 8, :, 3, 5, ), \n, S, e, n, d,  , s, e, r, v, i, c, e,  , a, c, c, o, u, n, t,  , a, n, d,  , i, n, s, t, r, u, c, t, i, o, n, s,  , f, o, r,  , s, e, t, t, i, n, g,  , u, p,  , e, x, p, e, r, i, m, e, n, t, s,  , u, s, i, n, g,  , i, n, c, r, e, m, e, n, t, a, l,  , c, a, c, h, i, n, g,  , t, o,  , e, n, a, b, l, e,  , l, o, c, a, l,  , a, n, d,  , r, e, m, o, t, e,  , t, e, s, t, i, n, g,  , (, 4, 0, :, 5, 0, ), \n, B, e,  , a, v, a, i, l, a, b, l, e,  , f, o, r,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g, s, ,,  , o, f, f, e, r, i, n, g,  , d, e, t, a, i, l, e, d,  , e, x, p, l, a, n, a, t, i, o, n, s,  , a, n, d,  , s, c, r, e, e, n,  , s, h, a, r, i, n, g,  , s, e, s, s, i, o, n, s,  , t, o,  , h, e, l, p,  , r, e, s, o, l, v, e,  , i, n, c, r, e, m, e, n, t, a, l,  , a, n, d,  , f, u, n, n, e, l,  , m, e, t, r, i, c,  , d, e, s, i, g, n,  , q, u, e, s, t, i, o, n, s,  , (, 2, 4, :, 4, 4, ), \n",
+      "participant_domains": [
+        "growthbook.io"
+      ]
+    }
+  ]
+}

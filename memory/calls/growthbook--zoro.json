@@ -1,0 +1,23 @@
+{
+  "company": "GrowthBook | Zoro",
+  "slug": "growthbook--zoro",
+  "last_etl_date": "2026-08-08T17:27:26.403972",
+  "calls": [
+    {
+      "id": "01KZ9C7ZK49JX7PYK1RSMCHMDH",
+      "source": "fireflies",
+      "title": "GrowthBook | Zoro sync",
+      "date": "2026-08-07",
+      "duration_minutes": 28.190000534057617,
+      "summary": "The team is set to initiate a Proof of Concept (POC) for integrating Growth Book, aiming for a start on August 17th, contingent on legal review. The POC will encompass AA testing, full AB experiments, a browser extension, and integration with Datadog to ensure core capabilities and site performance metrics. Key technical aspects involve connecting to BigQuery and optimizing data handling through SQL queries. The meeting underscored the importance of integrating Datadog to monitor site performance and facilitate automated rollbacks during experiments. There will be an internal sync on POC scope, with follow-up meetings and the establishment of Slack channels for efficient communication as the team moves forward.",
+      "organizer": "christian@growthbook.io",
+      "participants": 5,
+      "keywords": "Product analytics, POC, feature flags, Datadog integration, BigQuery, browser extension",
+      "action_items": "\n, *, *, J, a, y,  , S, h, e, l, l, -, L, a, r, s, o, n, *, *, \n, K, i, c, k,  , o, f, f,  , l, e, g, a, l,  , r, e, v, i, e, w,  , p, r, o, c, e, s, s,  , f, o, r,  , P, O, C,  , a, g, r, e, e, m, e, n, t,  , i, m, m, e, d, i, a, t, e, l, y,  , (, 0, 2, :, 1, 5, ), \n, A, l, i, g, n,  , i, n, t, e, r, n, a, l,  , t, e, a, m, s,  , a, n, d,  , s, c, h, e, d, u, l, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , p, o, s, t,  , T, h, u, r, s, d, a, y,  , s, y, n, c,  , t, o,  , f, i, n, a, l, i, z, e,  , P, O, C,  , s, c, o, p, e,  , a, n, d,  , r, e, s, p, o, n, s, i, b, i, l, i, t, i, e, s,  , (, 1, 3, :, 4, 6, ), \n, C, o, o, r, d, i, n, a, t, e,  , w, i, t, h,  , s, o, f, t, w, a, r, e,  , e, n, g, i, n, e, e, r, i, n, g,  , p, a, r, t, n, e, r, s,  , t, o,  , p, r, e, p, a, r, e,  , f, o, r,  , P, O, C,  , t, e, c, h, n, i, c, a, l,  , s, e, t, u, p,  , a, n, d,  , r, e, q, u, i, r, e, m, e, n, t, s,  , (, 1, 3, :, 4, 6, ), \n, E, v, a, l, u, a, t, e,  , t, e, c, h, n, i, c, a, l,  , f, e, a, s, i, b, i, l, i, t, y,  , o, f,  , D, a, t, a, d, o, g,  , i, n, t, e, g, r, a, t, i, o, n,  , w, i, t, h,  , G, r, o, w, t, h,  , B, o, o, k,  , u, s, i, n, g,  , w, e, b, h, o, o, k,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , a, n, d,  , s, h, a, r, e,  , f, i, n, d, i, n, g, s,  , w, i, t, h,  , G, r, o, w, t, h,  , B, o, o, k,  , t, e, a, m,  , b, e, f, o, r, e,  , f, o, l, l, o, w, -, u, p,  , (, 2, 3, :, 3, 5, ), \n, \n, *, *, C, h, r, i, s,  , S, a, n, d, e, r, s, *, *, \n, R, e, v, i, e, w,  , c, u, r, r, e, n, t,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , a, n, d,  , p, r, o, v, i, d, e,  , t, e, c, h, n, i, c, a, l,  , f, e, e, d, b, a, c, k,  , o, n,  , w, e, b, h, o, o, k,  , i, n, t, e, g, r, a, t, i, o, n,  , a, n, d,  , p, o, t, e, n, t, i, a, l,  , f, o, r, w, a, r, d,  , c, o, n, t, r, o, l,  , m, e, c, h, a, n, i, s, m,  , f, o, r,  , a, u, t, o,  , r, o, l, l, b, a, c, k,  , o, f,  , e, x, p, e, r, i, m, e, n, t, s,  , v, i, a,  , D, a, t, a, d, o, g,  , (, 2, 4, :, 4, 3, ), \n, A, s, s, i, s, t,  , J, a, y,  , a, n, d,  , t, e, a, m,  , w, i, t, h,  , c, l, a, r, i, f, i, c, a, t, i, o, n, s,  , o, n,  , s, e, t, t, i, n, g,  , u, p,  , S, Q, L,  , q, u, e, r, i, e, s, ,,  , e, x, p, o, s, u, r, e,  , e, v, e, n, t, s, ,,  , a, n, d,  , f, e, a, t, u, r, e,  , f, l, a, g,  , t, o, g, g, l, i, n, g,  , f, o, r,  , P, O, C,  , (, 1, 0, :, 0, 4, ), \n, \n, *, *, C, h, r, i, s, t, i, a, n,  , L, i, e, b, e, n, o, w, *, *, \n, S, e, t,  , u, p,  , S, l, a, c, k,  , c, h, a, n, n, e, l,  , f, o, r,  , s, t, r, e, a, m, l, i, n, e, d,  , c, o, m, m, u, n, i, c, a, t, i, o, n,  , a, m, o, n, g,  , a, l, l,  , m, e, e, t, i, n, g,  , p, a, r, t, i, c, i, p, a, n, t, s,  , (, 2, 6, :, 5, 3, ), \n, P, a, r, t, i, c, i, p, a, t, e,  , i, n,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , e, a, r, l, y,  , n, e, x, t,  , w, e, e, k,  , t, o,  , d, i, s, c, u, s, s,  , P, O, C,  , p, r, o, g, r, e, s, s,  , a, n, d,  , s, u, p, p, o, r, t,  , n, e, e, d, s,  , (, 2, 6, :, 4, 2, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "zoro.com"
+      ]
+    }
+  ]
+}

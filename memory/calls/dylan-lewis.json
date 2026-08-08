@@ -1,0 +1,23 @@
+{
+  "company": "Dylan Lewis and",
+  "slug": "dylan-lewis",
+  "last_etl_date": "2026-08-08T17:27:26.404785",
+  "calls": [
+    {
+      "id": "01KZ6MCWM3DN31KGMGZ1SNWHBA",
+      "source": "fireflies",
+      "title": "Dylan Lewis and Graham McNicoll",
+      "date": "2026-08-06",
+      "duration_minutes": 35.529998779296875,
+      "summary": "The team discussed a multi-year quality scorecard designed to measure and improve experimentation rigor and efficiency. Year one introduced a 20-point quality scale, while year two refined scoring with detailed requirements for hypotheses and parameters. Current efforts center on using AI to automate quality checks and explore anti-patterns, although data quality remains a barrier for measuring business impacts. The scorecard is evolving to provide organizational insights, with pilot projects integrating AI for hypothesis generation. Additionally, the team emphasized the importance of balancing decision speed with thorough analysis, while addressing concerns about AI transparency and user control.",
+      "organizer": "graham@growthbook.io",
+      "participants": 3,
+      "keywords": "Experiment Quality, Hypothesis Standard, AI Analysis, Restart Handling, Decision Speed, Quality Scorecard",
+      "action_items": "\n, *, *, D, y, l, a, n,  , L, e, w, i, s, *, *, \n, S, h, a, r, e,  , c, o, n, s, o, l, i, d, a, t, e, d,  , n, o, t, e, s,  , a, n, d,  , q, u, a, l, i, t, y,  , s, c, o, r, e, c, a, r, d,  , r, e, s, u, l, t, s,  , d, e, r, i, v, e, d,  , f, r, o, m,  , v, a, r, i, o, u, s,  , i, n, d, u, s, t, r, y,  , p, a, p, e, r, s,  , a, n, d,  , A, I,  , a, n, a, l, y, s, i, s,  , w, i, t, h,  , G, r, a, h, a, m,  , M, c, N, i, c, o, l, l,  , (, 3, 2, :, 1, 6, ), \n, \n, *, *, G, r, a, h, a, m,  , M, c, N, i, c, o, l, l, *, *, \n, S, h, a, r, e,  , e, a, r, l, y,  , m, o, c, k, u, p, s,  , a, n, d,  , c, o, n, c, e, p, t, s,  , o, f,  , A, I, -, p, o, w, e, r, e, d,  , q, u, a, l, i, t, y,  , s, c, o, r, i, n, g,  , t, o, o, l, s,  , f, o, r,  , e, x, p, e, r, i, m, e, n, t, a, t, i, o, n,  , w, i, t, h,  , D, y, l, a, n,  , L, e, w, i, s,  , (, 2, 4, :, 1, 8, ), \n, E, x, p, l, o, r, e,  , p, o, t, e, n, t, i, a, l,  , t, o, o, l, i, n, g,  , f, o, r,  , a, u, t, o, m, a, t, i, c,  , s, c, r, e, e, n, s, h, o, t, s,  , a, n, d,  , D, O, M,  , r, e, c, o, r, d, i, n, g,  , i, n,  , c, l, i, e, n, t, -, s, i, d, e,  , e, x, p, e, r, i, m, e, n, t, s,  , t, o,  , i, m, p, r, o, v, e,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , q, u, a, l, i, t, y,  , a, s, s, e, s, s, m, e, n, t,  , (, 3, 4, :, 0, 5, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "atlassian.com"
+      ]
+    }
+  ]
+}

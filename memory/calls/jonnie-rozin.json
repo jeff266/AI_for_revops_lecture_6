@@ -1,0 +1,23 @@
+{
+  "company": "Jonnie Rozin and",
+  "slug": "jonnie-rozin",
+  "last_etl_date": "2026-08-08T17:27:26.408794",
+  "calls": [
+    {
+      "id": "01KYWKQMWCW04NAR07EMBJP7VP",
+      "source": "fireflies",
+      "title": "Jonnie Rozin and Scott Keller",
+      "date": "2026-08-04",
+      "duration_minutes": null,
+      "summary": "",
+      "organizer": "scott.keller@growthbook.io",
+      "participants": 2,
+      "keywords": "",
+      "action_items": "",
+      "participant_domains": [
+        "growthbook.io",
+        "jonniebydesign.com"
+      ]
+    }
+  ]
+}

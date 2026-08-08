@@ -1,0 +1,23 @@
+{
+  "company": "Tomáš / James",
+  "slug": "tom",
+  "last_etl_date": "2026-08-08T17:27:26.407686",
+  "calls": [
+    {
+      "id": "01KYYJ1BJZXFS9HCRGXK8SMA1E",
+      "source": "fireflies",
+      "title": "Tomáš / James",
+      "date": "2026-08-05",
+      "duration_minutes": 14.430000305175781,
+      "summary": "The team focused on presenting a proposal for an unlimited experimentation platform by Growthbook, targeting a total cost of €260,000 annually. James Shannon emphasized the benefits of running unlimited tests across mobile and web, looking to enhance operational efficiency and insight-sharing. Tomáš Voves raised concerns regarding the pricing compared to competitors like Optimizely, noting the importance of budget cuts. The procurement strategy will evaluate multiple vendors and seek adjustments to pricing based on multi-year commitments. Plans for implementation were discussed, with Tomáš set to clarify engineering costs and support needed to ensure a smooth rollout. Ultimately, the meeting highlighted the goal of achieving unlimited experimentation to drive growth and meet organizational demands.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "experimentation platform, pricing negotiation, procurement process, mobile and web testing, multi-year contract, implementation cost",
+      "action_items": "\n, *, *, T, o, m, á, š,  , V, o, v, e, s, *, *, \n, E, n, g, a, g, e,  , w, i, t, h,  , p, r, o, c, u, r, e, m, e, n, t,  , o, n,  , t, h, e,  , s, a, m, e,  , d, a, y,  , t, o,  , a, d, v, a, n, c, e,  , d, i, s, c, u, s, s, i, o, n, s,  , a, n, d,  , p, r, e, s, e, n, t,  , G, r, o, w, t, h, b, o, o, k,  , a, s,  , p, a, r, t,  , o, f,  , v, e, n, d, o, r,  , c, o, m, p, e, t, i, t, i, o, n,  , (, 0, 0, :, 5, 6, ), \n, D, i, s, c, u, s, s,  , p, r, o, p, o, s, a, l,  , a, n, d,  , p, r, i, c, i, n, g,  , w, i, t, h,  , C, P, O,  , T, o, m, á, š,  , B, u, n, d, e, l, i, k,  , a, n, d,  , e, n, g, i, n, e, e, r, i, n, g,  , t, e, a, m,  , t, o,  , e, v, a, l, u, a, t, e,  , i, m, p, l, e, m, e, n, t, a, t, i, o, n,  , c, o, s, t, s,  , a, n, d,  , r, e, q, u, i, r, e, d,  , h, o, u, r, s,  , (, 1, 0, :, 1, 6, ), \n, P, r, o, v, i, d, e,  , J, a, m, e, s,  , w, i, t, h,  , u, p, d, a, t, e, s,  , o, n,  , p, r, o, c, u, r, e, m, e, n, t,  , o, u, t, c, o, m, e,  , a, n, d,  , c, o, m, p, e, t, i, t, i, v, e,  , p, r, i, c, i, n, g,  , f, r, o, m,  , C, o, n, f, i, d, e, n, c, e,  , w, i, t, h, i, n,  , 1, 4,  , d, a, y, s,  , (, 1, 0, :, 5, 7, ), \n, C, o, n, f, i, r, m,  , a, v, a, i, l, a, b, i, l, i, t, y,  , f, o, r,  , a,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , n, e, x, t,  , w, e, e, k,  , T, h, u, r, s, d, a, y,  , t, o,  , d, i, s, c, u, s, s,  , p, r, o, g, r, e, s, s,  , a, n, d,  , n, e, g, o, t, i, a, t, i, o, n, s,  , (, 1, 2, :, 0, 6, ), \n, \n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, A, w, a, i, t,  , u, p, d, a, t, e, s,  , f, r, o, m,  , T, o, m, á, š,  , o, n,  , p, r, o, c, u, r, e, m, e, n, t,  , d, i, s, c, u, s, s, i, o, n, s,  , a, n, d,  , p, r, i, c, i, n, g,  , c, o, m, p, a, r, i, s, o, n, s,  , (, 0, 1, :, 1, 6, ), \n, P, r, e, p, a, r, e,  , t, o,  , n, e, g, o, t, i, a, t, e,  , p, r, i, c, i, n, g,  , m, o, d, e, l, s,  , p, o, t, e, n, t, i, a, l, l, y,  , b, a, s, e, d,  , o, n,  , m, u, l, t, i, -, y, e, a, r,  , c, o, n, t, r, a, c, t, s,  , o, r,  , o, t, h, e, r,  , l, e, v, e, r, s,  , t, o,  , a, c, c, o, m, m, o, d, a, t, e,  , b, u, d, g, e, t,  , a, n, d,  , c, l, i, e, n, t,  , n, e, e, d, s,  , (, 0, 8, :, 1, 7, ), \n, S, c, h, e, d, u, l, e,  , a, n, d,  , a, t, t, e, n, d,  , a,  , 1, 5, -, m, i, n, u, t, e,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g,  , n, e, x, t,  , w, e, e, k,  , T, h, u, r, s, d, a, y,  , t, o,  , c, o, n, t, i, n, u, e,  , d, i, s, c, u, s, s, i, o, n,  , (, 1, 2, :, 0, 6, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "livesport.eu"
+      ]
+    }
+  ]
+}

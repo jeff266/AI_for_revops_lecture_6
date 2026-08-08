@@ -1,0 +1,23 @@
+{
+  "company": "Jake <> Brent",
+  "slug": "jake",
+  "last_etl_date": "2026-08-08T17:27:26.406819",
+  "calls": [
+    {
+      "id": "01KZ56V6EYV096TDK90GZ57A92",
+      "source": "fireflies",
+      "title": "Jake <> Brent weekly 1:1",
+      "date": "2026-08-05",
+      "duration_minutes": 29.18000030517578,
+      "summary": "The meeting addressed various aspects of sales performance, highlighting a successful $60,000 deal closed with Funding Pips and strong pipeline numbers with 15 held deals in June and 14 in July. Brent provided coaching focused on building confidence in discovery and price negotiation, identifying Jake's potential while noting areas for growth. The team discussed lead generation challenges, particularly with the AI Leaders campaign, while celebrating successes in securing cold podcast attendees and exceeding Michelin Star dinner registrations. Pricing strategy was explored, proposing a new SMB tier to bridge gaps between Pro and Enterprise products. Process improvements were emphasized, urging reinstatement of weekly tracking and better CRM usage to enhance referral tracking and campaign monitoring. Brent also reinforced his supportive role in Jake's development and the importance of celebrating wins.",
+      "organizer": "jake.stangl@growthbook.io",
+      "participants": 2,
+      "keywords": "Enterprise Pricing, SMB Package, Pipeline Management, Dripify Campaign, Deal Closing Readiness, Quarterly Sales Performance",
+      "action_items": "\n, *, *, J, a, k, e,  , S, t, a, n, g, l, *, *, \n, R, e, o, p, e, n,  , a, n, d,  , r, e, v, i, e, w,  , t, h, e,  , w, e, e, k, l, y,  , n, o, t, e, -, t, r, a, c, k, i, n, g,  , s, p, r, e, a, d, s, h, e, e, t,  , t, o,  , m, a, i, n, t, a, i, n,  , a, l, i, g, n, m, e, n, t,  , o, n,  , k, e, y,  , d, e, a, l,  , p, r, o, g, r, e, s, s,  , a, n, d,  , p, r, i, o, r, i, t, i, e, s,  , (, 0, 6, :, 3, 8, ), \n, F, o, l, l, o, w,  , u, p,  , o, n,  , L, i, n, k, e, d, I, n,  , u, n, r, e, a, d,  , m, e, s, s, a, g, e, s,  , a, n, d,  , D, r, i, p, i, f, y,  , r, e, s, p, o, n, s, e, s,  , a, t,  , l, e, a, s, t,  , t, w, i, c, e,  , w, e, e, k, l, y,  , t, o,  , a, v, o, i, d,  , m, i, s, s, e, d,  , e, n, g, a, g, e, m, e, n, t,  , o, p, p, o, r, t, u, n, i, t, i, e, s,  , (, 2, 0, :, 0, 6, ), \n, D, e, v, e, l, o, p,  , a,  , s, y, s, t, e, m,  , f, o, r,  , t, r, a, c, k, i, n, g,  , P, r, o,  , a, c, c, o, u, n, t, s,  , r, e, f, e, r, r, e, d,  , f, r, o, m,  , c, o, n, v, e, r, s, a, t, i, o, n, s, ,,  , a, n, d,  , d, i, s, c, u, s, s,  , t, h, i, s,  , w, i, t, h,  , J, e, f, f,  , a, n, d,  , R, y, a, n,  , f, o, r,  , a, l, i, g, n, m, e, n, t,  , (, 2, 0, :, 4, 7, ), \n, C, o, n, n, e, c, t,  , w, i, t, h,  , R, y, a, n,  , t, o,  , d, i, s, c, u, s, s,  , t, h, e,  , f, e, a, s, i, b, i, l, i, t, y,  , a, n, d,  , s, p, e, c, i, f, i, c, s,  , o, f,  , a, n,  , S, M, B,  , p, r, i, c, i, n, g,  , p, a, c, k, a, g, e,  , a, n, d,  , p, l, a, t, f, o, r, m,  , f, e, e,  , a, d, j, u, s, t, m, e, n, t, s,  , (, 2, 3, :, 3, 6, ), \n, R, e, s, p, o, n, d,  , t, o,  , e, v, e, n, t,  , i, n, v, i, t, e, e, s,  , w, h, o,  , e, n, g, a, g, e, d,  , l, a, t, e, ,,  , s, u, c, h,  , a, s,  , J, a, k, e,  , M, a, c, r, a, m, ,,  , o, f, f, e, r, i, n, g,  , f, o, l, l, o, w, -, u, p,  , m, e, e, t, i, n, g, s,  , p, o, s, t, -, e, v, e, n, t,  , (, 1, 8, :, 5, 0, ), \n, \n, *, *, B, r, e, n, t,  , H, o, l, l, o, w, a, y, *, *, \n, C, o, n, t, i, n, u, e,  , p, r, o, v, i, d, i, n, g,  , c, o, a, c, h, i, n, g,  , a, n, d,  , d, e, a, l,  , s, u, p, p, o, r, t, ,,  , e, s, p, e, c, i, a, l, l, y,  , a, r, o, u, n, d,  , c, l, o, s, i, n, g,  , s, t, r, a, t, e, g, i, e, s,  , a, n, d,  , p, r, i, c, i, n, g,  , d, e, b, a, t, e, s, ,,  , a, l, o, n, g, s, i, d, e,  , R, y, a, n,  , (, 2, 8, :, 0, 3, ), \n, \n, *, *, R, y, a, n, *, *, \n, D, i, s, c, u, s, s,  , w, i, t, h,  , J, a, k, e,  , a, n, d,  , B, r, e, n, t,  , t, h, e,  , c, r, e, a, t, i, o, n,  , o, f,  , a, n,  , S, M, B,  , p, r, o, d, u, c, t,  , a, n, d,  , p, r, i, c, i, n, g,  , p, a, c, k, a, g, e,  , t, h, a, t,  , b, r, i, d, g, e, s,  , t, h, e,  , g, a, p,  , b, e, t, w, e, e, n,  , P, r, o,  , a, n, d,  , E, n, t, e, r, p, r, i, s, e,  , p, l, a, n, s,  , (, 2, 3, :, 3, 6, ), \n",
+      "participant_domains": [
+        "growthbook.io",
+        "saassalesadvisors.com"
+      ]
+    }
+  ]
+}

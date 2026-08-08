@@ -1,0 +1,20 @@
+{
+  "company": "Fireflies Demo Meeting",
+  "slug": "fireflies",
+  "last_etl_date": "2026-08-08T17:27:26.411260",
+  "calls": [
+    {
+      "id": "01KZ3H1Y991PG846HT8P54WBTX",
+      "source": "fireflies",
+      "title": "Fireflies Demo Meeting",
+      "date": "2026-08-03",
+      "duration_minutes": 13.59000015258789,
+      "summary": "The desktop app auto-detects meetings, offering functionalities like live notes and real-time assistance with prep notes available per calendar meeting. Users can control meeting settings through options for capturing audio and video, setting meeting preferences like language and privacy, and managing notifications. Recording modes vary, with a bot participant enabling enhanced features like speaker labels and transcripts. The Live Assist Panel provides real-time functionality, including a transcript with speaker identification, AI-driven note capturing, and preparation context. Users can query past meetings and knowledge bases through the Ask Fred feature, while Sales Assist is accessible only with the note-taker bot in the call.",
+      "organizer": "remy@growthbook.io",
+      "participants": 1,
+      "keywords": "meeting capture, live notes, Fireflies app, transcript, AI assistance, Sales Assist",
+      "action_items": "*, *, U, n, a, s, s, i, g, n, e, d, *, *,  ,  , \n, D, o, w, n, l, o, a, d,  , a, n, d,  , i, n, s, t, a, l, l,  , F, i, r, e, f, l, i, e, s,  , d, e, s, k, t, o, p,  , a, p, p,  , (, 0, 0, :, 0, 1, ),  ,  , \n, C, o, n, f, i, g, u, r, e,  , m, e, e, t, i, n, g,  , c, a, p, t, u, r, e,  , p, r, e, f, e, r, e, n, c, e, s,  , (, 0, 0, :, 3, 9, )",
+      "participant_domains": []
+    }
+  ]
+}

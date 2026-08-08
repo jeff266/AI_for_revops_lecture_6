@@ -1,0 +1,23 @@
+{
+  "company": "GrowthBook Commercial Discussion",
+  "slug": "growthbook-commercial-discussion",
+  "last_etl_date": "2026-08-08T17:27:26.404624",
+  "calls": [
+    {
+      "id": "01KZBXWWQSJ1ZA79FS13PYPQ2X",
+      "source": "fireflies",
+      "title": "GrowthBook Commercial Discussion",
+      "date": "2026-08-07",
+      "duration_minutes": 17.989999771118164,
+      "summary": "The discussions revolved around a straightforward commercial model with a fixed annual subscription for an experimentation platform, starting at $75,000 for 60 experiments. Pricing stability is ensured by charging based on experiments rather than traffic or users. Client targets were highlighted, with a goal of 312 annual experiments, though a more achievable target is 120. Urgent migration from the current platform, Unleash, is ongoing, with an estimated implementation timeline of four to six weeks. The decision-making process involves multiple teams, including product and engineering, with a focus on platform suitability and IT security. Growth Book's support and onboarding model was underscored, aimed at facilitating a smooth transition, with surveys being deployed to capture preferences ahead of a final decision expected next week.",
+      "organizer": "james.shannon@growthbook.io",
+      "participants": 2,
+      "keywords": "Experimentation, Pricing Model, Feature Flags, Migration, Deployment Timeline, Decision Process",
+      "action_items": "\n, *, *, J, a, m, e, s,  , S, h, a, n, n, o, n, *, *, \n, P, r, e, p, a, r, e,  , a,  , c, u, s, t, o, m, i, z, e, d,  , d, e, p, l, o, y, m, e, n, t, ,,  , r, o, l, l, o, u, t, ,,  , a, n, d,  , i, m, p, l, e, m, e, n, t, a, t, i, o, n,  , t, i, m, e, l, i, n, e,  , a, n, d,  , d, o, c, u, m, e, n, t, a, t, i, o, n,  , t, a, i, l, o, r, e, d,  , f, o, r,  , A, i, r, a, l, o, ’, s,  , t, e, c, h, n, o, l, o, g, y,  , s, t, a, c, k,  , a, n, d,  , s, p, e, c, i, f, i, c,  , n, e, e, d, s,  , t, o,  , a, s, s, i, s, t,  , i, n,  , d, e, c, i, s, i, o, n, -, m, a, k, i, n, g,  , (, 1, 4, :, 3, 9, ), \n, P, r, o, v, i, d, e,  , a,  , s, u, m, m, a, r, y,  , d, o, c, u, m, e, n, t,  , e, a, r, l, y,  , n, e, x, t,  , w, e, e, k,  , t, o,  , s, u, p, p, o, r, t,  , A, i, r, a, l, o, ’, s,  , f, i, n, a, l,  , p, l, a, t, f, o, r, m,  , r, e, c, o, m, m, e, n, d, a, t, i, o, n,  , d, o, c, u, m, e, n, t,  , (, 1, 5, :, 5, 0, ), \n, \n, *, *, A, n, d, r, a,  , T, o, l, b, u, s, *, *, \n, S, e, n, d,  , o, u, t,  , a,  , p, r, o, d, u, c, t,  , t, e, a, m,  , s, u, r, v, e, y,  , f, o, l, l, o, w, i, n, g,  , t, h, e,  , t, h, i, r, d,  , v, e, n, d, o, r,  , d, e, m, o,  , t, o,  , g, a, t, h, e, r,  , f, e, e, d, b, a, c, k,  , o, n,  , p, l, a, t, f, o, r, m,  , p, r, e, f, e, r, e, n, c, e, s,  , (, 1, 2, :, 0, 0, ), \n, P, a, r, t, i, c, i, p, a, t, e,  , i, n,  , t, h, e,  , t, e, c, h, n, i, c, a, l,  , c, h, e, c, k, -, i, n,  , c, a, l, l,  , p, l, a, n, n, e, d,  , f, o, r,  , n, e, x, t,  , T, h, u, r, s, d, a, y,  , w, i, t, h,  , t, h, e,  , i, n, t, e, r, n, a, l,  , t, e, a, m,  , t, r, i, a, l, i, n, g,  , G, r, o, w, t, h,  , B, o, o, k, ’, s,  , e, n, t, e, r, p, r, i, s, e,  , v, e, r, s, i, o, n, ,,  , i, f,  , a, v, a, i, l, a, b, l, e,  , (, 1, 2, :, 5, 0, ), \n, M, a, k, e,  , t, h, e,  , f, i, n, a, l,  , p, l, a, t, f, o, r, m,  , d, e, c, i, s, i, o, n,  , b, y,  , t, h, e,  , e, n, d,  , o, f,  , n, e, x, t,  , w, e, e, k,  , a, n, d,  , c, o, o, r, d, i, n, a, t, e,  , c, o, n, t, r, a, c, t,  , s, i, g, n, i, n, g,  , i, f,  , G, r, o, w, t, h,  , B, o, o, k,  , i, s,  , s, e, l, e, c, t, e, d,  , (, 1, 6, :, 0, 3, ), \n",
+      "participant_domains": [
+        "airalo.com",
+        "growthbook.io"
+      ]
+    }
+  ]
+}
