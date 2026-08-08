@@ -77,6 +77,23 @@ To get it: app.fireflies.ai → Integrations → API → copy the key"
 Ask: "Paste your Fireflies API key (or SKIP):"
 Store as: FIREFLIES_API_KEY
 
+### If using a custom call tool (Fathom, Avoma, Chorus, etc.):
+
+Tell the user:
+"You're using {tool_name} for call intelligence.
+If you've already built the adapter (from client context onboarding),
+provide the API credential(s) now.
+
+Credential name should match what the adapter expects.
+Check scripts/adapters/calls/{tool_slug}.py for the exact env var name."
+
+Ask: "Paste your {Tool} API credential:"
+Store as: {TOOL}_API_KEY (or whatever name the adapter uses)
+
+If they haven't built the adapter yet, tell them:
+"Run 'start client onboarding' first to generate the call adapter,
+then come back here for credential setup."
+
 ## Step 3 — Apollo API Key
 
 Tell the user:
@@ -136,19 +153,37 @@ Ask: "Paste your Zapier catch hook URL (or SKIP):"
 
 Write a .env file to the repo root with all collected values.
 
-Then print the GitHub Secrets checklist:
+Then print the GitHub Secrets checklist based on the selected platforms:
+
+**If using Fireflies:**
 
 GitHub Secrets — Environment: Agent
 
 □ ANTHROPIC_API_KEY
-□ FIREFLIES_API_KEY         (blank if using Gong)
-□ GONG_ACCESS_KEY           (blank if using Fireflies)
-□ GONG_ACCESS_KEY_SECRET    (blank if using Fireflies)
+□ FIREFLIES_API_KEY
 □ APOLLO_API_KEY            (blank if skipped)
 □ HUBSPOT_API_KEY
 □ SUPABASE_URL
 □ SUPABASE_SERVICE_KEY
 □ ZAP_RESPONSE_URL          (blank if skipped)
+
+**If using Gong:**
+
+GitHub Secrets — Environment: Agent
+
+□ ANTHROPIC_API_KEY
+□ GONG_ACCESS_KEY
+□ GONG_ACCESS_KEY_SECRET
+□ APOLLO_API_KEY            (blank if skipped)
+□ HUBSPOT_API_KEY
+□ SUPABASE_URL
+□ SUPABASE_SERVICE_KEY
+□ ZAP_RESPONSE_URL          (blank if skipped)
+
+**If using a custom call tool:**
+
+Include the credential name(s) for the custom adapter instead
+of Fireflies or Gong credentials.
 
 Fastest way to add them:
   gh secret set --env Agent --env-file .env
