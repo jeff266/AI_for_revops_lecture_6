@@ -23,8 +23,7 @@ from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import agent components
-from adapters import get_call_adapter
-from hubspot_deals import get_hubspot_deals_client
+from adapters import get_call_adapter, get_crm_adapter, get_storage_adapter
 from context_builder import build_cumulative_state
 from meddicc_agent import run_agent
 from github_memory import get_memory_manager
@@ -160,16 +159,15 @@ def main():
     call_adapter = get_call_adapter()
     print(f"Call adapter: {type(call_adapter).__name__}")
 
-    hubspot = get_hubspot_deals_client()
+    hubspot = get_crm_adapter()
     memory = get_memory_manager()
     tracker = TokenTracker(memory.memory_dir)
 
-    # Initialize Supabase writer if configured
+    # Initialize storage writer if configured
     sb_writer = None
     if os.getenv('SUPABASE_URL'):
         try:
-            from supabase_client import SupabaseWriter
-            sb_writer = SupabaseWriter()
+            sb_writer = get_storage_adapter()
             print('   ✓ Supabase connected')
         except Exception as e:
             print(f'   ⚠️  Supabase init failed: {e} — continuing without')
@@ -468,10 +466,14 @@ def main():
             # Update last_analyzed timestamp in deal
             deal['last_analyzed'] = datetime.now().isoformat()
 
+            # Extract structured scores once, shared by both write-backs
+            scores = hubspot._extract_scores_from_analysis(analysis)
+
             # Update HubSpot deal note
             try:
-                hubspot.upsert_meddicc_note(
+                hubspot.write_analysis(
                     deal_id=deal_id,
+                    scores=scores,
                     analysis_content=analysis,
                     calls_count=total_calls
                 )
@@ -481,9 +483,6 @@ def main():
             # Write analysis to Supabase
             if sb_writer:
                 try:
-                    from hubspot_deals import HubSpotDealsClient
-                    hs = HubSpotDealsClient.__new__(HubSpotDealsClient)
-                    scores = hs._extract_scores_from_analysis(analysis)
                     sb_writer.insert_analysis(
                         deal_id=str(deal_id),
                         company_name=company_name,

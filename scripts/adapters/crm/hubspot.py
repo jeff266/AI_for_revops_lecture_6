@@ -10,9 +10,10 @@ from typing import List, Dict, Optional
 from datetime import datetime
 
 from utils import get_components, component_key, get_methodology, load_client_config
+from .base import CRMAdapter
 
 
-class HubSpotDealsClient:
+class HubSpotDealsClient(CRMAdapter):
     """Client for HubSpot Deals API."""
 
     BASE_URL = "https://api.hubapi.com"
@@ -357,19 +358,20 @@ class HubSpotDealsClient:
                          if isinstance(v, str)})
         return defaults
 
-    def upsert_meddicc_note(self, deal_id: str, analysis_content: str, calls_count: int = 0) -> dict:
+    def write_analysis(self, deal_id: str, scores: dict, analysis_content: str,
+                       calls_count: int = 0) -> dict:
         """
-        Update the qualification analysis on a deal by PATCHing deal properties.
+        Write the qualification analysis to a deal by PATCHing deal
+        properties.
 
-        Extracts structured scores from analysis markdown and updates the
-        config-driven core properties (score, status, last_analyzed,
-        summary) plus champion / economic buyer per-component scores when
-        those components exist in the configured methodology.
+        Uses the config-driven core properties (score, status,
+        last_analyzed, summary) plus champion / economic buyer
+        per-component scores when those components exist in the
+        configured methodology. `scores` must include 'overall_score',
+        'status', and one <component_key>_score per configured component
+        (see HubSpotDealsClient._extract_scores_from_analysis).
         """
         today = datetime.now().strftime('%Y-%m-%d')
-
-        # Extract structured scores from analysis
-        scores = self._extract_scores_from_analysis(analysis_content)
 
         props = self._prop_names()
         components = get_components()
@@ -394,6 +396,16 @@ class HubSpotDealsClient:
         result = self._patch(endpoint, {'properties': properties})
         print(f"  ✓ Updated deal properties (score: {scores['overall_score']}, status: {scores['status']})")
         return result
+
+    def upsert_meddicc_note(self, deal_id: str, analysis_content: str, calls_count: int = 0) -> dict:
+        """
+        Deprecated alias — legacy 3-arg signature. Extracts scores from
+        analysis_content itself (as it always has), then delegates to
+        write_analysis(). Preserves current behavior exactly for any
+        caller still using this name.
+        """
+        scores = self._extract_scores_from_analysis(analysis_content)
+        return self.write_analysis(deal_id, scores, analysis_content, calls_count)
 
     # Alias for future methodology-agnostic naming
     upsert_analysis_note = upsert_meddicc_note
@@ -423,7 +435,7 @@ class HubSpotDealsClient:
             'contacts': contacts
         }
 
-    def setup_hubspot_properties(self) -> bool:
+    def setup_properties(self) -> bool:
         """
         Create the custom qualification properties in HubSpot if they
         don't exist. Property names and the component list are driven by
@@ -432,6 +444,8 @@ class HubSpotDealsClient:
 
         Creates the four core properties (score, status, last_analyzed,
         summary) plus one number property per methodology component.
+        Idempotent — safe to run repeatedly (existing properties are
+        skipped via the 409 branch below).
         """
         endpoint = "/crm/v3/properties/deals"
 
@@ -506,6 +520,9 @@ class HubSpotDealsClient:
 
         return True
 
+    # Deprecation alias — old callers keep working.
+    setup_hubspot_properties = setup_properties
+
     def test_connection(self) -> bool:
         """Test API connection."""
         try:
@@ -534,8 +551,8 @@ if __name__ == "__main__":
     print("✓ Connected to HubSpot")
 
     # Setup custom properties (run once, idempotent)
-    print("\nSetting up custom MEDDICC properties...")
-    client.setup_hubspot_properties()
+    print("\nSetting up custom qualification properties...")
+    client.setup_properties()
 
     # Get active deals
     print("\nFetching active deals...")

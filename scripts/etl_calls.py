@@ -40,7 +40,7 @@ if REVOPS_METRICS.exists():
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 from utils import slugify
-from adapters import get_call_adapter
+from adapters import get_call_adapter, get_storage_adapter
 
 
 def get_external_domains(meeting_attendees: list, internal_domains: list) -> list:
@@ -640,10 +640,7 @@ def main():
     if os.getenv('SUPABASE_URL'):
         print(f"\n📤 Writing to Supabase...")
         try:
-            import sys
-            sys.path.insert(0, str(repo_root / 'scripts'))
-            from supabase_client import SupabaseWriter
-            sb = SupabaseWriter()
+            sb = get_storage_adapter()
             total = 0
             for slug, data in calls_by_company.items():
                 calls = data.get('calls', [])

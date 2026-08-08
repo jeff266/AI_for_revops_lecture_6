@@ -22,6 +22,7 @@ DEALS_DIR = REPO_ROOT / 'memory' / 'deals'
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 from utils import slugify
+from adapters import get_crm_adapter, get_storage_adapter
 
 DEALS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -175,8 +176,7 @@ def main():
     # Initialize HubSpot client
     print("\n1. Connecting to HubSpot API...")
     try:
-        from hubspot_deals import get_hubspot_deals_client
-        hubspot = get_hubspot_deals_client()
+        hubspot = get_crm_adapter()
     except Exception as e:
         print(f"❌ Failed to initialize HubSpot client: {e}")
         print("\nMake sure HUBSPOT_API_KEY environment variable is set.")
@@ -382,9 +382,7 @@ def main():
     if os.getenv('SUPABASE_URL'):
         print(f'\n6. Writing to Supabase...')
         try:
-            sys.path.insert(0, str(REPO_ROOT / 'scripts'))
-            from supabase_client import SupabaseWriter
-            sb = SupabaseWriter()
+            sb = get_storage_adapter()
             count = 0
             for deal_id, deal in deals.items():
                 try:
