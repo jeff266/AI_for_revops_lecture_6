@@ -586,11 +586,35 @@ def main():
         type=str,
         help='Override cutoff date (YYYY-MM-DD) for incremental mode'
     )
+    parser.add_argument(
+        '--active-deals-only',
+        action='store_true',
+        help='Only fetch calls for companies with active deals in memory/deals/index.json'
+    )
     args = parser.parse_args()
 
     # Setup paths
     repo_root = Path(__file__).parent.parent
     output_dir = repo_root / 'memory' / 'calls'
+
+    # Load active deal slugs if --active-deals-only is set
+    active_deal_slugs = None
+    if args.active_deals_only:
+        deals_index_path = repo_root / 'memory' / 'deals' / 'index.json'
+        if deals_index_path.exists():
+            try:
+                with open(deals_index_path) as f:
+                    deals_index = json.load(f)
+                    active_deal_slugs = set(d.get('company_slug') for d in deals_index.get('deals', [])
+                                           if d.get('company_slug'))
+                print(f"  📋 Active deals filter: {len(active_deal_slugs)} companies")
+            except Exception as e:
+                print(f"  ⚠️  Failed to load active deals: {e}")
+                print(f"  Continuing without filter...")
+        else:
+            print(f"  ⚠️  {deals_index_path} not found")
+            print(f"  Run scripts/etl_deals.py first to create deal index")
+            print(f"  Continuing without filter...")
 
     # Track progress
     calls_by_company = {}
@@ -625,6 +649,18 @@ def main():
         # Fetch from APIs
         fetch_call_intelligence_incremental(since_date, calls_by_company)
         fetch_apollo_incremental(since_date, calls_by_company, total_summarized)
+
+    # Filter to active deals only if flag is set
+    if active_deal_slugs:
+        original_count = len(calls_by_company)
+        calls_by_company = {
+            slug: data for slug, data in calls_by_company.items()
+            if slug in active_deal_slugs
+        }
+        filtered_count = original_count - len(calls_by_company)
+        if filtered_count > 0:
+            print(f"  🔽 Filtered out {filtered_count} companies (not in active deals)")
+        print(f"  ✓ Keeping {len(calls_by_company)} companies with active deals")
 
     # Save results
     save_call_caches(calls_by_company, output_dir)

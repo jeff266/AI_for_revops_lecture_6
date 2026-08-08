@@ -42,6 +42,14 @@ Go to: **Actions → MEDDICC Agent Nightly Run → Run workflow**
 Watch the logs. First run analyzes your full active pipeline.
 After that the agent runs every night at 2am UTC automatically.
 
+### What runs automatically
+
+| Time (UTC) | Job | What it does |
+|---|---|---|
+| 1:00 AM | Daily Deal ETL | Updates active deal index from HubSpot |
+| 1:30 AM | Daily Calls ETL | Fetches new calls for active deals |
+| 2:00 AM | MEDDICC Agent | Analyzes deals, writes to HubSpot + Supabase |
+
 ---
 
 ## Call intelligence platforms
