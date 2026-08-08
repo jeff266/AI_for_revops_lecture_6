@@ -1,4 +1,4 @@
-> **Note for students**: This is an anonymized example showing what a high-quality MEDDICC analysis looks like after 13 calls. Company name, contacts, and product details have been changed. Your first run will produce similar output for your active deals.
+> **Note for students**: This is an anonymized example showing what a high-quality MEDDICC analysis looks like after 13 calls. Company name, contacts, and product details have been changed. Your first run will produce similar output for your active deals. This example uses MEDDICC; your output follows whichever methodology you configure.
 
 # MEDDICC Analysis: Acme Corp
 

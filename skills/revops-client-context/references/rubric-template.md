@@ -46,8 +46,18 @@ FAIL if component is Partial or Unknown with no next step.
 
 ## Criterion 5: No unsupported claims
 
+FAIL if any advocacy/authority component (e.g. Champion,
+Economic Buyer, Authority) is scored above 2/10 based on
+enthusiasm or engagement alone, without evidence of a
+buyer-owned action.
+
+{{if methodology includes Champion}}
 FAIL if Champion described as "advocating internally" without
 evidence of internal selling behavior.
-FAIL if Economic Buyer "confirmed" without explicit budget authority.
+{{end if}}
+{{if methodology includes Economic Buyer or Authority}}
+FAIL if budget authority "confirmed" without an explicit
+statement of who owns the budget.
+{{end if}}
 FAIL if timeline stated as confirmed when only mentioned as a target.
 ```

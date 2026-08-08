@@ -56,12 +56,53 @@ If the tool is anything else (Fathom, Avoma, Chorus, etc.):
   - Rate limits
 
   STEP B: Generate the adapter
+
+  If scripts/adapters/calls/base.py does not exist in this
+  repo (older fork), create it first with exactly this
+  interface, then proceed:
+
+  ```python
+  from abc import ABC, abstractmethod
+  from typing import List, Optional
+  from datetime import datetime
+
+  class CallAdapter(ABC):
+      """
+      Contract for all call intelligence adapters.
+      Every tool (Fireflies, Gong, Apollo, Fathom, Avoma...)
+      implements exactly this interface. Method names are
+      methodology-agnostic on purpose.
+      """
+
+      @abstractmethod
+      def search_by_company(self, company_name: str,
+                            since_date: Optional[datetime] = None
+                            ) -> List[dict]:
+          """Return call dicts for a company, newest data included."""
+
+      @abstractmethod
+      def format_summary(self, call: dict) -> str:
+          """Format one call dict into an analysis-ready text
+          summary. Must return >100 chars for real calls
+          (Guard 3 in the nightly agent)."""
+
+      @abstractmethod
+      def get_meeting_attendees(self, call_id: str) -> List[dict]:
+          """Return attendees with email where available:
+          [{'name': ..., 'email': ...}, ...]. Return [] if the
+          tool cannot provide attendees."""
+
+      def test_connection(self) -> bool:
+          """Optional override. Default: True."""
+          return True
+  ```
+
   Create scripts/adapters/calls/{tool_slug}.py following
   the interface in scripts/adapters/calls/base.py.
 
   Implement:
     search_by_company(company, since_date) -> list
-    format_summary_for_meddicc(call) -> str
+    format_summary(call) -> str
     get_meeting_attendees(call_id) -> list
 
   STEP C: Simulate a test (no API key needed)
@@ -148,6 +189,10 @@ Read all four reference files before generating anything.
 
 Generate all four files fully populated from the interview.
 No placeholder text anywhere.
+
+When generating prompts and rubric, resolve every {{if methodology
+...}} conditional against the components of the selected methodology
+— never leave conditional markers in output.
 
 ### If running in Claude Code (has file system access):
 
