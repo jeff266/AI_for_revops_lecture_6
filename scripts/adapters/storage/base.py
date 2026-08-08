@@ -20,11 +20,23 @@ class StorageAdapter(ABC):
 
     @abstractmethod
     def insert_analysis(self, deal_id: str, company_name: str,
-                        scores: dict, analysis_content: str,
+                        result: dict, scores: dict,
                         output_file: str = '') -> None:
-        """Insert one analysis row. scores includes
-        component_scores (JSONB-ready dict) and, when the
-        methodology is MEDDICC, the seven legacy score columns."""
+        """Insert one analysis row.
+
+        result: the full agent output dict from run_agent()
+                (draft, iterations, passed, evaluation, etc.)
+                — implementations may pull whatever fields
+                they need from this (e.g. result['draft'] as
+                the analysis text, result['iterations'] for
+                a metadata column).
+        scores: flat dict of scores. Must include
+                'component_scores' (JSONB-ready dict) and,
+                when the methodology is MEDDICC, the seven
+                legacy score columns for backward compat.
+        output_file: relative path to the written .md file,
+                     or '' if not applicable.
+        """
 
     @abstractmethod
     def query(self, sql: str, params: Optional[dict] = None
