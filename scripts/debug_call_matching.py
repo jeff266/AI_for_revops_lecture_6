@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Diagnostic: Verifies call matching logic between CSV and deal cache
 """
 Debug script to check which HubSpot deals have matching Fireflies/Apollo calls.
 """

@@ -26,10 +26,12 @@ Ask one at a time:
 2. "Who is your ICP? Company size, industry, and buyer title."
 3. "What is your primary differentiator?"
 4. "What qualification methodology do you use?"
-5. "What does a good first call look like for your best reps?"
-6. "What timezone is your sales team primarily in?
+5. "What CRM do you use? (HubSpot, Salesforce, other)"
+6. "What call recording platform do you use? (Fireflies, Gong, other)"
+7. "What does a good first call look like for your best reps?"
+8. "What timezone is your sales team primarily in?
    (e.g. America/New_York, America/Los_Angeles, Europe/London)
-   This ensures HubSpot dates match your team's calendar."
+   This ensures CRM dates match your team's calendar."
 
 Push back on vague answers. Ask for real examples.
 

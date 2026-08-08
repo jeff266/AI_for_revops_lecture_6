@@ -19,7 +19,7 @@ permissions:
 jobs:
   etl-calls:
     runs-on: ubuntu-latest
-    timeout-minutes: 90  # ETL can take 60-90 minutes
+    timeout-minutes: 30
     environment: Agent  # Use Agent environment for secrets
 
     steps:

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Diagnostic: Backfills missing participant emails from call transcripts
 """
 Backfill participant_domains for existing Fireflies calls in cache.
 
