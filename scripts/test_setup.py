@@ -81,9 +81,9 @@ def test_hubspot():
     print("\n4. Testing HubSpot API...")
 
     try:
-        from hubspot_deals import get_hubspot_deals_client
+        from adapters import get_crm_adapter
 
-        client = get_hubspot_deals_client()
+        client = get_crm_adapter()
         if not client.test_connection():
             print("   ❌ HubSpot connection failed")
             return False

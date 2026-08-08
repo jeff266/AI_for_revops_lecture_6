@@ -11,9 +11,10 @@ from supabase import create_client, Client
 import os
 import re
 from datetime import datetime, date
-from typing import Optional
+from typing import List, Optional
 
 from utils import get_methodology
+from .base import StorageAdapter
 
 FEATURE_GAP_KEYWORDS = [
     'feature gap', 'missing feature', "doesn't support", "can't do",
@@ -62,7 +63,7 @@ def _safe_date(val) -> Optional[str]:
         return None
 
 
-class SupabaseWriter:
+class SupabaseWriter(StorageAdapter):
     """Client for writing MEDDICC agent data to Supabase."""
 
     def __init__(self):
@@ -195,3 +196,19 @@ class SupabaseWriter:
         self.client.table('calls').upsert(
             rows, on_conflict='call_id').execute()
         return len(rows)
+
+    def query(self, sql: str, params: Optional[dict] = None) -> List[dict]:
+        """
+        Execute a read query.
+
+        supabase-py's REST/PostgREST client has no generic raw-SQL
+        endpoint, and no 'exec_sql' Postgres function is defined in
+        scripts/migrations/ — setup_supabase.py's best-effort call to it
+        is wrapped in a silent try/except, so it cannot be relied on here.
+        Raising explicitly means callers (e.g. the CRO agent) discover
+        this immediately rather than by trial and error.
+        """
+        raise NotImplementedError(
+            'Use table-specific methods; raw SQL not supported by this '
+            'client version'
+        )

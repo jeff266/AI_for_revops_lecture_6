@@ -21,9 +21,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 try:
-    from hubspot_deals import HubSpotDeals
+    # Stage discovery uses hubspot._get() directly (raw pipeline stage
+    # data), which isn't part of the generic CRMAdapter interface — this
+    # imports the concrete HubSpot client rather than going through
+    # get_crm_adapter().
+    from adapters.crm.hubspot import HubSpotDealsClient
 except ImportError:
-    print("❌ Error: hubspot_deals.py not found")
+    print("❌ Error: scripts/adapters/crm/hubspot.py not found")
     print("   Make sure you're running from the repo root")
     sys.exit(1)
 
@@ -51,7 +55,7 @@ def main():
 
     # Initialize HubSpot client
     try:
-        hubspot = HubSpotDeals(api_key)
+        hubspot = HubSpotDealsClient(api_key)
     except Exception as e:
         print(f"❌ Error initializing HubSpot client: {e}")
         sys.exit(1)
