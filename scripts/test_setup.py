@@ -39,9 +39,9 @@ def test_fireflies():
     print("\n2. Testing Fireflies API...")
 
     try:
-        from fireflies_client import get_fireflies_client
+        from adapters import get_call_adapter
 
-        client = get_fireflies_client()
+        client = get_call_adapter('fireflies')
         if not client.test_connection():
             print("   ❌ Fireflies connection failed")
             return False
@@ -61,9 +61,9 @@ def test_apollo():
     print("\n3. Testing Apollo API...")
 
     try:
-        from apollo_client import get_apollo_client
+        from adapters import get_call_adapter
 
-        client = get_apollo_client()
+        client = get_call_adapter('apollo')
         if not client.test_connection():
             print("   ❌ Apollo connection failed")
             return False
