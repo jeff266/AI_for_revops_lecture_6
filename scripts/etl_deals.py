@@ -37,12 +37,77 @@ CLOSED_WON_STAGES_DEFAULT = ['closedwon']
 CLOSED_LOST_STAGES_DEFAULT = ['closedlost']
 
 
+def _excluded_stages_from_pipeline_config(pipelines: list) -> dict:
+    """
+    Derive the legacy excluded_stages return shape from the new
+    pipeline.pipelines[] stage-order model (config/client.yaml).
+
+    The new schema unifies what used to be two separate concepts
+    (Meeting Set / Disqualified) under a single exclude_from_analysis
+    flag per stage, plus an analyze:false flag per pipeline. Both
+    legacy keys still exist in the return value for backward
+    compatibility with the callers below — exclude_from_analysis stage
+    IDs are reported under 'meeting_set' (the historically broader
+    "excluded from active analysis" bucket) and 'disqualified' is left
+    empty, since nothing in the new model maps to it separately. A
+    pipeline flagged analyze: false contributes its ID to
+    excluded_pipelines; its individual stages don't need to be
+    enumerated since the pipeline-level exclusion already covers them.
+    """
+    exclude_from_analysis = []
+    closed_won = []
+    closed_lost = []
+    excluded_pipelines = []
+
+    for p in pipelines:
+        if p.get('analyze') is False:
+            pid = p.get('id')
+            if pid:
+                excluded_pipelines.append(pid)
+            continue
+
+        for stage in p.get('stages', []):
+            sid = stage.get('id')
+            if not sid:
+                continue
+            if stage.get('exclude_from_analysis'):
+                exclude_from_analysis.append(sid)
+            if stage.get('is_won'):
+                closed_won.append(sid)
+            if stage.get('is_lost'):
+                closed_lost.append(sid)
+
+    return {
+        'meeting_set': exclude_from_analysis,
+        'disqualified': [],
+        'closed_won': closed_won or CLOSED_WON_STAGES_DEFAULT,
+        'closed_lost': closed_lost or CLOSED_LOST_STAGES_DEFAULT,
+        'excluded_pipelines': excluded_pipelines,
+    }
+
+
 def get_excluded_stages() -> dict:
     """
     Load stage exclusions from config/client.yaml.
-    No hardcoded meeting_set stages — these vary by client.
-    Run discover_stages.py to find your org's stage IDs.
+
+    Prefers the new pipeline.pipelines[] stage-order model — see
+    _excluded_stages_from_pipeline_config(). Falls back to the legacy
+    flat excluded_stages block for older forks that haven't migrated.
+    If both shapes are present in the same file, the new shape wins —
+    they describe the same underlying stages and must not drift apart.
+
+    Returns the same 5-key shape either way so downstream callers
+    (get_deal_status, get_meeting_set_stages, the active/history mode
+    filters in main()) don't need to know which config shape is in use.
     """
+    default_result = {
+        'meeting_set': [],
+        'disqualified': [],
+        'closed_won': CLOSED_WON_STAGES_DEFAULT,
+        'closed_lost': CLOSED_LOST_STAGES_DEFAULT,
+        'excluded_pipelines': EXCLUDED_PIPELINES_DEFAULT,
+    }
+
     try:
         import yaml
         config_path = REPO_ROOT / 'config' / 'client.yaml'
@@ -50,48 +115,44 @@ def get_excluded_stages() -> dict:
             print("  ⚠️  config/client.yaml not found")
             print("     Run: python scripts/discover_stages.py")
             print("     Then configure your stage IDs in client.yaml")
-            return {
-                'meeting_set': [],
-                'disqualified': [],
-                'closed_won': CLOSED_WON_STAGES_DEFAULT,
-                'closed_lost': CLOSED_LOST_STAGES_DEFAULT,
-                'excluded_pipelines': EXCLUDED_PIPELINES_DEFAULT,
-            }
+            return default_result
 
         with open(config_path) as f:
-            config = yaml.safe_load(f)
+            config = yaml.safe_load(f) or {}
 
+        # New shape: pipeline.pipelines[] with per-stage order/flags.
+        new_pipelines = config.get('pipeline', {}).get('pipelines', [])
+        if new_pipelines:
+            return _excluded_stages_from_pipeline_config(new_pipelines)
+
+        # Legacy shape: flat excluded_stages block (older forks).
         excluded = config.get('excluded_stages', {})
+        if excluded:
+            def get_ids(section):
+                stages = excluded.get(section, [])
+                if isinstance(stages, list):
+                    return [s.get('id') for s in stages if s.get('id')
+                            and 'YOUR_' not in str(s.get('id', ''))]
+                return []
 
-        def get_ids(section):
-            stages = excluded.get(section, [])
-            if isinstance(stages, list):
-                return [s.get('id') for s in stages if s.get('id')
-                        and 'YOUR_' not in str(s.get('id', ''))]
-            return []
+            excluded_pipelines = []
+            for pipeline in config.get('pipelines', {}).get('excluded', []):
+                pipeline_id = pipeline.get('id', '')
+                if pipeline_id and 'YOUR_' not in str(pipeline_id):
+                    excluded_pipelines.append(pipeline_id)
 
-        excluded_pipelines = []
-        for pipeline in config.get('pipelines', {}).get('excluded', []):
-            pipeline_id = pipeline.get('id', '')
-            if pipeline_id and 'YOUR_' not in str(pipeline_id):
-                excluded_pipelines.append(pipeline_id)
+            return {
+                'meeting_set': get_ids('meeting_set'),
+                'disqualified': get_ids('disqualified'),
+                'closed_won': get_ids('closed_won') or CLOSED_WON_STAGES_DEFAULT,
+                'closed_lost': get_ids('closed_lost') or CLOSED_LOST_STAGES_DEFAULT,
+                'excluded_pipelines': excluded_pipelines,
+            }
 
-        return {
-            'meeting_set': get_ids('meeting_set'),
-            'disqualified': get_ids('disqualified'),
-            'closed_won': get_ids('closed_won') or CLOSED_WON_STAGES_DEFAULT,
-            'closed_lost': get_ids('closed_lost') or CLOSED_LOST_STAGES_DEFAULT,
-            'excluded_pipelines': excluded_pipelines,
-        }
+        return default_result
     except Exception as e:
         print(f"  ⚠️  Could not load client.yaml: {e}")
-        return {
-            'meeting_set': [],
-            'disqualified': [],
-            'closed_won': CLOSED_WON_STAGES_DEFAULT,
-            'closed_lost': CLOSED_LOST_STAGES_DEFAULT,
-            'excluded_pipelines': [],
-        }
+        return default_result
 
 
 def get_deal_status(stage: str, excluded_stages: dict) -> str:

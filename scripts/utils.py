@@ -105,3 +105,60 @@ def component_key(name: str) -> str:
     """'Economic Buyer' -> 'economic_buyer';
        'Identified Pain' -> 'identified_pain'"""
     return name.lower().replace(' ', '_')
+
+
+def get_pipeline_config(pipeline_id: str = None,
+                        config: dict = None) -> dict:
+    """Return the pipeline config block. Defaults to the
+    pipeline marked is_primary if pipeline_id not given."""
+    if config is None:
+        config = load_client_config()
+    pipelines = config.get('pipeline', {}).get('pipelines', [])
+    if pipeline_id:
+        for p in pipelines:
+            if p['id'] == pipeline_id:
+                return p
+        raise ValueError(f"Unknown pipeline_id '{pipeline_id}'")
+    for p in pipelines:
+        if p.get('is_primary'):
+            return p
+    if pipelines:
+        return pipelines[0]
+    return {}
+
+
+def get_stage_order(stage_id: str, pipeline_id: str = None,
+                    config: dict = None) -> int:
+    """Return the order value for a stage ID within a
+    pipeline. Returns None if the stage ID is not found —
+    caller must handle this (likely an archived/renamed
+    stage — see Phase C)."""
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            return s['order']
+    return None
+
+
+def get_value_field(config: dict = None) -> str:
+    if config is None:
+        config = load_client_config()
+    return config.get('pipeline', {}).get('value_field', 'amount')
+
+
+def is_won_stage(stage_id: str, pipeline_id: str = None,
+                 config: dict = None) -> bool:
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            return bool(s.get('is_won'))
+    return False
+
+
+def is_lost_stage(stage_id: str, pipeline_id: str = None,
+                  config: dict = None) -> bool:
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            return bool(s.get('is_lost'))
+    return False

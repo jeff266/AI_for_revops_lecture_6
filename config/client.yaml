@@ -33,56 +33,100 @@ organization:
 # ============================================================================
 # HUBSPOT PIPELINE CONFIGURATION
 # ============================================================================
-# Use scripts/discover_stages.py to find your organization's stage IDs
+# Use scripts/discover_stages.py to find your organization's stage IDs.
+#
+# Each pipeline gets its own ordered stage list. order values are a
+# sales-cycle position WITHIN that pipeline only — they are NOT
+# comparable across pipelines (a renewal pipeline's order 3 has nothing
+# to do with the sales pipeline's order 3).
+#
+# Per-stage flags:
+#   is_won / is_lost            — terminal outcome stages
+#   exclude_from_analysis: true — excluded from active-deal MEDDICC
+#                                 analysis and pipeline analytics.
+#                                 Covers what used to be two separate
+#                                 buckets (Meeting Set / Disqualified) —
+#                                 anything pre-discovery, junk, or
+#                                 disqualified gets this flag.
+#
+# Per-pipeline flags:
+#   is_primary: true  — exactly one pipeline; the default used wherever
+#                        a pipeline isn't specified explicitly.
+#   analyze: false    — excludes ALL of this pipeline's deals from
+#                        active-deal analysis (e.g. renewal, partner).
+#
+# qualified_stage_order: the first order value that counts as
+# "qualified" for this pipeline — sales cycle clock starts here, and
+# the win-rate denominator requires a deal to have reached it.
 
-pipelines:
-  # Pipelines to include in active deal analysis
-  # Only deals in these pipelines will be analyzed nightly
-  included:
-    - name: "Sales Pipeline"
-      id: "default"
+pipeline:
+  value_field: amount
+  # Override to arr_value, tcv, acv, etc. if 'amount' is not
+  # the right value field for this client.
 
-  # Pipelines to exclude from active deal analysis
-  # Common: renewal pipelines, partner pipelines, marketing pipelines
-  excluded:
-    - name: "Renewal Pipeline"
-      id: "YOUR_RENEWAL_PIPELINE_ID"
-    # Add more pipelines here as needed
-    # - name: "Partner Pipeline"
-    #   id: "987654321"
+  lost_reason_field: closed_lost_reason
+  # HubSpot's default property; many orgs use a custom one.
+  # Onboarding should detect candidates by scanning deal
+  # properties for names containing 'lost' + 'reason' and
+  # confirm with the client. Set null if the org doesn't
+  # track it.
 
-# ============================================================================
-# DEAL STAGE FILTERING
-# ============================================================================
-# Stages to exclude from active deal analysis
-# Common exclusions: too early (meeting set), too late (closed), or disqualified
+  pipelines:
+    - id: "default"
+      name: "Sales Pipeline"
+      is_primary: true
+      # analyze: false   # ← uncomment to exclude this whole pipeline
+      stages:
+        - id: "appointmentscheduled"
+          name: "Meeting Set"
+          order: 1
+          exclude_from_analysis: true
+        - id: "qualifiedtobuy"
+          name: "Discovery"
+          order: 2
+        - id: "presentationscheduled"
+          name: "Scoping"
+          order: 3
+        - id: "decisionmakerboughtin"
+          name: "Evaluation"
+          order: 4
+        - id: "contractsent"
+          name: "Proposal"
+          order: 5
+        - id: "closedwon"
+          name: "Closed Won"
+          order: 6
+          is_won: true
+        - id: "closedlost"
+          name: "Closed Lost"
+          order: 6
+          is_lost: true
+      qualified_stage_order: 3
+      # First order value that counts as "qualified" — sales
+      # cycle clock starts here, win rate denominator requires
+      # this threshold to have been reached.
 
-excluded_stages:
-  # Early stages (pre-discovery)
-  # NOTE: "Appointment Scheduled" (appointmentscheduled) is NOT Meeting Set
-  # in the default HubSpot pipeline - it's the Discovery stage.
-  # Only add your org's actual Meeting Set stage IDs here.
-  meeting_set:
-    - name: "Meeting Set"
-      id: "YOUR_MEETING_SET_STAGE_ID"
-
-  # Disqualified deals
-  disqualified:
-    - name: "Disqualified"
-      id: "YOUR_DISQUALIFIED_STAGE_ID"
-
-  # Closed deals (excluded in active mode, included in history mode)
-  closed_won:
-    - name: "Closed Won"
-      id: "closedwon"
-    - name: "Renewal Closed Won"
-      id: "YOUR_RENEWAL_CLOSED_WON_ID"
-
-  closed_lost:
-    - name: "Closed Lost"
-      id: "closedlost"
-    - name: "Renewal Closed Lost"
-      id: "YOUR_RENEWAL_CLOSED_LOST_ID"
+    # Additional pipelines (self-serve, partner, renewal, etc.)
+    # get their own stage list and their own
+    # qualified_stage_order — order values are NOT comparable
+    # across pipelines.
+    #
+    # - id: "YOUR_RENEWAL_PIPELINE_ID"
+    #   name: "Renewal Pipeline"
+    #   analyze: false   # excluded from active-deal analysis entirely
+    #   stages:
+    #     - id: "YOUR_RENEWAL_STAGE_ID"
+    #       name: "Renewal Stage"
+    #       order: 1
+    #     - id: "YOUR_RENEWAL_CLOSED_WON_ID"
+    #       name: "Renewal Closed Won"
+    #       order: 2
+    #       is_won: true
+    #     - id: "YOUR_RENEWAL_CLOSED_LOST_ID"
+    #       name: "Renewal Closed Lost"
+    #       order: 2
+    #       is_lost: true
+    #   qualified_stage_order: 1
 
 # ============================================================================
 # STAGE PROGRESSION REQUIREMENTS
@@ -235,8 +279,10 @@ etl:
 # To customize this for your organization:
 #
 # 1. Run scripts/discover_stages.py to get your HubSpot stage IDs
-# 2. Update pipelines.excluded with your renewal/partner pipelines
-# 3. Update excluded_stages with your organization's stage names and IDs
+# 2. Fill in pipeline.pipelines[] with your real stage IDs, order
+#    values, and is_won/is_lost/exclude_from_analysis/qualified_stage_order
+# 3. Add renewal/partner pipelines under pipeline.pipelines[] with
+#    analyze: false if they shouldn't be analyzed
 # 4. Adjust stage_progression thresholds based on your sales process
 # 5. Set evaluation_mode to "strict" for initial rollout
 # 6. Add custom deal_properties you want to include in analysis
