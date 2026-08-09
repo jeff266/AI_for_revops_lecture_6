@@ -75,8 +75,23 @@ class SupabaseWriter(StorageAdapter):
         self.client: Client = create_client(url, key)
 
     def upsert_deal(self, deal: dict) -> None:
-        """Upsert a deal from the deal index."""
-        self.client.table('deals').upsert({
+        """
+        Upsert a deal from the deal index, history mode, or analytics
+        mode. Base fields are always written. Mode-specific fields
+        (history: deal_status/create_date/days_to_close; analytics:
+        pipeline_id/deal_value/highest_stage_order_reached/
+        qualified_date/lost_reason/stage_source/new_arr/expansion_arr/
+        prior_arr/sao/forecast_category) are only included when present
+        in the deal dict, so callers that don't populate them leave
+        those columns untouched on conflict (Postgres partial-upsert
+        semantics) — active mode's behavior is unaffected.
+
+        NOTE: the stage column is 'stage', not 'stage_id' — a prior
+        production bug (c6490e9) wrote to a 'stage_id' key that doesn't
+        exist on this table. Do not reintroduce it; 'stage' below is
+        the only stage column and is always written unconditionally.
+        """
+        row = {
             'deal_id':       str(deal['deal_id']),
             'company_name':  deal.get('company_name', ''),
             'company_slug':  deal.get('company_slug', ''),
@@ -87,7 +102,44 @@ class SupabaseWriter(StorageAdapter):
             'owner_email':   deal.get('owner'),
             'last_analyzed': deal.get('last_analyzed'),
             'updated_at':    datetime.now().isoformat(),
-        }, on_conflict='deal_id').execute()
+        }
+
+        # History-mode fields
+        if 'deal_status' in deal:
+            row['deal_status'] = deal['deal_status']
+        if 'create_date' in deal:
+            row['create_date'] = _safe_date(deal['create_date'])
+        if 'days_to_close' in deal:
+            row['days_to_close'] = _safe_int(deal['days_to_close'])
+
+        # Analytics-mode fields (Phase A qualification tracking)
+        if 'pipeline_id' in deal:
+            row['pipeline_id'] = deal['pipeline_id']
+        if 'deal_value' in deal:
+            row['deal_value'] = _safe_numeric(deal['deal_value'])
+        if 'highest_stage_order_reached' in deal:
+            row['highest_stage_order_reached'] = deal['highest_stage_order_reached']
+        if 'qualified_date' in deal:
+            row['qualified_date'] = _safe_date(deal['qualified_date'])
+        if 'lost_reason' in deal:
+            row['lost_reason'] = deal.get('lost_reason')
+        if 'stage_source' in deal:
+            row['stage_source'] = deal['stage_source']
+
+        # Analytics-mode optional reporting fields (migration 007)
+        if 'new_arr' in deal:
+            row['new_arr'] = _safe_numeric(deal['new_arr'])
+        if 'expansion_arr' in deal:
+            row['expansion_arr'] = _safe_numeric(deal['expansion_arr'])
+        if 'prior_arr' in deal:
+            row['prior_arr'] = _safe_numeric(deal['prior_arr'])
+        if 'sao' in deal:
+            row['sao'] = deal.get('sao')  # Boolean, no conversion needed
+        if 'forecast_category' in deal:
+            row['forecast_category'] = deal.get('forecast_category')
+
+        self.client.table('deals').upsert(
+            row, on_conflict='deal_id').execute()
 
     def upsert_call(self, call: dict, company_name: str) -> None:
         """Upsert a call from the call cache."""
@@ -212,3 +264,20 @@ class SupabaseWriter(StorageAdapter):
             'Use table-specific methods; raw SQL not supported by this '
             'client version'
         )
+
+
+def select_all(sb, table, columns='*', filters=None, page_size=1000):
+    """Paginated select — PostgREST caps unpaginated responses
+    at 1,000 rows silently."""
+    rows, page = [], 0
+    while True:
+        q = sb.table(table).select(columns)
+        for f in (filters or []):
+            q = getattr(q, f[0])(*f[1:])
+        batch = (q.range(page*page_size,
+                 (page+1)*page_size - 1).execute().data
+                 or [])
+        rows.extend(batch)
+        if len(batch) < page_size:
+            return rows
+        page += 1

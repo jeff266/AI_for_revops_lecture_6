@@ -73,9 +73,16 @@ organization:
 # the win-rate denominator requires a deal to have reached it.
 
 pipeline:
-  value_field: amount
+  value_field: amount            # <- current default, keep
   # Override to arr_value, tcv, acv, etc. if 'amount' is not
   # the right value field for this client.
+  #
+  # To compute value from ARR components instead of a single field
+  # (NULL-safe sum; use HubSpot INTERNAL names, which differ from
+  # labels — discover via GET /crm/v3/properties/deals):
+  # value_field:
+  #   type: computed
+  #   components: ["new_revenue", "expansion_revenue"]
 
   lost_reason_field: closed_lost_reason
   # HubSpot's default property; many orgs use a custom one.
@@ -83,6 +90,24 @@ pipeline:
   # properties for names containing 'lost' + 'reason' and
   # confirm with the client. Set null if the org doesn't
   # track it.
+
+  # win_rate_qualified_field: sao
+  # Optional. When set, win-rate denominator = deals where this
+  # boolean property is true (e.g. an SAO — Sales Accepted
+  # Opportunity — field). When unset, win rate falls back to
+  # highest_stage_order_reached >= qualified_stage_order. These
+  # answer different questions; stage-order qualification is
+  # always kept for cycle time and funnel reporting either way.
+
+  # forecast_category_field: hs_manual_forecast_category
+  # Optional. HubSpot property holding the rep's manual forecast
+  # category (Commit / Best Case / Pipeline / etc). Unset = not
+  # fetched, forecast_category stays null on every deal.
+
+  # prior_arr_field: prior_arr
+  # Optional. HubSpot property holding the account's ARR before
+  # this deal, for GRR/NRR retention math. Unset = not fetched,
+  # prior_arr stays null on every deal.
 
   pipelines:
     - id: "default"
@@ -105,15 +130,24 @@ pipeline:
         - id: "qualifiedtobuy"
           name: "Discovery"
           order: 2
+          # stage_probability: 0.10
+          # Optional, per stage. Canonical per-client value used by
+          # stage-weighted forecasting — derive from historical
+          # conversion rates or your team's documented values, never
+          # invent one. Unset stages simply aren't used in that
+          # forecast method.
         - id: "presentationscheduled"
           name: "Scoping"
           order: 3
+          # stage_probability: 0.25
         - id: "decisionmakerboughtin"
           name: "Evaluation"
           order: 4
+          # stage_probability: 0.45
         - id: "contractsent"
           name: "Proposal"
           order: 5
+          # stage_probability: 0.65
         - id: "closedwon"
           name: "Closed Won"
           order: 6
@@ -134,7 +168,9 @@ pipeline:
     #
     # - id: "YOUR_RENEWAL_PIPELINE_ID"
     #   name: "Renewal Pipeline"
-    #   analyze: false   # excluded from active-deal analysis entirely
+    #   analyze: false
+    #   # analyze: false = excluded from deal analysis (MEDDICC/SPICED),
+    #   # INCLUDED in analytics (won totals, retention, snapshots).
     #   stages:
     #     - id: "YOUR_RENEWAL_STAGE_ID"
     #       name: "Renewal Stage"
@@ -148,6 +184,15 @@ pipeline:
     #       order: 2
     #       is_lost: true
     #   qualified_stage_order: 1
+
+# ============================================================
+# FISCAL YEAR (optional)
+# ============================================================
+# fiscal:
+#   fy_start_month: 2
+# Fiscal year start month (1 = calendar year, the default).
+# Drives quarter windows for the waterfall's pulled_in /
+# pushed_out classification.
 
 # ============================================================================
 # STAGE PROGRESSION REQUIREMENTS

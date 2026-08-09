@@ -32,15 +32,6 @@ except ImportError:
     sys.exit(1)
 
 
-def format_stage_for_yaml(stage, indent=4):
-    """Format a stage dict as YAML with proper indentation"""
-    spaces = " " * indent
-    return (
-        f"{spaces}- name: \"{stage['label']}\"\n"
-        f"{spaces}  id: \"{stage['id']}\""
-    )
-
-
 def main():
     # Check for API key
     api_key = os.getenv("HUBSPOT_API_KEY")
@@ -112,126 +103,102 @@ def main():
             print("-" * 80)
             print()
 
-        # Print suggested configuration sections
+        # Print suggested configuration — the pipeline.pipelines[]
+        # stage-order model (config/client.yaml). HubSpot's isClosed/
+        # probability metadata and stage labels can only HINT at
+        # won/lost/meeting-set/disqualified/renewal — a human must
+        # confirm every hint below before it goes live.
         print()
         print("=" * 80)
-        print("SUGGESTED CONFIGURATION SECTIONS")
+        print("SUGGESTED CONFIGURATION — copy into config/client.yaml under 'pipeline:'")
         print("=" * 80)
         print()
+        print("# Every flag below marked HINT was guessed from HubSpot's own")
+        print("# metadata or the stage/pipeline label — review and correct")
+        print("# each one. order values, qualified_stage_order, is_primary,")
+        print("# and analyze: are business decisions this tool cannot make.")
+        print()
+        print("pipeline:")
+        print("  value_field: amount  # ← change if a different property holds deal value")
+        print("  lost_reason_field: closed_lost_reason  # ← verify this is your org's real property")
+        print("  pipelines:")
 
-        # Suggest pipelines to include/exclude
-        print("# Pipelines to include in active deal analysis:")
-        print("pipelines:")
-        print("  included:")
-        for pipeline in pipelines:
+        for p_idx, pipeline in enumerate(pipelines):
             label = pipeline.get('label', 'Unknown')
             pid = pipeline.get('id', 'unknown')
-            # Suggest excluding renewal pipelines
-            if 'renewal' in label.lower():
-                print(f"    # - name: \"{label}\"  # ← Excluded below")
-            else:
-                print(f"    - name: \"{label}\"")
-            print(f"      id: \"{pid}\"")
-        print()
+            stages = pipeline.get('stages', [])
+            is_renewal_like = any(kw in label.lower() for kw in ('renewal', 'partner'))
 
-        print("  excluded:")
-        for pipeline in pipelines:
-            label = pipeline.get('label', 'Unknown')
-            pid = pipeline.get('id', 'unknown')
-            if 'renewal' in label.lower():
-                print(f"    - name: \"{label}\"")
-                print(f"      id: \"{pid}\"")
-        print()
+            print(f'    - id: "{pid}"')
+            print(f'      name: "{label}"')
+            if p_idx == 0 and not is_renewal_like:
+                print('      is_primary: true  # ← review: exactly one pipeline should have this')
+            if is_renewal_like:
+                print('      analyze: false')
+                print('      # HINT: label suggests renewal/partner — confirm with the client.')
+                print('      # analyze: false = excluded from deal analysis (MEDDICC/SPICED),')
+                print('      # INCLUDED in analytics (won totals, retention, snapshots).')
+            print('      stages:')
 
-        # Suggest stages to exclude
-        print("# Stages to exclude from active deal analysis:")
-        print("excluded_stages:")
-        print("  # WARNING: Only add TRUE 'Meeting Set' stages here.")
-        print("  # 'Appointment Scheduled' in default HubSpot pipeline is Discovery, NOT Meeting Set.")
-        print("  # Only exclude stages that come BEFORE the first discovery call.")
-        print("  meeting_set:")
-
-        meeting_stages = []
-        for pipeline in pipelines:
-            for stage in pipeline.get('stages', []):
-                label = stage.get('label', '')
-                sid = stage.get('id', '')
-                # Only suggest stages with "meeting set" as a phrase, not individual words
-                if 'meeting set' in label.lower():
-                    if sid not in [s['id'] for s in meeting_stages]:
-                        meeting_stages.append({'label': label, 'id': sid})
-
-        if meeting_stages:
-            for stage in meeting_stages:
-                print(format_stage_for_yaml(stage))
-        else:
-            print("    # No meeting-related stages found")
-
-        print()
-        print("  disqualified:")
-
-        disqualified_stages = []
-        for pipeline in pipelines:
-            for stage in pipeline.get('stages', []):
-                label = stage.get('label', '')
-                sid = stage.get('id', '')
-                if 'disqualified' in label.lower():
-                    if sid not in [s['id'] for s in disqualified_stages]:
-                        disqualified_stages.append({'label': label, 'id': sid})
-
-        if disqualified_stages:
-            for stage in disqualified_stages:
-                print(format_stage_for_yaml(stage))
-        else:
-            print("    # No disqualified stages found")
-
-        print()
-        print("  closed_won:")
-
-        closed_won_stages = []
-        for pipeline in pipelines:
-            for stage in pipeline.get('stages', []):
+            for idx, stage in enumerate(stages, 1):
+                stage_label = stage.get('label', 'Unknown')
+                stage_id = stage.get('id', 'unknown')
                 metadata = stage.get('metadata', {})
-                if metadata.get('isClosed') == 'true' and metadata.get('probability') == '1.0':
-                    label = stage.get('label', '')
-                    sid = stage.get('id', '')
-                    if sid not in [s['id'] for s in closed_won_stages]:
-                        closed_won_stages.append({'label': label, 'id': sid})
+                is_closed_won = metadata.get('isClosed') == 'true' and metadata.get('probability') == '1.0'
+                is_closed_lost = metadata.get('isClosed') == 'true' and metadata.get('probability') == '0.0'
+                is_meeting_set_like = 'meeting set' in stage_label.lower()
+                is_disqualified_like = 'disqualified' in stage_label.lower()
 
-        if closed_won_stages:
-            for stage in closed_won_stages:
-                print(format_stage_for_yaml(stage))
-        else:
-            print("    # No closed won stages found")
+                print(f'        - id: "{stage_id}"')
+                print(f'          name: "{stage_label}"')
+                print(f'          order: {idx}  # ← review: must reflect true sales-cycle sequence')
+                if is_closed_won:
+                    print('          is_won: true  # HINT: HubSpot isClosed + probability 1.0')
+                if is_closed_lost:
+                    print('          is_lost: true  # HINT: HubSpot isClosed + probability 0.0')
+                if is_disqualified_like:
+                    print('          is_lost: true               # HINT: label contains "disqualified"')
+                    print('          exclude_from_analysis: true  # REQUIRED together — see RULE below')
+                elif is_meeting_set_like:
+                    print('          exclude_from_analysis: true  # HINT: label contains "meeting set"')
 
+            print('      qualified_stage_order: 0  # ← FILL IN: first order value that counts as "qualified"')
+            print()
+
+        print("# RULE: any Disqualified-type stage must carry BOTH is_lost: true")
+        print("# AND exclude_from_analysis: true. is_lost makes it terminal for")
+        print("# analytics (deal_status flips to 'lost', exits the funnel, counts")
+        print("# against qualification rate — it stays out of the win-rate")
+        print("# denominator automatically via qualified_stage_order, no separate")
+        print("# handling needed). exclude_from_analysis keeps it out of the")
+        print("# nightly MEDDICC agent's active-deal population. A stage with")
+        print("# ONLY exclude_from_analysis (no is_lost) looks \"active forever\"")
+        print("# in pipeline analytics — it never resolves to won or lost.")
+        print("# Meeting Set is the one legitimate exception: pre-discovery and")
+        print("# still open, so it gets exclude_from_analysis WITHOUT is_lost.")
         print()
-        print("  closed_lost:")
-
-        closed_lost_stages = []
-        for pipeline in pipelines:
-            for stage in pipeline.get('stages', []):
-                metadata = stage.get('metadata', {})
-                if metadata.get('isClosed') == 'true' and metadata.get('probability') == '0.0':
-                    label = stage.get('label', '')
-                    sid = stage.get('id', '')
-                    if sid not in [s['id'] for s in closed_lost_stages]:
-                        closed_lost_stages.append({'label': label, 'id': sid})
-
-        if closed_lost_stages:
-            for stage in closed_lost_stages:
-                print(format_stage_for_yaml(stage))
-        else:
-            print("    # No closed lost stages found")
-
+        print("# Optional capability surface (commented by default — unset means")
+        print("# 'not tracked', matching today's behavior exactly. Full reference")
+        print("# and explanations live in config/client.yaml itself):")
+        print("#   win_rate_qualified_field: <your SAO-style boolean property>")
+        print("#   forecast_category_field: <your forecast category property>")
+        print("#   prior_arr_field: <your prior-ARR property, for GRR/NRR>")
+        print("#   fiscal:")
+        print("#     fy_start_month: <1-12, 1 = calendar year, the default>")
         print()
         print("=" * 80)
         print()
         print("✅ Stage discovery complete!")
         print()
         print("Next steps:")
-        print("  1. Copy relevant sections above into config/client.yaml")
-        print("  2. Review excluded pipelines and stages")
-        print("  3. Adjust stage progression requirements if needed")
+        print("  1. Copy the pipeline: block above into config/client.yaml,")
+        print("     resolving every HINT and FILL IN marker")
+        print("  2. Decide is_primary, analyze:, order, and qualified_stage_order")
+        print("     for every pipeline — these are business decisions, not")
+        print("     something HubSpot's metadata can answer")
+        print("  3. Fill in the optional capability surface only for fields you")
+        print("     actually have (leave the rest commented/unset)")
+        print("  4. Adjust stage progression requirements if needed")
         print()
 
     except Exception as e:

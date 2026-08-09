@@ -5,6 +5,9 @@ ETL: HubSpot Deals API → Deal Index
 Modes:
   --mode active (default): Fetches active deals only, writes to memory/deals/index.json and Supabase
   --mode history: Fetches ALL deals including closed, writes to Supabase only for CRO history queries
+  --mode analytics: Fetches ALL deals in ALL configured pipelines regardless of stage (including
+    pipelines marked analyze: false — excluded from MEDDICC only, not from analytics), writes to
+    Supabase only. Powers snapshot_deals.py / compute_waterfall.py / generate_win_loss.py.
 
 Auto-detects pipeline stages to exclude (closed won/lost, meeting set) in active mode.
 """
@@ -21,8 +24,11 @@ REPO_ROOT = Path(__file__).parent.parent
 DEALS_DIR = REPO_ROOT / 'memory' / 'deals'
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
-from utils import slugify
+from utils import (slugify, get_value_properties, compute_deal_value,
+                   get_pipeline_config, get_stage_order, is_won_stage,
+                   is_lost_stage, load_client_config)
 from adapters import get_crm_adapter, get_storage_adapter
+from adapters.storage.supabase import select_all
 
 DEALS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -218,14 +224,66 @@ def get_meeting_set_stages(hubspot, excluded_stages: dict):
         return excluded_stages['meeting_set']
 
 
+# Base HubSpot properties analytics mode always needs, independent of
+# the client's value_field/reporting-field configuration.
+ANALYTICS_BASE_PROPERTIES = [
+    'dealname',
+    'dealstage',
+    'pipeline',
+    'closedate',
+    'incremental_arr',
+    'amount',
+    'hubspot_owner_id',
+    'dealtype',
+    'createdate',
+    'last_meddicc_analysis_date',
+]
+
+
+def _analytics_properties(config: dict) -> list:
+    """
+    Build the HubSpot property list for --mode analytics: the base
+    deal properties, plus get_value_properties() (whatever feeds
+    deal_value — one field or the computed components), plus any
+    optional reporting fields the client has actually configured
+    (win_rate_qualified_field, lost_reason_field,
+    forecast_category_field, prior_arr_field). Fields nobody configured
+    are simply omitted — this is the opt-in capability surface, not a
+    fixed superset.
+    """
+    props = list(ANALYTICS_BASE_PROPERTIES)
+    props.extend(get_value_properties(config))
+
+    pipeline_cfg = config.get('pipeline', {})
+    for key in ('win_rate_qualified_field', 'lost_reason_field',
+                'forecast_category_field', 'prior_arr_field'):
+        field = pipeline_cfg.get(key)
+        if field:
+            props.append(field)
+
+    # De-dupe while preserving order (e.g. a computed value_field
+    # component can coincide with a base property).
+    seen = set()
+    deduped = []
+    for p in props:
+        if p not in seen:
+            seen.add(p)
+            deduped.append(p)
+    return deduped
+
+
 def main():
     parser = argparse.ArgumentParser(description="ETL HubSpot deals to memory/Supabase")
     parser.add_argument(
         '--mode',
         type=str,
-        choices=['active', 'history'],
+        choices=['active', 'history', 'analytics'],
         default='active',
-        help='active: fetch active deals only (default) | history: fetch ALL deals including closed'
+        help=('active (default): active deals for MEDDICC agent | '
+              'history: all deals including closed (Supabase only) | '
+              'analytics: ALL deals, all stages, all configured '
+              'pipelines including analyze:false ones (Supabase only, '
+              'for snapshot/waterfall/qualification-rate)')
     )
     parser.add_argument(
         '--file',
@@ -243,6 +301,10 @@ def main():
     print(f"HUBSPOT DEALS ETL - MODE: {args.mode.upper()}")
     print("=" * 80)
 
+    # Load full config once — analytics mode needs it for value_field,
+    # reporting-field names, and per-pipeline qualified_stage_order.
+    full_config = load_client_config()
+
     # Load stage exclusions from config
     excluded_stages = get_excluded_stages()
 
@@ -254,6 +316,46 @@ def main():
         print(f"❌ Failed to initialize HubSpot client: {e}")
         print("\nMake sure HUBSPOT_API_KEY environment variable is set.")
         return
+
+    # Analytics mode writes to Supabase only — fail fast if it isn't
+    # configured, rather than silently producing nothing later.
+    sb_writer = None
+    existing_qual_map = {}
+    if args.mode == 'analytics':
+        if not os.getenv('SUPABASE_URL'):
+            print("❌ --mode analytics writes to Supabase only, but "
+                  "SUPABASE_URL is not set.")
+            return
+        try:
+            sb_writer = get_storage_adapter()
+        except Exception as e:
+            print(f"❌ Failed to initialize storage adapter: {e}")
+            return
+
+        # Batch-read existing high-water-mark state ONCE, before
+        # processing any deals — never per-deal. A deal missing from
+        # this map is genuinely new (no prior row); a deal present
+        # with a None value is a known row that hasn't crossed a
+        # stage/qualified threshold yet. Either way we never guess.
+        print("\n2. Batch-reading existing qualification state from Supabase...")
+        try:
+            existing_rows = select_all(
+                sb_writer.client, 'deals',
+                'deal_id, highest_stage_order_reached, qualified_date')
+            existing_qual_map = {
+                str(r['deal_id']): (r.get('highest_stage_order_reached'),
+                                    r.get('qualified_date'))
+                for r in existing_rows
+            }
+            print(f"   {len(existing_qual_map)} existing deal rows loaded")
+        except Exception as e:
+            # A partial/failed read must NOT silently degrade to "no
+            # existing data" — that risks lowering high-water marks
+            # for deals we simply failed to read back. Abort instead.
+            print(f"❌ Batch read of existing deals failed: {e}")
+            print("   Aborting — will not risk overwriting "
+                  "highest_stage_order_reached with incomplete data.")
+            return
 
     # Determine which deals to fetch based on mode
     if args.mode == 'active':
@@ -272,7 +374,7 @@ def main():
         except Exception as e:
             print(f"❌ Failed to fetch deals: {e}")
             return
-    else:  # history mode
+    elif args.mode == 'history':
         meeting_set_stages = []
         closed_stages = []
 
@@ -318,6 +420,25 @@ def main():
                 print("   Try exporting from HubSpot and using --file instead")
                 return
 
+    else:  # analytics mode
+        meeting_set_stages = []
+        closed_stages = []
+
+        # No stage/pipeline filtering at the API level — analytics
+        # deliberately includes pipelines marked analyze: false (they're
+        # excluded from MEDDICC only, not from analytics: renewal won
+        # totals, GRR/NRR, etc. still need those deals).
+        analytics_properties = _analytics_properties(full_config)
+        print("\n3. Fetching ALL deals from HubSpot API (analytics mode)...")
+        print(f"   Properties requested: {analytics_properties}")
+        try:
+            all_deals_api = hubspot.get_all_deals_including_closed(
+                properties=analytics_properties)
+            print(f"   Fetched {len(all_deals_api)} deals (all stages, all pipelines)")
+        except Exception as e:
+            print(f"❌ Failed to fetch deals: {e}")
+            return
+
     # Process deals
     print("\n4. Processing deals and fetching company info...")
     deals = {}
@@ -328,6 +449,19 @@ def main():
         'no_company': 0,
         'no_slug': 0
     }
+
+    # Analytics-mode-only summary state
+    analytics_status_counts = {'active': 0, 'won': 0, 'lost': 0}
+    analytics_qualified_count = 0
+    unmapped_pipelines = set()
+
+    # Config read once, outside the loop — reused per-deal below.
+    pipeline_top_config = full_config.get('pipeline', {})
+    lost_reason_field = pipeline_top_config.get('lost_reason_field')
+    forecast_category_field = pipeline_top_config.get('forecast_category_field')
+    prior_arr_field = pipeline_top_config.get('prior_arr_field')
+    win_rate_qualified_field = pipeline_top_config.get('win_rate_qualified_field')
+    value_field_cfg = pipeline_top_config.get('value_field', 'amount')
 
     for i, deal_obj in enumerate(all_deals_api, 1):
         if i % 50 == 0:
@@ -412,9 +546,120 @@ def main():
                 days = calculate_days_to_close(create_date, close_date)
                 deal_dict['days_to_close'] = days
 
+        # Add analytics-specific fields
+        if args.mode == 'analytics':
+            pipeline_id_norm = pipeline if pipeline else 'default'
+
+            try:
+                pipeline_cfg_for_deal = get_pipeline_config(
+                    pipeline_id_norm, full_config)
+            except ValueError:
+                # Deal belongs to a pipeline not in client.yaml at all.
+                # Don't guess won/lost/order for it — fall back to
+                # 'active' and leave stage-order fields untouched.
+                pipeline_cfg_for_deal = {}
+                unmapped_pipelines.add(pipeline_id_norm)
+
+            current_order = None
+            if pipeline_cfg_for_deal:
+                if is_won_stage(stage, pipeline_id_norm, full_config):
+                    deal_status = 'won'
+                elif is_lost_stage(stage, pipeline_id_norm, full_config):
+                    deal_status = 'lost'
+                else:
+                    deal_status = 'active'
+                current_order = get_stage_order(
+                    stage, pipeline_id_norm, full_config)
+            else:
+                deal_status = 'active'
+
+            deal_value = compute_deal_value(props, full_config)
+
+            # highest_stage_order_reached: GREATEST(existing, current).
+            # Never lower the mark. If the stage/pipeline is unmapped
+            # (current_order is None), leave whatever we already had.
+            existing_highest, existing_qdate = existing_qual_map.get(
+                str(deal_id), (None, None))
+            if current_order is not None:
+                highest = (max(current_order, existing_highest)
+                          if existing_highest is not None else current_order)
+            else:
+                highest = existing_highest
+
+            # qualified_date: never overwrite an existing value. Only
+            # set it the first time highest crosses this pipeline's
+            # qualified_stage_order threshold. Omitting the key (rather
+            # than re-writing the existing value) is what makes "never
+            # overwrite" hold — upsert() only updates columns present
+            # in the row, so an omitted key leaves the DB value as-is.
+            qualified_order = (pipeline_cfg_for_deal.get('qualified_stage_order')
+                               if pipeline_cfg_for_deal else None)
+            new_qualified_date = None
+            if not existing_qdate:
+                if (highest is not None and qualified_order is not None
+                        and highest >= qualified_order):
+                    new_qualified_date = datetime.now().strftime('%Y-%m-%d')
+
+            def _safe_numeric_or_none(val):
+                if val in (None, '', 'null'):
+                    return None
+                try:
+                    return float(str(val).replace('$', '').replace(',', '').strip())
+                except (ValueError, TypeError):
+                    return None
+
+            # new_arr / expansion_arr: only populated when value_field is
+            # the computed (ARR-components) shape — positional mapping,
+            # first component = new, second = expansion, matching the
+            # documented config example (components: [new, expansion]).
+            new_arr = expansion_arr = None
+            if isinstance(value_field_cfg, dict):
+                components = value_field_cfg.get('components', [])
+                if len(components) > 0:
+                    new_arr = _safe_numeric_or_none(props.get(components[0]))
+                if len(components) > 1:
+                    expansion_arr = _safe_numeric_or_none(props.get(components[1]))
+
+            prior_arr = (_safe_numeric_or_none(props.get(prior_arr_field))
+                        if prior_arr_field else None)
+
+            sao = None
+            if win_rate_qualified_field:
+                sao_raw = props.get(win_rate_qualified_field)
+                if isinstance(sao_raw, bool):
+                    sao = sao_raw
+                elif isinstance(sao_raw, str):
+                    sao = sao_raw.lower() in ('true', '1', 'yes')
+
+            forecast_category = (props.get(forecast_category_field)
+                                 if forecast_category_field else None)
+
+            deal_dict['deal_status'] = deal_status
+            deal_dict['create_date'] = create_date
+            deal_dict['pipeline_id'] = pipeline_id_norm
+            deal_dict['deal_value'] = deal_value
+            deal_dict['highest_stage_order_reached'] = highest
+            if new_qualified_date:
+                deal_dict['qualified_date'] = new_qualified_date
+            deal_dict['stage_source'] = 'prospective'
+            deal_dict['new_arr'] = new_arr
+            deal_dict['expansion_arr'] = expansion_arr
+            deal_dict['prior_arr'] = prior_arr
+            deal_dict['sao'] = sao
+            deal_dict['forecast_category'] = forecast_category
+
+            if deal_status == 'lost' and lost_reason_field:
+                deal_dict['lost_reason'] = props.get(lost_reason_field, '')
+
+            analytics_status_counts[deal_status] = (
+                analytics_status_counts.get(deal_status, 0) + 1)
+            if new_qualified_date or existing_qdate:
+                analytics_qualified_count += 1
+
         deals[deal_id] = deal_dict
 
-    # In active mode, write memory/deals/index.json. In history mode, skip (Supabase only).
+    # In active mode, write memory/deals/index.json. In history/analytics
+    # mode, skip — Supabase only, never touches the MEDDICC deal index.
     if args.mode == 'active':
         # Build index
         print(f"\n5. Building index...")
@@ -440,7 +685,7 @@ def main():
         print(f'    {skipped["no_company"]} No company')
         print(f'    {skipped["no_slug"]} Invalid slug')
         print(f'  Output: {out}')
-    else:  # history mode
+    elif args.mode == 'history':
         print(f"\n5. Processed {len(deals)} deals (active + closed)")
         # Count by status
         status_counts = {}
@@ -450,12 +695,30 @@ def main():
         print(f'  Status breakdown:')
         for status, count in sorted(status_counts.items()):
             print(f'    {status}: {count} deals')
+    else:  # analytics mode
+        print(f"\n5. Processed {len(deals)} deals (all stages, all pipelines)")
+        # skipped['no_company'] + skipped['no_slug'] are almost always
+        # spam/test company records, not real pipeline — e.g. a portal
+        # with 1,807 raw deal records may only have 1,672 with a real,
+        # slug-able company name. Don't treat this gap as a bug.
+        print(f'  Filtered (spam/test records, no usable company): '
+              f'{skipped["no_company"] + skipped["no_slug"]} '
+              f'({skipped["no_company"]} no company, '
+              f'{skipped["no_slug"]} invalid slug)')
+        if unmapped_pipelines:
+            print(f'  ⚠️  {len(unmapped_pipelines)} unmapped pipeline(s) '
+                  f'not in config/client.yaml: {sorted(unmapped_pipelines)}')
+            print('     Deals in these pipelines were kept as \'active\' '
+                  'with stage-order fields left untouched.')
 
     # Write to Supabase if configured
     if os.getenv('SUPABASE_URL'):
         print(f'\n6. Writing to Supabase...')
         try:
-            sb = get_storage_adapter()
+            # Analytics mode already initialized sb_writer for the
+            # batch-read above — reuse it instead of opening a second
+            # connection.
+            sb = sb_writer if sb_writer is not None else get_storage_adapter()
             count = 0
             for deal_id, deal in deals.items():
                 try:
@@ -467,8 +730,28 @@ def main():
             print(f'  ✓ Supabase: {count} deals upserted')
         except Exception as e:
             print(f'  ⚠️  Supabase write failed: {e}')
+            count = 0
     else:
         print(f'\n  ⏭️  SUPABASE_URL not set — skipping Supabase write')
+        count = 0
+
+    # Analytics-mode final summary: fetched / written / active / won /
+    # lost / qualified / qualification rate.
+    if args.mode == 'analytics':
+        print("\n" + "=" * 80)
+        print("ANALYTICS ETL SUMMARY")
+        print("=" * 80)
+        print(f'  Fetched:     {len(all_deals_api)}')
+        print(f'  Written:     {count}')
+        print(f'  Active:      {analytics_status_counts.get("active", 0)}')
+        print(f'  Won:         {analytics_status_counts.get("won", 0)}')
+        print(f'  Lost:        {analytics_status_counts.get("lost", 0)}')
+        print(f'  Qualified:   {analytics_qualified_count}')
+        created_count = len(deals)
+        qual_rate = (analytics_qualified_count / created_count * 100
+                    if created_count else 0)
+        print(f'  Qualification rate: {qual_rate:.1f}% '
+              f'({analytics_qualified_count}/{created_count})')
 
     # Print first 10 for verification
     print('\nFirst 10 active deals:')

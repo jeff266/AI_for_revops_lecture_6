@@ -144,6 +144,61 @@ class HubSpotDealsClient(CRMAdapter):
 
         return all_deals
 
+    def get_all_deals_including_closed(self, properties: List[str] = None) -> List[dict]:
+        """
+        Get ALL deals regardless of stage or pipeline (active + closed,
+        every pipeline). No stage/pipeline exclusion filters — used by
+        history and analytics ETL modes, which apply their own
+        filtering (or intentionally apply none) after the fetch.
+
+        Args:
+            properties: HubSpot property names to fetch. Defaults to
+                the same base set as get_active_deals() if not given.
+        """
+        endpoint = "/crm/v3/objects/deals/search"
+
+        if properties is None:
+            properties = [
+                'dealname',
+                'dealstage',
+                'pipeline',
+                'closedate',
+                'incremental_arr',
+                'amount',
+                'hubspot_owner_id',
+                'dealtype',
+                'createdate',
+                'last_meddicc_analysis_date'
+            ]
+
+        body = {
+            'filterGroups': [],
+            'properties': properties,
+            'sorts': [
+                {'propertyName': 'closedate', 'direction': 'ASCENDING'}
+            ],
+            'limit': 100
+        }
+
+        all_deals = []
+        after = None
+
+        while True:
+            if after:
+                body['after'] = after
+
+            response = self._post(endpoint, body)
+            results = response.get('results', [])
+            all_deals.extend(results)
+
+            paging = response.get('paging', {})
+            after = paging.get('next', {}).get('after')
+
+            if not after:
+                break
+
+        return all_deals
+
     def get_deals_modified_since(self, since_date: str) -> List[dict]:
         """
         Fetch only deals modified after since_date.

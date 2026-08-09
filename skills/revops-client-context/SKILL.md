@@ -163,18 +163,76 @@ Feature gaps — for each:
 Value metrics:
 "What quantifiable outcomes do champions use for the business case?"
 
-## Phase 6 — HubSpot stage configuration
+## Phase 6 — HubSpot pipeline & analytics configuration
 
 Tell the user to run: python scripts/discover_stages.py
-Ask them to paste the output.
+Ask them to paste the output. It prints a suggested
+pipeline.pipelines[] block (stage order, is_won / is_lost /
+exclude_from_analysis hints, analyze: hints) — not a flat
+exclusion list. Every hint in it was guessed from HubSpot's own
+metadata or stage/pipeline labels and must be reviewed, not
+trusted blindly.
 
-Parse it and identify stages to EXCLUDE:
-- Meeting Set equivalents (too early)
-- Closed Won stages
-- Closed Lost stages
-- Renewal pipeline stages
+Walk through the pasted output with them, resolving every HINT
+and FILL IN marker:
 
-Show proposed exclusion list and confirm.
+1. Confirm order values reflect the true sales-cycle sequence
+   for each pipeline (discover_stages.py numbers stages in
+   HubSpot's own listing order, which is usually but not always
+   correct).
+2. Confirm is_won / is_lost / exclude_from_analysis per stage.
+   Push back if a Disqualified-type stage is missing either
+   flag — both are required together. A stage with only
+   exclude_from_analysis looks "active forever" in analytics;
+   it never resolves to won or lost.
+3. Confirm exactly one pipeline has is_primary: true, and which
+   pipelines (if any) should get analyze: false. Reminder:
+   analyze: false excludes a pipeline from MEDDICC/SPICED
+   analysis but still includes it in analytics (won totals,
+   retention, snapshots) — it is not a full exclusion.
+4. Ask: "Which stage order counts as 'qualified' for each
+   pipeline?" This is where the sales-cycle clock starts, and
+   what the win-rate denominator requires a deal to have
+   reached. → qualified_stage_order per pipeline.
+
+Then ask the optional capability-surface questions. All of these
+default to unset/off — only write a key if the client actually
+answers; today's behavior (value_field: amount, no SAO field,
+calendar fiscal year) is what an unanswered question preserves:
+
+5. "What HubSpot property holds deal value?" Default: amount.
+   If they track New ARR and Expansion ARR as separate
+   properties instead of one combined field, offer the computed
+   option:
+     value_field:
+       type: computed
+       components: ["<new arr property>", "<expansion arr property>"]
+   Warn explicitly: HubSpot property NAMES in the API (internal
+   names) often differ from the LABELS shown in the HubSpot UI —
+   confirm the real internal name via GET /crm/v3/properties/deals,
+   never guess it from the label.
+6. "Do you have an SAO-style qualification field — a boolean
+   property marking a deal as Sales Accepted?" If yes, capture
+   its internal property name as win_rate_qualified_field. If
+   no, leave unset — win rate then falls back to
+   highest_stage_order_reached >= qualified_stage_order.
+7. Lost-reason field: query HubSpot's deal properties (GET
+   /crm/v3/properties/deals) for property names containing both
+   "lost" and "reason". Show the candidates found and confirm
+   which one to use for pipeline.lost_reason_field (HubSpot's
+   default is closed_lost_reason — confirm the portal actually
+   has it before assuming).
+8. "What month does your fiscal year start?" 1 = January /
+   calendar year, the default — only probe further if they say
+   their fiscal year isn't calendar-aligned. → fiscal.fy_start_month.
+9. "What day should the weekly analytics snapshot run?" Default
+   is Sunday 3am UTC, matching .github/workflows/weekly-analytics.yml
+   as shipped. If they want a different day/time, edit that
+   workflow's cron line directly — GitHub Actions schedules are
+   static in the workflow file, not read from client.yaml.
+
+Show the fully-resolved pipeline: block back to them and confirm
+before writing anything.
 
 ## Phase 7 — Learning preferences
 
@@ -200,21 +258,24 @@ Write files directly — do not show as code blocks:
 
 1. Write config/context.yaml
 2. Write config/client.yaml with:
-   - Placeholder stage IDs
+   - The full pipeline: block resolved in Phase 6 — real stage
+     IDs, order values, is_won / is_lost / exclude_from_analysis,
+     is_primary, analyze:, and qualified_stage_order for every
+     pipeline. No placeholder stage IDs — Phase 6 already
+     resolved real ones.
+   - Any optional capability-surface fields the client answered
+     in Phase 6 (value_field, win_rate_qualified_field,
+     lost_reason_field, fiscal.fy_start_month) written live;
+     leave everything they didn't answer commented/unset —
+     do not invent values.
    - call_tools.primary set to the adapter slug from Phase 2
      (fireflies, gong, or custom tool slug)
 3. Write prompts/CLAUDE.md
 4. Write prompts/evaluator_rubric.md
 
-Then run stage discovery:
-  python scripts/discover_stages.py
-
-Show the output and ask: "Which stages should be excluded?
-(Usually: Meeting Set, Closed Won, Closed Lost, any
-Renewal pipeline stages)"
-
-Update config/client.yaml with the real stage IDs from
-their answer.
+If the client wants a non-default weekly analytics snapshot day
+(Phase 6, question 9), update the cron line in
+.github/workflows/weekly-analytics.yml to match.
 
 Commit everything:
   git add config/ prompts/
@@ -244,7 +305,9 @@ Present each file as a labeled code block:
 Then show the deployment checklist:
 □ Copy all four files into your forked repo
 □ Run: python scripts/discover_stages.py
-□ Update excluded_stages in config/client.yaml
-  with your real HubSpot stage IDs
+□ Update the pipeline: block in config/client.yaml with your
+  real HubSpot pipeline/stage IDs, order, is_won/is_lost/
+  exclude_from_analysis flags, and qualified_stage_order
+  (see Phase 6)
 □ git add config/ prompts/ && git commit -m "Add client context"
 □ git push
