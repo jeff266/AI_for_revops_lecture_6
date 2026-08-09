@@ -49,6 +49,19 @@ organization:
 #                                 anything pre-discovery, junk, or
 #                                 disqualified gets this flag.
 #
+#   RULE — Disqualified-type stages MUST carry BOTH is_lost: true AND
+#   exclude_from_analysis: true. is_lost makes the stage terminal for
+#   analytics: deal_status flips to 'lost', the deal exits the funnel,
+#   and it counts against qualification rate — it stays out of the
+#   win-rate denominator automatically via the qualified_stage_order
+#   filter, no separate handling needed. exclude_from_analysis keeps
+#   it out of the nightly MEDDICC agent's active-deal population. A
+#   stage with ONLY exclude_from_analysis (no is_lost) looks "active
+#   forever" in pipeline analytics — it never resolves to won or lost.
+#   Meeting Set is the one legitimate exception: it's pre-discovery
+#   and still open, so it gets exclude_from_analysis WITHOUT is_lost.
+#   See the commented Disqualified example stage below.
+#
 # Per-pipeline flags:
 #   is_primary: true  — exactly one pipeline; the default used wherever
 #                        a pipeline isn't specified explicitly.
@@ -81,6 +94,14 @@ pipeline:
           name: "Meeting Set"
           order: 1
           exclude_from_analysis: true
+        # - id: "YOUR_DISQUALIFIED_STAGE_ID"
+        #   name: "Disqualified"
+        #   order: 1
+        #   is_lost: true                # ← terminal: deal_status → 'lost'
+        #   exclude_from_analysis: true  # ← out of the active-deal population
+        #   # Both flags required — see the RULE above. order: 1 keeps
+        #   # it below qualified_stage_order (3), so a disqualified
+        #   # deal correctly never enters the win-rate denominator.
         - id: "qualifiedtobuy"
           name: "Discovery"
           order: 2

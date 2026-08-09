@@ -43,18 +43,23 @@ def _excluded_stages_from_pipeline_config(pipelines: list) -> dict:
     pipeline.pipelines[] stage-order model (config/client.yaml).
 
     The new schema unifies what used to be two separate concepts
-    (Meeting Set / Disqualified) under a single exclude_from_analysis
-    flag per stage, plus an analyze:false flag per pipeline. Both
-    legacy keys still exist in the return value for backward
-    compatibility with the callers below — exclude_from_analysis stage
-    IDs are reported under 'meeting_set' (the historically broader
-    "excluded from active analysis" bucket) and 'disqualified' is left
-    empty, since nothing in the new model maps to it separately. A
-    pipeline flagged analyze: false contributes its ID to
-    excluded_pipelines; its individual stages don't need to be
-    enumerated since the pipeline-level exclusion already covers them.
+    (Meeting Set / Disqualified) under per-stage flags:
+      - exclude_from_analysis alone  → 'meeting_set' (pre-discovery,
+        still open — e.g. Meeting Set)
+      - exclude_from_analysis + is_lost together → 'disqualified'
+        (terminal — the config's RULE requires Disqualified-type
+        stages to carry both flags, so deal_status still flips to
+        'lost' via closed_lost below)
+    The two output lists are mutually exclusive; a stage can't land in
+    both. closed_won/closed_lost are independent of exclude_from_analysis
+    — any is_won/is_lost stage always resolves deal_status, regardless
+    of whether it's also excluded from active analysis. A pipeline
+    flagged analyze: false contributes its ID to excluded_pipelines;
+    its individual stages don't need to be enumerated since the
+    pipeline-level exclusion already covers them.
     """
-    exclude_from_analysis = []
+    meeting_set = []
+    disqualified = []
     closed_won = []
     closed_lost = []
     excluded_pipelines = []
@@ -70,16 +75,23 @@ def _excluded_stages_from_pipeline_config(pipelines: list) -> dict:
             sid = stage.get('id')
             if not sid:
                 continue
-            if stage.get('exclude_from_analysis'):
-                exclude_from_analysis.append(sid)
-            if stage.get('is_won'):
+            excludes = bool(stage.get('exclude_from_analysis'))
+            lost = bool(stage.get('is_lost'))
+            won = bool(stage.get('is_won'))
+
+            if excludes and lost:
+                disqualified.append(sid)
+            elif excludes:
+                meeting_set.append(sid)
+
+            if won:
                 closed_won.append(sid)
-            if stage.get('is_lost'):
+            if lost:
                 closed_lost.append(sid)
 
     return {
-        'meeting_set': exclude_from_analysis,
-        'disqualified': [],
+        'meeting_set': meeting_set,
+        'disqualified': disqualified,
         'closed_won': closed_won or CLOSED_WON_STAGES_DEFAULT,
         'closed_lost': closed_lost or CLOSED_LOST_STAGES_DEFAULT,
         'excluded_pipelines': excluded_pipelines,
