@@ -16,7 +16,6 @@ import sys
 import json
 import re
 import time
-import yaml
 import threading
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -24,14 +23,12 @@ from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import agent components
-from fireflies_client import get_fireflies_client
-from apollo_client import get_apollo_client
-from hubspot_deals import get_hubspot_deals_client
-from context_builder import build_cumulative_meddicc
+from adapters import get_call_adapter, get_crm_adapter, get_storage_adapter
+from context_builder import build_cumulative_state
 from meddicc_agent import run_agent
 from github_memory import get_memory_manager
 from token_tracker import TokenTracker
-from utils import slugify
+from utils import slugify, get_methodology, get_components, component_key
 
 # Repo root for config files
 REPO_ROOT = Path(__file__).parent.parent
@@ -125,7 +122,7 @@ def main():
     MAX_RUNTIME_SECONDS = 90 * 60  # 90 minutes, leaves buffer before GitHub Actions timeout
 
     print("=" * 80)
-    print("MEDDICC AGENT NIGHTLY RUN")
+    print(f"{get_methodology()} AGENT NIGHTLY RUN")
     print(f"Started: {datetime.now().isoformat()}")
     print(f"Max runtime: {MAX_RUNTIME_SECONDS / 60:.0f} minutes")
     print("=" * 80)
@@ -158,33 +155,19 @@ def main():
     # Initialize clients
     print("\n1. Initializing API clients...")
 
-    # Load call tools config
-    client_config_path = REPO_ROOT / 'config' / 'client.yaml'
-    call_tools = {}
-    if client_config_path.exists():
-        with open(client_config_path) as f:
-            call_tools = yaml.safe_load(f).get('call_tools', {})
+    # Single call adapter, chosen by config/client.yaml (call_tools.primary)
+    call_adapter = get_call_adapter()
+    print(f"Call adapter: {type(call_adapter).__name__}")
 
-    primary_tool = call_tools.get('primary', 'fireflies')
-    secondary_tool = call_tools.get('secondary', None)
-
-    fireflies = get_fireflies_client() if primary_tool == 'fireflies' \
-                or secondary_tool == 'fireflies' else None
-    apollo = get_apollo_client() if primary_tool == 'apollo' \
-             or secondary_tool == 'apollo' else None
-
-    print(f"Call tools: primary={primary_tool}, secondary={secondary_tool}")
-
-    hubspot = get_hubspot_deals_client()
+    hubspot = get_crm_adapter()
     memory = get_memory_manager()
     tracker = TokenTracker(memory.memory_dir)
 
-    # Initialize Supabase writer if configured
+    # Initialize storage writer if configured
     sb_writer = None
     if os.getenv('SUPABASE_URL'):
         try:
-            from supabase_client import SupabaseWriter
-            sb_writer = SupabaseWriter()
+            sb_writer = get_storage_adapter()
             print('   ✓ Supabase connected')
         except Exception as e:
             print(f'   ⚠️  Supabase init failed: {e} — continuing without')
@@ -371,14 +354,15 @@ def main():
 
             all_summaries = []
             for call in all_calls_sorted:
-                if 'formatted_summary' in call and call['formatted_summary']:
+                if call.get('formatted_summary'):
                     summary = call['formatted_summary']
-                elif 'summary' in call and call['summary']:
+                elif call.get('summary'):
                     summary = call['summary']
-                elif call.get('source') == 'fireflies':
-                    summary = fireflies.format_summary_for_meddicc(call) if fireflies else ''
                 else:
-                    summary = apollo.format_conversation_for_meddicc(call) if apollo else ''
+                    try:
+                        summary = call_adapter.format_summary(call)
+                    except Exception:
+                        summary = ''
 
                 if summary and summary.strip():
                     all_summaries.append((call.get('date', ''), summary))
@@ -415,14 +399,15 @@ def main():
             if len(all_summaries) == 1:
                 recent_call_summary = all_summaries[0]
                 historical_summaries = []
+                unknown_state = {
+                    component_key(c): {"status": "unknown", "evidence": "", "score": 0}
+                    for c in get_components()
+                }
                 cumulative_state = {
                     "company": company_name,
                     "calls_reviewed": 0,
-                    "meddicc_state": {
-                        k: {"status": "unknown", "evidence": "", "score": 0}
-                        for k in ["metrics", "economic_buyer", "decision_criteria",
-                                 "decision_process", "identified_pain", "champion", "competition"]
-                    },
+                    "qualification_state": unknown_state,
+                    "meddicc_state": unknown_state,  # same object reference for migration
                     "key_context": "First call on record — no prior context."
                 }
             else:
@@ -430,8 +415,8 @@ def main():
                 recent_call_summary = all_summaries[-1]
                 historical_summaries = all_summaries[:-1]
 
-                # Build cumulative MEDDICC state
-                cumulative_state = build_cumulative_meddicc(historical_summaries, company_name, tracker)
+                # Build cumulative qualification state
+                cumulative_state = build_cumulative_state(historical_summaries, company_name, tracker)
 
             # GUARD 3: Most recent call is below minimum signal threshold
             if not recent_call_summary or len(recent_call_summary.strip()) < 100:
@@ -466,10 +451,10 @@ def main():
             output_dir.mkdir(exist_ok=True)
 
             timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-            output_file = output_dir / f"meddicc_analysis_{deal_id}_{timestamp}.md"
+            output_file = output_dir / f"{get_methodology().lower()}_analysis_{deal_id}_{timestamp}.md"
 
             with open(output_file, 'w') as f:
-                f.write(f"# MEDDICC Analysis: {company_name}\n\n")
+                f.write(f"# {get_methodology()} Analysis: {company_name}\n\n")
                 f.write(f"**Deal ID:** {deal_id}\n")
                 f.write(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
                 f.write(f"**Calls Analyzed:** {total_calls}\n")
@@ -481,10 +466,14 @@ def main():
             # Update last_analyzed timestamp in deal
             deal['last_analyzed'] = datetime.now().isoformat()
 
+            # Extract structured scores once, shared by both write-backs
+            scores = hubspot._extract_scores_from_analysis(analysis)
+
             # Update HubSpot deal note
             try:
-                hubspot.upsert_meddicc_note(
+                hubspot.write_analysis(
                     deal_id=deal_id,
+                    scores=scores,
                     analysis_content=analysis,
                     calls_count=total_calls
                 )
@@ -494,9 +483,6 @@ def main():
             # Write analysis to Supabase
             if sb_writer:
                 try:
-                    from hubspot_deals import HubSpotDealsClient
-                    hs = HubSpotDealsClient.__new__(HubSpotDealsClient)
-                    scores = hs._extract_scores_from_analysis(analysis)
                     sb_writer.insert_analysis(
                         deal_id=str(deal_id),
                         company_name=company_name,

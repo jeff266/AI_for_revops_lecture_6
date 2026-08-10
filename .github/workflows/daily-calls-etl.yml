@@ -9,6 +9,9 @@ on:
 env:
   FIREFLIES_API_KEY: ${{ secrets.FIREFLIES_API_KEY }}
   APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+  GONG_ACCESS_KEY: ${{ secrets.GONG_ACCESS_KEY }}
+  GONG_ACCESS_KEY_SECRET: ${{ secrets.GONG_ACCESS_KEY_SECRET }}
 
 permissions:
   contents: write  # Allow committing and pushing
@@ -16,7 +19,7 @@ permissions:
 jobs:
   etl-calls:
     runs-on: ubuntu-latest
-    timeout-minutes: 90  # ETL can take 60-90 minutes
+    timeout-minutes: 30
     environment: Agent  # Use Agent environment for secrets
 
     steps:
@@ -35,10 +38,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run incremental calls ETL
+      - name: Run incremental calls ETL (active deals only)
         run: |
           cd $GITHUB_WORKSPACE
-          python scripts/etl_calls.py --mode incremental
+          python scripts/etl_calls.py \
+            --mode incremental \
+            --active-deals-only
         continue-on-error: false
 
       - name: Commit updated call cache

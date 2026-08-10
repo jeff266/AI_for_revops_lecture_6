@@ -20,6 +20,23 @@ artifacts: the Railway .env file and the GitHub Secrets checklist.
 Never ask for multiple credentials at once. One at a time keeps errors
 out and makes it easy to pause and come back.
 
+## Step 0 — Platform Discovery
+
+Ask these questions first to determine which credentials are needed:
+
+Ask: "What CRM do you use? (HubSpot, Salesforce, other)"
+Store the answer.
+
+Ask: "What call recording platform do you use? (Fireflies, Gong, other)"
+Store the answer.
+
+If they answer "other" for either, tell them:
+"Currently this agent supports HubSpot + (Fireflies or Gong).
+You'll need to fork the repo and add a custom client for [their platform].
+Should we continue with manual setup, or pause here?"
+
+Use these answers to determine which credentials to collect in subsequent steps.
+
 ## Step 1 — Anthropic API Key
 
 Tell the user:
@@ -32,10 +49,9 @@ Validate: must start with sk-ant-
 
 ## Step 2 — Call intelligence platform credentials
 
-First check config/client.yaml for the call_tools.primary setting.
-If it's 'gong', collect Gong credentials. Otherwise, collect Fireflies.
+Use the answer from Step 0 to determine which credentials to collect.
 
-### If using Gong (call_tools.primary = 'gong'):
+### If using Gong:
 
 Tell the user:
 "You're configured to use Gong for call intelligence.
@@ -52,7 +68,7 @@ Store as: GONG_ACCESS_KEY
 Ask: "Paste your Gong Access Key Secret:"
 Store as: GONG_ACCESS_KEY_SECRET
 
-### If using Fireflies (call_tools.primary = 'fireflies' or not set):
+### If using Fireflies:
 
 Tell the user:
 "You're configured to use Fireflies for call intelligence.
@@ -60,6 +76,23 @@ To get it: app.fireflies.ai → Integrations → API → copy the key"
 
 Ask: "Paste your Fireflies API key (or SKIP):"
 Store as: FIREFLIES_API_KEY
+
+### If using a custom call tool (Fathom, Avoma, Chorus, etc.):
+
+Tell the user:
+"You're using {tool_name} for call intelligence.
+If you've already built the adapter (from client context onboarding),
+provide the API credential(s) now.
+
+Credential name should match what the adapter expects.
+Check scripts/adapters/calls/{tool_slug}.py for the exact env var name."
+
+Ask: "Paste your {Tool} API credential:"
+Store as: {TOOL}_API_KEY (or whatever name the adapter uses)
+
+If they haven't built the adapter yet, tell them:
+"Run 'start client onboarding' first to generate the call adapter,
+then come back here for credential setup."
 
 ## Step 3 — Apollo API Key
 
@@ -71,7 +104,9 @@ To get it: your Apollo workspace → Settings → API"
 Ask: "Paste your Apollo API key (or SKIP):"
 Store as: APOLLO_API_KEY
 
-## Step 4 — HubSpot Private App Token
+## Step 4 — CRM credentials
+
+### If using HubSpot:
 
 Tell the user:
 "HubSpot is your CRM. The agent reads active deals and writes
@@ -118,19 +153,37 @@ Ask: "Paste your Zapier catch hook URL (or SKIP):"
 
 Write a .env file to the repo root with all collected values.
 
-Then print the GitHub Secrets checklist:
+Then print the GitHub Secrets checklist based on the selected platforms:
+
+**If using Fireflies:**
 
 GitHub Secrets — Environment: Agent
 
 □ ANTHROPIC_API_KEY
-□ FIREFLIES_API_KEY         (blank if using Gong)
-□ GONG_ACCESS_KEY           (blank if using Fireflies)
-□ GONG_ACCESS_KEY_SECRET    (blank if using Fireflies)
+□ FIREFLIES_API_KEY
 □ APOLLO_API_KEY            (blank if skipped)
 □ HUBSPOT_API_KEY
 □ SUPABASE_URL
 □ SUPABASE_SERVICE_KEY
 □ ZAP_RESPONSE_URL          (blank if skipped)
+
+**If using Gong:**
+
+GitHub Secrets — Environment: Agent
+
+□ ANTHROPIC_API_KEY
+□ GONG_ACCESS_KEY
+□ GONG_ACCESS_KEY_SECRET
+□ APOLLO_API_KEY            (blank if skipped)
+□ HUBSPOT_API_KEY
+□ SUPABASE_URL
+□ SUPABASE_SERVICE_KEY
+□ ZAP_RESPONSE_URL          (blank if skipped)
+
+**If using a custom call tool:**
+
+Include the credential name(s) for the custom adapter instead
+of Fireflies or Gong credentials.
 
 Fastest way to add them:
   gh secret set --env Agent --env-file .env

@@ -1,10 +1,10 @@
 """
-Apollo API Client for MEDDICC Agent
+Apollo API Client for the call intelligence layer.
 
-Extends base Apollo client with deal management and note updates for MEDDICC analysis.
-
-Note: This is Apollo.io (video meeting platform), NOT Apollo.io (sales intelligence).
-GrowthBook uses Apollo.io for recording and transcribing sales calls.
+Note: This is Apollo.io (video meeting platform), used for recording
+and transcribing sales calls. Only the call intelligence methods live
+here — Apollo.io has no CRM/deals API, so deal management belongs to
+the HubSpot client.
 """
 import os
 import sys
@@ -12,9 +12,11 @@ import requests
 from typing import List, Dict, Optional
 from datetime import datetime
 
+from .base import CallAdapter
 
-class ApolloClient:
-    """Client for Apollo.io REST API (video meetings, NOT sales intelligence)."""
+
+class ApolloClient(CallAdapter):
+    """Call intelligence adapter for Apollo.io (video meetings)."""
 
     BASE_URL = "https://api.apollo.io/api/v1"
 
@@ -78,7 +80,7 @@ class ApolloClient:
 
         return all_convos
 
-    def search_conversations_by_company(self, company_name: str, since_date: Optional[datetime] = None) -> List[dict]:
+    def search_by_company(self, company_name: str, since_date: Optional[datetime] = None) -> List[dict]:
         """
         Search conversations by company name in topic/title.
 
@@ -118,8 +120,12 @@ class ApolloClient:
 
         return matches
 
-    def format_conversation_for_meddicc(self, conversation: dict) -> str:
-        """Format a conversation summary for MEDDICC analysis."""
+    def search_conversations_by_company(self, company_name: str, since_date: Optional[datetime] = None) -> List[dict]:
+        """Deprecated alias for search_by_company."""
+        return self.search_by_company(company_name, since_date)
+
+    def format_summary(self, conversation: dict) -> str:
+        """Format a conversation summary for analysis."""
         topic = conversation.get('topic', 'Untitled')
         start_time = conversation.get('start_time', '')
 
@@ -154,33 +160,17 @@ class ApolloClient:
 
         return "\n".join(parts)
 
-    # ─────────────────────────────────────────────────────────────────
-    # Deals (PLACEHOLDER - Apollo.io doesn't have deals API)
-    # ─────────────────────────────────────────────────────────────────
-    # Note: The spec requires Apollo deal management, but Apollo.io is a
-    # video meeting platform. The user likely meant HubSpot for deals.
-    # Including stub methods that will need HubSpot integration.
+    def format_conversation_for_meddicc(self, conversation: dict) -> str:
+        """Deprecated alias for format_summary."""
+        return self.format_summary(conversation)
 
-    def get_active_deals(self) -> List[dict]:
+    def get_meeting_attendees(self, call_id: str) -> List[dict]:
         """
-        Get active deals (not Closed Won/Lost).
-
-        NOTE: Apollo.io doesn't have a deals API. This requires HubSpot integration.
-        This is a stub that should be replaced with HubSpot API calls.
+        Apollo.io does not expose structured attendee emails through its
+        conversations API, so there is no reliable way to return per-call
+        attendees with emails. Always returns [].
         """
-        raise NotImplementedError(
-            "Apollo.io (video meetings) doesn't have deals. "
-            "Use HubSpot API for deal management. "
-            "See /Users/jeffignacio/GrowthBook/revops-metrics/hubspot_client.py"
-        )
-
-    def get_deal(self, deal_id: str) -> dict:
-        """Get deal details. Requires HubSpot integration."""
-        raise NotImplementedError("Use HubSpot API for deal management")
-
-    def update_deal_note(self, deal_id: str, note_content: str) -> dict:
-        """Update or create MEDDICC analysis note on deal. Requires HubSpot integration."""
-        raise NotImplementedError("Use HubSpot API for deal notes")
+        return []
 
     # ─────────────────────────────────────────────────────────────────
     # Utilities
@@ -216,18 +206,11 @@ if __name__ == "__main__":
     test_company = "GrowthBook"
     print(f"\nSearching for conversations with '{test_company}'...")
 
-    results = client.search_conversations_by_company(test_company)
+    results = client.search_by_company(test_company)
     print(f"Found {len(results)} conversations")
 
     if results:
         print("\nFormatted summary example:")
         print("=" * 80)
-        print(client.format_conversation_for_meddicc(results[0]))
+        print(client.format_summary(results[0]))
         print("=" * 80)
-
-    # Note about deals
-    print("\n" + "=" * 80)
-    print("NOTE: Apollo.io is for VIDEO MEETINGS, not CRM/deals.")
-    print("For deal management, use HubSpot API:")
-    print("  /Users/jeffignacio/GrowthBook/revops-metrics/hubspot_client.py")
-    print("=" * 80)

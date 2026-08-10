@@ -10,6 +10,8 @@ from pathlib import Path
 from typing import Dict, Optional
 from anthropic import Anthropic
 
+from utils import get_methodology
+
 
 def load_claude_md() -> str:
     """Load current CLAUDE.md instructions."""
@@ -33,7 +35,8 @@ def build_initial_messages(
     call_summary: str,
     cumulative_state: dict,
     deal_context: dict,
-    previous_feedback: Optional[str] = None
+    previous_feedback: Optional[str] = None,
+    methodology: str = "MEDDICC"
 ) -> list:
     """Build initial messages for generator."""
 
@@ -65,7 +68,7 @@ def build_initial_messages(
 
 ---
 
-# Cumulative MEDDICC State (from all previous calls)
+# Cumulative {methodology} State (from all previous calls)
 
 ```json
 {cumulative_json}
@@ -79,7 +82,7 @@ def build_initial_messages(
 
 ---
 
-Generate a MEDDICC analysis following the format in your instructions."""
+Generate a {methodology} analysis following the format in your instructions."""
 
     if previous_feedback:
         user_content += f"""
@@ -105,10 +108,11 @@ def generate(
     claude_md: str,
     client: Anthropic,
     tracker=None,
-    company: str = ''
+    company: str = '',
+    methodology: str = "MEDDICC"
 ) -> str:
     """
-    Generate MEDDICC analysis using Claude Sonnet 4.6.
+    Generate the qualification analysis using Claude Sonnet 4.5.
 
     Handles potential tool calls in inner loop.
     """
@@ -116,7 +120,8 @@ def generate(
         call_summary,
         cumulative_state,
         deal_context,
-        previous_feedback
+        previous_feedback,
+        methodology
     )
 
     # Inner tool loop (though MEDDICC generation shouldn't need tools)
@@ -157,7 +162,7 @@ def generate(
                     tool_results.append({
                         "type": "tool_result",
                         "tool_use_id": block.id,
-                        "content": "Tool use not supported for MEDDICC analysis. Please generate the analysis directly."
+                        "content": f"Tool use not supported for {methodology} analysis. Please generate the analysis directly."
                     })
 
             messages.append({"role": "user", "content": tool_results})
@@ -182,10 +187,11 @@ def evaluate(
     rubric: str,
     client: Anthropic,
     tracker=None,
-    company: str = ''
+    company: str = '',
+    methodology: str = "MEDDICC"
 ) -> dict:
     """
-    Evaluate MEDDICC analysis using Claude Haiku.
+    Evaluate the qualification analysis using Claude Haiku.
 
     Returns evaluation result with pass/fail and feedback.
     """
@@ -194,7 +200,7 @@ def evaluate(
 
     cumulative_json = json.dumps(cumulative_state, indent=2)
 
-    evaluation_prompt = f"""# Generated MEDDICC Analysis to Evaluate
+    evaluation_prompt = f"""# Generated {methodology} Analysis to Evaluate
 
 {draft}
 
@@ -206,7 +212,7 @@ def evaluate(
 
 ---
 
-# Cumulative MEDDICC State (historical context)
+# Cumulative {methodology} State (historical context)
 
 ```json
 {cumulative_json}
@@ -281,7 +287,8 @@ def reflect(
     iterations: int,
     passed: bool,
     tracker=None,
-    company: str = ''
+    company: str = '',
+    methodology: str = "MEDDICC"
 ) -> dict:
     """
     Reflection gate: decide if this execution should generate a learning.
@@ -293,7 +300,7 @@ def reflect(
     # Use Claude Haiku for reflection
     anthropic_client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-    system_prompt = """You are a reflection gate for a MEDDICC analysis agent.
+    system_prompt = f"""You are a reflection gate for a {methodology} analysis agent.
 Decide whether this execution should generate a learning entry.
 
 Rules:
@@ -315,17 +322,17 @@ If the agent failed (passed == false or iterations > 1):
 If the agent passed on first try, set criterion_fired to null.
 
 Return ONLY valid JSON:
-{
+{{
   "outcome": "no_learning | observation | candidate | bug | prompt_issue",
   "root_cause": "instruction_gap | missing_data | customer_anomaly | model_limitation | edge_case | no_failure",
   "claude_md_would_help": true | false,
   "reasoning": "one sentence max",
-  "rubric_observation": {
+  "rubric_observation": {{
     "criterion_fired": "criterion name or null",
     "was_appropriate": true | false,
     "suggested_change": "proposed new wording or null"
-  }
-}"""
+  }}
+}}"""
 
     reflection_input = {
         "evaluation": evaluation,
@@ -408,6 +415,9 @@ def run_agent(
     """
     client = Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
+    # Resolve the configured methodology once for this run
+    methodology = get_methodology()
+
     # Load prompts if not provided
     if claude_md is None:
         claude_md = load_claude_md()
@@ -432,7 +442,8 @@ def run_agent(
             claude_md,
             client,
             tracker,
-            company
+            company,
+            methodology
         )
 
         # Evaluate analysis
@@ -443,7 +454,8 @@ def run_agent(
             rubric,
             client,
             tracker,
-            company
+            company,
+            methodology
         )
 
         # Check if passed
@@ -457,7 +469,7 @@ def run_agent(
 
     # Run reflection gate to decide if this should generate a learning
     passed = evaluation['pass'] if evaluation else False
-    reflection = reflect(evaluation, iteration, passed, tracker, company)
+    reflection = reflect(evaluation, iteration, passed, tracker, company, methodology)
 
     # Return final result with reflection
     return {

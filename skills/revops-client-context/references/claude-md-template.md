@@ -45,9 +45,24 @@ Typical stage: {{typical_stage}}
 
 - Score only what the prospect explicitly stated
 - Enthusiasm without specificity scores 1, not higher
-- Champion without demonstrated EB access scores maximum 2
 - Competitor mentions must use names from the list above
 - Value metrics must be prospect-stated, not seller-stated
+
+## Score advocacy on action, not sentiment
+
+For any component representing an internal advocate or
+budget authority ({{list the matching components for this
+methodology}}): score what the buyer DOES, not how they
+sound. Enthusiasm without a buyer-owned next step caps the
+score at the lowest band.
+
+{{if methodology includes Champion or Economic Buyer or Authority}}
+### Champion and Economic Buyer — score on action, not sentiment
+
+- Champion without demonstrated Economic Buyer access scores maximum 2
+- Economic Buyer / budget authority is "confirmed" only with an
+  explicit statement of who owns the budget
+{{end if}}
 
 ## Carry-forward rule
 

@@ -1,8 +1,10 @@
 # RevOps MEDDICC Agent
 
 Nightly AI-powered deal qualification for your HubSpot pipeline.
-Analyzes sales calls, scores every active deal on MEDDICC,
-writes scores back to HubSpot, and gets smarter over time.
+Analyzes sales calls, scores every active deal on your qualification
+methodology — MEDDICC by default; MEDDPIC, SPICED, and BANT supported
+via config/client.yaml — writes scores back to HubSpot, and gets
+smarter over time.
 
 ---
 
@@ -41,6 +43,14 @@ Go to: **Actions → MEDDICC Agent Nightly Run → Run workflow**
 
 Watch the logs. First run analyzes your full active pipeline.
 After that the agent runs every night at 2am UTC automatically.
+
+### What runs automatically
+
+| Time (UTC) | Job | What it does |
+|---|---|---|
+| 1:00 AM | Daily Deal ETL | Updates active deal index from HubSpot |
+| 1:30 AM | Daily Calls ETL | Fetches new calls for active deals |
+| 2:00 AM | MEDDICC Agent | Analyzes deals, writes to HubSpot + Supabase |
 
 ---
 

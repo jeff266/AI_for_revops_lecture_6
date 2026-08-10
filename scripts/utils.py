@@ -62,3 +62,239 @@ def slugify(name: str) -> str:
 
     slug = name.replace(' ', '-').strip('-')
     return slug if len(slug) >= 3 else ''
+
+
+METHODOLOGY_COMPONENTS = {
+    'MEDDICC': ['Metrics', 'Economic Buyer', 'Decision Criteria',
+                'Decision Process', 'Identified Pain',
+                'Champion', 'Competition'],
+    'MEDDPIC': ['Metrics', 'Economic Buyer', 'Decision Criteria',
+                'Decision Process', 'Paper Process',
+                'Identified Pain', 'Champion', 'Competition'],
+    'SPICED':  ['Situation', 'Pain', 'Impact',
+                'Critical Event', 'Decision'],
+    'BANT':    ['Budget', 'Authority', 'Need', 'Timeline'],
+}
+
+
+def load_client_config() -> dict:
+    import yaml
+    from pathlib import Path
+    p = Path(__file__).parent.parent / 'config' / 'client.yaml'
+    if not p.exists():
+        return {}
+    with open(p) as f:
+        return yaml.safe_load(f) or {}
+
+
+def get_methodology(config: dict = None) -> str:
+    if config is None:
+        config = load_client_config()
+    m = (config.get('methodology')
+         or config.get('organization', {}).get('sales_methodology')
+         or 'MEDDICC')
+    return str(m).upper()
+
+
+def get_components(config: dict = None) -> list:
+    return METHODOLOGY_COMPONENTS.get(
+        get_methodology(config), METHODOLOGY_COMPONENTS['MEDDICC'])
+
+
+def component_key(name: str) -> str:
+    """'Economic Buyer' -> 'economic_buyer';
+       'Identified Pain' -> 'identified_pain'"""
+    return name.lower().replace(' ', '_')
+
+
+def get_pipeline_config(pipeline_id: str = None,
+                        config: dict = None) -> dict:
+    """Return the pipeline config block. Defaults to the
+    pipeline marked is_primary if pipeline_id not given."""
+    if config is None:
+        config = load_client_config()
+    pipelines = config.get('pipeline', {}).get('pipelines', [])
+    if pipeline_id:
+        for p in pipelines:
+            if p['id'] == pipeline_id:
+                return p
+        raise ValueError(f"Unknown pipeline_id '{pipeline_id}'")
+    for p in pipelines:
+        if p.get('is_primary'):
+            return p
+    if pipelines:
+        return pipelines[0]
+    return {}
+
+
+def get_stage_order(stage_id: str, pipeline_id: str = None,
+                    config: dict = None) -> int:
+    """Return the order value for a stage ID within a
+    pipeline. Returns None if the stage ID is not found —
+    caller must handle this (likely an archived/renamed
+    stage — see Phase C)."""
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            return s['order']
+    return None
+
+
+def get_value_field(config: dict = None) -> str:
+    if config is None:
+        config = load_client_config()
+    return config.get('pipeline', {}).get('value_field', 'amount')
+
+
+def is_won_stage(stage_id: str, pipeline_id: str = None,
+                 config: dict = None) -> bool:
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            return bool(s.get('is_won'))
+    return False
+
+
+def is_lost_stage(stage_id: str, pipeline_id: str = None,
+                  config: dict = None) -> bool:
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            return bool(s.get('is_lost'))
+    return False
+
+
+def get_value_properties(config=None) -> list:
+    """
+    HubSpot property names the ETL must fetch to compute deal value.
+    String field -> [field]; computed -> its components.
+
+    Args:
+        config: Optional full config dict (loaded if not provided)
+
+    Returns:
+        list: Property names to fetch from HubSpot
+    """
+    if config is None:
+        from pathlib import Path
+        import yaml
+        config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
+        if config_path.exists():
+            with open(config_path) as f:
+                config = yaml.safe_load(f)
+        else:
+            config = {}
+
+    vf = config.get('pipeline', {}).get('value_field', 'amount')
+    if isinstance(vf, dict):
+        return list(vf.get('components', []))
+    return [vf]
+
+
+def compute_deal_value(properties: dict, config=None) -> float:
+    """
+    NULL-safe deal value from a HubSpot properties dict.
+    Blanks/None/'' -> 0. Works for both config shapes.
+
+    Args:
+        properties: HubSpot deal properties dict
+        config: Optional full config dict (loaded if not provided)
+
+    Returns:
+        float: Computed deal value
+    """
+    if config is None:
+        from pathlib import Path
+        import yaml
+        config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
+        if config_path.exists():
+            with open(config_path) as f:
+                config = yaml.safe_load(f)
+        else:
+            config = {}
+
+    vf = config.get('pipeline', {}).get('value_field', 'amount')
+    names = (vf.get('components', []) if isinstance(vf, dict) else [vf])
+
+    total = 0.0
+    for n in names:
+        raw = properties.get(n)
+        try:
+            # Strip $ and , from value strings, handle None/empty/null
+            if raw not in (None, '', 'null'):
+                clean = str(raw).replace('$', '').replace(',', '').strip()
+                if clean:
+                    total += float(clean)
+        except (ValueError, TypeError):
+            pass
+
+    return total
+
+
+def get_fiscal_quarter(as_of=None, config=None) -> tuple:
+    """
+    Return (q_start_date, q_end_date, label) for the fiscal quarter
+    containing as_of, from fiscal.fy_start_month.
+
+    fy_start_month=2 => Feb-Apr, May-Jul, Aug-Oct, Nov-Jan
+    FY label is the year of the FY END (May 2026 sits in FY2027 Q2)
+
+    Args:
+        as_of: Date to find quarter for (default: today)
+        config: Optional full config dict (loaded if not provided)
+
+    Returns:
+        tuple: (start_date, end_date, label) e.g. (date(2026,5,1), date(2026,7,31), "FY2027 Q2")
+    """
+    from datetime import date
+    from dateutil.relativedelta import relativedelta
+
+    if as_of is None:
+        as_of = date.today()
+
+    if config is None:
+        from pathlib import Path
+        import yaml
+        config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
+        if config_path.exists():
+            with open(config_path) as f:
+                config = yaml.safe_load(f)
+        else:
+            config = {}
+
+    fy_start_month = config.get('fiscal', {}).get('fy_start_month', 1)
+
+    # Find which quarter this date falls in
+    # Quarters are 3 months each starting from fy_start_month
+    year = as_of.year
+    month = as_of.month
+
+    # Calculate months since FY start
+    if month >= fy_start_month:
+        # Same fiscal year
+        fy_year = year + 1  # FY label is END year
+        months_into_fy = month - fy_start_month
+    else:
+        # Previous fiscal year
+        fy_year = year
+        months_into_fy = (12 - fy_start_month) + month
+
+    # Which quarter (0-3)?
+    quarter_num = months_into_fy // 3 + 1  # 1-4
+
+    # Calculate quarter start
+    q_start_month = fy_start_month + ((quarter_num - 1) * 3)
+    if q_start_month > 12:
+        q_start_month -= 12
+        q_start_year = fy_year
+    else:
+        q_start_year = fy_year - 1
+
+    q_start = date(q_start_year, q_start_month, 1)
+
+    # Quarter end is last day of 3rd month
+    q_end = q_start + relativedelta(months=3) - relativedelta(days=1)
+
+    label = f"FY{fy_year} Q{quarter_num}"
+
+    return (q_start, q_end, label)
