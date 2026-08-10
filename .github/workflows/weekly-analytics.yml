@@ -51,3 +51,21 @@ jobs:
         run: |
           python scripts/analytics/generate_win_loss.py \
             --limit 25 --yes
+
+      - name: Extract objections
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          python scripts/enrichment/extract_objections.py \
+            --limit 50 --yes
+
+      - name: Extract feature gaps
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          python scripts/enrichment/extract_feature_gaps.py \
+            --limit 50 --yes

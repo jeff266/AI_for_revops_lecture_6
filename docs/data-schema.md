@@ -149,3 +149,13 @@ the nightly agent in this repo; part of the shared contract.
 | `created_at` | TIMESTAMPTZ | Default NOW() |
 
 Unique on `(rep_email, period_start)`.
+
+---
+
+## `objections` / `feature_gaps` / `enrichment_scans`
+
+Populated by `scripts/enrichment/*.py`, which read call summaries from `memory/calls/*.json` — NOT from the `calls` table. Rationale: the file cache is the fuzzy-matched, company-slugged source the analysis agent already uses; the `calls` table is a thinner sync whose company names are parsed from call titles and which has no deal association.
+
+Scans are filtered to cache files whose slug matches a company with at least one deal, so a scanned call always has a possible deal association. `deal_id` is populated best-effort: when the company has exactly one deal, or exactly one deal whose lifetime covers the call date. Otherwise NULL — meaning genuine multi-deal ambiguity, not missing data. Rows are always anchored to `company_name`, which is taken from the matched deal (HubSpot-sourced), not from the cache file's title-derived field.
+
+`enrichment_scans` is the dedup ledger (PK: call_id + job). A row with items_found = 0 means "scanned, found nothing" — distinct from never scanned.
