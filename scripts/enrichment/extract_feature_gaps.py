@@ -39,12 +39,12 @@ def _vendor_name() -> str:
 
 
 PROMPT_TEMPLATE = """Read this sales call summary and identify any moments
-where the prospect asked for a capability {{vendor}} doesn't
+where the prospect asked for a capability {vendor} doesn't
 have, compared unfavorably to a competitor's feature, or
 described a workaround they'd need.
 
 Call summary:
-{{call_summary}}
+{call_summary}
 
 For each gap found, return an object with:
   feature_description: what they asked for or found missing,
