@@ -7,8 +7,9 @@ Supports both local file operations and GitHub API for Actions environment.
 import os
 import json
 import threading
+import secrets
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Optional
 import base64
 
@@ -35,6 +36,7 @@ class GitHubMemory:
         self.issues_dir = self.memory_dir / "issues"
         self.rubric_obs_dir = self.memory_dir / "rubric_observations"
         self.meta_dir = self.memory_dir / "meta"
+        self.runs_dir = self.meta_dir / "runs"
         self.calls_dir = self.memory_dir / "calls"
         self.deals_dir = self.memory_dir / "deals"
 
@@ -45,6 +47,7 @@ class GitHubMemory:
         self.issues_dir.mkdir(parents=True, exist_ok=True)
         self.rubric_obs_dir.mkdir(parents=True, exist_ok=True)
         self.meta_dir.mkdir(parents=True, exist_ok=True)
+        self.runs_dir.mkdir(parents=True, exist_ok=True)
         self.calls_dir.mkdir(parents=True, exist_ok=True)
         self.deals_dir.mkdir(parents=True, exist_ok=True)
 
@@ -53,47 +56,104 @@ class GitHubMemory:
         self._counter_lock = threading.Lock()
 
     # ─────────────────────────────────────────────────────────────────
-    # Counter Management
+    # Counter Management (Per-Run Files + Rollup)
     # ─────────────────────────────────────────────────────────────────
 
-    def get_counter(self) -> dict:
-        """Get current counter state."""
-        counter_path = self.meta_dir / "counter.json"
+    @staticmethod
+    def _rollup_counter(runs_dir: Path) -> dict:
+        """
+        Compute counter state by rolling up per-run marker files.
+        Returns derived state, not incremented.
+        """
+        run_file_paths = list(runs_dir.glob('*.json'))
 
-        if counter_path.exists():
-            with open(counter_path, 'r') as f:
-                return json.load(f)
+        if not run_file_paths:
+            # No runs yet
+            next_rewrite = (datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d')
+            return {
+                "total_runs": 0,
+                "runs_since_rewrite": 0,
+                "last_full_rewrite": None,
+                "next_full_rewrite_due": next_rewrite
+            }
 
-        # Initialize if doesn't exist
-        today = datetime.now().strftime('%Y-%m-%d')
-        next_rewrite = (datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d')
+        # Load and sort by timestamp field (not filename)
+        runs_with_timestamp = []
+        for run_file in run_file_paths:
+            try:
+                with open(run_file, 'r') as f:
+                    data = json.load(f)
+                    runs_with_timestamp.append((data.get('timestamp', ''), run_file, data))
+            except:
+                continue
+
+        # Sort by timestamp field
+        runs_with_timestamp.sort(key=lambda x: x[0])
+        run_files = [(path, data) for _, path, data in runs_with_timestamp]
+
+        # Find last full rewrite
+        last_full_rewrite_date = None
+        last_full_rewrite_idx = -1
+
+        for idx, (run_file, data) in enumerate(run_files):
+            if data.get('is_full_rewrite'):
+                last_full_rewrite_date = data.get('timestamp', '')[:10]
+                last_full_rewrite_idx = idx
+
+        # Count runs since last rewrite
+        if last_full_rewrite_idx >= 0:
+            runs_since_rewrite = len(run_files) - last_full_rewrite_idx - 1
+        else:
+            runs_since_rewrite = len(run_files)
+
+        # Calculate next rewrite due date
+        if last_full_rewrite_date:
+            try:
+                last_rewrite_dt = datetime.strptime(last_full_rewrite_date, '%Y-%m-%d')
+                next_rewrite = (last_rewrite_dt + timedelta(days=30)).strftime('%Y-%m-%d')
+            except:
+                next_rewrite = (datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d')
+        else:
+            next_rewrite = (datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d')
 
         return {
-            "total_runs": 0,
-            "runs_since_rewrite": 0,
-            "last_full_rewrite": None,
+            "total_runs": len(run_files),
+            "runs_since_rewrite": runs_since_rewrite,
+            "last_full_rewrite": last_full_rewrite_date,
             "next_full_rewrite_due": next_rewrite
         }
 
+    def get_counter(self) -> dict:
+        """
+        Get current counter state via rollup (thread-safe).
+        No longer reads counter.json file.
+        """
+        with self._counter_lock:
+            return self._rollup_counter(self.runs_dir)
+
     def update_counter(self, is_full_rewrite: bool = False) -> dict:
-        """Increment counter and optionally reset for full rewrite."""
-        counter = self.get_counter()
+        """
+        Write collision-proof per-run marker file.
+        Returns updated counter state via rollup.
+        """
+        with self._counter_lock:
+            now_utc = datetime.now(timezone.utc)
+            timestamp = now_utc.strftime('%Y-%m-%dT%H%M%SZ')
+            run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
+            filename = f'{timestamp}_nightly_{run_id}.json'
 
-        counter["total_runs"] += 1
+            # Write per-run marker
+            run_file = self.runs_dir / filename
+            with open(run_file, 'w') as f:
+                json.dump({
+                    'timestamp': now_utc.isoformat(),
+                    'job': 'nightly',
+                    'run_id': run_id,
+                    'is_full_rewrite': is_full_rewrite
+                }, f, indent=2)
 
-        if is_full_rewrite:
-            counter["runs_since_rewrite"] = 0
-            counter["last_full_rewrite"] = datetime.now().strftime('%Y-%m-%d')
-            counter["next_full_rewrite_due"] = (datetime.now() + timedelta(days=30)).strftime('%Y-%m-%d')
-        else:
-            counter["runs_since_rewrite"] += 1
-
-        # Write back
-        counter_path = self.meta_dir / "counter.json"
-        with open(counter_path, 'w') as f:
-            json.dump(counter, f, indent=2)
-
-        return counter
+            # Return rollup state
+            return self._rollup_counter(self.runs_dir)
 
     def should_full_rewrite(self) -> bool:
         """Check if it's time for a full rewrite (30 days)."""
