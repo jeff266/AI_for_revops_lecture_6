@@ -1,11 +1,13 @@
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 import threading
+import os
+import secrets
 
 class TokenTracker:
 
-    def __init__(self, memory_dir: Path):
+    def __init__(self, memory_dir: Path, job: str = 'unknown'):
         self.usage_dir = memory_dir / 'token_usage'
         self.usage_dir.mkdir(parents=True, exist_ok=True)
 
@@ -14,10 +16,10 @@ class TokenTracker:
         with open(costs_path) as f:
             self.model_costs = json.load(f)
 
-        self.today = datetime.now().strftime('%Y-%m-%d')
-        self.month = datetime.now().strftime('%Y-%m')
+        self.job = job
+        self.run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
         self.session_records = []
-        self._lock = threading.Lock()  # Thread-safety for concurrent recording
+        self._lock = threading.Lock()  # Thread safety for concurrent record() calls
 
     def record(self, response, model: str, role: str,
                company: str = '') -> float:
@@ -49,29 +51,31 @@ class TokenTracker:
 
     def save(self) -> dict:
         """
-        Merge session records into today's daily file.
-        Update monthly rollup.
-        Return the day's summary dict.
+        Write session records to a collision-proof per-run file.
+        Return the run's summary dict.
         """
-        daily_path = self.usage_dir / f'{self.today}.json'
+        if not self.session_records:
+            return {'total_cost_usd': 0, 'total_input_tokens': 0,
+                    'total_output_tokens': 0, 'total_calls': 0,
+                    'by_model': {}, 'by_role': {}}
 
-        # Load existing records for today if any
-        existing = []
-        if daily_path.exists():
-            with open(daily_path) as f:
-                existing = json.load(f).get('records', [])
+        summary = self._summarize(self.session_records)
 
-        all_records = existing + self.session_records
-        summary = self._summarize(all_records)
+        # Collision-proof filename: {date}T{time}Z_{job}_{run_id}.json
+        now_utc = datetime.now(timezone.utc)
+        timestamp = now_utc.strftime('%Y-%m-%dT%H%M%SZ')
+        filename = f'{timestamp}_{self.job}_{self.run_id}.json'
+        run_path = self.usage_dir / filename
 
-        with open(daily_path, 'w') as f:
+        with open(run_path, 'w') as f:
             json.dump({
-                'date':    self.today,
-                'summary': summary,
-                'records': all_records,
+                'timestamp': now_utc.isoformat(),
+                'job':       self.job,
+                'run_id':    self.run_id,
+                'summary':   summary,
+                'records':   self.session_records,
             }, f, indent=2)
 
-        self._update_monthly(summary)
         return summary
 
     def _summarize(self, records: list) -> dict:
@@ -112,28 +116,46 @@ class TokenTracker:
             'by_role':            by_role,
         }
 
-    def _update_monthly(self, day_summary: dict):
-        path = self.usage_dir / f'monthly_{self.month}.json'
-        data = {'month': self.month, 'days': {}, 'total_cost_usd': 0.0,
-                'by_model': {}, 'by_role': {}}
-        if path.exists():
-            with open(path) as f:
-                data = json.load(f)
+    @staticmethod
+    def rollup_monthly(usage_dir: Path, year_month: str) -> dict:
+        """
+        Compute monthly totals by summing all per-run files for the given month.
+        year_month format: 'YYYY-MM'
+        Returns: {'total_cost_usd': float, 'total_input_tokens': int,
+                  'total_output_tokens': int, 'total_calls': int, 'runs': int}
+        """
+        total_cost = 0.0
+        total_input = 0
+        total_output = 0
+        total_calls = 0
+        run_count = 0
 
-        data['days'][self.today] = {
-            'total_cost_usd':     day_summary['total_cost_usd'],
-            'total_input_tokens': day_summary['total_input_tokens'],
-            'total_output_tokens':day_summary['total_output_tokens'],
+        # Match both old daily files and new per-run files
+        for run_file in usage_dir.glob(f'{year_month}-*.json'):
+            if 'monthly' in run_file.name:
+                continue  # Skip old monthly aggregates
+            try:
+                with open(run_file) as f:
+                    data = json.load(f)
+                    summary = data.get('summary', {})
+                    total_cost += summary.get('total_cost_usd', 0)
+                    total_input += summary.get('total_input_tokens', 0)
+                    total_output += summary.get('total_output_tokens', 0)
+                    total_calls += summary.get('total_calls', 0)
+                    run_count += 1
+            except (json.JSONDecodeError, KeyError):
+                continue
+
+        return {
+            'total_cost_usd': round(total_cost, 6),
+            'total_input_tokens': total_input,
+            'total_output_tokens': total_output,
+            'total_calls': total_calls,
+            'runs': run_count,
         }
 
-        # Recompute monthly totals from all days
-        data['total_cost_usd'] = round(
-            sum(d['total_cost_usd'] for d in data['days'].values()), 6)
-
-        with open(path, 'w') as f:
-            json.dump(data, f, indent=2)
-
-    def print_summary(self, summary: dict, deals_processed: int = 0):
+    def print_summary(self, summary: dict, deals_processed: int = 0,
+                      show_monthly: bool = True):
         print("\n=== TOKEN USAGE ===")
         for model, s in summary['by_model'].items():
             label = model.replace('claude-', '').replace('-20250929','').replace('-20251001','')
@@ -143,11 +165,20 @@ class TokenTracker:
                   f"${s['cost_usd']:.5f}  "
                   f"({s['calls']} calls)")
         print(f"  {'─'*70}")
-        print(f"  {'TOTAL':<35}  "
+        print(f"  {'TOTAL (this run)':<35}  "
               f"{summary['total_input_tokens']:>8,} in  "
               f"{summary['total_output_tokens']:>7,} out  "
               f"${summary['total_cost_usd']:.5f}")
         if deals_processed > 0:
             cph = round(summary['total_cost_usd'] / deals_processed, 5)
             print(f"  Cost per deal: ${cph}")
+
+        if show_monthly:
+            year_month = datetime.now(timezone.utc).strftime('%Y-%m')
+            monthly = self.rollup_monthly(self.usage_dir, year_month)
+            print(f"  {'TOTAL (month-to-date)':<35}  "
+                  f"{monthly['total_input_tokens']:>8,} in  "
+                  f"{monthly['total_output_tokens']:>7,} out  "
+                  f"${monthly['total_cost_usd']:.5f}  "
+                  f"({monthly['runs']} runs)")
         print()

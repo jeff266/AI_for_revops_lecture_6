@@ -58,7 +58,7 @@ def main():
 
     sb = create_client(SUPABASE_URL, SUPABASE_KEY)
     memory = get_memory_manager()
-    tracker = TokenTracker(memory.memory_dir)
+    tracker = TokenTracker(memory.memory_dir, job='win_loss')
 
     # Determine cutoff date
     meta_path = REPO_ROOT / 'memory' / 'meta' / 'analytics_meta.json'

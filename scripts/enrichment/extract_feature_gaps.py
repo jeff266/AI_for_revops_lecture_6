@@ -227,7 +227,7 @@ def main():
     import anthropic
     client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     from token_tracker import TokenTracker
-    tracker = TokenTracker(REPO_ROOT / 'memory')
+    tracker = TokenTracker(REPO_ROOT / 'memory', job='feature_gaps')
 
     written, scanned = 0, 0
     deal_id_resolved = 0

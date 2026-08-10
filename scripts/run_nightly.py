@@ -161,7 +161,7 @@ def main():
 
     hubspot = get_crm_adapter()
     memory = get_memory_manager()
-    tracker = TokenTracker(memory.memory_dir)
+    tracker = TokenTracker(memory.memory_dir, job='nightly')
 
     # Initialize storage writer if configured
     sb_writer = None
