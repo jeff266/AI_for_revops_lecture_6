@@ -6,6 +6,7 @@ Supports both local file operations and GitHub API for Actions environment.
 """
 import os
 import json
+import secrets
 import threading
 from pathlib import Path
 from datetime import datetime, timedelta
@@ -105,13 +106,16 @@ class GitHubMemory:
     # ─────────────────────────────────────────────────────────────────
 
     def save_learning(self, learning: dict) -> Path:
-        """Save a learning entry. Thread-safe for parallel processing."""
+        """Save a learning entry. Thread-safe."""
         with self._save_lock:
-            # Generate ID
+            # Generate ID with run_id and sequence to prevent collisions
             today = datetime.now().strftime('%Y-%m-%d')
-            counter = self.get_counter()
-            run_num = counter["runs_since_rewrite"] + 1
-            learning_id = f"{today}_{run_num:03d}"
+            run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
+
+            # Count existing learnings for this run to get sequence number
+            existing = list(self.learnings_dir.glob(f'{today}_{run_id}_*.json'))
+            seq = len(existing) + 1
+            learning_id = f"{today}_{run_id}_{seq:03d}"
 
             learning["id"] = learning_id
             learning["timestamp"] = datetime.now().isoformat()
@@ -124,13 +128,16 @@ class GitHubMemory:
             return learning_path
 
     def save_issue(self, issue: dict) -> Path:
-        """Save an issue entry (bugs, prompt_issue outcomes). Thread-safe for parallel processing."""
+        """Save an issue entry (bugs, prompt_issue outcomes). Thread-safe."""
         with self._save_lock:
-            # Generate ID (same format as learning entries)
+            # Generate ID with run_id and sequence to prevent collisions
             today = datetime.now().strftime('%Y-%m-%d')
-            counter = self.get_counter()
-            run_num = counter["runs_since_rewrite"] + 1
-            issue_id = f"{today}_{run_num:03d}"
+            run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
+
+            # Count existing issues for this run to get sequence number
+            existing = list(self.issues_dir.glob(f'{today}_{run_id}_*.json'))
+            seq = len(existing) + 1
+            issue_id = f"{today}_{run_id}_{seq:03d}"
 
             issue["id"] = issue_id
             issue["timestamp"] = datetime.now().isoformat()
@@ -146,9 +153,8 @@ class GitHubMemory:
                                 company: str) -> Optional[Path]:
         """
         Save a rubric observation only when criterion_fired is not null
-        and suggested_change is not null.
+        and suggested_change is not null. Thread-safe.
         Observations with no criterion fired are not worth storing.
-        Thread-safe for parallel processing.
         """
         if not observation.get('criterion_fired'):
             return None
@@ -157,12 +163,16 @@ class GitHubMemory:
 
         with self._save_lock:
             today = datetime.now().strftime('%Y-%m-%d')
-            existing = list(self.rubric_obs_dir.glob(f'{today}_*.json'))
-            idx = str(len(existing) + 1).zfill(3)
-            path = self.rubric_obs_dir / f'{today}_{idx}.json'
+            run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
+
+            # Count existing observations for this run to get sequence number
+            existing = list(self.rubric_obs_dir.glob(f'{today}_{run_id}_*.json'))
+            seq = len(existing) + 1
+            obs_id = f'{today}_{run_id}_{seq:03d}'
+            path = self.rubric_obs_dir / f'{obs_id}.json'
 
             data = {
-                'id': f'{today}_{idx}',
+                'id': obs_id,
                 'timestamp': datetime.now().isoformat(),
                 'company': company,
                 **observation
@@ -216,9 +226,10 @@ class GitHubMemory:
         return version_path
 
     def save_diff(self, diff_content: str) -> Path:
-        """Save daily diff explanation."""
+        """Save daily diff explanation with run_id to prevent collisions."""
         today = datetime.now().strftime('%Y-%m-%d')
-        diff_path = self.diffs_dir / f"{today}.md"
+        run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
+        diff_path = self.diffs_dir / f"{today}_{run_id}.md"
 
         with open(diff_path, 'w') as f:
             f.write(diff_content)

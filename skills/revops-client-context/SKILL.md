@@ -35,6 +35,42 @@ Ask one at a time:
 
 Push back on vague answers. Ask for real examples.
 
+### Methodology Setup (based on Question 4 answer)
+
+After they answer Question 4 about their qualification methodology:
+
+**If MEDDICC:**
+- Use existing prompts/CLAUDE.md template
+- Use existing prompts/evaluator_rubric.md
+- Components: Metrics, Economic Buyer, Decision Criteria, Decision Process, Identified Pain, Champion, Competition
+- HubSpot properties: meddicc_score, meddicc_metrics_score, meddicc_economic_buyer_score, etc.
+
+**If MEDDPIC:**
+- Same as MEDDICC plus Process component
+- Components: Metrics, Economic Buyer, Decision Criteria, Decision Process, Identified Pain, Champion, Competition, Process
+- HubSpot properties: meddpic_score, meddpic_metrics_score, etc.
+
+**If SPICED:**
+- Generate SPICED-specific CLAUDE.md and evaluator_rubric.md
+- Components: Situation, Pain, Impact, Critical Event, Decision
+- HubSpot properties: spiced_score, spiced_situation_score, spiced_pain_score, spiced_impact_score, spiced_critical_event_score, spiced_decision_score
+
+**If BANT:**
+- Generate BANT-specific CLAUDE.md and evaluator_rubric.md
+- Components: Budget, Authority, Need, Timeline
+- HubSpot properties: bant_score, bant_budget_score, bant_authority_score, bant_need_score, bant_timeline_score
+
+**If Custom:**
+- Ask: "What are the components of your methodology? List them one by one."
+- For each component, ask:
+  - "What does {component} evaluate?"
+  - "What does good {component} qualification look like?"
+  - "What are common gaps or red flags for {component}?"
+- Generate custom CLAUDE.md and evaluator_rubric.md from their answers
+- HubSpot properties: custom_score, custom_{component_slug}_score
+
+Store the methodology name and component list for Phase 8 config generation.
+
 ## Phase 2 — Call Tool Adapter Setup
 
 After collecting the call tool name in Phase 1, run this:
@@ -158,8 +194,12 @@ Write files directly — do not show as code blocks:
    - Placeholder stage IDs
    - call_tools.primary set to the adapter slug from Phase 2
      (fireflies, gong, or custom tool slug)
-3. Write prompts/CLAUDE.md
-4. Write prompts/evaluator_rubric.md
+   - methodology: {methodology_name}
+   - hubspot.properties.score: {methodology_slug}_score
+   - hubspot.properties.component_scores: map each component to
+     {methodology_slug}_{component_slug}_score
+3. Write prompts/CLAUDE.md (methodology-specific from Phase 1)
+4. Write prompts/evaluator_rubric.md (methodology-specific from Phase 1)
 
 Then run stage discovery:
   python scripts/discover_stages.py
@@ -176,7 +216,14 @@ Commit everything:
   git commit -m "Add [company] client context and config"
   git push
 
+Then run the HubSpot property setup:
+  python scripts/setup_hubspot_properties.py
+
+This will create the {methodology} score properties in HubSpot
+by reading the property names from config/client.yaml.
+
 Tell the student: "Done. Config is live in the repo.
+HubSpot properties created for {methodology}.
 Next step: add GitHub Secrets, then run the ETL."
 
 ### If running in Claude.ai (no file system access):
@@ -187,7 +234,8 @@ Present each file as a labeled code block:
 [content]
 
 **config/client.yaml** — copy this to your repo
-(with call_tools.primary set to {adapter_slug})
+(with call_tools.primary set to {adapter_slug},
+ methodology and HubSpot properties for {methodology})
 [content]
 
 **prompts/CLAUDE.md** — copy this to your repo

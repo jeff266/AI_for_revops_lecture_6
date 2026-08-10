@@ -15,6 +15,7 @@ import os
 import sys
 import json
 import re
+import secrets
 import time
 import yaml
 import threading
@@ -827,6 +828,7 @@ Common reasons for iteration failures:
     # Create PR (if in GitHub Actions)
     branch_name = f"agent/learnings-{today}"
     title = f"chore: MEDDICC agent learnings — {today}"
+    run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
 
     memory.create_pr(
         branch_name=branch_name,
@@ -834,7 +836,7 @@ Common reasons for iteration failures:
         body=diff_content,
         files_to_commit={
             "prompts/CLAUDE.md": updated_claude_md,
-            f"memory/diffs/{today}.md": diff_content
+            f"memory/diffs/{today}_{run_id}.md": diff_content
         }
     )
 
@@ -935,6 +937,7 @@ Next full rewrite scheduled for: {(datetime.now() + timedelta(days=30)).strftime
     # Create PR
     branch_name = f"agent/rewrite-{today}"
     title = f"chore: MEDDICC agent 30-day synthesis — {today}"
+    run_id = os.getenv('GITHUB_RUN_ID', secrets.token_hex(4))
 
     memory.create_pr(
         branch_name=branch_name,
@@ -942,7 +945,7 @@ Next full rewrite scheduled for: {(datetime.now() + timedelta(days=30)).strftime
         body=changelog,
         files_to_commit={
             "prompts/CLAUDE.md": new_claude_md,
-            f"memory/diffs/{today}.md": changelog
+            f"memory/diffs/{today}_{run_id}.md": changelog
         }
     )
 

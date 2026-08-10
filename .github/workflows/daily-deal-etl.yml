@@ -43,7 +43,10 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Update deal index [skip ci]"
-            # Handle concurrent pushes with rebase
-            git pull --rebase origin main || true
+            # Resilient push: rebase, or fall back to merge if rebase fails
+            git pull --rebase origin main || {
+              git rebase --abort
+              git pull origin main --no-rebase -X ours
+            }
             git push
           fi

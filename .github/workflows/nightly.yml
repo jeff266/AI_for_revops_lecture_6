@@ -143,5 +143,8 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add memory/ output/
           git diff --quiet && git diff --staged --quiet || git commit -m "Update MEDDICC agent memory and analyses [skip ci]"
-          git pull --rebase origin main || true
+          git pull --rebase origin main || {
+            git rebase --abort
+            git pull origin main --no-rebase -X ours
+          }
           git push

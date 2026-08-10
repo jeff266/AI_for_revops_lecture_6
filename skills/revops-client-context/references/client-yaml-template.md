@@ -40,7 +40,13 @@ hubspot:
     score: meddicc_score
     status: meddicc_status
     last_analyzed: meddicc_last_analyzed
-    champion_score: meddicc_champion_score
-    economic_buyer_score: meddicc_economic_buyer_score
     summary: meddicc_analysis_summary
+    component_scores:
+      metrics: meddicc_metrics_score
+      economic_buyer: meddicc_economic_buyer_score
+      decision_criteria: meddicc_decision_criteria_score
+      decision_process: meddicc_decision_process_score
+      identified_pain: meddicc_identified_pain_score
+      champion: meddicc_champion_score
+      competition: meddicc_competition_score
 ```
