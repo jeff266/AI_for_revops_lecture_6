@@ -27,7 +27,7 @@ def main():
     import sys
     sys.path.insert(0, str(REPO_ROOT / 'scripts'))
     from utils import load_client_config, get_fiscal_quarter
-    from supabase_client import select_all
+    from adapters.storage.supabase import select_all
     from datetime import datetime
 
     sb = create_client(SUPABASE_URL, SUPABASE_KEY)
