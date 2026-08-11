@@ -115,13 +115,13 @@ def main():
     # Uses current highest_stage_order_reached (high-water mark) to filter
     for deal_id, p in prev_snap.items():
         if (p.get('deal_status') == 'active' and
-            qual_map.get(deal_id, {}).get('highest_stage_order_reached', 0) >= threshold):
+            (qual_map.get(deal_id, {}).get('highest_stage_order_reached') or 0) >= threshold):
             pipeline_id = p.get('pipeline_id', 'default')
             pipeline_waterfalls[pipeline_id]['beginning_value'] += float(p.get('deal_value') or 0)
 
     for deal_id, n in new_snap.items():
         if (n.get('deal_status') == 'active' and
-            qual_map.get(deal_id, {}).get('highest_stage_order_reached', 0) >= threshold):
+            (qual_map.get(deal_id, {}).get('highest_stage_order_reached') or 0) >= threshold):
             pipeline_id = n.get('pipeline_id', 'default')
             pipeline_waterfalls[pipeline_id]['ending_value'] += float(n.get('deal_value') or 0)
 
@@ -133,7 +133,7 @@ def main():
 
         # Skip deals that never reached qualification threshold
         qual_info = qual_map.get(deal_id, {})
-        if qual_info.get('highest_stage_order_reached', 0) < threshold:
+        if (qual_info.get('highest_stage_order_reached') or 0) < threshold:
             continue
 
         pipeline_id = (n or p).get('pipeline_id', 'default')
