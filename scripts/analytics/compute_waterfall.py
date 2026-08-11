@@ -272,6 +272,18 @@ def main():
               f"lost={wf['lost_value']:.0f}, "
               f"net={wf['net_change']:.0f}")
 
+        # Reconciliation check
+        calc_end = (wf['beginning_value'] + wf['new_pipeline_value'] +
+                    wf['moved_forward_value'] - wf['moved_backward_value'] -
+                    wf['won_value'] - wf['lost_value'])
+        diff = abs(calc_end - wf['ending_value'])
+        if diff > 1:
+            print(f"⚠️  Reconciliation gap: ${diff:,.0f}")
+            print(f"    This can occur when two snapshots were built")
+            print(f"    with different deal_status classification rules")
+            print(f"    (e.g. after a config change). Gap resolves")
+            print(f"    naturally once both snapshots use the same config.")
+
 
 if __name__ == '__main__':
     main()
