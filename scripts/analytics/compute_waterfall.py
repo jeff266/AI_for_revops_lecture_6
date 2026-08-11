@@ -5,6 +5,10 @@ Uses the two most recent snapshot dates (not "exactly 7 days
 prior" — uses nearest prior to survive missed crons).
 Writes to waterfall_weekly table.
 
+IMPORTANT: This tracks QUALIFIED pipeline only (highest_stage_order_reached >= 2).
+Meeting Set stage deals (order 0-1) are excluded from beginning/ending values
+and all waterfall movements to match HubSpot's qualified pipeline definition.
+
 Usage: python scripts/analytics/compute_waterfall.py
 """
 
@@ -32,6 +36,24 @@ def main():
 
     sb = create_client(SUPABASE_URL, SUPABASE_KEY)
     config = load_client_config()
+
+    # Load qualification threshold and current qualification status
+    pipeline_cfg = config.get('pipelines', {}).get('default', {})
+    threshold = pipeline_cfg.get('qualified_stage_order', 2)
+
+    print(f"Using qualification threshold: stage_order >= {threshold}")
+
+    # Load current qualification status for all deals (high-water mark)
+    qual_rows = select_all(sb, 'deals',
+                          columns='deal_id, highest_stage_order_reached, qualified_date')
+    qual_map = {
+        row['deal_id']: {
+            'highest_stage_order_reached': row.get('highest_stage_order_reached', 0),
+            'qualified_date': row.get('qualified_date')
+        }
+        for row in qual_rows
+    }
+    print(f"Loaded qualification data for {len(qual_map)} deals")
 
     # Find the two most recent distinct snapshot dates
     def latest_date_before(sb, before=None):
@@ -75,6 +97,7 @@ def main():
         'beginning_value': 0.0,
         'ending_value': 0.0,
         'new_pipeline_value': 0.0,
+        'newly_qualified_value': 0.0,
         'moved_forward_value': 0.0,
         'moved_backward_value': 0.0,
         'won_value': 0.0,
@@ -88,14 +111,17 @@ def main():
         'details': [],
     })
 
-    # Calculate beginning and ending values (active deals only)
+    # Calculate beginning and ending values (qualified pipeline only)
+    # Uses current highest_stage_order_reached (high-water mark) to filter
     for deal_id, p in prev_snap.items():
-        if p.get('deal_status') == 'active':
+        if (p.get('deal_status') == 'active' and
+            qual_map.get(deal_id, {}).get('highest_stage_order_reached', 0) >= threshold):
             pipeline_id = p.get('pipeline_id', 'default')
             pipeline_waterfalls[pipeline_id]['beginning_value'] += float(p.get('deal_value') or 0)
 
     for deal_id, n in new_snap.items():
-        if n.get('deal_status') == 'active':
+        if (n.get('deal_status') == 'active' and
+            qual_map.get(deal_id, {}).get('highest_stage_order_reached', 0) >= threshold):
             pipeline_id = n.get('pipeline_id', 'default')
             pipeline_waterfalls[pipeline_id]['ending_value'] += float(n.get('deal_value') or 0)
 
@@ -104,12 +130,30 @@ def main():
     for deal_id in all_deal_ids:
         n = new_snap.get(deal_id)
         p = prev_snap.get(deal_id)
+
+        # Skip deals that never reached qualification threshold
+        qual_info = qual_map.get(deal_id, {})
+        if qual_info.get('highest_stage_order_reached', 0) < threshold:
+            continue
+
         pipeline_id = (n or p).get('pipeline_id', 'default')
         wf = pipeline_waterfalls[pipeline_id]
         value = float((n or p).get('deal_value') or 0)
 
+        # Check if deal was newly qualified this week using qualified_date
+        qualified_date_str = qual_info.get('qualified_date')
+        newly_qualified_this_week = False
+        if qualified_date_str:
+            try:
+                qualified_dt = date.fromisoformat(qualified_date_str)
+                prev_dt = date.fromisoformat(prev_date)
+                new_dt = date.fromisoformat(new_date)
+                newly_qualified_this_week = prev_dt < qualified_dt <= new_dt
+            except (ValueError, TypeError):
+                pass
+
         if n and not p:
-            # New deal entered pipeline this week
+            # New deal created this week AND already qualified
             wf['new_pipeline_value'] += value
             wf['deals_created_count'] += 1
             wf['details'].append({
@@ -119,14 +163,17 @@ def main():
                 'change_type': 'new',
                 'value': value,
             })
-        elif p and not n:
-            # Deal disappeared — shouldn't happen often
+        elif newly_qualified_this_week and p:
+            # Deal existed before and crossed qualification threshold this week
+            wf['newly_qualified_value'] += value
+            wf['deals_qualified_count'] += 1
             wf['details'].append({
                 'deal_id': deal_id,
-                'company_name': p.get('company_name', ''),
-                'close_date': p.get('close_date'),
-                'change_type': 'removed',
+                'company_name': n.get('company_name', '') if n else p.get('company_name', ''),
+                'close_date': n.get('close_date') if n else p.get('close_date'),
+                'change_type': 'newly_qualified',
                 'value': value,
+                'qualified_date': qualified_date_str,
             })
         else:
             n_order = n.get('stage_order', 0) or 0
@@ -243,6 +290,7 @@ def main():
     for pipeline_id, wf in pipeline_waterfalls.items():
         wf['net_change'] = (
             wf['new_pipeline_value']
+            + wf['newly_qualified_value']
             + wf['moved_forward_value']
             - wf['moved_backward_value']
             - wf['won_value']
@@ -264,6 +312,7 @@ def main():
             'beginning_value': wf['beginning_value'],
             'ending_value': wf['ending_value'],
             'new_pipeline_value': wf['new_pipeline_value'],
+            'newly_qualified_value': wf['newly_qualified_value'],
             'moved_forward_value': wf['moved_forward_value'],
             'moved_backward_value': wf['moved_backward_value'],
             'won_value': wf['won_value'],
@@ -280,13 +329,23 @@ def main():
         sb.table('waterfall_weekly').upsert(
             row, on_conflict='week_ending,pipeline_id'
         ).execute()
-        print(f"✓ Waterfall {new_date} / {pipeline_id}: "
-              f"begin={wf['beginning_value']:.0f}, "
-              f"end={wf['ending_value']:.0f}, "
-              f"new={wf['new_pipeline_value']:.0f}, "
-              f"won={wf['won_value']:.0f}, "
-              f"lost={wf['lost_value']:.0f}, "
-              f"net={wf['net_change']:.0f}")
+
+        print(f"\n{'='*70}")
+        print(f"✓ Waterfall {new_date} / {pipeline_id} (QUALIFIED PIPELINE ONLY)")
+        print(f"{'='*70}")
+        print(f"Beginning Value:        ${wf['beginning_value']:>12,.0f}")
+        print(f"")
+        print(f"+ New Created:          ${wf['new_pipeline_value']:>12,.0f}  ({wf['deals_created_count']} deals)")
+        print(f"+ Newly Qualified:      ${wf['newly_qualified_value']:>12,.0f}  ({wf['deals_qualified_count']} deals)")
+        print(f"+ Moved Forward:        ${wf['moved_forward_value']:>12,.0f}")
+        print(f"- Moved Backward:       ${wf['moved_backward_value']:>12,.0f}")
+        print(f"- Won:                  ${wf['won_value']:>12,.0f}")
+        print(f"- Lost:                 ${wf['lost_value']:>12,.0f}")
+        print(f"")
+        print(f"= Net Change:           ${wf['net_change']:>12,.0f}")
+        print(f"")
+        print(f"Ending Value:           ${wf['ending_value']:>12,.0f}")
+        print(f"{'='*70}")
 
         # Reconciliation check
         calc_end = (wf['beginning_value'] + wf['new_pipeline_value'] +
