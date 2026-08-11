@@ -170,11 +170,9 @@ def run_migration_psycopg2(conn, schema: str, path: Path) -> Tuple[bool, str]:
         # Set search_path for this migration
         cur.execute(f"SET search_path TO {schema};")
 
-        # Execute all statements
-        statements = [s.strip() for s in sql.split(';') if s.strip()]
-        for stmt in statements:
-            if stmt.strip():
-                cur.execute(stmt)
+        # Execute the entire migration file
+        # (psycopg2 handles multiple statements; splitting on ';' breaks on comment semicolons)
+        cur.execute(sql)
 
         conn.commit()
 
