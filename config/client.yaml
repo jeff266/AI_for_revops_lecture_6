@@ -71,12 +71,12 @@ pipeline:
           order: 3
           stage_probability: 0.40
 
-        - id: "24682892"
+        - id: "YOUR_NEGOTIATING_STAGE_ID"
           name: "Negotiating"
           order: 4
           stage_probability: 0.60
 
-        - id: "43449439"
+        - id: "YOUR_AWAITING_SIGNATURE_STAGE_ID"
           name: "Awaiting Signature"
           order: 5
           stage_probability: 0.90
@@ -98,45 +98,45 @@ pipeline:
           order: 8
           stage_probability: 0.50
 
-        - id: "68509551"
+        - id: "YOUR_DISQUALIFIED_STAGE_ID"
           name: "Disqualified"
           order: 9
           stage_probability: 0.0
           is_lost: true
           exclude_from_analysis: true  # Both flags: lost AND excluded
 
-    - id: "866608541"
+    - id: "YOUR_RENEWAL_PIPELINE_ID"
       name: "Renewal Pipeline"
       analyze: false  # MEDDICC agent skips; analytics INCLUDES for GRR/NRR
       qualified_stage_order: 0
       stages:
-        - id: "1297321618"
+        - id: "YOUR_UPCOMING_RENEWAL_STAGE_ID"
           name: "Upcoming Renewal"
           order: 0
           stage_probability: 0.75
 
-        - id: "1297321619"
+        - id: "YOUR_RENEWAL_ENGAGED_STAGE_ID"
           name: "Renewal Engaged"
           order: 1
           stage_probability: 0.85
 
-        - id: "1297321620"
+        - id: "YOUR_PRICING_PRESENTED_STAGE_ID"
           name: "Pricing Presented"
           order: 2
           stage_probability: 0.90
 
-        - id: "1297321622"
+        - id: "YOUR_CONTRACT_SENT_STAGE_ID"
           name: "Contract Sent"
           order: 3
           stage_probability: 0.95
 
-        - id: "1297321623"
+        - id: "YOUR_RENEWAL_CLOSED_WON_STAGE_ID"
           name: "Closed Won (Renewal)"
           order: 4
           stage_probability: 1.0
           is_won: true
 
-        - id: "1297321624"
+        - id: "YOUR_RENEWAL_CLOSED_LOST_STAGE_ID"
           name: "Closed Lost (Renewal)"
           order: 5
           stage_probability: 0.0
@@ -159,7 +159,7 @@ pipelines:
   # Common: renewal pipelines, partner pipelines, marketing pipelines
   excluded:
     - name: "Renewal"
-      id: "866608541"
+      id: "YOUR_RENEWAL_PIPELINE_ID"
 
 # ============================================================================
 # DEAL STAGE FILTERING
@@ -171,26 +171,26 @@ excluded_stages:
   # Early stages (pre-discovery)
   meeting_set:
     - name: "Meeting Set"
-      id: "79653122"
+      id: "YOUR_MEETING_SET_STAGE_ID"
     # NOTE: appointmentscheduled is "Discovery" stage, NOT Meeting Set - do not exclude
 
   # Disqualified deals
   disqualified:
     - name: "Disqualified"
-      id: "68509551"
+      id: "YOUR_DISQUALIFIED_STAGE_ID"
 
   # Closed deals (excluded in active mode, included in history mode)
   closed_won:
     - name: "Closed won"
       id: "closedwon"
     - name: "Closed Won"
-      id: "1297321623"
+      id: "YOUR_RENEWAL_CLOSED_WON_STAGE_ID"
 
   closed_lost:
     - name: "Closed lost"
       id: "closedlost"
     - name: "Closed Lost"
-      id: "1297321624"
+      id: "YOUR_RENEWAL_CLOSED_LOST_STAGE_ID"
 
 # ============================================================================
 # STAGE PROGRESSION REQUIREMENTS

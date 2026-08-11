@@ -36,6 +36,9 @@ queries) and the nightly agent's deal index.
 | `deal_status` | TEXT | `active` / `won` / `lost` (migration 002) |
 | `create_date` | DATE | Deal creation date (migration 002) |
 | `days_to_close` | INTEGER | Null for active deals; set on close (migration 002) |
+| `highest_stage_order_reached` | INTEGER | High-water mark of stage progression; never decreases. Drives qualification status (migration 004) |
+| `qualified_date` | DATE | Set when deal first crosses `qualified_stage_order` threshold; used for newly_qualified detection and win-rate denominator when `win_rate_qualified_field` is unset (migration 004) |
+| `sao` | BOOLEAN | Sales Accepted Opportunity; alternate win-rate denominator when `win_rate_qualified_field` is configured in `config/client.yaml` (migration 004) |
 
 ---
 
@@ -149,6 +152,82 @@ the nightly agent in this repo; part of the shared contract.
 | `created_at` | TIMESTAMPTZ | Default NOW() |
 
 Unique on `(rep_email, period_start)`.
+
+---
+
+## `deals_snapshot`
+
+Point-in-time snapshot of all deals, capturing pipeline state for waterfall analysis.
+
+**Written by:** `scripts/analytics/snapshot_deals.py` (weekly via GitHub Actions)
+**Read by:** `scripts/analytics/compute_waterfall.py`
+
+| Column | Type | Notes |
+|---|---|---|
+| `deal_id` | TEXT | Part of composite PK |
+| `snapshot_date` | DATE | Part of composite PK |
+| `company_name` | TEXT | Deal's company name |
+| `pipeline_id` | TEXT | Pipeline identifier |
+| `stage_id` | TEXT | Stage identifier at snapshot time |
+| `stage_order` | INTEGER | Stage order value at snapshot time |
+| `deal_value` | NUMERIC | Deal ARR at snapshot time |
+| `close_date` | DATE | Expected close date at snapshot time |
+| `owner_email` | TEXT | Deal owner at snapshot time |
+| `deal_status` | TEXT | `active` / `won` / `lost` at snapshot time |
+| `snapshot_source` | TEXT | Always `prospective` |
+
+Primary key: `(deal_id, snapshot_date)`. Idempotent upserts allow re-running snapshot on same date without duplicates.
+
+---
+
+## `waterfall_weekly`
+
+Week-over-week pipeline movement analysis, tracking qualified pipeline changes across categories.
+
+**Written by:** `scripts/analytics/compute_waterfall.py` (weekly via GitHub Actions)
+**Read by:** CRO dashboards, pipeline forecasting, deal movement analysis
+
+| Column | Type | Notes |
+|---|---|---|
+| `week_ending` | DATE | Part of composite PK |
+| `pipeline_id` | TEXT | Part of composite PK |
+| `beginning_value` | NUMERIC | Qualified pipeline value at start (deals where `highest_stage_order_reached >= qualified_stage_order`) |
+| `ending_value` | NUMERIC | Qualified pipeline value at end (same filter) |
+| `new_pipeline_value` | NUMERIC | Brand new deals created this period, already qualified |
+| `newly_qualified_value` | NUMERIC | Existing deals that crossed qualification threshold this period (distinct from new pipeline creation) |
+| `moved_forward_value` | NUMERIC | Value of deals that advanced stages (among already-qualified deals) |
+| `moved_backward_value` | NUMERIC | Value of deals that regressed stages (among already-qualified deals) |
+| `won_value` | NUMERIC | Value of deals closed-won this period |
+| `lost_value` | NUMERIC | Value of deals closed-lost this period |
+| `pulled_in_value` | NUMERIC | Value of deals whose close date moved into current fiscal quarter |
+| `pushed_out_value` | NUMERIC | Value of deals whose close date moved out of current fiscal quarter |
+| `arr_change_value` | NUMERIC | Value of deals with ARR changes (not categorized elsewhere) |
+| `net_change` | NUMERIC | Computed: `new + newly_qualified + forward - backward - won - lost` |
+| `deals_created_count` | INTEGER | Count of new deals |
+| `deals_qualified_count` | INTEGER | Count of newly qualified deals |
+| `details` | JSONB | Per-deal change records with `deal_id`, `company_name`, `close_date`, `change_type`, `value`, and conditional metadata |
+| `computed_source` | TEXT | Always `prospective` |
+
+Primary key: `(week_ending, pipeline_id)`.
+
+**Reconciliation Check:** The formula `beginning + new + newly_qualified + forward - backward - won - lost` should equal `ending` within rounding tolerance. A mismatch usually indicates the two snapshots being compared were built under different pipeline configurations (e.g., right after a stage order or qualification threshold change in `config/client.yaml`). The gap will resolve once both snapshots share the same configuration.
+
+**Qualification Filter:** By default, waterfall tracks only qualified pipeline (`highest_stage_order_reached >= qualified_stage_order` from `config/client.yaml`). This excludes early-stage deals that haven't entered the qualified sales funnel yet.
+
+---
+
+## Fiscal Calendar
+
+Quarter boundaries are derived from `fiscal.fy_start_month` in `config/client.yaml` via the `get_fiscal_quarter()` function in `scripts/utils.py`. Never hardcode quarter date ranges in new scripts; import and use that function to ensure consistency with the configured fiscal calendar.
+
+Example:
+```python
+from utils import get_fiscal_quarter, load_client_config
+
+config = load_client_config()
+q_start, q_end, q_label = get_fiscal_quarter(date.today(), config)
+# Returns: (date(2026, 5, 1), date(2026, 7, 31), "Q2 FY2027") for GrowthBook
+```
 
 ---
 

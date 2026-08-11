@@ -87,6 +87,20 @@ and collect the right credentials.
   → Update CLAUDE.md via PR if new patterns emerge
 ```
 
+## What runs weekly (analytics workflow)
+
+```
+Sundays 3am UTC: GitHub Actions fires
+  1. Analytics deal ETL — Fetch all deals (all stages, both analyzed and analyze:false pipelines)
+  2. Snapshot deals — Capture point-in-time pipeline state to deals_snapshot table
+  3. Compute waterfall — Track qualified pipeline movement across 5 categories (new, newly qualified, forward, backward, won, lost) with reconciliation check
+  4. Generate win/loss narratives — Extract call evidence and compare to stated close reasons
+  5. Extract objections — Categorize and store per-company objections from call transcripts
+  6. Extract feature gaps — Identify and severity-score requested features from calls
+```
+
+**Output:** Waterfall movements in `waterfall_weekly` table, win/loss patterns, objection vault, and feature request backlog. All queryable via Supabase or the CRO agent.
+
 ---
 
 ## Files to know
