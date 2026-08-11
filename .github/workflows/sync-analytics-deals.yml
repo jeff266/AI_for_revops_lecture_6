@@ -21,10 +21,10 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Match HubSpot filters exactly
+      - name: Check if missing deals exist in Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           pip install supabase
-          python scripts/analytics/match_hubspot_filters.py
+          python scripts/analytics/check_missing_deals.py
