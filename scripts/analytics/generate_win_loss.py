@@ -184,7 +184,8 @@ Return JSON only, no prose outside it:
             )
             tracker.record(resp, 'claude-sonnet-4-5-20250929',
                            'win_loss', company_name)
-            raw = resp.content[0].text.strip()
+            raw = resp.content[0].text.strip() if resp.content else ''
+            print(f"  RAW ({len(raw)} chars): {raw[:300]!r}")
             parsed = json.loads(raw)
 
             sb.table('win_loss_narratives').upsert({
