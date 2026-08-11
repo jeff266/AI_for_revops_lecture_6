@@ -155,10 +155,16 @@ def main():
             # when closed stage_order differs from prior snapshot.
             if n_status not in ('won', 'lost') and \
                p_status not in ('won', 'lost'):
-                if n_order > p_order:
-                    changes.append('moved_forward')
-                elif n_order < p_order:
-                    changes.append('moved_backward')
+                n_order_real = n_order if (n_order or 0) > 0 else None
+                p_order_real = p_order if (p_order or 0) > 0 else None
+                if n_order_real and p_order_real:
+                    if n_order_real > p_order_real:
+                        changes.append('moved_forward')
+                    elif n_order_real < p_order_real:
+                        changes.append('moved_backward')
+                # Deals at order 0 (Meeting Set / pre-pipeline) are
+                # not counted as stage movement — they haven't entered
+                # the qualified pipeline yet.
 
             # Check ARR change
             n_value = float(n.get('deal_value') or 0)
