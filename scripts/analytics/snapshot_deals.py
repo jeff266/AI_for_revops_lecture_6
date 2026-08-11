@@ -51,6 +51,7 @@ def main():
         order = get_stage_order(d.get('stage', '')) or 0
         snapshots.append({
             'deal_id': d['deal_id'],
+            'company_name': d.get('company_name', ''),
             'snapshot_date': today,
             'company_name': d.get('company_name'),
             'pipeline_id': d.get('pipeline_id', 'default'),

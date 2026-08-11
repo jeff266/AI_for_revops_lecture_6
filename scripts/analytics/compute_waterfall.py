@@ -114,6 +114,8 @@ def main():
             wf['deals_created_count'] += 1
             wf['details'].append({
                 'deal_id': deal_id,
+                'company_name': n.get('company_name', ''),
+                'close_date': n.get('close_date'),
                 'change_type': 'new',
                 'value': value,
                 'close_date': n.get('close_date'),
@@ -123,6 +125,8 @@ def main():
             # Deal disappeared — shouldn't happen often
             wf['details'].append({
                 'deal_id': deal_id,
+                'company_name': p.get('company_name', ''),
+                'close_date': p.get('close_date'),
                 'change_type': 'removed',
                 'value': value,
                 'close_date': p.get('close_date'),
@@ -217,6 +221,8 @@ def main():
             if changes:
                 detail = {
                     'deal_id': deal_id,
+                    'company_name': n.get('company_name', ''),
+                    'close_date': n.get('close_date'),
                     'change_type': primary_change,
                     'value': value,
                     'close_date': n.get('close_date'),
