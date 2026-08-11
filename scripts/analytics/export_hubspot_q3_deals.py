@@ -92,11 +92,19 @@ for deal in all_hubspot_deals:
     props = deal.get('properties', {})
     deal_id = deal.get('id')
 
-    # Parse close date
+    # Parse close date (can be Unix timestamp ms or ISO string)
     close_ts = props.get('closedate')
     close_date = None
     if close_ts:
-        close_date = datetime.fromtimestamp(int(close_ts)/1000).strftime('%Y-%m-%d')
+        try:
+            # Try Unix timestamp milliseconds first
+            close_date = datetime.fromtimestamp(int(close_ts)/1000).strftime('%Y-%m-%d')
+        except (ValueError, TypeError):
+            # Try ISO 8601 format
+            try:
+                close_date = datetime.fromisoformat(close_ts.replace('Z', '+00:00')).strftime('%Y-%m-%d')
+            except:
+                close_date = close_ts  # Keep as-is if can't parse
 
     amount = float(props.get('amount', 0) or 0)
 
