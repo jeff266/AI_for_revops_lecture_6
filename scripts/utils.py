@@ -24,7 +24,11 @@ def slugify(name: str) -> str:
         return ''
 
     # Get vendor name from config
-    vendor = 'growthbook'  # Default
+    vendor = (load_client_config()
+              .get('organization', {})
+              .get('name', '')
+              .lower()
+              .replace(' ', '-')) or 'your-company'
     try:
         import yaml
         from pathlib import Path

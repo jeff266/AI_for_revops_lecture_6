@@ -249,7 +249,7 @@ industries:
 # ============================================================================
 # DISCOVERY QUESTIONS & OPPORTUNITY SIGNALS
 # ============================================================================
-# GrowthBook-specific questions that qualify deal strength
+# Questions that qualify deal strength
 # Used to detect strong vs weak opportunities in call transcripts
 
 discovery_signals:
@@ -299,12 +299,12 @@ discovery_signals:
 
     - signal: "Warehouse-first mandate or active data migration"
       component: "metrics"
-      why_strong: "Aligns with GrowthBook's core architecture advantage"
+      why_strong: "Aligns with product's core architecture advantage"
       evidence_keywords: ["Snowflake migration", "BigQuery", "Databricks", "data warehouse", "warehouse-native"]
 
     - signal: "Frustration with metric definitions outside experiment tool"
       component: "identified_pain"
-      why_strong: "Specific product differentiator for GrowthBook"
+      why_strong: "Specific product differentiator"
       evidence_keywords: ["metrics disconnect", "separate analytics", "definition drift", "metric consistency"]
 
     - signal: "Champion who can name the economic buyer and has air cover for POC"

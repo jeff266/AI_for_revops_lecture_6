@@ -6,12 +6,12 @@
 # ORGANIZATION INFO
 # ============================================================================
 organization:
-  name: "GrowthBook"
+  name: "YOUR_COMPANY_NAME"
   crm: "HubSpot"
   sales_methodology: "MEDDICC"  # Options: MEDDICC, MEDDPICC, MEDDIC
   timezone: "America/Los_Angeles"  # Used for meddicc_last_analyzed date field
   internal_domains:
-    - "growthbook.io"
+    - "your-company.com"
 
 fiscal:
   fy_start_month: 2  # FY starts Feb 1; Q2 FY2027 = May 1 - Jul 31 2026
@@ -30,13 +30,12 @@ fiscal:
 
 pipeline:
   # Analytics configuration
-  value_field:
-    type: computed
-    components: ["new_revenue", "expansion_revenue"]
-    # NULL-safe sum: blank components treated as 0.
-    # This is GrowthBook's Incremental ARR without the
-    # NULL-out hazard of the HubSpot calculated field.
-    # NEVER use the amount field for GrowthBook reporting.
+  # value_field: amount  # Default: uses HubSpot 'amount' property
+  # For computed ARR from multiple properties, uncomment and configure:
+  # value_field:
+  #   type: computed
+  #   components: ["new_revenue", "expansion_revenue"]
+  #   # NULL-safe sum: blank components treated as 0
   qualified_stage_order: 1  # Stages with order >= this are "qualified" (entered pipeline)
   win_rate_qualified_field: "sao"  # Win rate denominator = deals where SAO is true
 
