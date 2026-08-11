@@ -118,8 +118,6 @@ def main():
                 'close_date': n.get('close_date'),
                 'change_type': 'new',
                 'value': value,
-                'close_date': n.get('close_date'),
-                'company_name': n.get('company_name'),
             })
         elif p and not n:
             # Deal disappeared — shouldn't happen often
@@ -129,8 +127,6 @@ def main():
                 'close_date': p.get('close_date'),
                 'change_type': 'removed',
                 'value': value,
-                'close_date': p.get('close_date'),
-                'company_name': p.get('company_name'),
             })
         else:
             n_order = n.get('stage_order', 0) or 0
@@ -225,8 +221,6 @@ def main():
                     'close_date': n.get('close_date'),
                     'change_type': primary_change,
                     'value': value,
-                    'close_date': n.get('close_date'),
-                    'company_name': n.get('company_name'),
                 }
 
                 if 'moved_forward' in changes or 'moved_backward' in changes:

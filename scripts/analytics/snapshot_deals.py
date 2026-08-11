@@ -53,7 +53,6 @@ def main():
             'deal_id': d['deal_id'],
             'company_name': d.get('company_name', ''),
             'snapshot_date': today,
-            'company_name': d.get('company_name'),
             'pipeline_id': d.get('pipeline_id', 'default'),
             'stage_id': d.get('stage'),
             'stage_order': order,
