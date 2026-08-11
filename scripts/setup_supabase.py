@@ -16,6 +16,10 @@ Usage without database connection (manual fallback):
 Schema isolation (for testing):
     export MIGRATION_SCHEMA="migration_test"
     python scripts/setup_supabase.py
+
+Audit mode (verify schema without executing):
+    python scripts/setup_supabase.py --verify-all
+    # Verifies all migration fingerprints exist in the database
 """
 import os
 import re
@@ -239,7 +243,86 @@ def reload_postgrest_schema(conn):
         pass
 
 
+def verify_all_migrations(conn, schema: str, migration_files: List[Path]) -> bool:
+    """
+    Audit mode: verify all migrations' fingerprints exist, regardless of
+    _migrations table status. Read-only - executes nothing, writes nothing.
+
+    Returns True if all migrations verified, False otherwise.
+    """
+    print("=" * 70)
+    print("SCHEMA AUDIT MODE - Verifying all migrations")
+    print("=" * 70)
+    print(f"\nSchema: {schema}")
+    print(f"Migrations to verify: {len(migration_files)}\n")
+
+    all_passed = True
+    results = []
+
+    for path in migration_files:
+        sql = path.read_text()
+        fingerprints = parse_fingerprints(sql)
+
+        if not fingerprints:
+            # No objects to verify (e.g., 010 - drops only)
+            results.append((path.name, True, "no objects to verify"))
+            print(f"  {path.name}")
+            print(f"    ✓ PASS (no objects to verify)")
+            continue
+
+        # Verify fingerprints
+        success, missing = verify_fingerprints(conn, schema, fingerprints)
+        results.append((path.name, success, missing if not success else None))
+
+        if success:
+            print(f"  {path.name}")
+            print(f"    ✓ PASS ({len(fingerprints)} objects verified)")
+        else:
+            print(f"  {path.name}")
+            print(f"    ✗ FAIL - Missing objects:")
+            for obj in missing:
+                print(f"      - {obj}")
+            all_passed = False
+
+    print("\n" + "=" * 70)
+    print("AUDIT SUMMARY")
+    print("=" * 70)
+
+    passed_count = sum(1 for _, success, _ in results if success)
+    failed_count = len(results) - passed_count
+
+    print(f"\nTotal migrations: {len(results)}")
+    print(f"  ✓ Passed: {passed_count}")
+    if failed_count > 0:
+        print(f"  ✗ Failed: {failed_count}")
+        print("\nFailed migrations:")
+        for name, success, missing in results:
+            if not success:
+                print(f"  - {name}: {', '.join(missing)}")
+
+    print("\n" + "=" * 70)
+
+    if all_passed:
+        print("✅ All migrations verified - schema matches migration files")
+        return True
+    else:
+        print("⛔ Schema audit failed - missing objects found")
+        return False
+
+
 def main():
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description='Supabase migration runner with verification'
+    )
+    parser.add_argument(
+        '--verify-all',
+        action='store_true',
+        help='Audit mode: verify all migrations exist (read-only, no execution)'
+    )
+    args = parser.parse_args()
+
     schema = os.getenv('MIGRATION_SCHEMA', 'public')
     db_url = os.getenv('SUPABASE_DB_URL')
 
@@ -270,6 +353,25 @@ def main():
     if not migration_files:
         print('No migration files found in scripts/migrations/')
         return 1
+
+    # VERIFY-ALL MODE: audit schema without execution
+    if args.verify_all:
+        if not use_psycopg2:
+            print("⛔ ERROR: --verify-all requires SUPABASE_DB_URL to be set")
+            return 1
+
+        try:
+            print(f"Connecting to database (schema: {schema})...")
+            conn = psycopg2.connect(db_url)
+            print("✓ Connected\n")
+
+            all_passed = verify_all_migrations(conn, schema, migration_files)
+            conn.close()
+
+            return 0 if all_passed else 1
+        except Exception as e:
+            print(f"⛔ Connection failed: {e}")
+            return 1
 
     # Connect and check applied migrations
     if use_psycopg2:
