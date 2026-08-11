@@ -49,18 +49,14 @@ search_payload = {
                     "propertyName": "closedate",
                     "operator": "LTE",
                     "value": "1730419199000"  # Oct 31, 2026 23:59:59 UTC in ms
-                },
-                {
-                    "propertyName": "hs_is_closed",
-                    "operator": "EQ",
-                    "value": "false"
                 }
+                # NOT filtering by hs_is_closed - it's unreliable!
             ]
         }
     ],
     "properties": [
         "dealname", "amount", "closedate", "dealstage",
-        "pipeline", "hs_is_closed"
+        "pipeline", "hs_is_closed", "is_open"
     ],
     "limit": 100
 }
@@ -115,10 +111,15 @@ for deal in all_hubspot_deals:
         'close_date': close_date,
         'stage': props.get('dealstage', ''),
         'pipeline': props.get('pipeline', ''),
-        'is_closed': props.get('hs_is_closed', 'false')
+        'is_closed': props.get('hs_is_closed', 'false'),
+        'is_open': props.get('is_open', '0')
     }
 
-hubspot_total = sum(d['amount'] for d in hubspot_dict.values())
+# Filter to only open deals (is_open = 1)
+open_deals = {k: v for k, v in hubspot_dict.items() if v['is_open'] == '1'}
+print(f"  (Filtered to {len(open_deals)} open deals using is_open=1)")
+
+hubspot_total = sum(d['amount'] for d in open_deals.values())
 
 # Get Supabase Q3 deals
 sb = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -136,16 +137,16 @@ supabase_total = sum(float(d.get('deal_value') or 0) for d in supabase_dict.valu
 print("="*70)
 print("DIRECT API COMPARISON")
 print("="*70)
-print(f"HubSpot API (open Q3):  {len(hubspot_dict):3d} deals  ${hubspot_total:>14,.2f}")
+print(f"HubSpot API (open Q3):  {len(open_deals):3d} deals  ${hubspot_total:>14,.2f}")
 print(f"Supabase (Sales Q3):    {len(supabase_dict):3d} deals  ${supabase_total:>14,.2f}")
 print(f"Difference:                           ${hubspot_total - supabase_total:>14,.2f}")
 
 # Find differences
-in_hubspot_not_supabase = set(hubspot_dict.keys()) - set(supabase_dict.keys())
-in_supabase_not_hubspot = set(supabase_dict.keys()) - set(hubspot_dict.keys())
+in_hubspot_not_supabase = set(open_deals.keys()) - set(supabase_dict.keys())
+in_supabase_not_hubspot = set(supabase_dict.keys()) - set(open_deals.keys())
 
 if in_hubspot_not_supabase:
-    missing_value = sum(hubspot_dict[d]['amount'] for d in in_hubspot_not_supabase)
+    missing_value = sum(open_deals[d]['amount'] for d in in_hubspot_not_supabase)
     print(f"\n❌ {len(in_hubspot_not_supabase)} deals in HubSpot API but NOT in Supabase (${missing_value:,.2f}):")
     print("-"*70)
 
@@ -154,7 +155,7 @@ if in_hubspot_not_supabase:
                            reverse=True)
 
     for deal_id in sorted_missing[:20]:
-        d = hubspot_dict[deal_id]
+        d = open_deals[deal_id]
         print(f"  {deal_id:<15s} ${d['amount']:>11,.0f}  {d['close_date']}  {d['company_name'][:40]}")
 
 if in_supabase_not_hubspot:
@@ -177,8 +178,8 @@ print("VALUE MISMATCHES:")
 print("="*70)
 
 value_diffs = []
-for deal_id in set(hubspot_dict.keys()) & set(supabase_dict.keys()):
-    hs_val = hubspot_dict[deal_id]['amount']
+for deal_id in set(open_deals.keys()) & set(supabase_dict.keys()):
+    hs_val = open_deals[deal_id]['amount']
     sb_val = float(supabase_dict[deal_id].get('deal_value') or 0)
 
     if abs(hs_val - sb_val) > 1:
