@@ -26,9 +26,16 @@ if not SUPABASE_URL or not SUPABASE_KEY:
 print("Fetching Q3 2026 deals from HubSpot API...")
 print("="*70)
 
-crm = get_crm_adapter()
+import requests
 
-# Search for deals with Q3 close dates (Aug 1 - Oct 31, 2026)
+# Use HubSpot API directly
+headers = {
+    "Authorization": f"Bearer {HUBSPOT_API_KEY}",
+    "Content-Type": "application/json"
+}
+
+search_url = "https://api.hubapi.com/crm/v3/objects/deals/search"
+
 search_payload = {
     "filterGroups": [
         {
@@ -53,7 +60,7 @@ search_payload = {
     ],
     "properties": [
         "dealname", "amount", "closedate", "dealstage",
-        "pipeline", "hs_is_closed", "dealid"
+        "pipeline", "hs_is_closed"
     ],
     "limit": 100
 }
@@ -65,29 +72,30 @@ while True:
     if after:
         search_payload['after'] = after
 
-    response = crm.client.crm.deals.search_api.do_search(
-        public_object_search_request=search_payload
-    )
+    response = requests.post(search_url, headers=headers, json=search_payload)
+    response.raise_for_status()
+    data = response.json()
 
-    all_hubspot_deals.extend(response.results)
+    all_hubspot_deals.extend(data.get('results', []))
 
-    if not response.paging:
+    if not data.get('paging'):
         break
-    after = response.paging.next.after
+    after = data['paging']['next']['after']
 
 print(f"Found {len(all_hubspot_deals)} open Q3 deals from HubSpot API\n")
 
 # Convert to dict
 hubspot_dict = {}
+from datetime import datetime
+
 for deal in all_hubspot_deals:
-    props = deal.properties
-    deal_id = deal.id
+    props = deal.get('properties', {})
+    deal_id = deal.get('id')
 
     # Parse close date
     close_ts = props.get('closedate')
     close_date = None
     if close_ts:
-        from datetime import datetime
         close_date = datetime.fromtimestamp(int(close_ts)/1000).strftime('%Y-%m-%d')
 
     amount = float(props.get('amount', 0) or 0)
