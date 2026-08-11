@@ -136,9 +136,9 @@ def main():
 
         # Load MEDDICC score progression
         analyses = sb.table('analyses')\
-            .select('component_scores, created_at')\
+            .select('component_scores, analyzed_at')\
             .eq('deal_id', deal_id)\
-            .order('created_at')\
+            .order('analyzed_at')\
             .execute().data or []
         score_progression = json.dumps(
             [a['component_scores'] for a in analyses], indent=2
