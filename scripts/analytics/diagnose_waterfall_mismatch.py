@@ -26,19 +26,23 @@ def main():
 
     sb = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-    # Find the two most recent snapshot dates
-    snapshots = sb.table('deals_snapshot')\
-        .select('snapshot_date')\
-        .order('snapshot_date', desc=True)\
-        .limit(2)\
-        .execute().data
+    # Find the two most recent distinct snapshot dates
+    def latest_date_before(sb, before=None):
+        q = sb.table('deals_snapshot')\
+            .select('snapshot_date')\
+            .order('snapshot_date', desc=True)\
+            .limit(1)
+        if before:
+            q = q.lt('snapshot_date', before)
+        rows = q.execute().data or []
+        return rows[0]['snapshot_date'] if rows else None
 
-    if len(snapshots) < 2:
-        print("Need at least 2 snapshots for comparison")
+    new_date = latest_date_before(sb)
+    prev_date = latest_date_before(sb, before=new_date)
+
+    if not new_date or not prev_date:
+        print("Need at least 2 distinct snapshot dates for comparison")
         return
-
-    new_date = snapshots[0]['snapshot_date']
-    prev_date = snapshots[1]['snapshot_date']
 
     print(f"\n{'='*70}")
     print(f"Waterfall Reconciliation Diagnostic: {prev_date} → {new_date}")
