@@ -149,11 +149,16 @@ def main():
                 elif p_in_quarter and not n_in_quarter:
                     changes.append('pushed_out')
 
-            # Check stage movement
-            if n_order > p_order:
-                changes.append('moved_forward')
-            elif n_order < p_order:
-                changes.append('moved_backward')
+            # Only compare stage movement for active deals.
+            # Won/lost deals are already handled above; including
+            # them in the stage diff produces false backward movement
+            # when closed stage_order differs from prior snapshot.
+            if n_status not in ('won', 'lost') and \
+               p_status not in ('won', 'lost'):
+                if n_order > p_order:
+                    changes.append('moved_forward')
+                elif n_order < p_order:
+                    changes.append('moved_backward')
 
             # Check ARR change
             n_value = float(n.get('deal_value') or 0)
