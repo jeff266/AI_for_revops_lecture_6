@@ -115,9 +115,17 @@ for deal in all_hubspot_deals:
         'is_open': props.get('is_open', '0')
     }
 
-# Filter to only open deals (is_open = 1)
-open_deals = {k: v for k, v in hubspot_dict.items() if v['is_open'] == '1'}
-print(f"  (Filtered to {len(open_deals)} open deals using is_open=1)")
+# Check what is_open values we have
+is_open_values = {}
+for v in hubspot_dict.values():
+    val = v['is_open'] if v['is_open'] else 'null/empty'
+    is_open_values[val] = is_open_values.get(val, 0) + 1
+
+print(f"  is_open property values: {is_open_values}")
+print(f"  hs_is_closed values: {set(v['is_closed'] for v in hubspot_dict.values())}")
+
+# Use all deals for now (no filtering)
+open_deals = hubspot_dict
 
 hubspot_total = sum(d['amount'] for d in open_deals.values())
 
