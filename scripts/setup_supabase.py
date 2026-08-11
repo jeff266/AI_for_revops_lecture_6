@@ -1,108 +1,268 @@
 #!/usr/bin/env python3
 """
-Supabase setup script with migration tracking.
+Supabase setup script with migration tracking and verification.
 
-Runs all pending migrations in order. Already-applied
-migrations are skipped — safe to run repeatedly.
+Executes migrations via psycopg2 when SUPABASE_DB_URL is set, verifies
+each migration's objects exist, and only records verified migrations.
 
-Usage:
-    export SUPABASE_URL="https://your-project.supabase.co"
-    export SUPABASE_SERVICE_KEY="your-service-role-key"
+Usage with database connection (recommended):
+    export SUPABASE_DB_URL="postgresql://..."
+    python scripts/setup_supabase.py
+
+Usage without database connection (manual fallback):
+    python scripts/setup_supabase.py
+    # Script prints SQL to paste into Supabase SQL editor
+
+Schema isolation (for testing):
+    export MIGRATION_SCHEMA="migration_test"
     python scripts/setup_supabase.py
 """
 import os
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import List, Tuple, Optional
 
-from supabase import create_client
-
-
-def get_client():
-    url = os.getenv('SUPABASE_URL')
-    key = os.getenv('SUPABASE_SERVICE_KEY')
-    if not url or not key:
-        raise ValueError(
-            'SUPABASE_URL and SUPABASE_SERVICE_KEY must be set.\n'
-            'Get them from Supabase dashboard → Settings → API.'
-        )
-    return create_client(url, key)
+# Try to import psycopg2
+try:
+    import psycopg2
+    HAS_PSYCOPG2 = True
+except ImportError:
+    HAS_PSYCOPG2 = False
 
 
-def ensure_migrations_table(client):
-    """Create _migrations tracking table if it does not exist."""
-    sql = """
+def parse_fingerprints(sql: str) -> List[Tuple[str, str, Optional[str]]]:
+    """
+    Extract verification fingerprints from a migration file.
+
+    Returns list of (type, name, column) tuples:
+        - ('table', 'deals', None) for CREATE TABLE deals
+        - ('column', 'deals', 'deal_status') for ALTER TABLE deals ADD COLUMN deal_status
+        - ('index', 'idx_deals_status', None) for CREATE INDEX
+
+    Migrations that only drop/alter without creating (e.g., DROP CONSTRAINT)
+    return an empty list - nothing to verify.
+    """
+    fingerprints = []
+
+    # Match CREATE TABLE [IF NOT EXISTS] table_name
+    for match in re.finditer(
+        r'CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?(\w+)',
+        sql,
+        re.IGNORECASE
+    ):
+        table_name = match.group(1)
+        fingerprints.append(('table', table_name, None))
+
+    # Match ALTER TABLE table_name ADD COLUMN [IF NOT EXISTS] column_name
+    for match in re.finditer(
+        r'ALTER\s+TABLE\s+(\w+)\s+ADD\s+COLUMN\s+(?:IF\s+NOT\s+EXISTS\s+)?(\w+)',
+        sql,
+        re.IGNORECASE
+    ):
+        table_name = match.group(1)
+        column_name = match.group(2)
+        fingerprints.append(('column', table_name, column_name))
+
+    # Match CREATE INDEX [IF NOT EXISTS] index_name
+    for match in re.finditer(
+        r'CREATE\s+(?:UNIQUE\s+)?INDEX\s+(?:IF\s+NOT\s+EXISTS\s+)?(\w+)',
+        sql,
+        re.IGNORECASE
+    ):
+        index_name = match.group(1)
+        fingerprints.append(('index', index_name, None))
+
+    return fingerprints
+
+
+def verify_fingerprints(conn, schema: str, fingerprints: List[Tuple[str, str, Optional[str]]]) -> Tuple[bool, List[str]]:
+    """
+    Verify that all fingerprint objects exist in the specified schema.
+
+    Returns (success, missing_list) where missing_list describes what's absent.
+    """
+    cur = conn.cursor()
+    missing = []
+
+    for fp_type, name, column in fingerprints:
+        try:
+            if fp_type == 'table':
+                # Verify table exists
+                cur.execute(
+                    "SELECT 1 FROM information_schema.tables "
+                    "WHERE table_schema = %s AND table_name = %s LIMIT 1",
+                    (schema, name)
+                )
+                if not cur.fetchone():
+                    missing.append(f"table {schema}.{name}")
+
+            elif fp_type == 'column':
+                # Verify column exists in table
+                cur.execute(
+                    "SELECT 1 FROM information_schema.columns "
+                    "WHERE table_schema = %s AND table_name = %s AND column_name = %s LIMIT 1",
+                    (schema, name, column)
+                )
+                if not cur.fetchone():
+                    missing.append(f"column {schema}.{name}.{column}")
+
+            elif fp_type == 'index':
+                # Verify index exists
+                cur.execute(
+                    "SELECT 1 FROM pg_indexes "
+                    "WHERE schemaname = %s AND indexname = %s LIMIT 1",
+                    (schema, name)
+                )
+                if not cur.fetchone():
+                    missing.append(f"index {schema}.{name}")
+
+        except Exception as e:
+            missing.append(f"{fp_type} {name} (error: {e})")
+
+    cur.close()
+    return (len(missing) == 0, missing)
+
+
+def ensure_migrations_table(conn, schema: str):
+    """Create _migrations tracking table in the specified schema."""
+    cur = conn.cursor()
+    cur.execute(f"SET search_path TO {schema};")
+    cur.execute("""
         CREATE TABLE IF NOT EXISTS _migrations (
             id         SERIAL PRIMARY KEY,
             name       TEXT NOT NULL UNIQUE,
             applied_at TIMESTAMPTZ DEFAULT NOW()
         );
-    """
-    # Execute directly via Supabase's REST SQL endpoint
-    try:
-        client.rpc('exec_sql', {'sql': sql}).execute()
-    except Exception:
-        # exec_sql may not be available — try raw postgrest
-        # The table will be created by the first migration if needed
-        pass
+    """)
+    conn.commit()
+    cur.close()
 
 
-def get_applied(client) -> set:
-    """Return set of already-applied migration names."""
+def get_applied(conn, schema: str) -> set:
+    """Return set of already-applied migration names from the specified schema."""
+    cur = conn.cursor()
     try:
-        result = client.table('_migrations').select('name').execute()
-        return {r['name'] for r in (result.data or [])}
+        cur.execute(f"SET search_path TO {schema};")
+        cur.execute("SELECT name FROM _migrations;")
+        applied = {row[0] for row in cur.fetchall()}
+        cur.close()
+        return applied
     except Exception:
-        # Table doesn't exist yet — no migrations applied
+        # Table doesn't exist yet
+        cur.close()
         return set()
 
 
-def execute_sql(client, sql: str):
-    """Execute a SQL statement via Supabase."""
-    try:
-        client.rpc('exec_sql', {'sql': sql}).execute()
-    except Exception:
-        pass  # DDL may not return via RPC — proceed
+def run_migration_psycopg2(conn, schema: str, path: Path) -> Tuple[bool, str]:
+    """
+    Execute a migration via psycopg2, verify it, and record it.
 
-
-def run_migration(client, path: Path):
-    """Run a single migration file and record it."""
+    Returns (success, message).
+    """
     sql = path.read_text()
-    statements = [s.strip() for s in sql.split(';') if s.strip()]
-    for stmt in statements:
-        execute_sql(client, stmt)
+    fingerprints = parse_fingerprints(sql)
 
-    # Record as applied
-    client.table('_migrations').insert({
-        'name': path.name,
-        'applied_at': datetime.now(timezone.utc).isoformat(),
-    }).execute()
+    cur = conn.cursor()
+
+    try:
+        # Set search_path for this migration
+        cur.execute(f"SET search_path TO {schema};")
+
+        # Execute all statements
+        statements = [s.strip() for s in sql.split(';') if s.strip()]
+        for stmt in statements:
+            if stmt.strip():
+                cur.execute(stmt)
+
+        conn.commit()
+
+        # Verify fingerprints (if any)
+        if fingerprints:
+            success, missing = verify_fingerprints(conn, schema, fingerprints)
+            if not success:
+                msg = f"Verification failed - missing: {', '.join(missing)}"
+                cur.close()
+                return (False, msg)
+
+        # Record as applied
+        cur.execute("INSERT INTO _migrations (name, applied_at) VALUES (%s, %s);",
+                   (path.name, datetime.now(timezone.utc)))
+        conn.commit()
+        cur.close()
+
+        return (True, "Done")
+
+    except Exception as e:
+        conn.rollback()
+        cur.close()
+        return (False, str(e))
 
 
-def verify_tables(client):
-    """Quick sanity check that core tables exist."""
-    tables = ['deals', 'analyses', 'calls']
-    for t in tables:
-        try:
-            r = client.table(t).select('*', count='exact').limit(0).execute()
-            print(f'  ✓ {t} (rows: {r.count})')
-        except Exception as e:
-            print(f'  ✗ {t} — {e}')
+def print_manual_instructions(pending_migrations: List[Path]):
+    """Print instructions for manually applying migrations."""
+    print("\n" + "=" * 60)
+    print("MANUAL APPLICATION REQUIRED")
+    print("=" * 60)
+    print("\nSUPABASE_DB_URL is not set. Migrations must be applied")
+    print("manually via the Supabase SQL editor.\n")
+
+    print("Steps:")
+    print("1. Go to your Supabase project → SQL Editor")
+    print("2. Paste and run each migration below (in order)")
+    print("3. Re-run this script to verify and record them\n")
+
+    for i, path in enumerate(pending_migrations, 1):
+        print(f"\n{'=' * 60}")
+        print(f"Migration {i}/{len(pending_migrations)}: {path.name}")
+        print("=" * 60)
+        print(path.read_text())
+
+    print("\n" + "=" * 60)
+    print("After pasting all migrations into the SQL editor,")
+    print("re-run this script with SUPABASE_DB_URL set to verify")
+    print("and record them.")
+    print("=" * 60)
+
+
+def reload_postgrest_schema(conn):
+    """Attempt to reload PostgREST schema cache."""
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT pg_notify('pgrst', 'reload schema');")
+        conn.commit()
+        cur.close()
+        print("\n✓ PostgREST schema reload requested")
+        print("\nIf new tables/columns aren't visible in your app:")
+        print("  1. Test with a PATCH to a nonexistent row (should 404)")
+        print("  2. If stale, restart the Supabase project")
+    except Exception:
+        pass
 
 
 def main():
-    print('Connecting to Supabase...')
-    client = get_client()
-    print('✓ Connected\n')
+    schema = os.getenv('MIGRATION_SCHEMA', 'public')
+    db_url = os.getenv('SUPABASE_DB_URL')
 
-    ensure_migrations_table(client)
-    applied = get_applied(client)
+    # Check if we can execute migrations
+    if not db_url:
+        print("⚠️  SUPABASE_DB_URL not set - manual application mode")
+        print("Migrations will be printed for manual application.\n")
+        use_psycopg2 = False
+    elif not HAS_PSYCOPG2:
+        print("⚠️  psycopg2 not installed")
+        print("Install with: pip install psycopg2-binary\n")
+        use_psycopg2 = False
+    else:
+        use_psycopg2 = True
 
+    # Find migration files
     migrations_dir = Path('scripts/migrations')
     if not migrations_dir.exists():
         print(f'ERROR: {migrations_dir} not found.')
         print('Run from the repo root directory.')
-        return
+        return 1
 
     migration_files = sorted(
         f for f in migrations_dir.glob('*.sql')
@@ -111,33 +271,76 @@ def main():
 
     if not migration_files:
         print('No migration files found in scripts/migrations/')
-        return
+        return 1
+
+    # Connect and check applied migrations
+    if use_psycopg2:
+        try:
+            print(f"Connecting to database (schema: {schema})...")
+            conn = psycopg2.connect(db_url)
+            print("✓ Connected\n")
+
+            ensure_migrations_table(conn, schema)
+            applied = get_applied(conn, schema)
+        except Exception as e:
+            print(f"⛔ Connection failed: {e}")
+            print("\nFalling back to manual application mode.\n")
+            use_psycopg2 = False
+            conn = None
+            applied = set()
+    else:
+        conn = None
+        applied = set()
 
     pending = [f for f in migration_files if f.name not in applied]
 
+    # Report status
     if not pending:
         print('All migrations already applied:')
         for f in migration_files:
             print(f'  ✓ {f.name}')
         print()
-    else:
-        if applied:
-            print('Already applied:')
-            for name in sorted(applied):
-                print(f'  ✓ {name}')
-            print()
+        if use_psycopg2:
+            conn.close()
+        return 0
 
-        print(f'Applying {len(pending)} pending migration(s)...')
-        for path in pending:
-            print(f'  → {path.name}')
-            run_migration(client, path)
-            print(f'    ✓ Done')
+    if applied:
+        print('Already applied:')
+        for name in sorted(applied):
+            print(f'  ✓ {name}')
         print()
 
-    print('Verifying tables:')
-    verify_tables(client)
-    print('\nSetup complete.')
+    # Apply pending migrations
+    if use_psycopg2:
+        print(f'Applying {len(pending)} pending migration(s)...\n')
+        failed = False
+
+        for path in pending:
+            print(f'  → {path.name}')
+            success, msg = run_migration_psycopg2(conn, schema, path)
+
+            if success:
+                print(f'    ✓ {msg}')
+            else:
+                print(f'    ✗ FAILED: {msg}')
+                print(f'\nMigration SQL:\n{path.read_text()}\n')
+                print('Paste the above SQL into Supabase SQL editor to apply manually.')
+                failed = True
+                break
+
+        if not failed:
+            print()
+            reload_postgrest_schema(conn)
+            print('\n✓ Setup complete.')
+
+        conn.close()
+        return 1 if failed else 0
+
+    else:
+        # Manual application mode
+        print_manual_instructions(pending)
+        return 1
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
