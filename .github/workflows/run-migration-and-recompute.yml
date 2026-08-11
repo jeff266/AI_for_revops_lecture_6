@@ -39,8 +39,14 @@ jobs:
           import os
           from supabase import create_client
           sb = create_client(os.getenv('SUPABASE_URL'), os.getenv('SUPABASE_SERVICE_KEY'))
-          sb.table('waterfall_weekly').delete().eq('week_ending', '2026-08-11').execute()
-          print('✓ Deleted old waterfall')
+          # Find latest snapshot date
+          latest = sb.table('deals_snapshot').select('snapshot_date').order('snapshot_date', desc=True).limit(1).execute().data
+          if latest:
+              latest_date = latest[0]['snapshot_date']
+              sb.table('waterfall_weekly').delete().eq('week_ending', latest_date).execute()
+              print(f'✓ Deleted old waterfall for {latest_date}')
+          else:
+              print('⚠️  No snapshots found')
           "
 
       - name: Recompute waterfall
@@ -57,10 +63,19 @@ jobs:
           python -c "
           import os
           from supabase import create_client
+          from datetime import datetime
           sb = create_client(os.getenv('SUPABASE_URL'), os.getenv('SUPABASE_SERVICE_KEY'))
-          result = sb.table('waterfall_weekly').select('*').eq('week_ending', '2026-08-11').execute()
 
-          print('\n=== Waterfall Results (Aug 9 → Aug 11) ===')
+          # Find latest waterfall date
+          latest = sb.table('waterfall_weekly').select('week_ending').order('week_ending', desc=True).limit(1).execute().data
+          if not latest:
+              print('⚠️  No waterfall data found')
+              exit(0)
+
+          latest_date = latest[0]['week_ending']
+          result = sb.table('waterfall_weekly').select('*').eq('week_ending', latest_date).execute()
+
+          print(f'\n=== Waterfall Results (Week Ending {latest_date}) ===')
           for row in result.data:
               begin = row.get('beginning_value', 0) or 0
               end = row.get('ending_value', 0) or 0
