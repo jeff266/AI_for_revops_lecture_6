@@ -55,6 +55,12 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python scripts/analytics/compute_waterfall.py
 
+      - name: Diagnose mismatches
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python scripts/analytics/diagnose_waterfall_mismatch.py
+
       - name: Show results
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
