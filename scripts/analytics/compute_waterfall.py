@@ -27,7 +27,7 @@ def main():
     import sys
     sys.path.insert(0, str(REPO_ROOT / 'scripts'))
     from utils import load_client_config, get_fiscal_quarter
-    from adapters.storage.supabase import select_all
+    from supabase_client import select_all
     from datetime import datetime
 
     sb = create_client(SUPABASE_URL, SUPABASE_KEY)
@@ -72,6 +72,8 @@ def main():
     # Diff into waterfall categories per pipeline
     from collections import defaultdict
     pipeline_waterfalls = defaultdict(lambda: {
+        'beginning_value': 0.0,
+        'ending_value': 0.0,
         'new_pipeline_value': 0.0,
         'moved_forward_value': 0.0,
         'moved_backward_value': 0.0,
@@ -85,6 +87,17 @@ def main():
         'deals_qualified_count': 0,
         'details': [],
     })
+
+    # Calculate beginning and ending values (active deals only)
+    for deal_id, p in prev_snap.items():
+        if p.get('deal_status') == 'active':
+            pipeline_id = p.get('pipeline_id', 'default')
+            pipeline_waterfalls[pipeline_id]['beginning_value'] += float(p.get('deal_value') or 0)
+
+    for deal_id, n in new_snap.items():
+        if n.get('deal_status') == 'active':
+            pipeline_id = n.get('pipeline_id', 'default')
+            pipeline_waterfalls[pipeline_id]['ending_value'] += float(n.get('deal_value') or 0)
 
     all_deal_ids = set(new_snap) | set(prev_snap)
 
@@ -232,6 +245,8 @@ def main():
         row = {
             'week_ending': new_date,
             'pipeline_id': pipeline_id,
+            'beginning_value': wf['beginning_value'],
+            'ending_value': wf['ending_value'],
             'new_pipeline_value': wf['new_pipeline_value'],
             'moved_forward_value': wf['moved_forward_value'],
             'moved_backward_value': wf['moved_backward_value'],
@@ -250,9 +265,11 @@ def main():
             row, on_conflict='week_ending,pipeline_id'
         ).execute()
         print(f"✓ Waterfall {new_date} / {pipeline_id}: "
+              f"begin={wf['beginning_value']:.0f}, "
+              f"end={wf['ending_value']:.0f}, "
+              f"new={wf['new_pipeline_value']:.0f}, "
               f"won={wf['won_value']:.0f}, "
               f"lost={wf['lost_value']:.0f}, "
-              f"new={wf['new_pipeline_value']:.0f}, "
               f"net={wf['net_change']:.0f}")
 
 
