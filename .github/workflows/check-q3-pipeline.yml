@@ -24,3 +24,7 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           python scripts/analytics/check_q3_pipeline.py
+          echo ""
+          echo "========================================"
+          echo ""
+          python scripts/analytics/check_sales_pipeline_total.py
