@@ -18,19 +18,11 @@ jobs:
         run: |
           pip install supabase pyyaml python-dateutil psycopg2-binary
 
-      - name: Add waterfall columns
+      - name: Run migrations
         env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
         run: |
-          python -c "
-          import os
-          from supabase import create_client
-          sb = create_client(os.getenv('SUPABASE_URL'), os.getenv('SUPABASE_SERVICE_KEY'))
-          # Note: This uses PostgREST which may not support DDL
-          # Columns will be added during upsert if they don't exist
-          print('✓ Schema ready (columns will be created on upsert)')
-          "
+          python scripts/setup_supabase.py
 
       - name: Delete old waterfall
         env:
