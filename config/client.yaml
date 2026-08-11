@@ -34,7 +34,9 @@ pipeline:
   # For computed ARR from multiple properties, uncomment and configure:
   # value_field:
   #   type: computed
-  #   components: ["new_revenue", "expansion_revenue"]
+  #   components: ["your_new_arr_field", "your_expansion_arr_field"]
+  #   # Use your HubSpot INTERNAL property names (not labels).
+  #   # Discover them via: GET /crm/v3/properties/deals
   #   # NULL-safe sum: blank components treated as 0
   qualified_stage_order: 1  # Stages with order >= this are "qualified" (entered pipeline)
   win_rate_qualified_field: "sao"  # Win rate denominator = deals where SAO is true
@@ -47,7 +49,7 @@ pipeline:
         # RULE: Disqualified stages get BOTH is_lost=true AND exclude_from_analysis=true
         # Lost stages (is_lost=true) are included in waterfall unless exclude_from_analysis=true
 
-        - id: "79653122"
+        - id: "YOUR_MEETING_SET_STAGE_ID"
           name: "Meeting Set"
           order: 0
           stage_probability: 0.05
