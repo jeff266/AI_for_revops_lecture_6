@@ -231,6 +231,36 @@ q_start, q_end, q_label = get_fiscal_quarter(date.today(), config)
 
 ---
 
+## `forecast_weekly`
+
+Weekly snapshot of stage-weighted and category-weighted forecast, grouped by fiscal quarter.
+
+**Written by:** `scripts/analytics/compute_forecast.py` (weekly via GitHub Actions)
+**Read by:** CRO dashboards, forecast analysis, pipeline planning
+
+| Column | Type | Notes |
+|---|---|---|
+| `week_ending` | DATE | Part of composite PK |
+| `pipeline_id` | TEXT | Part of composite PK |
+| `fiscal_quarter` | TEXT | Part of composite PK (e.g., "Q2 FY2027") |
+| `open_pipeline_value` | NUMERIC | Total value of open deals with close dates in this quarter |
+| `open_deal_count` | INTEGER | Count of open deals |
+| `stage_weighted_forecast` | NUMERIC | Sum of (deal_value × stage_probability) for all open deals |
+| `category_weighted_forecast` | NUMERIC | Sum of (deal_value × category_weight) for all open deals |
+| `category_breakdown` | JSONB | Per-category stats: `{"COMMIT": {"count": N, "value": X, "weighted": Y}, ...}` |
+| `uncategorized_value` | NUMERIC | Value of deals with NULL or unrecognized forecast_category (data quality metric) |
+| `computed_at` | TIMESTAMPTZ | Default NOW() |
+
+Primary key: `(week_ending, pipeline_id, fiscal_quarter)`.
+
+**Stage-weighted forecast** uses the `stage_probability` values from `config/client.yaml` pipeline configuration. Each deal contributes `deal_value × probability` based on its current stage.
+
+**Category-weighted forecast** requires configuring `forecast.category_weights` in `config/client.yaml`. Common HubSpot defaults are COMMIT (1.0), BEST_CASE (0.75), PIPELINE (0.25), OMITTED (0.0), but actual picklist values vary by portal and must be verified.
+
+**NULL handling:** Deals with `forecast_category = NULL` are treated as OMIT (0.0 weight), not as a data quality issue. Only genuinely unrecognized non-null values contribute to `uncategorized_value` and trigger the >25% data quality warning.
+
+---
+
 ## `objections` / `feature_gaps` / `enrichment_scans`
 
 Populated by `scripts/enrichment/*.py`, which read call summaries from `memory/calls/*.json` — NOT from the `calls` table. Rationale: the file cache is the fuzzy-matched, company-slugged source the analysis agent already uses; the `calls` table is a thinner sync whose company names are parsed from call titles and which has no deal association.

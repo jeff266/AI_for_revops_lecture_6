@@ -266,6 +266,23 @@ calendar fiscal year) is what an unanswered question preserves:
    as shipped. If they want a different day/time, edit that
    workflow's cron line directly — GitHub Actions schedules are
    static in the workflow file, not read from client.yaml.
+10. "Does your HubSpot have a forecast category field for deals?"
+   If yes: "What are the actual picklist values in your portal?
+   Common HubSpot defaults are COMMIT, BEST_CASE, PIPELINE, OMITTED,
+   and CLOSED_WON, but customized portals may differ. Let me query
+   GET /crm/v3/properties/deals/forecast_category to see your exact
+   values."
+
+   After confirming the values, ask: "What weight (0.0 to 1.0)
+   should each category receive in the forecast calculation?
+   Typical: COMMIT=1.0 (100%), BEST_CASE=0.75, PIPELINE=0.25,
+   OMIT=0.0"
+
+   Write the confirmed values to forecast.category_weights in
+   client.yaml. If they say no forecast category field exists,
+   leave this section commented out — the forecast job will still
+   run but only produce stage-weighted forecasts, not
+   category-weighted.
 
 Show the fully-resolved pipeline: block back to them and confirm
 before writing anything.

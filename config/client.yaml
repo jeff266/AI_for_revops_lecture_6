@@ -16,6 +16,19 @@ organization:
 fiscal:
   fy_start_month: 2  # FY starts Feb 1; Q2 FY2027 = May 1 - Jul 31 2026
 
+# Forecast category weights (optional)
+# If your HubSpot has a forecast_category field, configure weights here.
+# Common HubSpot defaults: COMMIT, BEST_CASE, PIPELINE, OMITTED, CLOSED_WON
+# BUT your portal may have customized values — confirm via property definition.
+# Uncomment and configure after verifying your actual picklist values:
+# forecast:
+#   category_weights:
+#     COMMIT: 1.0       # 100% confidence
+#     BEST_CASE: 0.75   # 75% confidence
+#     PIPELINE: 0.25    # 25% confidence
+#     OMIT: 0.0         # Excluded from forecast
+#     NULL: 0.0         # Not yet categorized (treated as OMIT)
+
 # ============================================================================
 # HUBSPOT PIPELINE CONFIGURATION
 # ============================================================================
