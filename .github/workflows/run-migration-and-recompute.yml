@@ -18,11 +18,17 @@ jobs:
         run: |
           pip install supabase pyyaml python-dateutil psycopg2-binary
 
-      - name: Run migrations
-        env:
-          SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+      - name: Print migration SQL
         run: |
-          python scripts/setup_supabase.py
+          echo "============================================================"
+          echo "Migration 011 needs to be applied in Supabase SQL Editor:"
+          echo "============================================================"
+          cat scripts/migrations/011_add_waterfall_beginning_ending.sql
+          echo ""
+          echo "============================================================"
+          echo "After applying, the waterfall computation will populate these columns."
+          echo "For now, continuing with computation (will fail if columns don't exist)"
+          echo "============================================================"
 
       - name: Delete old waterfall
         env:
