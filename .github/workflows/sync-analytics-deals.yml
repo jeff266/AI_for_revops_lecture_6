@@ -21,14 +21,10 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Compare HubSpot CSV export with Supabase
+      - name: Match HubSpot filters exactly
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           pip install supabase
-          python scripts/analytics/compare_hubspot_export.py
-          echo ""
-          echo "========================================"
-          echo ""
-          python scripts/analytics/explain_740k_gap.py
+          python scripts/analytics/match_hubspot_filters.py
