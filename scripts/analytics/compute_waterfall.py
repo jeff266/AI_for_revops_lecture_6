@@ -116,6 +116,8 @@ def main():
                 'deal_id': deal_id,
                 'change_type': 'new',
                 'value': value,
+                'close_date': n.get('close_date'),
+                'company_name': n.get('company_name'),
             })
         elif p and not n:
             # Deal disappeared — shouldn't happen often
@@ -123,6 +125,8 @@ def main():
                 'deal_id': deal_id,
                 'change_type': 'removed',
                 'value': value,
+                'close_date': p.get('close_date'),
+                'company_name': p.get('company_name'),
             })
         else:
             n_order = n.get('stage_order', 0) or 0
@@ -215,6 +219,8 @@ def main():
                     'deal_id': deal_id,
                     'change_type': primary_change,
                     'value': value,
+                    'close_date': n.get('close_date'),
+                    'company_name': n.get('company_name'),
                 }
 
                 if 'moved_forward' in changes or 'moved_backward' in changes:
@@ -242,6 +248,16 @@ def main():
             - wf['won_value']
             - wf['lost_value']
         )
+
+        # Reconciliation check: ending = beginning + net_change
+        expected_ending = wf['beginning_value'] + wf['net_change']
+        actual_ending = wf['ending_value']
+        if abs(expected_ending - actual_ending) > 0.01:  # Allow for floating point errors
+            print(f"  ⚠️  Reconciliation mismatch for {pipeline_id}:")
+            print(f"      Expected ending: {expected_ending:.2f}")
+            print(f"      Actual ending:   {actual_ending:.2f}")
+            print(f"      Difference:      {actual_ending - expected_ending:.2f}")
+
         row = {
             'week_ending': new_date,
             'pipeline_id': pipeline_id,

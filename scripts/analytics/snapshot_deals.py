@@ -35,7 +35,7 @@ def main():
     # Read all current deals from Supabase (paginated)
     deals = select_all(
         sb, 'deals',
-        'deal_id, pipeline_id, stage, deal_value, '
+        'deal_id, company_name, pipeline_id, stage, deal_value, '
         'close_date, owner_email, deal_status, '
         'highest_stage_order_reached'
     )
@@ -52,6 +52,7 @@ def main():
         snapshots.append({
             'deal_id': d['deal_id'],
             'snapshot_date': today,
+            'company_name': d.get('company_name'),
             'pipeline_id': d.get('pipeline_id', 'default'),
             'stage_id': d.get('stage'),
             'stage_order': order,
