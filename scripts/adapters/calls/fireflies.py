@@ -9,8 +9,10 @@ import requests
 from typing import List, Dict, Optional
 from datetime import datetime
 
+from .base import CallAdapter
 
-class FirefliesClient:
+
+class FirefliesClient(CallAdapter):
     """Client for Fireflies GraphQL API with company search."""
 
     BASE_URL = "https://api.fireflies.ai/graphql"
@@ -208,8 +210,8 @@ class FirefliesClient:
         transcript = result.get("data", {}).get("transcript") or {}
         return transcript.get("meeting_attendees") or []
 
-    def format_summary_for_meddicc(self, transcript: dict) -> str:
-        """Format a transcript summary for MEDDICC analysis."""
+    def format_summary(self, transcript: dict) -> str:
+        """Format a transcript summary for analysis."""
         title = transcript.get('title', 'Untitled')
         date_raw = transcript.get('date')
 
@@ -259,6 +261,10 @@ class FirefliesClient:
             ])
 
         return "\n".join(parts)
+
+    def format_summary_for_meddicc(self, transcript: dict) -> str:
+        """Deprecated alias for format_summary."""
+        return self.format_summary(transcript)
 
     def test_connection(self) -> bool:
         """Test API connection."""

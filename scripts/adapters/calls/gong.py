@@ -21,8 +21,10 @@ import requests
 from datetime import datetime
 from typing import List, Optional, Dict
 
+from .base import CallAdapter
 
-class GongAdapter:
+
+class GongAdapter(CallAdapter):
     """
     Gong call intelligence adapter.
 
@@ -166,7 +168,7 @@ class GongAdapter:
                 content = rich.get('content', {})
                 interaction = rich.get('interaction', {})
 
-                # Flatten into format expected by format_summary_for_meddicc()
+                # Flatten into format expected by format_summary()
                 merged = {
                     'id': call_id,
                     'title': metadata.get('title', call.get('title', '')),
@@ -195,9 +197,9 @@ class GongAdapter:
 
         return results
 
-    def format_summary_for_meddicc(self, call: Dict) -> str:
+    def format_summary(self, call: Dict) -> str:
         """
-        Format a Gong call dict into a MEDDICC-ready summary.
+        Format a Gong call dict into an analysis-ready summary.
 
         Uses Gong's structured data:
         - brief: AI-generated summary
@@ -268,6 +270,57 @@ class GongAdapter:
             sections.extend(talk_time_lines)
 
         return '\n'.join(sections)
+
+    def format_summary_for_meddicc(self, call: Dict) -> str:
+        """Deprecated alias for format_summary."""
+        return self.format_summary(call)
+
+    def get_meeting_attendees(self, call_id: str) -> List[Dict]:
+        """
+        Return attendees for a single call using the extensive endpoint.
+
+        Fetches POST /v2/calls/extensive filtered to this call ID with
+        parties exposed, then maps Gong parties to the common attendee
+        shape [{'name': ..., 'email': ...}, ...].
+
+        Returns [] on 404 or any error.
+        """
+        request_body = {
+            'filter': {'callIds': [call_id]},
+            'contentSelector': {
+                'exposedFields': {
+                    'parties': True
+                }
+            }
+        }
+
+        try:
+            response = requests.post(
+                f'{self.base_url}/calls/extensive',
+                headers=self.headers,
+                json=request_body,
+                timeout=30
+            )
+
+            if response.status_code == 404:
+                return []
+
+            response.raise_for_status()
+
+            calls = response.json().get('calls', [])
+            if not calls:
+                return []
+
+            parties = calls[0].get('parties', []) or []
+            return [
+                {
+                    'name': p.get('name'),
+                    'email': p.get('emailAddress') or p.get('email', '')
+                }
+                for p in parties
+            ]
+        except Exception:
+            return []
 
     def _format_talk_time(self, parties: List[Dict], speakers: List[Dict],
                           total_duration_secs: int) -> List[str]:
@@ -442,7 +495,7 @@ class GongAdapter:
                 content = rich.get('content', {})
                 interaction = rich.get('interaction', {})
 
-                # Flatten into format expected by format_summary_for_meddicc()
+                # Flatten into format expected by format_summary()
                 merged = {
                     'id': call_id,
                     'title': metadata.get('title', call.get('title', '')),

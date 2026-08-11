@@ -7,6 +7,10 @@ for active HubSpot deals, scores them on 7 MEDDICC components,
 writes scores back to HubSpot, and self-improves via a PR-based
 learning loop. Built for RevOps School at Pavilion.
 
+Scores every active deal on your qualification methodology —
+MEDDICC by default; MEDDPIC, SPICED, and BANT supported via
+config/client.yaml.
+
 ---
 
 ## Auto-setup for fresh forks
@@ -111,6 +115,8 @@ whatever the student needs.
 | `config/context.yaml` | Competitors, objections, feature gaps |
 | `prompts/CLAUDE.md` | Generator system prompt — per client |
 | `prompts/evaluator_rubric.md` | Evaluation criteria |
+| `scripts/adapters/` | Call adapters (CallAdapter base + fireflies/gong/apollo) and factory |
+| `docs/` | data-schema.md (Supabase contract) and adapter-guide.md |
 
 ---
 

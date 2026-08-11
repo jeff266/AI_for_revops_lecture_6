@@ -1,8 +1,10 @@
 # RevOps MEDDICC Agent
 
 Nightly AI-powered deal qualification for your HubSpot pipeline.
-Analyzes sales calls, scores every active deal on MEDDICC,
-writes scores back to HubSpot, and gets smarter over time.
+Analyzes sales calls, scores every active deal on your qualification
+methodology — MEDDICC by default; MEDDPIC, SPICED, and BANT supported
+via config/client.yaml — writes scores back to HubSpot, and gets
+smarter over time.
 
 ---
 

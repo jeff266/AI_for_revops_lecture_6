@@ -40,6 +40,7 @@ if REVOPS_METRICS.exists():
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 from utils import slugify
+from adapters import get_call_adapter, get_storage_adapter
 
 
 def get_external_domains(meeting_attendees: list, internal_domains: list) -> list:
@@ -124,34 +125,6 @@ def get_last_cache_date(cache_dir: Path) -> datetime:
     return latest_date or (datetime.now() - timedelta(days=7))
 
 
-def get_call_adapter():
-    """
-    Load call intelligence adapter based on config/client.yaml.
-
-    Returns:
-        Adapter instance (GongAdapter or FirefliesClient)
-    """
-    # Load config
-    config_path = REPO_ROOT / 'config' / 'client.yaml'
-    if not config_path.exists():
-        print("   ⚠️  config/client.yaml not found, defaulting to Fireflies")
-        call_tool = 'fireflies'
-    else:
-        with open(config_path) as f:
-            config = yaml.safe_load(f)
-            call_tool = config.get('call_tools', {}).get('primary', 'fireflies')
-
-    # Import and return appropriate adapter
-    if call_tool == 'gong':
-        from adapters.gong_adapter import GongAdapter
-        return GongAdapter()
-    elif call_tool == 'fireflies':
-        from fireflies_client import FirefliesClient
-        return FirefliesClient()
-    else:
-        raise ValueError(f"Unknown call tool: {call_tool}. Must be 'gong' or 'fireflies'")
-
-
 def fetch_call_intelligence_incremental(since_date: datetime, calls_by_company: dict):
     """Fetch new calls from configured call intelligence platform (Gong or Fireflies)."""
     try:
@@ -230,8 +203,8 @@ def fetch_call_intelligence_incremental(since_date: datetime, calls_by_company: 
 
                 # Build call dict (different fields for Gong vs Fireflies)
                 if adapter_type == "GongAdapter":
-                    # Use Gong's format_summary_for_meddicc for structured summary
-                    summary = adapter.format_summary_for_meddicc(call)
+                    # Use Gong's format_summary for structured summary
+                    summary = adapter.format_summary(call)
                     calls_by_company[slug]["calls"].append({
                         "id": call.get('id'),
                         "source": "gong",
@@ -278,14 +251,12 @@ def fetch_call_intelligence_incremental(since_date: datetime, calls_by_company: 
 def fetch_apollo_incremental(since_date: datetime, calls_by_company: dict, total_summarized: list):
     """Fetch new Apollo calls since date via API."""
     try:
-        from apollo_client import get_apollo_client
-    except ImportError:
-        print("   ⚠️  apollo_client not available, skipping Apollo incremental fetch")
+        client = get_call_adapter('apollo')
+    except Exception as e:
+        print(f"   ⚠️  Apollo adapter not available, skipping Apollo incremental fetch: {e}")
         return
 
     print(f"\n📞 Fetching new Apollo calls since {since_date.strftime('%Y-%m-%d')}")
-
-    client = get_apollo_client()
 
     # Fetch all conversations (auto-paginated)
     all_convos = client.get_all_conversations(max_pages=10)
@@ -669,10 +640,7 @@ def main():
     if os.getenv('SUPABASE_URL'):
         print(f"\n📤 Writing to Supabase...")
         try:
-            import sys
-            sys.path.insert(0, str(repo_root / 'scripts'))
-            from supabase_client import SupabaseWriter
-            sb = SupabaseWriter()
+            sb = get_storage_adapter()
             total = 0
             for slug, data in calls_by_company.items():
                 calls = data.get('calls', [])

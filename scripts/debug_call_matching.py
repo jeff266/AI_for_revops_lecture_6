@@ -4,15 +4,13 @@
 Debug script to check which HubSpot deals have matching Fireflies/Apollo calls.
 """
 import sys
-from fireflies_client import get_fireflies_client
-from apollo_client import get_apollo_client
-from hubspot_deals import get_hubspot_deals_client
+from adapters import get_call_adapter, get_crm_adapter
 
 # Initialize clients
 print("Connecting to APIs...")
-fireflies = get_fireflies_client()
-apollo = get_apollo_client()
-hubspot = get_hubspot_deals_client()
+fireflies = get_call_adapter('fireflies')
+apollo = get_call_adapter('apollo')
+hubspot = get_crm_adapter()
 
 # Get active deals
 print("\nFetching active deals from HubSpot...")
