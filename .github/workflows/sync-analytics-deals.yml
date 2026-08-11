@@ -21,10 +21,11 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Check if missing deals exist in Supabase
+      - name: Export Q3 deals directly from HubSpot API
         env:
+          HUBSPOT_API_KEY: ${{ secrets.HUBSPOT_API_KEY }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           pip install supabase
-          python scripts/analytics/check_missing_deals.py
+          python scripts/analytics/export_hubspot_q3_deals.py
