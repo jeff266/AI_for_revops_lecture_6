@@ -3,6 +3,7 @@
 Rebuild waterfall for 2026-08-10 and verify close_date and company_name are present.
 """
 import os
+import json
 from supabase import create_client
 
 SUPABASE_URL = os.getenv('SUPABASE_URL')
@@ -39,48 +40,33 @@ print("\n" + "="*70)
 print("VERIFICATION: Top 10 deals with company_name and close_date")
 print("="*70 + "\n")
 
-query = """
-SELECT
-  d->>'company_name' as company,
-  d->>'change_type' as change,
-  d->>'close_date' as close_date,
-  (d->>'value')::numeric as value
-FROM waterfall_weekly,
-     jsonb_array_elements(details) d
-WHERE week_ending = '2026-08-10'
-ORDER BY (d->>'value')::numeric DESC NULLS LAST
-LIMIT 10
-"""
-
-result = sb.rpc('exec_sql', {'query': query}).execute()
+result = sb.table('waterfall_weekly').select('details').eq('week_ending', '2026-08-10').execute()
+all_details = []
 for row in result.data:
-    print(f"{row.get('company', 'N/A')[:30]:30s} "
-          f"{row.get('change', 'N/A'):15s} "
-          f"{row.get('close_date', 'N/A'):12s} "
-          f"${float(row.get('value', 0) or 0):>12,.0f}")
+    details = json.loads(row['details']) if isinstance(row['details'], str) else row['details']
+    all_details.extend(details)
+
+# Sort by value descending
+all_details.sort(key=lambda x: float(x.get('value', 0) or 0), reverse=True)
+
+for detail in all_details[:10]:
+    company = detail.get('company_name', 'N/A')[:30]
+    change = detail.get('change_type', 'N/A')
+    close_date = detail.get('close_date', 'N/A')
+    value = float(detail.get('value', 0) or 0)
+    print(f"{company:30s} {change:15s} {close_date:12s} ${value:>12,.0f}")
 
 # Step 4: Test Q3 slice query
 print("\n" + "="*70)
 print("Q3 SLICE (May 1 - Jul 31, 2026)")
 print("="*70 + "\n")
 
-q3_query = """
-SELECT
-  count(*) as deals,
-  sum((d->>'value')::numeric) as q3_value
-FROM waterfall_weekly,
-     jsonb_array_elements(details) d
-WHERE week_ending = '2026-08-10'
-  AND (d->>'close_date') BETWEEN '2026-05-01'
-                             AND '2026-07-31'
-"""
+q3_deals = [d for d in all_details
+            if d.get('close_date') and '2026-05-01' <= d.get('close_date') <= '2026-07-31']
+q3_count = len(q3_deals)
+q3_value = sum(float(d.get('value', 0) or 0) for d in q3_deals)
 
-result = sb.rpc('exec_sql', {'query': q3_query}).execute()
-if result.data:
-    row = result.data[0]
-    print(f"Deals in Q3: {row.get('deals', 0)}")
-    print(f"Q3 Value: ${float(row.get('q3_value', 0) or 0):,.0f}")
-else:
-    print("No Q3 data found")
+print(f"Deals in Q3: {q3_count}")
+print(f"Q3 Value: ${q3_value:,.0f}")
 
 print("\n✓ Verification complete")
