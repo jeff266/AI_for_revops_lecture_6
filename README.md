@@ -1,14 +1,41 @@
 # RevOps MEDDICC Agent
 
-Nightly AI-powered deal qualification for your HubSpot pipeline.
-Analyzes sales calls, scores every active deal on your qualification
-methodology — MEDDICC by default; MEDDPIC, SPICED, and BANT supported
-via config/client.yaml — writes scores back to HubSpot, and gets
-smarter over time.
+Your sales calls contain the truth about every deal's health, but that
+truth usually dies in a rep's head or a forgotten Gong recording. This
+agent listens to every call, reads it against your qualification
+methodology, and keeps every deal in HubSpot honestly scored, every
+night, without anyone doing manual review.
+
+Each night it re-evaluates your full active pipeline. It pulls the
+latest call transcripts, scores every deal on MEDDICC (or MEDDPICC,
+SPICED, or BANT, configurable to how your team actually sells), and
+writes the scores straight back to HubSpot so reps and managers see
+the same picture. It flags risk before it becomes a surprise in the
+forecast call, and it gets sharper over time as it learns your team's
+patterns.
+
+Beyond nightly scoring, it runs a weekly analytics pass across the
+whole pipeline:
+
+- **Waterfall tracking**: see exactly where deals are moving forward,
+  sliding back, or dying, stage by stage
+- **Win/loss narratives**: automatically extracted from call evidence,
+  not just the close reason field
+- **Objection log**: a searchable record of what prospects actually
+  pushed back on
+- **Feature-gap backlog**: requested features pulled straight from
+  calls, ranked by how often and how severely they come up
 
 ---
 
-## Setup — three steps
+Interested in forward deployment for your team? Reach out:
+
+- Email: jeff@revopsimpact.com
+- LinkedIn: [linkedin.com/in/jeffbethechange](https://linkedin.com/in/jeffbethechange)
+
+---
+
+## Setup: three steps
 
 ### Step 1 · Credentials
 
@@ -58,12 +85,12 @@ After that the agent runs every night at 2am UTC automatically.
 
 The agent supports two call recording platforms:
 
-**Fireflies** (default) — Fireflies.ai call transcripts
+**Fireflies** (default): Fireflies.ai call transcripts
 - Most common for SMB/mid-market
 - Simple API key authentication
 - Set `call_tools.primary: "fireflies"` in config/client.yaml
 
-**Gong** — Gong.io enterprise call intelligence
+**Gong**: Gong.io enterprise call intelligence
 - Enterprise standard for larger sales teams
 - Provides richer structured data (topics, action items, talk time)
 - Requires Access Key + Access Key Secret
@@ -91,12 +118,12 @@ and collect the right credentials.
 
 ```
 Sundays 3am UTC: GitHub Actions fires
-  1. Analytics deal ETL — Fetch all deals (all stages, both analyzed and analyze:false pipelines)
-  2. Snapshot deals — Capture point-in-time pipeline state to deals_snapshot table
-  3. Compute waterfall — Track qualified pipeline movement across 5 categories (new, newly qualified, forward, backward, won, lost) with reconciliation check
-  4. Generate win/loss narratives — Extract call evidence and compare to stated close reasons
-  5. Extract objections — Categorize and store per-company objections from call transcripts
-  6. Extract feature gaps — Identify and severity-score requested features from calls
+  1. Analytics deal ETL: fetch all deals (all stages, both analyzed and analyze:false pipelines)
+  2. Snapshot deals: capture point-in-time pipeline state to deals_snapshot table
+  3. Compute waterfall: track qualified pipeline movement across 5 categories (new, newly qualified, forward, backward, won, lost) with reconciliation check
+  4. Generate win/loss narratives: extract call evidence and compare to stated close reasons
+  5. Extract objections: categorize and store per-company objections from call transcripts
+  6. Extract feature gaps: identify and severity-score requested features from calls
 ```
 
 **Output:** Waterfall movements in `waterfall_weekly` table, win/loss patterns, objection vault, and feature request backlog. All queryable via Supabase or the CRO agent.
@@ -107,15 +134,15 @@ Sundays 3am UTC: GitHub Actions fires
 
 | File | What it does |
 |---|---|
-| `scripts/run_nightly.py` | Main orchestration — runs every night |
+| `scripts/run_nightly.py` | Main orchestration, runs every night |
 | `scripts/meddicc_agent.py` | Generator + evaluator + reflection loop |
 | `scripts/etl_calls.py` | Builds call cache from CSV exports |
 | `scripts/etl_deals.py` | Builds deal index from HubSpot |
-| `prompts/CLAUDE.md` | Generator instructions — edit to calibrate |
-| `prompts/evaluator_rubric.md` | Evaluation criteria — auto-improves |
+| `prompts/CLAUDE.md` | Generator instructions, edit to calibrate |
+| `prompts/evaluator_rubric.md` | Evaluation criteria, auto-improves |
 | `config/client.yaml` | Your HubSpot stage IDs and thresholds |
 | `config/context.yaml` | Your competitors, objections, feature gaps |
-| `memory/calls/` | Call cache — 1 JSON per company |
+| `memory/calls/` | Call cache, 1 JSON per company |
 | `memory/learnings/` | What the agent is learning |
 | `output/` | MEDDICC analysis files |
 
@@ -135,8 +162,8 @@ Sundays 3am UTC: GitHub Actions fires
 
 This repo includes two onboarding skills:
 
-- `skills/revops-agent-setup/SKILL.md` — credential setup wizard
-- `skills/revops-client-context/SKILL.md` — client context onboarding
+- `skills/revops-agent-setup/SKILL.md`: credential setup wizard
+- `skills/revops-client-context/SKILL.md`: client context onboarding
 
 **In Claude Code (desktop app):**
 The skills run automatically when you open a fresh fork (missing config files).
