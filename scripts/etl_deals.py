@@ -576,20 +576,20 @@ def main():
             deal_value = compute_deal_value(props, full_config)
 
             # highest_stage_order_reached: GREATEST(existing, current).
-            # Never lower the mark. If the stage/pipeline is unmapped
-            # (current_order is None), leave whatever we already had.
-            # Exclude administrative/terminal-adjacent stages that have
-            # exclude_from_progression: true to prevent them from
-            # inflating the high-water mark (e.g., a Disqualified stage
-            # with order 9 shouldn't outrank Closed Won at order 6).
-            from utils import is_excluded_from_progression
-            excluded = is_excluded_from_progression(stage, pipeline_id_norm, full_config)
+            # Never lower the mark. Use get_progression_stage_order()
+            # instead of get_stage_order() — it returns None for stages
+            # flagged exclude_from_progression, preventing administrative
+            # stages (Disqualified, Review) from inflating the high-water
+            # mark and polluting the win-rate denominator.
+            from utils import get_progression_stage_order
+            progression_order = get_progression_stage_order(
+                stage, pipeline_id_norm, full_config)
 
             existing_highest, existing_qdate = existing_qual_map.get(
                 str(deal_id), (None, None))
-            if current_order is not None and not excluded:
-                highest = (max(current_order, existing_highest)
-                          if existing_highest is not None else current_order)
+            if progression_order is not None:
+                highest = (max(progression_order, existing_highest)
+                          if existing_highest is not None else progression_order)
             else:
                 highest = existing_highest
 

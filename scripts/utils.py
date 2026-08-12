@@ -182,6 +182,27 @@ def is_excluded_from_progression(stage_id: str, pipeline_id: str = None,
     return False
 
 
+def get_progression_stage_order(stage_id: str, pipeline_id: str = 'default',
+                                 config: dict = None) -> int:
+    """
+    Stage order for high-water-mark ranking. Returns None for stages
+    flagged exclude_from_progression (administrative stages like
+    Disqualified/Review must not outrank real progression), and None
+    for unmapped stages.
+
+    Use this instead of get_stage_order() when computing
+    highest_stage_order_reached to prevent excluded stages from
+    inflating the high-water mark.
+    """
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            if s.get('exclude_from_progression'):
+                return None
+            return s['order']
+    return None
+
+
 def get_segment(employee_count: int or None, config: dict = None) -> tuple:
     """
     Return (segment_name, expected_cycle_days) for an employee count.
