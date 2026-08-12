@@ -14,7 +14,7 @@ organization:
     - "YOUR_COMPANY_DOMAIN.com"
     # Your reps' email domain — used to filter out
     # internal attendees from participant matching
-    # Example: growthbook.io, acme.com
+    # Example: acme.com, yourcompany.io
 
 # ============================================================================
 # FISCAL YEAR CONFIGURATION

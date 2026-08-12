@@ -203,7 +203,7 @@ if __name__ == "__main__":
     print("✓ Connected to Apollo.io")
 
     # Test company search
-    test_company = "GrowthBook"
+    test_company = "YourCompany"
     print(f"\nSearching for conversations with '{test_company}'...")
 
     results = client.search_by_company(test_company)

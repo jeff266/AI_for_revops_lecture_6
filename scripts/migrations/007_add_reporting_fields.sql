@@ -1,4 +1,4 @@
--- GrowthBook cardinal-rule fields: SAO win-rate basis,
+-- Production-proven reporting fields: SAO win-rate basis,
 -- ARR components for retention math, forecast category
 -- for the operating forecast, richer waterfall columns.
 

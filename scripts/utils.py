@@ -17,14 +17,14 @@ def slugify(name: str) -> str:
         'Acme Corp' -> 'acme-corp'
         'Scale AI' -> 'scale-ai'
         'Notion Labs Inc' -> 'notion-labs-inc'
-        'Skyscanner + GrowthBook' -> 'skyscanner'
-        'GrowthBook <> ClickHouse' -> 'clickhouse'
+        'Skyscanner + YourCompany' -> 'skyscanner'
+        'YourCompany <> ClickHouse' -> 'clickhouse'
     """
     if not name:
         return ''
 
     # Get vendor name from config
-    vendor = 'growthbook'  # Default
+    vendor = 'yourcompany'  # Default
     try:
         import yaml
         from pathlib import Path
@@ -194,10 +194,10 @@ def get_progression_stage_order(stage_id: str, pipeline_id: str = 'default',
     highest_stage_order_reached to prevent excluded stages from
     inflating the high-water mark.
 
-    NOTE: GrowthBook (production) does not have this code as of 2026-08-12.
-    It currently handles progression exclusion via a manual SQL patch
-    (scripts/fix_hwm_10_deals.sql). This template implementation should be
-    ported back to GrowthBook's utils.py and etl_deals.py.
+    NOTE: If porting this to an existing deployment, ensure
+    highest_stage_order_reached values are audited for stages flagged
+    exclude_from_progression — historical values may need correction via
+    a one-time SQL patch.
     """
     p = get_pipeline_config(pipeline_id, config)
     for s in p.get('stages', []):

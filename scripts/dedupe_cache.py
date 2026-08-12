@@ -19,10 +19,10 @@ CALLS_DIR = Path(__file__).parent.parent / 'memory' / 'calls'
 def _get_vendor_slug() -> str:
     """
     Read the organization name from config/client.yaml (same pattern as
-    utils.slugify). Lowercased and hyphenated. Falls back to 'growthbook'
+    utils.slugify). Lowercased and hyphenated. Falls back to 'yourcompany'
     if missing or still a placeholder.
     """
-    vendor = 'growthbook'  # Default
+    vendor = 'yourcompany'  # Default
     try:
         config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
         if config_path.exists():

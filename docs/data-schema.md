@@ -229,7 +229,7 @@ from utils import get_fiscal_quarter, load_client_config
 
 config = load_client_config()
 q_start, q_end, q_label = get_fiscal_quarter(date.today(), config)
-# Returns: (date(2026, 5, 1), date(2026, 7, 31), "Q2 FY2027") for GrowthBook
+# Example with fy_start_month=2: (date(2026, 5, 1), date(2026, 7, 31), "Q2 FY2027")
 ```
 
 ---

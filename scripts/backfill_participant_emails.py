@@ -47,7 +47,7 @@ def get_external_domains(meeting_attendees: list, internal_domains: list) -> lis
 
 def get_internal_domains() -> list:
     """Load internal domains from config."""
-    internal_domains = ['growthbook.io']  # Default
+    internal_domains = ['your-company.com']  # Default
     try:
         config_path = REPO_ROOT / 'config' / 'client.yaml'
         if config_path.exists():

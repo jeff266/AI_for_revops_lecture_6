@@ -449,12 +449,16 @@ class GitHubMemory:
                 return None
 
         # Fuzzy match: prefix matching with vendor-first reversal
+        from utils import load_client_config
+        config = load_client_config()
+        vendor = (config.get('organization', {}).get('name', 'yourcompany') or 'yourcompany').lower()
+
         matching_files = [
             f for f in self.calls_dir.glob("*.json")
             if f.stem == slug
             or f.stem.startswith(slug + '-')
-            or f.stem == f'growthbook-{slug}'
-            or f.stem.startswith(f'growthbook-{slug}-')
+            or f.stem == f'{vendor}-{slug}'
+            or f.stem.startswith(f'{vendor}-{slug}-')
         ]
 
         if len(matching_files) == 1:
@@ -477,12 +481,16 @@ class GitHubMemory:
     def save_call_cache(self, slug: str, cache_data: dict):
         """Save call cache for a company slug with fuzzy prefix matching."""
         # Check for existing file with prefix match (vendor-first reversal)
+        from utils import load_client_config
+        config = load_client_config()
+        vendor = (config.get('organization', {}).get('name', 'yourcompany') or 'yourcompany').lower()
+
         matching_files = [
             f for f in self.calls_dir.glob("*.json")
             if f.stem == slug
             or f.stem.startswith(slug + '-')
-            or f.stem == f'growthbook-{slug}'
-            or f.stem.startswith(f'growthbook-{slug}-')
+            or f.stem == f'{vendor}-{slug}'
+            or f.stem.startswith(f'{vendor}-{slug}-')
         ]
 
         if len(matching_files) == 1:
