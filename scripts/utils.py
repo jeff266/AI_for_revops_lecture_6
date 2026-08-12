@@ -24,11 +24,7 @@ def slugify(name: str) -> str:
         return ''
 
     # Get vendor name from config
-    vendor = (load_client_config()
-              .get('organization', {})
-              .get('name', '')
-              .lower()
-              .replace(' ', '-')) or 'your-company'
+    vendor = 'growthbook'  # Default
     try:
         import yaml
         from pathlib import Path
@@ -168,87 +164,66 @@ def is_lost_stage(stage_id: str, pipeline_id: str = None,
     return False
 
 
-def get_value_properties(config=None) -> list:
+def get_segment(employee_count: int or None, config: dict = None) -> tuple:
     """
-    HubSpot property names the ETL must fetch to compute deal value.
-    String field -> [field]; computed -> its components.
+    Return (segment_name, expected_cycle_days) for an employee count.
+
+    Maps employee count to configured segmentation bands (e.g., SMB, Mid-Market,
+    Enterprise). Returns 'Unknown' for None/missing employee counts.
 
     Args:
+        employee_count: Number of employees (from Company.numberofemployees)
         config: Optional full config dict (loaded if not provided)
 
     Returns:
-        list: Property names to fetch from HubSpot
+        tuple: (segment_name, expected_cycle_days)
+            e.g. ('SMB', 33), ('Enterprise', 132), ('Unknown', None)
+
+    Examples:
+        get_segment(100) -> ('SMB', 33)
+        get_segment(500) -> ('Mid-Market', 84)
+        get_segment(5000) -> ('Enterprise', 132)
+        get_segment(None) -> ('Unknown', None)
     """
     if config is None:
-        from pathlib import Path
-        import yaml
-        config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
-        if config_path.exists():
-            with open(config_path) as f:
-                config = yaml.safe_load(f)
-        else:
-            config = {}
+        config = load_client_config()
 
-    vf = config.get('pipeline', {}).get('value_field', 'amount')
-    if isinstance(vf, dict):
-        return list(vf.get('components', []))
-    return [vf]
+    bands = config.get('segmentation', {}).get('bands', [])
 
+    # Handle None/missing employee count -> Unknown
+    if employee_count is None:
+        unknown = next((b for b in bands if b['name'] == 'Unknown'), None)
+        return ('Unknown', unknown.get('expected_cycle_days') if unknown else None)
 
-def compute_deal_value(properties: dict, config=None) -> float:
-    """
-    NULL-safe deal value from a HubSpot properties dict.
-    Blanks/None/'' -> 0. Works for both config shapes.
+    # Find matching band
+    for band in bands:
+        lo = band.get('min', 0)
+        hi = band.get('max', float('inf'))
+        if lo <= employee_count <= hi:
+            return (band['name'], band.get('expected_cycle_days'))
 
-    Args:
-        properties: HubSpot deal properties dict
-        config: Optional full config dict (loaded if not provided)
-
-    Returns:
-        float: Computed deal value
-    """
-    if config is None:
-        from pathlib import Path
-        import yaml
-        config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
-        if config_path.exists():
-            with open(config_path) as f:
-                config = yaml.safe_load(f)
-        else:
-            config = {}
-
-    vf = config.get('pipeline', {}).get('value_field', 'amount')
-    names = (vf.get('components', []) if isinstance(vf, dict) else [vf])
-
-    total = 0.0
-    for n in names:
-        raw = properties.get(n)
-        try:
-            # Strip $ and , from value strings, handle None/empty/null
-            if raw not in (None, '', 'null'):
-                clean = str(raw).replace('$', '').replace(',', '').strip()
-                if clean:
-                    total += float(clean)
-        except (ValueError, TypeError):
-            pass
-
-    return total
+    # No match found -> Unknown
+    return ('Unknown', None)
 
 
-def get_fiscal_quarter(as_of=None, config=None) -> tuple:
+def get_fiscal_quarter(as_of=None, config: dict = None) -> tuple:
     """
     Return (q_start_date, q_end_date, label) for the fiscal quarter
-    containing as_of, from fiscal.fy_start_month.
+    containing as_of, based on config fiscal.fy_start_month.
 
-    fy_start_month=2 => Feb-Apr, May-Jul, Aug-Oct, Nov-Jan
-    FY label is the year of the FY END (May 2026 sits in FY2027 Q2)
+    For example, fy_start_month=2 creates quarters:
+      Q1: Feb-Apr, Q2: May-Jul, Q3: Aug-Oct, Q4: Nov-Jan
+
+    FY label is the year of the FY END. For example, if fy_start_month=2,
+    then May 2026 sits in FY2027 Q2 (because the FY runs Feb 2026 - Jan 2027).
 
     Args:
         as_of: Date to find quarter for (default: today)
         config: Optional full config dict (loaded if not provided)
 
     Returns:
-        tuple: (start_date, end_date, label) e.g. (date(2026,5,1), date(2026,7,31), "FY2027 Q2")
+        tuple: (start_date, end_date, label)
+            e.g. (date(2026,5,1), date(2026,7,31), "FY2027 Q2")
     """
     from datetime import date
     from dateutil.relativedelta import relativedelta
@@ -257,14 +232,7 @@ def get_fiscal_quarter(as_of=None, config=None) -> tuple:
         as_of = date.today()
 
     if config is None:
-        from pathlib import Path
-        import yaml
-        config_path = Path(__file__).parent.parent / 'config' / 'client.yaml'
-        if config_path.exists():
-            with open(config_path) as f:
-                config = yaml.safe_load(f)
-        else:
-            config = {}
+        config = load_client_config()
 
     fy_start_month = config.get('fiscal', {}).get('fy_start_month', 1)
 

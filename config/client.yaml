@@ -6,204 +6,199 @@
 # ORGANIZATION INFO
 # ============================================================================
 organization:
-  name: "YOUR_COMPANY_NAME"
+  name: "YOUR_ORGANIZATION_NAME"
   crm: "HubSpot"
   sales_methodology: "MEDDICC"  # Options: MEDDICC, MEDDPICC, MEDDIC
-  timezone: "America/Los_Angeles"  # Used for meddicc_last_analyzed date field
+  timezone: "America/New_York"  # Sales team timezone (e.g. America/Los_Angeles, Europe/London)
   internal_domains:
-    - "your-company.com"
+    - "YOUR_COMPANY_DOMAIN.com"
+    # Your reps' email domain — used to filter out
+    # internal attendees from participant matching
+    # Example: growthbook.io, acme.com
+
+# ============================================================================
+# FISCAL YEAR CONFIGURATION
+# ============================================================================
+# When does your fiscal year start? This drives fiscal quarter calculations
+# used in pipeline generation and forecast analysis.
+#
+# Examples:
+#   1 = Calendar year (Jan-Dec)
+#   2 = Feb-Jan (FY starts Feb 1)
+#   4 = Apr-Mar (FY starts Apr 1)
 
 fiscal:
-  fy_start_month: 2  # FY starts Feb 1; Q2 FY2027 = May 1 - Jul 31 2026
+  fy_start_month: 1  # Calendar year by default
 
-# Forecast category weights (optional)
-# If your HubSpot has a forecast_category field, configure weights here.
-# Common HubSpot defaults: COMMIT, BEST_CASE, PIPELINE, OMITTED, CLOSED_WON
-# BUT your portal may have customized values — confirm via property definition.
-# Uncomment and configure after verifying your actual picklist values:
-# forecast:
-#   category_weights:
-#     COMMIT: 1.0       # 100% confidence
-#     BEST_CASE: 0.75   # 75% confidence
-#     PIPELINE: 0.25    # 25% confidence
-#     OMIT: 0.0         # Excluded from forecast
-#     NULL: 0.0         # Not yet categorized (treated as OMIT)
+# ============================================================================
+# SEGMENTATION CONFIGURATION
+# ============================================================================
+# Company-size based segmentation for pipeline generation and in-quarter
+# contribution analysis. Enables tracking of different sales cycle lengths
+# by segment.
+#
+# Customize the thresholds and cycle times based on your GTM motion:
+#   - SMB (small/medium business): typically faster sales cycles
+#   - Mid-Market: moderate complexity and cycle time
+#   - Enterprise: longer sales cycles with more stakeholders
+#   - Unknown: deals without employee count data
+
+segmentation:
+  source: "company"  # Segmentation reads from associated Company object
+  field: "numberofemployees"  # HubSpot property on Company object
+  bands:
+    - name: "SMB"
+      max: 500
+      expected_cycle_days: 30
+      # Small/Medium Business: ≤500 employees, ~30-day sales cycle
+
+    - name: "Mid-Market"
+      min: 501
+      max: 2500
+      expected_cycle_days: 60
+      # Mid-Market: 501-2,500 employees, ~60-day sales cycle
+
+    - name: "Enterprise"
+      min: 2501
+      expected_cycle_days: 90
+      # Enterprise: 2,501+ employees, ~90-day sales cycle
+
+    - name: "Unknown"
+      expected_cycle_days: null
+      # No employee count or no company association - cannot predict cycle
+
+# ============================================================
+# METHODOLOGY & PROPERTY MAPPING (optional)
+# ============================================================
+# sales_methodology above drives which components are analyzed:
+#   MEDDICC (default) | MEDDPIC | SPICED | BANT
+# HubSpot property names default to <methodology>_* .
+# Override any of them here:
+# hubspot:
+#   properties:
+#     score: spiced_score
+#     status: spiced_status
+#     last_analyzed: spiced_last_analyzed
+#     summary: spiced_analysis_summary
 
 # ============================================================================
 # HUBSPOT PIPELINE CONFIGURATION
 # ============================================================================
-# Use scripts/discover_stages.py to find your organization's stage IDs
-
-# ============================================================================
-# PHASE A: New pipeline configuration shape (for analytics layer)
-# ============================================================================
-# This new shape enables waterfall tracking, conversion analysis, and
-# qualification trending. The legacy excluded_stages block below is kept
-# for backward compatibility during transition.
+# Use scripts/discover_stages.py to find your organization's stage IDs.
+#
+# Each pipeline gets its own ordered stage list. order values are a
+# sales-cycle position WITHIN that pipeline only — they are NOT
+# comparable across pipelines (a renewal pipeline's order 3 has nothing
+# to do with the sales pipeline's order 3).
+#
+# Per-stage flags:
+#   is_won / is_lost            — terminal outcome stages
+#   exclude_from_analysis: true — excluded from active-deal MEDDICC
+#                                 analysis and pipeline analytics.
+#                                 Covers what used to be two separate
+#                                 buckets (Meeting Set / Disqualified) —
+#                                 anything pre-discovery, junk, or
+#                                 disqualified gets this flag.
+#
+#   RULE — Disqualified-type stages MUST carry BOTH is_lost: true AND
+#   exclude_from_analysis: true. is_lost makes the stage terminal for
+#   analytics: deal_status flips to 'lost', the deal exits the funnel,
+#   and it counts against qualification rate — it stays out of the
+#   win-rate denominator automatically via the qualified_stage_order
+#   filter, no separate handling needed. exclude_from_analysis keeps
+#   it out of the nightly MEDDICC agent's active-deal population. A
+#   stage with ONLY exclude_from_analysis (no is_lost) looks "active
+#   forever" in pipeline analytics — it never resolves to won or lost.
+#   Meeting Set is the one legitimate exception: it's pre-discovery
+#   and still open, so it gets exclude_from_analysis WITHOUT is_lost.
+#   See the commented Disqualified example stage below.
+#
+# Per-pipeline flags:
+#   is_primary: true  — exactly one pipeline; the default used wherever
+#                        a pipeline isn't specified explicitly.
+#   analyze: false    — excludes ALL of this pipeline's deals from
+#                        active-deal analysis (e.g. renewal, partner).
+#
+# qualified_stage_order: the first order value that counts as
+# "qualified" for this pipeline — sales cycle clock starts here, and
+# the win-rate denominator requires a deal to have reached it.
 
 pipeline:
-  # Analytics configuration
-  # value_field: amount  # Default: uses HubSpot 'amount' property
-  # For computed ARR from multiple properties, uncomment and configure:
-  # value_field:
-  #   type: computed
-  #   components: ["your_new_arr_field", "your_expansion_arr_field"]
-  #   # Use your HubSpot INTERNAL property names (not labels).
-  #   # Discover them via: GET /crm/v3/properties/deals
-  #   # NULL-safe sum: blank components treated as 0
-  qualified_stage_order: 1  # Stages with order >= this are "qualified" (entered pipeline)
-  win_rate_qualified_field: "sao"  # Win rate denominator = deals where SAO is true
+  value_field: amount
+  # Override to arr_value, tcv, acv, etc. if 'amount' is not
+  # the right value field for this client.
 
-  # Pipeline definitions with per-stage configuration
+  lost_reason_field: closed_lost_reason
+  # HubSpot's default property; many orgs use a custom one.
+  # Onboarding should detect candidates by scanning deal
+  # properties for names containing 'lost' + 'reason' and
+  # confirm with the client. Set null if the org doesn't
+  # track it.
+
   pipelines:
     - id: "default"
       name: "Sales Pipeline"
+      is_primary: true
+      # analyze: false   # ← uncomment to exclude this whole pipeline
       stages:
-        # RULE: Disqualified stages get BOTH is_lost=true AND exclude_from_analysis=true
-        # Lost stages (is_lost=true) are included in waterfall unless exclude_from_analysis=true
-
-        - id: "YOUR_MEETING_SET_STAGE_ID"
-          name: "Meeting Set"
-          order: 0
-          stage_probability: 0.05
-          exclude_from_analysis: true  # Too early - not qualified yet
-
         - id: "appointmentscheduled"
-          name: "Discovery"
+          name: "Meeting Set"
           order: 1
-          stage_probability: 0.10
-          qualified_stage_order: 1  # First qualified stage
-
+          exclude_from_analysis: true
+        # - id: "YOUR_DISQUALIFIED_STAGE_ID"
+        #   name: "Disqualified"
+        #   order: 1
+        #   is_lost: true                # ← terminal: deal_status → 'lost'
+        #   exclude_from_analysis: true  # ← out of the active-deal population
+        #   # Both flags required — see the RULE above. order: 1 keeps
+        #   # it below qualified_stage_order (3), so a disqualified
+        #   # deal correctly never enters the win-rate denominator.
         - id: "qualifiedtobuy"
-          name: "Scoping"
+          name: "Discovery"
           order: 2
-          stage_probability: 0.10
-
         - id: "presentationscheduled"
-          name: "Technical Evaluation"
+          name: "Scoping"
           order: 3
-          stage_probability: 0.40
-
-        - id: "YOUR_NEGOTIATING_STAGE_ID"
-          name: "Negotiating"
-          order: 4
-          stage_probability: 0.60
-
-        - id: "YOUR_AWAITING_SIGNATURE_STAGE_ID"
-          name: "Awaiting Signature"
-          order: 5
-          stage_probability: 0.90
-
-        - id: "closedwon"
-          name: "Closed Won (default)"
-          order: 6
-          stage_probability: 1.0
-          is_won: true
-
-        - id: "closedlost"
-          name: "Closed Lost (default)"
-          order: 7
-          stage_probability: 0.0
-          is_lost: true
-
         - id: "decisionmakerboughtin"
-          name: "Review"
-          order: 8
-          stage_probability: 0.50
-
-        - id: "YOUR_DISQUALIFIED_STAGE_ID"
-          name: "Disqualified"
-          order: 9
-          stage_probability: 0.0
-          is_lost: true
-          exclude_from_analysis: true  # Both flags: lost AND excluded
-
-    - id: "YOUR_RENEWAL_PIPELINE_ID"
-      name: "Renewal Pipeline"
-      analyze: false  # MEDDICC agent skips; analytics INCLUDES for GRR/NRR
-      qualified_stage_order: 0
-      stages:
-        - id: "YOUR_UPCOMING_RENEWAL_STAGE_ID"
-          name: "Upcoming Renewal"
-          order: 0
-          stage_probability: 0.75
-
-        - id: "YOUR_RENEWAL_ENGAGED_STAGE_ID"
-          name: "Renewal Engaged"
-          order: 1
-          stage_probability: 0.85
-
-        - id: "YOUR_PRICING_PRESENTED_STAGE_ID"
-          name: "Pricing Presented"
-          order: 2
-          stage_probability: 0.90
-
-        - id: "YOUR_CONTRACT_SENT_STAGE_ID"
-          name: "Contract Sent"
-          order: 3
-          stage_probability: 0.95
-
-        - id: "YOUR_RENEWAL_CLOSED_WON_STAGE_ID"
-          name: "Closed Won (Renewal)"
+          name: "Evaluation"
           order: 4
-          stage_probability: 1.0
-          is_won: true
-
-        - id: "YOUR_RENEWAL_CLOSED_LOST_STAGE_ID"
-          name: "Closed Lost (Renewal)"
+        - id: "contractsent"
+          name: "Proposal"
           order: 5
-          stage_probability: 0.0
+        - id: "closedwon"
+          name: "Closed Won"
+          order: 6
+          is_won: true
+        - id: "closedlost"
+          name: "Closed Lost"
+          order: 6
           is_lost: true
+      qualified_stage_order: 3
+      # First order value that counts as "qualified" — sales
+      # cycle clock starts here, win rate denominator requires
+      # this threshold to have been reached.
 
-# ============================================================================
-# LEGACY: Backward-compatible excluded_stages configuration
-# ============================================================================
-# This block is kept for backward compatibility during Phase A transition.
-# The new pipeline.pipelines[] shape above takes precedence when both exist.
-
-pipelines:
-  # Pipelines to include in active deal analysis
-  # Only deals in these pipelines will be analyzed nightly
-  included:
-    - name: "Sales Pipeline"
-      id: "default"
-
-  # Pipelines to exclude from active deal analysis
-  # Common: renewal pipelines, partner pipelines, marketing pipelines
-  excluded:
-    - name: "Renewal"
-      id: "YOUR_RENEWAL_PIPELINE_ID"
-
-# ============================================================================
-# DEAL STAGE FILTERING
-# ============================================================================
-# Stages to exclude from active deal analysis
-# Common exclusions: too early (meeting set), too late (closed), or disqualified
-
-excluded_stages:
-  # Early stages (pre-discovery)
-  meeting_set:
-    - name: "Meeting Set"
-      id: "YOUR_MEETING_SET_STAGE_ID"
-    # NOTE: appointmentscheduled is "Discovery" stage, NOT Meeting Set - do not exclude
-
-  # Disqualified deals
-  disqualified:
-    - name: "Disqualified"
-      id: "YOUR_DISQUALIFIED_STAGE_ID"
-
-  # Closed deals (excluded in active mode, included in history mode)
-  closed_won:
-    - name: "Closed won"
-      id: "closedwon"
-    - name: "Closed Won"
-      id: "YOUR_RENEWAL_CLOSED_WON_STAGE_ID"
-
-  closed_lost:
-    - name: "Closed lost"
-      id: "closedlost"
-    - name: "Closed Lost"
-      id: "YOUR_RENEWAL_CLOSED_LOST_STAGE_ID"
+    # Additional pipelines (self-serve, partner, renewal, etc.)
+    # get their own stage list and their own
+    # qualified_stage_order — order values are NOT comparable
+    # across pipelines.
+    #
+    # - id: "YOUR_RENEWAL_PIPELINE_ID"
+    #   name: "Renewal Pipeline"
+    #   analyze: false   # excluded from active-deal analysis entirely
+    #   stages:
+    #     - id: "YOUR_RENEWAL_STAGE_ID"
+    #       name: "Renewal Stage"
+    #       order: 1
+    #     - id: "YOUR_RENEWAL_CLOSED_WON_ID"
+    #       name: "Renewal Closed Won"
+    #       order: 2
+    #       is_won: true
+    #     - id: "YOUR_RENEWAL_CLOSED_LOST_ID"
+    #       name: "Renewal Closed Lost"
+    #       order: 2
+    #       is_lost: true
+    #   qualified_stage_order: 1
 
 # ============================================================================
 # STAGE PROGRESSION REQUIREMENTS
@@ -356,8 +351,10 @@ etl:
 # To customize this for your organization:
 #
 # 1. Run scripts/discover_stages.py to get your HubSpot stage IDs
-# 2. Update pipelines.excluded with your renewal/partner pipelines
-# 3. Update excluded_stages with your organization's stage names and IDs
+# 2. Fill in pipeline.pipelines[] with your real stage IDs, order
+#    values, and is_won/is_lost/exclude_from_analysis/qualified_stage_order
+# 3. Add renewal/partner pipelines under pipeline.pipelines[] with
+#    analyze: false if they shouldn't be analyzed
 # 4. Adjust stage_progression thresholds based on your sales process
 # 5. Set evaluation_mode to "strict" for initial rollout
 # 6. Add custom deal_properties you want to include in analysis
