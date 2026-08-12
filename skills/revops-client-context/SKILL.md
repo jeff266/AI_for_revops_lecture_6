@@ -172,7 +172,7 @@ Value metrics:
 
 Deal value configuration:
 "Which HubSpot property holds a deal's value for reporting — a single
-field like amount, or a sum of components (e.g. New ARR + Expansion ARR)?
+field like amount, or a sum of components (the computed form, e.g. New ARR + Expansion ARR)?
 If components: what are the INTERNAL property names? (Labels and internal
 names differ; we'll verify against the properties API during stage discovery.)"
 
