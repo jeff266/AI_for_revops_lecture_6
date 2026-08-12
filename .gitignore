@@ -44,3 +44,15 @@ test_*.md
 
 # Data files (historical ETL artifacts)
 data/*.csv
+
+# Agent memory and output (contains customer data)
+memory/calls/*
+memory/deals/*
+memory/learnings/*
+memory/diffs/*
+memory/token_usage/*
+memory/versions/*
+memory/rubric_observations/*
+output/*
+scripts/analytics/*.csv
+!**/.gitkeep
