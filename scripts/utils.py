@@ -164,6 +164,24 @@ def is_lost_stage(stage_id: str, pipeline_id: str = None,
     return False
 
 
+def is_excluded_from_progression(stage_id: str, pipeline_id: str = None,
+                                  config: dict = None) -> bool:
+    """
+    Check if a stage should be excluded from highest_stage_order_reached ranking.
+
+    Administrative or terminal-adjacent stages (like Disqualified, Review) should
+    not participate in high-water-mark progression or they can outrank won deals
+    and pollute the win-rate denominator.
+
+    Returns True if the stage has exclude_from_progression: true in config.
+    """
+    p = get_pipeline_config(pipeline_id, config)
+    for s in p.get('stages', []):
+        if s['id'] == stage_id:
+            return bool(s.get('exclude_from_progression'))
+    return False
+
+
 def get_segment(employee_count: int or None, config: dict = None) -> tuple:
     """
     Return (segment_name, expected_cycle_days) for an employee count.

@@ -119,8 +119,21 @@ def main():
         print("# and analyze: are business decisions this tool cannot make.")
         print()
         print("pipeline:")
-        print("  value_field: amount  # ← change if a different property holds deal value")
+        print("  value_field: amount")
+        print("  # ← If one property holds deal value, name it here.")
+        print("  # If value is a SUM of properties (e.g. New ARR + Expansion ARR),")
+        print("  # use the computed form instead:")
+        print("  # value_field:")
+        print("  #   type: computed")
+        print('  #   components: ["new_revenue", "expansion_revenue"]')
+        print("  # IMPORTANT: use HubSpot INTERNAL names, not labels.")
+        print("  # 'New ARR' in the UI may be 'new_revenue' internally.")
+        print("  # List internal names: GET /crm/v3/properties/deals")
         print("  lost_reason_field: closed_lost_reason  # ← verify this is your org's real property")
+        print("  # win_rate_qualified_field: sao  # ← optional: boolean field like SAO")
+        print("  # (Sales Accepted Opportunity). If set, win rate uses this as the")
+        print("  # denominator instead of stage-order-based qualification. Omit if")
+        print("  # you use stage progression to define qualified opportunities.")
         print("  pipelines:")
 
         for p_idx, pipeline in enumerate(pipelines):
@@ -159,8 +172,29 @@ def main():
                 if is_disqualified_like:
                     print('          is_lost: true               # HINT: label contains "disqualified"')
                     print('          exclude_from_analysis: true  # REQUIRED together — see RULE below')
+                    print('          exclude_from_progression: true  # HINT: administrative stage —')
+                    print('          # excluded from highest-stage-reached ranking so it can\'t')
+                    print('          # inflate the win-rate denominator.')
                 elif is_meeting_set_like:
                     print('          exclude_from_analysis: true  # HINT: label contains "meeting set"')
+
+                # Emit stage_probability for non-terminal stages
+                if not (is_closed_won or is_closed_lost):
+                    prob_str = metadata.get('probability')
+                    if prob_str:
+                        try:
+                            prob_val = float(prob_str)
+                            print(f'          stage_probability: {prob_val:.2f}  # HINT: HubSpot\'s own stage')
+                            print('          # probability. Used by the stage-weighted forecast.')
+                            print('          # Replace with your team\'s real historical conversion')
+                            print('          # rates if you have them — HubSpot defaults are often')
+                            print('          # never calibrated.')
+                        except (ValueError, TypeError):
+                            print('          stage_probability: null  # HINT: metadata missing —')
+                            print('          # stage-weighted forecast needs a value here.')
+                    else:
+                        print('          stage_probability: null  # HINT: metadata missing —')
+                        print('          # stage-weighted forecast needs a value here.')
 
             print('      qualified_stage_order: 0  # ← FILL IN: first order value that counts as "qualified"')
             print()

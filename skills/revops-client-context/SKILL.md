@@ -35,6 +35,10 @@ Ask one at a time:
 9. "How do you segment deals by company size? (e.g., SMB ≤500 employees,
    Mid-Market 501-2500, Enterprise 2501+). Include the typical sales
    cycle length for each segment in days."
+10. "When does your fiscal year start? (month 1-12; answer 1 if you use
+    the calendar year). This drives quarter boundaries for forecasting
+    and the pulled-in/pushed-out waterfall categories — getting it wrong
+    silently misplaces every quarter."
 
 Push back on vague answers. Ask for real examples.
 
@@ -166,18 +170,51 @@ Feature gaps — for each:
 Value metrics:
 "What quantifiable outcomes do champions use for the business case?"
 
+Deal value configuration:
+"Which HubSpot property holds a deal's value for reporting — a single
+field like amount, or a sum of components (e.g. New ARR + Expansion ARR)?
+If components: what are the INTERNAL property names? (Labels and internal
+names differ; we'll verify against the properties API during stage discovery.)"
+
+Win-rate qualification field:
+"Do you have a boolean qualification field like SAO (Sales Accepted
+Opportunity)? If yes, win rate uses it as the denominator instead of
+stage progression — give the internal property name."
+
 ## Phase 6 — HubSpot stage configuration
 
 Tell the user to run: python scripts/discover_stages.py
 Ask them to paste the output.
 
-Parse it and identify stages to EXCLUDE:
-- Meeting Set equivalents (too early)
-- Closed Won stages
-- Closed Lost stages
-- Renewal pipeline stages
+The script prints a SUGGESTED pipeline: block with HINT annotations.
+Walk through confirming each configuration element:
 
-Show proposed exclusion list and confirm.
+1. "The suggested order values match HubSpot's displayOrder (0-based).
+   Keep them as-is unless your portal has a specific reason to renumber."
+
+2. "Which stage order counts as 'a real opportunity'? This is your
+   qualified_stage_order — drives win rate denominator, cycle time
+   start point, and waterfall qualification filter. Usually the first
+   stage after Discovery/Scoping where a deal has been validated."
+
+3. "Confirm is_won and is_lost flags on terminal stages. For
+   Disqualified-type stages that should be excluded from analysis,
+   add BOTH is_lost: true AND exclude_from_analysis: true."
+
+4. "Any administrative or terminal-adjacent stages that shouldn't
+   count toward highest_stage_order_reached? Mark those with
+   exclude_from_progression: true to prevent them from inflating
+   the win-rate denominator."
+
+5. "For renewal/partner pipelines: set analyze: false to exclude
+   from deal analysis (but still track in analytics)."
+
+6. "Review stage_probability values from HubSpot (shown in HINTs).
+   These drive the stage-weighted forecast — replace with your
+   team's actual conversion rates if you have them."
+
+Show the full confirmed pipeline: block and ask for approval
+before writing to config/client.yaml.
 
 ## Phase 7 — Learning preferences
 
@@ -206,7 +243,7 @@ Write files directly — do not show as code blocks:
    - Placeholder stage IDs
    - call_tools.primary set to the adapter slug from Phase 2
      (fireflies, gong, or custom tool slug)
-   - fiscal.fy_start_month from Phase 1 (or 1 if not asked)
+   - fiscal.fy_start_month from Phase 1 question 10
    - segmentation.bands from Phase 1 question 9 (employee thresholds
      and expected_cycle_days for each segment)
 3. Write prompts/CLAUDE.md
@@ -250,7 +287,7 @@ Present each file as a labeled code block:
 Then show the deployment checklist:
 □ Copy all four files into your forked repo
 □ Run: python scripts/discover_stages.py
-□ Update excluded_stages in config/client.yaml
-  with your real HubSpot stage IDs
+□ Replace the placeholder pipeline: block in config/client.yaml
+  with the confirmed output of discover_stages.py
 □ git add config/ prompts/ && git commit -m "Add client context"
 □ git push

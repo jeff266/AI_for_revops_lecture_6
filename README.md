@@ -131,12 +131,17 @@ Sundays 3am UTC: GitHub Actions fires
 
 ---
 
-## Skills for Claude.ai
+## Skills for Claude.ai and Claude Code
 
-Once the agent is running, install these skills in Claude.ai
-for on-demand analysis:
+This repo includes two onboarding skills:
 
-- `skills/revops-agent-setup.skill` — credential setup wizard
-- `skills/revops-client-context.skill` — client context onboarding
+- `skills/revops-agent-setup/SKILL.md` — credential setup wizard
+- `skills/revops-client-context/SKILL.md` — client context onboarding
 
-Open each file in Claude.ai and click Save skill.
+**In Claude Code (desktop app):**
+The skills run automatically when you open a fresh fork (missing config files).
+Claude Code will proactively offer to guide you through setup.
+
+**In Claude.ai (web/mobile):**
+Copy the contents of each `SKILL.md` file into Claude.ai's custom skill creator.
+Once saved, trigger by saying "start client onboarding" or "set up credentials".

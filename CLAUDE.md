@@ -54,23 +54,55 @@ Also read and use these reference files during the interview:
 
 Run: python scripts/discover_stages.py
 
-Show the output. Help the student identify which stage IDs
-to add to excluded_stages in config/client.yaml.
-Update the file with their choices.
+Show the output. discover_stages.py prints a SUGGESTED pipeline:
+block with HINT annotations. Walk the student through confirming,
+for EACH pipeline:
+
+- order values (HubSpot displayOrder is 0-based — keep it 0-based,
+  do not renumber)
+- qualified_stage_order (which order counts as 'a real opportunity'
+  — drives win rate, cycle time, and the waterfall qualification filter)
+- is_won / is_lost flags (a Disqualified-type stage gets BOTH
+  is_lost: true AND exclude_from_analysis: true)
+- exclude_from_progression: true on administrative/terminal-adjacent
+  stages (prevents polluting win-rate denominator)
+- analyze: false on renewal/partner pipelines (excluded from deal
+  analysis, INCLUDED in analytics)
+- stage_probability per open stage (used by stage-weighted forecast)
+
+Then write the confirmed block into config/client.yaml.
 
 ### Step 4: Supabase setup
 
 Run: python scripts/setup_supabase.py
 
-If SUPABASE_URL is not yet set, remind them to add it to
-.env first and export it.
+Requires SUPABASE_DB_URL in the environment (collected in Step 1).
+The script executes each migration, VERIFIES a fingerprint object
+exists via a scoped read, and only then records it — if it reports
+a verification failure, paste the printed SQL into the Supabase
+SQL editor and re-run.
+
+After setup, audit any time with:
+  python scripts/setup_supabase.py --verify-all
 
 ### Step 5: Hand off
 
 Tell the student:
-"Add the GitHub Secrets from your .env file, then go to
-Actions → MEDDICC Agent Nightly Run → Run workflow
-to trigger the first run."
+"Add the GitHub Secrets from your .env file, then:
+
+1. Actions → MEDDICC Agent Nightly Run → Run workflow
+   (first deal analysis)
+2. Actions → Weekly Analytics → Run workflow
+   (first snapshot; runs itself every Sunday 3am UTC)
+
+Note: the waterfall needs TWO snapshots before it computes
+anything — its first run will correctly print 'insufficient
+snapshot history' and skip. That is expected, not an error.
+It comes alive on week two.
+
+Optional: 52+ weeks of historical waterfall can be reconstructed
+from HubSpot stage history — see the 'Historical Backfill' section
+of docs/data-schema.md."
 
 If config files already exist, skip setup and help with
 whatever the student needs.

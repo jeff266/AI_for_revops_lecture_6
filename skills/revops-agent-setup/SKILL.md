@@ -137,6 +137,22 @@ Validate: must start with https:// and end with .supabase.co
 Ask: "Paste your Supabase service_role key:"
 Validate: starts with eyJ
 
+Tell the user:
+"One more Supabase credential — the direct database connection string.
+This is DIFFERENT from the Project URL and is required to run schema migrations.
+
+Go to: Supabase dashboard → your project → Settings → Database → Connection string → URI tab.
+
+Copy the pooler URI (it contains .pooler.supabase.com) and replace [YOUR-PASSWORD]
+with your database password (set at project creation; also shown on that page).
+
+Note: the hostname is NOT db.<ref>.supabase.co — free-tier projects only resolve
+the pooler hostname."
+
+Ask: "Paste your Supabase connection string:"
+Validate: starts with postgresql:// and contains supabase.com
+Store as: SUPABASE_DB_URL
+
 ## Step 6 — GitHub repository
 
 Ask: "Enter your GitHub repo (owner/repo-name):"
@@ -165,6 +181,7 @@ GitHub Secrets — Environment: Agent
 □ HUBSPOT_API_KEY
 □ SUPABASE_URL
 □ SUPABASE_SERVICE_KEY
+□ SUPABASE_DB_URL
 □ ZAP_RESPONSE_URL          (blank if skipped)
 
 **If using Gong:**
@@ -178,6 +195,7 @@ GitHub Secrets — Environment: Agent
 □ HUBSPOT_API_KEY
 □ SUPABASE_URL
 □ SUPABASE_SERVICE_KEY
+□ SUPABASE_DB_URL
 □ ZAP_RESPONSE_URL          (blank if skipped)
 
 **If using a custom call tool:**
@@ -189,6 +207,8 @@ Fastest way to add them:
   gh secret set --env Agent --env-file .env
 
 Note: GITHUB_TOKEN and GITHUB_REPO are automatic — do not add them.
+
+SUPABASE_DB_URL is needed by anyone running setup_supabase.py or --verify-all locally.
 
 Tell the user: "Credentials done. Now run the context onboarding:
 say 'start client onboarding'"
