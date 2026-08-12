@@ -29,6 +29,9 @@ Create the next numbered file, e.g. `003_add_feature_flags.sql`, commit it to th
 | `008_add_enrichment_tables.sql` | Add `objections` and `feature_gaps` tables with scan timestamp columns on `calls` |
 | `009_add_enrichment_scans.sql` | Add `enrichment_scans` table as dedup ledger (supersedes scan timestamp columns) |
 | `010_drop_call_fk_constraints.sql` | Drop foreign key constraints from enrichment tables to support file-based cache extraction |
+| `011_add_waterfall_beginning_ending.sql` | Add beginning_value and ending_value columns to waterfall_weekly; add newly_qualified category |
+| `012_add_forecast_weekly.sql` | Add `forecast_weekly` table for stage-weighted and category-weighted forecasts |
+| `017_add_backfill_confidence.sql` | Add `backfill_confidence` column to deals_snapshot for historical replay quality tracking |
 
 ## 008–010 evolution note
 
