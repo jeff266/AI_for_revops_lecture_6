@@ -82,18 +82,8 @@ def main():
         print("   ✓ No unmapped stage IDs found")
     print()
 
-    # Verify expected stages are now configured
-    print("4. Verifying Phase C additions are in config...")
-    expected_in_config = ['24682892', '43449439']  # Added after Phase C
-    for stage_id in expected_in_config:
-        if stage_id in configured:
-            print(f"   ✓ {stage_id} is configured")
-        else:
-            print(f"   ⚠️  {stage_id} is MISSING from config")
-    print()
-
     # Report on configured stages
-    print("5. All configured stage IDs:")
+    print("4. All configured stage IDs:")
     for stage_id in sorted(configured):
         in_use = "✓" if stage_id in current else " "
         print(f"   {in_use} {stage_id}")
