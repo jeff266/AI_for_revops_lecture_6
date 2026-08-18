@@ -171,24 +171,41 @@ def test_config_driven_stage_requirements():
         print(f"  ✓ Correct: terminal stage has no requirements")
         print()
 
-        # Test 6: Verify with actual production stage IDs (should still work)
-        print("[TEST 6] Works with actual production stage IDs")
+        # Test 6: Verify with actual config stage IDs (works for any config)
+        print("[TEST 6] Works with actual config stage IDs")
 
         # Restore real config
         stage_requirements._load_config = original_load_config
         stage_requirements._config_cache = None
         stage_requirements._stage_lookup_cache = None
 
-        # Test with real GrowthBook stage ID
-        real_reqs = stage_requirements.get_requirements_for_stage("qualifiedtobuy")
+        # Get first non-excluded stage from actual config
+        # (works for both template and production configs)
+        config = stage_requirements._load_config()
+        first_stage_id = None
+        first_stage_order = None
 
-        # qualifiedtobuy is order 2 in GrowthBook (Scoping)
-        # Should map to scoping_to_proposal
-        assert "metrics" in real_reqs, "Real config: Scoping should require metrics"
-        assert real_reqs["metrics"] == 6, "Real config: Metrics should be 6"
+        for pipeline in config.get("pipeline", {}).get("pipelines", []):
+            if pipeline.get("analyze") is False:
+                continue
+            for stage in sorted(pipeline.get("stages", []), key=lambda s: s.get("order", 999)):
+                if not stage.get("exclude_from_analysis") and not stage.get("is_won") and not stage.get("is_lost"):
+                    first_stage_id = stage.get("id")
+                    first_stage_order = stage.get("order")
+                    break
+            if first_stage_id:
+                break
 
-        print(f"  ✓ qualifiedtobuy (real GrowthBook ID) → {real_reqs}")
-        print(f"  ✓ Correct: maps based on order, not hardcoded ID")
+        assert first_stage_id, "No valid stage found in config"
+
+        first_reqs = stage_requirements.get_requirements_for_stage(first_stage_id)
+
+        # First non-excluded stage should map to first progression entry (discovery_to_scoping)
+        assert "pain" in first_reqs or "champion" in first_reqs, \
+            f"First stage should have discovery requirements, got {first_reqs}"
+
+        print(f"  ✓ {first_stage_id} (order {first_stage_order}) → {first_reqs}")
+        print(f"  ✓ Correct: maps based on order from config, not hardcoded ID")
         print()
 
         print("="*80)
