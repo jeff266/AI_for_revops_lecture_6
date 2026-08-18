@@ -7,7 +7,11 @@ dispatches to handlers, sends answer to Zapier (Slack reply).
 Zapier Zap 1 (in):
   Trigger: New message in #revops-intel channel
   Action: POST https://<railway-url>/slack/question
-  Body: {text, user_id, channel_id, thread_ts, ts}
+  Body: {text, user_id, channel_id, thread_ts, ts, secret}
+  Headers: X-Relay-Secret: <SLACK_RELAY_SECRET> (alternative to body.secret)
+
+  The shared secret (SLACK_RELAY_SECRET env var) authenticates the
+  Zapier → Railway relay. Send in X-Relay-Secret header OR body.secret field.
 
 Zapier Zap 2 (out):
   Trigger: Catch Hook at https://<railway-url>/zap/reply-url
@@ -19,6 +23,7 @@ import os
 import json
 import asyncio
 import logging
+import hmac
 from fastapi import FastAPI, Request, BackgroundTasks
 from fastapi.responses import JSONResponse
 import httpx
@@ -31,6 +36,14 @@ ZAP_REPLY_URL = os.environ.get("ZAP_REPLY_URL", "")
 # The Zapier catch hook URL for Zap 2 — stored as Railway
 # env var, never in code.
 
+SLACK_RELAY_SECRET = os.environ.get("SLACK_RELAY_SECRET", "")
+# Shared secret to authenticate the Zapier → Railway relay.
+# Zapier must send this in X-Relay-Secret header or payload.secret field.
+
+# Warn once at startup if relay secret is not set
+if not SLACK_RELAY_SECRET:
+    logger.warning("[SECURITY] SLACK_RELAY_SECRET not set — /slack/question is unauthenticated")
+
 @app.post("/slack/question")
 async def receive_question(request: Request,
                            background: BackgroundTasks):
@@ -38,8 +51,24 @@ async def receive_question(request: Request,
     Zapier Zap 1 posts here. Responds within 3 seconds
     with an ack so Zapier doesn't time out. The real
     answer is sent asynchronously via ZAP_REPLY_URL.
+
+    Requires SLACK_RELAY_SECRET to authenticate the Zapier relay.
+    Secret can be sent in X-Relay-Secret header or payload.secret field.
     """
     payload = await request.json()
+
+    # Authenticate the Zapier → Railway relay
+    # Accept secret from header or payload, fail closed only when configured
+    if SLACK_RELAY_SECRET:
+        provided_secret = (
+            request.headers.get("X-Relay-Secret") or
+            payload.get("secret") or
+            ""
+        )
+        if not hmac.compare_digest(SLACK_RELAY_SECRET, provided_secret):
+            logger.warning("[AUTH] /slack/question rejected: invalid or missing secret")
+            return JSONResponse({"error": "unauthorized"}, status_code=401)
+
     text      = (payload.get("text") or "").strip()
     user_id   = payload.get("user_id", "")
     channel   = payload.get("channel_id", "")
@@ -122,7 +151,9 @@ async def refresh_schema(request: Request):
     from api.schema_context import invalidate_cache
     payload = await request.json()
     # Require a shared secret to prevent abuse
-    if payload.get("secret") != os.environ.get("ADMIN_SECRET"):
+    admin_secret = os.environ.get("ADMIN_SECRET", "")
+    provided_secret = payload.get("secret", "")
+    if not admin_secret or not hmac.compare_digest(admin_secret, provided_secret):
         return JSONResponse({"error": "unauthorized"}, status_code=401)
     invalidate_cache()
     return JSONResponse({"ok": True,

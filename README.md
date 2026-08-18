@@ -254,16 +254,18 @@ Only needed if you want the Slack Q&A layer.
 3. In Zapier, build two Zaps:
    - **Inbound:** Slack trigger (message / mention) → POST to your
      Railway `/slack/question` with the message text, user, channel,
-     and thread_ts.
+     thread_ts, AND the shared secret (either in body as `secret` field
+     or as `X-Relay-Secret` header). Set this to match `SLACK_RELAY_SECRET`.
    - **Outbound:** Catch hook that receives the agent's reply and posts
      it back to the Slack thread. Put that catch hook's URL in
      `ZAP_REPLY_URL`.
 4. Message the bot in Slack and confirm you get a threaded reply.
 
-> **Security note:** the Zapier catch-hook URL is an unauthenticated
-> write path into your Slack replies. Treat it as a secret, and
-> validate the Slack signing secret on the inbound Zap so the endpoint
-> can't be replayed by a third party.
+> **Security note:** the `/slack/question` endpoint is protected by
+> `SLACK_RELAY_SECRET` (shared secret authenticating Zapier → Railway).
+> The Zapier catch-hook URL (`ZAP_REPLY_URL`) is an unauthenticated write
+> path into your Slack replies — treat it as a secret. The inbound endpoint
+> uses timing-safe comparison (`hmac.compare_digest`) to prevent timing attacks.
 
 ---
 
@@ -281,6 +283,7 @@ Only needed if you want the Slack Q&A layer.
 | `APOLLO_API_KEY` | enrichment | Participant enrichment (optional) |
 | `GITHUB_TOKEN` / `GITHUB_REPO` | nightly | Automatic in Actions |
 | `ZAP_REPLY_URL` | Slack agent | Zapier catch hook for replies |
+| `SLACK_RELAY_SECRET` | Slack agent | Authenticates Zapier → Railway relay (optional but recommended) |
 | `ADMIN_SECRET` | Slack agent | Guards `/admin/refresh-schema` |
 
 ---
