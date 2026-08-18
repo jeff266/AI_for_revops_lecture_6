@@ -800,10 +800,11 @@ async def query_competitive_intel(params: dict, sb) -> dict:
         COMPETITION_VOCAB["build_vs_buy"] +
         COMPETITION_VOCAB["competitors"])
 
-    # Internal calls (e.g. GrowthBook dogfooding/demo calls) get
+    # Internal calls (e.g. your own company's demo/testing calls) get
     # ingested by the same enrichment pipeline — exclude them so
     # they don't read as external competitive signal.
-    INTERNAL_COMPANIES = {"growthbook", "growth book"}
+    # TODO: Configure your company name in config/client.yaml
+    INTERNAL_COMPANIES = set()  # e.g. {"your_company", "yourco"}
 
     # 1. Competitor mentions in feature_gaps (most structured data)
     comp_gaps = [r for r in select_all(sb, "feature_gaps",
@@ -844,9 +845,9 @@ async def query_competitive_intel(params: dict, sb) -> dict:
                            if (r.get("company_name") or "").lower()
                            not in INTERNAL_COMPANIES]
 
-    # Self-hosting / on-prem mentions are a GrowthBook deployment
-    # option, not a build-vs-buy competitive signal — surface them
-    # separately so they don't get counted as competitive objections.
+    # Self-hosting / on-prem mentions may be a deployment
+    # option discussion, not a build-vs-buy competitive signal — surface
+    # them separately so they don't get counted as competitive objections.
     self_host_signals = [
         obj for obj in all_objections
         if any(t.lower() in
@@ -876,7 +877,7 @@ async def query_competitive_intel(params: dict, sb) -> dict:
         "search_vocab_used": vocab[:5],
         "self_host_signals": self_host_signals,
         "self_host_note": (
-            "Self-hosting mentions are GrowthBook deployment "
+            "Self-hosting mentions may be deployment preference "
             "discussions, not build-vs-buy objections."
         ) if self_host_signals else None,
         "period": tw["label"],
