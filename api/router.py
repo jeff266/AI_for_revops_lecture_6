@@ -93,6 +93,74 @@ def build_entity_hint(entities: dict) -> str:
             f"these specific entities from the prior answer: "
             f"{'; '.join(parts)}")
 
+def stated_entity_count(question: str) -> int | None:
+    """
+    Extract explicit count the user states about a referenced entity set.
+
+    Returns the integer count when the question clearly quantifies the set
+    (e.g., "the 10 deals", "those 3", "all 5 of them", "these two").
+    Returns None if no count is stated or if numbers appear incidentally
+    (e.g., "deals closing in Q3", "$2M pipeline").
+
+    Examples:
+        "what are the stages for the 10 deals you flagged?" → 10
+        "show me those 3" → 3
+        "all 5 of them" → 5
+        "these two deals" → 2
+        "the one you mentioned" → 1
+        "deals closing in Q3" → None (incidental)
+        "show me $2M pipeline" → None (dollar amount)
+        "which deals?" → None (no count)
+    """
+    import re
+
+    # Normalize to lowercase for matching
+    q = question.lower()
+
+    # Number words mapping (zero through twenty)
+    number_words = {
+        "zero": 0, "one": 1, "two": 2, "three": 3, "four": 4,
+        "five": 5, "six": 6, "seven": 7, "eight": 8, "nine": 9,
+        "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
+        "fourteen": 14, "fifteen": 15, "sixteen": 16, "seventeen": 17,
+        "eighteen": 18, "nineteen": 19, "twenty": 20,
+    }
+
+    # Patterns that indicate explicit quantification of a referenced set
+    # "the N deals/companies", "those N", "all N of", "these N", "the one"
+    patterns = [
+        r'\bthe\s+(\d+)\s+(?:deal|company|companies)',
+        r'\bthose\s+(\d+)\b',
+        r'\ball\s+(\d+)\s+of\b',
+        r'\bthese\s+(\d+)\b',
+        r'\bthat\s+(\d+)\b',
+        r'\bthe\s+one\b',  # Special case for "the one"
+        r'\bthose\s+(' + '|'.join(number_words.keys()) + r')\b',
+        r'\bthe\s+(' + '|'.join(number_words.keys()) + r')\s+(?:deal|company|companies)',
+        r'\ball\s+(' + '|'.join(number_words.keys()) + r')\s+of\b',
+        r'\bthese\s+(' + '|'.join(number_words.keys()) + r')\b',
+        r'\bthat\s+(' + '|'.join(number_words.keys()) + r')\b',
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, q)
+        if match:
+            # Special case: "the one" has no capture group
+            if pattern == r'\bthe\s+one\b':
+                return 1
+            count_str = match.group(1)
+            # Check if it's a number word
+            if count_str in number_words:
+                return number_words[count_str]
+            # Otherwise it's a digit string
+            try:
+                return int(count_str)
+            except ValueError:
+                continue
+
+    return None
+
+
 def should_use_entity_scope(question: str, prior_entities: dict) -> bool:
     """
     Decide whether to bypass discovery and query directly
@@ -126,6 +194,17 @@ def should_use_entity_scope(question: str, prior_entities: dict) -> bool:
     q_lower = question.lower()
     if any(sig in q_lower for sig in NEW_DISCOVERY_SIGNALS):
         return False
+
+    # Check cardinality: if user states a count that doesn't match
+    # the prior entity set size, force rediscovery
+    stated_count = stated_entity_count(question)
+    if stated_count is not None:
+        actual_count = len(prior_entities.get("deal_ids", []))
+        if stated_count != actual_count:
+            logger.info(f"[ENTITY_SCOPE] stated count {stated_count} != "
+                       f"scope size {actual_count}, forcing rediscovery")
+            return False
+
     return True
 
 def classify_entity_scope_handler(question: str, entity_context: str, client) -> str | None:
