@@ -37,17 +37,62 @@ NOTE ON REAL CACHE DATA:
 """
 
 import json
+import yaml
+from pathlib import Path
 
 INTENT_PROSPECT     = "prospect"
 INTENT_SALES_REVIEW = "sales_review"
 INTENT_SKIP         = "skip"
 
-INTERNAL_DOMAIN = "growthbook.io"  # keep for email checks
+
+def _load_internal_identity():
+    """
+    Load internal identity from config/client.yaml organization block.
+
+    Returns:
+        (internal_domains, internal_company_tokens): tuple of tuples
+        - internal_domains: email domains to identify internal participants
+        - internal_company_tokens: company name tokens for internal company matching
+
+    Defaults to empty tuples if config missing or keys not present.
+    """
+    try:
+        config_path = Path(__file__).parent.parent.parent / "config" / "client.yaml"
+        with open(config_path) as f:
+            config = yaml.safe_load(f)
+
+        org = config.get("organization", {})
+
+        # Get internal domains (list in config)
+        domains_list = org.get("internal_domains", [])
+        internal_domains = tuple(d.lower() for d in domains_list if d)
+
+        # Get internal company tokens (optional in config)
+        # If not present, derive from organization name
+        if "internal_company_tokens" in org:
+            tokens_list = org.get("internal_company_tokens", [])
+            internal_company_tokens = tuple(t.lower() for t in tokens_list if t)
+        else:
+            # Derive from organization name
+            org_name = org.get("name", "")
+            if org_name and org_name != "YOUR_ORGANIZATION_NAME":
+                internal_company_tokens = (org_name.lower(),)
+            else:
+                internal_company_tokens = ()
+
+        return internal_domains, internal_company_tokens
+
+    except Exception:
+        # Missing config or parse error — default to empty
+        return (), ()
+
+
+# Load internal identity from config
 # Company *names* never carry the domain suffix — the cache stores
-# "GrowthBook", "GrowthBook AI", "EA + GrowthBook". Matching those
+# "YourCo", "YourCo AI", "EA + YourCo". Matching those
 # against the domain string reads them as external, so name checks
 # use these tokens instead.
-INTERNAL_COMPANY_TOKENS = ("growthbook", "growth book")
+INTERNAL_DOMAINS, INTERNAL_COMPANY_TOKENS = _load_internal_identity()
 
 # Keywords that strongly signal sales review intent
 SALES_REVIEW_KEYWORDS = [
@@ -107,13 +152,13 @@ Respond with JSON only:
 
 def _is_internal_company(company: str) -> bool:
     """
-    True when a company name refers to GrowthBook and nothing else.
+    True when a company name refers to your own company and nothing else.
 
     Cache company names pair both sides of the call — "Acorns +
-    GrowthBook", "GrowthBook <> ECCO" — so a bare substring test for
-    "growthbook" marks every prospect internal. slugify() strips the
-    GrowthBook half and returns '' only when nothing else remains
-    ("GrowthBook", "GrowthBook AI", "EA + GrowthBook"), which is
+    YourCo", "YourCo <> ECCO" — so a bare substring test for
+    "yourco" marks every prospect internal. slugify() strips the
+    YourCo half and returns '' only when nothing else remains
+    ("YourCo", "YourCo AI", "EA + YourCo"), which is
     exactly the internal set.
     """
     if not company:
@@ -146,18 +191,21 @@ def _participant_emails(participants) -> list:
 
 def _all_internal(participants) -> bool:
     """
-    True only if every participant with a known email is on the
+    True only if every participant with a known email is on an
     internal domain.
 
     Returns False when no email data exists (including the integer
     participant counts the call cache actually stores) — "unknown"
     must never be mistaken for "all internal", and this must never
-    raise on a non-list input.
+    raise on a non-list input. Also returns False when no internal
+    domains are configured.
     """
+    if not INTERNAL_DOMAINS:
+        return False
     emails = _participant_emails(participants)
     if not emails:
         return False
-    return all(INTERNAL_DOMAIN in e for e in emails)
+    return all(any(dom in e for dom in INTERNAL_DOMAINS) for e in emails)
 
 
 def _keyword_classify(title: str,
