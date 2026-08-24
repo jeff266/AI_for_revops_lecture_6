@@ -1,13 +1,28 @@
-# Data Schema — the 5-table Supabase contract
+# Data Schema — Supabase storage contract
 
 This schema is the API between repos. The nightly agent writes; the CRO
 agent reads; ETL can be replaced by Fivetran/Airbyte and storage by
 Snowflake as long as this contract holds.
 
-The tables below are defined by the migrations in
-`scripts/migrations/` — `001_initial_schema.sql`,
-`002_add_deal_history.sql`, and `003_add_component_scores.sql`. Run them
-with `scripts/setup_supabase.py`.
+## Storage vs. CRM Split
+
+**Supabase (this doc):** Methodology-agnostic JSONB storage for history/queries
+**HubSpot (via CRM adapter):** Individual properties for filters/workflows/UI
+
+The progressive scorer writes to BOTH layers:
+- Supabase `call_scores` table (per-call JSONB)
+- HubSpot deal properties (rollup via CRM adapter)
+
+## Migrations
+
+Tables defined by migrations in `scripts/migrations/`:
+- `001_initial_schema.sql` - deals, calls, analyses base tables
+- `002_add_deal_history.sql` - deal_status, days_to_close
+- `003_add_component_scores.sql` - analyses.component_scores JSONB
+- `041_create_call_transcripts.sql` - call_transcripts table (Phase 4)
+- `043_add_call_scores.sql` - call_scores table for progressive scoring (Phase 4)
+
+Run with `scripts/setup_supabase.py`.
 
 ---
 
@@ -298,3 +313,51 @@ Populated by `scripts/enrichment/*.py`, which read call summaries from `memory/c
 Scans are filtered to cache files whose slug matches a company with at least one deal, so a scanned call always has a possible deal association. `deal_id` is populated best-effort: when the company has exactly one deal, or exactly one deal whose lifetime covers the call date. Otherwise NULL — meaning genuine multi-deal ambiguity, not missing data. Rows are always anchored to `company_name`, which is taken from the matched deal (HubSpot-sourced), not from the cache file's title-derived field.
 
 `enrichment_scans` is the dedup ledger (PK: call_id + job). A row with items_found = 0 means "scanned, found nothing" — distinct from never scanned.
+
+---
+
+## `call_scores` (Phase 4 - Progressive Scoring)
+
+Per-call MEDDICC scores. One row per call, scored once at ingest. Deal
+scores roll up as most-recent-non-null per component.
+
+**Written by:** `scripts/call_scorer.py` (progressive per-call scorer)  
+**Read by:** `scripts/rollup_deal_scores.py` (deal-level rollup)
+
+| Column | Type | Notes |
+|---|---|---|
+| `call_id` | TEXT | Primary key, FK → `calls(call_id)` |
+| `deal_id` | TEXT | Nullable until `resolve_calls.py` links it |
+| `call_date` | DATE | Ordering key for rollup |
+| `component_scores` | JSONB | `{component_key: score}`, NULL = call silent on component |
+| `evidence` | JSONB | `{component_key: evidence_text}` for non-null scores |
+| `text_source` | TEXT | `transcript` or `summary` |
+| `model` | TEXT | e.g. `claude-sonnet-4-6` |
+| `scorer_version` | TEXT | Bump to invalidate stale rows on re-backfill |
+| `scored_at` | TIMESTAMPTZ | Default NOW() |
+
+**CRITICAL: JSONB, not fixed columns.** GrowthBook's migration 043 had
+`metrics_score`, `economic_buyer_score`, etc. (7 fixed columns) which
+defeats methodology switching. Template uses `component_scores JSONB` so
+MEDDPICC gets `{"paper_process": 7, ...}` with zero schema changes.
+
+**Null semantics:** A null score means "this call said nothing about this
+component" — never zero, never a guess. Every non-null score carries
+evidence; nulls carry none.
+
+---
+
+## `call_transcripts` (Phase 4)
+
+Full call transcripts for signal extraction (objections, feature gaps).
+
+**Written by:** `scripts/transcript_store.py`  
+**Read by:** Signal extraction jobs (objections vault, feature gap backlog)
+
+| Column | Type | Notes |
+|---|---|---|
+| `call_id` | TEXT | Primary key, FK → `calls(call_id)` |
+| `transcript_text` | TEXT | Full transcript |
+| `source` | TEXT | `fireflies`, `gong`, `apollo`, etc. |
+| `fetched_at` | TIMESTAMPTZ | Default NOW() |
+

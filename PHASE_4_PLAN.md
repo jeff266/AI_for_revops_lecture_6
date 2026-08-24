@@ -175,18 +175,36 @@ For `COMPONENT_DESCRIPTIONS` in context_builder.py: Keep the dict (it's universa
 
 ## CRM Adapter Decision
 
-**Port HubSpot-direct for this pass.**
+**Port through the CRM adapter (`adapters/crm/hubspot.py`).**
 
-The template has `scripts/adapters/crm/base.py` (36 lines) + `hubspot.py` (633 lines), but GrowthBook's session work bypasses it and calls HubSpot APIs directly. Routing through the adapter now buys an abstraction nothing has tested.
+The template already has production files using the adapter: `discover_stages.py`, `run_nightly.py`, and others import `HubSpotDealsClient`. Porting HubSpot-direct would introduce a second pattern into a repo with a working one — exactly the drift Phases 1-3 exist to prevent.
 
-**Action:**
-- Port GrowthBook's HubSpot-direct code as-is
-- **Document each place** that should eventually route through `adapters/crm/hubspot.py`
-- Mark with `# TODO: Route through CRM adapter (base.py interface)`
-- Don't refactor during the port — defer to a follow-up pass
+The interface already fits: `write_analysis(deal_id, scores, ...)` takes scores with "one <component_key>_score per configured component" (lines 416-428), which is methodology-aware and consistent with `get_components()`.
 
-**Future Work Note in README:**
-> The CRM adapter interface (`scripts/adapters/crm/base.py`) is unproven. Current code calls HubSpot APIs directly. A future pass can route through the adapter to enable Salesforce support, but porting now via an untested abstraction adds risk without validated benefit.
+**Two-Layer Storage Pattern (CRM + Storage):**
+
+1. **CRM writes (HubSpot):** Individual deal properties
+   - `meddicc_champion_score`, `meddicc_economic_buyer_score`, etc.
+   - Real HubSpot custom fields (one per component)
+   - Written via `HubSpotDealsClient.write_analysis()`
+   - Lines 444-447: Checks `if 'Champion' in components` before writing
+
+2. **Storage writes (Supabase):** JSONB aggregates
+   - `analyses.component_scores` JSONB: `{component_key: score}`
+   - `call_scores.component_scores` JSONB: `{component_key: score}` (Phase 4a)
+   - `call_scores.evidence` JSONB: `{component_key: evidence_text}` (Phase 4a)
+   - Written via `SupabaseWriter.insert_analysis()` and new `write_call_scores()`
+   - Lives in `adapters/storage/supabase.py`, NOT the CRM adapter
+
+**Why this split:**
+- HubSpot needs real properties for filters, workflows, UI (CRM layer)
+- Supabase stores methodology-agnostic history for queries (storage layer)
+- Progressive scorer writes to BOTH: HubSpot deal rollup + Supabase call_scores
+
+**Action for Phase 4:**
+- All HubSpot operations route through `HubSpotDealsClient`
+- All Supabase operations route through `SupabaseWriter`
+- Add `write_call_scores()` method to `adapters/storage/supabase.py` for progressive scoring
 
 ---
 
@@ -200,7 +218,7 @@ The template has `scripts/adapters/crm/base.py` (36 lines) + `hubspot.py` (633 l
 
 4. **Component descriptions are universal** - `context_builder.py`'s `COMPONENT_DESCRIPTIONS` dict covers all methodologies. Keep it, iterate over `get_components()` to filter.
 
-5. **CRM adapter is future work** - Port HubSpot-direct, document adapter touchpoints, don't refactor now.
+5. **Two-layer storage** - CRM writes (individual HubSpot properties) + Storage writes (JSONB in Supabase). Both layers required, different purposes.
 
 ---
 
