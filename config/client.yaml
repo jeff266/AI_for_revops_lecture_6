@@ -212,8 +212,28 @@ pipeline:
 # ============================================================================
 # STAGE PROGRESSION REQUIREMENTS
 # ============================================================================
-# Minimum MEDDICC component scores required to advance between stages
-# Used by evaluator to validate stage recommendations
+# Minimum component scores required to advance between stages.
+# Used by evaluator to validate stage recommendations.
+#
+# THESE ARE UNVALIDATED DEFAULTS. The threshold numbers below are judgment,
+# not derived from your win/loss data. Once you have 30+ closed deals, the
+# advisory engine can propose stage gates calibrated to your actual outcomes
+# (e.g., "deals with champion >= 7 at proposal win at 80%; those with
+# champion < 5 win at 12%"). Until then, these defaults provide a starting
+# rubric. Tuning them incorrectly makes the evaluator either too permissive
+# (accepts weak analyses) or too strict (rejects valid progression).
+#
+# VARIABLE TRANSITIONS: The set below assumes four open stages (discovery,
+# scoping, proposal, negotiating). A pipeline with three or five stages
+# needs a matching set of transitions. Onboarding (Phase 5) must generate
+# the correct number of transition keys based on the client's actual pipeline
+# structure, not assume four. The config tolerates fewer or more.
+#
+# Component keys (identified_pain, champion, etc.) come from component_key()
+# in utils.py, driven by the sales_methodology setting. MEDDPICC clients add
+# paper_process; SPICED clients use entirely different keys (situation, pain,
+# impact, critical_event, decision). The transition names (discovery_to_scoping)
+# are methodology-agnostic and driven by stage bucket semantics.
 
 stage_progression:
   discovery_to_scoping:
@@ -228,16 +248,14 @@ stage_progression:
     decision_criteria: 5
 
   proposal_to_negotiating:
-    # All components must meet minimum
     all_components_minimum: 6
     decision_process: 7
     competition: 6
 
   negotiating_to_closed_won:
-    # All components must be strong
     all_components_minimum: 8
     decision_process: 7
-    # If using MEDDPICC:
+    # If using MEDDPICC, add:
     # paper_process: 7
 
 # ============================================================================
