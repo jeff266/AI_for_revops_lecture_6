@@ -38,6 +38,10 @@ Thumbs.db
 .env
 .env.local
 
+# Secret protection
+.forbidden_names
+.secrets.baseline
+
 # Test outputs
 test_*.json
 test_*.md

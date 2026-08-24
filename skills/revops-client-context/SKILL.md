@@ -192,9 +192,21 @@ First, ask about pipeline structure:
 Proposal, Negotiating."
 
 Store the answer. Count the stages. This determines how many stage_progression
-transitions to generate (N stages = N-1 transitions). A three-stage pipeline
-needs discovery_to_scoping and scoping_to_proposal only. Five stages need
-four transitions.
+transitions to generate.
+
+CRITICAL RULE: N open stages = N transitions (last transition is always to
+a terminal state).
+
+Examples:
+- 3 open stages → 3 transitions: discovery_to_scoping, scoping_to_proposal,
+  proposal_to_closed_won
+- 4 open stages → 4 transitions: discovery_to_scoping, scoping_to_proposal,
+  proposal_to_negotiating, negotiating_to_closed_won
+- 5 open stages → 5 transitions (including final_stage_to_closed_won)
+
+The final transition (e.g., negotiating_to_closed_won) sets the requirements
+to win the deal. Without it, the final gate is missing and stage_requirements.py
+breaks (see lines 102-127 for the mapping logic).
 
 Then tell the user to run: python scripts/discover_stages.py
 Ask them to paste the output.
@@ -277,9 +289,10 @@ Write files directly — do not show as code blocks:
    - fiscal.fy_start_month from Phase 1 question 10
    - segmentation.bands from Phase 1 question 9 (employee thresholds
      and expected_cycle_days for each segment)
-   - stage_progression with N-1 transitions based on the open stages
-     count from Phase 6 (3 stages = 2 transitions, 4 stages = 3
-     transitions, 5 stages = 4 transitions)
+   - stage_progression with N transitions based on the open stages
+     count from Phase 6 (3 stages = 3 transitions, 4 stages = 4
+     transitions, 5 stages = 5 transitions). Last transition is
+     always {final_open_stage}_to_closed_won.
 
 3. Write prompts/CLAUDE.md
 
@@ -325,7 +338,8 @@ Present each file as a labeled code block:
 
 **config/client.yaml** — copy this to your repo
 (with sales_methodology, call_tools.primary, fiscal settings, segmentation,
-stage_progression with N-1 transitions based on open stages count)
+stage_progression with N transitions for N open stages — last transition is
+always to closed_won)
 [content]
 
 **prompts/CLAUDE.md** — copy this to your repo

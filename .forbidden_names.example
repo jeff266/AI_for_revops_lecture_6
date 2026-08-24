@@ -1,0 +1,15 @@
+# Forbidden client-specific names
+#
+# This file is used by the pre-commit hook (scripts/hooks/block_api_keys.sh)
+# to prevent client-specific language from entering the template repository.
+#
+# Copy this file to .forbidden_names (gitignored) and add your client's name
+# and any other client-specific identifiers that shouldn't appear in commits.
+#
+# One name per line. Case-insensitive. Word boundaries enforced.
+# Lines starting with # are ignored.
+#
+# Example:
+# AcmeCorp
+# Acme
+# BigClient Inc
