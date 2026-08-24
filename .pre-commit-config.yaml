@@ -1,0 +1,33 @@
+# Pre-commit hooks for secret protection
+# Install with: pre-commit install (or run scripts/install_hooks.sh)
+# Docs: https://pre-commit.com
+
+repos:
+  # Detect hardcoded secrets (Anthropic API keys, HubSpot tokens, etc.)
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline']
+        exclude: ^(test_.*\.py|.*_test\.py|package-lock\.json)$
+
+  # Block common API key patterns as immediate fail-fast
+  - repo: local
+    hooks:
+      - id: block-api-keys
+        name: Block Anthropic/HubSpot API keys
+        entry: scripts/hooks/block_api_keys.sh
+        language: script
+        pass_filenames: false
+
+  # Prevent large files from being committed
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+      - id: check-merge-conflict
+      - id: end-of-file-fixer
+        exclude: ^(.*\.csv|.*\.json)$
+      - id: trailing-whitespace
+        exclude: ^(.*\.csv|.*\.md)$

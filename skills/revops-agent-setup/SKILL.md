@@ -72,7 +72,11 @@ Store as: GONG_ACCESS_KEY_SECRET
 
 Tell the user:
 "You're configured to use Fireflies for call intelligence.
-To get it: app.fireflies.ai → Integrations → API → copy the key"
+To get it: app.fireflies.ai → Integrations → API → copy the key
+
+IMPORTANT: The API key must have TRANSCRIPT scope, not just summaries.
+When creating the key, ensure 'Access to transcripts' is enabled.
+Without it, the progressive scorer can't analyze call content."
 
 Ask: "Paste your Fireflies API key (or SKIP):"
 Store as: FIREFLIES_API_KEY
@@ -141,6 +145,10 @@ Tell the user:
 "One more Supabase credential — the direct database connection string.
 This is DIFFERENT from the Project URL and is required to run schema migrations.
 
+WHY: The PostgREST API (Project URL + service_role key) can't execute DDL
+(CREATE TABLE, ALTER, etc.). setup_supabase.py needs direct Postgres access
+to run migrations.
+
 Go to: Supabase dashboard → your project → Settings → Database → Connection string → URI tab.
 
 Copy the pooler URI (it contains .pooler.supabase.com) and replace [YOUR-PASSWORD]
@@ -165,7 +173,24 @@ Tell the user:
 
 Ask: "Paste your Zapier catch hook URL (or SKIP):"
 
-## Step 8 — Generate outputs
+## Step 8 — Install secret protection hooks
+
+Tell the user:
+"Installing pre-commit hooks to block API keys from being committed.
+These hooks prevent secrets from entering version control — critical
+for a template repo where every client starts from a fresh clone."
+
+Run: ./scripts/install_hooks.sh
+
+If it fails with permission denied:
+  chmod +x scripts/install_hooks.sh scripts/hooks/block_api_keys.sh
+  ./scripts/install_hooks.sh
+
+Tell the user:
+"✓ Hooks installed. Git will now block commits containing API keys.
+To bypass when needed: git commit --no-verify"
+
+## Step 9 — Generate outputs
 
 Write a .env file to the repo root with all collected values.
 
