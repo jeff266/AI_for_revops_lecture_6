@@ -1,0 +1,68 @@
+# COACHING SEED — universal primitives. Ships with the template.
+# Never edit this file for a specific client. Client-specific coaching
+# config lives in config/coaching_client.yaml.
+
+blocker_taxonomy:
+  # universal — from gb-drill-difficult-stakeholders, applies to any B2B sale
+  technical:
+    signals: ["Missing capability", "Integration failure", "Wrong result"]
+    right_response: "Diagnose properly, don't guess, propose structured review"
+  resourcing:
+    signals: ["No engineers", "No capacity", "Competing priorities"]
+    right_response: "Reduce the ask. Narrow the scope. Make adoption smaller."
+  cultural:
+    signals: ["Leadership sceptical", "Cautious stakeholders", "Tests judged too small"]
+    right_response: "Arm the champion with artefacts. Accept this is largely outside our control."
+  commercial:
+    signals: ["Budget", "Procurement", "Competitor pricing"]
+    right_response: "Establish value precisely, then bring in pricing authority. Focus on value, not negotiation."
+
+ownership_calibration:
+  # universal principle, not client content
+  over_apologising: >
+    Accepting fault for something that isn't ours. Feels like de-escalation.
+    Actually concedes a fault, invites a credit request, and undermines
+    platform credibility for the rest of the relationship.
+  under_owning: >
+    'Your test is set up wrong.' Even when true, said too early it reads
+    as deflection.
+  calibrated_position: >
+    Own the process, not the outcome, until you know. 'I don't want to
+    guess at the cause. Let's walk through the setup together and I'll
+    bring our data science team if we need them. If it's something on
+    our end we'll own it fully. If not, we'll diagnose together.'
+
+discovery_five_numbers_structure:
+  # the STRUCTURE is universal; the actual numbers are client-specific
+  # (see coaching_client.yaml discovery_numbers for client-specific values)
+  slots:
+    - key: "volume"
+      description: "How much of the core activity happens per period. Not 'a lot'."
+    - key: "win_rate"
+      description: "What proportion produce a successful/shippable outcome."
+    - key: "value_per_win"
+      description: "The value of a typical successful outcome."
+    - key: "incumbent_cost"
+      description: "What they currently spend, and the pricing model."
+    - key: "the_clock"
+      description: "Contract renewal, budget cycle, or deadline driving urgency."
+
+discovery_quality_rubric:
+  # universal signals of strong/weak discovery, content-free
+  strong_call_signals:
+    - "At least three of the five discovery numbers obtained"
+    - "The clock is identified and external, not aspirational"
+    - "Who signs and what the approval threshold is"
+    - "A vague answer got followed up at least once, visibly"
+    - "Rep asked something the prospect had to think about"
+  weak_call_signals:
+    - "Every answer accepted at face value"
+    - "No number obtained — adjectives instead of quantities"
+    - "Rep talked more than the prospect"
+    - "Features described before needs established"
+    - "Call ended with 'I'll send materials' and no commitment"
+    - "Pitched before understanding"
+
+learning_defaults:
+  min_evidence_companies: 2
+  track_failure_patterns: true

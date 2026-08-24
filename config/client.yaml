@@ -80,6 +80,15 @@ segmentation:
 #     status: spiced_status
 #     last_analyzed: spiced_last_analyzed
 #     summary: spiced_analysis_summary
+#
+# CRITICAL: Component storage uses JSONB, never fixed columns.
+# analyses.component_scores and call_scores.component_scores both store
+# {component_key: score} with keys driven by get_components(). A MEDDPICC
+# client gets {"paper_process": 7, ...}; MEDDICC omits it. Changing
+# methodology requires zero schema changes. Any code that introduces
+# fixed component columns (metrics_score, economic_buyer_score, etc.)
+# breaks methodology switching and must be rejected — the same defect
+# Phase 1 exists to prevent.
 
 # ============================================================================
 # HUBSPOT PIPELINE CONFIGURATION
