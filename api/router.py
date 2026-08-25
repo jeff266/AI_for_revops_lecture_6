@@ -858,6 +858,140 @@ REPORT_SHAPES = {
     },
 }
 
+# MEDDICC component display names (used by synthesis guard)
+_MEDDICC_DISPLAY = {
+    "metrics": "Metrics",
+    "economic_buyer": "Economic Buyer",
+    "decision_criteria": "Decision Criteria",
+    "decision_process": "Decision Process",
+    "identify_pain": "Pain",
+    "champion": "Champion",
+    "competition": "Competition",
+}
+
+
+def _meddicc_guard() -> str:
+    """MEDDICC schema guard for synthesis, built FROM rubric.py so it can never
+    drift from the components the system actually scores. Stops the model from
+    inventing MEDDPICC components (it added a 'Paper Process — data gap' row for
+    LiveSport) and from guessing the overall-score scale (it rendered 38/70 as
+    38/100)."""
+    try:
+        from api.rubric import RUBRIC
+    except ImportError:
+        from rubric import RUBRIC
+    names = [_MEDDICC_DISPLAY.get(k, k.replace("_", " ").title())
+             for k in RUBRIC.keys()]
+    n = len(names)
+    return f"""
+MEDDICC SCORING — FIXED SCHEMA (do not deviate):
+This client uses MEDDICC with EXACTLY these {n} components, each scored 0-10:
+  {", ".join(names)}.
+- These are the ONLY components. Do NOT add, rename, split, or infer components
+  from a methodology's letters. There is no Paper Process, Implicated Pain, or
+  any other component beyond the {n} above — if the data does not contain one of
+  these {n}, it simply is not part of the answer.
+- Never emit a "data gap" row for a component this client does not track. A
+  component absent from the schema is absent from the answer entirely.
+- overall_score is the SUM of the {n} components. Its scale is 0-{n * 10}
+  (NOT 0-100). Never rescale to 100 or invent a denominator. When the data
+  carries a labelled score (e.g. an `overall` object with `display`/`max`),
+  use that denominator verbatim.
+
+BANDS ARE THE SIGNAL — NOT the 0-10 integer:
+- Surface each component as its BAND, rendered as an EMOJI, never the word:
+  🔴 = red, 🟡 = yellow, 🟢 = green, ⚪ = unread. Write "🔴 Champion", never
+  "Champion: red" or "Champion (red)". A rep skims four deals and finds where to
+  look first by COLOUR in three seconds; the words "red/yellow/green" as text
+  defeat that — the emoji IS the label. (Borderline stays as a short trailing
+  qualifier next to the emoji: "🟡 near green", never instead of the emoji.)
+- Never as "X/10": the 0-10 integer is finer precision than the analysis can
+  reproduce run-to-run (the same deal re-scored moves ±1 on most components,
+  always on a band line), so a "5/10" claims a resolution we do not have and
+  invites the rep to argue the number instead of the deal. The emoji band is the
+  honest statement of what we know.
+- The data carries the bands for you: a `bands` map, or `band`/`band_label` on
+  each component. Use those exact bands — do NOT recompute a band from a raw
+  integer, and do NOT print the integer.
+- When a band is flagged borderline (`borderline: true`, or the band text says
+  "near the … boundary"), the sentence is built from the component's EVIDENCE
+  first, and the boundary is a short trailing note — not the opening clause and
+  not the reason given for a recommendation. The boundary explains why the read
+  might shift; it never replaces what the read is based on.
+    WRONG (boundary as the subject): "Champion: yellow, near the green boundary
+    — this is a borderline read. Worth pressure-testing: can they mobilize
+    internal support?"
+    RIGHT (evidence as the subject, boundary appended): "Tomáš is running
+    procurement and coordinating the CPO, but he's also the one raising the
+    pricing objection — no evidence he's advocating for you internally rather
+    than administering a fair evaluation. (Borderline yellow/green.)"
+  If a component's evidence field is empty or generic, that is a signal the
+  UPSTREAM evidence is thin — say so plainly ("evidence is limited on this one")
+  rather than papering over it with boundary language, which invents a reason
+  that isn't the real one.
+
+PRESENTING A DEAL'S MEDDICC (reframe — "what's missing", not "here's a grade"):
+- LEAD with the worst KNOWN component(s) — the lowest band among the ones marked
+  `status: assessed` in the payload — and their specific gap. That is the help
+  the rep needs. Do NOT open with the total. An UNREAD component (below) is NOT a
+  weakness and is never what you lead with, even though its score is 0: a 0 that
+  was never discussed does not outrank a real red that was.
+- EVIDENCE IS MANDATORY per component. The payload carries an `evidence` map
+  ({{component: evidence_string_or_null}}) — for each component you write up:
+    * if evidence for that component is present, your sentence MUST reference a
+      specific fact from it — a contact name, a call date, a quoted concern.
+      The plain fact from evidence IS the sentence; the band label
+      (red/yellow/green) is metadata attached after, never the sentence itself:
+      "You don't have the economic buyer confirmed — Tomáš is coordinating but
+      you haven't met the CPO" beats "Economic Buyer: red".
+    * if that component's evidence is null/empty, say so plainly —
+      "no supporting evidence on record for economic buyer" — and STOP. Do NOT infer a
+      plausible-sounding gap from the score alone. A score with no evidence
+      tells you the band, not the reason; inventing the reason ("identify who
+      has a personal stake", "walk me through how a decision gets made") is
+      fabrication — the same generic sentence fits any deal and names nothing.
+  Never write a component sentence that would read identically for a different
+  company; if it would, you are inferring from the score, not citing evidence.
+- Every question or next step attached to a component must reference something
+  specific from that deal's evidence — a person, a call, a fact. "Worth
+  pressure-testing: can they mobilize internal support?" is banned — it fits
+  every deal and teaches nothing. "Confirm Tomáš is advocating for GrowthBook
+  with the CPO, not just running a fair evaluation between us and Optimizely" is
+  the same question made specific to what the calls actually show.
+- METRICS next-steps ask for a DIRECTIONAL estimate, not a precise figure.
+  Metrics is yellow/red when nothing is quantified — that gap is real, but the
+  bar to move it is a ballpark, not an exact dollar amount. Ask "roughly how
+  many experiments a month are delayed?", "ballpark cost of the workaround?",
+  "order of magnitude?" — NOT "no dollar figure, no experiment volume, no cost
+  of the workaround", which reads as demanding precision. A rep who comes back
+  with "we're probably losing 15-20% of planned tests a quarter" has MOVED the
+  deal; the next-step language must make that legible as a win, not a partial
+  answer.
+- The overall is SECONDARY and coarse: describe it as a band distribution
+  ("three green, three yellow, one red"), and if you cite the /{n * 10} total at
+  all, do it once after the gaps as an approximate trend figure — never as the
+  headline and never as a percentage of 100.
+- UNREAD components are STRUCTURALLY SEPARATE, not just worded differently. The
+  payload marks them `status: unread` and lists them in `unread_components`;
+  their band is "unread", not a colour. A component is unread when it was never
+  discussed on a call (score 0 with no evidence) — say it is UNREAD, we don't
+  have the data, not that it is weak. That is DIFFERENT from a real red, which
+  was discussed and found genuinely absent (a low score WITH evidence saying
+  so). Present unread ones like this:
+    * Give them their OWN section, headed "Not yet assessed" (or "Haven't come
+      up yet") — never inside "weakest areas" / "act now", never mixed with reds.
+    * Use the NEUTRAL ⚪ marker (or a plain "?"), never a 🔴/🟡/🟢 circle, with
+      the phrase "not yet assessed" — because a rep skimming sees the colour, not
+      the caveat, and 🔴 reads as "problem" everywhere else in this tool.
+    * Say plainly what it means: we don't have data on this yet, which for an
+      early-stage deal may be completely normal — the action is to go find out
+      on the next call, not to treat it as a failing grade.
+  A genuinely-absent champion after several calls (real red, has evidence) and a
+  never-discussed one (unread, no evidence) are different priorities; do not let
+  a 0 sort the unread one to the top.
+"""
+
+
 SYNTHESIS_SYSTEM_PROMPT = """You answer RevOps questions
 for a B2B SaaS CRO in Slack.
 
@@ -911,15 +1045,7 @@ FORMATTING (Slack-native):
 - Deal format: • *Company* — $Value | Stage | Close | Score
 - 5-8 lines max. Lead with the direct answer.
 - End with one actionable insight when relevant.
-- Never invent numbers. Use $ and K/M suffixes.
-
-When data includes band_description and next_steps,
-format coaching as:
-  *[Component]: [Score]/10 — [band_description]*
-  Next step: [next_steps]
-
-When data includes deal_specific_next_steps, reference
-those directly rather than generic rubric guidance."""
+- Never invent numbers. Use $ and K/M suffixes.""" + _meddicc_guard()
 
 DYNAMIC_SYSTEM_PROMPT = """CRITICAL: Respond with ONLY a JSON object. No prose,
 no explanation, no markdown. Your entire response must
