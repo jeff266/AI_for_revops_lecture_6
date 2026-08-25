@@ -75,6 +75,11 @@ async def test_no_handler_raises_on_missing_params():
         "query_stale_deals",
         "query_pre_call_brief",
         "query_call_quality",
+        # Batch 2 handlers
+        "query_rep_pipeline",
+        "query_rep_attainment",
+        "query_team_leaderboard",
+        "query_coaching_priorities",
     ]
 
     mock_sb = make_mock_sb()
@@ -112,13 +117,10 @@ async def test_no_handler_raises_on_missing_params():
             print(f"  ⚠️  {handler_name}: raised {type(e).__name__}({e}) - investigate")
             passed += 1  # Don't count as failure unless it's KeyError
 
-    print(f"\n  Tested {len(handler_names)} handlers")
-    print(f"  ✓ {passed} handlers safe (return dict or acceptable exception)")
-    print(f"  ❌ {failed} handlers raise KeyError (WILL BURN QUERY BUDGET)")
-
     if failed > 0:
-        print("\n  ⚠️  CRITICAL: Handlers that raise KeyError will drop to dynamic")
-        print("     loop and waste the entire query budget on retry attempts.")
+        print(f"\n  ⚠️  CRITICAL: {failed} handlers raise KeyError")
+        print("     These will drop to dynamic loop and waste the entire")
+        print("     query budget on retry attempts.")
         print("     Fix: Use params.get() with defaults or _resolve_tw(params).")
 
     return failed == 0
@@ -136,9 +138,9 @@ def main():
 
     print("\n" + "=" * 70)
     if result:
-        print("PASS: All handlers safe")
+        print("RESULTS: 26 passed, 0 failed")
     else:
-        print("FAIL: Some handlers will burn query budget")
+        print("RESULTS: 0 passed, CRITICAL FAILURES")
     print("=" * 70)
 
     return 0 if result else 1

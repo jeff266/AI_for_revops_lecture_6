@@ -553,8 +553,9 @@ async def query_deal(params: dict, sb) -> dict:
 
     # If no explicit company but entity context has one,
     # use the first company from context
-    if not company and params.get("company_names"):
-        company = params["company_names"][0]
+    company_names = params.get("company_names") or []
+    if not company and company_names:
+        company = company_names[0]
 
     if not company:
         return {"error": "Company name required"}
@@ -1279,6 +1280,459 @@ async def query_pre_call_brief(params: dict, sb) -> dict:
             f"Focus on: {', '.join(g['component'] for g in component_gaps[:3])}"
             if component_gaps else "No critical gaps — focus on advancing the deal"
         )
+    }
+
+
+async def query_rep_pipeline(params: dict, sb) -> dict:
+    """
+    Pipeline for a specific rep.
+
+    GrowthBook bugs fixed:
+    1. Errored on rep names - nothing resolved "Christian" to email
+    2. Param mismatch: intent prompt emitted rep_email, handler read owner_email
+
+    Fix: Accepts owner_email, rep_email, first name, or full name.
+    Resolves via user_personas table.
+    """
+    # Accept multiple param names
+    rep_identifier = (params.get("owner_email") or
+                     params.get("rep_email") or
+                     params.get("rep_name") or
+                     params.get("rep", ""))
+
+    if not rep_identifier:
+        return {"error": "Rep identifier required (email, first name, or full name)"}
+
+    # Resolve to email via user_personas
+    personas = select_all(sb, "user_personas",
+        columns="email,display_name,name,role")
+
+    matched_email = None
+    rep_identifier_lower = rep_identifier.lower()
+
+    for p in personas:
+        email = p.get("email", "")
+        display_name = (p.get("display_name") or "").lower()
+        name = (p.get("name") or "").lower()
+
+        # Match on email, display_name, name, or first name
+        if (rep_identifier_lower == email.lower() or
+            rep_identifier_lower == display_name or
+            rep_identifier_lower == name or
+            rep_identifier_lower in name.split()):
+            matched_email = email
+            break
+
+    if not matched_email:
+        return {
+            "error": f"No user found matching '{rep_identifier}'",
+            "hint": "Try full email or exact first name"
+        }
+
+    # Get rep's pipeline
+    tw = _resolve_tw(params)
+    deals = select_all(sb, "deals",
+        columns="deal_id,company_name,deal_value,arr_usd,stage,"
+                "deal_status,close_date,forecast_category",
+        filters=[
+            ("eq", "owner_email", matched_email),
+            ("eq", "deal_status", "active")
+        ])
+
+    # Get rep's analyses
+    deal_ids = [d["deal_id"] for d in deals]
+    analyses = []
+    if deal_ids:
+        analyses = select_all(sb, "analyses",
+            columns="deal_id,overall_score,champion_score,analyzed_at",
+            filters=[("in_", "deal_id", deal_ids)])
+
+        # Keep latest per deal
+        latest = {}
+        for a in analyses:
+            deal_id = a["deal_id"]
+            analyzed_at = a.get("analyzed_at", "")
+            if deal_id not in latest or analyzed_at > latest[deal_id].get("analyzed_at", ""):
+                latest[deal_id] = a
+        analyses = list(latest.values())
+
+    # Build analysis map
+    analysis_map = {a["deal_id"]: a for a in analyses}
+
+    # Enrich deals with scores
+    enriched_deals = []
+    for d in deals:
+        deal_id = d["deal_id"]
+        analysis = analysis_map.get(deal_id, {})
+        enriched_deals.append({
+            **d,
+            "overall_score": analysis.get("overall_score"),
+            "champion_score": analysis.get("champion_score")
+        })
+
+    # Sort by deal value
+    enriched_deals.sort(key=lambda x: x.get("deal_value") or 0, reverse=True)
+
+    total_pipeline = sum(d.get("deal_value") or 0 for d in deals)
+
+    return {
+        "rep_email": matched_email,
+        "deals": enriched_deals,
+        "total_pipeline": total_pipeline,
+        "deal_count": len(deals),
+        "period": tw.get("label")
+    }
+
+
+async def query_rep_attainment(params: dict, sb) -> dict:
+    """
+    Rep attainment vs quota target.
+
+    Shows closed-won ARR vs target for a specific rep in a period.
+    """
+    # Resolve rep (same pattern as query_rep_pipeline)
+    rep_identifier = (params.get("owner_email") or
+                     params.get("rep_email") or
+                     params.get("rep_name") or
+                     params.get("rep", ""))
+
+    if not rep_identifier:
+        return {"error": "Rep identifier required"}
+
+    # Resolve to email
+    personas = select_all(sb, "user_personas",
+        columns="email,display_name,name")
+
+    matched_email = None
+    rep_identifier_lower = rep_identifier.lower()
+
+    for p in personas:
+        email = p.get("email", "")
+        display_name = (p.get("display_name") or "").lower()
+        name = (p.get("name") or "").lower()
+
+        if (rep_identifier_lower == email.lower() or
+            rep_identifier_lower == display_name or
+            rep_identifier_lower == name or
+            rep_identifier_lower in name.split()):
+            matched_email = email
+            break
+
+    if not matched_email:
+        return {"error": f"No user found matching '{rep_identifier}'"}
+
+    tw = _resolve_tw(params)
+
+    # Get closed-won deals for this rep
+    won_deals = select_all(sb, "deals",
+        columns="deal_id,company_name,deal_value,new_arr,close_date",
+        filters=[
+            ("eq", "owner_email", matched_email),
+            ("eq", "deal_status", "won"),
+            ("gte", "close_date", tw["start"]),
+            ("lte", "close_date", tw["end"])
+        ])
+
+    total_closed = sum(d.get("deal_value") or 0 for d in won_deals)
+
+    # Get target
+    period_label = tw.get("label", "").replace(" ", "_")
+    targets = select_all(sb, "rep_targets",
+        columns="target_value,metric",
+        filters=[
+            ("eq", "entity_name", matched_email),
+            ("eq", "period", period_label)
+        ])
+
+    target_value = targets[0].get("target_value") if targets else None
+
+    attainment_pct = None
+    if target_value and target_value > 0:
+        attainment_pct = round((total_closed / target_value) * 100, 1)
+
+    return {
+        "rep_email": matched_email,
+        "total_closed": total_closed,
+        "target": target_value,
+        "attainment_pct": attainment_pct,
+        "deal_count": len(won_deals),
+        "deals": won_deals,
+        "period": tw["label"]
+    }
+
+
+async def query_team_leaderboard(params: dict, sb) -> dict:
+    """
+    Team leaderboard - rep rankings by pipeline, attainment, or MEDDICC scores.
+
+    Answers: 'show me team performance', 'who's leading?',
+             'team leaderboard this quarter'
+    """
+    tw = _resolve_tw(params)
+    metric = params.get("metric", "pipeline")  # pipeline | attainment | meddicc
+
+    # Get all reps from user_personas
+    personas = select_all(sb, "user_personas",
+        columns="email,display_name,role")
+
+    # Filter to sales reps (role = ae or sdr)
+    sales_reps = [p for p in personas
+                  if p.get("role", "").lower() in ["ae", "account_executive", "sales"]]
+
+    if not sales_reps:
+        return {
+            "leaderboard": [],
+            "note": "No sales reps found in user_personas. Run seed_user_personas.py to populate."
+        }
+
+    leaderboard = []
+
+    if metric == "pipeline":
+        # Rank by open pipeline value
+        for rep in sales_reps:
+            email = rep["email"]
+            deals = select_all(sb, "deals",
+                columns="deal_value",
+                filters=[
+                    ("eq", "owner_email", email),
+                    ("eq", "deal_status", "active")
+                ])
+            total = sum(d.get("deal_value") or 0 for d in deals)
+            leaderboard.append({
+                "rep_email": email,
+                "display_name": rep.get("display_name"),
+                "value": total,
+                "deal_count": len(deals)
+            })
+
+    elif metric == "attainment":
+        # Rank by closed-won vs target
+        period_label = tw.get("label", "").replace(" ", "_")
+        for rep in sales_reps:
+            email = rep["email"]
+            won_deals = select_all(sb, "deals",
+                columns="deal_value",
+                filters=[
+                    ("eq", "owner_email", email),
+                    ("eq", "deal_status", "won"),
+                    ("gte", "close_date", tw["start"]),
+                    ("lte", "close_date", tw["end"])
+                ])
+            total_closed = sum(d.get("deal_value") or 0 for d in won_deals)
+
+            # Get target
+            targets = select_all(sb, "rep_targets",
+                columns="target_value",
+                filters=[
+                    ("eq", "entity_name", email),
+                    ("eq", "period", period_label)
+                ])
+            target = targets[0].get("target_value") if targets else None
+
+            attainment_pct = None
+            if target and target > 0:
+                attainment_pct = round((total_closed / target) * 100, 1)
+
+            leaderboard.append({
+                "rep_email": email,
+                "display_name": rep.get("display_name"),
+                "value": total_closed,
+                "target": target,
+                "attainment_pct": attainment_pct,
+                "deal_count": len(won_deals)
+            })
+
+    elif metric == "meddicc":
+        # Rank by average MEDDICC score
+        for rep in sales_reps:
+            email = rep["email"]
+            deals = select_all(sb, "deals",
+                columns="deal_id",
+                filters=[
+                    ("eq", "owner_email", email),
+                    ("eq", "deal_status", "active")
+                ])
+            deal_ids = [d["deal_id"] for d in deals]
+
+            if not deal_ids:
+                leaderboard.append({
+                    "rep_email": email,
+                    "display_name": rep.get("display_name"),
+                    "value": 0,
+                    "deal_count": 0
+                })
+                continue
+
+            analyses = select_all(sb, "analyses",
+                columns="deal_id,overall_score,analyzed_at",
+                filters=[("in_", "deal_id", deal_ids)])
+
+            # Keep latest per deal
+            latest = {}
+            for a in analyses:
+                deal_id = a["deal_id"]
+                analyzed_at = a.get("analyzed_at", "")
+                if deal_id not in latest or analyzed_at > latest[deal_id].get("analyzed_at", ""):
+                    latest[deal_id] = a
+
+            scores = [a.get("overall_score", 0) or 0 for a in latest.values()]
+            avg_score = sum(scores) / len(scores) if scores else 0
+
+            leaderboard.append({
+                "rep_email": email,
+                "display_name": rep.get("display_name"),
+                "value": round(avg_score, 1),
+                "deal_count": len(deal_ids),
+                "scored_count": len(scores)
+            })
+
+    # Sort by value descending
+    leaderboard.sort(key=lambda x: x.get("value") or 0, reverse=True)
+
+    return {
+        "leaderboard": leaderboard,
+        "metric": metric,
+        "period": tw.get("label")
+    }
+
+
+async def query_coaching_priorities(params: dict, sb) -> dict:
+    """
+    Coaching priorities based on deal blockers and MEDDICC gaps.
+
+    Reads blocker taxonomy from config/coaching_seed.yaml (not hardcoded).
+    Returns recommended coaching focus areas with prescribed responses.
+    """
+    import yaml
+    from pathlib import Path
+
+    tw = _resolve_tw(params)
+    rep_identifier = (params.get("owner_email") or
+                     params.get("rep_email") or
+                     params.get("rep_name") or
+                     params.get("rep"))
+
+    # Load blocker taxonomy from coaching_seed.yaml
+    config_path = Path(__file__).parent.parent / "config" / "coaching_seed.yaml"
+    config = yaml.safe_load(open(config_path))
+    blocker_taxonomy = config.get("blocker_taxonomy", {})
+
+    # Get deals (optionally filtered by rep)
+    filters = [("eq", "deal_status", "active")]
+
+    if rep_identifier:
+        # Resolve rep to email (same pattern as other rep handlers)
+        personas = select_all(sb, "user_personas",
+            columns="email,display_name,name")
+
+        matched_email = None
+        rep_identifier_lower = rep_identifier.lower()
+
+        for p in personas:
+            email = p.get("email", "")
+            display_name = (p.get("display_name") or "").lower()
+            name = (p.get("name") or "").lower()
+
+            if (rep_identifier_lower == email.lower() or
+                rep_identifier_lower == display_name or
+                rep_identifier_lower == name or
+                rep_identifier_lower in name.split()):
+                matched_email = email
+                break
+
+        if matched_email:
+            filters.append(("eq", "owner_email", matched_email))
+
+    deals = select_all(sb, "deals",
+        columns="deal_id,company_name,owner_email",
+        filters=filters)
+
+    deal_ids = [d["deal_id"] for d in deals]
+
+    # Get MEDDICC analyses to identify gaps
+    from api.stage_requirements import get_components
+
+    component_cols = ["deal_id", "company_name", "overall_score"]
+    for component in get_components():
+        component_cols.append(f"{component}_score")
+
+    analyses = []
+    if deal_ids:
+        analyses = select_all(sb, "analyses",
+            columns=",".join(component_cols),
+            filters=[("in_", "deal_id", deal_ids)])
+
+    # Identify common gaps
+    gap_counts = {}
+    for component in get_components():
+        gap_counts[component] = 0
+
+    for a in analyses:
+        for component in get_components():
+            score = a.get(f"{component}_score", 0) or 0
+            if score < 4:  # Below acceptable threshold
+                gap_counts[component] += 1
+
+    # Sort gaps by frequency
+    sorted_gaps = sorted(gap_counts.items(), key=lambda x: x[1], reverse=True)
+    top_gaps = [{"component": comp, "deal_count": count}
+                for comp, count in sorted_gaps[:3] if count > 0]
+
+    # Get blocker signals from call_quality table (if populated)
+    call_quality_rows = select_all(sb, "call_quality",
+        columns="blocker_type,pattern_flags,owner_email",
+        filters=[])
+
+    blocker_counts = {"technical": 0, "resourcing": 0, "cultural": 0, "commercial": 0}
+    for row in call_quality_rows:
+        blocker_type = row.get("blocker_type")
+        if blocker_type in blocker_counts:
+            blocker_counts[blocker_type] += 1
+
+    # Build coaching priorities
+    priorities = []
+
+    # Priority 1: Most common MEDDICC gap
+    if top_gaps:
+        top_gap = top_gaps[0]
+        priorities.append({
+            "priority": "Most common MEDDICC gap",
+            "component": top_gap["component"],
+            "affected_deals": top_gap["deal_count"],
+            "recommendation": f"Focus discovery questions on {top_gap['component'].replace('_', ' ')}"
+        })
+
+    # Priority 2: Most common blocker type
+    if blocker_counts:
+        top_blocker = max(blocker_counts.items(), key=lambda x: x[1])
+        if top_blocker[1] > 0:
+            blocker_type, count = top_blocker
+            taxonomy_entry = blocker_taxonomy.get(blocker_type, {})
+
+            priorities.append({
+                "priority": "Most common blocker",
+                "blocker_type": blocker_type,
+                "occurrence_count": count,
+                "signals": taxonomy_entry.get("signals", []),
+                "right_response": taxonomy_entry.get("right_response", "")
+            })
+
+    # Priority 3: Deals at risk (low overall scores)
+    at_risk = [a for a in analyses if (a.get("overall_score") or 0) < 40]
+    if at_risk:
+        priorities.append({
+            "priority": "Deals at risk",
+            "deal_count": len(at_risk),
+            "recommendation": "Review deals with overall MEDDICC score < 40"
+        })
+
+    return {
+        "priorities": priorities,
+        "top_meddicc_gaps": top_gaps,
+        "blocker_distribution": blocker_counts,
+        "total_deals_analyzed": len(deals),
+        "period": tw.get("label"),
+        "rep_email": matched_email if rep_identifier else None
     }
 
 
