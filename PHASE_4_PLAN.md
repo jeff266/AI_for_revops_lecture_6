@@ -239,11 +239,19 @@ GrowthBook repo is read-only for this port. After pull on 2026-08-24, it has:
 Phase 4 is complete when:
 
 1. ✅ Migration 043 created with JSONB (not fixed columns)
-2. ✅ Progressive trio ported and rewired (call_scorer, rollup, meddicc_agent)
-3. ✅ MEDDPICC acceptance test passes (8 components, no Python edited)
-4. ✅ All 14 production files rewired to `get_components()` + `component_key()`
-5. ✅ Three GrowthBook comment strings replaced
-6. ✅ CRM adapter touchpoints documented
-7. ✅ Fix PRs #17-24 ported
+2. ⏸️ Progressive trio ported and rewired (call_scorer, rollup, meddicc_agent verified clean)
+   - **BLOCKED:** 4b acceptance test failed
+   - **Issue:** utils.py has `'MEDDPIC'` but client.yaml comment says `'MEDDPICC'`
+   - **Fix required:** Rename dict key to MEDDPICC or update comment to MEDDPIC
+   - **Test result:** Expected 8 components with MEDDPICC, got 7 (fell back to MEDDICC)
+3. ⏳ MEDDPICC acceptance test (gates 4c/4d)
+4. ⏳ All 14 production files rewired to `get_components()` + `component_key()`
+5. ⏳ Three GrowthBook comment strings replaced
+6. ✅ CRM adapter touchpoints documented (Phase 4 planning)
+7. ⏳ Fix PRs #17-24 ported
 
-**Next:** Phase 5 (update onboarding skills), Phase 6 (prove it with fictional client)
+**Phase 5 verification fixes applied:**
+- ✅ Transition count corrected: N open stages = N transitions (including terminal)
+- ✅ .forbidden_names.example added with .gitignore entries
+
+**Next:** Unblock 4b (fix MEDDPIC/MEDDPICC mismatch), then 4c (substrate files), 4d (rewire 14 files), Phase 5 already complete, Phase 6 (prove it with fictional client)
