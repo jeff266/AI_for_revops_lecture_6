@@ -41,6 +41,11 @@ sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 from utils import slugify
 from adapters import get_call_adapter, get_storage_adapter
+from transcript_store import (
+    fetch_utterances,
+    build_transcript_row,
+    deduplicate_transcripts
+)
 
 
 def get_external_domains(meeting_attendees: list, internal_domains: list) -> list:
@@ -531,6 +536,113 @@ def save_call_caches(calls_by_company: dict, output_dir: Path):
     print(f"\n✅ Processed {len(calls_by_company)} company cache files")
 
 
+def fetch_and_store_transcripts(calls_by_company: dict) -> int:
+    """
+    Fetch full transcripts from all sources and write to call_transcripts table.
+
+    Multi-source dedup: Fireflies > Gong > Apollo
+    Uses transcript_store for rate-limit backoff and GraphQL error parsing.
+
+    Returns: Number of transcripts stored
+    """
+    print(f"\n🎤 Fetching full transcripts for call_transcripts table...")
+
+    # Build list of (source, call_id, call_date) tuples from all calls
+    call_ids_to_fetch = []
+    for company_data in calls_by_company.values():
+        for call in company_data.get('calls', []):
+            call_id = call.get('id')
+            source = call.get('source', '')
+            call_date_str = call.get('date', '')
+
+            if not call_id or not source:
+                continue
+
+            # Parse call date for TERMINAL vs RETRY classification
+            try:
+                call_date = datetime.fromisoformat(call_date_str)
+            except:
+                call_date = None
+
+            call_ids_to_fetch.append((source, call_id, call_date))
+
+    if not call_ids_to_fetch:
+        print("   No calls to fetch")
+        return 0
+
+    print(f"   Found {len(call_ids_to_fetch)} calls to fetch")
+
+    # Load API clients for all sources
+    clients = {}
+    try:
+        # Try to load each source adapter
+        for source_name in ['fireflies', 'gong', 'apollo']:
+            try:
+                adapter = get_call_adapter(source_name)
+                clients[source_name] = adapter
+            except Exception as e:
+                print(f"   ⚠️  {source_name.title()} adapter not available: {e}")
+    except:
+        pass
+
+    if not clients:
+        print("   ⚠️  No call adapters available — skipping transcript fetch")
+        return 0
+
+    # Fetch transcripts with exponential backoff
+    transcript_rows = []
+    for i, (source, call_id, call_date) in enumerate(call_ids_to_fetch, 1):
+        if source not in clients:
+            continue
+
+        # Progress update every 10 calls
+        if i % 10 == 0 or i == 1:
+            print(f"   [{i}/{len(call_ids_to_fetch)}] Fetching {source} transcripts...")
+
+        # Fetch utterances (handles rate limits and GraphQL errors)
+        utterances, error = fetch_utterances(
+            source=source,
+            call_id=call_id,
+            clients=clients,
+            retries=6,
+            backoff=2.0,
+            throttle=0.5  # 500ms between calls to avoid rate limits
+        )
+
+        # Build transcript row
+        row = build_transcript_row(
+            source=source,
+            call_id=call_id,
+            utterances=utterances,
+            error=error,
+            call_date=call_date
+        )
+
+        transcript_rows.append(row)
+
+    if not transcript_rows:
+        print("   No transcripts fetched")
+        return 0
+
+    # Deduplicate by source priority (Fireflies > Gong > Apollo)
+    deduplicated = deduplicate_transcripts(
+        transcript_rows,
+        priority=['fireflies', 'gong', 'apollo']
+    )
+
+    print(f"   Fetched {len(transcript_rows)} transcripts → {len(deduplicated)} after dedup")
+
+    # Write to Supabase
+    try:
+        sb = get_storage_adapter()
+        count = sb.bulk_upsert_transcripts(deduplicated)
+        print(f"   ✓ Wrote {count} transcripts to call_transcripts table")
+        return count
+    except Exception as e:
+        print(f"   ✗ Failed to write transcripts: {e}")
+        return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="ETL call transcripts to cache")
     parser.add_argument(
@@ -637,6 +749,7 @@ def main():
     save_call_caches(calls_by_company, output_dir)
 
     # Write to Supabase if configured
+    transcripts_stored = 0
     if os.getenv('SUPABASE_URL'):
         print(f"\n📤 Writing to Supabase...")
         try:
@@ -650,6 +763,10 @@ def main():
                     n = sb.bulk_upsert_calls(calls, data['company'])
                     total += n
             print(f"  ✓ Supabase: {total} calls upserted")
+
+            # Fetch and store full transcripts (migration 030)
+            transcripts_stored = fetch_and_store_transcripts(calls_by_company)
+
         except Exception as e:
             print(f"  ⚠️  Supabase write failed: {e}")
     else:
@@ -666,6 +783,8 @@ def main():
     print(f"Companies updated: {len(calls_by_company)}")
     print(f"Total new calls: {total_calls}")
     print(f"Apollo calls summarized: {total_summarized[0]}")
+    if transcripts_stored > 0:
+        print(f"Full transcripts stored: {transcripts_stored}")
     print(f"Time: {elapsed:.1f}s")
     print(f"Output: {output_dir}/")
     print(f"{'='*60}\n")

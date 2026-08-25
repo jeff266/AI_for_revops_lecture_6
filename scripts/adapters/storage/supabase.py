@@ -249,6 +249,37 @@ class SupabaseWriter(StorageAdapter):
             rows, on_conflict='call_id').execute()
         return len(rows)
 
+    def bulk_upsert_transcripts(self, transcript_rows: list) -> int:
+        """
+        Upsert multiple call transcripts at once. Returns count upserted.
+
+        Expects rows from transcript_store.build_transcript_row():
+        - call_id, source, transcript_text, transcript_quality
+        - total_utterances, speaker_count, total_duration_seconds
+        - metrics (JSONB), fetched_at, fetch_error
+        """
+        if not transcript_rows:
+            return 0
+
+        rows = []
+        for t in transcript_rows:
+            rows.append({
+                'call_id':                  str(t['call_id']),
+                'source':                   t.get('source', ''),
+                'transcript_text':          t.get('transcript_text'),
+                'transcript_quality':       t.get('transcript_quality', 'unavailable'),
+                'total_utterances':         _safe_int(t.get('total_utterances', 0)),
+                'speaker_count':            _safe_int(t.get('speaker_count', 0)),
+                'total_duration_seconds':   _safe_numeric(t.get('total_duration_seconds', 0)),
+                'metrics':                  t.get('metrics', {}),
+                'fetched_at':               t.get('fetched_at', datetime.now()).isoformat(),
+                'fetch_error':              t.get('fetch_error'),
+            })
+
+        self.client.table('call_transcripts').upsert(
+            rows, on_conflict='call_id,source').execute()
+        return len(rows)
+
     def query(self, sql: str, params: Optional[dict] = None) -> List[dict]:
         """
         Execute a read query.

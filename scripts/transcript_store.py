@@ -1,0 +1,403 @@
+"""
+Shared transcript fetch + assemble + metrics + row-shaping.
+
+Handles multi-source fetch (Fireflies, Gong, Apollo) with:
+- GraphQL body-level error parsing (rate limits in response body, not HTTP 429)
+- Exponential backoff (15s/30s/60s for rate limits, 2s/4s/8s for other errors)
+- Source-priority dedup (Fireflies > Gong > Apollo)
+- Utterance normalization (seconds vs milliseconds)
+- Metrics computation (talk time, questions, longest monologue)
+
+Ported from GrowthBook's scripts/transcript_store.py to close the 260-line
+etl_calls.py gap (template 675 lines → GrowthBook 935 lines).
+"""
+import time
+from typing import List, Dict, Optional, Tuple, Any
+from datetime import datetime, timedelta
+
+
+class RateLimited(Exception):
+    """Raised when API returns rate-limit error (body or HTTP status)."""
+    pass
+
+
+def fetch_utterances(
+    source: str,
+    call_id: str,
+    clients: Dict[str, Any],
+    retries: int = 6,
+    backoff: float = 2.0,
+    throttle: float = 0.0
+) -> Tuple[Optional[List[Dict]], Optional[str]]:
+    """
+    Fetch normalized utterances from call source.
+
+    Returns (utterances, error):
+    - utterances: List of {speaker, text, start_seconds, end_seconds} dicts
+    - error: Error message if fetch failed (None on success)
+
+    Handles:
+    - Rate-limit backoff (15s, 30s, 60s) vs other errors (2s, 4s, 8s)
+    - GraphQL body-level error parsing (Fireflies returns 200 OK with errors in body)
+    - Utterance normalization (Fireflies seconds, Apollo milliseconds)
+    """
+    if throttle > 0:
+        time.sleep(throttle)
+
+    attempt = 0
+    last_error = None
+
+    while attempt < retries:
+        try:
+            if source == 'fireflies':
+                return _fetch_fireflies(call_id, clients), None
+            elif source == 'apollo':
+                return _fetch_apollo(call_id, clients), None
+            elif source == 'gong':
+                return _fetch_gong(call_id, clients), None
+            else:
+                return None, f"Unknown source: {source}"
+
+        except RateLimited as e:
+            # Rate limit: long backoff (15s, 30s, 60s)
+            last_error = str(e)
+            wait = 15 * (2 ** attempt)  # 15, 30, 60, 120...
+            print(f"  Rate limited ({source}): {e} — waiting {wait}s")
+            time.sleep(wait)
+            attempt += 1
+
+        except Exception as e:
+            # Other error: short backoff (2s, 4s, 8s)
+            last_error = str(e)
+            wait = backoff * (2 ** attempt)  # 2, 4, 8, 16...
+            print(f"  Error ({source}): {e} — retry {attempt+1}/{retries} in {wait}s")
+            time.sleep(wait)
+            attempt += 1
+
+    # All retries exhausted
+    return None, f"Failed after {retries} attempts: {last_error}"
+
+
+def _fetch_fireflies(call_id: str, clients: Dict[str, Any]) -> List[Dict]:
+    """
+    Fetch Fireflies transcript at utterance level.
+
+    GraphQL query for transcript.sentences (NOT summary).
+    Fireflies returns rate limits in response body (not HTTP 429).
+    """
+    client = clients.get('fireflies')
+    if not client:
+        raise ValueError("Fireflies client not configured")
+
+    # Use actual Fireflies GraphQL schema
+    # Note: Fireflies uses 'transcriptId' not 'id' for the parameter name
+    query = """
+    query GetTranscript($transcriptId: String!) {
+      transcript(id: $transcriptId) {
+        id
+        sentences {
+          speaker_name
+          text
+          start_time
+          end_time
+        }
+      }
+    }
+    """
+
+    response = client._query(query, {"transcriptId": call_id})
+
+    # Check for GraphQL body-level errors (the GrowthBook 88% failure bug)
+    if response.get("errors"):
+        msg = "; ".join(e.get("message", "")[:80] for e in response["errors"])
+        if _is_rate_limit(msg):
+            raise RateLimited(f"fireflies: {msg[:100]}")
+        raise Exception(f"GraphQL error: {msg}")
+
+    # Extract sentences
+    data = response.get("data", {})
+    transcript = data.get("transcript")
+    if not transcript:
+        return []
+
+    sentences = transcript.get("sentences", [])
+
+    # Normalize to common format (Fireflies already in seconds)
+    utterances = []
+    for s in sentences:
+        utterances.append({
+            'speaker': s.get('speaker_name', 'Unknown'),
+            'text': s.get('text', ''),
+            'start_seconds': s.get('start_time', 0),  # Already seconds
+            'end_seconds': s.get('end_time', 0)
+        })
+
+    return utterances
+
+
+def _fetch_apollo(call_id: str, clients: Dict[str, Any]) -> List[Dict]:
+    """
+    Fetch Apollo transcript at utterance level.
+
+    Apollo transcript format: list of {speaker, words} entries.
+    No timestamps available in Apollo API (basic utterance-level only).
+    """
+    client = clients.get('apollo')
+    if not client:
+        raise ValueError("Apollo client not configured")
+
+    # Get full conversation with transcript
+    response = client.get_conversation(call_id)
+
+    if not response or 'transcript' not in response:
+        return []
+
+    transcript_list = response.get('transcript', [])
+
+    # Normalize to common format (Apollo has no timestamps, use sequential index)
+    utterances = []
+    for idx, entry in enumerate(transcript_list):
+        utterances.append({
+            'speaker': entry.get('speaker', 'Unknown'),
+            'text': entry.get('words', ''),
+            'start_seconds': idx,  # No timestamps - use sequence
+            'end_seconds': idx + 1
+        })
+
+    return utterances
+
+
+def _fetch_gong(call_id: str, clients: Dict[str, Any]) -> List[Dict]:
+    """
+    Fetch Gong transcript at utterance level.
+
+    Gong uses seconds for timestamps.
+    """
+    client = clients.get('gong')
+    if not client:
+        raise ValueError("Gong client not configured")
+
+    # Gong-specific API call (adapt to actual API)
+    response = client.get_transcript(call_id)
+
+    if not response or 'sentences' not in response:
+        return []
+
+    # Normalize to common format (Gong uses seconds)
+    utterances = []
+    for s in response['sentences']:
+        utterances.append({
+            'speaker': s.get('speaker', 'Unknown'),
+            'text': s.get('text', ''),
+            'start_seconds': s.get('start', 0),
+            'end_seconds': s.get('end', 0)
+        })
+
+    return utterances
+
+
+def _is_rate_limit(error_message: str) -> bool:
+    """
+    Detect rate-limit errors from GraphQL body messages.
+
+    Fireflies returns rate limits in response body (not HTTP 429).
+    Common patterns: "rate limit", "too many requests", "quota exceeded"
+    """
+    msg_lower = error_message.lower()
+    patterns = ['rate limit', 'too many requests', 'quota exceeded', 'throttl']
+    return any(p in msg_lower for p in patterns)
+
+
+def build_transcript_row(
+    source: str,
+    call_id: str,
+    utterances: Optional[List[Dict]],
+    error: Optional[str] = None,
+    call_date: Optional[datetime] = None
+) -> Dict:
+    """
+    Shape one call_transcripts row: assembled text + metrics, or 'unavailable'.
+
+    Returns dict ready for sb.bulk_upsert_transcripts():
+    {
+        'call_id': str,
+        'source': str,
+        'transcript_text': str,
+        'transcript_quality': 'full' | 'partial' | 'fragments_only' | 'unavailable',
+        'total_utterances': int,
+        'speaker_count': int,
+        'total_duration_seconds': float,
+        'metrics': {talk_time_seconds: {...}, question_count: {...}, ...},
+        'fetched_at': datetime,
+        'fetch_error': Optional[str]
+    }
+
+    Quality levels:
+    - full: 100+ utterances, multiple speakers
+    - partial: 10-99 utterances
+    - fragments_only: 1-9 utterances
+    - unavailable: 0 utterances or fetch error
+    """
+    row = {
+        'call_id': call_id,
+        'source': source,
+        'fetched_at': datetime.utcnow()
+    }
+
+    # Handle fetch errors
+    if error:
+        row.update({
+            'transcript_text': None,
+            'transcript_quality': 'unavailable',
+            'total_utterances': 0,
+            'speaker_count': 0,
+            'total_duration_seconds': 0.0,
+            'metrics': {},
+            'fetch_error': error
+        })
+        return row
+
+    # Handle empty transcript (classify as TERMINAL or RETRY)
+    if not utterances:
+        quality = _classify_empty_transcript(call_date)
+        row.update({
+            'transcript_text': None,
+            'transcript_quality': quality,
+            'total_utterances': 0,
+            'speaker_count': 0,
+            'total_duration_seconds': 0.0,
+            'metrics': {},
+            'fetch_error': None
+        })
+        return row
+
+    # Assemble full transcript text
+    transcript_text = "\n".join([
+        f"{u['speaker']}: {u['text']}" for u in utterances
+    ])
+
+    # Compute metrics
+    metrics = compute_metrics(utterances)
+
+    # Determine quality level
+    utterance_count = len(utterances)
+    speaker_count = len(set(u['speaker'] for u in utterances))
+
+    if utterance_count >= 100 and speaker_count > 1:
+        quality = 'full'
+    elif utterance_count >= 10:
+        quality = 'partial'
+    elif utterance_count >= 1:
+        quality = 'fragments_only'
+    else:
+        quality = 'unavailable'
+
+    # Total duration (last utterance end time)
+    duration = max(u['end_seconds'] for u in utterances) if utterances else 0.0
+
+    row.update({
+        'transcript_text': transcript_text,
+        'transcript_quality': quality,
+        'total_utterances': utterance_count,
+        'speaker_count': speaker_count,
+        'total_duration_seconds': duration,
+        'metrics': metrics,
+        'fetch_error': None
+    })
+
+    return row
+
+
+def _classify_empty_transcript(call_date: Optional[datetime]) -> str:
+    """
+    Classify empty transcript as TERMINAL or RETRY.
+
+    TERMINAL (unavailable): Call is old enough that transcript should exist
+    RETRY (fragments_only): Call is recent, transcript may still be processing
+
+    Threshold: 48 hours (Fireflies typically processes within 24h)
+    """
+    if not call_date:
+        return 'unavailable'
+
+    age = datetime.utcnow() - call_date
+    if age > timedelta(hours=48):
+        return 'unavailable'  # TERMINAL: should exist by now
+    else:
+        return 'fragments_only'  # RETRY: still processing
+
+
+def compute_metrics(utterances: List[Dict]) -> Dict:
+    """
+    Compute per-speaker talk time + question count + longest monologue.
+
+    Returns:
+    {
+        'talk_time_seconds': {speaker: seconds, ...},
+        'question_count': {speaker: count, ...},
+        'longest_monologue_seconds': {speaker: seconds, ...}
+    }
+    """
+    talk_time = {}
+    question_count = {}
+    monologues = {}
+
+    for u in utterances:
+        speaker = u['speaker']
+        duration = u['end_seconds'] - u['start_seconds']
+        text = u['text']
+
+        # Talk time
+        talk_time[speaker] = talk_time.get(speaker, 0.0) + duration
+
+        # Question count (heuristic: ends with ?)
+        if text.strip().endswith('?'):
+            question_count[speaker] = question_count.get(speaker, 0) + 1
+
+        # Longest monologue
+        if duration > monologues.get(speaker, 0.0):
+            monologues[speaker] = duration
+
+    return {
+        'talk_time_seconds': talk_time,
+        'question_count': question_count,
+        'longest_monologue_seconds': monologues
+    }
+
+
+def deduplicate_transcripts(
+    transcript_rows: List[Dict],
+    priority: List[str] = ['fireflies', 'gong', 'apollo']
+) -> List[Dict]:
+    """
+    Source-priority dedup: keep highest-priority source for each call_id.
+
+    Args:
+        transcript_rows: List of transcript rows (from build_transcript_row)
+        priority: Source priority order (default: Fireflies > Gong > Apollo)
+
+    Returns:
+        Deduplicated list (one row per call_id)
+    """
+    # Build priority map (lower index = higher priority)
+    priority_map = {source: idx for idx, source in enumerate(priority)}
+
+    # Group by call_id
+    by_call = {}
+    for row in transcript_rows:
+        call_id = row['call_id']
+        if call_id not in by_call:
+            by_call[call_id] = []
+        by_call[call_id].append(row)
+
+    # For each call_id, keep highest-priority source
+    deduplicated = []
+    for call_id, rows in by_call.items():
+        # Sort by priority (lowest priority_map value = highest priority)
+        rows_sorted = sorted(
+            rows,
+            key=lambda r: priority_map.get(r['source'], 999)
+        )
+        deduplicated.append(rows_sorted[0])
+
+    return deduplicated
