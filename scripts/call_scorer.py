@@ -58,10 +58,10 @@ SCORER_VERSION = "phase4-progressive-jsonb-v1"
 def _build_gate_system_prompt():
     """Build the gate system prompt dynamically based on configured methodology."""
     component_lines = []
-    for label in get_components():
+    for label in get_components():  # drift-guard: ok (iterates get_components(), not hardcoded)
         key = component_key(label)
         # Methodology-specific descriptions
-        if key == "metrics":
+        if key == "metrics":  # drift-guard: ok (if/elif chain for descriptions, not enumeration)
             desc = "quantified business impact / value metrics"
         elif key == "economic_buyer":
             desc = "who controls budget; confirmed authority; buyer-owned approval steps"
@@ -69,7 +69,7 @@ def _build_gate_system_prompt():
             desc = "the stated requirements / evaluation criteria"
         elif key == "decision_process":
             desc = "timeline, stakeholders, approval steps"
-        elif key == "pain":
+        elif key == "pain":  # drift-guard: ok (if/elif chain for descriptions, not enumeration)
             desc = "the problem, its urgency and business impact"
         elif key == "champion":
             desc = "a person taking internal action to advance the deal"

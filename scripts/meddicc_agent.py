@@ -504,7 +504,7 @@ SDK quality, visual editor, experimentation, SSO, SAML, budget approval
 - Schedule CFO meeting with John Torres
 - Provide security questionnaire responses"""
 
-    test_cumulative_state = {
+    test_cumulative_state = {  # drift-guard: ok (test fixture with example MEDDICC state)
         "company": "Acme Corp",
         "calls_reviewed": 2,
         "meddicc_state": {

@@ -266,7 +266,7 @@ async def query_deals_at_risk(params: dict, sb) -> dict:
     at_risk = []
 
     # Component name mapping
-    component_fields = {
+    component_fields = {  # drift-guard: ok (field name mapping, not component enumeration)
         "pain": "pain_score",
         "champion": "champion_score",
         "metrics": "metrics_score",

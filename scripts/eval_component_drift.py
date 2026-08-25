@@ -70,15 +70,10 @@ def test_no_file_defines_component_list_outside_utils():
             # 1. utils.py - single source of truth for component definitions
             # 2. Guards (eval_*.py) - contain test fixtures and pattern literals
             # 3. Tests (test_*.py) - fixtures legitimately name components
-            # 4. Scoring/mapping - rubric.py, handlers.py, stage_requirements.py
-            # 5. Agents - meddicc_agent.py, call_scorer.py (legitimate component iteration)
+            # All other files (including stage_requirements.py, call_scorer.py, meddicc_agent.py)
+            # are scanned. Use inline '# drift-guard: ok' to opt out specific lines.
             excluded_files = {
                 'utils.py',
-                'rubric.py',
-                'handlers.py',
-                'stage_requirements.py',
-                'meddicc_agent.py',
-                'call_scorer.py',
             }
 
             if filepath.name in excluded_files:
@@ -109,13 +104,17 @@ def test_no_file_defines_component_list_outside_utils():
                     # Get the line content
                     lines = content.split('\n')
                     if line_num <= len(lines):
-                        line_content = lines[line_num - 1].strip()
+                        line_content = lines[line_num - 1]
+
+                        # Inline opt-out: skip if line has drift-guard: ok
+                        if '# drift-guard: ok' in line_content:
+                            continue
 
                         violations.append({
                             'file': str(filepath.relative_to(repo_root)),
                             'line': line_num,
                             'pattern': pattern,
-                            'content': line_content
+                            'content': line_content.strip()
                         })
 
             # Check for dict-key enumeration (multi-line, so use DOTALL)
@@ -125,16 +124,24 @@ def test_no_file_defines_component_list_outside_utils():
                     # Get line number of start
                     line_num = content[:match.start()].count('\n') + 1
 
-                    # Get the line content
+                    # Inline opt-out: check matched span + 5 lines before for drift-guard: ok
                     lines = content.split('\n')
+                    start_line = max(0, line_num - 6)  # 5 lines before + current
+                    end_line = content[:match.end()].count('\n') + 1
+                    context_lines = lines[start_line:end_line]
+
+                    if any('# drift-guard: ok' in line for line in context_lines):
+                        continue
+
+                    # Get the line content
                     if line_num <= len(lines):
-                        line_content = lines[line_num - 1].strip()
+                        line_content = lines[line_num - 1]
 
                         violations.append({
                             'file': str(filepath.relative_to(repo_root)),
                             'line': line_num,
                             'pattern': f'dict_enum:{pattern[:40]}...',
-                            'content': f'{line_content[:60]}... (dict with hardcoded component keys)'
+                            'content': f'{line_content.strip()[:60]}... (dict with hardcoded component keys)'
                         })
 
     if violations:

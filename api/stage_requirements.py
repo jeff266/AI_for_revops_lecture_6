@@ -77,7 +77,7 @@ def get_requirements_for_stage(stage_id: str) -> Dict[str, int]:
     Returns the component score requirements a deal at this stage needs
     to meet to ADVANCE to the next stage.
 
-    For example, a Discovery-stage deal returns {"pain": 5, "champion": 4}
+    For example, a Discovery-stage deal returns {"pain": 5, "champion": 4}  # drift-guard: ok (docstring example)
     — the requirements to reach Scoping. Components not in this dict are
     not yet expected to be strong.
 

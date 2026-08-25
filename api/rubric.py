@@ -3,7 +3,7 @@ MEDDICC scoring rubric with bands and next steps.
 Used for general coaching when deal-specific analysis unavailable.
 """
 
-RUBRIC = {
+RUBRIC = {  # drift-guard: ok (scoring rubric data structure, not component enumeration)
     "metrics": {
         "bands": {
             "red": (0, 3, "No quantified business case"),
