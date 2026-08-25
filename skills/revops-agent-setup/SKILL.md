@@ -37,6 +37,22 @@ Should we continue with manual setup, or pause here?"
 
 Use these answers to determine which credentials to collect in subsequent steps.
 
+## Step 0a — Install dependencies
+
+Tell the user:
+"Before collecting credentials, install the required Python dependencies.
+This ensures imports work when testing your setup.
+
+From the repo root, run:
+
+  pip install -r requirements.txt
+
+This installs: anthropic, requests, PyYAML, supabase, and other dependencies.
+
+If you see import errors later (ModuleNotFoundError), this step was skipped."
+
+Wait for confirmation before proceeding.
+
 ## Step 1 — Anthropic API Key
 
 Tell the user:
