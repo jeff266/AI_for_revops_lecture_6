@@ -16,23 +16,43 @@ import os
 import hashlib
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
+from unittest.mock import MagicMock
 
 # Add project root to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-def _get_supabase_client():
-    """Get Supabase client for testing."""
-    from supabase import create_client
-    url = os.getenv('SUPABASE_URL')
-    key = os.getenv('SUPABASE_SERVICE_KEY')
-    if not url or not key:
-        raise ValueError('SUPABASE_URL and SUPABASE_SERVICE_KEY must be set')
-    return create_client(url, key)
 
+def _make_mock_sb():
+    """Create a mock Supabase client that returns empty results by default."""
+    mock_sb = MagicMock()
+    mock_table = MagicMock()
+    mock_select = MagicMock()
+    mock_execute = MagicMock()
+    mock_insert = MagicMock()
+    mock_update = MagicMock()
+    mock_delete = MagicMock()
 
-def _clean_test_proposals(sb):
-    """Clean up test proposals."""
-    sb.table('proposals').delete().ilike('entity_key', 'test_%').execute()
+    # Chain the mocks
+    mock_sb.table.return_value = mock_table
+    mock_table.select.return_value = mock_select
+    mock_table.insert.return_value = mock_insert
+    mock_table.update.return_value = mock_update
+    mock_table.delete.return_value = mock_delete
+
+    # Default responses
+    mock_select.execute.return_value.data = []
+    mock_select.execute.return_value.count = 0
+    mock_insert.execute.return_value.data = []
+    mock_update.execute.return_value.data = []
+    mock_delete.execute.return_value = MagicMock()
+
+    # Allow chaining for filters
+    mock_select.eq.return_value = mock_select
+    mock_select.gte.return_value = mock_select
+    mock_update.eq.return_value = mock_update
+    mock_delete.ilike.return_value = mock_delete
+
+    return mock_sb
 
 
 def test_propose_suppressed_below_evidence_bar():
@@ -42,10 +62,7 @@ def test_propose_suppressed_below_evidence_bar():
     print("\n[TEST] Propose suppressed below evidence bar")
 
     from scripts.proposals import propose
-    sb = _get_supabase_client()
-
-    # Clean up first
-    _clean_test_proposals(sb)
+    sb = _make_mock_sb()
 
     # Attempt to propose with low evidence count (below min 30)
     result = propose(
@@ -62,7 +79,6 @@ def test_propose_suppressed_below_evidence_bar():
     )
 
     if result is not None:
-        _clean_test_proposals(sb)
         raise AssertionError(f'Expected None, got proposal {result["id"]}')
 
     print('  ✓ Proposal suppressed: evidence_count 15 < min 30')
@@ -75,9 +91,7 @@ def test_propose_suppressed_below_effect_size():
     print("\n[TEST] Propose suppressed below effect size")
 
     from scripts.proposals import propose
-    sb = _get_supabase_client()
-
-    _clean_test_proposals(sb)
+    sb = _make_mock_sb()
 
     # Attempt to propose with low effect size (below min 10%)
     result = propose(
@@ -99,7 +113,6 @@ def test_propose_suppressed_below_effect_size():
     )
 
     if result is not None:
-        _clean_test_proposals(sb)
         raise AssertionError(f'Expected None, got proposal {result["id"]}')
 
     print('  ✓ Proposal suppressed: effect_size 6.7% < min 10%')
@@ -112,11 +125,21 @@ def test_propose_suppressed_when_duplicate_open():
     print("\n[TEST] Propose suppressed when duplicate open")
 
     from scripts.proposals import propose
-    sb = _get_supabase_client()
+    sb = _make_mock_sb()
 
-    _clean_test_proposals(sb)
+    # Mock first proposal succeeding - insert returns the created row
+    first_proposal_row = {
+        'id': 'test-proposal-123',
+        'entity_type': 'coverage_methodology',
+        'entity_key': 'test_duplicate_suppression',
+        'status': 'proposed'
+    }
+    sb.table.return_value.insert.return_value.execute.return_value.data = [first_proposal_row]
 
-    # Create first proposal
+    # First proposal - should succeed (count=0, no duplicates)
+    sb.table.return_value.select.return_value.execute.return_value.count = 0
+    sb.table.return_value.select.return_value.execute.return_value.data = []
+
     first = propose(
         sb,
         entity_type='coverage_methodology',
@@ -135,6 +158,12 @@ def test_propose_suppressed_when_duplicate_open():
     if first is None:
         raise AssertionError('First proposal should succeed')
 
+    # Now mock duplicate check returning the existing proposal
+    sb.table.return_value.select.return_value.execute.return_value.data = [{
+        'id': 'test-proposal-123',
+        'proposed_at': datetime.now(timezone.utc).isoformat()
+    }]
+
     # Attempt duplicate proposal (should be suppressed)
     duplicate = propose(
         sb,
@@ -151,8 +180,6 @@ def test_propose_suppressed_when_duplicate_open():
         evidence_count=200
     )
 
-    _clean_test_proposals(sb)
-
     if duplicate is not None:
         raise AssertionError(f'Duplicate should be suppressed, got proposal {duplicate["id"]}')
 
@@ -167,42 +194,32 @@ def test_propose_suppressed_at_max_open_proposals():
     print("\n[TEST] Propose suppressed at max open proposals")
 
     from scripts.proposals import propose
-    sb = _get_supabase_client()
+    sb = _make_mock_sb()
 
-    _clean_test_proposals(sb)
+    # Mock open count at the limit (10)
+    sb.table.return_value.select.return_value.execute.return_value.count = 10
 
-    # Check current open count
-    open_count = sb.table('proposals').select('id', count='exact').eq(
-        'status', 'proposed'
-    ).execute()
+    result = propose(
+        sb,
+        entity_type='coverage_methodology',
+        entity_key='test_max_open_limit',
+        current_value={'anchor_week': 3},
+        proposed_value={'anchor_week': 5},
+        rationale='Test proposal when at max',
+        evidence={
+            'quarters_analyzed': 6,
+            'deals_in_cohort': 150,
+            'effect_size': 0.25
+        },
+        evidence_count=150
+    )
 
-    # Note: This test assumes max_open_proposals is 10 in config
-    # If there are already 10+ open proposals, this test will verify suppression
-    if open_count.count >= 10:
-        result = propose(
-            sb,
-            entity_type='coverage_methodology',
-            entity_key='test_max_open_limit',
-            current_value={'anchor_week': 3},
-            proposed_value={'anchor_week': 5},
-            rationale='Test proposal when at max',
-            evidence={
-                'quarters_analyzed': 6,
-                'deals_in_cohort': 150,
-                'effect_size': 0.25
-            },
-            evidence_count=150
+    if result is not None:
+        raise AssertionError(
+            f'Proposal should be suppressed at max limit, got {result["id"]}'
         )
 
-        if result is not None:
-            _clean_test_proposals(sb)
-            raise AssertionError(
-                f'Proposal should be suppressed at max limit, got {result["id"]}'
-            )
-
-        print(f'  ✓ Proposal suppressed: {open_count.count} open >= max 10')
-    else:
-        print(f'  ⚠️  SKIP: Only {open_count.count} open proposals (need 10+ to test limit)')
+    print(f'  ✓ Proposal suppressed: 10 open >= max 10')
 
 
 def test_approve_does_not_mutate_any_config_file():
@@ -216,9 +233,7 @@ def test_approve_does_not_mutate_any_config_file():
     print("\n[TEST] Approve does not mutate any config file")
 
     from scripts.proposals import propose, approve
-    sb = _get_supabase_client()
-
-    _clean_test_proposals(sb)
+    sb = _make_mock_sb()
 
     # Snapshot all config file checksums
     config_dir = Path('config')
@@ -233,7 +248,22 @@ def test_approve_does_not_mutate_any_config_file():
 
     checksums_before = {f: file_checksum(f) for f in config_files}
 
-    # Create and approve a proposal
+    # Mock proposal creation succeeding
+    proposal_row = {
+        'id': 'test-proposal-456',
+        'entity_type': 'coverage_methodology',
+        'entity_key': 'test_approval_no_mutation',
+        'affects_handlers': True,
+        'requires_regeneration': True,
+        'status': 'proposed'
+    }
+    sb.table.return_value.insert.return_value.execute.return_value.data = [proposal_row]
+
+    # Mock open count and duplicate check as empty
+    sb.table.return_value.select.return_value.execute.return_value.count = 0
+    sb.table.return_value.select.return_value.execute.return_value.data = []
+
+    # Create proposal
     proposal = propose(
         sb,
         entity_type='coverage_methodology',
@@ -254,12 +284,14 @@ def test_approve_does_not_mutate_any_config_file():
     if proposal is None:
         raise AssertionError('Proposal should succeed (clears evidence bar)')
 
+    # Mock the proposal retrieval for approve()
+    sb.table.return_value.select.return_value.execute.return_value.data = [proposal_row]
+
     # Approve the proposal
     response = approve(sb, proposal['id'], reviewed_by='test_suite', notes='Test approval')
 
     # Verify response includes manual steps
     if not response.get('follow_up_steps'):
-        _clean_test_proposals(sb)
         raise AssertionError('Approval response should include follow_up_steps')
 
     # Verify config files unchanged
@@ -269,8 +301,6 @@ def test_approve_does_not_mutate_any_config_file():
     for f in config_files:
         if checksums_before[f] != checksums_after[f]:
             changed_files.append(f.name)
-
-    _clean_test_proposals(sb)
 
     if changed_files:
         raise AssertionError(
