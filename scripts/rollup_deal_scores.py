@@ -19,7 +19,7 @@ This is the read path the nightly uses when SCORING_MODE=progressive. It calls
 the model zero times.
 
 PHASE 4 PORT: Rewired to read from JSONB (component_scores, evidence) instead of
-fixed columns. Methodology-agnostic: works for MEDDICC, MEDDPIC, SPICED, BANT.
+fixed columns. Methodology-agnostic: works for MEDDICC, MEDDPICC, SPICED, BANT.
 """
 import json
 from datetime import datetime

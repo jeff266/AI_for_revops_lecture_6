@@ -239,12 +239,12 @@ GrowthBook repo is read-only for this port. After pull on 2026-08-24, it has:
 Phase 4 is complete when:
 
 1. ✅ Migration 043 created with JSONB (not fixed columns)
-2. ⏸️ Progressive trio ported and rewired (call_scorer, rollup, meddicc_agent verified clean)
-   - **BLOCKED:** 4b acceptance test failed
-   - **Issue:** utils.py has `'MEDDPIC'` but client.yaml comment says `'MEDDPICC'`
-   - **Fix required:** Rename dict key to MEDDPICC or update comment to MEDDPIC
-   - **Test result:** Expected 8 components with MEDDPICC, got 7 (fell back to MEDDICC)
-3. ⏳ MEDDPICC acceptance test (gates 4c/4d)
+2. ✅ Progressive trio ported and rewired (call_scorer, rollup, meddicc_agent verified clean)
+3. ✅ MEDDPICC acceptance test PASSED
+   - **Fix applied:** Renamed dict key from `'MEDDPIC'` to `'MEDDPICC'`
+   - **Loud failure added:** get_components() now raises ValueError on unrecognized methodology
+   - **Test result:** MEDDPICC returns 8 components with paper_process, MEDDICC returns 7
+   - **No Python edited** to switch between methodologies
 4. ⏳ All 14 production files rewired to `get_components()` + `component_key()`
 5. ⏳ Three GrowthBook comment strings replaced
 6. ✅ CRM adapter touchpoints documented (Phase 4 planning)

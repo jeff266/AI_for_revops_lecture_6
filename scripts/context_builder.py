@@ -13,7 +13,7 @@ from utils import get_methodology, get_components, component_key
 
 # Per-component descriptions. MEDDICC components keep their original
 # descriptions; the remaining methodologies use methodology-agnostic
-# one-liners so the same builder works for SPICED, BANT, and MEDDPIC.
+# one-liners so the same builder works for SPICED, BANT, and MEDDPICC.
 COMPONENT_DESCRIPTIONS = {
     # MEDDICC (descriptions preserved from the original prompt)
     'Metrics': 'Quantifiable business outcomes the buyer cares about',

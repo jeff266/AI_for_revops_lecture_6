@@ -326,7 +326,7 @@ class HubSpotDealsClient(CRMAdapter):
 
         The component map is built dynamically from the configured
         methodology so the same extractor works for MEDDICC, SPICED,
-        BANT, and MEDDPIC. 'Identified Pain' is mapped to 'pain_score'
+        BANT, and MEDDPICC. 'Identified Pain' is mapped to 'pain_score'
         to preserve existing Supabase/HubSpot column naming.
         """
         import re
@@ -495,7 +495,7 @@ class HubSpotDealsClient(CRMAdapter):
         Create the custom qualification properties in HubSpot if they
         don't exist. Property names and the component list are driven by
         the configured methodology, so MEDDICC keeps its existing
-        meddicc_* names while SPICED/BANT/MEDDPIC get their own.
+        meddicc_* names while SPICED/BANT/MEDDPICC get their own.
 
         Creates the four core properties (score, status, last_analyzed,
         summary) plus one number property per methodology component.

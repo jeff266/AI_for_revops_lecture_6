@@ -68,9 +68,9 @@ METHODOLOGY_COMPONENTS = {
     'MEDDICC': ['Metrics', 'Economic Buyer', 'Decision Criteria',
                 'Decision Process', 'Identified Pain',
                 'Champion', 'Competition'],
-    'MEDDPIC': ['Metrics', 'Economic Buyer', 'Decision Criteria',
-                'Decision Process', 'Paper Process',
-                'Identified Pain', 'Champion', 'Competition'],
+    'MEDDPICC': ['Metrics', 'Economic Buyer', 'Decision Criteria',
+                 'Decision Process', 'Paper Process',
+                 'Identified Pain', 'Champion', 'Competition'],
     'SPICED':  ['Situation', 'Pain', 'Impact',
                 'Critical Event', 'Decision'],
     'BANT':    ['Budget', 'Authority', 'Need', 'Timeline'],
@@ -97,8 +97,21 @@ def get_methodology(config: dict = None) -> str:
 
 
 def get_components(config: dict = None) -> list:
-    return METHODOLOGY_COMPONENTS.get(
-        get_methodology(config), METHODOLOGY_COMPONENTS['MEDDICC'])
+    """Get component list for configured methodology.
+
+    Raises ValueError if methodology is not recognized. This is intentional:
+    silent fallback to MEDDICC hides config errors. A client following the
+    documented option must get their configured components, not a default.
+    """
+    methodology = get_methodology(config)
+    if methodology not in METHODOLOGY_COMPONENTS:
+        valid_options = ', '.join(sorted(METHODOLOGY_COMPONENTS.keys()))
+        raise ValueError(
+            f"Unrecognized sales_methodology: '{methodology}'. "
+            f"Valid options: {valid_options}. "
+            f"Check config/client.yaml organization.sales_methodology setting."
+        )
+    return METHODOLOGY_COMPONENTS[methodology]
 
 
 def component_key(name: str) -> str:
