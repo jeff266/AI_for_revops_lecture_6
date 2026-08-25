@@ -28,8 +28,9 @@ from utils import load_client_config
 def check_supabase_analytics():
     """Run plausibility checks on Supabase analytical tables."""
     try:
-        from supabase_client import get_client, select_all
-        sb = get_client()
+        from supabase_client import SupabaseWriter, select_all
+        writer = SupabaseWriter()
+        sb = writer.client
 
         violations = []
 

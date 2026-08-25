@@ -55,8 +55,9 @@ def load_call_cache():
 def get_supabase_coverage():
     """Get deal coverage from Supabase (scores and snapshots)."""
     try:
-        from supabase_client import get_client, select_all
-        sb = get_client()
+        from supabase_client import SupabaseWriter, select_all
+        writer = SupabaseWriter()
+        sb = writer.client
 
         # Get deals with analyses
         analyses = select_all(sb, 'analyses', columns='deal_id')

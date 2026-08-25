@@ -42,7 +42,7 @@ def load_deal_index():
 def get_crm_deal_count():
     """Get deal count directly from HubSpot API."""
     try:
-        from hubspot_deals import HubSpotDealsClient
+        from adapters.crm.hubspot import HubSpotDealsClient
         hs = HubSpotDealsClient()
 
         # Get all deals (no filters)
