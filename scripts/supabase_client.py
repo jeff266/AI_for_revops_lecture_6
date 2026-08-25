@@ -61,6 +61,33 @@ def _safe_date(val) -> Optional[str]:
         return None
 
 
+def _coerce_in_values(val):
+    """An `in_` filter needs a COLLECTION. If a bare string reaches postgrest's
+    .in_(), postgrest iterates it CHARACTER BY CHARACTER — a single deal_id
+    "60785721693" becomes in.(6,0,7,8,5,...) and the query returns nonsense.
+
+    Production fix #1: _coerce_in_values - deal ID string iteration bug.
+    Live Bestseller incident: a comma-joined id string produced a filter on
+    single digits and quote chars. Coerce here so no caller can trip it:
+      - a str is split on commas if it contains any (a joined id list), else
+        treated as ONE id → [val];
+      - any other non-collection scalar becomes [val];
+      - a list/tuple/set passes through as a list.
+    Each element is stringified and de-quoted."""
+    if isinstance(val, (list, tuple, set)):
+        items = list(val)
+    elif isinstance(val, str):
+        items = val.split(",") if "," in val else [val]
+    else:
+        items = [val]
+    out = []
+    for v in items:
+        s = str(v).strip().strip('"').strip("'").strip()
+        if s:
+            out.append(s)
+    return out
+
+
 def select_all(sb, table, columns='*', filters=None, page_size=1000):
     """Paginated select — PostgREST caps unpaginated responses
     at 1,000 rows silently."""
@@ -77,7 +104,9 @@ def select_all(sb, table, columns='*', filters=None, page_size=1000):
                 q = q.ilike(f[1], f[2])
             elif op == "in_" or op == "in":
                 # Fix A1: "in" is reserved keyword, always use "in_" method
-                q = q.in_(f[1], f[2])
+                # Production fix #1: Coerce value to list before .in_() to prevent
+                # character iteration (deal_id string → in.(6,0,1,4,...))
+                q = q.in_(f[1], _coerce_in_values(f[2]))
             else:
                 q = getattr(q, op)(f[1], f[2])
         batch = (q.range(page*page_size,

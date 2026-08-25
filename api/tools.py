@@ -3,7 +3,7 @@ import sys, json
 from pathlib import Path
 from collections import defaultdict
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
-from supabase_client import select_all
+from supabase_client import select_all, _coerce_in_values
 
 _VALID_COLUMNS = {}
 
@@ -58,6 +58,10 @@ async def filter_table(sb, table, columns=None, filters=None, limit=50, order_by
                 # needs .not_.is_() not a chained attr
                 processed_filters.append(
                     ("__not_null__", col, None))
+        elif op in ("in_", "in"):
+            # Production fix #1: Coerce in_ values to prevent string char-iteration
+            # A bare string or comma-joined string must become a list before .in_()
+            processed_filters.append(("in_", col, _coerce_in_values(val)))
         else:
             processed_filters.append((op, col, val))
 
@@ -87,6 +91,7 @@ async def join_tables(sb, primary_table, primary_key, joined_table, foreign_key,
     key_values = [r[primary_key] for r in primary_rows if r.get(primary_key)]
     if not key_values:
         return {"rows": primary_rows, "total_found": len(primary_rows)}
+    # Production fix #1: key_values already a list, but coerce for safety
     joined = select_all(sb, joined_table,
         columns=",".join(_validate_columns(joined_table, joined_columns or [])) or "*",
         filters=[("in_", foreign_key, key_values)])

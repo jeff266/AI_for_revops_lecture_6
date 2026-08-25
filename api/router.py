@@ -6,8 +6,17 @@ generates answers with Sonnet, verifies numbers with Haiku.
 
 import json
 import os
+import re
 import logging
+import sys
+from pathlib import Path
 import anthropic
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+try:
+    from llm_client import LLMClient
+except ImportError:
+    LLMClient = None  # Optional dependency for synthesis
 from api.db import get_supabase, log_unanswered, is_admin, get_prior_entities, get_api_history
 from api import handlers
 
@@ -15,6 +24,145 @@ from api import handlers
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 logger = logging.getLogger("cro_agent")
 logger.info("[STARTUP] Phase G.2 robust router with evaluation loop loaded")
+
+# ── Production Fix #7: Synthesis output ceiling ──
+# 600 truncated multi-deal MEDDICC answers mid-sentence (a two-deal scorecard
+# is 2 deals x 7 components + narrative + next steps — well over 600 tokens).
+# A CRO routinely asks about several deals at once, so size for that; the retry
+# ceiling is the truncation-guard's second attempt.
+SYNTH_MAX_TOKENS = 4000
+SYNTH_MAX_TOKENS_RETRY = 8000
+
+# ── Production Fix #6: Bounded fallback columns ──
+# How much of the tool_results JSON reaches synthesis. 3000 chars truncated a
+# multi-deal payload before the model saw the later deals. Cost is not the
+# constraint here — a complete answer over many deals beats a truncated one.
+SYNTH_PAYLOAD_CHARS = 20000
+
+_TERMINAL_ENDINGS = ".!?)\"'`]}…"
+
+
+def _looks_truncated(text: str) -> bool:
+    """Heuristic: did a synthesized answer get cut off (max_tokens ceiling)?
+    A complete answer ends on terminal punctuation or a closing bracket/quote.
+    One that ends on a word, an em/en dash, a comma, a colon, or a bullet
+    marker was clipped mid-thought. Empty/whitespace is treated as not
+    truncated (that is a different failure the empty-result path handles).
+
+    Production fix #7: A two-deal response truncated mid-sentence at 600 tokens."""
+    # Strip trailing markdown emphasis/quote so "**...strong.**" reads as "."
+    t = (text or "").rstrip().rstrip("*_`> ").rstrip()
+    if not t:
+        return False
+    last = t[-1]
+    if last in _TERMINAL_ENDINGS:
+        return False
+    # A trailing dash/comma/colon/semicolon/bullet is an unfinished clause or
+    # list item; anything else is a bare word with no closing punctuation.
+    return True
+
+
+# ── Production Fix #5: Confidence floor ──
+# PROVISIONAL — this value is a guess, not validated from log data. Before this,
+# the assessor score gated nothing: a 0.00 confabulation and a 0.50 truncation
+# both shipped. Below the floor we send an honest miss instead. It is config
+# (env-overridable) precisely so it can be retuned from the [ASSESS] score
+# distribution after ~1 week of real traffic — check whether 0.30 catches the
+# bad answers and lets good ones through before trusting it. No retry is
+# attached (see incident analysis: neither the confab nor the truncation would
+# have been fixed by re-synthesizing the same data).
+_DEFAULT_ASSESS_FLOOR = 0.30
+try:
+    ASSESS_CORRECTNESS_FLOOR = float(os.getenv("ASSESS_CORRECTNESS_FLOOR",
+                                               _DEFAULT_ASSESS_FLOOR))
+except (TypeError, ValueError):
+    ASSESS_CORRECTNESS_FLOOR = _DEFAULT_ASSESS_FLOOR
+
+
+def _result_summary(tool_results: dict) -> str:
+    """Factual, count-only description of what a handler returned — for the
+    honest-miss message. States ONLY what the system has (row counts / empty),
+    never a guessed cause for the miss.
+
+    Production fix #4: Empty-result honesty. Synthesis invented three causes for
+    a broken query rather than saying what it looked for."""
+    if not tool_results:
+        return "no data came back"
+    for key in ("scores", "rows", "deals", "narratives", "analyses",
+                "objections", "results"):
+        v = tool_results.get(key)
+        if isinstance(v, list):
+            return (f"{len(v)} row{'s' if len(v) != 1 else ''} came back"
+                    if v else "no matching rows came back")
+    if tool_results.get("deal"):
+        return "one deal record came back"
+    return ("no matching data came back"
+            if not any(v for v in tool_results.values())
+            else "some data came back")
+
+
+def _below_floor(assessment: dict, floor: float = None) -> bool:
+    """Pure predicate: should this assessed answer be blocked as low-confidence?
+    Blocks only a real, low score. EXEMPT: skipped assessments (budget/honest-gap
+    short-circuits) and data_gap issues (an acknowledged gap is an honest answer).
+    Kept separate from route_question so it is unit-testable.
+
+    Production fix #5: Confidence floor. Assessor scores of 0.00 and 0.50 shipped."""
+    floor = ASSESS_CORRECTNESS_FLOOR if floor is None else floor
+    a = assessment or {}
+    if a.get("skipped") or a.get("issue") == "data_gap":
+        return False
+    score = a.get("score", 0.5)
+    return isinstance(score, (int, float)) and score < floor
+
+
+def _honest_miss(handler_name: str, tool_results: dict) -> str:
+    """The below-floor reply. Only facts the system actually has: which handler
+    ran and what came back. No speculation about WHY — that is what the
+    confabulated answer did, and it was worse than saying nothing.
+
+    Production fix #4: The bug this replaces wasn't the empty result — it was
+    synthesis inventing three plausible causes ('deal might not exist, might be
+    below threshold, might be named differently') for a query that was simply
+    broken. The replacement must state only what it observed."""
+    return (
+        "I couldn't answer that reliably — my own check on the drafted answer "
+        "came back below the confidence floor, so I'm not going to send it. "
+        f"(I routed to `{handler_name}` and {_result_summary(tool_results)}.) "
+        "A confident wrong answer is worse than telling you I missed. If you "
+        "name the specific deal or company, I'll pull its MEDDICC scorecard "
+        "directly."
+    )
+
+
+def extract_explicit_deal_ids(question: str) -> list:
+    """Find deal IDs mentioned in THIS message (overrides thread context).
+
+    Production fix #2: Current-message entities override thread context.
+    A cached deal_id hijacked every follow-up in a thread, including ones
+    with explicit IDs pasted."""
+    return re.findall(r'\b\d{5,}\b', question)
+
+
+def message_names_known_company(question: str, sb) -> bool:
+    """Does THIS message name a company we have data for?
+
+    Production fix #2: A named company in THIS message is an explicit entity
+    and overrides any cached company from thread context."""
+    # Get list of known companies from database
+    try:
+        companies = sb.table("companies").select("name").execute()
+        if not companies.data:
+            return False
+
+        company_names = {c["name"].lower() for c in companies.data if c.get("name")}
+        question_lower = question.lower()
+
+        # Check if any known company is mentioned in the question
+        return any(company.lower() in question_lower for company in company_names)
+    except Exception:
+        return False
+
 
 FOLLOWUP_PRONOUNS = [
     "which of those", "which of them", "which of these",
