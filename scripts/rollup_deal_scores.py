@@ -25,13 +25,15 @@ import json
 from datetime import datetime
 
 import call_scorer as cs
+from utils import get_components, component_key
 
 # Prose abbreviations for the MEDDICC output headers (M/E/D/D/I/C/C).
 # Build dynamically for methodology portability
 def _build_abbr():
     """Build abbreviation map for components. Uses first letter of each word."""
     abbr = {}
-    for label, key in cs.COMPONENTS:
+    for label in get_components():
+        key = component_key(label)
         # Simple first-letter abbreviation
         abbr[key] = label[0].upper()
     return abbr
@@ -112,7 +114,8 @@ def _row_components(row):
         ev = {}
 
     # Build component dict for all configured components
-    return {k: {"score": scores.get(k), "evidence": ev.get(k)} for k in cs.COMPONENT_KEYS}
+    component_keys = [component_key(label) for label in get_components()]
+    return {k: {"score": scores.get(k), "evidence": ev.get(k)} for k in component_keys}
 
 
 def rollup(rows):
@@ -160,9 +163,13 @@ def render_md(company, deal_id, rolled, ncalls):
             lines.append(f"**Evidence from calls**: {ev or '(no evidence recorded)'} "
                         f"(most recently set by the call on {prov})")
         lines.append("")
-    strongest = max(cs.COMPONENT_KEYS, key=lambda k: (rolled[k]["score"] or -1))
-    weakest = min(cs.COMPONENT_KEYS, key=lambda k: (rolled[k]["score"] if rolled[k]["score"] is not None else 99))
-    slabel = dict((k, l) for l, k in cs.COMPONENTS)
+
+    # Build component keys and label map
+    component_keys = [component_key(label) for label in get_components()]
+    slabel = {component_key(label): label for label in get_components()}
+
+    strongest = max(component_keys, key=lambda k: (rolled[k]["score"] or -1))
+    weakest = min(component_keys, key=lambda k: (rolled[k]["score"] if rolled[k]["score"] is not None else 99))
     wk = rolled[weakest]["score"]
     lines.append("## Summary & Recommended Actions")
     lines.append(f"Progressive roll-up across {ncalls} scored call(s): overall {tot}/70. "

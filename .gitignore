@@ -60,3 +60,4 @@ memory/rubric_observations/*
 output/*
 scripts/analytics/*.csv
 !**/.gitkeep
+*.bak

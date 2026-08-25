@@ -31,13 +31,17 @@ from utils import get_components, component_key
 
 # Dynamic component loading — methodology comes from config/client.yaml
 # MEDDICC: 7 components, MEDDPIC: 8 (adds Paper Process), SPICED: 5, BANT: 4
-COMPONENTS = [(label, component_key(label)) for label in get_components()]
-COMPONENT_KEYS = [k for _, k in COMPONENTS]
+# No local copy — use get_components() and component_key() directly
+
+def _component_keys():
+    """Get current methodology's component keys. Not cached - call sparingly."""
+    return [component_key(label) for label in get_components()]
 
 # Bump when the prompt/rubric changes so a re-backfill can find stale rows.
 SCORER_VERSION = "phase4-progressive-jsonb-v1"
 
-COMPONENT_LABELS = {k: label for label, k in COMPONENTS}
+# Build component labels map dynamically
+COMPONENT_LABELS = {component_key(label): label for label in get_components()}
 
 # Two passes, cumulative-context. Prompt-level "return null" does NOT make a model
 # abstain — handed a rich transcript and a seven-field form it fills every field
@@ -57,7 +61,8 @@ COMPONENT_LABELS = {k: label for label, k in COMPONENTS}
 def _build_gate_system_prompt():
     """Build the gate system prompt dynamically based on configured methodology."""
     component_lines = []
-    for label, key in COMPONENTS:
+    for label in get_components():
+        key = component_key(label)
         # Methodology-specific descriptions
         if key == "metrics":
             desc = "quantified business impact / value metrics"
@@ -184,7 +189,8 @@ def _format_prior_state(prior_state):
     if not prior_state:
         return "No earlier calls — this is the first call on the deal; nothing is established yet."
     lines = []
-    for label, key in COMPONENTS:
+    for label in get_components():
+        key = component_key(label)
         cell = prior_state.get(key) or {}
         sc = cell.get("score")
         if sc is None:
@@ -229,9 +235,10 @@ def _parse_advanced(text):
     if not isinstance(obj, list):
         return []
     seen, out = set(), []
+    component_keys = _component_keys()
     for item in obj:
         k = str(item).strip().lower()
-        if k in COMPONENT_KEYS and k not in seen:
+        if k in component_keys and k not in seen:
             seen.add(k)
             out.append(k)
     return out
@@ -278,13 +285,14 @@ def parse_call_scores(text):
     for all components. Tolerant of code fences and trailing prose; any
     component the model omits or malforms becomes null (safe: null = 'said
     nothing'). Never raises."""
-    out = {k: {"score": None, "evidence": None} for k in COMPONENT_KEYS}
+    component_keys = _component_keys()
+    out = {k: {"score": None, "evidence": None} for k in component_keys}
     if not text:
         return out
     obj = _extract_json_object(text)
     if not isinstance(obj, dict):
         return out
-    for key in COMPONENT_KEYS:
+    for key in component_keys:
         cell = obj.get(key)
         if isinstance(cell, dict):
             score = _coerce_score(cell.get("score"))
@@ -352,7 +360,8 @@ def score_call(call_text, deal_context=None, prior_state=None, client=None):
         from llm_client import LLMClient
         client = LLMClient.from_config("generator")
 
-    components = {k: {"score": None, "evidence": None} for k in COMPONENT_KEYS}
+    component_keys = _component_keys()
+    components = {k: {"score": None, "evidence": None} for k in component_keys}
     tok_in = tok_out = 0
     model = None
 
@@ -404,12 +413,13 @@ def roll_up(scored_calls):
     Returns {key: {"score", "evidence", "call_id", "call_date"}} with full
     provenance; score is None (and call_id/date None) if no call scored it.
     """
+    component_keys = _component_keys()
     rolled = {k: {"score": None, "evidence": None, "call_id": None, "call_date": None}
-              for k in COMPONENT_KEYS}
+              for k in component_keys}
     ordered = sorted(scored_calls, key=lambda r: (r.get("call_date") or ""))
     for row in ordered:
         comps = row.get("components") or {}
-        for key in COMPONENT_KEYS:
+        for key in component_keys:
             cell = comps.get(key) or {}
             if cell.get("score") is not None:
                 rolled[key] = {
@@ -435,13 +445,14 @@ def to_score_row(call_id, deal_id, call_date, result, text_source):
     SPICED gets 5, BANT gets 4. Zero schema changes when switching methodologies.
     """
     comps = result["components"]
+    component_keys = _component_keys()
 
     # Build component_scores JSONB: {component_key: score} for non-null scores
-    component_scores = {k: comps[k]["score"] for k in COMPONENT_KEYS
+    component_scores = {k: comps[k]["score"] for k in component_keys
                        if comps[k]["score"] is not None}
 
     # Build evidence JSONB: {component_key: evidence_text} for non-null evidence
-    evidence = {k: comps[k]["evidence"] for k in COMPONENT_KEYS
+    evidence = {k: comps[k]["evidence"] for k in component_keys
                if comps[k]["score"] is not None and comps[k]["evidence"]}
 
     return {

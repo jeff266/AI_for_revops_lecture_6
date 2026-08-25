@@ -8,9 +8,16 @@ Design: Stage requirements are derived from config ONLY, never hardcoded.
 Uses stage.order to map to stage_progression entries, making this work
 for any client's stage IDs/names without code changes.
 """
+import sys
 import yaml
 from pathlib import Path
 from typing import Dict, Optional
+
+# Add scripts to path for utils
+_REPO_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(_REPO_ROOT / 'scripts'))
+
+from utils import get_components, component_key
 
 # Cache the config to avoid repeated file reads
 _config_cache = None
@@ -152,10 +159,11 @@ def get_requirements_for_stage(stage_id: str) -> Dict[str, int]:
             requirements[component] = threshold
         elif component == "__all__":
             # All components must meet this threshold
-            for comp in ["metrics", "economic_buyer", "decision_criteria",
-                        "decision_process", "champion", "pain", "competition"]:
-                if comp not in requirements:  # Don't override specific higher requirements
-                    requirements[comp] = threshold
+            # Use get_components() + component_key() to get current methodology's components
+            for label in get_components():
+                comp_key = component_key(label)
+                if comp_key not in requirements:  # Don't override specific higher requirements
+                    requirements[comp_key] = threshold
 
     return requirements
 
