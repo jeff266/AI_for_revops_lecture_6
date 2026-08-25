@@ -50,6 +50,14 @@ def test_no_file_defines_component_list_outside_utils():
         r'for\s+comp\s+in\s+\["pain"',    # Hardcoded component iteration
     ]
 
+    # Dict-key enumeration patterns (catch hardcoded component_mapping-style dicts)
+    # Look for dicts with 3+ component names as keys (3 to avoid false positives)
+    dict_enum_patterns = [
+        r'"identified_pain".*"champion".*"metrics"',  # Multiple MEDDICC keys in dict
+        r'"metrics".*"economic_buyer".*"decision_criteria"',  # Multiple component keys
+        r'"pain".*"champion".*"economic_buyer"',      # Alternative naming
+    ]
+
     violations = []
 
     # Check all Python files in scripts/ and api/
@@ -94,6 +102,25 @@ def test_no_file_defines_component_list_outside_utils():
                             'line': line_num,
                             'pattern': pattern,
                             'content': line_content
+                        })
+
+            # Check for dict-key enumeration (multi-line, so use DOTALL)
+            for pattern in dict_enum_patterns:
+                matches = re.finditer(pattern, content, re.IGNORECASE | re.DOTALL)
+                for match in matches:
+                    # Get line number of start
+                    line_num = content[:match.start()].count('\n') + 1
+
+                    # Get the line content
+                    lines = content.split('\n')
+                    if line_num <= len(lines):
+                        line_content = lines[line_num - 1].strip()
+
+                        violations.append({
+                            'file': str(filepath.relative_to(repo_root)),
+                            'line': line_num,
+                            'pattern': f'dict_enum:{pattern[:40]}...',
+                            'content': f'{line_content[:60]}... (dict with hardcoded component keys)'
                         })
 
     if violations:

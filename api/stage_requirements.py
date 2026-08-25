@@ -17,7 +17,7 @@ from typing import Dict, Optional
 _REPO_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(_REPO_ROOT / 'scripts'))
 
-from utils import get_components, component_key
+from utils import get_components, component_key, get_methodology
 
 # Cache the config to avoid repeated file reads
 _config_cache = None
@@ -136,17 +136,10 @@ def get_requirements_for_stage(stage_id: str) -> Dict[str, int]:
     # Load requirements for this progression
     reqs = stage_prog.get(progression_key, {})
 
-    # Convert config keys to MEDDICC component names
-    component_mapping = {
-        "identified_pain": "pain",
-        "champion": "champion",
-        "metrics": "metrics",
-        "economic_buyer": "economic_buyer",
-        "decision_criteria": "decision_criteria",
-        "decision_process": "decision_process",
-        "competition": "competition",
-        "all_components_minimum": "__all__",  # Special marker for all components
-    }
+    # Derive component mapping from configured methodology (not hardcoded list)
+    # Works for MEDDICC (7), MEDDPICC (8), SPICED (5), BANT (4) without code changes
+    component_mapping = {component_key(c): component_key(c) for c in get_components()}
+    component_mapping["all_components_minimum"] = "__all__"  # Special marker
 
     requirements = {}
     for config_key, threshold in reqs.items():
@@ -155,11 +148,21 @@ def get_requirements_for_stage(stage_id: str) -> Dict[str, int]:
             continue
 
         component = component_mapping.get(config_key)
-        if component and component != "__all__":
+        if component is None:
+            # Unmapped key — fail loudly, don't silently drop
+            valid_keys = sorted([k for k in component_mapping.keys() if k != "__all__"])
+            valid_keys.append("all_components_minimum")
+            valid_keys.append("minimum_stakeholders")
+            raise ValueError(
+                f"Unknown component '{config_key}' in stage_progression.{progression_key}. "
+                f"Valid component keys for {get_methodology()}: {', '.join(valid_keys)}. "
+                f"Check config/client.yaml stage_progression section."
+            )
+
+        if component != "__all__":
             requirements[component] = threshold
-        elif component == "__all__":
+        else:
             # All components must meet this threshold
-            # Use get_components() + component_key() to get current methodology's components
             for label in get_components():
                 comp_key = component_key(label)
                 if comp_key not in requirements:  # Don't override specific higher requirements
