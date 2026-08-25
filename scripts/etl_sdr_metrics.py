@@ -576,6 +576,16 @@ def main():
 
     # Determine which tools to run
     tools_config = config.get('sdr_tools', {})
+
+    # Validate tool names in config
+    VALID_TOOLS = {'apollo', 'salesloft', 'aircall'}
+    invalid_tools = set(tools_config.keys()) - VALID_TOOLS
+    if invalid_tools:
+        raise ValueError(
+            f"Unrecognized SDR tools in config/client.yaml: {', '.join(sorted(invalid_tools))}. "
+            f"Valid options: {', '.join(sorted(VALID_TOOLS))}"
+        )
+
     enabled_tools = []
 
     if args.tool == 'all':

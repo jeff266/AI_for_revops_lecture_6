@@ -132,4 +132,14 @@ etl:
   - hs_lastmodifieddate
   active_deals_refresh: nightly
   call_lookback_days: 90
+sdr_tools:
+  # SDR activity sources. All disabled by default — enable only what the
+  # client actually uses. With none enabled, etl_sdr_metrics does nothing
+  # and the three SDR handlers query empty tables.
+  apollo:
+    enabled: false      # dialer — calls, connects
+  salesloft:
+    enabled: false      # sequencer — emails, sequence steps
+  aircall:
+    enabled: false      # dialer — calls, voicemails
 sales_methodology: MEDDICC
