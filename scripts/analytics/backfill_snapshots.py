@@ -31,10 +31,16 @@ from typing import Dict, List, Optional, Tuple
 
 # Add scripts to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent))
 
 from supabase import create_client
 from adapters.storage.supabase import select_all
 from utils import is_lost_stage as config_is_lost_stage
+from point_in_time import (
+    get_stage_at_date as pit_get_stage_at_date,
+    get_field_at_date,
+    reconstruct_open_rows
+)
 
 
 class SnapshotBackfiller:
@@ -114,55 +120,17 @@ class SnapshotBackfiller:
         """
         Get stage ID for a deal at a specific snapshot date.
 
+        REWIRED: Now uses shared point_in_time.get_stage_at_date to prevent divergence.
+        The local implementation was deleted and replaced with this wrapper.
+
         Returns:
             (stage_id, confidence, has_history)
             - stage_id: The stage at snapshot_date (or None)
-            - confidence: 'exact', 'interpolated', 'inferred', or 'unknown'
+            - confidence: 'exact', 'cleared', 'pre_history', or 'no_history'
             - has_history: True if property history exists
         """
-        if deal_id not in self.property_history:
-            # No property history available
-            return None, 'unknown', False
-
-        history = self.property_history[deal_id]['history']
-
-        if not history:
-            # Deal exists but has no stage history
-            return None, 'unknown', False
-
-        # Sort history by timestamp (oldest first)
-        sorted_history = sorted(history, key=lambda x: x['timestamp'])
-
-        # Find the most recent stage change before or at snapshot_date
-        snapshot_ts = snapshot_date.isoformat()
-        current_stage = None
-        exact_match = False
-
-        for entry in sorted_history:
-            entry_ts = entry['timestamp']
-
-            if entry_ts <= snapshot_ts:
-                current_stage = entry['value']
-                # Check if this is an exact match (same day)
-                entry_date = datetime.fromisoformat(entry_ts.replace('Z', '+00:00')).date()
-                snapshot_dt = snapshot_date.date()
-                if entry_date == snapshot_dt:
-                    exact_match = True
-            else:
-                # We've passed the snapshot date
-                break
-
-        if current_stage is None:
-            # No stage change before this snapshot date (deal created after snapshot)
-            return None, 'inferred', True
-
-        # Determine confidence level
-        if exact_match:
-            confidence = 'exact'
-        else:
-            confidence = 'interpolated'
-
-        return current_stage, confidence, True
+        # Call shared point_in_time function (matches migration 017 vocabulary)
+        return pit_get_stage_at_date(self.property_history, deal_id, snapshot_date)
 
     def generate_snapshot_dates(self, weeks: int = 52) -> List[datetime]:
         """

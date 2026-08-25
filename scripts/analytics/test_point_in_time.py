@@ -330,6 +330,70 @@ def test_field_reconstruction():
     print("  ✓ Field reconstruction uses same backward-looking logic")
 
 
+def test_weekly_sampling_drops_intermediate_stages():
+    """
+    Fixture: Weekly sampling drops intermediate stages within a week.
+
+    This is a DOCUMENTED LIMITATION, not a bug. Weekly snapshots capture
+    the stage at snapshot time, not all stages a deal passed through.
+
+    Timeline (all within one week):
+    - 2024-01-01 Monday: Discovery
+    - 2024-01-03 Wednesday: Scoping (intermediate)
+    - 2024-01-05 Friday: Proposal (intermediate)
+    - 2024-01-07 Sunday: Negotiating
+
+    Weekly snapshot on 2024-01-07 (Sunday) sees: Negotiating
+    Intermediate stages (Scoping, Proposal) are not captured.
+
+    Without this fixture, someone will eventually report this as a bug.
+    """
+    print("\n[FIXTURE] Weekly sampling drops intermediate stages")
+
+    property_history = {
+        'deal_fast_mover': {
+            'history': [
+                {'timestamp': '2024-01-01T00:00:00', 'value': 'appointmentscheduled'},  # Discovery
+                {'timestamp': '2024-01-03T00:00:00', 'value': 'qualifiedtobuy'},        # Scoping
+                {'timestamp': '2024-01-05T00:00:00', 'value': 'presentationscheduled'}, # Proposal
+                {'timestamp': '2024-01-07T00:00:00', 'value': '24682892'},              # Negotiating
+            ]
+        }
+    }
+
+    # Test 1: Monday snapshot sees Discovery (first stage)
+    stage, conf, _ = get_stage_at_date(
+        property_history, 'deal_fast_mover',
+        datetime(2024, 1, 1)
+    )
+    assert stage == 'appointmentscheduled', f"Expected Discovery on Monday, got {stage}"
+    print("  ✓ 2024-01-01 (Mon): appointmentscheduled (Discovery)")
+
+    # Test 2: Mid-week snapshot sees intermediate stage (Scoping)
+    stage, conf, _ = get_stage_at_date(
+        property_history, 'deal_fast_mover',
+        datetime(2024, 1, 3)
+    )
+    assert stage == 'qualifiedtobuy', f"Expected Scoping on Wednesday, got {stage}"
+    print("  ✓ 2024-01-03 (Wed): qualifiedtobuy (Scoping)")
+
+    # Test 3: Sunday snapshot sees final stage for the week (Negotiating)
+    # Intermediate stages (Scoping, Proposal) are NOT captured in weekly snapshot
+    stage, conf, _ = get_stage_at_date(
+        property_history, 'deal_fast_mover',
+        datetime(2024, 1, 7)
+    )
+    assert stage == '24682892', f"Expected Negotiating on Sunday, got {stage}"
+    print("  ✓ 2024-01-07 (Sun): 24682892 (Negotiating)")
+
+    # Test 4: Next week's snapshot sees different stage
+    # Weekly sampling shows: Discovery (Week 1) → Negotiating (Week 1 end)
+    # Missing from weekly: Scoping, Proposal (happened mid-week)
+    print("  ✓ Weekly sampling drops Scoping and Proposal (intermediate stages)")
+    print("  ✓ This is a DOCUMENTED LIMITATION, not a bug")
+    print("  ✓ Point-in-time is correct - weekly sampling is lossy by design")
+
+
 def main():
     """Run all fixture tests."""
     print("=" * 70)
@@ -340,6 +404,7 @@ def main():
     print("2. Returns null when no history (never defaults)")
     print("3. No lookahead (strictly backward-looking)")
     print("4. Distinguishes cleared vs pre_history")
+    print("5. Weekly sampling drops intermediate stages (documented limitation)")
 
     tests = [
         test_deal_moving_backward,
@@ -348,6 +413,7 @@ def main():
         test_cleared_vs_pre_history,
         test_inclusion_rule_with_fixtures,
         test_field_reconstruction,
+        test_weekly_sampling_drops_intermediate_stages,
     ]
 
     passed = 0

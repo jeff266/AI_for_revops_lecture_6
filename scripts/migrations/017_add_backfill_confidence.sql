@@ -19,6 +19,7 @@
 ALTER TABLE deals_snapshot
 ADD COLUMN IF NOT EXISTS backfill_confidence TEXT CHECK (backfill_confidence IN (
   'exact',          -- stage history covers this date (true point-in-time read)
+  'cleared',        -- entry at or before this date exists but value is null (actively unstaged)
   'pre_history',    -- deal existed but history does not reach this date (null, not guessed)
   'no_history',     -- no stage history for the deal at all
   -- Legacy vocabulary kept for backward compatibility with any existing data:
@@ -40,8 +41,10 @@ ON deals_snapshot(has_property_history);
 COMMENT ON COLUMN deals_snapshot.backfill_confidence IS
 'Confidence level for backfilled snapshot data:
 - exact: Snapshot built from actual HubSpot property history at this date
+- cleared: Entry at or before this date exists but value is null (stage was actively cleared/unstaged)
 - pre_history: Deal existed but stage history does not reach this snapshot_date (returns null, never guessed)
 - no_history: No stage history available for this deal
+Both cleared and pre_history read as null/open, but represent different facts.
 - Legacy values (interpolated/inferred/unknown/excluded_mismatch) kept for backward compatibility';
 
 COMMENT ON COLUMN deals_snapshot.has_property_history IS
@@ -61,5 +64,5 @@ DO $$
 BEGIN
     RAISE NOTICE 'Migration 017 complete - added backfill confidence fields to deals_snapshot';
     RAISE NOTICE 'New columns: backfill_confidence, has_property_history, interpolation_method, data_quality_notes';
-    RAISE NOTICE 'CHECK constraint uses final vocabulary (exact/pre_history/no_history + legacy)';
+    RAISE NOTICE 'CHECK constraint vocabulary: exact/cleared/pre_history/no_history + legacy';
 END $$;

@@ -240,7 +240,7 @@ def test_check_constraint_vocabularies_match_code():
     code_vocab = {
         # backfill_confidence carries the stage confidence from point_in_time.
         # Template gets the correct vocabulary from the start (migration 017).
-        'backfill_confidence': {'exact', 'pre_history', 'no_history'},
+        'backfill_confidence': {'exact', 'cleared', 'pre_history', 'no_history'},
 
         # transcript_quality written by call adapters
         'transcript_quality': {'full', 'partial', 'fragments_only', 'unavailable'},

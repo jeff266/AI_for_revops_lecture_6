@@ -149,18 +149,11 @@ def test_method2_never_reads_current_state():
             missing.append(func)
 
     if missing:
-        # Check if this is the template's stub version with local implementation
-        has_local_impl = 'def get_stage_at_date(self' in source
-        if has_local_impl:
-            print("  ⚠️  Template version detected: has local get_stage_at_date")
-            print("  ⚠️  Will be replaced in Step 3b with shared point_in_time functions")
-            print(f"  ⚠️  Missing shared functions: {missing}")
-            return  # Don't fail on template stub - will be replaced
-        else:
-            raise AssertionError(
-                f"backfill_snapshots.py does not import/use required point_in_time "
-                f"functions: {missing}. Method 2 must reconstruct from property history."
-            )
+        raise AssertionError(
+            f"backfill_snapshots.py does not import/use required point_in_time "
+            f"functions: {missing}. Method 2 must reconstruct from property history. "
+            f"The local implementation must be deleted and replaced with imports."
+        )
 
     print("  ✓ backfill_snapshots.py does not query live deals table")
     print("  ✓ Uses get_stage_at_date() for historical stage reconstruction")

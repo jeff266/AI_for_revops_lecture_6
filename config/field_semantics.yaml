@@ -29,6 +29,10 @@ stage_map:
     label: "Technical Evaluation"
     bucket: "proposal"
     transition: "proposal_to_negotiating"
+  "24682892":
+    label: "Negotiating"
+    bucket: "proposal"
+    transition: null
   closedwon:
     label: "Closed Won"
     bucket: "closed_won"
