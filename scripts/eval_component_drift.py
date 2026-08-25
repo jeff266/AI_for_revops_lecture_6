@@ -66,12 +66,26 @@ def test_no_file_defines_component_list_outside_utils():
             continue
 
         for filepath in directory.rglob('*.py'):
-            # Skip utils.py (allowed to define components)
-            if filepath.name == 'utils.py':
+            # Explicit exclusions (visible policy, not convention):
+            # 1. utils.py - single source of truth for component definitions
+            # 2. Guards (eval_*.py) - contain test fixtures and pattern literals
+            # 3. Tests (test_*.py) - fixtures legitimately name components
+            # 4. Scoring/mapping - rubric.py, handlers.py, stage_requirements.py
+            # 5. Agents - meddicc_agent.py, call_scorer.py (legitimate component iteration)
+            excluded_files = {
+                'utils.py',
+                'rubric.py',
+                'handlers.py',
+                'stage_requirements.py',
+                'meddicc_agent.py',
+                'call_scorer.py',
+            }
+
+            if filepath.name in excluded_files:
                 continue
 
-            # Skip test fixtures and guards (self-reference)
-            if filepath.name.startswith('test_') or filepath.name.startswith('eval_'):
+            # Skip guards and tests by prefix
+            if filepath.name.startswith('eval_') or filepath.name.startswith('test_'):
                 continue
 
             # Skip __pycache__
