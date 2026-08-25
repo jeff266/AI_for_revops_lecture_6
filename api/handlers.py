@@ -36,6 +36,58 @@ def _resolve_tw(params: dict) -> dict:
         return resolve_time_window({"period": "current_quarter"})
 
 
+def _resolve_owner_email(params: dict, sb):
+    """Resolve a rep to an owner_email, accepting an email OR a person's name.
+
+    The classifier is asked to turn a first name into an email via the roster,
+    but that resolution silently fails when the roster is empty (personas not
+    seeded) or the name is partial — the handler then gets a name where it
+    wanted an ID, errors, and drops to the budget-burning dynamic loop. This
+    resolves in-handler against user_personas so a rep's first name, full name,
+    or email all work.
+
+    Returns (email_or_None, note_or_None). `note` explains a name→email
+    resolution or a miss, for transparency in the handler's output.
+    """
+    # 1. An email supplied under any of the known keys wins outright.
+    for key in ("owner_email", "rep_email", "sdr_email", "email"):
+        v = params.get(key)
+        if v and "@" in str(v):
+            return str(v).strip().lower(), None
+
+    # 2. Otherwise gather any name-ish candidate the classifier may have passed.
+    candidates = []
+    for key in ("owner_email", "rep_email", "sdr_email", "email",
+                "rep_name", "owner_name", "sdr_name", "name",
+                "rep", "owner", "sdr"):
+        v = params.get(key)
+        if v and "@" not in str(v):
+            candidates.append(str(v).strip())
+    if not candidates:
+        return None, None
+
+    try:
+        personas = select_all(sb, "user_personas",
+                              columns="email,name,display_name")
+    except Exception:
+        personas = []
+
+    for cand in candidates:
+        cl = cand.lower().strip()
+        if not cl:
+            continue
+        for p in personas:
+            for nm in (p.get("name"), p.get("display_name")):
+                nml = str(nm or "").lower().strip()
+                if not nml:
+                    continue
+                first = nml.split()[0] if nml.split() else nml
+                if cl == nml or cl == first or cl in nml:
+                    if p.get("email"):
+                        return p["email"], f"resolved '{cand}' to {p['email']}"
+    return None, f"could not resolve '{candidates[0]}' to a known rep"
+
+
 async def query_waterfall(params: dict, sb) -> dict:
     """
     Pipeline snapshot + movement in ONE handler with question-aware emphasis.
@@ -1736,25 +1788,122 @@ async def query_coaching_priorities(params: dict, sb) -> dict:
     }
 
 
-async def query_sdr_activity(params: dict, sb) -> dict:
-    """
-    Daily SDR activity metrics from sdr_metrics table.
+# ══════════════════════════════════════════════════════════════════════════════
+# Batch 3: SDR + Pipeline Movement Handlers (ported from MEDDICC-agent)
+# ══════════════════════════════════════════════════════════════════════════════
 
-    Shows calls, emails, connect rates for individual SDRs.
+async def query_sdr_pipeline_sourced(params: dict, sb) -> dict:
+    """
+    SDR-sourced pipeline analysis — which SDRs are generating qualified pipeline.
+
+    Reads deals table to identify deals with SDR attribution (sdr_owner_email).
+    Returns top SDRs by pipeline value, deal count, and attribution metrics.
+
+    Answers: 'which SDRs are sourcing pipeline?', 'show me SDR attribution',
+             'top performing SDRs by pipeline'
+    """
+    tw = _resolve_tw(params)
+    sdr_email, _ = _resolve_owner_email(params, sb)
+
+    # Query deals with SDR attribution
+    filters = [
+        ("eq", "deal_status", "active"),
+        ("gte", "create_date", tw["start"]),
+        ("lte", "create_date", tw["end"])
+    ]
+
+    # The production fix: The old "not.is" operator was not one select_all
+    # understands — getattr(q, "not.is") raised AttributeError. The correct
+    # operator for "IS NOT NULL" is "__not_null__".
+    filters.append(("__not_null__", "sdr_owner_email"))
+
+    if sdr_email:
+        filters.append(("eq", "sdr_owner_email", sdr_email))
+
+    deals = select_all(sb, "deals",
+        columns="deal_id,company_name,deal_value,new_arr,sdr_owner_email,"
+                "owner_email,create_date,dealstage",
+        filters=filters)
+
+    if not deals:
+        note = f"No SDR-sourced deals found for {tw['label']}"
+        if sdr_email:
+            note += f" (sdr_email={sdr_email})"
+        return {
+            "sdr_sourced_deals": [],
+            "top_sdrs": [],
+            "note": note,
+            "period": tw["label"]
+        }
+
+    # Aggregate by SDR
+    from collections import defaultdict
+    sdr_stats = defaultdict(lambda: {
+        "deal_count": 0,
+        "total_value": 0,
+        "total_arr": 0,
+        "deals": []
+    })
+
+    for deal in deals:
+        sdr = deal.get("sdr_owner_email")
+        if not sdr:
+            continue
+        stats = sdr_stats[sdr]
+        stats["deal_count"] += 1
+        stats["total_value"] += deal.get("deal_value") or 0
+        stats["total_arr"] += deal.get("new_arr") or 0
+        stats["deals"].append({
+            "deal_id": deal["deal_id"],
+            "company_name": deal.get("company_name"),
+            "deal_value": deal.get("deal_value"),
+            "owner_email": deal.get("owner_email"),
+            "create_date": deal.get("create_date")
+        })
+
+    # Build top SDRs list
+    top_sdrs = []
+    for sdr, stats in sdr_stats.items():
+        top_sdrs.append({
+            "sdr_email": sdr,
+            "deal_count": stats["deal_count"],
+            "total_value": stats["total_value"],
+            "total_arr": stats["total_arr"],
+            "avg_deal_value": round(stats["total_value"] / stats["deal_count"], 0) if stats["deal_count"] > 0 else None
+        })
+
+    # Sort by total value
+    top_sdrs.sort(key=lambda x: x["total_value"], reverse=True)
+
+    return {
+        "sdr_sourced_deals": deals,
+        "top_sdrs": top_sdrs,
+        "total_deals": len(deals),
+        "total_pipeline_value": sum(d.get("deal_value") or 0 for d in deals),
+        "period": tw["label"],
+        "sdr_email": sdr_email
+    }
+
+
+async def query_sdr_metrics(params: dict, sb) -> dict:
+    """
+    SDR activity metrics from sdr_metrics and sdr_users tables.
+
+    Returns call/email metrics, connect rates, and meeting attribution.
+    Aggregated by SDR user across tools (Apollo, Salesloft, Aircall).
+
     Answers: 'show me SDR activity', 'how many calls did Jake make?',
              'SDR performance this week'
     """
     tw = _resolve_tw(params)
-    sdr_identifier = (params.get("owner_email") or
-                     params.get("sdr_email") or
-                     params.get("sdr_name") or
-                     params.get("sdr"))
+    sdr_email, note = _resolve_owner_email(params, sb)
 
     # Check if table has data
     sample = select_all(sb, "sdr_metrics", columns="id", filters=[])
     if not sample:
         return {
-            "sdr_activity": [],
+            "calls_summary": {},
+            "meetings_summary": {},
             "note": (
                 "SDR metrics table exists but is empty. "
                 "This feature requires configuring Apollo, Salesloft, or Aircall "
@@ -1762,295 +1911,838 @@ async def query_sdr_activity(params: dict, sb) -> dict:
             )
         }
 
-    # Build filters
+    # Get SDR users to resolve email to tool user IDs
+    sdr_users = select_all(sb, "sdr_users",
+        columns="user_email,user_name,tool_user_id,tool")
+
+    if sdr_email:
+        matched_users = [u for u in sdr_users
+                        if u.get("user_email", "").lower() == sdr_email.lower()]
+        if not matched_users:
+            return {
+                "error": f"No SDR user found for {sdr_email}",
+                "hint": "Check sdr_users table or run scripts/etl_sdr_metrics.py"
+            }
+    else:
+        matched_users = sdr_users
+
+    # Build filters for metrics query
     filters = [
         ("gte", "metric_date", tw["start"]),
         ("lte", "metric_date", tw["end"])
     ]
 
-    if sdr_identifier:
-        # Try to resolve to user_email via sdr_users table
-        sdr_users = select_all(sb, "sdr_users",
-            columns="user_email,user_name,tool_user_id,tool")
+    # Get metrics for matched users across all tools
+    all_metrics = []
+    for user in matched_users:
+        tool = user.get("tool")
+        tool_user_id = user.get("tool_user_id")
+        user_metrics = select_all(sb, "sdr_metrics",
+            columns="tool,user_name,metric_date,calls_made,connected_calls,"
+                    "connect_rate,emails_sent,emails_opened,emails_replied,"
+                    "open_rate,reply_rate,voicemails,meeting_booked",
+            filters=filters + [
+                ("eq", "tool", tool),
+                ("eq", "tool_user_id", tool_user_id)
+            ])
+        all_metrics.extend(user_metrics)
 
-        matched_tool_users = []
-        sdr_identifier_lower = sdr_identifier.lower()
+    # Aggregate calls summary
+    total_calls = sum(m.get("calls_made") or 0 for m in all_metrics)
+    total_connected = sum(m.get("connected_calls") or 0 for m in all_metrics)
+    total_voicemails = sum(m.get("voicemails") or 0 for m in all_metrics)
+    total_emails = sum(m.get("emails_sent") or 0 for m in all_metrics)
+    total_replied = sum(m.get("emails_replied") or 0 for m in all_metrics)
 
-        for u in sdr_users:
-            email = (u.get("user_email") or "").lower()
-            name = (u.get("user_name") or "").lower()
-
-            if (sdr_identifier_lower == email or
-                sdr_identifier_lower == name or
-                sdr_identifier_lower in name.split()):
-                matched_tool_users.append({
-                    "tool": u["tool"],
-                    "tool_user_id": u["tool_user_id"]
-                })
-
-        if not matched_tool_users:
-            return {
-                "error": f"No SDR found matching '{sdr_identifier}'",
-                "hint": "Check sdr_users table or run etl_sdr_metrics.py"
-            }
-
-        # Filter by tool_user_id (may be multiple if user is in multiple tools)
-        # Build OR filter across tools
-        rows = []
-        for tu in matched_tool_users:
-            tool_rows = select_all(sb, "sdr_metrics",
-                columns="tool,user_name,metric_date,calls_made,"
-                        "connected_calls,connect_rate,emails_sent,"
-                        "emails_opened,emails_replied,open_rate,reply_rate",
-                filters=filters + [
-                    ("eq", "tool", tu["tool"]),
-                    ("eq", "tool_user_id", tu["tool_user_id"])
-                ])
-            rows.extend(tool_rows)
-    else:
-        # All SDRs
-        rows = select_all(sb, "sdr_metrics",
-            columns="tool,user_name,metric_date,calls_made,"
-                    "connected_calls,connect_rate,emails_sent,"
-                    "emails_opened,emails_replied,open_rate,reply_rate",
-            filters=filters)
-
-    # Sort by date
-    rows.sort(key=lambda x: x.get("metric_date", ""), reverse=True)
-
-    # Calculate aggregates
-    total_calls = sum(r.get("calls_made") or 0 for r in rows)
-    total_connected = sum(r.get("connected_calls") or 0 for r in rows)
-    total_emails = sum(r.get("emails_sent") or 0 for r in rows)
-
-    return {
-        "sdr_activity": rows,
+    calls_summary = {
         "total_calls": total_calls,
-        "total_connected": total_connected,
+        "connected_calls": total_connected,
+        "connect_rate": round(total_connected / total_calls * 100, 1) if total_calls > 0 else None,
+        "voicemails": total_voicemails,
         "total_emails": total_emails,
-        "avg_connect_rate": round(total_connected / total_calls * 100, 1) if total_calls > 0 else None,
-        "period": tw["label"],
-        "sdr": sdr_identifier
+        "emails_replied": total_replied,
+        "reply_rate": round(total_replied / total_emails * 100, 1) if total_emails > 0 else None
     }
 
+    # Get meetings attributed to these SDRs
+    meeting_filters = [
+        ("gte", "meeting_date", tw["start"]),
+        ("lte", "meeting_date", tw["end"])
+    ]
+    if sdr_email:
+        meeting_filters.append(("eq", "sdr_owner_email", sdr_email))
 
-async def query_sdr_performance(params: dict, sb) -> dict:
-    """
-    SDR conversion rates and benchmarks.
+    meetings = select_all(sb, "meetings",
+        columns="meeting_id,meeting_date,deal_id,sdr_owner_email",
+        filters=meeting_filters)
 
-    Shows connect rates, reply rates, and activity benchmarks.
-    Answers: 'SDR conversion rates', 'how are SDRs performing?',
-             'best performing SDR'
-    """
-    tw = _resolve_tw(params)
+    meetings_summary = {
+        "total_meetings": len(meetings),
+        "meetings_per_connect": round(len(meetings) / total_connected, 2) if total_connected > 0 else None
+    }
 
-    # Check if table has data
-    sample = select_all(sb, "sdr_metrics", columns="id", filters=[])
-    if not sample:
-        return {
-            "sdr_performance": [],
-            "note": "SDR metrics table is empty. Configure SDR tools and run ETL."
-        }
-
-    # Get metrics for period
-    rows = select_all(sb, "sdr_metrics",
-        columns="tool,user_name,tool_user_id,metric_date,"
-                "calls_made,connected_calls,connect_rate,"
-                "emails_sent,emails_replied,reply_rate",
-        filters=[
-            ("gte", "metric_date", tw["start"]),
-            ("lte", "metric_date", tw["end"])
-        ])
-
-    # Aggregate by user
-    from collections import defaultdict
-    user_stats = defaultdict(lambda: {
-        "calls_made": 0,
-        "connected_calls": 0,
-        "emails_sent": 0,
-        "emails_replied": 0
-    })
-
-    for r in rows:
-        key = (r.get("tool"), r.get("tool_user_id"), r.get("user_name"))
-        user_stats[key]["calls_made"] += r.get("calls_made") or 0
-        user_stats[key]["connected_calls"] += r.get("connected_calls") or 0
-        user_stats[key]["emails_sent"] += r.get("emails_sent") or 0
-        user_stats[key]["emails_replied"] += r.get("emails_replied") or 0
-
-    # Build performance summary
-    performance = []
-    for (tool, tool_user_id, user_name), stats in user_stats.items():
-        calls = stats["calls_made"]
-        connected = stats["connected_calls"]
-        emails = stats["emails_sent"]
-        replied = stats["emails_replied"]
-
-        connect_rate = round(connected / calls * 100, 1) if calls > 0 else None
-        reply_rate = round(replied / emails * 100, 1) if emails > 0 else None
-
-        performance.append({
-            "user_name": user_name,
-            "tool": tool,
-            "calls_made": calls,
-            "connected_calls": connected,
-            "connect_rate": connect_rate,
-            "emails_sent": emails,
-            "emails_replied": replied,
-            "reply_rate": reply_rate
-        })
-
-    # Sort by calls made
-    performance.sort(key=lambda x: x.get("calls_made") or 0, reverse=True)
-
-    # Calculate team benchmarks
-    total_calls = sum(p["calls_made"] for p in performance)
-    total_connected = sum(p["connected_calls"] for p in performance)
-    total_emails = sum(p["emails_sent"] for p in performance)
-    total_replied = sum(p["emails_replied"] for p in performance)
-
-    team_connect_rate = round(total_connected / total_calls * 100, 1) if total_calls > 0 else None
-    team_reply_rate = round(total_replied / total_emails * 100, 1) if total_emails > 0 else None
+    # Get targets if available
+    targets = []
+    if sdr_email:
+        period_label = tw.get("label", "").replace(" ", "_")
+        targets = select_all(sb, "rep_targets",
+            columns="target_value,metric",
+            filters=[
+                ("eq", "entity_name", sdr_email),
+                ("eq", "period", period_label)
+            ])
 
     return {
-        "sdr_performance": performance,
-        "team_benchmarks": {
-            "total_calls": total_calls,
-            "team_connect_rate": team_connect_rate,
-            "total_emails": total_emails,
-            "team_reply_rate": team_reply_rate
-        },
-        "period": tw["label"]
+        "calls_summary": calls_summary,
+        "meetings_summary": meetings_summary,
+        "targets": targets,
+        "period": tw["label"],
+        "sdr_email": sdr_email,
+        "note": note
     }
 
 
-async def query_team_sdr_metrics(params: dict, sb) -> dict:
+async def query_sdr_leaderboard(params: dict, sb) -> dict:
     """
-    Team-level SDR aggregates (calls, emails, trends).
+    SDR team leaderboard - rank SDRs by activity and performance.
 
-    Answers: 'show me team SDR metrics', 'SDR team performance',
-             'how is the SDR team doing?'
+    Aggregates metrics by user (across tools) and ranks by total activity.
+    Returns top performers by calls, emails, and meetings booked.
+
+    Answers: 'show me SDR leaderboard', 'top SDRs this month',
+             'which SDR is most active?'
     """
     tw = _resolve_tw(params)
+    metric = params.get("metric", "calls")  # calls | emails | meetings
 
     # Check if table has data
     sample = select_all(sb, "sdr_metrics", columns="id", filters=[])
     if not sample:
         return {
-            "team_metrics": {},
+            "leaderboard": [],
             "note": "SDR metrics table is empty. Configure SDR tools and run ETL."
         }
 
     # Get all metrics for period
     rows = select_all(sb, "sdr_metrics",
-        columns="metric_date,calls_made,connected_calls,connect_rate,"
-                "emails_sent,emails_opened,emails_replied,voicemails",
+        columns="tool,tool_user_id,user_name,metric_date,"
+                "calls_made,connected_calls,emails_sent,emails_replied,"
+                "meeting_booked",
         filters=[
             ("gte", "metric_date", tw["start"]),
             ("lte", "metric_date", tw["end"])
         ])
 
-    # Aggregate by date for trending
+    # Aggregate by user (tool + tool_user_id is the unique key)
     from collections import defaultdict
-    daily_totals = defaultdict(lambda: {
-        "calls": 0, "connected": 0, "emails": 0,
-        "opened": 0, "replied": 0, "voicemails": 0
+    user_stats = defaultdict(lambda: {
+        "calls_made": 0,
+        "connected_calls": 0,
+        "emails_sent": 0,
+        "emails_replied": 0,
+        "meetings_booked": 0,
+        "user_name": None,
+        "tools": set()
     })
 
     for r in rows:
-        date = r.get("metric_date")
-        daily_totals[date]["calls"] += r.get("calls_made") or 0
-        daily_totals[date]["connected"] += r.get("connected_calls") or 0
-        daily_totals[date]["emails"] += r.get("emails_sent") or 0
-        daily_totals[date]["opened"] += r.get("emails_opened") or 0
-        daily_totals[date]["replied"] += r.get("emails_replied") or 0
-        daily_totals[date]["voicemails"] += r.get("voicemails") or 0
+        key = (r.get("tool"), r.get("tool_user_id"))
+        stats = user_stats[key]
+        stats["calls_made"] += r.get("calls_made") or 0
+        stats["connected_calls"] += r.get("connected_calls") or 0
+        stats["emails_sent"] += r.get("emails_sent") or 0
+        stats["emails_replied"] += r.get("emails_replied") or 0
+        stats["meetings_booked"] += r.get("meeting_booked") or 0
+        stats["user_name"] = r.get("user_name")  # Take latest
+        stats["tools"].add(r.get("tool"))
 
-    # Build daily trend
-    daily_trend = []
-    for date in sorted(daily_totals.keys()):
-        stats = daily_totals[date]
-        daily_trend.append({
-            "date": date,
-            "calls": stats["calls"],
-            "connected": stats["connected"],
-            "emails": stats["emails"],
-            "connect_rate": round(stats["connected"] / stats["calls"] * 100, 1) if stats["calls"] > 0 else None
+    # Build leaderboard
+    leaderboard = []
+    for (tool, tool_user_id), stats in user_stats.items():
+        calls = stats["calls_made"]
+        connected = stats["connected_calls"]
+        emails = stats["emails_sent"]
+        replied = stats["emails_replied"]
+
+        leaderboard.append({
+            "user_name": stats["user_name"],
+            "tools": sorted(stats["tools"]),
+            "calls_made": calls,
+            "connected_calls": connected,
+            "connect_rate": round(connected / calls * 100, 1) if calls > 0 else None,
+            "emails_sent": emails,
+            "emails_replied": replied,
+            "reply_rate": round(replied / emails * 100, 1) if emails > 0 else None,
+            "meetings_booked": stats["meetings_booked"]
         })
 
-    # Overall totals
-    total_calls = sum(r.get("calls_made") or 0 for r in rows)
-    total_connected = sum(r.get("connected_calls") or 0 for r in rows)
-    total_emails = sum(r.get("emails_sent") or 0 for r in rows)
-    total_replied = sum(r.get("emails_replied") or 0 for r in rows)
-    total_voicemails = sum(r.get("voicemails") or 0 for r in rows)
+    # Sort by selected metric
+    if metric == "calls":
+        leaderboard.sort(key=lambda x: x["calls_made"], reverse=True)
+    elif metric == "emails":
+        leaderboard.sort(key=lambda x: x["emails_sent"], reverse=True)
+    elif metric == "meetings":
+        leaderboard.sort(key=lambda x: x["meetings_booked"], reverse=True)
+    else:
+        # Default: sort by total activity (calls + emails)
+        leaderboard.sort(key=lambda x: x["calls_made"] + x["emails_sent"], reverse=True)
 
     return {
-        "team_metrics": {
-            "total_calls": total_calls,
-            "total_connected": total_connected,
-            "connect_rate": round(total_connected / total_calls * 100, 1) if total_calls > 0 else None,
-            "total_emails": total_emails,
-            "total_replied": total_replied,
-            "reply_rate": round(total_replied / total_emails * 100, 1) if total_emails > 0 else None,
-            "total_voicemails": total_voicemails
-        },
-        "daily_trend": daily_trend,
+        "leaderboard": leaderboard,
+        "metric": metric,
         "period": tw["label"]
     }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# Pipeline Movement Handler + Helpers (query_pipeline_movement)
+# Ported from MEDDICC-agent with all 5 views and helper functions
+# ══════════════════════════════════════════════════════════════════════════════
+
+_PM_SNAPSHOT_COLUMNS = (
+    # Only the columns the views actually use — deal_status and fiscal_quarter
+    # (the latter is the filter, never read back) were dropped to shrink the
+    # per-row payload the curve/composition views page through (Issue 5).
+    "deal_id,snapshot_date,pipeline_id,stage_id,stage_order,"
+    "close_date,owner_email,snapshot_source,"
+    "backfill_confidence,week_of_quarter"
+)
+# deal_value is intentionally absent from the column list above. Counts only.
+
+_PM_CONFIDENCE_KEYS = ("exact", "pre_history", "no_history")
+_PM_VIEWS = ("movement", "composition", "deal_changes", "curve", "stage_deals")
+
+
+def _pm_load_scoping():
+    """Import the SHARED analytics-scoping functions (not reimplemented)."""
+    analytics_dir = str(Path(__file__).parent.parent / "scripts" / "analytics")
+    if analytics_dir not in sys.path:
+        sys.path.insert(0, analytics_dir)
+    # scripts/ is already on sys.path (top of this module), so the shared
+    # module is importable as analytics.point_in_time — same path
+    # eval_reconstruction.py uses.
+    from analytics.point_in_time import (
+        load_scope_config, is_deal_in_analytics_scope,
+    )
+    return load_scope_config, is_deal_in_analytics_scope
+
+
+def _pm_current_quarter_label():
+    """Current fiscal quarter in the stored column's format ('FY2027 Q3')."""
+    from utils import get_fiscal_quarter
+    _, _, label = get_fiscal_quarter()
+    return label
+
+
+def _pm_stage_name(stage_id, stage_cfg):
+    if stage_id is None or not str(stage_id).strip():
+        return "unknown"
+    cfg = stage_cfg.get(str(stage_id))
+    if cfg:
+        return cfg["name"]
+    # Unmapped stage at read time: degrade (label by id / field_semantics),
+    # do not raise. Reconstruction raises on unclassifiable stages; a live
+    # Slack handler degrades gracefully instead.
+    try:
+        return stage_label(str(stage_id))
+    except Exception:
+        return str(stage_id)
+
+
+def _pm_stage_order(row, stage_cfg):
+    so = row.get("stage_order")
+    if so is not None:
+        return so
+    cfg = stage_cfg.get(str(row.get("stage_id")))
+    return cfg["order"] if cfg else 9_999  # unknown sorts last
+
+
+def _pm_in_scope(row, excluded_pipelines, stage_cfg, is_in_scope):
+    """Read-time analytics scope.
+
+    Delegates the stage judgement to the shared is_deal_in_analytics_scope;
+    adds only the two deviations the spec mandates:
+      - null-stage rows COUNT (returned as 'unknown'), rather than being
+        dropped for lacking a stage;
+      - Closed Won / Closed Lost are dropped explicitly (the shared function
+        keeps them because their order is >= qualified; the spec lists them
+        as excluded).
+    """
+    pid = row.get("pipeline_id")
+    if pid is not None and str(pid) in excluded_pipelines:
+        return False  # renewal / partner / marketing pipelines
+    stage_id = row.get("stage_id")
+    if stage_id is None or not str(stage_id).strip():
+        return True   # null stage → counted downstream as 'unknown'
+    try:
+        if is_won(str(stage_id)) or is_lost(str(stage_id)):
+            return False  # Closed Won / Closed Lost / Disqualified
+    except Exception:
+        pass
+    return is_in_scope(str(stage_id), pid, excluded_pipelines, stage_cfg)
+
+
+def _pm_confidence_mix(rows):
+    mix = {k: 0 for k in _PM_CONFIDENCE_KEYS}
+    for r in rows:
+        c = r.get("backfill_confidence")
+        if c in mix:
+            mix[c] += 1
+        else:
+            mix["other"] = mix.get("other", 0) + 1
+    return mix
+
+
+def _pm_latest_row_per_deal(rows):
+    """Collapse to one row per deal for a single snapshot date (PK is
+    (deal_id, snapshot_date), so this is normally 1:1; guard duplicates)."""
+    out = {}
+    for r in rows:
+        out[r["deal_id"]] = r
+    return out
+
+
+def _pm_by_date(scoped):
+    by_date = {}
+    for r in scoped:
+        by_date.setdefault(r["snapshot_date"], []).append(r)
+    return by_date
+
+
+def _pm_stage_sets(date_rows, stage_cfg):
+    """stage_name -> set(deal_id) and deal_id -> stage_name for one date."""
+    stage_to_deals = {}
+    deal_to_stage = {}
+    for r in date_rows:
+        name = _pm_stage_name(r.get("stage_id"), stage_cfg)
+        stage_to_deals.setdefault(name, set()).add(r["deal_id"])
+        deal_to_stage[r["deal_id"]] = name
+    return stage_to_deals, deal_to_stage
+
+
+def _pm_company_map(sb, deal_ids):
+    """{deal_id: company_name} from the deals table for the given ids.
+
+    deals_snapshot has no name column, so individual deals would otherwise be
+    reported by opaque deal_id (Issue 2). Minimal join — only deal_id +
+    company_name — chunked to keep the in_ filter URL bounded.
+    """
+    ids = sorted({str(d) for d in deal_ids if d is not None})
+    out = {}
+    for i in range(0, len(ids), 100):
+        chunk = ids[i:i + 100]
+        try:
+            drows = select_all(sb, "deals", columns="deal_id,company_name",
+                               filters=[("in_", "deal_id", chunk)])
+        except Exception:
+            drows = []
+        for r in drows:
+            out[str(r["deal_id"])] = r.get("company_name")
+    return out
+
+
+def _pm_deal_rows(date_rows, stage_cfg, company_map=None, limit=200):
+    """Entity-bearing rows for one snapshot date, so extract_entity_context
+    can save deal_ids AND company_names for follow-up questions. Carries stage
+    so a drill-down ('which of those are in Discovery?') has the context it
+    needs, and company_name so deals are named, not shown as bare ids.
+
+    Still COUNTS-ONLY: deal_value is neither selected nor emitted here.
+    """
+    company_map = company_map or {}
+    rows = []
+    for r in _pm_latest_row_per_deal(date_rows).values():
+        did = r["deal_id"]
+        rows.append({
+            "deal_id": did,
+            "company_name": company_map.get(str(did)),
+            "stage": _pm_stage_name(r.get("stage_id"), stage_cfg),
+            "owner_email": r.get("owner_email"),
+            "close_date": r.get("close_date"),
+            "week_of_quarter": r.get("week_of_quarter"),
+            "backfill_confidence": r.get("backfill_confidence"),
+        })
+    rows.sort(key=lambda x: (x["stage"], str(x["deal_id"])))
+    return rows[:limit]
+
+
+def _pm_view_movement(by_date, all_dates, stage_cfg, data_gaps):
+    if len(all_dates) < 2:
+        data_gaps.append(
+            "movement needs two snapshot dates; found "
+            f"{len(all_dates)} in this grid — returning null, not a zero"
+        )
+        return None, [], {"prior": None, "current": None, "net": None}, {}, {}
+    prior_date, current_date = all_dates[-2], all_dates[-1]
+    prior_rows = list(_pm_latest_row_per_deal(by_date[prior_date]).values())
+    current_rows = list(_pm_latest_row_per_deal(by_date[current_date]).values())
+
+    prior_sets, _ = _pm_stage_sets(prior_rows, stage_cfg)
+    current_sets, _ = _pm_stage_sets(current_rows, stage_cfg)
+
+    prior_all = {r["deal_id"] for r in prior_rows}
+    current_all = {r["deal_id"] for r in current_rows}
+    new_ids = current_all - prior_all         # absent in prior → new to pipeline
+    left_ids = prior_all - current_all        # present in prior, gone in current
+
+    stage_names = set(prior_sets) | set(current_sets)
+
+    def _order(name):
+        # order a stage name for display using stage_cfg
+        for sid, cfg in stage_cfg.items():
+            if cfg["name"] == name:
+                return cfg["order"]
+        return 9_999  # 'unknown' and unmapped sort last
+
+    by_stage = []
+    for name in sorted(stage_names, key=_order):
+        p = prior_sets.get(name, set())
+        c = current_sets.get(name, set())
+        entered = c - p
+        # A deal in this stage now that wasn't here before is either new to the
+        # pipeline entirely (absent in prior) or moved in from another stage.
+        # Reporting a newly-created deal as "entered a stage" overstates
+        # movement (Issue 3), so split them.
+        entered_new = entered & new_ids
+        entered_moved = entered - new_ids
+        by_stage.append({
+            "stage": name,
+            "prior": len(p),
+            "current": len(c),
+            "net": len(c) - len(p),
+            "entered": len(entered),                 # total, back-compat
+            "entered_from_other_stage": len(entered_moved),
+            "new_to_pipeline": len(entered_new),
+            "exited": len(p - c),
+            "deal_ids": sorted(c),
+            "entered_from_other_stage_ids": sorted(entered_moved),
+            "new_to_pipeline_ids": sorted(entered_new),
+            "exited_ids": sorted(p - c),
+        })
+
+    # Moved between stages = present in both snapshots but changed stage.
+    _, prior_stage_of = _pm_stage_sets(prior_rows, stage_cfg)
+    _, current_stage_of = _pm_stage_sets(current_rows, stage_cfg)
+    moved_between = {d for d in (prior_all & current_all)
+                     if prior_stage_of.get(d) != current_stage_of.get(d)}
+
+    totals = {
+        "prior": len(prior_rows),
+        "current": len(current_rows),
+        "net": len(current_rows) - len(prior_rows),
+    }
+    # Deal-level, mutually exclusive tallies so nothing double-counts: a new
+    # deal is in `new_to_pipeline`, not in `moved_between_stages`.
+    summary = {
+        "new_to_pipeline": len(new_ids),
+        "left_pipeline": len(left_ids),
+        "moved_between_stages": len(moved_between),
+    }
+    confidence = _pm_confidence_mix(current_rows)
+    return [prior_date, current_date], by_stage, totals, confidence, summary
+
+
+def _pm_view_composition(by_date, all_dates, stage_cfg, weeks):
+    dates = all_dates[-weeks:]
+    grid = []
+    for d in dates:
+        rows = list(_pm_latest_row_per_deal(by_date[d]).values())
+        counts = {}
+        for r in rows:
+            name = _pm_stage_name(r.get("stage_id"), stage_cfg)
+            counts[name] = counts.get(name, 0) + 1
+        week_of_quarter = rows[0].get("week_of_quarter") if rows else None
+        grid.append({
+            "snapshot_date": d,
+            "week_of_quarter": week_of_quarter,
+            "by_stage": counts,
+            "total": len(rows),
+            "confidence": _pm_confidence_mix(rows),
+        })
+    return dates, grid
+
+
+def _pm_left_reason(deal_id, unscoped_current):
+    """Why a deal that was in the scoped pipeline last snapshot is gone now.
+
+    A deal absent from the CURRENT scoped snapshot either closed (won/lost),
+    dropped to an excluded stage (Meeting Set / Disqualified), or is simply
+    gone from the snapshot. We can distinguish the first two by looking at the
+    UNSCOPED current-date row (which still carries closed/excluded stages).
+    """
+    stage_id = unscoped_current.get(deal_id)
+    if stage_id is None:
+        return "gone_from_snapshot"
+    try:
+        if is_won(str(stage_id)):
+            return "closed_won"
+        if is_lost(str(stage_id)):
+            return "closed_lost"
+    except Exception:
+        pass
+    return "moved_to_excluded_stage"
+
+
+def _pm_view_deal_changes(by_date, all_dates, stage_cfg, data_gaps,
+                          company_map=None, unscoped_current=None):
+    if len(all_dates) < 2:
+        data_gaps.append(
+            "deal_changes needs two snapshot dates; found "
+            f"{len(all_dates)} in this grid — returning null, not a zero"
+        )
+        return None, []
+    company_map = company_map or {}
+    unscoped_current = unscoped_current or {}
+    prior_date, current_date = all_dates[-2], all_dates[-1]
+    prior_rows = _pm_latest_row_per_deal(by_date[prior_date])
+    current_rows = _pm_latest_row_per_deal(by_date[current_date])
+
+    changes = []
+    all_ids = set(prior_rows) | set(current_rows)
+    for deal_id in all_ids:
+        pr = prior_rows.get(deal_id)
+        cr = current_rows.get(deal_id)
+        prior_stage = _pm_stage_name(pr.get("stage_id"), stage_cfg) if pr else None
+        current_stage = _pm_stage_name(cr.get("stage_id"), stage_cfg) if cr else None
+
+        reason = None
+        if pr and not cr:
+            # Absent now — this is leaving the pipeline, NOT a stage move.
+            direction = "left_pipeline"
+            reason = _pm_left_reason(deal_id, unscoped_current)
+        elif cr and not pr:
+            # Absent in prior — a newly-created deal, NOT a stage entry (Issue 3).
+            direction = "new_to_pipeline"
+        elif prior_stage == current_stage:
+            continue  # unchanged — only report movement
+        else:
+            po = _pm_stage_order(pr, stage_cfg)
+            co = _pm_stage_order(cr, stage_cfg)
+            if co > po:
+                direction = "advanced"
+            elif co < po:
+                direction = "regressed"
+            else:
+                direction = "moved"
+        item = {
+            "deal_id": deal_id,
+            "company_name": company_map.get(str(deal_id)),
+            "owner_email": (cr or pr).get("owner_email"),
+            "prior_stage": prior_stage,
+            "current_stage": current_stage,
+            "direction": direction,
+        }
+        if reason:
+            item["reason"] = reason
+        changes.append(item)
+
+    order = {"advanced": 0, "regressed": 1, "moved": 2,
+             "new_to_pipeline": 3, "left_pipeline": 4}
+    changes.sort(key=lambda x: (order.get(x["direction"], 9), str(x["deal_id"])))
+    return [prior_date, current_date], changes
+
+
+def _pm_view_curve(by_date, all_dates, stage_cfg):
+    curve = []
+    for d in all_dates:
+        rows = list(_pm_latest_row_per_deal(by_date[d]).values())
+        curve.append({
+            "week_of_quarter": rows[0].get("week_of_quarter") if rows else None,
+            "snapshot_date": d,
+            "count": len(rows),
+            "confidence": _pm_confidence_mix(rows),
+        })
+    curve.sort(key=lambda x: (x["week_of_quarter"] is None, x["week_of_quarter"]))
+    return curve
 
 
 async def query_pipeline_movement(params: dict, sb) -> dict:
     """
-    Pipeline movement - how deals moved through stages over time.
+    Pipeline movement / composition / deal-level changes / coverage curve,
+    read from deals_snapshot. COUNTS ONLY — never dollars (see module header).
 
-    Uses waterfall_weekly table to show new pipeline, won, lost, and net change.
-    Answers: 'show me pipeline movement', 'how did pipeline change?',
-             'pipeline waterfall this quarter'
+    params:
+      view          : 'movement' | 'composition' | 'deal_changes' | 'curve' |
+                      'stage_deals' (default 'movement')
+      fiscal_quarter: e.g. 'FY2027 Q2' (default: current fiscal quarter)
+      weeks         : how many recent weeks for 'composition' (default 4)
+      pipeline_id   : optional single-pipeline filter (default: config scope —
+                      renewals and non-qualified stages excluded)
+      owner_email   : optional rep filter (also accepts rep_email)
+      deal_ids      : optional explicit deal set for 'deal_changes'
+      stage         : for 'stage_deals' — the stage name (e.g. 'Discovery') or
+                      a deal_id to list at the latest snapshot
+      close_date_scope : 'all' (default) | 'current_quarter'. Default counts
+                      all open deals (correct for coverage); 'current_quarter'
+                      restricts to deals closing in the quarter, for
+                      reconciliation against a CRM board — never the default.
+
+    Every view also returns a `rows` list of {deal_id, company_name, stage, ...}
+    from the latest snapshot so the thread-context layer can save entities for
+    follow-up drill-downs. Counts only — deal_value is never selected/emitted.
     """
-    tw = _resolve_tw(params)
+    load_scope_config, is_in_scope = _pm_load_scoping()
+    excluded_pipelines, stage_cfg = load_scope_config()
 
-    # Get weekly waterfall data
-    rows = select_all(sb, "waterfall_weekly",
-        columns="week_ending,pipeline_id,new_pipeline_value,"
-                "won_value,lost_value,net_change,"
-                "pulled_in_value,pushed_out_value,deals_qualified_count",
-        filters=[
-            ("gte", "week_ending", tw["start"]),
-            ("lte", "week_ending", tw["end"])
-        ])
+    view = (params.get("view") or "movement").strip()
+    if view not in _PM_VIEWS:
+        view = "movement"
+
+    fiscal_quarter = params.get("fiscal_quarter")
+    if not fiscal_quarter:
+        try:
+            fiscal_quarter = _pm_current_quarter_label()
+        except Exception as e:
+            return {
+                "view": view, "basis": "count",
+                "error": f"could not resolve current fiscal quarter ({e}); "
+                         "pass fiscal_quarter explicitly",
+            }
+
+    try:
+        weeks = int(params.get("weeks")) if params.get("weeks") is not None else 4
+    except (TypeError, ValueError):
+        weeks = 4
+    weeks = max(1, min(weeks, 13))
+
+    owner_email = params.get("owner_email") or params.get("rep_email")
+    pipeline_id = params.get("pipeline_id")
+    deal_ids = params.get("deal_ids")
+    close_date_scope = (params.get("close_date_scope") or "all").strip().lower()
+    if close_date_scope not in ("all", "current_quarter"):
+        close_date_scope = "all"
+
+    # Explicit, prominent scope statement so a count can be reconciled against
+    # a CRM board view (Issue 4). The default counts ALL open deals with no
+    # close-date filter — correct for coverage math — which is usually the gap
+    # against a board filtered to "close date this quarter".
+    close_stmt = ("all open deals as of each snapshot, with NO close-date "
+                  "filter" if close_date_scope == "all"
+                  else f"only deals whose close date falls in {fiscal_quarter}")
+    scope_statement = (
+        f"Counting {close_stmt}. Excludes Meeting Set, Disqualified, "
+        f"Closed Won, Closed Lost; the renewal pipeline is out of analytics "
+        f"scope. A CRM board filtered by close date or including renewals "
+        f"will not match."
+    )
+    scope_out = {
+        "pipeline": (str(pipeline_id) if pipeline_id
+                     else "default (renewals & non-qualified stages excluded)"),
+        "excluded_stages": ["Meeting Set", "Disqualified",
+                            "Closed Won", "Closed Lost"],
+        "excluded_pipelines": sorted(excluded_pipelines),
+        "close_date_scope": close_date_scope,
+        "statement": scope_statement,
+    }
+
+    # ── load snapshot rows for the quarter ──
+    filters = [("eq", "fiscal_quarter", fiscal_quarter)]
+    if owner_email:
+        filters.append(("eq", "owner_email", owner_email))
+    if pipeline_id:
+        filters.append(("eq", "pipeline_id", str(pipeline_id)))
+    else:
+        # Default scope always drops the excluded (renewal) pipelines. Push
+        # that server-side so those rows are never paged in the first place —
+        # a real reduction in rows/pages the curve & composition views scan
+        # (Issue 5). Null-stage rows live in the default pipeline, so a `neq`
+        # on the renewal id keeps them.
+        for pid in sorted(excluded_pipelines):
+            filters.append(("neq", "pipeline_id", str(pid)))
+    rows = select_all(sb, "deals_snapshot",
+                      columns=_PM_SNAPSHOT_COLUMNS, filters=filters)
+    loaded_row_count = len(rows)
+    loaded_pages = (loaded_row_count // 1000) + 1
+
+    if deal_ids:
+        wanted = {str(d) for d in deal_ids}
+        rows = [r for r in rows if str(r.get("deal_id")) in wanted]
+
+    base = {
+        "view": view,
+        "fiscal_quarter": fiscal_quarter,
+        "scope": scope_out,
+        # Surfaced at top level too, so a synthesis layer naturally includes it.
+        "scope_statement": scope_statement,
+        "basis": "count",  # explicit — never 'dollar' until the ledger clears
+        "query_stats": {"rows_loaded": loaded_row_count,
+                        "pages_loaded": loaded_pages},
+    }
 
     if not rows:
-        return {
-            "pipeline_movement": [],
-            "note": (
-                "No waterfall data for this period. "
-                "Waterfall snapshots are computed weekly. "
-                "Needs at least 2 weeks of data to compute movement."
+        gap = f"no snapshot rows for {fiscal_quarter}"
+        if owner_email:
+            gap += f" (owner {owner_email})"
+        return {**base, "snapshot_dates": [], "result": None,
+                "data_gaps": [gap]}
+
+    # ── grid handling: never silently mix weekday grids ──
+    data_gaps = []
+    sources = {}
+    for r in rows:
+        src = r.get("snapshot_source") or "unknown"
+        sources.setdefault(src, set()).add(r.get("snapshot_date"))
+    chosen_source = max(sources, key=lambda s: len(sources[s]))
+    if len(sources) > 1:
+        ignored = {s: sorted(d for d in sources[s])
+                   for s in sources if s != chosen_source}
+        data_gaps.append(
+            f"multiple snapshot grids present; used source '{chosen_source}' "
+            f"and did not mix in {ignored} (different weekday grids)"
+        )
+    grid_rows = [r for r in rows
+                 if (r.get("snapshot_source") or "unknown") == chosen_source]
+
+    # ── apply analytics scope at read time (null-stage rows counted) ──
+    scoped = [r for r in grid_rows
+              if _pm_in_scope(r, excluded_pipelines, stage_cfg, is_in_scope)]
+
+    # Optional close-date scope (Issue 4). Default 'all' leaves the coverage
+    # denominator unfiltered; 'current_quarter' restricts to deals whose
+    # point-in-time close_date falls in the queried quarter, for reconciliation
+    # against a CRM board — it never changes the default.
+    if close_date_scope == "current_quarter" and scoped:
+        from utils import get_fiscal_quarter
+        any_date = datetime.fromisoformat(
+            min(r["snapshot_date"] for r in scoped)).date()
+        q_start, q_end, _ = get_fiscal_quarter(any_date)
+        lo, hi = q_start.isoformat(), q_end.isoformat()
+        before_n = len(scoped)
+        scoped = [r for r in scoped
+                  if r.get("close_date") and lo <= r["close_date"][:10] <= hi]
+        data_gaps.append(
+            f"close_date_scope=current_quarter: kept {len(scoped)} of "
+            f"{before_n} in-scope deal-rows whose close date is in "
+            f"{fiscal_quarter}")
+
+    by_date = _pm_by_date(scoped)
+    all_dates = sorted(by_date.keys())
+
+    base["snapshot_source"] = chosen_source
+
+    if not all_dates:
+        data_gaps.append(
+            f"no in-scope rows for {fiscal_quarter} on the '{chosen_source}' grid"
+        )
+        return {**base, "snapshot_dates": [], "result": None,
+                "data_gaps": data_gaps}
+
+    # Company names for the deals we'll name individually (Issue 2). Union of
+    # the latest snapshot and the prior snapshot (deal_changes compares both).
+    name_ids = {r["deal_id"] for r in by_date[all_dates[-1]]}
+    if len(all_dates) >= 2:
+        name_ids |= {r["deal_id"] for r in by_date[all_dates[-2]]}
+    company_map = _pm_company_map(sb, name_ids)
+
+    # Unscoped current-date stages (pre-scope) so deal_changes can say WHY a
+    # deal left the scoped pipeline (closed vs dropped to an excluded stage).
+    unscoped_current = {r["deal_id"]: r.get("stage_id")
+                        for r in grid_rows
+                        if r.get("snapshot_date") == all_dates[-1]}
+
+    # Entity-bearing rows from the latest snapshot, attached to every view so
+    # extract_entity_context saves deal_ids AND company_names and follow-ups
+    # ("which of those are in Discovery?") have thread context.
+    latest_rows = _pm_deal_rows(by_date[all_dates[-1]], stage_cfg, company_map)
+
+    # ── stage-filtered deal list (direct drill-down) ──
+    if view == "stage_deals":
+        want = (params.get("stage") or "").strip().lower()
+        if not want:
+            data_gaps.append("stage_deals needs a 'stage' param (e.g. 'Discovery')")
+            return {**base, "snapshot_dates": [all_dates[-1]],
+                    "stage": None, "rows": [], "count": None,
+                    "data_gaps": data_gaps}
+        matched = [r for r in latest_rows
+                   if r["stage"].lower() == want or str(r["deal_id"]) == want]
+        if not matched:
+            data_gaps.append(
+                f"no in-scope deals in stage {params.get('stage')!r} at "
+                f"{all_dates[-1]} (stages present: "
+                f"{sorted({r['stage'] for r in latest_rows})})"
             )
+        return {
+            **base,
+            "snapshot_dates": [all_dates[-1]],
+            "stage": params.get("stage"),
+            "rows": matched,
+            "count": len(matched),
+            "data_gaps": data_gaps,
         }
 
-    # Sort by week
-    rows.sort(key=lambda x: x.get("week_ending", ""))
+    # ── dispatch ──
+    if view == "movement":
+        snap_dates, by_stage, totals, confidence, summary = _pm_view_movement(
+            by_date, all_dates, stage_cfg, data_gaps)
+        return {
+            **base,
+            "snapshot_dates": snap_dates or [],
+            "by_stage": by_stage,
+            "totals": totals,
+            "summary": summary,   # new_to_pipeline / left_pipeline / moved (deal-level)
+            "confidence": confidence,
+            "rows": latest_rows,
+            "data_gaps": data_gaps,
+        }
 
-    # Calculate period totals
-    total_new = sum(r.get("new_pipeline_value") or 0 for r in rows)
-    total_won = sum(r.get("won_value") or 0 for r in rows)
-    total_lost = sum(r.get("lost_value") or 0 for r in rows)
-    total_net_change = sum(r.get("net_change") or 0 for r in rows)
-    total_qualified = sum(r.get("deals_qualified_count") or 0 for r in rows)
+    if view == "composition":
+        dates, grid = _pm_view_composition(
+            by_date, all_dates, stage_cfg, weeks)
+        return {
+            **base,
+            "snapshot_dates": dates,
+            "weeks": grid,
+            "rows": latest_rows,
+            "data_gaps": data_gaps,
+        }
 
+    if view == "deal_changes":
+        snap_dates, changes = _pm_view_deal_changes(
+            by_date, all_dates, stage_cfg, data_gaps,
+            company_map=company_map, unscoped_current=unscoped_current)
+        summary = {}
+        for c in changes:
+            summary[c["direction"]] = summary.get(c["direction"], 0) + 1
+        # For deal_changes the drillable set is the deals that MOVED, so the
+        # entity rows are the changed deals rather than the whole snapshot.
+        change_rows = [{
+            "deal_id": c["deal_id"],
+            "company_name": c.get("company_name"),
+            "stage": c["current_stage"],
+            "owner_email": c["owner_email"],
+            "direction": c["direction"],
+        } for c in changes]
+        return {
+            **base,
+            "snapshot_dates": snap_dates or [],
+            "changes": changes,
+            "summary": summary,
+            "rows": change_rows,
+            "data_gaps": data_gaps,
+        }
+
+    # view == "curve"
+    curve = _pm_view_curve(by_date, all_dates, stage_cfg)
+    present_weeks = {c["week_of_quarter"] for c in curve
+                     if c["week_of_quarter"] is not None}
+    missing = [w for w in range(1, 14) if w not in present_weeks]
+    if missing:
+        data_gaps.append(
+            f"no snapshot for week_of_quarter {missing} — reported as absent, "
+            "not zero-filled"
+        )
     return {
-        "pipeline_movement": rows,
-        "period_totals": {
-            "new_pipeline": total_new,
-            "won": total_won,
-            "lost": total_lost,
-            "net_change": total_net_change,
-            "deals_qualified": total_qualified
-        },
-        "period": tw["label"]
+        **base,
+        "snapshot_dates": all_dates,
+        "curve": curve,
+        "rows": latest_rows,
+        "data_gaps": data_gaps,
     }
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# End of Batch 3 Handlers
+# ══════════════════════════════════════════════════════════════════════════════
 
 
 async def query_call_quality(params: dict, sb) -> dict:

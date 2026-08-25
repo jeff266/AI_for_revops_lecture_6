@@ -3,10 +3,10 @@
 Verification tests for Batch 3 handlers (SDR + pipeline movement).
 
 Tests:
-1. query_sdr_activity - individual SDR daily activity
-2. query_sdr_performance - conversion rates and benchmarks
-3. query_team_sdr_metrics - team-level aggregates
-4. query_pipeline_movement - waterfall movement data
+1. query_sdr_pipeline_sourced - SDR attribution, "__not_null__" operator fix
+2. query_sdr_metrics - individual SDR activity metrics
+3. query_sdr_leaderboard - team rankings by activity
+4. query_pipeline_movement - reads deals_snapshot (NOT waterfall_weekly)
 """
 
 import sys
@@ -27,16 +27,17 @@ sys.modules['supabase_client'].select_all = lambda *args, **kwargs: []
 
 spec.loader.exec_module(handlers_module)
 
-# Mock _resolve_tw to avoid import errors
+# Mock _resolve_tw and _resolve_owner_email to avoid import errors
 handlers_module._resolve_tw = lambda params: {
     "start": "2026-01-01",
     "end": "2026-03-31",
     "label": "Q1 2026"
 }
+handlers_module._resolve_owner_email = lambda params, sb: (None, None)
 
-query_sdr_activity = handlers_module.query_sdr_activity
-query_sdr_performance = handlers_module.query_sdr_performance
-query_team_sdr_metrics = handlers_module.query_team_sdr_metrics
+query_sdr_pipeline_sourced = handlers_module.query_sdr_pipeline_sourced
+query_sdr_metrics = handlers_module.query_sdr_metrics
+query_sdr_leaderboard = handlers_module.query_sdr_leaderboard
 query_pipeline_movement = handlers_module.query_pipeline_movement
 
 
@@ -45,177 +46,204 @@ def make_mock_sb():
     return MagicMock()
 
 
-async def test_query_sdr_activity_handles_empty_table():
-    """query_sdr_activity handles empty sdr_metrics table gracefully."""
-    print("\n[TEST] query_sdr_activity handles empty table")
+async def test_query_sdr_pipeline_sourced_uses_not_null():
+    """query_sdr_pipeline_sourced uses '__not_null__' operator, not 'not.is'.
+
+    The production fix: The old 'not.is' operator raised AttributeError
+    when select_all tried getattr(q, 'not.is'). The correct operator is
+    '__not_null__'.
+    """
+    print("\n[TEST] query_sdr_pipeline_sourced uses __not_null__ operator")
 
     mock_sb = make_mock_sb()
     original_select_all = handlers_module.select_all
-    handlers_module.select_all = lambda *args, **kwargs: []
 
-    try:
-        result = await query_sdr_activity({}, mock_sb)
-        assert "note" in result
-        assert "empty" in result["note"].lower()
-        print("  ✓ Returns informative note for empty table")
-
-    finally:
-        handlers_module.select_all = original_select_all
-
-    print("  ✓ PASS: query_sdr_activity handles empty table")
-
-
-async def test_query_sdr_performance_calculates_benchmarks():
-    """query_sdr_performance calculates team benchmarks from individual metrics."""
-    print("\n[TEST] query_sdr_performance calculates benchmarks")
-
-    mock_sb = make_mock_sb()
-    original_select_all = handlers_module.select_all
+    # Track the filter operators used
+    filters_seen = []
 
     def mock_select_all(sb, table, columns=None, filters=None):
-        if table == "sdr_metrics":
-            # Return sample data
-            return [
-                {
-                    "id": 1,  # Sample row to indicate table has data
-                    "tool": "apollo",
-                    "user_name": "SDR 1",
-                    "tool_user_id": "user1",
-                    "calls_made": 50,
-                    "connected_calls": 10,
-                    "emails_sent": 30,
-                    "emails_replied": 3
-                },
-                {
-                    "id": 2,
-                    "tool": "salesloft",
-                    "user_name": "SDR 2",
-                    "tool_user_id": "user2",
-                    "calls_made": 40,
-                    "connected_calls": 8,
-                    "emails_sent": 20,
-                    "emails_replied": 2
-                }
-            ]
+        if table == "deals":
+            filters_seen.extend(filters or [])
         return []
 
     handlers_module.select_all = mock_select_all
 
     try:
-        result = await query_sdr_performance({}, mock_sb)
-        assert "team_benchmarks" in result
-        assert "sdr_performance" in result
+        result = await query_sdr_pipeline_sourced({}, mock_sb)
 
-        benchmarks = result["team_benchmarks"]
-        assert benchmarks["total_calls"] == 90
-        assert benchmarks["team_connect_rate"] == 20.0  # 18/90 * 100
-        print("  ✓ Calculates team benchmarks correctly")
+        # Verify __not_null__ was used
+        has_not_null = any(f[0] == "__not_null__" and f[1] == "sdr_owner_email"
+                          for f in filters_seen)
+        assert has_not_null, \
+            "query_sdr_pipeline_sourced must use ('__not_null__', 'sdr_owner_email') filter"
+
+        # Verify 'not.is' was NOT used (would raise AttributeError)
+        has_not_is = any(f[0] == "not.is" for f in filters_seen)
+        assert not has_not_is, "Must not use 'not.is' operator (raises AttributeError)"
+
+        print("  ✓ Uses ('__not_null__', 'sdr_owner_email') filter")
+        print("  ✓ Does NOT use 'not.is' operator")
 
     finally:
         handlers_module.select_all = original_select_all
 
-    print("  ✓ PASS: query_sdr_performance calculates benchmarks")
+    print("  ✓ PASS: query_sdr_pipeline_sourced uses correct filter operator")
 
 
-async def test_query_team_sdr_metrics_builds_daily_trend():
-    """query_team_sdr_metrics aggregates daily totals and builds trend."""
-    print("\n[TEST] query_team_sdr_metrics builds daily trend")
+async def test_query_sdr_metrics_queries_multiple_tables():
+    """query_sdr_metrics queries sdr_metrics, sdr_users, and meetings tables."""
+    print("\n[TEST] query_sdr_metrics queries multiple tables")
+
+    mock_sb = make_mock_sb()
+    original_select_all = handlers_module.select_all
+    original_resolve_owner = handlers_module._resolve_owner_email
+
+    tables_queried = set()
+
+    def mock_select_all(sb, table, columns=None, filters=None):
+        tables_queried.add(table)
+        if table == "sdr_metrics":
+            return [{"id": 1}]  # Sample to pass empty check
+        if table == "sdr_users":
+            return [{
+                "user_email": "sdr@example.com",
+                "user_name": "SDR User",
+                "tool": "apollo",
+                "tool_user_id": "user123"
+            }]
+        return []
+
+    # Mock _resolve_owner_email to return the email directly
+    handlers_module._resolve_owner_email = lambda params, sb: ("sdr@example.com", None)
+    handlers_module.select_all = mock_select_all
+
+    try:
+        result = await query_sdr_metrics({"sdr_email": "sdr@example.com"}, mock_sb)
+
+        assert "sdr_metrics" in tables_queried, "Must query sdr_metrics table"
+        assert "sdr_users" in tables_queried, "Must query sdr_users table"
+        assert "meetings" in tables_queried, "Must query meetings table"
+
+        assert "calls_summary" in result
+        assert "meetings_summary" in result
+
+        print("  ✓ Queries sdr_metrics, sdr_users, and meetings tables")
+        print("  ✓ Returns calls_summary and meetings_summary")
+
+    finally:
+        handlers_module.select_all = original_select_all
+        handlers_module._resolve_owner_email = original_resolve_owner
+
+    print("  ✓ PASS: query_sdr_metrics queries correct tables")
+
+
+async def test_query_sdr_leaderboard_aggregates_by_user():
+    """query_sdr_leaderboard aggregates by (tool, tool_user_id) key."""
+    print("\n[TEST] query_sdr_leaderboard aggregates by user")
 
     mock_sb = make_mock_sb()
     original_select_all = handlers_module.select_all
 
     def mock_select_all(sb, table, columns=None, filters=None):
         if table == "sdr_metrics":
+            # Return sample data with duplicates for same user
             return [
                 {
-                    "id": 1,
+                    "tool": "apollo",
+                    "tool_user_id": "user1",
+                    "user_name": "SDR 1",
                     "metric_date": "2026-01-15",
                     "calls_made": 25,
                     "connected_calls": 5,
                     "emails_sent": 15,
-                    "emails_opened": 8,
                     "emails_replied": 2,
-                    "voicemails": 10
+                    "meeting_booked": 1
                 },
                 {
-                    "id": 2,
-                    "metric_date": "2026-01-15",
+                    "tool": "apollo",
+                    "tool_user_id": "user1",  # Same user, different date
+                    "user_name": "SDR 1",
+                    "metric_date": "2026-01-16",
                     "calls_made": 30,
                     "connected_calls": 6,
                     "emails_sent": 20,
-                    "emails_opened": 10,
                     "emails_replied": 3,
-                    "voicemails": 12
+                    "meeting_booked": 2
                 }
             ]
-        return []
+        return [{"id": 1}]  # Sample to pass empty check
 
     handlers_module.select_all = mock_select_all
 
     try:
-        result = await query_team_sdr_metrics({}, mock_sb)
-        assert "team_metrics" in result
-        assert "daily_trend" in result
+        result = await query_sdr_leaderboard({}, mock_sb)
 
-        metrics = result["team_metrics"]
-        assert metrics["total_calls"] == 55
-        assert metrics["total_connected"] == 11
-        print("  ✓ Aggregates team metrics correctly")
+        assert "leaderboard" in result
+        assert len(result["leaderboard"]) == 1, "Should aggregate duplicate user to 1 entry"
 
-        trend = result["daily_trend"]
-        assert len(trend) == 1  # One unique date
-        assert trend[0]["date"] == "2026-01-15"
-        assert trend[0]["calls"] == 55
-        print("  ✓ Builds daily trend correctly")
+        user = result["leaderboard"][0]
+        assert user["calls_made"] == 55, "Should sum calls across dates"
+        assert user["connected_calls"] == 11, "Should sum connected calls"
+
+        print("  ✓ Aggregates by (tool, tool_user_id) key")
+        print("  ✓ Sums metrics across dates for same user")
 
     finally:
         handlers_module.select_all = original_select_all
 
-    print("  ✓ PASS: query_team_sdr_metrics builds daily trend")
+    print("  ✓ PASS: query_sdr_leaderboard aggregates correctly")
 
 
-async def test_query_pipeline_movement_uses_waterfall():
-    """query_pipeline_movement reads from waterfall_weekly table."""
-    print("\n[TEST] query_pipeline_movement uses waterfall table")
+async def test_query_pipeline_movement_reads_deals_snapshot():
+    """query_pipeline_movement reads deals_snapshot table, NOT waterfall_weekly.
+
+    This is the critical batch 3 correction: the invented handler read
+    waterfall_weekly (which has no writer), but the correct handler reads
+    deals_snapshot for point-in-time pipeline reconstruction.
+    """
+    print("\n[TEST] query_pipeline_movement reads deals_snapshot")
 
     mock_sb = make_mock_sb()
     original_select_all = handlers_module.select_all
 
+    # Mock the helper functions that query_pipeline_movement needs
+    def mock_load_scope_config():
+        return set(), {}  # excluded_pipelines, stage_cfg
+
+    def mock_is_in_scope(stage_id, pipeline_id, excluded_pipelines, stage_cfg):
+        return True
+
+    handlers_module._pm_load_scoping = lambda: (mock_load_scope_config, mock_is_in_scope)
+    handlers_module._pm_current_quarter_label = lambda: "FY2027 Q2"
+
+    tables_queried = set()
+
     def mock_select_all(sb, table, columns=None, filters=None):
-        if table == "waterfall_weekly":
-            return [
-                {
-                    "week_ending": "2026-01-12",
-                    "pipeline_id": "default",
-                    "new_pipeline_value": 100000,
-                    "won_value": 50000,
-                    "lost_value": 20000,
-                    "net_change": 30000,
-                    "pulled_in_value": 0,
-                    "pushed_out_value": 0,
-                    "deals_qualified_count": 5
-                }
-            ]
+        tables_queried.add(table)
         return []
 
     handlers_module.select_all = mock_select_all
 
     try:
         result = await query_pipeline_movement({}, mock_sb)
-        assert "pipeline_movement" in result
-        assert "period_totals" in result
 
-        totals = result["period_totals"]
-        assert totals["new_pipeline"] == 100000
-        assert totals["won"] == 50000
-        assert totals["lost"] == 20000
-        assert totals["net_change"] == 30000
-        print("  ✓ Calculates period totals from waterfall data")
+        assert "deals_snapshot" in tables_queried, \
+            "query_pipeline_movement MUST read deals_snapshot, not waterfall_weekly"
+
+        assert "waterfall_weekly" not in tables_queried, \
+            "Must NOT read waterfall_weekly (has no writer in template)"
+
+        assert "basis" in result and result["basis"] == "count", \
+            "Must return basis='count' (COUNTS ONLY, never dollars)"
+
+        print("  ✓ Reads deals_snapshot table")
+        print("  ✓ Does NOT read waterfall_weekly")
+        print("  ✓ Returns basis='count' (COUNTS ONLY)")
 
     finally:
         handlers_module.select_all = original_select_all
 
-    print("  ✓ PASS: query_pipeline_movement uses waterfall table")
+    print("  ✓ PASS: query_pipeline_movement uses correct substrate")
 
 
 async def run_all_tests():
@@ -223,13 +251,13 @@ async def run_all_tests():
     print("=" * 70)
     print("BATCH 3 HANDLERS VERIFICATION TESTS")
     print("=" * 70)
-    print("\nVerifies SDR + pipeline movement handlers")
+    print("\nVerifies SDR + pipeline movement handlers (CORRECTED from drift)")
 
     tests = [
-        test_query_sdr_activity_handles_empty_table,
-        test_query_sdr_performance_calculates_benchmarks,
-        test_query_team_sdr_metrics_builds_daily_trend,
-        test_query_pipeline_movement_uses_waterfall,
+        test_query_sdr_pipeline_sourced_uses_not_null,
+        test_query_sdr_metrics_queries_multiple_tables,
+        test_query_sdr_leaderboard_aggregates_by_user,
+        test_query_pipeline_movement_reads_deals_snapshot,
     ]
 
     passed = 0

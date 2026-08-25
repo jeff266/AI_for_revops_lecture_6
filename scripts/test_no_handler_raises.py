@@ -81,9 +81,9 @@ async def test_no_handler_raises_on_missing_params():
         "query_team_leaderboard",
         "query_coaching_priorities",
         # Batch 3 handlers
-        "query_sdr_activity",
-        "query_sdr_performance",
-        "query_team_sdr_metrics",
+        "query_sdr_pipeline_sourced",
+        "query_sdr_metrics",
+        "query_sdr_leaderboard",
         "query_pipeline_movement",
     ]
 
