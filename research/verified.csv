@@ -1,0 +1,21 @@
+company|sector|firms|employees|source|hq|status|verified|note
+Abnormal AI (Abnormal Security)|Security|Greylock, Insight Partners|~1,400-1,500|Revelio Labs / company statement, Jun 2026|San Francisco, CA|Private|2026-08-25|Renamed Abnormal AI; some records list a Las Vegas NV address
+Snyk|Security|Accel, Greylock|1,550-1,870|Crustdata Aug 2026 (1,870); PitchBook (1,550)|Boston, MA|Private|2026-08-25|Source spread ~300
+Illumio|Security|Andreessen Horowitz, General Catalyst, Accel|891|Revelio Labs, Mar 2026|Sunnyvale, CA|Private|2026-08-25|
+Tanium|Security|Andreessen Horowitz, IVP|~2,300|LeadIQ/ZoomInfo, Jun 2026|Kirkland, WA|Private|2026-08-25|Near upper bound of range
+Axonius|Security|Bessemer, Lightspeed, Accel|774-944|Revelio Labs Dec 2025 (944); LeadIQ Mar 2026 (774)|New York, NY|Private|2026-08-25|Source spread ~170
+Claroty|Security|Bessemer Venture Partners|770-857|Revelio Labs, Mar 2026 (770); PitchBook (857)|New York, NY|Private|2026-08-25|
+Sysdig|Security|Accel, Insight Partners|723|Revelio Labs, Mar 2026|San Francisco, CA|Private|2026-08-25|Headcount down 28.8% since 2023
+Corelight|Security|Accel, Insight Partners, General Catalyst|456-477|Revelio Labs Mar 2026 (456); LeadIQ Jul 2026 (477)|San Francisco, CA|Private|2026-08-25|
+Huntress|Security|Kleiner Perkins|950-986|PitchBook Aug 17 2026 (986); Revelio Jun 2026 (950)|Columbia, MD|Private|2026-08-25|HQ corrected from Ellicott City
+Cyera|Security|Sequoia, Accel|1,300-1,500|PitchBook (1,500); Revelio Dec 2025 (1,477); LeadIQ Mar 2026 (1.3K)|New York, NY|Private|2026-08-25|85.9% YoY growth
+Island|Security|Sequoia, Insight Partners|1,263|PitchBook, Jun 2026|Dallas, TX|Private|2026-08-25|Older sources say 500
+Orca Security|Security|Redpoint Ventures|495|LeadIQ/Tracxn, Jan 31 2026|Portland, OR|Private|2026-08-25|Israel-founded; US HQ Portland
+Cybereason|Security|Lightspeed Venture Partners|455-564|Revelio Mar 2026 (564); Jun 30 2026 (455)|Boston, MA (disputed - La Jolla CA)|Private|2026-08-25|HQ CONFLICT across sources; headcount declining
+BigID|Security|Bessemer, Insight Partners|625-709|Revelio Mar 2026 (639); Tracxn Jun 2026 (625); LeadIQ Feb 2026 (709)|New York, NY|Private|2026-08-25|
+Chainguard|Security|Sequoia, Kleiner Perkins, IVP, Redpoint|622-705|Crustdata Jun 2026 (705); Revelio Dec 2025 (688)|Kirkland, WA|Private|2026-08-25|
+Expel|Security|Index Ventures, Battery Ventures, NEA|481-484|Tracxn/PitchBook, Apr 30 2026|Herndon, VA|Private|2026-08-25|Backing confirmed via Tracxn investor list
+HackerOne|Security|Benchmark, NEA|UNVERIFIED|Sources irreconcilable: Revelio Mar 2026 (3,696) vs LeadIQ May 2026 (6,897)|San Francisco, CA|Private|2026-08-25|FLAGGED - figures likely count researcher community not employees
+Vanta|Security|Sequoia Capital|1,884-1,917|Tracxn May 31 2026 (1,884); PitchBook (1,917)|San Francisco, CA|Private|2026-08-25|Sequoia confirmed in Jul 2025 $150M Series D; GetLatka outlier says ~1,000
+Teleport|Security|Kleiner Perkins, Bessemer|194-230|Wikipedia (230); PitchBook (194)|Oakland, CA|Private|2026-08-25|
+Coalition|Fintech|Index Ventures|701-733|PitchBook (733); Tracxn Jun 30 2026 (714)|San Francisco, CA|Private|2026-08-25|Cyber insurance; Index backing confirmed via Tracxn
