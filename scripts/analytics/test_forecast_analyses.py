@@ -16,6 +16,41 @@ REPO_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(REPO_ROOT / 'scripts'))
 
 
+def get_test_config():
+    """Minimal config for tests - no PyYAML dependency."""
+    return {
+        'pipeline': {
+            'pipelines': [
+                {
+                    'id': 'default',
+                    'name': 'Sales Pipeline',
+                    'is_primary': True,
+                    'stages': [
+                        {'id': 'qualifiedtobuy', 'name': 'Discovery', 'order': 2},
+                        {'id': 'closedwon', 'name': 'Closed Won', 'order': 6, 'is_won': True},
+                    ]
+                },
+                {
+                    'id': '866608541',
+                    'name': 'Renewal Pipeline',
+                    'analyze': True,  # Both pipelines in scope for test
+                    'stages': [
+                        {'id': 'renewal_engaged', 'name': 'Renewal Engaged', 'order': 2},
+                        {'id': 'closedwon', 'name': 'Closed Won', 'order': 6, 'is_won': True},
+                    ]
+                }
+            ]
+        },
+        'quality_thresholds': {
+            'analytics': {
+                'min_evidence_count': 10,
+                'min_scoped_snapshot_coverage_pct': 70,
+                'null_value_threshold_pct': 10
+            }
+        }
+    }
+
+
 class MockSupabase:
     """Mock Supabase client that returns fixture data."""
 
@@ -75,7 +110,6 @@ def test_defect_1_numerator_counts_in_quarter_wins_only():
     print("\n[TEST] Defect 1: Numerator counts in-quarter wins only")
 
     from forecast_analyses import compute_quarter_conversion
-    from utils import load_client_config
 
     # Q1: Feb 1 - Apr 30
     q1_start = date(2026, 2, 1)
@@ -112,7 +146,7 @@ def test_defect_1_numerator_counts_in_quarter_wins_only():
     }
 
     sb = MockSupabase(fixture)
-    config = load_client_config()
+    config = get_test_config()
 
     # Monkey-patch select_all
     import adapters.storage.supabase as storage_mod
@@ -147,7 +181,6 @@ def test_defect_3_denominator_unfiltered_by_close_date():
     print("\n[TEST] Defect 3: Denominator unfiltered by close date")
 
     from forecast_analyses import compute_quarter_conversion
-    from utils import load_client_config
 
     q1_start = date(2026, 2, 1)
     q1_end = date(2026, 4, 30)
@@ -178,7 +211,7 @@ def test_defect_3_denominator_unfiltered_by_close_date():
     }
 
     sb = MockSupabase(fixture)
-    config = load_client_config()
+    config = get_test_config()
 
     import adapters.storage.supabase as storage_mod
     original_select_all = storage_mod.select_all
@@ -218,7 +251,6 @@ def test_defect_4_null_value_deals_excluded_and_counted():
     print("\n[TEST] Defect 4: Null values excluded from both sides and counted")
 
     from forecast_analyses import compute_quarter_conversion
-    from utils import load_client_config
 
     q1_start = date(2026, 2, 1)
     q1_end = date(2026, 4, 30)
@@ -249,7 +281,7 @@ def test_defect_4_null_value_deals_excluded_and_counted():
     }
 
     sb = MockSupabase(fixture)
-    config = load_client_config()
+    config = get_test_config()
 
     import adapters.storage.supabase as storage_mod
     original_select_all = storage_mod.select_all
@@ -294,7 +326,6 @@ def test_defect_2_scope_mismatch_excluded():
     print("\n[TEST] Defect 2: Renewal pipeline excluded from both sides")
 
     from forecast_analyses import compute_quarter_conversion
-    from utils import load_client_config
 
     q1_start = date(2026, 2, 1)
     q1_end = date(2026, 4, 30)
@@ -328,7 +359,7 @@ def test_defect_2_scope_mismatch_excluded():
     }
 
     sb = MockSupabase(fixture)
-    config = load_client_config()
+    config = get_test_config()
 
     # Check if renewal pipeline is configured with analyze: false
     pipelines = config.get('pipeline', {}).get('pipelines', [])
