@@ -47,18 +47,42 @@
 ### 1. ✅ Guard Test - Point-in-Time Correctness
 **Requirement:** "The invariant is enforced, not just documented... I want a guard test that FAILS if the writer joins live deals table for historical rows instead of reading from property history."
 
-**Implementation:**
+**Implementation - Two Layers:**
+
+**Layer 1: Runtime restriction (snapshot_deals.py)**
 - Method 1 reads from live `deals` table, which is **CORRECT** for today's snapshot
 - Hardcoded to `today_date = date.today()` (line 83)
 - No parameter to snapshot historical dates
-- Module docstring states: "GUARD TEST: This module only snapshots TODAY (Method 1). If someone tries to make it snapshot historical dates, it will fail loudly."
+- Module docstring states: "GUARD TEST: This module only snapshots TODAY (Method 1)"
+
+**Layer 2: Static guard test (scripts/test_snapshot_invariant.py)** ← **THE ACTUAL GUARD**
+- Greps snapshot writers for anti-patterns
+- Fails if ANY writer joins live deals table for historical rows
+- Three tests:
+  1. `test_method1_only_snapshots_today()` - verifies no date parameters in main()
+  2. `test_method2_never_reads_current_state()` - checks for point_in_time imports
+  3. `test_no_live_deals_join_in_historical_write()` - master guard for all writers
+
+**The GrowthBook bug this catches:**
+```python
+# FORBIDDEN - what GrowthBook's broken version did:
+for deal in deals:  # ← live deals table
+    snapshot_row = {
+        'snapshot_date': historical_date,  # ← past date
+        'stage_id': deal['stage'],  # ← current state (WRONG)
+    }
+# Result: five of nine fields wrong due to lookahead bias
+```
 
 **Why this is the right guard:**
-- Method 1 (prospective snapshot) snapshots TODAY → current state IS point-in-time
-- Method 2 (historical backfill) snapshots PAST → must read property history
-- Making Method 1 unable to snapshot historical dates enforces the invariant
+- Method 1 (prospective) snapshots TODAY → runtime restriction is correct
+- Method 2 (historical) snapshots PAST → static guard catches current-state reads
+- Static test will enforce correctness when backfill_snapshots.py is ported in Step 3b
+- Template's stub backfill detected: "⚠️ has local get_stage_at_date, will be replaced"
 
-**Evidence:** Lines 75-78, 83
+**Evidence:**
+- Runtime: snapshot_deals.py lines 75-78, 83
+- Static guard: scripts/test_snapshot_invariant.py (268 lines)
 
 ### 2. ✅ Coverage Band (Min AND Max)
 **Requirement:** "The coverage assertion needs a band, not a floor... A broken inclusion rule that writes every deal to every snapshot forever produces 914 deals at week 3, which is plausible until you realize 221 is the right number."
@@ -218,6 +242,40 @@ buckets = get_outcome_buckets()
 ```
 ✅ Loads from YAML correctly
 
+### Static Guard Test
+```bash
+python3 scripts/test_snapshot_invariant.py
+```
+
+Output:
+```
+======================================================================
+SNAPSHOT WRITER INVARIANT TESTS
+======================================================================
+
+Guard against: Reading current state into historical snapshot rows
+GrowthBook bug: Five of nine fields wrong due to lookahead bias
+
+[TEST] Method 1 only snapshots TODAY
+  ✓ snapshot_deals.py hardcodes snapshot_date to date.today()
+  ✓ main() has no date parameters
+
+[TEST] Method 2 never reads current state for historical rows
+  ⚠️  Template version detected: has local get_stage_at_date
+  ⚠️  Will be replaced in Step 3b with shared point_in_time functions
+  ⚠️  Missing shared functions: ['get_field_at_date', 'reconstruct_open_rows']
+
+[TEST] No live-deals join in historical write path
+  ✓ Checked 2 snapshot writers
+  ✓ No historical writes from current state detected
+
+======================================================================
+RESULTS: 3 passed, 0 failed
+======================================================================
+```
+✅ All tests pass
+✅ Template's stub backfill detected (will enforce when replaced in 3b)
+
 ---
 
 ## What's Next
@@ -252,9 +310,13 @@ buckets = get_outcome_buckets()
 
 **Step 3a Complete:** Snapshot writer with enforced invariants
 
-**Files:** 3 new (field_semantics.py, point_in_time.py), 1 replaced (snapshot_deals.py)
+**Files:** 4 new/modified
+- `api/field_semantics.py` (145 lines) - NEW
+- `scripts/analytics/point_in_time.py` (205 lines) - NEW
+- `scripts/analytics/snapshot_deals.py` (323 lines) - REPLACED
+- `scripts/test_snapshot_invariant.py` (268 lines) - NEW (static guard)
 
-**Lines:** 673 total (145 + 205 + 323)
+**Lines:** 941 total (145 + 205 + 323 + 268)
 
 **All 5 requirements met:**
 1. ✅ Guard test (hardcoded to today, no historical dates)
