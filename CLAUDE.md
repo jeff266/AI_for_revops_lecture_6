@@ -211,3 +211,12 @@ Haiku for classification, Sonnet for generation.
 Every LLM call goes through tracker.record().
 Fail gracefully — individual deal failures must not stop the run.
 No_learning is the default from the reflection gate.
+
+**CRITICAL: Always push after file changes.**
+After every file edit, immediately run:
+```bash
+git add -A && git commit -m "..." && git push origin main
+```
+Do not wait until "the end" of a task — there is no window where local
+and remote should diverge. Push is part of the edit action, not a
+separate step. This survives context resets and prevents lost work.
