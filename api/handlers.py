@@ -15,6 +15,27 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 from supabase_client import select_all
 
 
+def _resolve_tw(params: dict) -> dict:
+    """
+    Resolve time_window from params, defaulting to current quarter.
+
+    A missing time_window causes KeyError → drops to dynamic loop →
+    burns 20k query budget → returns "partial data". This was the
+    most common user-visible failure in GrowthBook (three incidents).
+
+    Fix: Always return a valid time window, defaulting to current quarter.
+    """
+    from api.time_resolver import resolve_time_window
+
+    tw = params.get("time_window")
+    if tw:
+        # Have time_window, resolve it
+        return resolve_time_window(tw)
+    else:
+        # No time_window, default to current quarter
+        return resolve_time_window({"period": "current_quarter"})
+
+
 async def query_waterfall(params: dict, sb) -> dict:
     """
     Pipeline snapshot + movement in ONE handler with question-aware emphasis.
@@ -32,7 +53,7 @@ async def query_waterfall(params: dict, sb) -> dict:
     import yaml
     from pathlib import Path
 
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     question = params.get("question", "").lower()
 
     # Load stage config from client.yaml
@@ -219,7 +240,7 @@ async def query_deals_at_risk(params: dict, sb) -> dict:
     """
     from api.stage_requirements import get_requirements_for_stage
 
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     deal_ids = params.get("deal_ids", [])
 
     # Filter analyses to specific deals if context provided
@@ -350,7 +371,7 @@ async def query_win_loss(params: dict, sb) -> dict:
     Answers: 'why did we lose?', 'what did we win?',
     'win/loss summary', 'why are we losing?'
     """
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     deal_ids = params.get("deal_ids", [])
 
     # 1. Check for AI-generated narratives first
@@ -426,7 +447,7 @@ async def query_objections(params: dict, sb) -> dict:
     Top objections by category for the period from objections table.
     Returns counts by category, total, and unaddressed percentage.
     """
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     rows = select_all(sb, "objections",
         columns="category,stage_when_raised,"
                 "rep_response,company_name,extracted_at",
@@ -450,7 +471,7 @@ async def query_feature_gaps(params: dict, sb) -> dict:
     Feature gaps by severity and competitor from feature_gaps table.
     Returns total, blockers, counts by category, and top competitors.
     """
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     rows = select_all(sb, "feature_gaps",
         columns="category,severity,competitor_mentioned,"
                 "feature_description,company_name,extracted_at",
@@ -476,7 +497,7 @@ async def query_coverage(params: dict, sb) -> dict:
     Pipeline coverage vs quota targets from rep_targets and deals tables.
     Returns coverage % for each target (company/team/rep level).
     """
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     period_label = tw.get("label", "").replace(" ", "_")
 
     targets = select_all(sb, "rep_targets",
@@ -730,7 +751,7 @@ async def query_new_deals(params: dict, sb) -> dict:
     deals table directly. Answers 'which deals were
     created this week/quarter/period?'
     """
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     rows = select_all(sb, "deals",
         columns="deal_id,company_name,deal_value,stage,"
                 "owner_email,create_date,forecast_category,"
@@ -791,7 +812,7 @@ async def query_competitive_intel(params: dict, sb) -> dict:
     - "what competitors keep coming up?"
     - "where is Statsig showing up?"
     """
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     search_term = params.get("search_term", "")
 
     # Build search vocabulary: a specific term (e.g. "Statsig", "DIY")
@@ -890,7 +911,7 @@ async def query_won_deals(params: dict, sb) -> dict:
     Answers: 'what did we win?', 'show me our wins',
              'which deals closed won this quarter?'
     """
-    tw = params["time_window"]
+    tw = _resolve_tw(params)
     rows = select_all(sb, "deals",
         columns="deal_id,company_name,deal_value,stage,"
                 "owner_email,close_date,forecast_category,"
@@ -915,7 +936,13 @@ async def query_rubric_scores_bulk(params: dict, sb) -> dict:
     """MEDDICC scores for a known set of deal_ids.
     Used by entity-scoped follow-up questions like
     'what are the meddicc scores for these deals?'"""
-    deal_ids = params["deal_ids"]
+    deal_ids = params.get("deal_ids", [])
+    if not deal_ids:
+        return {
+            "scores": [],
+            "error": "No deal IDs provided. This handler requires a list of specific deals."
+        }
+
     rows = select_all(sb, "analyses",
         columns="deal_id,company_name,overall_score,"
                 "champion_score,economic_buyer_score,"
@@ -945,7 +972,13 @@ async def query_deal_stages_bulk(params: dict, sb) -> dict:
 
 async def query_deal_owners_bulk(params: dict, sb) -> dict:
     """Owner for a known set of deal_ids."""
-    deal_ids = params["deal_ids"]
+    deal_ids = params.get("deal_ids", [])
+    if not deal_ids:
+        return {
+            "owners": [],
+            "error": "No deal IDs provided. This handler requires a list of specific deals."
+        }
+
     rows = select_all(sb, "deals",
         columns="deal_id,company_name,owner_email",
         filters=[("in", "deal_id", deal_ids)])
@@ -953,7 +986,14 @@ async def query_deal_owners_bulk(params: dict, sb) -> dict:
 
 async def query_deal_values_bulk(params: dict, sb) -> dict:
     """ARR/value for a known set of deal_ids."""
-    deal_ids = params["deal_ids"]
+    deal_ids = params.get("deal_ids", [])
+    if not deal_ids:
+        return {
+            "values": [],
+            "total_arr": 0,
+            "error": "No deal IDs provided. This handler requires a list of specific deals."
+        }
+
     rows = select_all(sb, "deals",
         columns="deal_id,company_name,deal_value,"
                 "arr_usd,new_arr,expansion_arr",
