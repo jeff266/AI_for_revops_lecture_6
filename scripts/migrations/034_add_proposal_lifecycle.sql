@@ -1,5 +1,5 @@
 -- Migration 034: Add proposal lifecycle to data_dictionary
--- Ported from GrowthBook migration 034 (Phase 5)
+-- Ported from the reference implementation migration 034 (Phase 5)
 --
 -- Purpose: Enable self-improvement loop where the agent can propose new field
 -- definitions without immediately affecting production queries.

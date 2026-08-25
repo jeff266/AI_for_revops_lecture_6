@@ -334,16 +334,24 @@ def extract_company_from_title(title: str) -> str | None:
 
     Common patterns:
     - "Demo Call with X from Company" → "Company"
-    - "Company and GrowthBook" → "Company"
-    - "GrowthBook Introduction" → None (no external company)
+    - "Company and YourCompany" → "Company"
+    - "YourCompany Introduction" → None (no external company)
     """
     if not title:
         return None
 
-    # Pattern: "X and GrowthBook" → extract X
-    if ' and GrowthBook' in title:
-        company = title.split(' and GrowthBook')[0].strip()
-        if company and not company.startswith('GrowthBook'):
+    # Get internal domain pattern from config
+    from utils import get_config
+    config = get_config()
+    internal_domains = config.get('organization', {}).get('internal_domains', [])
+    # Extract base company name from first internal domain
+    internal_company = internal_domains[0].split('.')[0].title() if internal_domains else 'YourCompany'
+
+    # Pattern: "X and <InternalCompany>" → extract X
+    pattern = f' and {internal_company}'
+    if pattern in title:
+        company = title.split(pattern)[0].strip()
+        if company and not company.startswith(internal_company):
             return company
 
     # Pattern: "Demo Call with X from Company" → extract Company
@@ -360,7 +368,7 @@ def extract_company_from_title(title: str) -> str | None:
     if ' and ' in title:
         parts = title.split(' and ')
         company = parts[0].strip()
-        if company and 'Demo Call' not in company and 'GrowthBook' not in company:
+        if company and 'Demo Call' not in company and internal_company not in company:
             return company
 
     # No clear company pattern

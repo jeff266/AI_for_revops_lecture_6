@@ -3,12 +3,12 @@
 Migration file validation tests.
 
 Guards against:
-- Duplicate migration numbers (caught 5 collision pairs in GrowthBook)
+- Duplicate migration numbers (caught 5 collision pairs in the reference implementation)
 - Gaps in migration sequence (would have caught the 028-042 missing problem)
 - CHECK constraint vocabularies not matching what code writes (backfill_confidence 23514 incident)
 
 Run this before committing any new migrations.
-Ported from GrowthBook scripts/eval_migrations.py with template-specific adaptations.
+Ported from the reference implementation scripts/eval_migrations.py with template-specific adaptations.
 """
 
 import sys
@@ -19,12 +19,12 @@ def test_no_duplicate_migration_numbers():
     """
     Ensure no two migration files share the same numeric prefix.
 
-    This test prevents the collision problem that existed in GrowthBook with:
+    This test prevents the collision problem that existed in the reference implementation with:
     - 012_add_forecast_weekly.sql AND 012_add_sdr_metrics.sql
     - 013_add_segmentation.sql AND 013_add_user_personas.sql
     - etc. (5 collision pairs total)
 
-    On GrowthBook these were applied in the right order by hand.
+    On the reference implementation these were applied in the right order by hand.
     On template they would apply in undefined order, breaking dependencies.
     """
     print("\n[TEST] No duplicate migration numbers")
@@ -127,7 +127,7 @@ def test_critical_dependencies_respected():
     """
     Verify critical dependencies are in correct order.
 
-    Template-specific dependencies (adapted from GrowthBook):
+    Template-specific dependencies (adapted from the reference implementation):
     - Fold-forward dependencies (merged migrations must not exist separately)
     - FK dependencies (referenced tables must exist first)
     """

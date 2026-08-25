@@ -12,7 +12,7 @@ Usage:
   # Run with API key:
   ANTHROPIC_API_KEY=... python scripts/test_routing_smoke.py
 
-Critical test: "score Bestseller on MEDDICC" must route to query_rubric_scores_bulk,
+Critical test: "score Acme on MEDDICC" must route to query_rubric_scores_bulk,
 NOT query_deal_health (the production misroute that this disambiguation prevents).
 """
 
@@ -80,25 +80,25 @@ SMOKE_TESTS = [
     # Batch 1: Deal-level handlers
     ("which deals are at risk?", "query_deal_health", 0.7),
     ("which deals haven't moved in 30 days?", "query_stale_deals", 0.7),
-    ("prep me for my Skyscanner call", "query_pre_call_brief", 0.7),
-    ("how did the last Skyscanner call go?", "query_call_quality", 0.6),
+    ("prep me for my Contoso call", "query_pre_call_brief", 0.7),
+    ("how did the last Fabrikam call go?", "query_call_quality", 0.6),
 
     # Batch 2: Rep/team handlers
-    ("show me Christian's pipeline", "query_rep_pipeline", 0.7),
+    ("show me the AE's pipeline", "query_rep_pipeline", 0.7),
     ("who is on track to hit quota?", "query_rep_attainment", 0.7),
     ("show me the team leaderboard", "query_team_leaderboard", 0.7),
     ("which reps need coaching this week?", "query_coaching_priorities", 0.6),
 
     # Batch 3: SDR/pipeline handlers
-    ("how is Jake tracking this month", "query_sdr_metrics", 0.7),
+    ("how is the SDR tracking this month", "query_sdr_metrics", 0.7),
     ("show me SDR team activity", "query_sdr_leaderboard", 0.6),
     ("show me pipeline sourced by SDRs", "query_sdr_pipeline_sourced", 0.6),
     ("which deals moved stage last week?", "query_pipeline_movement", 0.6),
 
-    # CRITICAL: The Bestseller misroute case
+    # CRITICAL: The named-company MEDDICC score case
     # This MUST route to query_rubric_scores_bulk, NOT query_deal_health
-    # Catches the live bug this disambiguation fixes
-    ("score Bestseller on MEDDICC, highlight weaknesses and next steps", "query_rubric_scores_bulk", 0.7),
+    # Catches the live disambiguation bug this fixes
+    ("score Acme on MEDDICC, highlight weaknesses and next steps", "query_rubric_scores_bulk", 0.7),
 ]
 
 

@@ -144,7 +144,7 @@ def test_no_lookahead():
     - 2024-03-01: Closed Won
 
     Snapshot on 2024-01-20 must see Discovery, NOT Scoping (even though Scoping
-    is the "next" stage). This is the lookahead bias that broke GrowthBook.
+    is the "next" stage). This is the lookahead bias that broke the reference implementation.
     """
     print("\n[FIXTURE] No lookahead (strictly backward-looking)")
 

@@ -1,5 +1,5 @@
 -- Migration 032: Create meetings table for SDR metrics
--- Merged from GrowthBook 033+035 (fold-forward pattern)
+-- Merged from the reference implementation 033+035 (fold-forward pattern)
 --
 -- Purpose: Track HubSpot meeting bookings with call recording held inference
 --
@@ -12,7 +12,7 @@
 -- which meetings were actually held.
 --
 -- IMPORTANT: This migration uses call_recording_id from the start (not
--- fireflies_call_id). GrowthBook's 033 created it as fireflies_call_id, then
+-- fireflies_call_id). the reference implementation's 033 created it as fireflies_call_id, then
 -- 035 renamed it when Apollo was added. The template gets the final naming
 -- to support multiple call adapters (Fireflies, Gong, Apollo) without migration.
 --

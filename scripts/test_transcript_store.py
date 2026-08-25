@@ -2,7 +2,7 @@
 """
 Tests for transcript_store module.
 
-Guards against failure modes that cost real time in GrowthBook:
+Guards against failure modes that cost real time in the reference implementation:
 1. GraphQL body-error rate-limit detection (1,920 of 2,189 Fireflies calls failed)
 2. Transient vs terminal classification (resume must re-attempt transients)
 3. Apollo metrics use real timestamps (not utterance count)
@@ -27,7 +27,7 @@ def test_graphql_body_error_triggers_rate_limit():
     """
     GraphQL body-level errors must trigger rate-limit backoff.
 
-    GrowthBook failure: Fireflies returned 200 OK with {"errors": [...]}
+    the reference implementation failure: Fireflies returned 200 OK with {"errors": [...]}
     containing rate-limit messages, but code only checked HTTP 429.
     Result: 1,920 of 2,189 calls failed with no backoff.
 
@@ -35,7 +35,7 @@ def test_graphql_body_error_triggers_rate_limit():
     """
     print("\n[TEST] GraphQL body-error triggers rate-limit backoff")
 
-    # Real Fireflies rate-limit messages from GrowthBook logs
+    # Real Fireflies rate-limit messages from the reference implementation logs
     fireflies_patterns = [
         "Rate limit exceeded. Please try again later.",
         "Too many requests. Please slow down.",
@@ -65,7 +65,7 @@ def test_transient_failure_is_retryable_not_terminal():
     """
     Transient failures (recent calls, still processing) must be retryable.
 
-    GrowthBook issue: Empty transcripts were always marked 'unavailable'
+    the reference implementation issue: Empty transcripts were always marked 'unavailable'
     (TERMINAL), so resume never re-attempted them. Corrected logic uses
     unavailable_reason with TERMINAL/RETRY prefix to distinguish.
 
@@ -114,7 +114,7 @@ def test_apollo_metrics_use_real_timestamps_and_sum_correctly():
     """
     Apollo metrics must use real timestamps (milliseconds), not utterance count.
 
-    GrowthBook spot-check: Call had 919.0 + 1170.9 = 2089.9 total_speech_seconds
+    the reference implementation spot-check: Call had 919.0 + 1170.9 = 2089.9 total_speech_seconds
     exactly matching per-speaker talk time sum. This only works with real durations.
 
     The bug: sequential index as timestamps (0, 1, 2, 3...) makes talk_time
@@ -122,7 +122,7 @@ def test_apollo_metrics_use_real_timestamps_and_sum_correctly():
     """
     print("\n[TEST] Apollo metrics use real timestamps and sum correctly")
 
-    # Apollo fragments with real millisecond timestamps (from GrowthBook field probe)
+    # Apollo fragments with real millisecond timestamps (from the reference implementation field probe)
     apollo_utterances = [
         # Speaker A: 3 utterances totaling 919 seconds
         {'speaker': 'participant_1', 'display_name': 'Alice',
@@ -297,7 +297,7 @@ def test_backchannel_rule_preserves_monologues():
     Without it, an eight-minute monologue reads as twelve short runs every
     time the other party says "mm-hmm."
 
-    GrowthBook example: Sales rep speaks 5min (300s), prospect says "got it"
+    the reference implementation example: Sales rep speaks 5min (300s), prospect says "got it"
     (1s), rep continues 3min (180s) → should be one 480s monologue, not two
     separate 300s and 180s runs.
     """
@@ -360,7 +360,7 @@ def main():
     print("=" * 70)
     print("TRANSCRIPT_STORE TESTS")
     print("=" * 70)
-    print("\nGuarding against GrowthBook failure modes:")
+    print("\nGuarding against the reference implementation failure modes:")
     print("- 1,920 of 2,189 Fireflies calls failed (no body-error detection)")
     print("- Transient empties marked terminal (resume skipped them)")
     print("- Apollo talk_time was utterance_count (no real timestamps)")
@@ -397,7 +397,7 @@ def main():
 
     if failed > 0:
         print("\n⚠️  FIX BEFORE COMMITTING")
-        print("These failures indicate production bugs that cost real time in GrowthBook.")
+        print("These failures indicate production bugs that cost real time in the reference implementation.")
 
     return 0 if failed == 0 else 1
 

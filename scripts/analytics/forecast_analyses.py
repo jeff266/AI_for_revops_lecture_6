@@ -2,34 +2,34 @@
 """
 Forecast analytics handler — conversion rates, win rates, cycle times from snapshots.
 
-DEFECT-FREE ON ARRIVAL (5 corrections from GrowthBook's production bugs):
+DEFECT-FREE ON ARRIVAL (5 corrections from the reference implementation's production bugs):
 
 1. CUMULATIVE NUMERATOR FIXED: Counts deals that transitioned to won DURING the
-   quarter (close_date in quarter), not all deals won as of quarter end. GrowthBook's
+   quarter (close_date in quarter), not all deals won as of quarter end. the reference implementation's
    bug reported 196/178/205 wins (cumulative) against actual 31/40/48 (in-quarter) —
    a 5-6x overstatement.
 
 2. SCOPE MISMATCH FIXED: Both numerator and denominator use the SAME scope filter
-   from is_deal_in_analytics_scope(). GrowthBook's bug swept all pipelines including
+   from is_deal_in_analytics_scope(). the reference implementation's bug swept all pipelines including
    renewal in numerator, default-pipeline-only in denominator. Conversion across
    mismatched populations is meaningless.
 
 3. CLOSE-DATE FILTER ASYMMETRY PRESERVED: Denominator is unfiltered by close date
    (week-3 starting pipeline = all open in-scope deals). Numerator filters by
    in-quarter close date. This asymmetry is INTENTIONAL and must not be "fixed".
-   GrowthBook's bug applied in-quarter close-date to both sides, collapsing denominator
+   the reference implementation's bug applied in-quarter close-date to both sides, collapsing denominator
    from 213 to 19 and producing 110% conversion.
 
 4. NULL-TO-ZERO COALESCING FIXED: Null deal_value now propagates (excluded from both
-   numerator and denominator, counted separately). GrowthBook had 7 sites that coerced
+   numerator and denominator, counted separately). the reference implementation had 7 sites that coerced
    null to 0.0 inside dollar sums, inflating denominators and understating conversions.
    Returns null above threshold (default 10%).
 
 5. STAGE EXCLUSIONS USE POINT-IN-TIME STATE: Stage filtering reads stage_id from
-   deals_snapshot at snapshot_date, never a join to current deals table. GrowthBook's
+   deals_snapshot at snapshot_date, never a join to current deals table. the reference implementation's
    bug joined current state, misclassifying historical deals.
 
-Gates (unchanged from GrowthBook):
+Gates (unchanged from the reference implementation):
 - min_evidence_count: Minimum deals required (default 10)
 - min_scoped_snapshot_coverage_pct: Minimum snapshot coverage (default 70%)
 - null_value_threshold_pct: Max null deal_value fraction before returning null (default 10%)

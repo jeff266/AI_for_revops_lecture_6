@@ -350,7 +350,7 @@ def reconstruct_value_at_date(field_history, deal_id, snapshot_date,
                               value_properties, config, pipeline_id,
                               compute_value_fn):
     """
-    Point-in-time deal value via the GrowthBook rule. Returns (value, conf).
+    Point-in-time deal value via the the reference implementation rule. Returns (value, conf).
 
     value is None — never 0.0 — when NO component resolved at this date.
     compute_value_fn (utils.compute_deal_value) on an all-blank property dict

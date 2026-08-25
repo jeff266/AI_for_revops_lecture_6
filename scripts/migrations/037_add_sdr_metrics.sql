@@ -1,5 +1,5 @@
 -- Migration 037: Create SDR metrics tables
--- Ported from GrowthBook migration 028
+-- Ported from the reference implementation migration 028
 --
 -- Purpose: Track daily SDR activity metrics across dialer/sequencer platforms
 -- Enables SDR performance tracking, activity trending, and team benchmarking.

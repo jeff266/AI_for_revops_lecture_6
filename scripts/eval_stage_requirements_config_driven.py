@@ -23,7 +23,7 @@ def test_config_driven_stage_requirements():
     print("="*80)
     print()
 
-    # Test 1: Create mock config with DIFFERENT stage IDs than GrowthBook
+    # Test 1: Create mock config with DIFFERENT stage IDs than the reference implementation
     print("[TEST 1] Mock config with completely different stage IDs")
 
     mock_config = {

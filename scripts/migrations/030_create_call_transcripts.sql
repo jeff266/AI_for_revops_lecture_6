@@ -1,5 +1,5 @@
 -- Migration 030: Create call_transcripts table
--- Ported from GrowthBook migration 041
+-- Ported from the reference implementation migration 041
 --
 -- Purpose: Store raw call transcripts in the substrate
 -- (STORE_AND_BACKFILL_TRANSCRIPTS)

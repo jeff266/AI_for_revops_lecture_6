@@ -5,7 +5,7 @@ Static guard: snapshot writers must never backfill from current state.
 A snapshot row for a past date must never be populated from the current
 deals table. Reading current state into a historical row produces plausible
 numbers with silent lookahead bias — five of nine fields were wrong this way
-before it was caught in GrowthBook.
+before it was caught in the reference implementation.
 
 This test greps the snapshot writers and fails on anti-patterns:
 - Method 1 (snapshot_deals.py): Must hardcode snapshot_date to today
@@ -92,14 +92,14 @@ def test_method2_never_reads_current_state():
         stage_id, conf = get_stage_at_date(stage_history, deal_id, snapshot_date)
         snapshot_row = {'snapshot_date': snapshot_date, 'stage_id': stage_id, ...}
 
-    FORBIDDEN (the GrowthBook bug):
+    FORBIDDEN (the the reference implementation bug):
         for deal in deals:  # ← live deals table
             snapshot_row = {
                 'snapshot_date': historical_date,  # ← past date
                 'stage_id': deal['stage'],  # ← current state (WRONG)
             }
 
-    This is the actual bug pattern from GrowthBook that produced silent
+    This is the actual bug pattern from the reference implementation that produced silent
     lookahead bias in five of nine fields.
     """
     print("\n[TEST] Method 2 never reads current state for historical rows")
@@ -118,7 +118,7 @@ def test_method2_never_reads_current_state():
         raise AssertionError(
             "backfill_snapshots.py queries the live deals table. Method 2 must "
             "read from property history (stage_history, field_history), not "
-            "current state. This is the GrowthBook bug."
+            "current state. This is the the reference implementation bug."
         )
 
     # Anti-pattern 2: Accessing deal['stage'] for historical snapshots
@@ -206,7 +206,7 @@ def test_no_live_deals_join_in_historical_write():
     if violations:
         raise AssertionError(
             f"Found snapshot writer(s) that accept date parameters AND query "
-            f"live deals table: {violations}. This is the GrowthBook bug pattern. "
+            f"live deals table: {violations}. This is the the reference implementation bug pattern. "
             f"Historical snapshots must read from property history, not current state."
         )
 
@@ -220,7 +220,7 @@ def main():
     print("SNAPSHOT WRITER INVARIANT TESTS")
     print("=" * 70)
     print("\nGuard against: Reading current state into historical snapshot rows")
-    print("GrowthBook bug: Five of nine fields wrong due to lookahead bias\n")
+    print("the reference implementation bug: Five of nine fields wrong due to lookahead bias\n")
 
     tests = [
         test_method1_only_snapshots_today,

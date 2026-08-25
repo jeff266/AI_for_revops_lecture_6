@@ -3,7 +3,7 @@
 Plausibility verification: Deterministic assertions on analytical outputs.
 
 Catches the class of failure that produces a confident wrong number instead of
-a crash. Examples from GrowthBook's history:
+a crash. Examples from the reference implementation's history:
 - Conversion rate 147% (missing denominator filter)
 - Win rate -23% (signed integer underflow on lost count)
 - Cycle time 0 days (datetime parsing bug)

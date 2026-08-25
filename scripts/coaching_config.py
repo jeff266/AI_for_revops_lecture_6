@@ -1,5 +1,5 @@
 """Single source for loading coaching config. Merges seed (universal,
-never edited per client) with client (GrowthBook's specifics, what a
+never edited per client) with client (the reference implementation's specifics, what a
 new client fills in). Replaces six inline yaml.safe_load(context.yaml)
 calls in api/handlers.py."""
 import yaml

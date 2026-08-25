@@ -154,11 +154,11 @@ def _is_internal_company(company: str) -> bool:
     """
     True when a company name refers to your own company and nothing else.
 
-    Cache company names pair both sides of the call — "Acorns +
-    YourCo", "YourCo <> ECCO" — so a bare substring test for
+    Cache company names pair both sides of the call — "Contoso +
+    YourCo", "YourCo <> Fabrikam" — so a bare substring test for
     "yourco" marks every prospect internal. slugify() strips the
     YourCo half and returns '' only when nothing else remains
-    ("YourCo", "YourCo AI", "EA + YourCo"), which is
+    ("YourCo", "YourCo AI", "Northwind + YourCo"), which is
     exactly the internal set.
     """
     if not company:

@@ -1,5 +1,5 @@
 -- Migration 035: Create proposals table for self-tuning analyses
--- Ported from GrowthBook migration 036
+-- Ported from the reference implementation migration 036
 --
 -- Purpose: Generic proposals table for self-tuning analyses
 -- Part of Phase 1: Proposal Loop and Advisory Cron

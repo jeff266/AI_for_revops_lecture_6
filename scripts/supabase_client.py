@@ -67,8 +67,8 @@ def _coerce_in_values(val):
     "60785721693" becomes in.(6,0,7,8,5,...) and the query returns nonsense.
 
     Production fix #1: _coerce_in_values - deal ID string iteration bug.
-    Live Bestseller incident: a comma-joined id string produced a filter on
-    single digits and quote chars. Coerce here so no caller can trip it:
+    A deal_id string was iterated character by character, producing in.(6,0,1,4,...).
+    Coerce here so no caller can trip it:
       - a str is split on commas if it contains any (a joined id list), else
         treated as ONE id → [val];
       - any other non-collection scalar becomes [val];

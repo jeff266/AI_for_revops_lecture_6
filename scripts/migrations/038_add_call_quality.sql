@@ -1,8 +1,8 @@
 -- Migration 038: Create call_quality table
--- Ported from GrowthBook migration 030
+-- Ported from the reference implementation migration 030
 --
 -- Purpose: Store discovery quality scores extracted from call summaries
--- Based on gb-drill-discovery framework from GrowthBook coaching skills.
+-- Based on gb-drill-discovery framework from the reference implementation coaching skills.
 -- Enables discovery coaching, rep skill trending, and pattern identification.
 --
 -- Usage: Table is always created but remains empty unless client enables

@@ -9,8 +9,8 @@ Handles multi-source fetch (Fireflies, Gong, Apollo) with:
 - Metrics computation (talk time, questions, longest monologue)
 - Terminal vs retryable failures (backfill_transcripts resume logic)
 
-Ported from GrowthBook's scripts/transcript_store.py to close the 260-line
-etl_calls.py gap (template 675 lines → GrowthBook 935 lines).
+Ported from the reference implementation's scripts/transcript_store.py to close the 260-line
+etl_calls.py gap (template 675 lines → the reference implementation 935 lines).
 """
 import os
 import time
@@ -127,7 +127,7 @@ def _fetch_fireflies(call_id: str, clients: Dict[str, Any]) -> List[Dict]:
 
     response = client._query(query, {"transcriptId": call_id})
 
-    # Check for GraphQL body-level errors (the GrowthBook 88% failure bug)
+    # Check for GraphQL body-level errors (the the reference implementation 88% failure bug)
     if response.get("errors"):
         msg = "; ".join(e.get("message", "")[:80] for e in response["errors"])
         if _is_rate_limit(msg):
@@ -162,7 +162,7 @@ def _fetch_apollo(call_id: str, clients: Dict[str, Any]) -> List[Dict]:
     Fetch Apollo transcript at utterance level.
 
     Apollo format: fragments with start_time/end_time in milliseconds,
-    participant_id, and per-word triples. GrowthBook field probe confirmed
+    participant_id, and per-word triples. the reference implementation field probe confirmed
     real durations enable correct talk-time computation.
     """
     client = clients.get('apollo')

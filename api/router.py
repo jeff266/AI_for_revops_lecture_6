@@ -225,8 +225,8 @@ HANDLER_DESCRIPTIONS = {
         "weaknesses / recommend next steps — even when it also asks about "
         "weaknesses, gaps, or next steps (those do NOT make it a query_deal_health "
         "scan). Resolves a company name to its deal(s) automatically. Examples: "
-        "'score Bestseller on MEDDICC, highlight weaknesses and next steps', "
-        "'score the LiveSport deal on MEDDICC', 'how does Acme look on MEDDICC?'"
+        "'score Acme on MEDDICC, highlight weaknesses and next steps', "
+        "'score the Northwind deal on MEDDICC', 'how does Contoso look on MEDDICC?'"
     ),
     "query_deal_stages_bulk": "current stage for a known set of deals",
     "query_deal_owners_bulk": "owner/rep for a known set of deals",
@@ -282,8 +282,8 @@ Examples: 'how is Jake tracking this month', 'show me Jake's calls',
         "scores with weakest components, last call summaries, open objections, "
         "and focus questions based on what's missing. Use when someone asks to "
         "be prepped for a call, wants a brief before a meeting, or asks what to "
-        "focus on in an upcoming call. Examples: 'prep me for my Skyscanner call', "
-        "'quick brief on the Stone deal', 'what should I focus on with IKEA?'"
+        "focus on in an upcoming call. Examples: 'prep me for my Contoso call', "
+        "'quick brief on the Fabrikam deal', 'what should I focus on with Northwind?'"
     ),
     "query_coaching_priorities": (
         "Which deals and reps need coaching attention — missing economic buyer, "
@@ -297,9 +297,9 @@ Examples: 'how is Jake tracking this month', 'show me Jake's calls',
         "Review what happened on a specific call or assess discovery quality "
         "patterns across a rep or the team. Not roleplay — looks back at real "
         "call summaries and scores them against discovery rubric. Examples: "
-        "'how did the last Skyscanner call go?', 'where is Christian weak in "
+        "'how did the last Fabrikam call go?', 'where is the AE weak in "
         "discovery?', 'show me the team's discovery quality this month', "
-        "'what happened on James's Stone call?'"
+        "'what happened on the Northwind call?'"
     ),
     "query_help": (
         "The person is orienting, not asking a data question — a greeting, "
@@ -872,8 +872,8 @@ _MEDDICC_DISPLAY = _get_meddicc_display()
 def _meddicc_guard() -> str:
     """MEDDICC schema guard for synthesis, built FROM rubric.py so it can never
     drift from the components the system actually scores. Stops the model from
-    inventing MEDDPICC components (it added a 'Paper Process — data gap' row for
-    LiveSport) and from guessing the overall-score scale (it rendered 38/70 as
+    inventing MEDDPICC components (it added a 'Paper Process — data gap' row in
+    one case) and from guessing the overall-score scale (it rendered 38/70 as
     38/100)."""
     try:
         from api.rubric import RUBRIC
@@ -954,8 +954,8 @@ PRESENTING A DEAL'S MEDDICC (reframe — "what's missing", not "here's a grade")
 - Every question or next step attached to a component must reference something
   specific from that deal's evidence — a person, a call, a fact. "Worth
   pressure-testing: can they mobilize internal support?" is banned — it fits
-  every deal and teaches nothing. "Confirm Tomáš is advocating for GrowthBook
-  with the CPO, not just running a fair evaluation between us and Optimizely" is
+  every deal and teaches nothing. "Confirm Sarah is advocating for our solution
+  with the CPO, not just running a fair evaluation between us and the competitor" is
   the same question made specific to what the calls actually show.
 - METRICS next-steps ask for a DIRECTIONAL estimate, not a precise figure.
   Metrics is yellow/red when nothing is quantified — that gap is real, but the

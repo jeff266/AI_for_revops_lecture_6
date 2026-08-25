@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS rep_targets (
   id            BIGSERIAL PRIMARY KEY,
   period        TEXT NOT NULL,        -- 'Q3_FY2027'
   level         TEXT NOT NULL,        -- 'company'|'team'|'rep'
-  entity_name   TEXT NOT NULL,        -- 'GrowthBook'|'AE Team'|'Jessica Smith'
+  entity_name   TEXT NOT NULL,        -- 'YourCompany'|'AE Team'|'Jessica Smith'
   entity_email  TEXT,                 -- null for team/company
   role          TEXT,                 -- 'ae'|'am'|null for rollups
   metric        TEXT NOT NULL,        -- 'new_arr'|'expansion_arr'|'total_arr'

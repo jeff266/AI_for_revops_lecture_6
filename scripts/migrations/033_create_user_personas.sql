@@ -1,12 +1,12 @@
 -- Migration 033: Create user_personas table
--- Merged from GrowthBook 029+032 (fold-forward pattern)
+-- Merged from the reference implementation 029+032 (fold-forward pattern)
 --
 -- Purpose: User personas for voice-aware agent responses
 -- Captures role, experience level, and preferred communication style
 -- Used by API router to adapt response voice and detail level
 --
 -- IMPORTANT: This migration uses email as PRIMARY KEY from the start.
--- GrowthBook's 029 created it with id as PK and slack_user_id as UNIQUE NOT NULL,
+-- the reference implementation's 029 created it with id as PK and slack_user_id as UNIQUE NOT NULL,
 -- then 032 redesigned to use email as PK with slack_user_id nullable (lazy binding).
 -- The template gets the final schema without the intermediate state.
 --

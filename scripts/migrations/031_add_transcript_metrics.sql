@@ -1,5 +1,5 @@
 -- Migration 031: Add conversation metrics to call_transcripts
--- Ported from GrowthBook migration 042
+-- Ported from the reference implementation migration 042
 --
 -- Purpose: Conversation metrics on call_transcripts
 -- (STORE_AND_BACKFILL_TRANSCRIPTS)

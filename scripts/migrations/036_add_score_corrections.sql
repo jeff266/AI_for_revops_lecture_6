@@ -1,5 +1,5 @@
 -- Migration 036: Create score_corrections table
--- Ported from GrowthBook migration 040
+-- Ported from the reference implementation migration 040
 --
 -- Purpose: Score corrections - a rep's structured disagreement with a MEDDICC
 -- component score (FIX_MEDDICC_SCORING_PIPELINE, Part 7).

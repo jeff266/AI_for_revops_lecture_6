@@ -56,7 +56,7 @@ def make_mock_sb():
 
 async def test_query_rep_pipeline_resolves_names():
     """query_rep_pipeline accepts owner_email, rep_email, first name, or full name.
-    Resolves via user_personas to fix GrowthBook bugs:
+    Resolves via user_personas to fix the reference implementation bugs:
     1. Errored on rep names (no resolution)
     2. Param mismatch (intent emitted rep_email, handler read owner_email)"""
     print("\n[TEST] query_rep_pipeline resolves rep names")
@@ -238,7 +238,7 @@ async def run_all_tests():
     print("=" * 70)
     print("BATCH 2 HANDLERS VERIFICATION TESTS")
     print("=" * 70)
-    print("\nVerifies four rep/team handlers with GrowthBook fixes")
+    print("\nVerifies four rep/team handlers with the reference implementation fixes")
 
     tests = [
         test_query_rep_pipeline_resolves_names,

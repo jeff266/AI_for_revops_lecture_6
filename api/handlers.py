@@ -21,7 +21,7 @@ def _resolve_tw(params: dict) -> dict:
 
     A missing time_window causes KeyError → drops to dynamic loop →
     burns 20k query budget → returns "partial data". This was the
-    most common user-visible failure in GrowthBook (three incidents).
+    most common user-visible failure in the reference implementation (three incidents).
 
     Fix: Always return a valid time window, defaulting to current quarter.
     """
@@ -1339,8 +1339,8 @@ async def query_rep_pipeline(params: dict, sb) -> dict:
     """
     Pipeline for a specific rep.
 
-    GrowthBook bugs fixed:
-    1. Errored on rep names - nothing resolved "Christian" to email
+    Fixes from reference implementation:
+    1. Errored on rep names - nothing resolved first name to email
     2. Param mismatch: intent prompt emitted rep_email, handler read owner_email
 
     Fix: Accepts owner_email, rep_email, first name, or full name.

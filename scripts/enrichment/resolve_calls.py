@@ -142,7 +142,7 @@ def main():
 
     # If not in config, try to infer from org name
     if not internal_domains_list and org_config.get("name"):
-        # Basic inference: "GrowthBook" → "growthbook.io"
+        # Basic inference: "the reference implementation" → "growthbook.io"
         org_name = org_config["name"].lower().replace(" ", "")
         internal_domains_list = [f"{org_name}.io"]
 

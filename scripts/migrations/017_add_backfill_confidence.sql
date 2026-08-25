@@ -1,5 +1,5 @@
 -- Migration 017: Add backfill confidence scoring fields
--- Merged from GrowthBook 017+039 (fold-forward pattern)
+-- Merged from the reference implementation 017+039 (fold-forward pattern)
 --
 -- Phase D Task 2 - supports historical snapshot backfill quality tracking
 --
@@ -9,7 +9,7 @@
 --
 -- IMPORTANT: This migration uses the FINAL vocabulary from the start (exact,
 -- pre_history, no_history) rather than the interim vocabulary (exact,
--- interpolated, inferred) that GrowthBook's 017 had before 039 widened it.
+-- interpolated, inferred) that the reference implementation's 017 had before 039 widened it.
 -- This prevents the 23514 constraint violation that occurred when reconstruction
 -- code wrote 'pre_history' against the old CHECK.
 --

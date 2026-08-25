@@ -15,10 +15,10 @@ def slugify(name: str) -> str:
 
     Examples:
         'Acme Corp' -> 'acme-corp'
-        'Scale AI' -> 'scale-ai'
-        'Notion Labs Inc' -> 'notion-labs-inc'
-        'Skyscanner + YourCompany' -> 'skyscanner'
-        'YourCompany <> ClickHouse' -> 'clickhouse'
+        'Contoso Ltd' -> 'contoso-ltd'
+        'Fabrikam Inc' -> 'fabrikam-inc'
+        'Northwind + YourCompany' -> 'northwind'
+        'YourCompany <> Tailwind' -> 'tailwind'
     """
     if not name:
         return ''

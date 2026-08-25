@@ -2,7 +2,7 @@
 """
 CRM crosscheck: Compare agent's pipeline counts against CRM and explain the difference.
 
-GrowthBook's 78-vs-44 was a scope difference (agent used last 90 days, CRM showed
+the reference implementation's 78-vs-44 was a scope difference (agent used last 90 days, CRM showed
 all-time), not a bug, but nobody could tell until it was reconciled explicitly.
 
 This check:

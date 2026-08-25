@@ -104,7 +104,7 @@ def test_defect_1_numerator_counts_in_quarter_wins_only():
     Defect 1: Cumulative numerator.
 
     Fixture: 8 deals won in Q1, 5 won in Q2, 3 still open.
-    Q1 numerator must be 8, not 13. GrowthBook's cumulative bug
+    Q1 numerator must be 8, not 13. the reference implementation's cumulative bug
     reported 196 against an actual 31.
     """
     print("\n[TEST] Defect 1: Numerator counts in-quarter wins only")
@@ -176,7 +176,7 @@ def test_defect_3_denominator_unfiltered_by_close_date():
     Defect 3: Close-date filter collapsing denominator.
 
     Fixture: 20 open deals at week 3, only 6 with in-quarter close dates.
-    Denominator must be 20. GrowthBook's bug filtered to 6, producing 110% conversion.
+    Denominator must be 20. the reference implementation's bug filtered to 6, producing 110% conversion.
     """
     print("\n[TEST] Defect 3: Denominator unfiltered by close date")
 
@@ -246,7 +246,7 @@ def test_defect_4_null_value_deals_excluded_and_counted():
     Defect 4: Null-to-zero coalescing.
 
     Fixture: 15 deals, 3 with null deal_value. Both sides use 12,
-    exclusion count is 3. GrowthBook coerced nulls to 0.0, inflating denominators.
+    exclusion count is 3. the reference implementation coerced nulls to 0.0, inflating denominators.
     """
     print("\n[TEST] Defect 4: Null values excluded from both sides and counted")
 
@@ -320,7 +320,7 @@ def test_defect_2_scope_mismatch_excluded():
     Defect 2: Numerator/denominator scope mismatch.
 
     Fixture with renewal pipeline deals: numerator and denominator populations
-    must be identical. GrowthBook swept all pipelines in numerator, default-only
+    must be identical. the reference implementation swept all pipelines in numerator, default-only
     in denominator. Mismatched scope makes conversion meaningless.
     """
     print("\n[TEST] Defect 2: Renewal pipeline excluded from both sides")
@@ -444,7 +444,7 @@ def main():
     print("=" * 70)
     print("FORECAST ANALYSES BEHAVIORAL DEFECT VERIFICATION")
     print("=" * 70)
-    print("\nVerifying all five GrowthBook defects with real fixtures:")
+    print("\nVerifying all five the reference implementation defects with real fixtures:")
 
     tests = [
         test_defect_1_numerator_counts_in_quarter_wins_only,

@@ -4,7 +4,7 @@ Guard test: No handler raises on missing params.
 
 A KeyError on missing params drops to the dynamic loop, which burns
 the 20k query budget and returns "Hit query budget with partial data."
-This was the single most common user-visible failure in GrowthBook
+This was the single most common user-visible failure in the reference implementation
 (three separate incidents).
 
 Every handler must return a clear error dict on missing required params,
@@ -137,7 +137,7 @@ def main():
     print("HANDLER PARAMS SAFETY GUARD")
     print("=" * 70)
     print("\nGuard against: KeyError on missing params → dynamic loop → query budget burned")
-    print("This was the #1 user-visible failure in GrowthBook (3 incidents)")
+    print("This was the #1 user-visible failure in the reference implementation (3 incidents)")
 
     result = asyncio.run(test_no_handler_raises_on_missing_params())
 

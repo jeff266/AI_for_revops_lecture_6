@@ -1,5 +1,5 @@
 -- Migration 029: Add forecast analysis fields to deals_snapshot
--- Merged from GrowthBook 037+038 (fold-forward pattern)
+-- Merged from the reference implementation 037+038 (fold-forward pattern)
 --
 -- Part of Phase 2: Snapshot Schema for Forecast Analyses
 --
@@ -7,7 +7,7 @@
 -- commit calibration analysis in Phase 3.
 --
 -- IMPORTANT: This migration includes fiscal_quarter as NOT NULL from the start.
--- GrowthBook's 037 created it nullable, then 038 added the constraint after
+-- the reference implementation's 037 created it nullable, then 038 added the constraint after
 -- backfilling. The template gets the final schema without the intermediate state.
 --
 -- Dependencies: Assumes deals_snapshot table exists (migration 016)

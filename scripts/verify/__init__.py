@@ -2,7 +2,7 @@
 Verification suite for RevOps MEDDICC Agent.
 
 Run during onboarding to help clients find their own bad numbers rather than
-inheriting GrowthBook's assumptions.
+inheriting the reference implementation's assumptions.
 
 Available checks:
 - coverage.py: What fraction of deals have calls, transcripts, scores, snapshots

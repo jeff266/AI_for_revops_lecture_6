@@ -1,5 +1,5 @@
 -- Migration 028: Add SDR owner field to deals
--- Ported from GrowthBook migration 031
+-- Ported from the reference implementation migration 031
 --
 -- Purpose: Track SDR/BDR attribution post-handoff to AE
 -- Enables tracking SDR-sourced pipeline post-handoff to AEs

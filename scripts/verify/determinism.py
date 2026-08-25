@@ -2,7 +2,7 @@
 """
 Determinism verification: Score one call N times and report per-component spread.
 
-A client learns their own jitter rather than inheriting an assumption. GrowthBook's
+A client learns their own jitter rather than inheriting an assumption. the reference implementation's
 real jitter was spread-0 on 3 of 7 components and ±1 on the rest, all at band
 boundaries (6→7 green/yellow transitions).
 
