@@ -1,12 +1,12 @@
--- Migration 037: Create SDR metrics tables (OPTIONAL)
+-- Migration 037: Create SDR metrics tables
 -- Ported from GrowthBook migration 028
---
--- **OPTIONAL MIGRATION**
--- Only required if client has Apollo, Salesloft, or Aircall configured.
--- Skip this migration if SDR metrics tracking is not needed.
 --
 -- Purpose: Track daily SDR activity metrics across dialer/sequencer platforms
 -- Enables SDR performance tracking, activity trending, and team benchmarking.
+--
+-- Usage: Tables are always created but remain empty unless client configures
+-- Apollo, Salesloft, or Aircall. The ETL (scripts/etl_sdr_metrics.py) checks
+-- for API keys before running. API handlers check table emptiness before querying.
 --
 -- Consumed by:
 -- - scripts/etl_sdr_metrics.py (Apollo/Salesloft/Aircall ETL)
@@ -95,12 +95,12 @@ CREATE INDEX IF NOT EXISTS idx_sdr_metrics_tool_date
 
 -- Comments for documentation
 COMMENT ON TABLE sdr_users IS
-'OPTIONAL: User mapping across SDR tools (Apollo, Salesloft, Aircall). Only needed if
-client has these tools configured. Normalizes user IDs for cross-tool analytics.';
+'User mapping across SDR tools (Apollo, Salesloft, Aircall). Normalizes user IDs for
+cross-tool analytics. Remains empty unless client configures these tools.';
 
 COMMENT ON TABLE sdr_metrics IS
-'OPTIONAL: Daily SDR activity metrics per user per tool. Only needed if client has
-Apollo/Salesloft/Aircall configured. Populated by scripts/etl_sdr_metrics.py.';
+'Daily SDR activity metrics per user per tool. Populated by scripts/etl_sdr_metrics.py
+when Apollo/Salesloft/Aircall API keys are configured. Remains empty otherwise.';
 
 COMMENT ON COLUMN sdr_metrics.metric_date IS
 'Date in reporting timezone (config.organization.timezone), not UTC. All SDR metrics
@@ -113,7 +113,7 @@ activity" from "metrics not tracked". Used to avoid dividing by zero in rate cal
 -- Verification
 DO $$
 BEGIN
-    RAISE NOTICE 'Migration 037 complete - created SDR metrics tables (OPTIONAL)';
+    RAISE NOTICE 'Migration 037 complete - created SDR metrics tables';
     RAISE NOTICE 'Tables: sdr_users, sdr_metrics';
-    RAISE NOTICE 'Skip if client does not use Apollo/Salesloft/Aircall';
+    RAISE NOTICE 'Tables remain empty unless Apollo/Salesloft/Aircall configured';
 END $$;

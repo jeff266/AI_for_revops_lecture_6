@@ -1,7 +1,7 @@
--- Migration 043: Add call_scores table for progressive scoring
+-- Migration 039: Add call_scores table for progressive scoring
 -- Phase 4a: JSONB pattern for methodology-agnostic component storage
 --
--- CRITICAL: Uses JSONB, not fixed columns. GrowthBook's migration 043 had
+-- CRITICAL: Uses JSONB, not fixed columns. GrowthBook's original migration had
 -- metrics_score, economic_buyer_score, etc. (7 fixed columns) which defeats
 -- methodology switching. This migration uses component_scores JSONB so a
 -- MEDDPICC client gets {"paper_process": 7, ...} with zero schema changes.

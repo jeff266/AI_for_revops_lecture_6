@@ -1,13 +1,13 @@
--- Migration 038: Create call_quality table (OPTIONAL)
+-- Migration 038: Create call_quality table
 -- Ported from GrowthBook migration 030
---
--- **OPTIONAL MIGRATION**
--- Only required if client wants discovery quality scoring feature.
--- Skip this migration if call quality assessment is not needed.
 --
 -- Purpose: Store discovery quality scores extracted from call summaries
 -- Based on gb-drill-discovery framework from GrowthBook coaching skills.
 -- Enables discovery coaching, rep skill trending, and pattern identification.
+--
+-- Usage: Table is always created but remains empty unless client enables
+-- discovery quality scoring feature. API handlers check table emptiness before
+-- querying. No ETL runs by default - feature must be explicitly enabled.
 --
 -- Consumed by:
 -- - api/handlers.py (query_call_quality handler)
@@ -67,9 +67,9 @@ CREATE INDEX IF NOT EXISTS call_quality_call_date_idx
 
 -- Comments for documentation
 COMMENT ON TABLE call_quality IS
-'OPTIONAL: Discovery quality assessment. Only needed if client wants discovery coaching
-feature. Scores calls on 5 dimensions (quantification, incumbent, technical, decision
-process, question quality). Based on gb-drill-discovery framework.';
+'Discovery quality assessment. Scores calls on 5 dimensions (quantification, incumbent,
+technical, decision process, question quality). Based on gb-drill-discovery framework.
+Remains empty unless client enables discovery coaching feature.';
 
 COMMENT ON COLUMN call_quality.numbers_obtained IS
 'JSONB array of which discovery numbers were captured (e.g., ["current_cost",
@@ -87,7 +87,7 @@ COMMENT ON COLUMN call_quality.blocker_type IS
 -- Verification
 DO $$
 BEGIN
-    RAISE NOTICE 'Migration 038 complete - created call_quality table (OPTIONAL)';
+    RAISE NOTICE 'Migration 038 complete - created call_quality table';
     RAISE NOTICE 'Discovery quality scoring feature';
-    RAISE NOTICE 'Skip if client does not need discovery coaching';
+    RAISE NOTICE 'Table remains empty unless feature explicitly enabled';
 END $$;
