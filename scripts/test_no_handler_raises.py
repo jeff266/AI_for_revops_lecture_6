@@ -80,6 +80,11 @@ async def test_no_handler_raises_on_missing_params():
         "query_rep_attainment",
         "query_team_leaderboard",
         "query_coaching_priorities",
+        # Batch 3 handlers
+        "query_sdr_activity",
+        "query_sdr_performance",
+        "query_team_sdr_metrics",
+        "query_pipeline_movement",
     ]
 
     mock_sb = make_mock_sb()
@@ -138,7 +143,7 @@ def main():
 
     print("\n" + "=" * 70)
     if result:
-        print("RESULTS: 26 passed, 0 failed")
+        print("RESULTS: 30 passed, 0 failed")
     else:
         print("RESULTS: 0 passed, CRITICAL FAILURES")
     print("=" * 70)

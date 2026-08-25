@@ -1736,6 +1736,323 @@ async def query_coaching_priorities(params: dict, sb) -> dict:
     }
 
 
+async def query_sdr_activity(params: dict, sb) -> dict:
+    """
+    Daily SDR activity metrics from sdr_metrics table.
+
+    Shows calls, emails, connect rates for individual SDRs.
+    Answers: 'show me SDR activity', 'how many calls did Jake make?',
+             'SDR performance this week'
+    """
+    tw = _resolve_tw(params)
+    sdr_identifier = (params.get("owner_email") or
+                     params.get("sdr_email") or
+                     params.get("sdr_name") or
+                     params.get("sdr"))
+
+    # Check if table has data
+    sample = select_all(sb, "sdr_metrics", columns="id", filters=[])
+    if not sample:
+        return {
+            "sdr_activity": [],
+            "note": (
+                "SDR metrics table exists but is empty. "
+                "This feature requires configuring Apollo, Salesloft, or Aircall "
+                "API keys and running scripts/etl_sdr_metrics.py."
+            )
+        }
+
+    # Build filters
+    filters = [
+        ("gte", "metric_date", tw["start"]),
+        ("lte", "metric_date", tw["end"])
+    ]
+
+    if sdr_identifier:
+        # Try to resolve to user_email via sdr_users table
+        sdr_users = select_all(sb, "sdr_users",
+            columns="user_email,user_name,tool_user_id,tool")
+
+        matched_tool_users = []
+        sdr_identifier_lower = sdr_identifier.lower()
+
+        for u in sdr_users:
+            email = (u.get("user_email") or "").lower()
+            name = (u.get("user_name") or "").lower()
+
+            if (sdr_identifier_lower == email or
+                sdr_identifier_lower == name or
+                sdr_identifier_lower in name.split()):
+                matched_tool_users.append({
+                    "tool": u["tool"],
+                    "tool_user_id": u["tool_user_id"]
+                })
+
+        if not matched_tool_users:
+            return {
+                "error": f"No SDR found matching '{sdr_identifier}'",
+                "hint": "Check sdr_users table or run etl_sdr_metrics.py"
+            }
+
+        # Filter by tool_user_id (may be multiple if user is in multiple tools)
+        # Build OR filter across tools
+        rows = []
+        for tu in matched_tool_users:
+            tool_rows = select_all(sb, "sdr_metrics",
+                columns="tool,user_name,metric_date,calls_made,"
+                        "connected_calls,connect_rate,emails_sent,"
+                        "emails_opened,emails_replied,open_rate,reply_rate",
+                filters=filters + [
+                    ("eq", "tool", tu["tool"]),
+                    ("eq", "tool_user_id", tu["tool_user_id"])
+                ])
+            rows.extend(tool_rows)
+    else:
+        # All SDRs
+        rows = select_all(sb, "sdr_metrics",
+            columns="tool,user_name,metric_date,calls_made,"
+                    "connected_calls,connect_rate,emails_sent,"
+                    "emails_opened,emails_replied,open_rate,reply_rate",
+            filters=filters)
+
+    # Sort by date
+    rows.sort(key=lambda x: x.get("metric_date", ""), reverse=True)
+
+    # Calculate aggregates
+    total_calls = sum(r.get("calls_made") or 0 for r in rows)
+    total_connected = sum(r.get("connected_calls") or 0 for r in rows)
+    total_emails = sum(r.get("emails_sent") or 0 for r in rows)
+
+    return {
+        "sdr_activity": rows,
+        "total_calls": total_calls,
+        "total_connected": total_connected,
+        "total_emails": total_emails,
+        "avg_connect_rate": round(total_connected / total_calls * 100, 1) if total_calls > 0 else None,
+        "period": tw["label"],
+        "sdr": sdr_identifier
+    }
+
+
+async def query_sdr_performance(params: dict, sb) -> dict:
+    """
+    SDR conversion rates and benchmarks.
+
+    Shows connect rates, reply rates, and activity benchmarks.
+    Answers: 'SDR conversion rates', 'how are SDRs performing?',
+             'best performing SDR'
+    """
+    tw = _resolve_tw(params)
+
+    # Check if table has data
+    sample = select_all(sb, "sdr_metrics", columns="id", filters=[])
+    if not sample:
+        return {
+            "sdr_performance": [],
+            "note": "SDR metrics table is empty. Configure SDR tools and run ETL."
+        }
+
+    # Get metrics for period
+    rows = select_all(sb, "sdr_metrics",
+        columns="tool,user_name,tool_user_id,metric_date,"
+                "calls_made,connected_calls,connect_rate,"
+                "emails_sent,emails_replied,reply_rate",
+        filters=[
+            ("gte", "metric_date", tw["start"]),
+            ("lte", "metric_date", tw["end"])
+        ])
+
+    # Aggregate by user
+    from collections import defaultdict
+    user_stats = defaultdict(lambda: {
+        "calls_made": 0,
+        "connected_calls": 0,
+        "emails_sent": 0,
+        "emails_replied": 0
+    })
+
+    for r in rows:
+        key = (r.get("tool"), r.get("tool_user_id"), r.get("user_name"))
+        user_stats[key]["calls_made"] += r.get("calls_made") or 0
+        user_stats[key]["connected_calls"] += r.get("connected_calls") or 0
+        user_stats[key]["emails_sent"] += r.get("emails_sent") or 0
+        user_stats[key]["emails_replied"] += r.get("emails_replied") or 0
+
+    # Build performance summary
+    performance = []
+    for (tool, tool_user_id, user_name), stats in user_stats.items():
+        calls = stats["calls_made"]
+        connected = stats["connected_calls"]
+        emails = stats["emails_sent"]
+        replied = stats["emails_replied"]
+
+        connect_rate = round(connected / calls * 100, 1) if calls > 0 else None
+        reply_rate = round(replied / emails * 100, 1) if emails > 0 else None
+
+        performance.append({
+            "user_name": user_name,
+            "tool": tool,
+            "calls_made": calls,
+            "connected_calls": connected,
+            "connect_rate": connect_rate,
+            "emails_sent": emails,
+            "emails_replied": replied,
+            "reply_rate": reply_rate
+        })
+
+    # Sort by calls made
+    performance.sort(key=lambda x: x.get("calls_made") or 0, reverse=True)
+
+    # Calculate team benchmarks
+    total_calls = sum(p["calls_made"] for p in performance)
+    total_connected = sum(p["connected_calls"] for p in performance)
+    total_emails = sum(p["emails_sent"] for p in performance)
+    total_replied = sum(p["emails_replied"] for p in performance)
+
+    team_connect_rate = round(total_connected / total_calls * 100, 1) if total_calls > 0 else None
+    team_reply_rate = round(total_replied / total_emails * 100, 1) if total_emails > 0 else None
+
+    return {
+        "sdr_performance": performance,
+        "team_benchmarks": {
+            "total_calls": total_calls,
+            "team_connect_rate": team_connect_rate,
+            "total_emails": total_emails,
+            "team_reply_rate": team_reply_rate
+        },
+        "period": tw["label"]
+    }
+
+
+async def query_team_sdr_metrics(params: dict, sb) -> dict:
+    """
+    Team-level SDR aggregates (calls, emails, trends).
+
+    Answers: 'show me team SDR metrics', 'SDR team performance',
+             'how is the SDR team doing?'
+    """
+    tw = _resolve_tw(params)
+
+    # Check if table has data
+    sample = select_all(sb, "sdr_metrics", columns="id", filters=[])
+    if not sample:
+        return {
+            "team_metrics": {},
+            "note": "SDR metrics table is empty. Configure SDR tools and run ETL."
+        }
+
+    # Get all metrics for period
+    rows = select_all(sb, "sdr_metrics",
+        columns="metric_date,calls_made,connected_calls,connect_rate,"
+                "emails_sent,emails_opened,emails_replied,voicemails",
+        filters=[
+            ("gte", "metric_date", tw["start"]),
+            ("lte", "metric_date", tw["end"])
+        ])
+
+    # Aggregate by date for trending
+    from collections import defaultdict
+    daily_totals = defaultdict(lambda: {
+        "calls": 0, "connected": 0, "emails": 0,
+        "opened": 0, "replied": 0, "voicemails": 0
+    })
+
+    for r in rows:
+        date = r.get("metric_date")
+        daily_totals[date]["calls"] += r.get("calls_made") or 0
+        daily_totals[date]["connected"] += r.get("connected_calls") or 0
+        daily_totals[date]["emails"] += r.get("emails_sent") or 0
+        daily_totals[date]["opened"] += r.get("emails_opened") or 0
+        daily_totals[date]["replied"] += r.get("emails_replied") or 0
+        daily_totals[date]["voicemails"] += r.get("voicemails") or 0
+
+    # Build daily trend
+    daily_trend = []
+    for date in sorted(daily_totals.keys()):
+        stats = daily_totals[date]
+        daily_trend.append({
+            "date": date,
+            "calls": stats["calls"],
+            "connected": stats["connected"],
+            "emails": stats["emails"],
+            "connect_rate": round(stats["connected"] / stats["calls"] * 100, 1) if stats["calls"] > 0 else None
+        })
+
+    # Overall totals
+    total_calls = sum(r.get("calls_made") or 0 for r in rows)
+    total_connected = sum(r.get("connected_calls") or 0 for r in rows)
+    total_emails = sum(r.get("emails_sent") or 0 for r in rows)
+    total_replied = sum(r.get("emails_replied") or 0 for r in rows)
+    total_voicemails = sum(r.get("voicemails") or 0 for r in rows)
+
+    return {
+        "team_metrics": {
+            "total_calls": total_calls,
+            "total_connected": total_connected,
+            "connect_rate": round(total_connected / total_calls * 100, 1) if total_calls > 0 else None,
+            "total_emails": total_emails,
+            "total_replied": total_replied,
+            "reply_rate": round(total_replied / total_emails * 100, 1) if total_emails > 0 else None,
+            "total_voicemails": total_voicemails
+        },
+        "daily_trend": daily_trend,
+        "period": tw["label"]
+    }
+
+
+async def query_pipeline_movement(params: dict, sb) -> dict:
+    """
+    Pipeline movement - how deals moved through stages over time.
+
+    Uses waterfall_weekly table to show new pipeline, won, lost, and net change.
+    Answers: 'show me pipeline movement', 'how did pipeline change?',
+             'pipeline waterfall this quarter'
+    """
+    tw = _resolve_tw(params)
+
+    # Get weekly waterfall data
+    rows = select_all(sb, "waterfall_weekly",
+        columns="week_ending,pipeline_id,new_pipeline_value,"
+                "won_value,lost_value,net_change,"
+                "pulled_in_value,pushed_out_value,deals_qualified_count",
+        filters=[
+            ("gte", "week_ending", tw["start"]),
+            ("lte", "week_ending", tw["end"])
+        ])
+
+    if not rows:
+        return {
+            "pipeline_movement": [],
+            "note": (
+                "No waterfall data for this period. "
+                "Waterfall snapshots are computed weekly. "
+                "Needs at least 2 weeks of data to compute movement."
+            )
+        }
+
+    # Sort by week
+    rows.sort(key=lambda x: x.get("week_ending", ""))
+
+    # Calculate period totals
+    total_new = sum(r.get("new_pipeline_value") or 0 for r in rows)
+    total_won = sum(r.get("won_value") or 0 for r in rows)
+    total_lost = sum(r.get("lost_value") or 0 for r in rows)
+    total_net_change = sum(r.get("net_change") or 0 for r in rows)
+    total_qualified = sum(r.get("deals_qualified_count") or 0 for r in rows)
+
+    return {
+        "pipeline_movement": rows,
+        "period_totals": {
+            "new_pipeline": total_new,
+            "won": total_won,
+            "lost": total_lost,
+            "net_change": total_net_change,
+            "deals_qualified": total_qualified
+        },
+        "period": tw["label"]
+    }
+
+
 async def query_call_quality(params: dict, sb) -> dict:
     """
     Discovery call quality scores from call_quality table (migration 038).
