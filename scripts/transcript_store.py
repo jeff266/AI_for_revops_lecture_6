@@ -7,13 +7,33 @@ Handles multi-source fetch (Fireflies, Gong, Apollo) with:
 - Source-priority dedup (Fireflies > Gong > Apollo)
 - Utterance normalization (seconds vs milliseconds)
 - Metrics computation (talk time, questions, longest monologue)
+- Terminal vs retryable failures (backfill_transcripts resume logic)
 
 Ported from GrowthBook's scripts/transcript_store.py to close the 260-line
 etl_calls.py gap (template 675 lines → GrowthBook 935 lines).
 """
+import os
 import time
 from typing import List, Dict, Optional, Tuple, Any
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
+
+
+# Quality levels for call_transcripts.transcript_quality
+FULL = "full"
+PARTIAL = "partial"
+FRAGMENTS_ONLY = "fragments_only"
+UNAVAILABLE = "unavailable"
+
+# An empty result (fetch succeeded, no sentences) on a call older than this is
+# TERMINAL — a transcript will never appear (silent/failed recording), so resume
+# must stop re-attempting it (else every future pass burns an API call on it).
+# On a RECENT call the same emptiness is PENDING — the transcript may still be
+# generating — so resume keeps retrying it. Recorders finalise within minutes to
+# hours; 3 days is a safe cutoff. unavailable_reason carries the distinction as a
+# "terminal:" / "retry:" prefix, read by is_done() — no extra column needed.
+STILL_PROCESSING_DAYS = int(os.getenv("TRANSCRIPT_STILL_PROCESSING_DAYS", "3"))
+TERMINAL = "terminal:"
+RETRY = "retry:"
 
 
 class RateLimited(Exception):
@@ -254,30 +274,33 @@ def build_transcript_row(
         'fetched_at': datetime.utcnow()
     }
 
-    # Handle fetch errors
+    # Handle fetch errors - always retryable
     if error:
+        reason = f"{RETRY} {error}"
         row.update({
             'transcript_text': None,
-            'transcript_quality': 'unavailable',
+            'transcript_quality': UNAVAILABLE,
+            'unavailable_reason': reason,
             'total_utterances': 0,
             'speaker_count': 0,
             'total_duration_seconds': 0.0,
             'metrics': {},
-            'fetch_error': error
+            'fetch_error': error  # keep for backward compat
         })
         return row
 
-    # Handle empty transcript (classify as TERMINAL or RETRY)
+    # Handle empty transcript (classify as TERMINAL or RETRY by call age)
     if not utterances:
-        quality = _classify_empty_transcript(call_date)
+        reason = _classify_empty_transcript(call_date)
         row.update({
             'transcript_text': None,
-            'transcript_quality': quality,
+            'transcript_quality': UNAVAILABLE,
+            'unavailable_reason': reason,
             'total_utterances': 0,
             'speaker_count': 0,
             'total_duration_seconds': 0.0,
             'metrics': {},
-            'fetch_error': None
+            'fetch_error': None  # keep for backward compat
         })
         return row
 
@@ -308,11 +331,12 @@ def build_transcript_row(
     row.update({
         'transcript_text': transcript_text,
         'transcript_quality': quality,
+        'unavailable_reason': None,  # NULL when transcript exists
         'total_utterances': utterance_count,
         'speaker_count': speaker_count,
         'total_duration_seconds': duration,
         'metrics': metrics,
-        'fetch_error': None
+        'fetch_error': None  # keep for backward compat
     })
 
     return row
@@ -320,21 +344,34 @@ def build_transcript_row(
 
 def _classify_empty_transcript(call_date: Optional[datetime]) -> str:
     """
-    Classify empty transcript as TERMINAL or RETRY.
+    Classify an empty result as TERMINAL (old call — no transcript will ever
+    appear) or RETRY (recent call — may still be processing), by call age.
 
-    TERMINAL (unavailable): Call is old enough that transcript should exist
-    RETRY (fragments_only): Call is recent, transcript may still be processing
+    Returns unavailable_reason string with TERMINAL or RETRY prefix.
 
-    Threshold: 48 hours (Fireflies typically processes within 24h)
+    Threshold: STILL_PROCESSING_DAYS (default 3 days). Fireflies typically
+    processes within hours, but 3 days is a safe cutoff before marking terminal.
     """
-    if not call_date:
-        return 'unavailable'
+    try:
+        if isinstance(call_date, str):
+            call_date_obj = datetime.fromisoformat(call_date[:10])
+        elif isinstance(call_date, datetime):
+            call_date_obj = call_date
+        elif isinstance(call_date, date):
+            call_date_obj = datetime.combine(call_date, datetime.min.time())
+        else:
+            call_date_obj = None
 
-    age = datetime.utcnow() - call_date
-    if age > timedelta(hours=48):
-        return 'unavailable'  # TERMINAL: should exist by now
-    else:
-        return 'fragments_only'  # RETRY: still processing
+        if call_date_obj:
+            age = (date.today() - call_date_obj.date()).days
+        else:
+            age = None
+    except Exception:
+        age = None
+
+    if age is not None and age > STILL_PROCESSING_DAYS:
+        return f"{TERMINAL} no transcript ({age}d-old call, none will appear)"
+    return f"{RETRY} no transcript yet (recent call, may still be processing)"
 
 
 def compute_metrics(utterances: List[Dict]) -> Dict:
@@ -439,6 +476,31 @@ def compute_metrics(utterances: List[Dict]) -> Dict:
         'question_count': question_count,
         'longest_monologue_seconds': monologues
     }
+
+
+def is_done(quality: str, reason: Optional[str]) -> bool:
+    """
+    A call_transcripts row is DONE (resume should NOT re-attempt it) when it
+    has text, or when it is a TERMINAL empty. A RETRY/pending empty, or an
+    absent row, is re-attempted.
+
+    Single authority shared by the backfill's resume set and the tests.
+
+    This is the corrected resume logic: transient failures (rate limits, API
+    errors) are written with "retry:" prefix so backfill re-attempts them.
+    Terminal empties (old calls that will never have transcripts) get
+    "terminal:" prefix so backfill stops wasting API calls on them.
+
+    Args:
+        quality: transcript_quality field value
+        reason: unavailable_reason field value
+
+    Returns:
+        True if the row is done (skip on resume), False if should retry
+    """
+    if quality != UNAVAILABLE:
+        return True
+    return bool(reason) and reason.startswith(TERMINAL)
 
 
 def deduplicate_transcripts(

@@ -303,3 +303,27 @@ class SupabaseWriter:
         self.client.table('calls').upsert(
             rows, on_conflict='call_id').execute()
         return len(rows)
+
+    def bulk_upsert_transcripts(self, rows: list, chunk: int = 25) -> int:
+        """
+        Upsert call_transcripts rows (STORE_AND_BACKFILL_TRANSCRIPTS).
+
+        Chunked because a transcript row is 40-60KB — one big upsert of the
+        whole book would be a multi-MB request. Rows are pre-shaped by
+        transcript_store.build_transcript_row (which enforces NULL-never-empty
+        and the unavailable_reason invariant). Returns count upserted.
+
+        Args:
+            rows: List of transcript rows from build_transcript_row()
+            chunk: Chunk size for batching (default 25)
+
+        Returns:
+            Count of rows upserted
+        """
+        rows = [r for r in (rows or []) if r and r.get("call_id")]
+        if not rows:
+            return 0
+        for i in range(0, len(rows), chunk):
+            self.client.table('call_transcripts').upsert(
+                rows[i:i + chunk], on_conflict='call_id').execute()
+        return len(rows)
