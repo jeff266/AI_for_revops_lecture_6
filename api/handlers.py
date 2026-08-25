@@ -960,3 +960,372 @@ async def query_deal_values_bulk(params: dict, sb) -> dict:
         filters=[("in", "deal_id", deal_ids)])
     total = sum(r.get("arr_usd") or 0 for r in rows)
     return {"values": rows, "total_arr": total}
+
+
+async def query_deal_health(params: dict, sb) -> dict:
+    """
+    Deal health assessment combining MEDDICC scores with activity signals.
+
+    Returns deals with health scores, flagging those below thresholds.
+    Originally had char-iteration bug: built deal_id filter from threshold
+    scan and passed string to .in_(), producing in.(6,0,1,4,...).
+
+    Fix: Always pass deal_ids as list to .in_() filter.
+    """
+    from api.stage_requirements import get_components
+
+    tw = params.get("time_window", {})
+    deal_ids = params.get("deal_ids", [])
+    health_threshold = params.get("threshold", 40)
+
+    # Get all analyses, optionally filtered by deal_ids
+    analyses_filters = []
+    if tw and tw.get("start"):
+        analyses_filters.append(("gte", "analyzed_at", tw["start"]))
+    if deal_ids:
+        # Production fix: Ensure deal_ids is a list, not string
+        # _coerce_in_values in supabase_client handles this, but
+        # verify caller passes list for clarity
+        if not isinstance(deal_ids, list):
+            deal_ids = [deal_ids] if isinstance(deal_ids, str) else list(deal_ids)
+        analyses_filters.append(("in_", "deal_id", deal_ids))
+
+    # Fetch component scores dynamically based on methodology
+    component_cols = ["deal_id", "company_name", "overall_score", "analyzed_at"]
+    for component in get_components():
+        component_cols.append(f"{component}_score")
+
+    analyses = select_all(sb, "analyses",
+        columns=",".join(component_cols),
+        filters=analyses_filters)
+
+    # Deduplicate: keep most recent per deal
+    latest = {}
+    for a in analyses:
+        deal_id = a.get("deal_id")
+        analyzed_at = a.get("analyzed_at", "")
+        if deal_id not in latest or analyzed_at > latest[deal_id].get("analyzed_at", ""):
+            latest[deal_id] = a
+
+    # Fetch deal data
+    if deal_ids:
+        # Use the verified list
+        deals = select_all(sb, "deals",
+            columns="deal_id,company_name,deal_value,stage,deal_status,owner_email",
+            filters=[("in_", "deal_id", deal_ids)])
+    else:
+        deals = select_all(sb, "deals",
+            columns="deal_id,company_name,deal_value,stage,deal_status,owner_email",
+            filters=[("eq", "deal_status", "active")])
+
+    # Combine and assess health
+    health_results = []
+    for d in deals:
+        deal_id = d.get("deal_id")
+        analysis = latest.get(deal_id, {})
+        overall_score = analysis.get("overall_score", 0) or 0
+
+        health_flags = []
+        if overall_score < health_threshold:
+            health_flags.append(f"low_overall_{overall_score}")
+
+        # Check component-specific gaps
+        for component in get_components():
+            score = analysis.get(f"{component}_score", 0) or 0
+            if score < 4:
+                health_flags.append(f"{component}_gap_{score}")
+
+        health_results.append({
+            "deal_id": deal_id,
+            "company_name": d.get("company_name"),
+            "deal_value": d.get("deal_value"),
+            "stage": d.get("stage"),
+            "owner_email": d.get("owner_email"),
+            "overall_score": overall_score,
+            "health_flags": health_flags,
+            "health_status": "at_risk" if health_flags else "healthy"
+        })
+
+    # Sort by health (worst first)
+    health_results.sort(key=lambda x: (
+        0 if x["health_status"] == "at_risk" else 1,
+        x["overall_score"]
+    ))
+
+    at_risk_count = sum(1 for r in health_results if r["health_status"] == "at_risk")
+
+    return {
+        "deals": health_results,
+        "total_deals": len(health_results),
+        "at_risk_count": at_risk_count,
+        "healthy_count": len(health_results) - at_risk_count,
+        "threshold_used": health_threshold,
+        "period": tw.get("label") if tw else None
+    }
+
+
+async def query_stale_deals(params: dict, sb) -> dict:
+    """
+    Deals with no recent activity (calls, updates, or stage movement).
+
+    Answers: 'which deals are stuck?', 'what deals haven't moved?',
+             'show me stale pipeline'
+    """
+    from datetime import datetime, timedelta
+
+    tw = params.get("time_window", {})
+    deal_ids = params.get("deal_ids", [])
+    stale_days = params.get("stale_days", 30)
+
+    # Calculate stale cutoff
+    cutoff_date = (datetime.now() - timedelta(days=stale_days)).date().isoformat()
+
+    # Get active deals
+    deal_filters = [("eq", "deal_status", "active")]
+    if deal_ids:
+        if not isinstance(deal_ids, list):
+            deal_ids = [deal_ids]
+        deal_filters.append(("in_", "deal_id", deal_ids))
+
+    deals = select_all(sb, "deals",
+        columns="deal_id,company_name,deal_value,stage,owner_email,updated_at,close_date",
+        filters=deal_filters)
+
+    # Get recent call activity
+    all_deal_ids = [d["deal_id"] for d in deals]
+    recent_calls = []
+    if all_deal_ids:
+        recent_calls = select_all(sb, "calls",
+            columns="call_id,deal_id,call_date,company_name",
+            filters=[
+                ("in_", "deal_id", all_deal_ids),
+                ("gte", "call_date", cutoff_date)
+            ])
+
+    # Build map of deals with recent calls
+    deals_with_calls = {c["deal_id"] for c in recent_calls if c.get("deal_id")}
+
+    # Identify stale deals
+    stale = []
+    for d in deals:
+        deal_id = d.get("deal_id")
+        updated_at = d.get("updated_at", "")
+
+        # Check if updated recently
+        is_recently_updated = updated_at >= cutoff_date if updated_at else False
+        has_recent_calls = deal_id in deals_with_calls
+
+        if not is_recently_updated and not has_recent_calls:
+            days_stale = (datetime.now().date() -
+                         datetime.fromisoformat(updated_at[:10]).date()).days if updated_at else None
+
+            stale.append({
+                "deal_id": deal_id,
+                "company_name": d.get("company_name"),
+                "deal_value": d.get("deal_value"),
+                "stage": d.get("stage"),
+                "owner_email": d.get("owner_email"),
+                "last_activity": updated_at,
+                "days_stale": days_stale,
+                "close_date": d.get("close_date")
+            })
+
+    # Sort by days stale (most stale first)
+    stale.sort(key=lambda x: x.get("days_stale") or 0, reverse=True)
+
+    return {
+        "stale_deals": stale,
+        "count": len(stale),
+        "total_active_deals": len(deals),
+        "stale_percentage": round(len(stale) / max(len(deals), 1) * 100, 1),
+        "stale_threshold_days": stale_days,
+        "cutoff_date": cutoff_date
+    }
+
+
+async def query_pre_call_brief(params: dict, sb) -> dict:
+    """
+    Pre-call preparation brief for a specific deal.
+
+    Returns:
+    - Current MEDDICC component scores
+    - Stage-specific questions to ask (from coaching_client.yaml)
+    - Recent call history
+    - Known objections/gaps
+
+    Reads STAGE_COMPONENT_QUESTIONS from config/coaching_client.yaml
+    to provide stage-aware coaching guidance.
+    """
+    import yaml
+    from pathlib import Path
+    from api.stage_requirements import get_components, get_requirements_for_stage
+
+    company = params.get("company", "")
+    if not company and params.get("company_names"):
+        company = params["company_names"][0]
+
+    if not company:
+        return {"error": "Company name required for pre-call brief"}
+
+    # Get deal
+    deals = select_all(sb, "deals",
+        columns="deal_id,company_name,deal_value,stage,owner_email,close_date")
+    deal = next((d for d in deals
+                 if company.lower() in (d.get("company_name") or "").lower()), None)
+
+    if not deal:
+        return {"error": f"No deal found for '{company}'"}
+
+    deal_id = deal["deal_id"]
+    stage_id = deal.get("stage")
+
+    # Get latest MEDDICC analysis
+    component_cols = ["deal_id", "overall_score", "analyzed_at"]
+    for component in get_components():
+        component_cols.append(f"{component}_score")
+
+    analyses = select_all(sb, "analyses",
+        columns=",".join(component_cols),
+        filters=[("eq", "deal_id", deal_id)])
+    analyses.sort(key=lambda x: x.get("analyzed_at", ""), reverse=True)
+    latest_analysis = analyses[0] if analyses else {}
+
+    # Get stage requirements
+    requirements = get_requirements_for_stage(stage_id) if stage_id else {}
+
+    # Identify gaps (components below required threshold for stage)
+    component_gaps = []
+    for component in get_components():
+        required_threshold = requirements.get(component, 0)
+        actual_score = latest_analysis.get(f"{component}_score", 0) or 0
+
+        if required_threshold and actual_score < required_threshold:
+            component_gaps.append({
+                "component": component,
+                "current_score": actual_score,
+                "required_score": required_threshold,
+                "gap": required_threshold - actual_score
+            })
+
+    # Get recent calls
+    calls = select_all(sb, "calls",
+        columns="call_id,call_date,title,duration_minutes",
+        filters=[("eq", "company_slug", deal.get("company_name", "").lower().replace(" ", "-"))])
+    calls.sort(key=lambda x: x.get("call_date", ""), reverse=True)
+    recent_calls = calls[:5]
+
+    # Get objections
+    objections = select_all(sb, "objections",
+        columns="category,verbatim_quote,rep_response",
+        filters=[("eq", "company_name", deal["company_name"])])
+
+    # Load stage-specific questions from coaching_client.yaml
+    config_path = Path(__file__).parent.parent / "config" / "coaching_client.yaml"
+    config = yaml.safe_load(open(config_path))
+
+    # STAGE_COMPONENT_QUESTIONS structure (if defined in config)
+    stage_questions = config.get("stage_component_questions", {}) or {}
+    relevant_questions = stage_questions.get(stage_id, {}) if stage_id else {}
+
+    return {
+        "deal": deal,
+        "latest_scores": latest_analysis,
+        "component_gaps": component_gaps,
+        "stage_requirements": requirements,
+        "recommended_questions": relevant_questions,
+        "recent_calls": recent_calls,
+        "known_objections": objections,
+        "prep_note": (
+            f"Focus on: {', '.join(g['component'] for g in component_gaps[:3])}"
+            if component_gaps else "No critical gaps — focus on advancing the deal"
+        )
+    }
+
+
+async def query_call_quality(params: dict, sb) -> dict:
+    """
+    Discovery call quality scores from call_quality table (migration 038).
+
+    Returns quality assessment across 5 dimensions:
+    - Quantification (did they leave with numbers?)
+    - Incumbent picture (cost, contract end, what's wrong)
+    - Technical picture (warehouse, SDK, who runs tests)
+    - Decision process (who decides, threshold, timeline)
+    - Question quality (open, one at a time, followed up)
+
+    Answers: 'how are our discovery calls?', 'show me call quality',
+             'which reps need discovery coaching?'
+    """
+    tw = params.get("time_window", {})
+    owner_email = params.get("owner_email")
+    deal_ids = params.get("deal_ids", [])
+
+    # Check if table has any data
+    sample = select_all(sb, "call_quality", columns="id", filters=[])
+    if not sample:
+        return {
+            "call_quality": [],
+            "note": (
+                "Call quality table exists but is empty. "
+                "This feature must be explicitly enabled and requires "
+                "running discovery quality ETL to populate scores."
+            )
+        }
+
+    # Build filters
+    filters = []
+    if tw and tw.get("start"):
+        filters.append(("gte", "call_date", tw["start"]))
+    if tw and tw.get("end"):
+        filters.append(("lte", "call_date", tw["end"]))
+    if owner_email:
+        filters.append(("eq", "owner_email", owner_email))
+    if deal_ids:
+        if not isinstance(deal_ids, list):
+            deal_ids = [deal_ids]
+        filters.append(("in_", "deal_id", deal_ids))
+
+    # Fetch quality scores
+    rows = select_all(sb, "call_quality",
+        columns="call_id,deal_id,company_name,owner_email,call_date,"
+                "quantification_score,incumbent_picture_score,"
+                "technical_picture_score,decision_process_score,"
+                "question_quality_score,overall_quality_score,"
+                "numbers_obtained,numbers_missing,pattern_flags,"
+                "strongest_moment,weakest_moment",
+        filters=filters)
+
+    # Calculate aggregates
+    if rows:
+        avg_overall = sum(r.get("overall_quality_score", 0) or 0 for r in rows) / len(rows)
+        avg_quantification = sum(r.get("quantification_score", 0) or 0 for r in rows) / len(rows)
+        avg_incumbent = sum(r.get("incumbent_picture_score", 0) or 0 for r in rows) / len(rows)
+        avg_technical = sum(r.get("technical_picture_score", 0) or 0 for r in rows) / len(rows)
+        avg_decision = sum(r.get("decision_process_score", 0) or 0 for r in rows) / len(rows)
+        avg_question = sum(r.get("question_quality_score", 0) or 0 for r in rows) / len(rows)
+
+        # Common pattern flags
+        all_flags = []
+        for r in rows:
+            all_flags.extend(r.get("pattern_flags", []) or [])
+        from collections import Counter
+        pattern_counts = Counter(all_flags)
+    else:
+        avg_overall = avg_quantification = avg_incumbent = avg_technical = 0
+        avg_decision = avg_question = 0
+        pattern_counts = {}
+
+    return {
+        "call_quality": rows,
+        "count": len(rows),
+        "averages": {
+            "overall": round(avg_overall, 1),
+            "quantification": round(avg_quantification, 1),
+            "incumbent_picture": round(avg_incumbent, 1),
+            "technical_picture": round(avg_technical, 1),
+            "decision_process": round(avg_decision, 1),
+            "question_quality": round(avg_question, 1)
+        },
+        "common_patterns": dict(pattern_counts.most_common(5)),
+        "period": tw.get("label") if tw else None
+    }

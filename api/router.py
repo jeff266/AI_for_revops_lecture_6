@@ -13,10 +13,9 @@ from pathlib import Path
 import anthropic
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-try:
-    from llm_client import LLMClient
-except ImportError:
-    LLMClient = None  # Optional dependency for synthesis
+# LLMClient is a hard dependency (in requirements.txt). Import error should be
+# loud and immediate, not a silent fallback that produces NoneType errors later.
+from llm_client import LLMClient
 from api.db import get_supabase, log_unanswered, is_admin, get_prior_entities, get_api_history
 from api import handlers
 

@@ -49,3 +49,23 @@ discovery_numbers:
     value_per_win: "EXAMPLE: Revenue per shipped feature, cost savings per optimization, etc."
     incumbent_cost: "EXAMPLE: Current tool costs, manual process costs, etc."
     the_clock: "EXAMPLE: Contract renewal date, budget cycle, launch deadline, etc."
+
+# Stage-specific questions by component for pre-call preparation
+# Used by query_pre_call_brief handler to provide context-aware coaching
+# Format: stage_component_questions.<stage_id>.<component>: [list of questions]
+stage_component_questions:
+  # Example structure - customize per your HubSpot stage IDs and methodology
+  # discovery:
+  #   pain:
+  #     - "What's not working with your current process?"
+  #     - "What's the cost of the problem (time, money, opportunity)?"
+  #   champion:
+  #     - "Who internally is most affected by this problem?"
+  #     - "Who would be willing to advocate for solving it?"
+  # scoping:
+  #   metrics:
+  #     - "What does success look like in numbers?"
+  #     - "How will you measure if this worked?"
+  #   economic_buyer:
+  #     - "Who has budget authority for this?"
+  #     - "What's the approval process for a purchase this size?"
