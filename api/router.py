@@ -1625,9 +1625,20 @@ async def route_question(question: str, user_id: str,
             params.get("time_window", {}))
 
         # Inject prior entity context for pronoun follow-ups
+        # PRECEDENCE: Current message entities override cached thread context
         if entity_params:
             params["deal_ids"]      = entity_params["deal_ids"]
             params["company_names"] = entity_params["company_names"]
+
+        # Rep/SDR email fallback: if params has no rep/SDR email from classification
+        # but prior_entities has one, use it (enables "their pipeline" follow-ups)
+        if prior_entities:
+            if not params.get("rep_email") and prior_entities.get("rep_email"):
+                params["rep_email"] = prior_entities["rep_email"]
+                logger.info(f"[CONTEXT] using prior rep_email: {prior_entities['rep_email']}")
+            if not params.get("sdr_email") and prior_entities.get("sdr_email"):
+                params["sdr_email"] = prior_entities["sdr_email"]
+                logger.info(f"[CONTEXT] using prior sdr_email: {prior_entities['sdr_email']}")
 
         confidence = intent.get("confidence", 0.5)
 

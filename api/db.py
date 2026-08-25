@@ -189,15 +189,27 @@ def extract_entity_context(tool_results: dict, sb=None) -> dict:
 
     logger.info(f"[ENTITY_EXTRACT] schema-driven extraction: {entities}")
 
+    # 4. Extract owner emails (rep_email, sdr_email, owner_email) for thread context
+    # These are NOT in entity_registry but handlers emit them after name resolution.
+    # Save to thread context so follow-ups ("their pipeline", "their metrics") scope
+    # to the same rep/SDR without re-specifying the name.
+    owner_emails = {}
+    for key in ("rep_email", "sdr_email", "owner_email"):
+        value = tool_results.get(key)
+        if value and isinstance(value, str):
+            owner_emails[key] = value
+            logger.info(f"[ENTITY_EXTRACT] found {key}: {value}")
+
     # Convert to legacy shape for backward compatibility
-    return _to_legacy_entity_shape(entities)
+    return _to_legacy_entity_shape(entities, owner_emails)
 
 
-def _to_legacy_entity_shape(entities: dict) -> dict:
+def _to_legacy_entity_shape(entities: dict, owner_emails: dict = None) -> dict:
     """
     Convert schema-driven entity dict to legacy shape for backward compatibility.
 
-    The legacy shape {"deal_ids": [...], "company_names": [...]} is required by:
+    The legacy shape {"deal_ids": [...], "company_names": [...], "rep_email": "...", "sdr_email": "..."}
+    is required by:
     - save_thread() storage (db.py:325)
     - get_prior_entities() retrieval (db.py:363)
     - router.py entity_params construction (672-674, 713-714)
@@ -211,17 +223,26 @@ def _to_legacy_entity_shape(entities: dict) -> dict:
                 "call": {"ids": ["call_123"], "labels": ["Discovery call"]},
                 ...
             }
+        owner_emails: Owner email entities extracted from tool_results top-level:
+            {
+                "rep_email": "christian@example.com",
+                "sdr_email": "jake@example.com",
+                "owner_email": "christian@example.com"
+            }
 
     Returns:
         Legacy format:
             {
                 "deal_ids": ["D1", "D2"],
-                "company_names": ["Acme", "Globex"]
+                "company_names": ["Acme", "Globex"],
+                "rep_email": "christian@example.com",  # if present
+                "sdr_email": "jake@example.com"        # if present
             }
 
     Mapping:
     - deal_ids: IDs from "deal" entity type
     - company_names: Labels from "deal" entity type (company_name field)
+    - rep_email, sdr_email: Directly from owner_emails (for thread-context follow-ups)
 
     Note: Other entity types (company, call, campaign, etc.) are extracted
     but not included in legacy output. They'll be added to the shape in
@@ -237,6 +258,12 @@ def _to_legacy_entity_shape(entities: dict) -> dict:
         "company_names": deal_data["labels"]
     }
 
+    # Add owner emails to legacy shape for thread-context follow-ups
+    if owner_emails:
+        for key in ("rep_email", "sdr_email", "owner_email"):
+            if key in owner_emails:
+                legacy[key] = owner_emails[key]
+
     # Log if non-deal entities were extracted (informational)
     other_types = [et for et in entities.keys() if et != "deal"]
     if other_types:
@@ -245,7 +272,8 @@ def _to_legacy_entity_shape(entities: dict) -> dict:
 
     logger.info(f"[ENTITY_EXTRACT] legacy shape: "
                 f"{len(legacy['deal_ids'])} deal_ids, "
-                f"{len(legacy['company_names'])} company_names")
+                f"{len(legacy['company_names'])} company_names, "
+                f"owner_emails={list(owner_emails.keys()) if owner_emails else []}")
 
     return legacy
 
@@ -488,8 +516,12 @@ def get_api_history(history: list) -> list:
 def get_prior_entities(history: list) -> dict:
     """
     Extract the most recent entity_context from history.
-    Returns {"deal_ids": [...], "company_names": [...]}
+    Returns {"deal_ids": [...], "company_names": [...], "rep_email": "...", "sdr_email": "..."}
     or empty dict if no prior entities found.
+
+    Thread-context entities enable follow-ups like:
+    - "show me Christian's pipeline" → saves rep_email
+    - "which of those are closing this quarter?" → uses saved rep_email
     """
     for msg in reversed(history):
         if msg.get("role") == ENTITY_ROLE:
