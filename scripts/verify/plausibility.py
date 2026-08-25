@@ -107,6 +107,63 @@ def check_supabase_analytics():
                     f"Waterfall: won+lost ({won + lost}) > qualified ({qualified})"
                 )
 
+        # Check 7: call_scores table integrity
+        call_scores = select_all(sb, 'call_scores',
+                                 columns='call_id,deal_id,call_date,component_scores,evidence')
+
+        for i, score_row in enumerate(call_scores):
+            call_id = score_row.get('call_id', f'row_{i}')
+
+            # Parse component_scores JSONB
+            import json
+            component_scores = score_row.get('component_scores')
+            if isinstance(component_scores, str):
+                try:
+                    component_scores = json.loads(component_scores)
+                except Exception:
+                    component_scores = {}
+            elif not isinstance(component_scores, dict):
+                component_scores = {}
+
+            # Parse evidence JSONB
+            evidence = score_row.get('evidence')
+            if isinstance(evidence, str):
+                try:
+                    evidence = json.loads(evidence)
+                except Exception:
+                    evidence = {}
+            elif not isinstance(evidence, dict):
+                evidence = {}
+
+            # Check: All component scores should be 0-10
+            for comp_key, score in component_scores.items():
+                if score is not None and (score < 0 or score > 10):
+                    violations.append(
+                        f"call_scores call_id={call_id}: {comp_key} score={score} out of bounds (0-10)"
+                    )
+
+            # Check: No null evidence with non-null score
+            for comp_key, score in component_scores.items():
+                if score is not None:
+                    ev = evidence.get(comp_key)
+                    if not ev or (isinstance(ev, str) and not ev.strip()):
+                        violations.append(
+                            f"call_scores call_id={call_id}: {comp_key} has score={score} but null/empty evidence"
+                        )
+
+            # Check: call_date should be a valid date (basic format check)
+            call_date = score_row.get('call_date')
+            if call_date:
+                try:
+                    # Try to parse as ISO date
+                    from datetime import datetime
+                    if isinstance(call_date, str):
+                        datetime.fromisoformat(call_date.replace('Z', '+00:00'))
+                except Exception:
+                    violations.append(
+                        f"call_scores call_id={call_id}: invalid call_date format '{call_date}'"
+                    )
+
         return violations
 
     except Exception as e:

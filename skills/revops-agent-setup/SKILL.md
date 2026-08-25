@@ -237,3 +237,43 @@ SUPABASE_DB_URL is needed by anyone running setup_supabase.py or --verify-all lo
 
 Tell the user: "Credentials done. Now run the context onboarding:
 say 'start client onboarding'"
+
+## Step 10 — Verification suite (run after Supabase setup)
+
+Tell the user:
+"After you complete context onboarding, stage discovery, and Supabase setup,
+run the verification suite to validate your data quality before the first nightly:
+
+  python scripts/verify/run_all.py
+
+This checks five things:
+1. Coverage — what fraction of deals have calls, transcripts, scores, snapshots
+2. Determinism — LLM scoring jitter (spread per component)
+3. Plausibility — sanity checks on analytical outputs (no negative counts,
+   conversions ≤100%, subsets smaller than supersets)
+4. CRM crosscheck — agent pipeline count vs HubSpot, with explanation
+5. Reconciliation — pattern for write guards (examples, not run automatically)
+
+**Expected verdicts PRE-ETL (before first nightly):**
+- Coverage: INCONCLUSIVE (no deals in memory/deals/index.json yet)
+- Determinism: INCONCLUSIVE (no calls in memory/calls/*.json yet)
+- Plausibility: FAIL (missing deal index and Supabase credentials not wired)
+- CRM crosscheck: INCONCLUSIVE (no agent deals to compare)
+
+These are CORRECT, not broken. They confirm the checks are wired.
+
+**Expected verdicts POST-ETL (after first nightly):**
+- Coverage: PASS or specific percentages (e.g., '26.2% snapshot coverage')
+- Determinism: PASS (spread ≤1 per component) or specific jitter report
+- Plausibility: PASS (all assertions hold) or FAIL with specific violations
+- CRM crosscheck: PASS (counts reconcile) or difference with explanation
+
+Run it TWICE:
+1. Now (confirms wiring, expect INCONCLUSIVE)
+2. After first nightly completes (see your own numbers)
+
+If you see unexpected FAILs after the first nightly (e.g., 'Qualified deals > total deals',
+'Conversion rate 147%'), those are real data quality issues to investigate.
+
+The verification suite helps you find your own bad numbers rather than inheriting
+GrowthBook's assumptions."
