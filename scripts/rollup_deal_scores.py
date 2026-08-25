@@ -38,7 +38,8 @@ def _build_abbr():
         abbr[key] = label[0].upper()
     return abbr
 
-_ABBR = _build_abbr()
+# No module-level _ABBR constant - build it within functions to avoid
+# caching methodology at import time
 
 
 def band(score):
@@ -128,7 +129,8 @@ def rollup(rows):
 def component_details(rolled):
     """Shape for hubspot.write_component_scores: {key:{score,status,evidence}}."""
     out = {}
-    for _, key in cs.COMPONENTS:
+    for label in get_components():
+        key = component_key(label)
         c = rolled[key]
         sc = c["score"]
         out[key] = {"score": sc if sc is not None else 0,
@@ -147,13 +149,15 @@ def render_md(company, deal_id, rolled, ncalls):
     existing writers parse it with no changes."""
     tot = overall(rolled)
     lines = [f"# MEDDICC Analysis: {company}", ""]
-    for label, key in cs.COMPONENTS:
+    abbr = _build_abbr()  # Build fresh to reflect current methodology
+    for label in get_components():
+        key = component_key(label)
         c = rolled[key]
         sc = c["score"]
         shown = 0 if sc is None else sc
         ev = (c.get("evidence") or "").strip()
         prov = c.get("call_date")
-        lines.append(f"### {_ABBR[key]} - {label}")
+        lines.append(f"### {abbr[key]} - {label}")
         lines.append(f"**Status**: {_status_emoji(sc)}")
         lines.append(f"**Score**: {shown}/10")
         lines.append("")

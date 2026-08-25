@@ -40,9 +40,6 @@ def _component_keys():
 # Bump when the prompt/rubric changes so a re-backfill can find stale rows.
 SCORER_VERSION = "phase4-progressive-jsonb-v1"
 
-# Build component labels map dynamically
-COMPONENT_LABELS = {component_key(label): label for label in get_components()}
-
 # Two passes, cumulative-context. Prompt-level "return null" does NOT make a model
 # abstain — handed a rich transcript and a seven-field form it fills every field
 # (empirically: null never fired across two prompt revisions). So abstention is its

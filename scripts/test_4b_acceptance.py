@@ -31,8 +31,10 @@ def test_meddpicc_has_eight_components():
         config = yaml.safe_load(f)
 
     # Temporarily set to MEDDPICC
-    original_methodology = config.get('sales_methodology', 'MEDDICC')
-    config['sales_methodology'] = 'MEDDPICC'
+    original_methodology = config.get('organization', {}).get('sales_methodology', 'MEDDICC')
+    if 'organization' not in config:
+        config['organization'] = {}
+    config['organization']['sales_methodology'] = 'MEDDPICC'
 
     # Write updated config
     with open(config_path, 'w') as f:
@@ -74,7 +76,9 @@ def test_meddpicc_has_eight_components():
     print("  ✓ rollup_deal_scores._build_abbr() has 8 entries")
 
     # Restore original methodology
-    config['sales_methodology'] = original_methodology
+    if 'organization' not in config:
+        config['organization'] = {}
+    config['organization']['sales_methodology'] = original_methodology
     with open(config_path, 'w') as f:
         yaml.dump(config, f, default_flow_style=False, sort_keys=False)
 
@@ -91,7 +95,9 @@ def test_meddicc_has_seven_components():
         config = yaml.safe_load(f)
 
     # Set to MEDDICC
-    config['sales_methodology'] = 'MEDDICC'
+    if 'organization' not in config:
+        config['organization'] = {}
+    config['organization']['sales_methodology'] = 'MEDDICC'
 
     # Write updated config
     with open(config_path, 'w') as f:
