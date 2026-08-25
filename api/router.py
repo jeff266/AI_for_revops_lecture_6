@@ -595,12 +595,22 @@ async def route_entity_scoped_question(
         logger.error(traceback.format_exc())
         return None
 
-def build_intent_prompt(today: str, current_quarter: str, history: str, question: str) -> str:
+def build_intent_prompt(today: str, current_quarter: str, history: str, question: str, roster_text: str = "") -> str:
     """Build INTENT_PROMPT from HANDLER_DESCRIPTIONS (single source of truth)."""
     handlers_text = "\n".join([
         f"  {name:25s} - {desc}"
         for name, desc in HANDLER_DESCRIPTIONS.items()
     ])
+
+    roster_section = ""
+    if roster_text:
+        roster_section = f"""
+**Team Roster (for name→email resolution):**
+{roster_text}
+
+When question mentions a first name (e.g. "Jake", "Jennifer"), look up their
+email in the roster above and use it in rep_email or sdr_email parameters.
+"""
 
     return f"""Classify this Slack question into one of
 these handler types. Reply with JSON only.
@@ -608,6 +618,7 @@ these handler types. Reply with JSON only.
 Handlers:
 {handlers_text}
 
+{roster_section}
 Required JSON:
 {{
   "handler": "<handler_name>",
@@ -1244,6 +1255,13 @@ async def route_question(question: str, user_id: str,
     today  = date.today().isoformat()
     cq     = current_quarter_label()
 
+    # Load team roster for name→email resolution in intent classifier
+    team_roster = sb.table("user_personas").select("name,email,role").execute()
+    roster_text = "\n".join([
+        f"- {r['name']} — {r['email']} ({r['role']})"
+        for r in (team_roster.data or [])
+    ])
+
     # ── -1. Entity-scope check (structural bypass) ───
     # Check if thread has known entities BEFORE pronoun matching
     prior_entities = get_prior_entities(history)
@@ -1312,6 +1330,7 @@ async def route_question(question: str, user_id: str,
                     current_quarter=cq,
                     history=json.dumps(get_api_history(history)[-4:]),
                     question=question,
+                    roster_text=roster_text,
                 ) + build_entity_hint(prior_entities)
             }]
         )
