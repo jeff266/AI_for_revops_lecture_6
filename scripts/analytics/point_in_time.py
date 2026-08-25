@@ -198,3 +198,230 @@ def is_deal_in_analytics_scope(
         return False
 
     return cfg['order'] >= cfg['qualified_stage_order']
+
+
+def get_stage_at_date(
+    property_history: dict,
+    deal_id: str,
+    snapshot_date
+) -> tuple[Optional[str], str, bool]:
+    """
+    Get stage ID for a deal at a specific snapshot date.
+
+    Args:
+        property_history: Dict mapping deal_id to {'history': [{'timestamp': str, 'value': str}]}
+        deal_id: Deal identifier
+        snapshot_date: Point-in-time date for reconstruction (datetime or date)
+
+    Returns:
+        (stage_id, confidence, has_history)
+        - stage_id: The stage at snapshot_date (or None)
+        - confidence: 'exact', 'cleared', 'pre_history', 'no_history'
+        - has_history: True if property history exists
+
+    Confidence definitions:
+    - 'exact': Stage history exists and covers this date (change occurred at or before it)
+    - 'cleared': An entry at or before this date exists but carries a null value —
+      the stage was actively cleared. Not the same fact as 'pre_history'.
+    - 'pre_history': Deal existed but had no stage entry at or before this date (null, not guessed)
+    - 'no_history': No stage history available for this deal at all
+
+    Strictly backward-looking: a history entry after the snapshot date must never
+    be selected. No history before the snapshot date means null, never forward-fill,
+    never a default.
+    """
+    if deal_id not in property_history:
+        # No property history available
+        return None, 'no_history', False
+
+    history = property_history[deal_id]['history']
+
+    if not history:
+        # Deal exists but has no stage history
+        return None, 'no_history', False
+
+    # Sort history by timestamp (oldest first)
+    sorted_history = sorted(history, key=lambda x: x['timestamp'])
+
+    # Normalize snapshot_date to datetime for comparison
+    snapshot_dt = _as_datetime(snapshot_date)
+
+    # Find the most recent stage change before or at snapshot_date
+    # Strictly backward-looking: entries after snapshot_date are never selected
+    snapshot_ts = snapshot_dt.isoformat()
+    current_stage = None
+    # Whether any entry at all fell at or before the snapshot date. Without
+    # this, a cleared stage (entry present, value null) is indistinguishable
+    # from history that starts later — both leave current_stage as None.
+    entry_covers_date = False
+
+    for entry in sorted_history:
+        entry_ts = entry['timestamp']
+
+        if entry_ts <= snapshot_ts:
+            current_stage = entry['value']
+            entry_covers_date = True
+        else:
+            # We've passed the snapshot date (strictly backward-looking)
+            break
+
+    if current_stage is None:
+        if entry_covers_date:
+            # An entry covers this date but its value is null: the stage was
+            # actively cleared. Reads as open, same as pre_history, but it is
+            # a different fact and is labelled as one.
+            return None, 'cleared', True
+        # No stage entry at or before this snapshot date
+        # Deal existed but history doesn't cover this early date
+        return None, 'pre_history', True
+
+    # We have a stage from history that covers this date
+    # This is 'exact' regardless of whether the change landed on the exact same day
+    # (The old definition marked almost everything 'interpolated' and made correct data look unreliable)
+    confidence = 'exact'
+
+    return current_stage, confidence, True
+
+
+def get_field_at_date(
+    field_history: dict,
+    deal_id: str,
+    snapshot_date
+) -> tuple[Optional[str], str]:
+    """
+    Generic point-in-time field lookup (amount, closedate, etc).
+
+    Args:
+        field_history: Dict mapping deal_id to {'history': [{'timestamp': str, 'value': any}]}
+        deal_id: Deal identifier
+        snapshot_date: Point-in-time date for reconstruction (datetime or date)
+
+    Returns:
+        (value, confidence)
+        - value: Field value at snapshot_date (or None)
+        - confidence: 'exact', 'cleared', 'pre_history', 'no_history'
+
+    Same backward-looking logic as stage reconstruction, including the
+    cleared-versus-never-set distinction.
+    """
+    if deal_id not in field_history:
+        return None, 'no_history'
+
+    history = field_history[deal_id]['history']
+
+    if not history:
+        return None, 'no_history'
+
+    sorted_history = sorted(history, key=lambda x: x['timestamp'])
+    snapshot_dt = _as_datetime(snapshot_date)
+    snapshot_ts = snapshot_dt.isoformat()
+    current_value = None
+    entry_covers_date = False
+
+    for entry in sorted_history:
+        if entry['timestamp'] <= snapshot_ts:
+            current_value = entry['value']
+            entry_covers_date = True
+        else:
+            # Strictly backward-looking
+            break
+
+    if current_value is None:
+        return None, ('cleared' if entry_covers_date else 'pre_history')
+
+    return current_value, 'exact'
+
+
+def _as_datetime(d):
+    """
+    Normalize a date or datetime to a midnight datetime.
+
+    is_deal_open_at_date and get_stage_at_date compare against each other and
+    against ISO timestamps, so create and snapshot must be the same type. A
+    caller passing a date for one and a datetime for the other was a real bug
+    caught by a fixture; normalizing here removes the footgun for every caller.
+    """
+    if isinstance(d, datetime):
+        return d
+    return datetime(d.year, d.month, d.day)
+
+
+def reconstruct_value_at_date(field_history, deal_id, snapshot_date,
+                              value_properties, config, pipeline_id,
+                              compute_value_fn):
+    """
+    Point-in-time deal value via the GrowthBook rule. Returns (value, conf).
+
+    value is None — never 0.0 — when NO component resolved at this date.
+    compute_value_fn (utils.compute_deal_value) on an all-blank property dict
+    returns 0.0 through the amount fallback, and writing that would swap a
+    proxy for a fabrication indistinguishable from a real zero. A component
+    present and zero stays a real 0.0. compute_value_fn is injected so this
+    module needs no import of utils.
+
+    Shared by the dry-run and the Phase 4 writer so the None-not-0.0 rule —
+    a documented cause of the prior attempt's failure — lives in one place.
+    """
+    Ddt = _as_datetime(snapshot_date)
+    pit_props, confs = {}, []
+    for prop in value_properties:
+        v, c = get_field_at_date(field_history[prop], deal_id, Ddt)
+        pit_props[prop] = v
+        confs.append(c)
+    if 'exact' in confs:
+        return compute_value_fn(pit_props, config, pipeline_id), 'exact'
+    return None, ('pre_history' if 'pre_history' in confs else 'no_history')
+
+
+def reconstruct_open_rows(deals, stage_history, field_history, snapshot_date,
+                          config, value_properties, compute_value_fn):
+    """
+    Population + per-deal reconstruction for one date.
+
+    THE single source of truth for which deals are in a snapshot and what
+    their reconstructed stage and value are. Both the Phase 3 dry-run and the
+    Phase 4 writer call this; neither reimplements population selection, so
+    the two cannot diverge. Coverage tallying and DB-column shaping are the
+    caller's job — this fixes the inclusion rule and the value rule.
+
+    Population is driven from `deals` (the deals table), NOT from
+    stage_history.keys(). A deal created on or before D that is not terminal
+    at D is IN; a deal with no stage history at D is a null-stage row, not a
+    drop. That is the Phase 2a fix — iterating history keys and dropping
+    null-stage deals was the ~291 cap.
+
+    Args:
+        deals: {deal_id: {'create': date|datetime, 'pipeline': str, ...}}
+        stage_history, field_history: per point_in_time cache shape
+        snapshot_date: date or datetime
+        value_properties, config, compute_value_fn: for value reconstruction
+
+    Returns:
+        (rows, unclassifiable_deal_ids)
+        rows: [{deal_id, pipeline, stage_id, stage_confidence,
+                deal_value, value_confidence}]  (ascending deal_id — stable
+                ordering so a batched, resumable write is deterministic)
+        unclassifiable: deal_ids whose stage@D field_semantics cannot classify;
+                the caller decides whether that is fatal.
+    """
+    Ddt = _as_datetime(snapshot_date)
+    rows, unclassifiable = [], []
+    for deal_id in sorted(deals):
+        d = deals[deal_id]
+        create = _as_datetime(d['create'])
+        if create > Ddt:
+            continue
+        stage, s_conf, _ = get_stage_at_date(stage_history, deal_id, Ddt)
+        try:
+            if not is_deal_open_at_date(create, stage, Ddt, is_terminal_stage):
+                continue
+        except UnclassifiableStageError:
+            unclassifiable.append(deal_id)
+            continue
+        value, v_conf = reconstruct_value_at_date(
+            field_history, deal_id, Ddt, value_properties, config,
+            d.get('pipeline'), compute_value_fn)
+        rows.append({'deal_id': deal_id, 'pipeline': d.get('pipeline'),
+                     'stage_id': stage, 'stage_confidence': s_conf,
+                     'deal_value': value, 'value_confidence': v_conf})
+    return rows, unclassifiable

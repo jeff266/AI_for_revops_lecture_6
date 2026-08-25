@@ -29,7 +29,7 @@ def _load_config():
 
     # Build STAGE_MAP from yaml
     stage_map = {}
-    for stage_id, info in config.get('stages', {}).items():
+    for stage_id, info in config.get('stage_map', {}).items():
         stage_map[str(stage_id)] = info
 
     # Build OUTCOME_BUCKETS - read from yaml and build 'open' list

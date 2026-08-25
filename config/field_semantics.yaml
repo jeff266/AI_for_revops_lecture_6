@@ -16,11 +16,27 @@
 
 stage_map:
   # Run scripts/discover_stages.py to populate this map from your HubSpot instance
-  # Example format:
-  # appointmentscheduled:
-  #   label: "Discovery"
-  #   bucket: "discovery"
-  #   transition: "discovery_to_scoping"
+  # Minimal stages for fixture tests (replace with your actual HubSpot stages)
+  appointmentscheduled:
+    label: "Discovery"
+    bucket: "discovery"
+    transition: "discovery_to_scoping"
+  qualifiedtobuy:
+    label: "Scoping"
+    bucket: "scoping"
+    transition: "scoping_to_proposal"
+  presentationscheduled:
+    label: "Technical Evaluation"
+    bucket: "proposal"
+    transition: "proposal_to_negotiating"
+  closedwon:
+    label: "Closed Won"
+    bucket: "closed_won"
+    transition: null
+  closedlost:
+    label: "Closed Lost"
+    bucket: "closed_lost"
+    transition: null
 
 outcome_buckets:
   won: ["closed_won"]
