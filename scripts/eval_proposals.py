@@ -385,9 +385,15 @@ def main():
         for name, error in failed:
             print(f"  - {name}")
             print(f"    {error[:100]}")
+        print("\n" + "=" * 70)
+        print(f"RESULTS: {passed} passed, {len(failed)} failed")
+        print("=" * 70)
         return 1
 
     print("\n✅ All proposal pipeline tests passed")
+    print("\n" + "=" * 70)
+    print(f"RESULTS: {passed} passed, 0 failed")
+    print("=" * 70)
     return 0
 
 
