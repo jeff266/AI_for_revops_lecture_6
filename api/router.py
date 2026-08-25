@@ -301,9 +301,156 @@ Examples: 'how is Jake tracking this month', 'show me Jake's calls',
         "discovery?', 'show me the team's discovery quality this month', "
         "'what happened on James's Stone call?'"
     ),
+    "query_help": (
+        "The person is orienting, not asking a data question — a greeting, "
+        "asking what the assistant can do, asking what they should ask, or "
+        "recovering from a bad answer. Set params.help_category to one of: "
+        "'greeting' (hi, hey, hello, morning, yo, sup, hi Claude), "
+        "'capability' (what can you do, how does this work, who are you, "
+        "what is this, help, /help), "
+        "'prompt_seeking' (what should I ask you, give me examples, where do "
+        "I start, I don't know what to ask, how do I use this), "
+        "'recovery' (that didn't work, that's not what I asked, I don't "
+        "understand, try again, what?). "
+        "DO NOT use query_help when a greeting is followed by a real question "
+        "('hi, how's the Acme deal?') — route on the question. DO NOT use it "
+        "for 'help me [do a real thing]' ('help me prep for Acme', 'help me "
+        "understand this deal') — those are task requests (e.g. "
+        "query_pre_call_brief / query_deal)."
+    ),
+    "acknowledgment": (
+        "A social acknowledgment or sign-off with no request behind it — "
+        "'thanks', 'thank you', 'got it', 'ok', 'okay', 'cool', 'great', "
+        "'nice', 'bye', 'see ya'. Return a one-line reply; do NOT list "
+        "capabilities. Not to be confused with 'ok what about Q2?' which "
+        "carries a real follow-up question."
+    ),
     "dynamic_query": "question requires combining data from multiple tables or filters not covered by the precomputed handlers above. Use when no other handler fits but the data likely exists in Supabase.",
     "unanswerable": "question cannot be answered with available data",
 }
+
+# ══════════════════════════════════════════════════════════════
+# HELP / GREETING — persona-aware orientation
+# ══════════════════════════════════════════════════════════════
+# Example questions for query_help are ASSEMBLED FROM THE HANDLER REGISTRY,
+# never hardcoded as prose. Each entry keys a real handler in
+# HANDLER_DESCRIPTIONS to one example phrasing and the persona buckets it
+# suits. A hardcoded help list goes stale the moment a handler is renamed and
+# nothing catches it.
+#
+# Persona buckets: 'rep' (individual contributor / AE), 'leadership'
+# (CRO / VP / sales leadership), 'admin' (both + data-health). role_group maps:
+# ic→rep; sales_leadership/executive→leadership; operational→leadership;
+# unknown/other→rep+leadership (general); is_admin(user_id)→adds admin.
+HELP_EXAMPLES = {
+    # handler_name: {"example": str, "personas": [buckets]}
+    "query_pre_call_brief":  {"example": "Prep me for my call with [company]",
+                              "personas": ["rep"]},
+    "query_deal":            {"example": "How's the [company] deal looking?",
+                              "personas": ["rep"]},
+    "query_deal_health":     {"example": "Which of my deals need attention?",
+                              "personas": ["rep"]},
+    "query_objections":      {"example": "What objections came up on my last call?",
+                              "personas": ["rep"]},
+    "query_coverage":        {"example": "Where's the pipeline for this quarter?",
+                              "personas": ["leadership"]},
+    "query_stale_deals":     {"example": "Which deals are stale?",
+                              "personas": ["leadership"]},
+    "query_rep_attainment":  {"example": "How's the team tracking to forecast?",
+                              "personas": ["leadership"]},
+    "query_team_leaderboard":{"example": "Who has the weakest qualification depth?",
+                              "personas": ["leadership"]},
+    # Admin data-health — no dedicated precomputed handler; routes via the
+    # registered dynamic_query intent.
+    "dynamic_query":         {"example": "Which deals are missing values or a close date?",
+                              "personas": ["admin"]},
+}
+
+
+def _help_persona_tags(persona: dict, user_id: str) -> list:
+    """Persona buckets whose examples this viewer should see."""
+    role_group = (persona or {}).get("role_group")
+    if role_group == "ic":
+        tags = ["rep"]
+    elif role_group in ("sales_leadership", "executive", "operational"):
+        tags = ["leadership"]
+    else:  # unknown / other → general set
+        tags = ["rep", "leadership"]
+    if is_admin(user_id):
+        # Admin sees both plus data-health, deduped, order preserved.
+        for t in ("rep", "leadership", "admin"):
+            if t not in tags:
+                tags.append(t)
+    return tags
+
+
+def _select_help_examples(tags: list, limit: int = 4) -> list:
+    """Assemble example questions from the handler registry, filtered by
+    persona bucket, in registry order, capped. Never hardcoded prose."""
+    picked = []
+    for name, meta in HELP_EXAMPLES.items():
+        if any(t in meta["personas"] for t in tags):
+            picked.append((name, meta["example"]))
+        if len(picked) >= limit:
+            break
+    return picked
+
+
+def build_help_response(help_category: str, persona: dict, user_id: str,
+                        history: list) -> str:
+    """Persona- and thread-aware orientation. Ends open, never terminal.
+
+    Shape: one line on what it is → 3-4 example questions → one line inviting
+    a follow-up. capability skips the welcome; prompt_seeking leads with the
+    examples; recovery acknowledges the miss first; a returning thread gets a
+    shorter version than first contact.
+    """
+    tags = _help_persona_tags(persona, user_id)
+    examples = _select_help_examples(tags)
+    example_lines = "\n".join(f"• {ex}" for _, ex in examples)
+
+    # Unknown persona is a first-class case — say so, do not pretend a mapping.
+    unknown_prefix = ""
+    if not persona:
+        unknown_prefix = ("I don't have you mapped to a role yet, so I'll answer "
+                          "generally. Ask Jeff to add you and I can tailor this "
+                          "to your deals.\n\n")
+
+    returning = bool(history)  # prior turns in this thread → reconnection
+    invite = "\nOr just describe what you're looking at."
+
+    if help_category == "acknowledgment":  # defensive; normally handled separately
+        return "👍"
+
+    if help_category == "capability":
+        # Direct answer, skip the welcome.
+        body = ("I answer RevOps questions from your CRM data — pipeline, deals, "
+                "MEDDICC health, forecast, objections, and rep activity. "
+                "For example:\n" + example_lines)
+        return unknown_prefix + body + invite
+
+    if help_category == "prompt_seeking":
+        # Lead with concrete examples — highest intent.
+        body = ("Here's where people usually start:\n" + example_lines)
+        return unknown_prefix + body + invite
+
+    if help_category == "recovery":
+        # Acknowledge the miss first, then orient.
+        body = ("Sorry — let me reset. I answer questions from your CRM data. "
+                "A few that tend to work:\n" + example_lines)
+        return unknown_prefix + body + invite
+
+    # greeting (default)
+    if returning:
+        # Reconnection — short, not the full orientation.
+        body = ("Welcome back. Ask me anything about your deals or pipeline — "
+                "for example:\n" + example_lines)
+    else:
+        body = ("Hi — I'm your RevOps assistant. I answer questions from your "
+                "CRM data: pipeline, deals, MEDDICC health, forecast, and rep "
+                "activity. A few things you can ask:\n" + example_lines)
+    return unknown_prefix + body + invite
+
 
 # Bulk handlers that can operate on entity scopes (deal_ids from prior context)
 ENTITY_SCOPE_BULK_HANDLERS = [
@@ -642,7 +789,8 @@ Required JSON:
     "weeks": "<for query_pipeline_movement composition: integer count of recent weeks, or null>",
     "stage": "<for query_pipeline_movement stage_deals: stage name like 'Discovery', else null>",
     "close_date_scope": "<for query_pipeline_movement: 'current_quarter' to reconcile against a CRM board filtered by close date, else null (default all)>",
-    "component": "<for query_rubric: a MEDDICC component (champion, economic_buyer, metrics, decision_criteria, decision_process, pain, competition), else null>"
+    "component": "<for query_rubric: a MEDDICC component (champion, economic_buyer, metrics, decision_criteria, decision_process, pain, competition), else null>",
+    "help_category": "<for query_help ONLY: greeting|capability|prompt_seeking|recovery, else null>"
   }},
   "unanswerable_reason": "no_data|out_of_scope|ambiguous|null",
   "confidence": 0.0-1.0
@@ -1359,6 +1507,29 @@ async def route_question(question: str, user_id: str,
 
         print(f"[INTENT] handler={handler_name} "
               f"confidence={confidence:.2f}", flush=True)
+
+        # ── 1b. Greeting / help / acknowledgment (orientation, no data) ──
+        # Short-circuit BEFORE the data handler + synthesis path: these carry
+        # no numbers to synthesize or verify. Thread-aware (persona loading
+        # deferred for simplicity; build_help_response handles None gracefully).
+        if handler_name == "acknowledgment":
+            logger.info(f"[HELP] category=acknowledgment user={user_id}")
+            return {"answer": "👍 Anytime — just say the word when you need "
+                              "something.",
+                    "handler_name": "acknowledgment", "tool_results": {}}
+
+        if handler_name == "query_help":
+            help_category = (params.get("help_category")
+                             or "capability")  # default if classifier omitted it
+            # Cheap signal for whether orientation lands: the category now, and
+            # the next turn's [INTENT] line is what they asked next.
+            logger.info(f"[HELP] category={help_category} user={user_id} "
+                        f"returning={bool(history)}")
+            return {"answer": build_help_response(
+                        help_category, persona=None, user_id=user_id, history=history),
+                    "handler_name": "query_help",
+                    "help_category": help_category,
+                    "tool_results": {}}
 
         # ── 2. Auth check ─────────────────────────────────
         if handler_name == "set_target":
