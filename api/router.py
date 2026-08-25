@@ -859,15 +859,14 @@ REPORT_SHAPES = {
 }
 
 # MEDDICC component display names (used by synthesis guard)
-_MEDDICC_DISPLAY = {
-    "metrics": "Metrics",
-    "economic_buyer": "Economic Buyer",
-    "decision_criteria": "Decision Criteria",
-    "decision_process": "Decision Process",
-    "identify_pain": "Pain",
-    "champion": "Champion",
-    "competition": "Competition",
-}
+# Derived from get_components() to prevent drift (MEDDPICC clients need Paper Process)
+def _get_meddicc_display() -> dict:
+    """Build component display name map from configured methodology.
+    Prevents hardcoded 7-component list breaking MEDDPICC clients."""
+    from scripts.utils import get_components, component_key
+    return {component_key(c): c for c in get_components()}
+
+_MEDDICC_DISPLAY = _get_meddicc_display()
 
 
 def _meddicc_guard() -> str:
