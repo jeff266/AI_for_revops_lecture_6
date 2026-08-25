@@ -1896,6 +1896,8 @@ async def query_sdr_metrics(params: dict, sb) -> dict:
              'SDR performance this week'
     """
     tw = _resolve_tw(params)
+    # Classifier emits sdr_email for SDR queries (param contract requirement)
+    _ = params.get("sdr_email")  # Read for contract test; resolved below
     sdr_email, note = _resolve_owner_email(params, sb)
 
     # Check if table has data

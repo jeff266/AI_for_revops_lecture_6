@@ -189,6 +189,21 @@ NEW_DISCOVERY_SIGNALS = [
 # Handler descriptions - single source of truth for both INTENT_PROMPT and entity-scope classification
 HANDLER_DESCRIPTIONS = {
     "query_waterfall": "pipeline movement, new/won/lost this week/quarter",
+    "query_pipeline_movement": (
+        "Historical pipeline movement, stage composition over time, "
+        "deal-level stage changes, and the coverage curve by week — read "
+        "from the reconstructed weekly deals_snapshot series (FY2026 Q3 "
+        "onward). COUNT-based only (no dollar figures). Set params.view: "
+        "'movement' for week-over-week counts in/out by stage, 'composition' "
+        "for the stage-by-week grid, 'deal_changes' for which deals moved/"
+        "advanced/regressed/left, 'curve' for deal count by week-of-quarter, "
+        "'stage_deals' to list the deals currently in a named stage (set "
+        "params.stage). Examples: 'how has pipeline moved over the last four "
+        "weeks?' (movement), 'what's the stage breakdown this quarter versus "
+        "last?' (composition), 'which deals moved stage since last week?' "
+        "(deal_changes), 'show me the coverage curve for FY2027 Q2' (curve), "
+        "'which deals are in Discovery?' (stage_deals, stage='Discovery')"
+    ),
     "query_new_deals": "which deals were created, added to pipeline, or started in a time window",
     "query_won_deals": "which deals did we ALREADY win/close (past tense), retrospective wins/bookings. NOT future close dates.",
     "query_arr": "ARR by customer, total ARR",
@@ -202,10 +217,90 @@ HANDLER_DESCRIPTIONS = {
     "generate_win_loss": "full narrative for a specific closed deal (slow)",
     "query_competitive_intel": "competitive intelligence: which companies mentioned DIY/build-it-themselves, named competitors showing up in calls, build-vs-buy signals, what alternatives prospects are evaluating",
     "set_target": "admin: set quota or target (requires auth)",
-    "query_rubric_scores_bulk": "MEDDICC component scores for a known set of deals",
+    "query_rubric_scores_bulk": (
+        "MEDDICC component scores for a NAMED company or a known set of deals — "
+        "the scorecard for specific deal(s), including which components are weak "
+        "and what the AE should do next. ALWAYS use this when the question names "
+        "a company or deal and asks to score it / assess its MEDDICC / highlight "
+        "weaknesses / recommend next steps — even when it also asks about "
+        "weaknesses, gaps, or next steps (those do NOT make it a query_deal_health "
+        "scan). Resolves a company name to its deal(s) automatically. Examples: "
+        "'score Bestseller on MEDDICC, highlight weaknesses and next steps', "
+        "'score the LiveSport deal on MEDDICC', 'how does Acme look on MEDDICC?'"
+    ),
     "query_deal_stages_bulk": "current stage for a known set of deals",
     "query_deal_owners_bulk": "owner/rep for a known set of deals",
     "query_deal_values_bulk": "ARR/deal value for a known set of deals",
+    "query_sdr_metrics": """SDR/BDR activity metrics for an individual rep — calls made, voicemails, call volume.
+Use when asking about a specific SDR's activity, call counts, or outbound effort.
+Examples: 'how is Jake tracking this month', 'show me Jake's calls',
+'what are Jake's metrics for August', 'how many dials did Jake make this week'""",
+    "query_sdr_leaderboard": "SDR/BDR team activity overview — calls and voicemails across all SDRs. Use for team-wide SDR activity or comparing SDR performance.",
+    "query_sdr_pipeline_sourced": "Pipeline sourced by SDRs/BDRs — deals attributed to an SDR via the configured attribution field or current ownership. Use when asking about SDR-sourced pipeline, BDR contribution, or meetings that converted to opportunities.",
+    "query_rep_pipeline": (
+        "Active pipeline for a specific AE — all their open deals with "
+        "value, stage, close date, and MEDDICC score. Use when asking about "
+        "a rep's deals, pipeline, or book of business. Examples: "
+        "'show me Christian's pipeline', 'what deals does Cary own?', "
+        "'show me Scott's deals closing this quarter'"
+    ),
+    "query_rep_attainment": (
+        "Quota attainment for one or all AEs — won revenue vs target. "
+        "Use when asking who is on track, above/below quota, or how the "
+        "team is tracking to number. Examples: 'who is on track to hit quota?', "
+        "'show me Q3 attainment by rep', 'who is furthest from their number?', "
+        "'which reps are above 50% to quota?'"
+    ),
+    "query_deal_health": (
+        "MEDDICC health filter — an UNNAMED threshold scan ACROSS THE BOOK (or a "
+        "rep's book) for the SET of deals with weak scores, missing components, "
+        "or specific qualification gaps. Use ONLY when NO single company or deal "
+        "is named — the question asks which deals (plural) are weak/risky/missing "
+        "something. If the question names a company, use query_rubric_scores_bulk "
+        "instead, EVEN when it asks about weaknesses or next steps. "
+        "Examples: 'show me Christian's weakest deals', "
+        "'which deals have no economic buyer?', "
+        "'show me deals closing this month with a score below 5', "
+        "'show me deals where pain is identified but metrics are not'"
+    ),
+    "query_stale_deals": (
+        "Deals with no recent activity or past their close date. Use when "
+        "asking about stuck deals, deals that haven't moved, or deals past "
+        "close date. Examples: 'which deals have been stuck for 30 days?', "
+        "'show me deals past their close date', "
+        "'which of Cary's deals haven't moved?', "
+        "'show me deals stuck in Technical Evaluation'"
+    ),
+    "query_team_leaderboard": (
+        "Full AE team ranking across pipeline, attainment, MEDDICC quality, "
+        "and deals won. Use for team-wide comparison questions. Examples: "
+        "'show me the team leaderboard', 'who is carrying the team?', "
+        "'rank the AEs by pipeline', 'who has the most pipeline this quarter?'"
+    ),
+    "query_pre_call_brief": (
+        "Pre-call intelligence brief for a specific deal — current MEDDICC "
+        "scores with weakest components, last call summaries, open objections, "
+        "and focus questions based on what's missing. Use when someone asks to "
+        "be prepped for a call, wants a brief before a meeting, or asks what to "
+        "focus on in an upcoming call. Examples: 'prep me for my Skyscanner call', "
+        "'quick brief on the Stone deal', 'what should I focus on with IKEA?'"
+    ),
+    "query_coaching_priorities": (
+        "Which deals and reps need coaching attention — missing economic buyer, "
+        "weak champion, no recent call activity, unaddressed objections, or strong "
+        "MEDDICC score with no movement. Use for 1:1 prep, coaching reviews, or "
+        "pipeline health checks. Examples: 'which reps need coaching this week?', "
+        "'prep me for my 1:1 with Christian', 'show me deals with no champion', "
+        "'which of James's deals haven't had a call in 3 weeks?'"
+    ),
+    "query_call_quality": (
+        "Review what happened on a specific call or assess discovery quality "
+        "patterns across a rep or the team. Not roleplay — looks back at real "
+        "call summaries and scores them against discovery rubric. Examples: "
+        "'how did the last Skyscanner call go?', 'where is Christian weak in "
+        "discovery?', 'show me the team's discovery quality this month', "
+        "'what happened on James's Stone call?'"
+    ),
     "dynamic_query": "question requires combining data from multiple tables or filters not covered by the precomputed handlers above. Use when no other handler fits but the data likely exists in Supabase.",
     "unanswerable": "question cannot be answered with available data",
 }
@@ -518,23 +613,38 @@ Required JSON:
   "handler": "<handler_name>",
   "params": {{
     "time_window": {{
-      "period": "current_quarter|current_week|last_N_days|specific",
+      "period": "current_quarter|current_month|previous_month|current_week|last_N_days|specific",
       "start": "YYYY-MM-DD or null",
       "end":   "YYYY-MM-DD or null"
     }},
     "company": "<company name or null>",
     "rep_email": "<email or null>",
+    "sdr_email": "<SDR/BDR email for query_sdr_metrics or null>",
     "role": "ae|am|null",
     "metric": "new_arr|expansion_arr|total_arr|null",
     "target_value": "<number or null>",
     "entity_name": "<rep/team name for set_target or null>",
     "period_label": "Q3_FY2027 or null",
     "search_term": "<specific competitor/term for query_competitive_intel or null>",
-    "is_slow": false
+    "view": "<for query_pipeline_movement: movement|composition|deal_changes|curve|stage_deals, else null>",
+    "fiscal_quarter": "<for query_pipeline_movement: 'FY2027 Q2' style label, or null for current>",
+    "weeks": "<for query_pipeline_movement composition: integer count of recent weeks, or null>",
+    "stage": "<for query_pipeline_movement stage_deals: stage name like 'Discovery', else null>",
+    "close_date_scope": "<for query_pipeline_movement: 'current_quarter' to reconcile against a CRM board filtered by close date, else null (default all)>",
+    "component": "<for query_rubric: a MEDDICC component (champion, economic_buyer, metrics, decision_criteria, decision_process, pain, competition), else null>"
   }},
   "unanswerable_reason": "no_data|out_of_scope|ambiguous|null",
   "confidence": 0.0-1.0
 }}
+
+Orientation vs. data questions (weigh the WHOLE message, not a prefix):
+  - A greeting followed by a real question routes on the QUESTION
+    ("hi, how's the Acme deal?" → query_deal), never query_help.
+  - "help me [do a real thing]" is a task ("help me prep for Acme" →
+    query_pre_call_brief), never query_help.
+  - Bare social acknowledgments/sign-offs ("thanks", "ok", "cool", "bye")
+    → acknowledgment, NOT query_help. But "ok, what about Q2?" carries a
+    real follow-up → route on that.
 
 For time windows, use the fiscal calendar:
   FY starts February. Q1=Feb-Apr, Q2=May-Jul,
