@@ -77,18 +77,48 @@ def parse_date_arg(date_str: str, config: dict) -> date:
         return date.fromisoformat(date_str)
 
 
-def resolve_owner_email(hubspot_owner_id: str) -> str | None:
+def resolve_owner_email(hubspot_owner_id: str, sb) -> str | None:
     """
-    Resolve HubSpot owner ID to email using hardcoded mapping.
+    Resolve HubSpot owner ID to email.
+
+    Lookup order:
+    1. Query user_personas table by hubspot_owner_id (primary source)
+    2. Fall back to OWNER_EMAIL_MAP if not in table (legacy/manual override)
+    3. Log unmapped IDs (silent attribution loss is the failure shape that
+       produced six bugs today)
 
     The HubSpot owners API requires additional scopes that the private app
-    token doesn't have. Instead, use a hardcoded mapping for known SDRs.
+    token doesn't have. Instead, use user_personas populated by
+    seed_personas_from_config.py from config/client.yaml team roster.
     """
     if not hubspot_owner_id:
         return None
 
-    # Use hardcoded mapping
-    return OWNER_EMAIL_MAP.get(str(hubspot_owner_id))
+    owner_id_str = str(hubspot_owner_id)
+
+    # 1. Try user_personas table first
+    if sb:
+        try:
+            result = sb.table('user_personas').select('email').eq(
+                'hubspot_owner_id', owner_id_str
+            ).limit(1).execute()
+
+            if result.data and len(result.data) > 0:
+                return result.data[0].get('email')
+        except Exception as e:
+            print(f"  Warning: user_personas lookup failed for owner {owner_id_str}: {e}")
+
+    # 2. Fall back to hardcoded mapping (legacy/manual override)
+    fallback_email = OWNER_EMAIL_MAP.get(owner_id_str)
+    if fallback_email:
+        return fallback_email
+
+    # 3. Log unmapped owner IDs (silent attribution loss → missing data bugs)
+    print(f"  ⚠️  Unmapped HubSpot owner ID: {owner_id_str}")
+    print(f"     Add to user_personas via seed_personas_from_config.py")
+    print(f"     or manually via OWNER_EMAIL_MAP for quick override")
+
+    return None
 
 
 def fetch_hubspot_meetings(
@@ -429,7 +459,7 @@ def main():
         hs_outcome = props.get('hs_meeting_outcome')
         owner_id = props.get('hubspot_owner_id')
 
-        owner_email = resolve_owner_email(owner_id)
+        owner_email = resolve_owner_email(owner_id, sb)
 
         # Match to call recording if database available
         call_match = None

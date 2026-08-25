@@ -80,6 +80,7 @@ def build_personas(config: dict) -> list[dict]:
             continue
         role = _norm_role(m.get("role"))
         slack_id = m.get("slack_user_id")
+        hubspot_owner_id = m.get("hubspot_owner_id")
         by_email[email] = {
             "email": email,
             "name": m.get("name"),
@@ -88,6 +89,7 @@ def build_personas(config: dict) -> list[dict]:
             "role_group": ROLE_TO_GROUP.get(role, "other"),
             "title": m.get("title"),
             "slack_user_id": None if _is_placeholder(slack_id) else slack_id,
+            "hubspot_owner_id": hubspot_owner_id,
             "source": "config_seed",
         }
 
@@ -97,22 +99,24 @@ def build_personas(config: dict) -> list[dict]:
         role = _norm_role(ov.get("role"))
         row = by_email.setdefault(email, {
             "email": email, "name": None, "display_name": None,
-            "slack_user_id": None, "source": "config_seed",
+            "slack_user_id": None, "hubspot_owner_id": None, "source": "config_seed",
         })
         row["role"] = role
         row["role_group"] = ROLE_TO_GROUP.get(role, "other")
         if ov.get("title"):
             row["title"] = ov["title"]
+        if ov.get("hubspot_owner_id"):
+            row["hubspot_owner_id"] = ov["hubspot_owner_id"]
 
     return list(by_email.values())
 
 
-# Columns we upsert. slack_user_id / name / display_name / title use COALESCE
-# on conflict so a re-run never wipes a value that's already there (e.g. a
-# Slack ID a user self-bound, or a name we don't have in config).
+# Columns we upsert. slack_user_id / name / display_name / title / hubspot_owner_id
+# use COALESCE on conflict so a re-run never wipes a value that's already there
+# (e.g. a Slack ID a user self-bound, or a name we don't have in config).
 _COLS = ["email", "name", "display_name", "role", "role_group",
-         "persona", "title", "slack_user_id", "source"]
-_COALESCE = {"name", "display_name", "title", "slack_user_id"}
+         "persona", "title", "slack_user_id", "hubspot_owner_id", "source"]
+_COALESCE = {"name", "display_name", "title", "slack_user_id", "hubspot_owner_id"}
 
 
 def _sql_lit(v):
