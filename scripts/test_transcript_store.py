@@ -66,38 +66,48 @@ def test_transient_failure_is_retryable_not_terminal():
     Transient failures (recent calls, still processing) must be retryable.
 
     GrowthBook issue: Empty transcripts were always marked 'unavailable'
-    (TERMINAL), so resume never re-attempted them. Calls recorded <24h ago
-    should be 'fragments_only' (RETRY) to allow processing to complete.
+    (TERMINAL), so resume never re-attempted them. Corrected logic uses
+    unavailable_reason with TERMINAL/RETRY prefix to distinguish.
 
-    The 48-hour threshold means:
-    - Call from 1 day ago: fragments_only (RETRY - might still be processing)
-    - Call from 3 days ago: unavailable (TERMINAL - should exist by now)
+    The STILL_PROCESSING_DAYS threshold (default 3 days) means:
+    - Call from 1 day ago: unavailable_reason='retry: ...' (might still be processing)
+    - Call from 4 days ago: unavailable_reason='terminal: ...' (should exist by now)
     """
-    print("\n[TEST] Transient failure is retryable, not terminal")
+    from transcript_store import RETRY, TERMINAL, STILL_PROCESSING_DAYS
+
+    print(f"\n[TEST] Transient failure is retryable, not terminal (threshold={STILL_PROCESSING_DAYS}d)")
 
     now = datetime.utcnow()
 
-    # Recent call (within 48h) - should be RETRY
-    recent_call = now - timedelta(hours=24)
-    quality = _classify_empty_transcript(recent_call)
-    assert quality == 'fragments_only', \
-        f"Recent call (<48h) should be 'fragments_only' (RETRY), got '{quality}'"
+    # Recent call (within threshold) - should be RETRY
+    recent_call = now - timedelta(days=1)
+    reason = _classify_empty_transcript(recent_call)
+    assert reason.startswith(RETRY), \
+        f"Recent call (<{STILL_PROCESSING_DAYS}d) should start with '{RETRY}', got '{reason}'"
 
-    # Old call (>48h) - should be TERMINAL
-    old_call = now - timedelta(hours=72)
-    quality = _classify_empty_transcript(old_call)
-    assert quality == 'unavailable', \
-        f"Old call (>48h) should be 'unavailable' (TERMINAL), got '{quality}'"
+    # Old call (beyond threshold) - should be TERMINAL
+    old_call = now - timedelta(days=STILL_PROCESSING_DAYS + 1)
+    reason = _classify_empty_transcript(old_call)
+    assert reason.startswith(TERMINAL), \
+        f"Old call (>{STILL_PROCESSING_DAYS}d) should start with '{TERMINAL}', got '{reason}'"
 
-    # Edge case: exactly 48h
-    edge_call = now - timedelta(hours=48, minutes=1)
-    quality = _classify_empty_transcript(edge_call)
-    assert quality == 'unavailable', \
-        f"Call at 48h+ should be 'unavailable' (TERMINAL), got '{quality}'"
+    # Edge case: exactly at threshold boundary (STILL_PROCESSING_DAYS uses .days which truncates)
+    # To cross the threshold, need full days > threshold
+    edge_call = now - timedelta(days=STILL_PROCESSING_DAYS, hours=12)
+    reason = _classify_empty_transcript(edge_call)
+    # This is still <= threshold in whole days, so should be RETRY
+    assert reason.startswith(RETRY), \
+        f"Call at {STILL_PROCESSING_DAYS}d+12h (still {STILL_PROCESSING_DAYS} whole days) should be '{RETRY}', got '{reason}'"
 
-    print("  ✓ Recent calls (<48h) are retryable (fragments_only)")
-    print("  ✓ Old calls (>48h) are terminal (unavailable)")
-    print("  ✓ Resume will re-attempt transients, skip terminals")
+    # Just past threshold
+    past_threshold_call = now - timedelta(days=STILL_PROCESSING_DAYS + 1, hours=0)
+    reason = _classify_empty_transcript(past_threshold_call)
+    assert reason.startswith(TERMINAL), \
+        f"Call at {STILL_PROCESSING_DAYS + 1}d should start with '{TERMINAL}', got '{reason}'"
+
+    print(f"  ✓ Recent calls (<{STILL_PROCESSING_DAYS}d) are retryable (retry:)")
+    print(f"  ✓ Old calls (>{STILL_PROCESSING_DAYS}d) are terminal (terminal:)")
+    print("  ✓ Resume will re-attempt retryables, skip terminals")
 
 
 def test_apollo_metrics_use_real_timestamps_and_sum_correctly():
@@ -180,10 +190,12 @@ def test_null_transcript_never_empty_string():
 
     assert row['transcript_text'] is None, \
         f"Empty utterances should produce NULL transcript_text, got '{row['transcript_text']}'"
-    assert row['transcript_quality'] == 'fragments_only', \
-        f"Recent empty should be 'fragments_only', got '{row['transcript_quality']}'"
+    assert row['transcript_quality'] == 'unavailable', \
+        f"Recent empty should be 'unavailable', got '{row['transcript_quality']}'"
+    assert row.get('unavailable_reason', '').startswith('retry:'), \
+        f"Recent empty should have 'retry:' reason, got '{row.get('unavailable_reason')}'"
 
-    # Fetch error - should produce NULL transcript
+    # Fetch error - should produce NULL transcript with retry: prefix
     row = build_transcript_row(
         source='fireflies',
         call_id='test-002',
@@ -196,6 +208,8 @@ def test_null_transcript_never_empty_string():
         f"Error should produce NULL transcript_text, got '{row['transcript_text']}'"
     assert row['transcript_quality'] == 'unavailable', \
         f"Error should be 'unavailable', got '{row['transcript_quality']}'"
+    assert row.get('unavailable_reason', '').startswith('retry:'), \
+        f"Transient error should have 'retry:' reason, got '{row.get('unavailable_reason')}'"
 
     # Valid utterances - should produce non-empty string
     row = build_transcript_row(
@@ -214,11 +228,65 @@ def test_null_transcript_never_empty_string():
         "Valid utterances should produce non-empty transcript_text"
     assert 'Alice: Hello' in row['transcript_text'], \
         f"Transcript should contain utterance, got: {row['transcript_text']}"
+    assert row.get('unavailable_reason') is None, \
+        f"Valid transcript should have NULL unavailable_reason, got '{row.get('unavailable_reason')}'"
 
-    print("  ✓ Empty utterances → NULL (not '')")
-    print("  ✓ Fetch error → NULL (not '')")
-    print("  ✓ Valid utterances → non-empty string")
+    print("  ✓ Empty utterances → NULL (not '') + retry: reason")
+    print("  ✓ Fetch error → NULL (not '') + retry: reason")
+    print("  ✓ Valid utterances → non-empty string + NULL reason")
     print("  ✓ CHECK(transcript_text IS NULL OR length > 0) will pass")
+
+
+def test_is_done_single_authority_for_resume():
+    """
+    is_done() is the single authority for resume logic.
+
+    A row is DONE (skip on resume) when:
+    - Has text (quality != 'unavailable'), OR
+    - Is a terminal empty (unavailable_reason starts with 'terminal:')
+
+    A row is NOT DONE (retry on resume) when:
+    - Is a retryable empty (unavailable_reason starts with 'retry:'), OR
+    - Row is absent from table
+
+    This prevents the two scale failures:
+    1. Transient failures (rate limits) not skipped forever
+    2. Old calls without transcripts not re-attempted every pass
+    """
+    from transcript_store import is_done, UNAVAILABLE, TERMINAL, RETRY
+
+    print("\n[TEST] is_done() single authority for resume logic")
+
+    # Has text - DONE
+    assert is_done('full', None) == True, \
+        "Row with text (quality='full') should be DONE"
+    assert is_done('partial', None) == True, \
+        "Row with text (quality='partial') should be DONE"
+    assert is_done('fragments_only', None) == True, \
+        "Row with text (quality='fragments_only') should be DONE"
+
+    # Terminal empty - DONE
+    assert is_done(UNAVAILABLE, f'{TERMINAL} no transcript (7d-old call, none will appear)') == True, \
+        "Terminal empty should be DONE (skip on resume)"
+
+    # Retryable empty - NOT DONE
+    assert is_done(UNAVAILABLE, f'{RETRY} no transcript yet (recent call, may still be processing)') == False, \
+        "Retryable empty should NOT be DONE (retry on resume)"
+    assert is_done(UNAVAILABLE, f'{RETRY} Rate limit exceeded') == False, \
+        "Transient failure should NOT be DONE (retry on resume)"
+
+    # Edge cases
+    assert is_done(UNAVAILABLE, None) == False, \
+        "UNAVAILABLE with NULL reason should NOT be DONE (missing data)"
+    assert is_done(UNAVAILABLE, '') == False, \
+        "UNAVAILABLE with empty reason should NOT be DONE (missing data)"
+    assert is_done(UNAVAILABLE, 'something else') == False, \
+        "UNAVAILABLE without terminal: prefix should NOT be DONE"
+
+    print("  ✓ Has text → DONE (skip)")
+    print("  ✓ Terminal empty → DONE (skip)")
+    print("  ✓ Retryable empty → NOT DONE (retry)")
+    print("  ✓ Single authority prevents rate-limit casualties skipped forever")
 
 
 def test_backchannel_rule_preserves_monologues():
