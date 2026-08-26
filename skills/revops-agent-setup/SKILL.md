@@ -134,12 +134,22 @@ MEDDICC scores back as deal properties.
 
 To get it:
 1. HubSpot → Settings → Integrations → Private Apps
-2. Required scopes: crm.objects.deals.read, crm.objects.deals.write,
-   crm.objects.contacts.read, crm.objects.companies.read,
-   timeline, timeline.read, timeline.write
+2. Required scopes:
+   - crm.objects.deals.read
+   - crm.objects.deals.write
+   - crm.objects.companies.read
+   - crm.objects.contacts.read
+   - crm.objects.owners.read
+   - crm.schemas.deals.read
+   - crm.schemas.deals.write
 3. Copy the access token (starts with pat-na1-)
 
-Important: rotate this token if it was ever in a public repo."
+IMPORTANT: crm.schemas.deals.write is a SEPARATE permission toggle from
+crm.objects.deals.write. Many users have object write but not schema write
+— it's a different checkbox in the HubSpot UI. You need both. Schema write
+is what setup_hubspot_properties.py needs to create custom properties.
+
+Also important: rotate this token if it was ever in a public repo."
 
 Ask: "Paste your HubSpot private app token:"
 Validate: should start with pat-

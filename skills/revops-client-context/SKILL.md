@@ -178,6 +178,24 @@ field like amount, or a sum of components (the computed form, e.g. New ARR + Exp
 If components: what are the INTERNAL property names? (Labels and internal
 names differ; we'll verify against the properties API during stage discovery.)"
 
+After receiving the answer, CHECK for non-default properties and warn about consequences:
+
+If they specified `arr` or `incremental_arr` as the value field (or as components):
+"You configured {property_name} as your deal value field. This is a CUSTOM
+property (not a HubSpot default). If this property doesn't exist in your
+HubSpot portal, every deal value will read null and the waterfall and forecast
+will be all zero.
+
+Have you already created this property in HubSpot? (yes/no)"
+
+If no: "You'll need to create it before running the nightly agent. HubSpot →
+Settings → Properties → Deals → Create property. Make it a Number field."
+
+If they're using SDR attribution:
+"Do you have an sdr_owner_email custom property for SDR attribution tracking?
+This is optional — only needed if you want SDR metrics in the Slack agent.
+If absent, SDR metrics handlers will return empty. (yes/no/skip)"
+
 Win-rate qualification field:
 "Do you have a boolean qualification field like SAO (Sales Accepted
 Opportunity)? If yes, win rate uses it as the denominator instead of

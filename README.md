@@ -48,6 +48,35 @@ Someone who has these answers ready completes onboarding in one sitting. Someone
 - **The CRM field holding deal value** — `amount`, `arr`, `incremental_arr`, custom field. Pipeline waterfall and forecast analytics read this field. If you point it at the wrong one, every dollar calculation is wrong.
 - **Team roster** — Names, emails, roles, and CRM owner IDs. Used for persona-aware Slack responses (executive vs sales vs operational voice).
 
+### HubSpot prerequisites
+
+**We create the 21 scoring properties** (setup_hubspot_properties.py creates `meddicc_{component}_score`, `meddicc_{component}_status`, `meddicc_{component}_rationale` for each methodology component — typically 7 components, so 21 properties total).
+
+**These must already exist:**
+
+**HubSpot OAuth scopes:**
+```
+crm.objects.deals.read
+crm.objects.deals.write
+crm.objects.companies.read
+crm.objects.contacts.read
+crm.objects.owners.read
+crm.schemas.deals.read
+crm.schemas.deals.write
+```
+
+**Note:** `crm.schemas.deals.write` is a separate permission toggle from `crm.objects.deals.write`. Many users have object write but not schema write — it's a different checkbox in the HubSpot UI and it's the one that fails `setup_hubspot_properties.py`. You need both.
+
+**Custom deal properties (conditional on your configuration):**
+
+- **`incremental_arr`** — Required if `pipeline.value_field: incremental_arr` in `config/client.yaml`. If configured but the property doesn't exist, every deal value reads null and the waterfall and forecast are all zero.
+
+- **`arr`** — Required if `pipeline.value_field: arr` in `config/client.yaml`. If configured but the property doesn't exist, every deal value reads null.
+
+- **`sdr_owner_email`** — Required for SDR attribution tracking (optional). If absent, SDR metrics handlers return empty and no SDR attribution appears in analytics.
+
+**All other properties are HubSpot defaults** (deals: `dealname`, `dealstage`, `pipeline`, `closedate`, `amount`, `hubspot_owner_id`, `createdate`; companies: `name`, `domain`, `numberofemployees`; contacts: `email`, `firstname`, `lastname`, `jobtitle`; meetings: `hs_meeting_*` properties). If your HubSpot instance has these, you're covered.
+
 ---
 
 ## Requirements
@@ -138,7 +167,7 @@ If plausibility checks fail, the analytical outputs have a bug. If they pass but
 
 **Slack agent returns "I don't have enough data to answer that":** Handler's Supabase query returned zero rows. Either table is empty (check ETL ran), filter is too strict (e.g., filtering for Q3 deals when it's Q1), or intent classification routed to wrong handler. Check Railway logs for SQL query, run it manually in Supabase.
 
-**Waterfall empty after Week 2:** Waterfall (`scripts/analytics/compute_waterfall.py`) reads `deals_snapshot` rows across multiple weeks and requires `qualified_date` on each deal. If snapshots are missing, have null `fiscal_quarter` values, or deals lack `qualified_date`, waterfall will be empty. Confirm `scripts/analytics/snapshot_deals.py` wrote rows with non-null `fiscal_quarter`, `scripts/etl/seed_qualified_dates.py` populated `qualified_date` for all deals that reached qualified threshold, and `fiscal.fy_start_month` is set correctly in `client.yaml`. Note: waterfall needs TWO snapshots before it computes anything — first run correctly skips with "insufficient snapshot history."
+**Waterfall empty after Week 2:** Waterfall (`scripts/analytics/compute_waterfall.py`) reads `deals_snapshot` rows across multiple weeks and requires `qualified_date` on each deal. If snapshots are missing, have null `fiscal_quarter` values, or deals lack `qualified_date`, waterfall will be empty. Confirm `scripts/analytics/snapshot_deals.py` wrote rows with non-null `fiscal_quarter`, `scripts/analytics/seed_qualification_history.py` populated `qualified_date` for all deals that reached qualified threshold (derives it from stage history), and `fiscal.fy_start_month` is set correctly in `client.yaml`. Note: waterfall needs TWO snapshots before it computes anything — first run correctly skips with "insufficient snapshot history."
 
 **Factory raises "call_tools.primary = 'gongg' is not recognized":** Typo in config. Valid options: `fireflies`, `gong`, `apollo`. Factory uses Gap 2 discipline — no silent fallbacks. Fix typo in `config/client.yaml`.
 
