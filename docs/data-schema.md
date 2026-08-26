@@ -336,7 +336,7 @@ scores roll up as most-recent-non-null per component.
 | `scorer_version` | TEXT | Bump to invalidate stale rows on re-backfill |
 | `scored_at` | TIMESTAMPTZ | Default NOW() |
 
-**CRITICAL: JSONB, not fixed columns.** GrowthBook's migration 043 had
+**CRITICAL: JSONB, not fixed columns.** An earlier migration version had
 `metrics_score`, `economic_buyer_score`, etc. (7 fixed columns) which
 defeats methodology switching. Template uses `component_scores JSONB` so
 MEDDPICC gets `{"paper_process": 7, ...}` with zero schema changes.

@@ -6,7 +6,7 @@ The template uses three adapter layers to isolate vendor-specific code:
 2. **Storage Adapter** (`adapters/storage/`) — Supabase, Snowflake, BigQuery
 3. **Call Adapter** (`adapters/calls/`) — Fireflies, Gong, Apollo, Fathom, Avoma
 
-Each wraps a vendor SDK behind a small interface. Production code (ETL, nightly agent, progressive scorer) only ever talks to the interface, never imports vendor SDKs directly. This pattern prevents drift — porting a GrowthBook feature that calls HubSpot directly would introduce a second pattern into a repo with a working one.
+Each wraps a vendor SDK behind a small interface. Production code (ETL, nightly agent, progressive scorer) only ever talks to the interface, never imports vendor SDKs directly. This pattern prevents drift — porting a feature that calls a vendor SDK directly would introduce a second pattern into a repo with a working one.
 
 **Phase 4 Note:** Progressive scoring (call_scorer.py, rollup_deal_scores.py) writes to BOTH layers — CRM writes (individual HubSpot properties for UI/filters/workflows) + Storage writes (JSONB in Supabase for methodology-agnostic history). The split is intentional and required. See "Two-Layer Storage Pattern" below.
 

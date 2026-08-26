@@ -292,4 +292,4 @@ If you see unexpected FAILs after the first nightly (e.g., 'Qualified deals > to
 'Conversion rate 147%'), those are real data quality issues to investigate.
 
 The verification suite helps you find your own bad numbers rather than inheriting
-GrowthBook's assumptions."
+the template's default assumptions."

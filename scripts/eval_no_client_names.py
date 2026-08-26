@@ -20,11 +20,14 @@ FORBIDDEN_NAMES = [
     "ECCO",
 ]
 
-# File extensions to check (markdown excluded - those move to docs/build-history/)
-EXTENSIONS = {".py", ".sh", ".sql", ".yaml", ".yml", ".json"}
+# File extensions to check
+EXTENSIONS = {".py", ".sh", ".sql", ".yaml", ".yml", ".json", ".md"}
 
 # Directories to exclude
 EXCLUDE_DIRS = {".git", "__pycache__", "node_modules", ".pytest_cache"}
+
+# Paths to exclude (session artifacts and port history with historical client names)
+EXCLUDE_PATHS = {"docs/build-history", "docs/port-history"}
 
 
 def test_no_client_names_in_tracked_files():
@@ -39,6 +42,14 @@ def test_no_client_names_in_tracked_files():
     for f in repo_root.rglob("*"):
         # Skip excluded directories
         if any(exc in f.parts for exc in EXCLUDE_DIRS):
+            continue
+
+        # Skip excluded paths (session artifacts in docs/build-history/)
+        try:
+            rel_path = str(f.relative_to(repo_root))
+            if any(rel_path.startswith(exc) for exc in EXCLUDE_PATHS):
+                continue
+        except ValueError:
             continue
 
         # Only check tracked file types
@@ -78,6 +89,7 @@ def test_no_client_names_in_tracked_files():
 
     print(f"  ✓ No client names found in tracked files")
     print(f"  ✓ Checked extensions: {', '.join(sorted(EXTENSIONS))}")
+    print(f"  ✓ Excluded paths: {', '.join(sorted(EXCLUDE_PATHS))}")
     print(f"  ✓ Forbidden names: {', '.join(FORBIDDEN_NAMES)}")
 
 

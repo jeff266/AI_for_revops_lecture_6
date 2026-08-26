@@ -1,0 +1,228 @@
+# RevOps MEDDICC Agent — Production Status
+
+**Template Version:** 2026-08-25
+**Repository:** AI_for_revops_lecture_6
+
+This template is a production-ready MEDDICC agent for RevOps teams. It was
+ported from a live the reference deployment deployment, scrubbed of all client-specific
+data, and made generic for any HubSpot/Salesforce user running MEDDICC,
+MEDDPICC, SPICED, or BANT.
+
+---
+
+## What Works
+
+The **nightly MEDDICC agent** is complete and tested:
+
+- ETL: Pull deals from HubSpot → `memory/deals/index.json`
+- ETL: Pull calls from Fireflies/Gong → `memory/calls/*.json` cache
+- Context builder: Haiku synthesizes cumulative MEDDICC state from call cache
+- Generator/Evaluator/Reflection loop: Sonnet scores, Haiku evaluates,
+  Haiku reflection gate decides if a learning is worth keeping
+- HubSpot write-back: 6 MEDDICC component scores + overall score written
+  to HubSpot deal properties
+- Supabase write: Parallel write to `analyses` table
+- Self-improvement: Learnings extracted → synthesizer → PR to `prompts/CLAUDE.md`
+- Token tracking: Every LLM call logged with role, tokens, cost
+- GitHub Actions: Scheduled nightly and weekly runs
+
+The **CRO Slack agent** (query layer) is complete and runs on Railway:
+
+- Intent classification: Precomputed handler vs dynamic query path
+- 16 precomputed handlers: at-risk deals, pipeline coverage, objections,
+  feature gaps, deal deep-dives, rubric coaching, win/loss intelligence
+- Dynamic query path: Novel combinations via typed query primitives
+- Thread context: Follow-ups reuse deals from prior messages
+- Self-assessment: Correctness + tone check before reply, retry if needed
+- Zapier relay: Inbound (Slack → Railway) + outbound (Railway → Slack)
+
+The **weekly analytics** pass runs Sunday 3am UTC:
+
+- Pipeline snapshots (`scripts/analytics/snapshot_deals.py`)
+- Forecast computation (stage-weighted + category-weighted)
+- Deal status tracking (won/lost/moved)
+
+The **verification suite** is complete:
+
+- 87 passing tests across `scripts/test_*.py`
+- CRM crosscheck (agent count vs HubSpot count reconciliation)
+- Config validation (raises on missing critical keys)
+- Name guard (no client names in tracked code)
+
+---
+
+## What Is Not Built
+
+The following analytics batch scripts exist in the reference deployment
+but are **not ported** to this template:
+
+- **`compute_waterfall.py`**: Stage-to-stage conversion tracking across
+  fiscal quarters. The snapshots table exists and gets written every
+  Sunday; the waterfall computation that reads those snapshots is absent.
+- **`generate_win_loss.py`**: Automated win/loss narrative extraction
+  from call evidence. The enrichment module extracts objections and
+  feature gaps; win/loss narrative synthesis is missing.
+- **`compute_segment_metrics.py`**: Segment-level (SMB/Mid-Market/Enterprise)
+  win rate, cycle time, and conversion analysis. Segmentation config
+  exists in `client.yaml`; the analytics that group by it are not here.
+
+The **Gong adapter factory** is documented but not implemented:
+
+- `scripts/adapters/calls/fireflies.py` exists and works.
+- `scripts/adapters/calls/gong.py` is stubbed (interface only, no
+  implementation). The onboarding skill (`revops-client-context`) claims
+  to web-search a call tool's API docs and generate an adapter; this has
+  not been tested against a live Gong credential.
+
+The **shape-aware synthesis guard** exists in the reference CRO agent
+but is not ported:
+
+- Context: The reference deployment had a synthesis guard that prevented
+  hallucinations like "Deal X has strong champion evidence (score 8)" when
+  the deal's champion score was actually 3. The guard checked that the
+  synthesis stayed within the shape of the data it was given.
+- Status: This template's `api/assessor.py` checks correctness and tone,
+  but does not validate that the synthesized answer matches the structure
+  of the underlying rows. A client deploying this will get occasional
+  shape drift (rare, but it happens).
+
+---
+
+## What Is Untested and What Is Provisional
+
+### Untested Against Live Data
+
+This template has **never run against live client data**. It was ported
+from a working the reference deployment deployment, but the port rewrote every
+client-specific reference (stage IDs, pipeline names, competitor names,
+internal domains) to be config-driven. The following are true:
+
+- The test suite passes (87 passing tests).
+- Every file reads from `config/client.yaml` and `config/context.yaml`
+  instead of hardcoding values.
+- The name guard confirms no client names remain in tracked code.
+- The reference the reference deployment deployment runs every night without error.
+
+But **no one has deployed this template to a fresh client and watched it
+run a full nightly cycle**. Edge cases may exist where a config key is
+read but not validated, or where a HubSpot API response shape differs
+from what the reference deployment sees.
+
+### Provisional Thresholds (Guesses, Not Measurements)
+
+The following values in `config/client.yaml` are **guesses**. They came
+from the reference deployment, but they were calibrated to the reference deployment's
+sales motion and may not generalize:
+
+**`quality_thresholds.minimum_quality_score: 70`**
+Determines when the evaluator rejects a generated analysis as too weak.
+the reference deployment's live data showed that scores below 70 correlated with vague
+or hedging language. A team with shorter calls or less structured
+discovery might need to lower this; a team with deep enterprise cycles
+might raise it.
+
+**`stage_progression` thresholds (e.g., `identified_pain: 5`, `champion: 4`)**
+These are the MEDDICC component scores required to move from one stage
+to the next. They shape the agent's risk warnings ("this deal is in
+Scoping but champion is only a 3 — below the 4 threshold"). the reference deployment's
+thresholds reflect their qualification bar. Your team's bar may differ.
+
+**`deal_health.strong.minimum_components_above_6: 5`**
+Defines when a deal is flagged as "strong" in the at-risk handler. Five
+components above 6 worked for the reference deployment. A team with a lighter
+qualification methodology (BANT instead of MEDDICC) might need fewer.
+
+**`api/assessor.py` correctness floor (0.30)**
+The Slack agent self-assesses answer correctness on a 0-1 scale and
+retries if it falls below 0.30. This threshold was chosen arbitrarily —
+it has not been tuned against real Slack question volume. A client might
+find 0.30 too permissive (too many weak answers get through) or too
+strict (too many retries on acceptable answers).
+
+---
+
+## Recommendations for First Deployment
+
+1. **Run `discover_stages.py` and confirm every stage's classification.**
+   The onboarding skill generates a pipeline block with HINT annotations.
+   Walk through each stage and confirm `is_won`, `is_lost`,
+   `exclude_from_analysis`, and `qualified_stage_order`. A wrong
+   classification corrupts the waterfall and win-rate calculations.
+
+2. **Set a test deal and watch the first nightly run.**
+   Create a single test deal in HubSpot, attach a Fireflies call, and
+   trigger the nightly workflow manually. Confirm the scores get written
+   back, the Supabase row appears, and no errors surface in the Actions log.
+
+3. **Check the snapshot coverage after the first Sunday.**
+   The weekly analytics writes a snapshot every Sunday 3am UTC. After the
+   first run, query `deals_snapshot` and confirm the row count matches
+   your active pipeline size. If it's capped at ~291 or drops deals with
+   null stages, the point-in-time reconstruction has a bug (this was fixed
+   in the reference deployment but may reappear under different HubSpot
+   property-history shapes).
+
+4. **Lower the correctness floor if the Slack agent retries too often.**
+   If the Slack agent logs show excessive retries on reasonable-looking
+   answers, lower `ASSESS_CORRECTNESS_FLOOR` in `api/assessor.py` from
+   0.30 to 0.20. If it passes weak answers that miss the user's question,
+   raise it to 0.40.
+
+5. **Calibrate stage_progression thresholds after 2-3 weeks.**
+   Watch the nightly analysis outputs. If the agent flags too many deals
+   as "below threshold for this stage," your thresholds are too strict.
+   If it never warns and a rep later says "I knew that deal was weak,"
+   your thresholds are too loose. Adjust the `stage_progression` block
+   in `config/client.yaml` and re-run.
+
+---
+
+## What to Do If Something Breaks
+
+**The nightly run stops mid-way (50 deals analyzed, 30 skipped):**
+Individual deal failures are logged but should not halt the run. Check
+the Actions log for exceptions. Common causes: HubSpot API rate limit
+(add a sleep), Fireflies call cache miss (re-run ETL), missing deal
+property (add it to `etl.deal_properties` in `client.yaml`).
+
+**HubSpot scores are all zero:**
+The score extraction regex in `scripts/hubspot_deals.py` expects lines
+like `Metrics: 7/10` or `Champion: 8`. If your prompt format drifts,
+scores won't parse. Check an analysis file in `output/` and confirm the
+format matches the regex in `_extract_scores_from_analysis()`.
+
+**Slack agent returns "I don't have enough data to answer that":**
+The handler's Supabase query returned zero rows. Either the table is
+empty (check ETL ran), the filter is too strict (e.g., filtering for Q3
+deals when it's Q1), or the intent classification routed to the wrong
+handler. Check the Railway logs for the SQL query and run it manually in
+Supabase to see what it returns.
+
+**The waterfall is empty after Week 2:**
+The waterfall reads `deals_snapshot` rows across multiple weeks. If
+snapshots are missing or have null `fiscal_quarter` values, the waterfall
+will be empty. Confirm `scripts/analytics/snapshot_deals.py` wrote rows
+with non-null `fiscal_quarter` and that `fiscal.fy_start_month` is set
+correctly in `client.yaml`.
+
+---
+
+## Final Notes
+
+This template is **production-ready in structure** but **untested in the wild**.
+The code is clean, the tests pass, and the reference deployment proves the
+architecture works. But every client has a different HubSpot shape, a
+different call cadence, and a different qualification bar. Expect to spend
+2-3 weeks calibrating thresholds and watching the first few nightly runs
+before trusting it as a source of truth.
+
+The three gaps documented above (waterfall computation, win/loss narratives,
+shape-aware synthesis) are real but not blockers. The nightly agent scores
+deals and writes them back; the Slack agent answers pipeline questions; the
+weekly snapshots build a time-series record. Those three pieces alone are
+enough to start getting value. The missing analytics can be added later when
+you need them.
+
+If you deploy this and hit an edge case, document it. This template improves
+as more teams run it and report what broke. That is how the reference
+deployment got stable, and it is how this one will too.
