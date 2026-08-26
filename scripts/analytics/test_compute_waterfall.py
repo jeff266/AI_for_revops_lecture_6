@@ -155,7 +155,11 @@ def test_unknown_value_excluded_from_dollar_sum_not_zero_filled():
     # Monkey-patch select_all and utils
     import adapters.storage.supabase as storage_mod
     original_select_all = storage_mod.select_all
-    storage_mod.select_all = lambda sb, table, **kwargs: mock_select_all(sb, table, **kwargs)
+
+    def mock_select_wrapper(sb, table, columns=None, filters=None):
+        return mock_select_all(sb, table, columns=columns, filters=filters)
+
+    storage_mod.select_all = mock_select_wrapper
 
     # Build qual_map from fixture
     qual_map = {row['deal_id']: {'qualified_date': row['qualified_date']}
@@ -225,12 +229,12 @@ def test_qualification_uses_qualified_date_not_current_stage():
 
     # Fixture: 5 deals
     # - 3 early qualifiers (qualified_date = 2026-02-10, before week1)
-    # - 2 late qualifiers (qualified_date = 2026-03-18, after week2 but before week3)
+    # - 2 late qualifiers (qualified_date = 2026-03-10, after week2 but before week3)
     fixture = {
         'deals': [
             *[{'deal_id': f'early_{i}', 'qualified_date': '2026-02-10'}
               for i in range(1, 4)],
-            *[{'deal_id': f'late_{i}', 'qualified_date': '2026-03-18'}
+            *[{'deal_id': f'late_{i}', 'qualified_date': '2026-03-10'}
               for i in range(1, 3)],
         ],
         'deals_snapshot': [
@@ -269,7 +273,11 @@ def test_qualification_uses_qualified_date_not_current_stage():
     # Monkey-patch
     import adapters.storage.supabase as storage_mod
     original_select_all = storage_mod.select_all
-    storage_mod.select_all = lambda sb, table, **kwargs: mock_select_all(sb, table, **kwargs)
+
+    def mock_select_wrapper(sb, table, columns=None, filters=None):
+        return mock_select_all(sb, table, columns=columns, filters=filters)
+
+    storage_mod.select_all = mock_select_wrapper
 
     qual_map = {row['deal_id']: {'qualified_date': row['qualified_date']}
                 for row in fixture['deals']}
