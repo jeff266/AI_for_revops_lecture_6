@@ -461,7 +461,15 @@ def main():
     forecast_category_field = pipeline_top_config.get('forecast_category_field')
     prior_arr_field = pipeline_top_config.get('prior_arr_field')
     win_rate_qualified_field = pipeline_top_config.get('win_rate_qualified_field')
-    value_field_cfg = pipeline_top_config.get('value_field', 'amount')
+    value_field_cfg = pipeline_top_config.get('value_field')
+    if not value_field_cfg:
+        raise ValueError(
+            "pipeline.value_field not set in config/client.yaml\n"
+            "This is the HubSpot/Salesforce property name containing deal ARR/value.\n"
+            "Common options: 'amount', 'arr', 'incremental_arr', 'acv'\n"
+            "Example: pipeline:\n"
+            "  value_field: incremental_arr"
+        )
 
     for i, deal_obj in enumerate(all_deals_api, 1):
         if i % 50 == 0:

@@ -291,7 +291,17 @@ def get_fiscal_quarter(as_of=None, config: dict = None) -> tuple:
     if config is None:
         config = load_client_config()
 
-    fy_start_month = config.get('fiscal', {}).get('fy_start_month', 1)
+    fiscal_config = config.get('fiscal', {})
+    fy_start_month = fiscal_config.get('fy_start_month')
+    if fy_start_month is None:
+        raise ValueError(
+            "fiscal.fy_start_month not set in config/client.yaml\n"
+            "This setting determines Q1/Q2/Q3/Q4 boundaries for all analytics.\n"
+            "Set to 1 for January, 2 for February, etc.\n"
+            "Example: fiscal:\n"
+            "  fy_start_month: 2  # February fiscal year start"
+        )
+    fy_start_month = int(fy_start_month)
 
     # Find which quarter this date falls in
     # Quarters are 3 months each starting from fy_start_month

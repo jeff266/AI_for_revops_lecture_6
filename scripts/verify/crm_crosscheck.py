@@ -67,7 +67,16 @@ def analyze_difference(agent_deals, crm_deals, config):
     explanation = []
 
     # Check 1: Close-date filter
-    call_lookback_days = config.get('etl', {}).get('call_lookback_days', 90)
+    etl_config = config.get('etl', {})
+    call_lookback_days = etl_config.get('call_lookback_days')
+    if call_lookback_days is None:
+        raise ValueError(
+            "etl.call_lookback_days not set in config/client.yaml\n"
+            "This setting determines the window for call data to include.\n"
+            "CRM crosscheck verification requires knowing this window.\n"
+            "Example: etl:\n"
+            "  call_lookback_days: 90"
+        )
     cutoff_date = datetime.now() - timedelta(days=call_lookback_days)
 
     # Count CRM deals outside lookback window

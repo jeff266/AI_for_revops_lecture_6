@@ -46,6 +46,11 @@ def main():
             prob_map[(p['id'], s['id'])] = s.get(
                 'stage_probability', 0.0)
 
+    if prob_map and all(p == 0.0 for p in prob_map.values()):
+        print("⚠️  No stage_probability values configured — "
+              "stage-weighted forecast will be all zeros. "
+              "Add stage_probability to each open stage in config/client.yaml to enable.")
+
     deals = select_all(
         sb, 'deals',
         columns=('deal_id, pipeline_id, stage, deal_value, '

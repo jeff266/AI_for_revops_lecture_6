@@ -147,11 +147,21 @@ def load_scope_config(config=None):
             excluded_pipelines.add(str(pipeline.get('id', '')))
 
     # Build stage config map
-    default_qso = config.get('pipeline', {}).get('qualified_stage_order', 1)
+    pipeline_config = config.get('pipeline', {})
+    default_qso = pipeline_config.get('qualified_stage_order')
     stages = {}
 
     for pipeline in config.get('pipeline', {}).get('pipelines', []):
         qso = pipeline.get('qualified_stage_order', default_qso)
+        if qso is None:
+            raise ValueError(
+                f"qualified_stage_order not set for pipeline '{pipeline.get('name', pipeline.get('id'))}'\n"
+                "This setting determines which stage counts as 'qualified' for waterfall analytics.\n"
+                "Set qualified_stage_order on each pipeline in config/client.yaml.\n"
+                "Example: pipelines:\n"
+                "  - id: default\n"
+                "    qualified_stage_order: 3  # stage order where deals become 'qualified'"
+            )
         for stage in pipeline.get('stages', []):
             stages[str(stage['id'])] = {
                 'name': stage.get('name', ''),
