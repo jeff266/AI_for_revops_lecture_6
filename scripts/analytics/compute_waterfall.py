@@ -5,7 +5,10 @@ Uses the two most recent snapshot dates (not "exactly 7 days
 prior" — uses nearest prior to survive missed crons).
 Writes to waterfall_weekly table.
 
-IMPORTANT: This tracks QUALIFIED pipeline only (highest_stage_order_reached >= 2).
+IMPORTANT: This tracks the QUALIFIED pipeline only. Membership is point-in-time
+(defect 5): a deal counts for a week only once its qualified_date — the immutable
+event when it first crossed the threshold — has occurred on or before that week's
+snapshot date. It is NOT gated on the current-state highest_stage_order_reached.
 Meeting Set stage deals (order 0-1) are excluded from beginning/ending values
 and all waterfall movements to match HubSpot's qualified pipeline definition.
 
@@ -24,6 +27,26 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).parent.parent.parent
 
 
+def _qualified_as_of(qual_map, deal_id, as_of_iso):
+    """Point-in-time qualified-pipeline membership (defect 5).
+
+    A deal is in the qualified pipeline as of a date only once its
+    qualified_date (the immutable event when it first crossed the qualification
+    threshold — seeded from HubSpot dealstage history) has occurred on or
+    before that date. Uses the event timestamp, NEVER the current-state
+    highest_stage_order_reached, which is the stage the deal has reached BY NOW
+    and would count a not-yet-qualified deal as already in an earlier week's
+    pipeline.
+    """
+    qd = (qual_map.get(deal_id) or {}).get('qualified_date')
+    if not qd:
+        return False
+    try:
+        return date.fromisoformat(qd) <= date.fromisoformat(as_of_iso)
+    except (ValueError, TypeError):
+        return False
+
+
 def main():
     parser = argparse.ArgumentParser(description='Compute pipeline waterfall')
     parser.add_argument('--backfill', action='store_true',
@@ -39,30 +62,44 @@ def main():
     from supabase import create_client
     import sys
     sys.path.insert(0, str(REPO_ROOT / 'scripts'))
-    from utils import load_client_config, get_fiscal_quarter
+    from utils import load_client_config, get_fiscal_quarter, get_pipeline_config
     from adapters.storage.supabase import select_all
     from datetime import datetime
 
     sb = create_client(SUPABASE_URL, SUPABASE_KEY)
     config = load_client_config()
 
-    # Load qualification threshold and current qualification status
-    pipeline_cfg = config.get('pipelines', {}).get('default', {})
-    threshold = pipeline_cfg.get('qualified_stage_order', 2)
+    # Load qualification threshold — raises if not set (Gap 2)
+    pipeline_cfg = get_pipeline_config(config=config)
+    threshold = pipeline_cfg.get('qualified_stage_order')
+    if threshold is None:
+        raise ValueError(
+            "qualified_stage_order not set in config/client.yaml\n"
+            "This setting determines which stage counts as 'qualified' for waterfall analytics.\n"
+            "Set qualified_stage_order on the primary pipeline in config/client.yaml.\n"
+            "Example: pipelines:\n"
+            "  - id: default\n"
+            "    qualified_stage_order: 3  # stage order where deals become 'qualified'"
+        )
 
-    print(f"Using qualification threshold: stage_order >= {threshold}")
+    print(f"Qualification threshold (config): stage_order >= {threshold}; "
+          f"membership is point-in-time via qualified_date")
 
-    # Load current qualification status for all deals (high-water mark)
+    # Point-in-time qualified-pipeline membership (defect 5). qualified_date is
+    # the IMMUTABLE event timestamp of when a deal first crossed the
+    # qualification threshold (seed_qualification_history replays dealstage
+    # history) — an event fact, like a won deal's close_date, NOT current state.
+    # We deliberately do NOT read highest_stage_order_reached: that is the stage
+    # the deal has reached BY NOW, and gating a historical week on it would
+    # count a not-yet-qualified deal as already in that week's pipeline. Stage
+    # exclusions come from the point-in-time snapshot; membership from the event.
     qual_rows = select_all(sb, 'deals',
-                          columns='deal_id, highest_stage_order_reached, qualified_date')
+                          columns='deal_id, qualified_date')
     qual_map = {
-        row['deal_id']: {
-            'highest_stage_order_reached': row.get('highest_stage_order_reached', 0),
-            'qualified_date': row.get('qualified_date')
-        }
+        row['deal_id']: {'qualified_date': row.get('qualified_date')}
         for row in qual_rows
     }
-    print(f"Loaded qualification data for {len(qual_map)} deals")
+    print(f"Loaded qualification (event) data for {len(qual_map)} deals")
 
     if args.backfill:
         # Backfill mode: get all snapshot dates and compute waterfalls for all pairs
@@ -149,11 +186,32 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
     Compute waterfall between two snapshot dates.
 
     Args:
-        computed_source: 'prospective' for real-time or 'backfill' for historical replay
+        sb: Supabase client
+        config: Client configuration
+        qual_map: {deal_id: {'qualified_date': ...}} — point-in-time membership
+        threshold: Qualification stage_order threshold
+        prev_date: Previous snapshot date (str)
+        new_date: New snapshot date (str)
+        computed_source: 'prospective' or 'backfill'
     """
     from utils import get_fiscal_quarter
     from adapters.storage.supabase import select_all
-    from datetime import datetime
+    import sys as _sys
+    _sys.path.insert(0, str(Path(__file__).parent))  # analytics/ for null_propagation
+    from null_propagation import null_propagate
+
+    # Null-propagation threshold (defect 4). A deal whose deal_value is None is
+    # EXCLUDED from every dollar sum and COUNTED — never coalesced to 0.0, which
+    # would re-fabricate the number Phase 2b removed.
+    max_null_pct = float(config.get('forecast_analysis', {})
+                         .get('max_null_value_pct', 5))
+
+    def _deal_value(row):
+        """deal_value as float, or None when unknown — NEVER 0-coalesced."""
+        if not row:
+            return None
+        v = row.get('deal_value')
+        return float(v) if v is not None else None
 
     # Load both snapshots (paginated)
     def load_snapshot(snap_date: str) -> dict:
@@ -168,7 +226,8 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
 
     # Get current fiscal quarter boundaries
     q_start, q_end, q_label = get_fiscal_quarter(date.fromisoformat(new_date), config)
-    print(f"  Fiscal quarter: {q_label} ({q_start} to {q_end})")
+    if computed_source == 'prospective':
+        print(f"  Fiscal quarter: {q_label} ({q_start} to {q_end})")
 
     # Diff into waterfall categories per pipeline
     from collections import defaultdict
@@ -187,22 +246,34 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
         'net_change': 0.0,
         'deals_created_count': 0,
         'deals_qualified_count': 0,
+        'null_value_excluded_count': 0,   # deals dropped from dollar sums (unknown value)
         'details': [],
     })
 
-    # Calculate beginning and ending values (qualified pipeline only)
-    # Uses current highest_stage_order_reached (high-water mark) to filter
+    # Beginning/ending values (qualified pipeline only), null-propagated:
+    # collect per-pipeline value lists (None for unknown), then exclude-and-
+    # count via null_propagate rather than coalescing null -> 0.
+    from collections import defaultdict as _dd
+    begin_values, end_values = _dd(list), _dd(list)
     for deal_id, p in prev_snap.items():
         if (p.get('deal_status') == 'active' and
-            (qual_map.get(deal_id, {}).get('highest_stage_order_reached') or 0) >= threshold):
-            pipeline_id = p.get('pipeline_id', 'default')
-            pipeline_waterfalls[pipeline_id]['beginning_value'] += float(p.get('deal_value') or 0)
-
+            _qualified_as_of(qual_map, deal_id, prev_date)):
+            begin_values[p.get('pipeline_id', 'default')].append(_deal_value(p))
     for deal_id, n in new_snap.items():
         if (n.get('deal_status') == 'active' and
-            (qual_map.get(deal_id, {}).get('highest_stage_order_reached') or 0) >= threshold):
-            pipeline_id = n.get('pipeline_id', 'default')
-            pipeline_waterfalls[pipeline_id]['ending_value'] += float(n.get('deal_value') or 0)
+            _qualified_as_of(qual_map, deal_id, new_date)):
+            end_values[n.get('pipeline_id', 'default')].append(_deal_value(n))
+
+    for pid, vals in begin_values.items():
+        npr = null_propagate(vals, max_null_pct)
+        pipeline_waterfalls[pid]['beginning_value'] = npr['sum']  # excludes nulls, never 0-filled
+        pipeline_waterfalls[pid]['beginning_null_excluded'] = npr['null_count']
+        pipeline_waterfalls[pid]['beginning_dollar_basis_null'] = npr['basis_null']
+    for pid, vals in end_values.items():
+        npr = null_propagate(vals, max_null_pct)
+        pipeline_waterfalls[pid]['ending_value'] = npr['sum']
+        pipeline_waterfalls[pid]['ending_null_excluded'] = npr['null_count']
+        pipeline_waterfalls[pid]['ending_dollar_basis_null'] = npr['basis_null']
 
     all_deal_ids = set(new_snap) | set(prev_snap)
 
@@ -210,14 +281,21 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
         n = new_snap.get(deal_id)
         p = prev_snap.get(deal_id)
 
-        # Skip deals that never reached qualification threshold
+        # Skip deals not yet in the qualified pipeline as of this week (defect
+        # 5: point-in-time via qualified_date, not the current high-water mark).
         qual_info = qual_map.get(deal_id, {})
-        if (qual_info.get('highest_stage_order_reached') or 0) < threshold:
+        if not _qualified_as_of(qual_map, deal_id, new_date):
             continue
 
         pipeline_id = (n or p).get('pipeline_id', 'default')
         wf = pipeline_waterfalls[pipeline_id]
-        value = float((n or p).get('deal_value') or 0)
+        # None when value is unknown — NEVER 0-coalesced. A dollar category adds
+        # `value` only when known; an unknown-value deal is counted (count basis)
+        # and tallied into null_value_excluded_count (dollar basis).
+        value = _deal_value(n or p)
+        value_known = value is not None
+        if not value_known:
+            wf['null_value_excluded_count'] += 1
 
         # Check if deal was newly qualified this week using qualified_date
         qualified_date_str = qual_info.get('qualified_date')
@@ -233,7 +311,8 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
 
         if n and not p:
             # New deal created this week AND already qualified
-            wf['new_pipeline_value'] += value
+            if value_known:
+                wf['new_pipeline_value'] += value
             wf['deals_created_count'] += 1
             wf['details'].append({
                 'deal_id': deal_id,
@@ -244,7 +323,8 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
             })
         elif newly_qualified_this_week and p:
             # Deal existed before and crossed qualification threshold this week
-            wf['newly_qualified_value'] += value
+            if value_known:
+                wf['newly_qualified_value'] += value
             wf['deals_qualified_count'] += 1
             wf['details'].append({
                 'deal_id': deal_id,
@@ -255,14 +335,15 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
                 'qualified_date': qualified_date_str,
             })
         else:
-            n_order = n.get('stage_order', 0) or 0
-            p_order = p.get('stage_order', 0) or 0
-            n_status = n.get('deal_status', 'active')
-            p_status = p.get('deal_status', 'active')
+            # Handle existing deals (may be None if deal only exists in one snapshot)
+            n_order = n.get('stage_order', 0) or 0 if n else 0
+            p_order = p.get('stage_order', 0) or 0 if p else 0
+            n_status = n.get('deal_status', 'active') if n else 'active'
+            p_status = p.get('deal_status', 'active') if p else 'active'
 
             # Parse close dates for fiscal quarter analysis
-            n_close_raw = n.get('close_date')
-            p_close_raw = p.get('close_date')
+            n_close_raw = n.get('close_date') if n else None
+            p_close_raw = p.get('close_date') if p else None
 
             try:
                 n_close = date.fromisoformat(n_close_raw) if n_close_raw else None
@@ -309,10 +390,12 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
                 # not counted as stage movement — they haven't entered
                 # the qualified pipeline yet.
 
-            # Check ARR change
-            n_value = float(n.get('deal_value') or 0)
-            p_value = float(p.get('deal_value') or 0)
-            if n_value != p_value:
+            # Check ARR change — null-propagated: an unknown value on either
+            # side is not a fabricated 0, so we do not manufacture an arr_change
+            # from it. Only a real change between two KNOWN values counts.
+            n_value = _deal_value(n)
+            p_value = _deal_value(p)
+            if n_value is not None and p_value is not None and n_value != p_value:
                 changes.append('arr_change')
 
             # Apply value to highest precedence category
@@ -323,28 +406,31 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
                     primary_change = category
                     break
 
-            # Update waterfall values
-            if primary_change == 'won':
-                wf['won_value'] += value
-            elif primary_change == 'lost':
-                wf['lost_value'] += value
-            elif primary_change == 'pulled_in':
-                wf['pulled_in_value'] += value
-            elif primary_change == 'pushed_out':
-                wf['pushed_out_value'] += value
-            elif primary_change == 'moved_forward':
-                wf['moved_forward_value'] += value
-            elif primary_change == 'moved_backward':
-                wf['moved_backward_value'] += value
-            elif primary_change == 'arr_change':
-                wf['arr_change_value'] += value
+            # Update waterfall values — dollar categories only when the value
+            # is known; an unknown-value deal is already counted in
+            # null_value_excluded_count and must not become a fabricated 0.
+            if value_known:
+                if primary_change == 'won':
+                    wf['won_value'] += value
+                elif primary_change == 'lost':
+                    wf['lost_value'] += value
+                elif primary_change == 'pulled_in':
+                    wf['pulled_in_value'] += value
+                elif primary_change == 'pushed_out':
+                    wf['pushed_out_value'] += value
+                elif primary_change == 'moved_forward':
+                    wf['moved_forward_value'] += value
+                elif primary_change == 'moved_backward':
+                    wf['moved_backward_value'] += value
+                elif primary_change == 'arr_change':
+                    wf['arr_change_value'] += value
 
             # Add to details with all relevant metadata
             if changes:
                 detail = {
                     'deal_id': deal_id,
-                    'company_name': n.get('company_name', ''),
-                    'close_date': n.get('close_date'),
+                    'company_name': n.get('company_name', '') if n else (p.get('company_name', '') if p else ''),
+                    'close_date': n.get('close_date') if n else (p.get('close_date') if p else None),
                     'change_type': primary_change,
                     'value': value,
                 }
@@ -367,6 +453,23 @@ def compute_waterfall_for_dates(sb, config, qual_map, threshold, prev_date, new_
                 wf['details'].append(detail)
 
     for pipeline_id, wf in pipeline_waterfalls.items():
+        # Surface the null-value exclusion in details (schema-safe: no new
+        # column). A material fraction means the dollar figures understate the
+        # pipeline because unknown-value deals were excluded, not zero-filled.
+        excluded = wf.get('null_value_excluded_count', 0)
+        begin_excl = wf.get('beginning_null_excluded', 0)
+        end_excl = wf.get('ending_null_excluded', 0)
+        if excluded or begin_excl or end_excl:
+            wf['details'].insert(0, {
+                'change_type': 'null_value_excluded_summary',
+                'movement_null_value_excluded': excluded,
+                'beginning_null_value_excluded': begin_excl,
+                'ending_null_value_excluded': end_excl,
+                'beginning_dollar_basis_null': wf.get('beginning_dollar_basis_null', False),
+                'ending_dollar_basis_null': wf.get('ending_dollar_basis_null', False),
+                'note': 'unknown-value deals excluded from dollar sums (not 0-filled); counts unaffected',
+            })
+
         wf['net_change'] = (
             wf['new_pipeline_value']
             + wf['newly_qualified_value']
