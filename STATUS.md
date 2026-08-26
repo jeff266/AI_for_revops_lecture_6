@@ -58,6 +58,18 @@ The **weekly analytics** pass runs Sunday 3am UTC:
   win rates, conversion rates, and velocity aren't isolated from pipeline generation
   in this version (genuine gap — not a missing file, but a missing capability)
 
+The **call adapter layer** supports multi-source transcript ingestion:
+
+- Factory (`scripts/adapters/calls/__init__.py`): get_call_adapter(config) reads
+  call_tools.primary and instantiates the matching adapter (fireflies, gong, apollo)
+- Three adapters: FirefliesClient, GongAdapter, ApolloClient — all implement
+  CallAdapter interface
+- Transcript normalization (`scripts/transcript_store.py`): Units converted at
+  boundary (Fireflies seconds, Apollo milliseconds, Gong no-timestamps), speaker-attributed,
+  consumers never know source
+- Gong limitation documented: API provides no timing data, so talk-time and
+  longest-monologue metrics unavailable for Gong transcripts (question count works)
+
 The **verification suite** is complete:
 
 - 87 passing tests across `scripts/test_*.py`
@@ -68,16 +80,6 @@ The **verification suite** is complete:
 ---
 
 ## What Is Not Built
-
-The **Gong adapter factory wiring** is incomplete:
-
-- `scripts/adapters/calls/gong.py` exists and is fully implemented (525 lines,
-  ported from reference deployment — GrowthBook had no Gong adapter).
-- `scripts/adapters/calls/fireflies.py` exists and works.
-- Missing: factory.py wiring to discover and instantiate call adapters at
-  runtime, and whatever transcript_store needs to handle Gong's transcript
-  shape (currently only tested with Fireflies shape). The adapter implementation
-  itself is present; the discovery/instantiation layer is not.
 
 The **shape-aware synthesis guard** exists in the reference CRO agent
 but is not ported:
@@ -225,11 +227,11 @@ different call cadence, and a different qualification bar. Expect to spend
 2-3 weeks calibrating thresholds and watching the first few nightly runs
 before trusting it as a source of truth.
 
-The two gaps documented above (Gong factory wiring, shape-aware synthesis)
-are real but not blockers. The nightly agent scores deals and writes them back;
-the Slack agent answers pipeline questions; the weekly snapshots and waterfall
-build a time-series record; win/loss narratives extract coaching insight from
-closed deals. Those pieces are complete. The Gong integration and shape-aware
+The one gap documented above (shape-aware synthesis) is real but not a blocker.
+The nightly agent scores deals and writes them back; the Slack agent answers
+pipeline questions; the weekly snapshots and waterfall build a time-series record;
+win/loss narratives extract coaching insight from closed deals; the call adapter
+layer supports Fireflies, Gong, and Apollo. Those pieces are complete. Shape-aware
 synthesis can be added when needed.
 
 If you deploy this and hit an edge case, document it. This template improves
