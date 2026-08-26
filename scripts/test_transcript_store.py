@@ -77,7 +77,8 @@ def test_transient_failure_is_retryable_not_terminal():
 
     print(f"\n[TEST] Transient failure is retryable, not terminal (threshold={STILL_PROCESSING_DAYS}d)")
 
-    now = datetime.utcnow()
+    # Use local time to match _classify_empty_transcript's date.today() logic
+    now = datetime.now()
 
     # Recent call (within threshold) - should be RETRY
     recent_call = now - timedelta(days=1)
@@ -371,6 +372,7 @@ def main():
         test_transient_failure_is_retryable_not_terminal,
         test_apollo_metrics_use_real_timestamps_and_sum_correctly,
         test_null_transcript_never_empty_string,
+        test_is_done_single_authority_for_resume,
         test_backchannel_rule_preserves_monologues,
     ]
 

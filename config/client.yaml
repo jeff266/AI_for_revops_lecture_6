@@ -133,22 +133,17 @@ etl:
   active_deals_refresh: nightly
   call_lookback_days: 90
 sdr_tools:
-  # SDR activity sources. All disabled by default — enable only what the
-  # client actually uses. With none enabled, etl_sdr_metrics does nothing
-  # and the three SDR handlers query empty tables.
   apollo:
-    enabled: false      # dialer — calls, connects
+    enabled: false
   salesloft:
-    enabled: false      # sequencer — emails, sequence steps
+    enabled: false
   aircall:
-    enabled: false      # dialer — calls, voicemails
+    enabled: false
 proposal_engine:
-  # The agent proposes config changes from measured evidence; a human approves
-  # and applies them manually. Approval never writes config.
   enabled: true
-  min_evidence_count: 30        # data points required before a proposal is made
-  min_quarters_of_history: 4    # a change proposed from one quarter is noise
-  min_effect_size_pct: 10       # below this, the change isn't worth the churn
-  suppress_duplicate_days: 30   # don't re-propose the same change repeatedly
-  max_open_proposals: 10        # cap the review backlog
+  min_evidence_count: 30
+  min_quarters_of_history: 4
+  min_effect_size_pct: 10
+  suppress_duplicate_days: 30
+  max_open_proposals: 10
 sales_methodology: MEDDICC
