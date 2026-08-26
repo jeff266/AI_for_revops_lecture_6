@@ -51,11 +51,13 @@ def test_no_client_names_in_tracked_files():
 
         try:
             content = f.read_text()
+            content_lower = content.lower()
             for name in FORBIDDEN_NAMES:
-                if name in content:
+                # Case-insensitive matching to catch "growthbook.io", "GrowthBook", etc.
+                if name.lower() in content_lower:
                     # Find line numbers
                     for i, line in enumerate(content.split("\n"), 1):
-                        if name in line:
+                        if name.lower() in line.lower():
                             violations.append((f.relative_to(repo_root), i, name, line.strip()[:80]))
         except Exception:
             # Binary or unreadable file
