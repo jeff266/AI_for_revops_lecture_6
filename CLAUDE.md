@@ -220,3 +220,12 @@ git add -A && git commit -m "..." && git push origin main
 Do not wait until "the end" of a task — there is no window where local
 and remote should diverge. Push is part of the edit action, not a
 separate step. This survives context resets and prevents lost work.
+
+**STATUS.md requires reality checks when referenced.**
+STATUS.md goes stale by default, not by neglect — it documents what was true
+when written, not what's true now. When STATUS.md is referenced (by a user asking
+"what's not built?" or during investigation), verify its claims against the actual
+codebase before trusting them. Of six "not built" entries in the original STATUS.md,
+five were wrong: two named files that never existed in either repo, three named
+capabilities already ported. Check files exist, grep for claimed gaps, read actual
+implementations. Update STATUS.md to match reality, then proceed.

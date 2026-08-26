@@ -81,17 +81,58 @@ The **verification suite** is complete:
 
 ## What Is Not Built
 
-The **shape-aware synthesis guard** exists in the reference CRO agent
-but is not ported:
+**Nothing.** All analytics scripts documented in earlier STATUS.md versions have
+been ported, were never real (incorrectly inferred from config presence), or were
+capabilities embedded in other files rather than standalone scripts.
 
-- Context: The reference deployment had a synthesis guard that prevented
-  hallucinations like "Deal X has strong champion evidence (score 8)" when
-  the deal's champion score was actually 3. The guard checked that the
-  synthesis stayed within the shape of the data it was given.
-- Status: This template's `api/assessor.py` checks correctness and tone,
-  but does not validate that the synthesized answer matches the structure
-  of the underlying rows. A client deploying this will get occasional
-  shape drift (rare, but it happens).
+Of six original "not built" entries:
+- compute_waterfall.py: ported (560 lines, null-propagation + point-in-time qualification)
+- generate_win_loss.py: ported (358 lines, three-outcome classification)
+- compute_segment_metrics.py: never existed (segment analysis embedded in compute_pipeline_generation.py)
+- Gong adapter factory: ported (factory wiring + transcript normalization)
+- Gong adapter implementation: already existed (525 lines, fully implemented)
+- Shape-aware synthesis: never existed in reference deployment (see Known Limitations below)
+
+Porting is complete. What remains are **known limitations** (design gaps shared by
+both implementations) and **untested-against-live-data** calibrations (thresholds
+that may need client-specific tuning).
+
+---
+
+## Known Limitations
+
+These are design gaps present in **both** the reference deployment and this template.
+They are not porting gaps — they reflect capabilities that were never built in either
+codebase.
+
+### Shape Validation (Hallucination Prevention)
+
+**Gap:** Neither the reference deployment nor this template validates that a synthesized
+answer's structure matches the handler's data.
+
+**What this means:** A CRO Slack agent response can assert "Deal X has strong champion
+evidence (score 8)" when the handler returned a champion score of 3. The synthesis can
+drift from the data it was given.
+
+**What is checked:** Correctness (did the answer address the question? right data source?
+gaps acknowledged?) and tone (executive vs operational voice). Both are assessed via
+`api/assessor.py`.
+
+**What is NOT checked:** Whether the response's assertions match the actual values in the
+handler's query results. A response can claim a number, trend, or state that doesn't
+appear in the underlying rows.
+
+**Workaround:** The correctness check catches some shape drift (e.g., answering "what deals
+did we win?" with waterfall totals instead of individual won deals), but it does not validate
+field-level accuracy. A client may see occasional hallucinations where a synthesized insight
+contradicts the data. These are rare but not prevented.
+
+**Why it's here:** This was listed in earlier STATUS.md versions as "not ported from the
+reference deployment," implying the reference had it and the template didn't. Investigation
+(grep of reference `api/assessor.py` and `api/router.py`) confirmed the capability never
+existed. Router comments mention "shape" as a concept, but no validation logic was implemented.
+
+This is a known gap in both implementations, not a porting gap.
 
 ---
 
@@ -227,12 +268,14 @@ different call cadence, and a different qualification bar. Expect to spend
 2-3 weeks calibrating thresholds and watching the first few nightly runs
 before trusting it as a source of truth.
 
-The one gap documented above (shape-aware synthesis) is real but not a blocker.
-The nightly agent scores deals and writes them back; the Slack agent answers
-pipeline questions; the weekly snapshots and waterfall build a time-series record;
-win/loss narratives extract coaching insight from closed deals; the call adapter
-layer supports Fireflies, Gong, and Apollo. Those pieces are complete. Shape-aware
-synthesis can be added when needed.
+All documented capabilities have been ported. The nightly agent scores deals and
+writes them back; the Slack agent answers pipeline questions; the weekly snapshots
+and waterfall build a time-series record; win/loss narratives extract coaching insight
+from closed deals; the call adapter layer supports Fireflies, Gong, and Apollo.
+
+Known limitations (shape validation, provisional thresholds) are documented above.
+These are design gaps shared by both the reference deployment and this template, not
+porting gaps.
 
 If you deploy this and hit an edge case, document it. This template improves
 as more teams run it and report what broke. That is how the reference
