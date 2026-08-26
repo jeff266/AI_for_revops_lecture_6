@@ -199,28 +199,41 @@ def _fetch_gong(call_id: str, clients: Dict[str, Any]) -> List[Dict]:
     """
     Fetch Gong transcript at utterance level.
 
-    Gong uses seconds for timestamps.
+    CRITICAL LIMITATION: Gong's /calls/{id}/transcript API endpoint does NOT
+    return timestamps (start/end times). Only speaker names and sentence text
+    are available. This means:
+    - Transcript text assembly works (utterances can be joined)
+    - Talk-time metrics CANNOT be computed (no duration data)
+    - Longest-monologue detection CANNOT run (no timing boundaries)
+    - Question count works (text-based heuristic)
+
+    The normalized output marks start_seconds and end_seconds as None to
+    propagate the limitation — consumers must handle missing timing data.
+
+    If Gong later adds timing to their API, update GongAdapter.get_transcript_utterances()
+    and this normalizer to populate start_seconds/end_seconds.
     """
     client = clients.get('gong')
     if not client:
         raise ValueError("Gong client not configured")
 
-    # Gong-specific API call (adapt to actual API)
-    response = client.get_transcript(call_id)
+    # Call Gong adapter's utterance method (returns list of {speaker, text})
+    raw_utterances = client.get_transcript_utterances(call_id)
 
-    if not response or 'sentences' not in response:
+    if not raw_utterances:
         return []
 
-    # Normalize to common format (Gong uses seconds)
+    # Normalize to common format (Gong has NO timestamps)
     utterances = []
-    for s in response['sentences']:
-        speaker = s.get('speaker', 'Unknown')
+    for u in raw_utterances:
+        speaker = u.get('speaker', 'Unknown')
         utterances.append({
             'speaker': speaker,
             'display_name': speaker,  # Gong has name only
-            'text': s.get('text', ''),
-            'start_seconds': s.get('start', 0),
-            'end_seconds': s.get('end', 0)
+            'text': u.get('text', ''),
+            # Gong API limitation: no timing data available
+            'start_seconds': None,
+            'end_seconds': None
         })
 
     return utterances
@@ -325,8 +338,9 @@ def build_transcript_row(
     else:
         quality = 'unavailable'
 
-    # Total duration (last utterance end time)
-    duration = max(u['end_seconds'] for u in utterances) if utterances else 0.0
+    # Total duration (last utterance end time, or 0.0 if no timing available)
+    end_times = [u.get('end_seconds') for u in utterances if u.get('end_seconds') is not None]
+    duration = max(end_times) if end_times else 0.0
 
     row.update({
         'transcript_text': transcript_text,
@@ -391,6 +405,10 @@ def compute_metrics(utterances: List[Dict]) -> Dict:
     Without it, an eight-minute monologue reads as twelve short runs every
     time the other party says "mm-hmm."
 
+    Handles timing-unavailable sources (Gong): If any utterance has None
+    timestamps, talk_time and longest_monologue metrics are skipped (not
+    computed with placeholder values). Question count (text-based) still works.
+
     Returns:
     {
         'talk_time_seconds': {speaker: seconds, ...},
@@ -405,79 +423,88 @@ def compute_metrics(utterances: List[Dict]) -> Dict:
             'longest_monologue_seconds': {}
         }
 
+    # Check if timing data is available (Gong has None timestamps)
+    has_timing = all(
+        u.get('start_seconds') is not None and u.get('end_seconds') is not None
+        for u in utterances
+    )
+
     talk_time = {}
     question_count = {}
 
-    # Talk time and question count (simple aggregation)
+    # Talk time and question count
     for u in utterances:
         speaker = u['speaker']
-        duration = u['end_seconds'] - u['start_seconds']
         text = u['text']
 
-        # Talk time
-        talk_time[speaker] = talk_time.get(speaker, 0.0) + duration
+        # Talk time (only if timing available)
+        if has_timing:
+            duration = u['end_seconds'] - u['start_seconds']
+            talk_time[speaker] = talk_time.get(speaker, 0.0) + duration
 
-        # Question count (heuristic: ends with ?)
+        # Question count (text-based heuristic — works without timing)
         if text.strip().endswith('?'):
             question_count[speaker] = question_count.get(speaker, 0) + 1
 
-    # Longest monologue (with backchannel rule)
+    # Longest monologue (with backchannel rule) — only if timing available
     monologues = {}
-    current_speaker = None
-    current_run_duration = 0.0
-    backchannel_buffer = []  # [(speaker, duration), ...]
-    BACKCHANNEL_THRESHOLD = 3.0  # seconds
 
-    for u in utterances:
-        speaker = u['speaker']
-        duration = u['end_seconds'] - u['start_seconds']
+    if has_timing:
+        current_speaker = None
+        current_run_duration = 0.0
+        backchannel_buffer = []  # [(speaker, duration), ...]
+        BACKCHANNEL_THRESHOLD = 3.0  # seconds
 
-        if speaker == current_speaker:
-            # Same speaker continues
-            current_run_duration += duration
-            # Clear any buffered backchannels (they didn't break the run)
-            backchannel_buffer = []
+        for u in utterances:
+            speaker = u['speaker']
+            duration = u['end_seconds'] - u['start_seconds']
 
-        else:
-            # Different speaker
-            if current_speaker is not None:
-                # Check if this is a backchannel (short interjection)
-                total_backchannel = sum(d for _, d in backchannel_buffer) + duration
+            if speaker == current_speaker:
+                # Same speaker continues
+                current_run_duration += duration
+                # Clear any buffered backchannels (they didn't break the run)
+                backchannel_buffer = []
 
-                if total_backchannel < BACKCHANNEL_THRESHOLD:
-                    # It's a backchannel - buffer it but don't break the run
-                    backchannel_buffer.append((speaker, duration))
-                    # Track backchannel speaker's own monologue
-                    if duration > monologues.get(speaker, 0.0):
-                        monologues[speaker] = duration
+            else:
+                # Different speaker
+                if current_speaker is not None:
+                    # Check if this is a backchannel (short interjection)
+                    total_backchannel = sum(d for _, d in backchannel_buffer) + duration
+
+                    if total_backchannel < BACKCHANNEL_THRESHOLD:
+                        # It's a backchannel - buffer it but don't break the run
+                        backchannel_buffer.append((speaker, duration))
+                        # Track backchannel speaker's own monologue
+                        if duration > monologues.get(speaker, 0.0):
+                            monologues[speaker] = duration
+                    else:
+                        # It's a real speaker change - finalize the current run
+                        if current_run_duration > monologues.get(current_speaker, 0.0):
+                            monologues[current_speaker] = current_run_duration
+
+                        # Finalize any buffered backchannels
+                        for bc_speaker, bc_duration in backchannel_buffer:
+                            if bc_duration > monologues.get(bc_speaker, 0.0):
+                                monologues[bc_speaker] = bc_duration
+
+                        # Start new run with the interrupting speaker
+                        current_speaker = speaker
+                        current_run_duration = duration
+                        backchannel_buffer = []
                 else:
-                    # It's a real speaker change - finalize the current run
-                    if current_run_duration > monologues.get(current_speaker, 0.0):
-                        monologues[current_speaker] = current_run_duration
-
-                    # Finalize any buffered backchannels
-                    for bc_speaker, bc_duration in backchannel_buffer:
-                        if bc_duration > monologues.get(bc_speaker, 0.0):
-                            monologues[bc_speaker] = bc_duration
-
-                    # Start new run with the interrupting speaker
+                    # First utterance
                     current_speaker = speaker
                     current_run_duration = duration
-                    backchannel_buffer = []
-            else:
-                # First utterance
-                current_speaker = speaker
-                current_run_duration = duration
 
-    # Finalize last run
-    if current_speaker is not None:
-        if current_run_duration > monologues.get(current_speaker, 0.0):
-            monologues[current_speaker] = current_run_duration
+        # Finalize last run
+        if current_speaker is not None:
+            if current_run_duration > monologues.get(current_speaker, 0.0):
+                monologues[current_speaker] = current_run_duration
 
-    # Finalize any remaining backchannels
-    for bc_speaker, bc_duration in backchannel_buffer:
-        if bc_duration > monologues.get(bc_speaker, 0.0):
-            monologues[bc_speaker] = bc_duration
+        # Finalize any remaining backchannels
+        for bc_speaker, bc_duration in backchannel_buffer:
+            if bc_duration > monologues.get(bc_speaker, 0.0):
+                monologues[bc_speaker] = bc_duration
 
     return {
         'talk_time_seconds': talk_time,

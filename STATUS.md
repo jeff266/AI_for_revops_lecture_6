@@ -41,6 +41,22 @@ The **weekly analytics** pass runs Sunday 3am UTC:
 - Pipeline snapshots (`scripts/analytics/snapshot_deals.py`)
 - Forecast computation (stage-weighted + category-weighted)
 - Deal status tracking (won/lost/moved)
+- Waterfall computation (`scripts/analytics/compute_waterfall.py`): Stage-to-stage
+  movement tracking with null-propagation (unknown deal values excluded from
+  dollar sums, not zero-filled) and point-in-time qualification (uses
+  qualified_date immutable event timestamp, not highest_stage_order_reached
+  current-state high-water mark)
+- Win/loss narratives (`scripts/analytics/generate_win_loss.py`): Three-outcome
+  classification (won/lost/slipped — a deal that closed in a later quarter than
+  committed is slipped, not lost), point-in-time semantics reading from
+  deals_snapshot for historical progression, min_evidence_count gate (below
+  threshold returns null with reason rather than fabricating narrative from
+  thin material)
+- Segment analysis: Embedded in `scripts/analytics/compute_pipeline_generation.py`.
+  Per-segment pipeline generation, cycle-time expectations from
+  config.segmentation.bands, segment field on deal responses. Note: segment-specific
+  win rates, conversion rates, and velocity aren't isolated from pipeline generation
+  in this version (genuine gap — not a missing file, but a missing capability)
 
 The **verification suite** is complete:
 
@@ -53,26 +69,15 @@ The **verification suite** is complete:
 
 ## What Is Not Built
 
-The following analytics batch scripts exist in the reference deployment
-but are **not ported** to this template:
+The **Gong adapter factory wiring** is incomplete:
 
-- **`compute_waterfall.py`**: Stage-to-stage conversion tracking across
-  fiscal quarters. The snapshots table exists and gets written every
-  Sunday; the waterfall computation that reads those snapshots is absent.
-- **`generate_win_loss.py`**: Automated win/loss narrative extraction
-  from call evidence. The enrichment module extracts objections and
-  feature gaps; win/loss narrative synthesis is missing.
-- **`compute_segment_metrics.py`**: Segment-level (SMB/Mid-Market/Enterprise)
-  win rate, cycle time, and conversion analysis. Segmentation config
-  exists in `client.yaml`; the analytics that group by it are not here.
-
-The **Gong adapter factory** is documented but not implemented:
-
+- `scripts/adapters/calls/gong.py` exists and is fully implemented (525 lines,
+  ported from reference deployment — GrowthBook had no Gong adapter).
 - `scripts/adapters/calls/fireflies.py` exists and works.
-- `scripts/adapters/calls/gong.py` is stubbed (interface only, no
-  implementation). The onboarding skill (`revops-client-context`) claims
-  to web-search a call tool's API docs and generate an adapter; this has
-  not been tested against a live Gong credential.
+- Missing: factory.py wiring to discover and instantiate call adapters at
+  runtime, and whatever transcript_store needs to handle Gong's transcript
+  shape (currently only tested with Fireflies shape). The adapter implementation
+  itself is present; the discovery/instantiation layer is not.
 
 The **shape-aware synthesis guard** exists in the reference CRO agent
 but is not ported:
@@ -199,11 +204,15 @@ handler. Check the Railway logs for the SQL query and run it manually in
 Supabase to see what it returns.
 
 **The waterfall is empty after Week 2:**
-The waterfall reads `deals_snapshot` rows across multiple weeks. If
-snapshots are missing or have null `fiscal_quarter` values, the waterfall
-will be empty. Confirm `scripts/analytics/snapshot_deals.py` wrote rows
-with non-null `fiscal_quarter` and that `fiscal.fy_start_month` is set
-correctly in `client.yaml`.
+The waterfall (`scripts/analytics/compute_waterfall.py`) reads `deals_snapshot`
+rows across multiple weeks and requires qualified_date on each deal. If
+snapshots are missing, have null `fiscal_quarter` values, or deals lack
+qualified_date, the waterfall will be empty. Confirm `scripts/analytics/snapshot_deals.py`
+wrote rows with non-null `fiscal_quarter`, `scripts/etl/seed_qualified_dates.py`
+populated qualified_date for all deals that reached the qualified threshold,
+and that `fiscal.fy_start_month` is set correctly in `client.yaml`. Note: The
+waterfall needs TWO snapshots before it computes anything — first run correctly
+skips with "insufficient snapshot history."
 
 ---
 
@@ -216,12 +225,12 @@ different call cadence, and a different qualification bar. Expect to spend
 2-3 weeks calibrating thresholds and watching the first few nightly runs
 before trusting it as a source of truth.
 
-The three gaps documented above (waterfall computation, win/loss narratives,
-shape-aware synthesis) are real but not blockers. The nightly agent scores
-deals and writes them back; the Slack agent answers pipeline questions; the
-weekly snapshots build a time-series record. Those three pieces alone are
-enough to start getting value. The missing analytics can be added later when
-you need them.
+The two gaps documented above (Gong factory wiring, shape-aware synthesis)
+are real but not blockers. The nightly agent scores deals and writes them back;
+the Slack agent answers pipeline questions; the weekly snapshots and waterfall
+build a time-series record; win/loss narratives extract coaching insight from
+closed deals. Those pieces are complete. The Gong integration and shape-aware
+synthesis can be added when needed.
 
 If you deploy this and hit an edge case, document it. This template improves
 as more teams run it and report what broke. That is how the reference

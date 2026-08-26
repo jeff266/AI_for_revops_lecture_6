@@ -407,6 +407,55 @@ class GongAdapter(CallAdapter):
 
         return '\n'.join(lines)
 
+    def get_transcript_utterances(self, call_id: str) -> List[Dict]:
+        """
+        Fetch structured transcript utterances for transcript_store.
+
+        WARNING: Gong's /calls/{id}/transcript endpoint does NOT return
+        timestamps (start/end times). The API returns only speaker names
+        and sentence text. This means:
+        - No talk-time metrics can be computed
+        - No longest-monologue detection
+        - Transcript text assembly works but metrics are unavailable
+
+        Returns:
+            List of {speaker, text} dicts (NO start_seconds/end_seconds)
+            Empty list on 404 or error
+
+        This is the shape-boundary method for transcript_store.py's
+        _fetch_gong() normalizer. If Gong adds timing data to their API,
+        update this method to include start_seconds/end_seconds.
+        """
+        response = requests.get(
+            f'{self.base_url}/calls/{call_id}/transcript',
+            headers=self.headers,
+            timeout=30
+        )
+
+        if response.status_code == 404:
+            return []
+
+        try:
+            response.raise_for_status()
+        except Exception:
+            return []
+
+        # Gong returns callTranscripts array with speakerName + sentence
+        sentences = response.json().get('callTranscripts', [])
+
+        # Return minimal structure (no timestamps available from Gong API)
+        utterances = []
+        for s in sentences:
+            speaker = s.get('speakerName', 'Unknown')
+            text = s.get('sentence', '')
+            if text.strip():
+                utterances.append({
+                    'speaker': speaker,
+                    'text': text
+                })
+
+        return utterances
+
     def get_calls(self, limit: int = 100, skip: int = 0) -> List[Dict]:
         """
         Get recent calls with rich structured data.
