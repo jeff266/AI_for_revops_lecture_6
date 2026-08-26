@@ -164,6 +164,70 @@ def check_supabase_analytics():
                         f"call_scores call_id={call_id}: invalid call_date format '{call_date}'"
                     )
 
+        # Check 8: waterfall_weekly plausibility
+        waterfall_weekly = select_all(sb, 'waterfall_weekly',
+                                      columns='week_ending,pipeline_id,beginning_value,ending_value,'
+                                              'new_pipeline_value,newly_qualified_value,moved_forward_value,'
+                                              'moved_backward_value,won_value,lost_value,pulled_in_value,'
+                                              'pushed_out_value,arr_change_value,net_change')
+
+        for w in waterfall_weekly:
+            week = w.get('week_ending', 'unknown')
+            pipeline = w.get('pipeline_id', 'unknown')
+            week_label = f"Waterfall {week}/{pipeline}"
+
+            # All dollar values should be non-negative
+            dollar_fields = ['beginning_value', 'ending_value', 'new_pipeline_value',
+                           'newly_qualified_value', 'moved_forward_value', 'moved_backward_value',
+                           'won_value', 'lost_value', 'pulled_in_value', 'pushed_out_value',
+                           'arr_change_value']
+            for field in dollar_fields:
+                val = w.get(field, 0) or 0
+                if val < 0:
+                    violations.append(f"{week_label}: {field}=${val:,.0f} is negative")
+
+            # Reconciliation: ending = beginning + net_change
+            beginning = w.get('beginning_value', 0) or 0
+            ending = w.get('ending_value', 0) or 0
+            net_change = w.get('net_change', 0) or 0
+            expected_ending = beginning + net_change
+            diff = abs(ending - expected_ending)
+            if diff > 0.01:  # Allow floating point error
+                violations.append(
+                    f"{week_label}: ending (${ending:,.0f}) != beginning (${beginning:,.0f}) "
+                    f"+ net_change (${net_change:,.0f}) [diff=${diff:,.0f}]"
+                )
+
+            # Net change = additions - subtractions
+            new_pipeline = w.get('new_pipeline_value', 0) or 0
+            newly_qualified = w.get('newly_qualified_value', 0) or 0
+            moved_forward = w.get('moved_forward_value', 0) or 0
+            moved_backward = w.get('moved_backward_value', 0) or 0
+            won = w.get('won_value', 0) or 0
+            lost = w.get('lost_value', 0) or 0
+
+            calculated_net_change = (new_pipeline + newly_qualified + moved_forward
+                                    - moved_backward - won - lost)
+            net_diff = abs(net_change - calculated_net_change)
+            if net_diff > 0.01:
+                violations.append(
+                    f"{week_label}: net_change (${net_change:,.0f}) != calculated "
+                    f"(${calculated_net_change:,.0f}) [diff=${net_diff:,.0f}]"
+                )
+
+            # Won/lost can't exceed beginning + additions
+            max_possible_won_lost = beginning + new_pipeline + newly_qualified + moved_forward
+            if won > max_possible_won_lost:
+                violations.append(
+                    f"{week_label}: won (${won:,.0f}) > beginning + additions "
+                    f"(${max_possible_won_lost:,.0f})"
+                )
+            if lost > max_possible_won_lost:
+                violations.append(
+                    f"{week_label}: lost (${lost:,.0f}) > beginning + additions "
+                    f"(${max_possible_won_lost:,.0f})"
+                )
+
         return violations
 
     except Exception as e:
