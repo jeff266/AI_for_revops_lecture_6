@@ -304,6 +304,31 @@ deals_snapshot.backfill_confidence values:
   excluded_mismatch   — replay's final stage differs from
                         current stage; excluded from win-rate
 
+### Snapshot Sizing
+
+Row count = deals × weeks, where "deals" means deals open at that week, not total deals ever.
+
+**Formula:**
+```
+rows ≈ (average open deals per week) × (weeks of history)
+```
+
+**Examples:**
+- 150 open deals over two years ≈ 15,600 rows
+- 500 open deals over the same span ≈ 52,000 rows
+
+**Reference deployment:** 22,247 rows across five quarters — FY2026 Q3 3,683 / Q4 6,175 / FY2027 Q1 7,535 / Q2 4,854. That's ~65 weekly grids, averaging ~340 rows per week, consistent with ~400 open deals in a recent week and fewer in earlier quarters when the pipeline was smaller.
+
+**Two things bound it below naive total_deals × weeks:**
+
+1. **The inclusion rule** — a deal appears in a week only if created by then and not yet terminal. A deal that closed in Q1 doesn't appear in Q2's grids at all. That's what the coverage assertion protects; without it the reference deployment's snapshots carried every deal ever and one quarter's week-3 denominator read 914 instead of 221.
+
+2. **History depth** — you can't backfill earlier than the CRM retains stage changes. The reference cache reached back about four years.
+
+**Runtime:** Row count is not what drives the time. API calls to fetch property history are, and that's one call per deal, not per deal-week. A client with 1,000 deals makes ~1,000 history fetches whether they backfill one quarter or eight. The row writing is fast by comparison.
+
+**The fetch is bounded by deal count, the write is bounded by deal-weeks, and the fetch dominates.**
+
 ---
 
 ## `objections` / `feature_gaps` / `enrichment_scans`
