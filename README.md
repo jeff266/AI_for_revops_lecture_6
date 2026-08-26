@@ -1,271 +1,146 @@
 # RevOps MEDDICC Agent
 
-Your sales calls contain the truth about every deal's health, but that
-truth usually dies in a rep's head or a forgotten call recording. This
-repo turns those calls into an always-current, honestly-scored pipeline
-that your whole team can see and question in plain language.
+A revenue operations data substrate with an agent on top. The substrate reconstructs point-in-time pipeline history from CRM property history so you can ask what the pipeline looked like on any past date and get the real answer, not current state projected backward. The agent scores deals against a configurable sales methodology from call transcripts and answers questions in Slack.
 
-It is two systems that share one database:
-
-1. **The nightly agent** re-scores your full active pipeline against
-   your qualification methodology every night and writes the scores
-   back to HubSpot. It runs on GitHub Actions. No server to babysit.
-2. **The CRO Slack agent** lets anyone ask the pipeline questions in
-   Slack ("which deals are at risk?", "show me the Acme deal", "what's
-   our Q3 coverage?") and get a grounded answer in seconds. It runs as
-   a small FastAPI service on Railway.
-
-You can run the nightly agent alone. The Slack agent is optional and
-sits on top of the same Supabase data the nightly agent produces.
+**This has never been deployed against live client data.** It was ported from a working reference deployment, every client-specific reference was scrubbed and made config-driven, and 87 passing tests confirm the structure is sound. But no one has watched it run a full nightly cycle against fresh data. Edge cases may exist where a config key is read but not validated, or where a CRM API response shape differs from what the reference deployment sees.
 
 ---
 
-Interested in forward deployment for your team? Reach out:
+## Pipeline history and analytics
 
-- Email: jeff@revopsimpact.us
-- LinkedIn: [linkedin.com/in/jeffbethechange](https://linkedin.com/in/jeffbethechange)
+Everything the Slack agent answers was produced by these batch jobs.
 
----
+**Point-in-time snapshots** — Weekly forward snapshots (`scripts/analytics/snapshot_deals.py`) plus backfill from CRM property history (`scripts/etl/backfill_snapshots.py`). Both use the same inclusion rule so they cannot diverge. You can ask "what was the pipeline on March 15?" and get the real historical state, not today's deals with fabricated timestamps.
 
-## The whole system at a glance
+**Waterfall** — Beginning balance, newly qualified, moved forward, moved backward, won, lost, ending balance. Unknown deal values are excluded from dollar sums and counted separately (never zero-filled). `scripts/analytics/compute_waterfall.py` — 560 lines, null-propagation + point-in-time qualification.
 
-```
-                        ┌─────────────────────────────┐
-   Call platform ──────▶│  Nightly agent (GitHub       │
-   (Fireflies/Gong)     │  Actions)                    │
-                        │  ETL → score → write back    │
-   HubSpot ────────────▶│                              │
-        ▲               └───────────┬─────────────────┘
-        │ MEDDICC scores            │ analyses, deals,
-        │ written back              │ waterfall, objections,
-        │                           ▼ feature gaps
-        │               ┌─────────────────────────────┐
-        └───────────────│  Supabase (source of truth   │
-                        │  for the query layer)        │
-                        └───────────┬─────────────────┘
-                                    │
-   Slack ──▶ Zapier ──▶ Railway ────┘  reads, synthesizes,
-     ▲                  (FastAPI +      replies
-     └── Zapier ◀────── Claude)
-```
+**Forecast analytics** — Week-3 pipeline conversion rates, coverage curves (pipeline needed to hit quota), quarter pacing (`scripts/analytics/compute_pipeline_generation.py` and `compute_forecast.py`).
 
-The nightly agent is the writer. Supabase is the shared record. The
-Slack agent is the reader. Everything the Slack agent answers was
-produced by the nightly and weekly jobs.
+**Win/loss narratives** — Won, lost, and **slipped** as three outcomes (a deal that closed in a later quarter than committed is slipped, not lost — different diagnosis, different coaching). `scripts/analytics/generate_win_loss.py` — 358 lines, point-in-time semantics, min_evidence_count gate (below threshold returns null with reason rather than fabricating narrative from thin material).
+
+**Pipeline generation by segment** — Per-segment (SMB/Mid-Market/Enterprise) pipeline generation with per-band cycle expectations from `config/client.yaml`. Embedded in `compute_pipeline_generation.py`. Note: segment-specific win rates, conversion rates, and velocity aren't isolated from pipeline generation in this version (design gap, not missing file).
+
+**Call transcripts with speaker metrics** — Talk ratio, question count, longest monologue. Supports Fireflies (seconds), Apollo (milliseconds → seconds), and Gong (no timing data from API, so talk-time/monologue metrics unavailable). Units converted at boundary, speaker-attributed, consumers never know source. `scripts/transcript_store.py`.
 
 ---
 
-## Part 1 — The nightly agent
+## Deal scoring and the agent
 
-Each night it re-evaluates your full active pipeline. It pulls the
-latest call transcripts, scores every deal on MEDDICC (or MEDDPICC,
-SPICED, or BANT, configurable to how your team actually sells), and
-writes the scores straight back to HubSpot so reps and managers see
-the same picture. It flags risk before it becomes a surprise in the
-forecast call, and it gets sharper over time as it learns your team's
-patterns.
+**Progressive per-call MEDDICC scoring** — Each call updates component scores, accumulated to deal level via `scripts/context_builder.py` (Haiku cumulative state synthesis). Not a full-history re-read every time — carry-forward rule keeps context manageable.
 
-Beyond nightly scoring, it runs a weekly analytics pass across the
-whole pipeline:
+**Configurable methodology** — MEDDICC, MEDDPICC, SPICED, or BANT. Switched in `config/client.yaml`, no code change. `scripts/get_components.py` reads the methodology and returns the right component list. Raises on unknown values (Gap 2 discipline: no silent fallbacks).
 
-- **Waterfall tracking**: see exactly where deals are moving forward,
-  sliding back, or dying, stage by stage
-- **Win/loss narratives**: automatically extracted from call evidence,
-  not just the close reason field
-- **Objection log**: a searchable record of what prospects actually
-  pushed back on
-- **Feature-gap backlog**: requested features pulled straight from
-  calls, ranked by how often and how severely they come up
+**Nightly scoring run** — `scripts/run_nightly.py` orchestrates: load deals → load calls → context builder (Haiku) → generator (Sonnet) → evaluator (Haiku) → reflection gate (Haiku) → write HubSpot + Supabase + learnings. GitHub Actions, 2am UTC daily.
 
-### What runs automatically
-
-| Time (UTC) | Job | What it does |
-|---|---|---|
-| 1:00 AM | Daily Deal ETL | Updates active deal index from HubSpot |
-| 1:30 AM | Daily Calls ETL | Fetches new calls for active deals |
-| 2:00 AM | MEDDICC Agent | Analyzes deals, writes to HubSpot + Supabase |
-| Sun 3:00 AM | Weekly Analytics | Waterfall, win/loss, objections, feature gaps |
-
-### What runs nightly
-
-```
-2am UTC: GitHub Actions fires
-  → Load active deals from deal index
-  → For each deal: load call cache → context builder (Haiku)
-  → Generator (Sonnet) → Evaluator (Haiku) → Reflection gate
-  → Write analysis to GitHub output/
-  → Write 6 MEDDICC scores to HubSpot deal properties
-  → Write analysis to Supabase for the query layer
-  → Update CLAUDE.md via PR if new patterns emerge
-```
+**Slack agent** — 28 handlers (16 precomputed + 12 dynamic). Answers deal, rep, team, SDR, and pipeline questions. Intent classification → query → synthesis → self-assessment (correctness + tone) → retry if needed. FastAPI on Railway. See `api/router.py`, `api/handlers.py`.
 
 ---
 
-## Part 2 — The CRO Slack agent
+## What you need before you start
 
-Message the bot in Slack. Zapier catches the message and posts it to
-the Railway service. The service classifies the question, pulls the
-relevant rows from Supabase, has Claude synthesize an answer, checks
-its own answer for correctness and tone, and sends the reply back
-through Zapier into the Slack thread. Follow-ups in the same thread
-keep context, so "who owns those?" resolves against the deals from the
-previous answer.
+Someone who has these answers ready completes onboarding in one sitting. Someone who does not stops halfway to go find them.
 
-### What it can answer
-
-**Precomputed handlers (fast path)**
-```
-what is our pipeline this quarter?
-which deals are at risk?
-show me ARR by customer
-what are our top objections this quarter?
-what feature gaps are blockers?
-what's our pipeline coverage this quarter?
-```
-
-**Dynamic query path (novel combinations)**
-```
-which deals have a champion score above 6 and close in Q3?
-which rep has created the most pipeline value this quarter?
-which companies have both a budget objection and a feature gap?
-which deals are in Technical Evaluation with no economic buyer confirmed?
-show me deals where pain is identified but metrics aren't
-```
-
-**Deal deep-dives**
-```
-show me the Acme deal
-what's the status on Contoso?
-which of our open deals have the strongest decision process?
-```
-
-**Rubric and coaching**
-```
-what does a 6 mean for champion?
-how do I improve a metrics score?
-what separates a 7 from a 9 on decision process?
-```
-
-**Win/loss intelligence**
-```
-why did we lose our last three deals?
-what competitors keep coming up in lost deals?
-which objections are showing up most in Technical Evaluation?
-```
-
-**Coverage and targets** (once you set targets)
-```
-set AE team Q3 target $2M
-what's our Q3 coverage?
-which rep is furthest from their number?
-```
-
-**Thread follow-ups** (test these as sequences)
-```
-which deals close in September?
-[reply] who owns those?
-[reply] which of those are at risk?
-```
-
-### How a question flows
-
-```
-Slack message
-  → Zapier catch hook → POST /slack/question (Railway/FastAPI)
-  → entity-scope check (reuse deals already in this thread?)
-  → intent classification → precomputed handler OR dynamic query
-  → pull rows from Supabase
-  → synthesize answer (Sonnet)
-  → self-assess correctness + tone, retry if needed (Haiku)
-  → POST answer to ZAP_REPLY_URL → Zapier → Slack thread
-  → cache result + save thread entities for follow-ups
-```
-
-### Service endpoints (`api/main.py`)
-
-| Method | Route | Purpose |
-|---|---|---|
-| POST | `/slack/question` | Receives a question from Zapier, replies async |
-| GET | `/health` | Health check for Railway |
-| POST | `/admin/refresh-schema` | Clears the schema cache (needs `ADMIN_SECRET`) |
-
-**Railway start command:**
-```
-uvicorn api.main:app --host 0.0.0.0 --port $PORT
-```
+- **Sales methodology** — MEDDICC, MEDDPICC, SPICED, or BANT
+- **Pipeline stages in order** — First contact to signature, not including closed won or closed lost. You need stage IDs, not display names. `scripts/discover_stages.py` finds them from your CRM.
+- **Fiscal year start month** — Getting this wrong silently misplaces every quarter boundary. If your fiscal year starts February 1, this is `2`, not `1`.
+- **Segment bands** — How you split SMB / Mid-Market / Enterprise. The CRM field it reads from (`numberofemployees`, `arr`, custom field). Rough cycle length per band in days.
+- **Call tool** — Fireflies, Gong, or Apollo. API access credentials for whichever you use.
+- **The CRM field holding deal value** — `amount`, `arr`, `incremental_arr`, custom field. Pipeline waterfall and forecast analytics read this field. If you point it at the wrong one, every dollar calculation is wrong.
+- **Team roster** — Names, emails, roles, and CRM owner IDs. Used for persona-aware Slack responses (executive vs sales vs operational voice).
 
 ---
 
-## Setup
+## Requirements
 
-### Step 1 · Credentials and context
+**CRM:** HubSpot or Salesforce. If Salesforce, you provide the adapter (documented interface in `scripts/adapters/crm/base.py`).
 
-Open this repo in Claude Code. On a fresh fork it detects the missing
-config files and walks you through setup. Just say: **"set up this repo"**
-then **"start client onboarding"**.
+**Call intelligence:** Fireflies, Gong, or Apollo. Factory in `scripts/adapters/calls/__init__.py` reads `call_tools.primary` from config and instantiates the matching adapter. All three adapters are fully implemented.
 
-Two skills drive this (see `skills/`):
+**Database:** Supabase. 27 migrations in `scripts/migrations/`. Direct pooler connection string required for migrations (not just project URL + service key).
 
-- `revops-agent-setup` collects every credential one at a time and
-  writes your `.env` plus a GitHub Secrets checklist.
-- `revops-client-context` interviews you about your product,
-  competitors, objections, and pipeline, then writes `config/client.yaml`,
-  `config/context.yaml`, `prompts/CLAUDE.md`, and
-  `prompts/evaluator_rubric.md` — and generates a call-tool adapter if
-  you use something other than Fireflies or Gong.
+**Slack (optional):** Only needed if you want the query layer. You provide a Slack workspace and two Zapier zaps (inbound: Slack → Railway, outbound: Railway → Slack).
 
-In **Claude.ai** (web/mobile), paste each `SKILL.md` into the custom
-skill creator, then say "start client onboarding" or "set up credentials."
+**Anthropic API:** Claude Sonnet 4.5 (generation, synthesis) + Claude Haiku 4.5 (classification, evaluation). ~$10-20/month for nightly + light Slack use.
 
-### Step 2 · Database
+**Someone who can:** Run Python, apply SQL migrations, set environment variables, configure GitHub Actions secrets, deploy to Railway (if using Slack agent).
 
-Run the Supabase migrations (001–027) to build the schema:
+If you do not have these, learn it here rather than at step seven.
 
-```bash
-python scripts/setup_supabase.py
-```
+---
 
-Migrations 001–017 cover the nightly agent and analytics. Migrations
-018–027 add the CRO agent tables (conversation threads, result cache,
-entity registry, learning log, sales signals). See
-`scripts/migrations/README.md`.
+## Start here
 
-### Step 3 · GitHub Secrets (nightly agent)
+1. **`pip install -r requirements.txt`** — Python 3.10+, packages from `requirements.txt`
 
-After the setup skill writes your `.env`, add the values as GitHub
-Secrets under the **Agent** environment:
+2. **Run the `revops-agent-setup` skill** — Credentials, secret hooks, environment variables. In Claude Code: open repo, say "set up this repo". In Claude.ai (web/mobile): paste `skills/revops-agent-setup/SKILL.md` into custom skill creator, say "start setup". Writes `.env` and prints GitHub Secrets checklist.
 
-```bash
-gh secret set --env Agent --env-file .env
-```
+3. **Run the `revops-client-context` skill** — Methodology, stages, segments, competitors, objections. Say "start client onboarding". Writes `config/client.yaml`, `config/context.yaml`, `prompts/CLAUDE.md`, `prompts/evaluator_rubric.md`. References in `skills/revops-client-context/references/`.
 
-### Step 4 · First nightly run
+4. **Apply migrations** — `python scripts/setup_supabase.py`. Requires `SUPABASE_DB_URL` in environment (direct pooler connection string). Migrations 001–027 build the full schema. Each migration executes, verifies a fingerprint object via scoped read, then records success. If verification fails, paste printed SQL into Supabase SQL editor and re-run. Audit any time with `python scripts/setup_supabase.py --verify-all`.
 
-Go to **Actions → MEDDICC Agent Nightly Run → Run workflow**. The first
-run analyzes your full active pipeline. After that it runs every night.
+5. **`python scripts/verify/run_all.py`** — Expect INCONCLUSIVE before any data has loaded. That is correct, not broken. Plausibility checks return INCONCLUSIVE when tables are empty or below minimum thresholds. After first nightly run, re-run to see your actual numbers.
 
-### Step 5 · Deploy the Slack agent (optional)
+6. **First nightly run** — Set GitHub Secrets under the `Agent` environment (`gh secret set --env Agent --env-file .env`). Actions → MEDDICC Agent Nightly Run → Run workflow. First run analyzes full active pipeline (~$3-5). Subsequent runs analyze only changed deals (~$0.10-0.30/night).
 
-Only needed if you want the Slack Q&A layer.
+7. **Re-run verification suite** — `python scripts/verify/run_all.py` now shows your data. Plausibility checks (conversion rates 0-100%, win rate 0-100%, cycle time non-negative, counts non-negative, subset ≤ superset) verify analytical outputs. See `scripts/verify/plausibility.py`.
 
-1. Deploy this repo to Railway. Start command:
-   `uvicorn api.main:app --host 0.0.0.0 --port $PORT`
-2. Set the Railway environment variables (see the table below).
-3. In Zapier, build two Zaps:
-   - **Inbound:** Slack trigger (message / mention) → POST to your
-     Railway `/slack/question` with the message text, user, channel,
-     thread_ts, AND the shared secret (either in body as `secret` field
-     or as `X-Relay-Secret` header). Set this to match `SLACK_RELAY_SECRET`.
-   - **Outbound:** Catch hook that receives the agent's reply and posts
-     it back to the Slack thread. Put that catch hook's URL in
-     `ZAP_REPLY_URL`.
-4. Message the bot in Slack and confirm you get a threaded reply.
+**Optional — Slack agent (step 8):**
 
-> **Security note:** the `/slack/question` endpoint is protected by
-> `SLACK_RELAY_SECRET` (shared secret authenticating Zapier → Railway).
-> The Zapier catch-hook URL (`ZAP_REPLY_URL`) is an unauthenticated write
-> path into your Slack replies — treat it as a secret. The inbound endpoint
-> uses timing-safe comparison (`hmac.compare_digest`) to prevent timing attacks.
+Deploy to Railway (`uvicorn api.main:app --host 0.0.0.0 --port $PORT`). Set environment variables (see table below). Build two Zapier zaps: inbound (Slack → POST `/slack/question` with `SLACK_RELAY_SECRET`), outbound (catch hook receives reply, posts to Slack thread). Put catch hook URL in `ZAP_REPLY_URL`. Message bot in Slack, confirm threaded reply.
+
+---
+
+## Read STATUS.md before trusting the numbers
+
+**Provisional thresholds:** The correctness floor at 0.30 (`api/assessor.py`) and the stage-progression thresholds (`config/client.yaml`) are guesses carried from the reference deployment, not measurements from your business. A team with shorter calls or less structured discovery might need to lower the quality threshold; a team with deep enterprise cycles might raise it. Stage-progression thresholds (e.g., `identified_pain: 5`, `champion: 4` to move from Discovery to Scoping) reflect the reference deployment's qualification bar. Your team's bar may differ.
+
+**The verification suite is how you find out what is true for your data.** Run `python scripts/verify/run_all.py` after first nightly run. Plausibility checks catch:
+- Conversion rates outside 0-100%
+- Win rates outside 0-100% or negative
+- Cycle times negative
+- Counts negative
+- Subset counts exceeding superset (qualified > total, won > qualified)
+- Waterfall reconciliation errors (ending ≠ beginning + net_change)
+
+If plausibility checks fail, the analytical outputs have a bug. If they pass but numbers seem wrong, the thresholds need calibration. See `STATUS.md` Known Limitations and Untested sections.
+
+---
+
+## Architecture in brief
+
+**Nightly (GitHub Actions):**
+- 1:00 AM UTC: Deal ETL (`scripts/etl_deals.py` → `memory/deals/index.json`)
+- 1:30 AM UTC: Calls ETL (`scripts/etl_calls.py` → `memory/calls/<slug>.json`)
+- 2:00 AM UTC: MEDDICC agent (`scripts/run_nightly.py` → HubSpot + Supabase)
+- Sunday 3:00 AM UTC: Weekly analytics (snapshots, waterfall, win/loss, forecast)
+
+**Interactive (Railway + Zapier):**
+- User messages bot in Slack
+- Zapier catches message → POST `/slack/question` (Railway FastAPI)
+- Intent classification → precomputed handler OR dynamic query
+- Pull rows from Supabase → synthesize (Sonnet) → self-assess (Haiku) → retry if needed
+- POST answer to `ZAP_REPLY_URL` → Zapier → Slack thread
+- Thread context cached, follow-ups reuse entities
+
+**Costs:**
+- First full pipeline run: ~$3-5
+- Nightly steady state: ~$0.10-0.30
+- Slack agent per question: ~$0.01-0.05
+- Monthly total (nightly + light Slack use): ~$10-20
+
+---
+
+## When something breaks
+
+**Nightly run stops mid-way (50 deals analyzed, 30 skipped):** Individual deal failures are logged but should not halt the run. Check Actions log for exceptions. Common causes: CRM API rate limit (add sleep), call cache miss (re-run ETL), missing deal property (add to `etl.deal_properties` in `client.yaml`).
+
+**HubSpot scores all zero:** Score extraction regex in `scripts/hubspot_deals.py` expects lines like `Metrics: 7/10` or `Champion: 8`. If prompt format drifts, scores won't parse. Check an analysis file in `output/` and confirm format matches regex in `_extract_scores_from_analysis()`.
+
+**Slack agent returns "I don't have enough data to answer that":** Handler's Supabase query returned zero rows. Either table is empty (check ETL ran), filter is too strict (e.g., filtering for Q3 deals when it's Q1), or intent classification routed to wrong handler. Check Railway logs for SQL query, run it manually in Supabase.
+
+**Waterfall empty after Week 2:** Waterfall (`scripts/analytics/compute_waterfall.py`) reads `deals_snapshot` rows across multiple weeks and requires `qualified_date` on each deal. If snapshots are missing, have null `fiscal_quarter` values, or deals lack `qualified_date`, waterfall will be empty. Confirm `scripts/analytics/snapshot_deals.py` wrote rows with non-null `fiscal_quarter`, `scripts/etl/seed_qualified_dates.py` populated `qualified_date` for all deals that reached qualified threshold, and `fiscal.fy_start_month` is set correctly in `client.yaml`. Note: waterfall needs TWO snapshots before it computes anything — first run correctly skips with "insufficient snapshot history."
+
+**Factory raises "call_tools.primary = 'gongg' is not recognized":** Typo in config. Valid options: `fireflies`, `gong`, `apollo`. Factory uses Gap 2 discipline — no silent fallbacks. Fix typo in `config/client.yaml`.
 
 ---
 
@@ -273,123 +148,34 @@ Only needed if you want the Slack Q&A layer.
 
 | Variable | Used by | Notes |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | both | Claude API |
-| `HUBSPOT_API_KEY` | nightly | Private app token, deal read/write |
-| `SUPABASE_URL` | both | Project URL |
-| `SUPABASE_SERVICE_KEY` | both | service_role key (not anon) |
-| `SUPABASE_DB_URL` | migrations | Direct pooler connection string |
-| `FIREFLIES_API_KEY` | nightly | If using Fireflies |
-| `GONG_ACCESS_KEY` / `GONG_ACCESS_KEY_SECRET` | nightly | If using Gong |
-| `APOLLO_API_KEY` | enrichment | Participant enrichment (optional) |
-| `GITHUB_TOKEN` / `GITHUB_REPO` | nightly | Automatic in Actions |
-| `ZAP_REPLY_URL` | Slack agent | Zapier catch hook for replies |
-| `SLACK_RELAY_SECRET` | Slack agent | Authenticates Zapier → Railway relay (optional but recommended) |
+| `ANTHROPIC_API_KEY` | Both | Claude API (Sonnet 4.5 + Haiku 4.5) |
+| `HUBSPOT_API_KEY` | Nightly | Private app token, deal read/write |
+| `SUPABASE_URL` | Both | Project URL |
+| `SUPABASE_SERVICE_KEY` | Both | service_role key (not anon) |
+| `SUPABASE_DB_URL` | Migrations | Direct pooler connection string |
+| `FIREFLIES_API_KEY` | Nightly | If `call_tools.primary: fireflies` |
+| `GONG_ACCESS_KEY` / `GONG_ACCESS_KEY_SECRET` | Nightly | If `call_tools.primary: gong` |
+| `APOLLO_API_KEY` | Nightly | If `call_tools.primary: apollo` |
+| `GITHUB_TOKEN` / `GITHUB_REPO` | Nightly | Automatic in GitHub Actions |
+| `ZAP_REPLY_URL` | Slack agent | Zapier catch hook for replies (treat as secret) |
+| `SLACK_RELAY_SECRET` | Slack agent | Authenticates Zapier → Railway (optional but recommended) |
 | `ADMIN_SECRET` | Slack agent | Guards `/admin/refresh-schema` |
 
 ---
 
-## Call intelligence platforms
+## What's in `docs/`
 
-The agent ships with adapters for two platforms and a documented
-interface for adding more.
+Detailed guides that don't belong in the README:
 
-**Fireflies** (default): simple API key. Set `call_tools.primary: "fireflies"`.
+- **`docs/adapter-guide.md`** — How to add a new call intelligence adapter (Fathom, Avoma, Chorus). `CallAdapter` interface, normalization rules, factory wiring.
+- **`docs/data-schema.md`** — Supabase table contracts. Every table, every column, every index. What writes what, point-in-time semantics, historical backfill rules.
+- **`scripts/migrations/README.md`** — Migration guide. Order matters (001–027), idempotency, verification fingerprints, rollback procedures.
 
-**Gong**: Access Key + Secret, richer structured data. Set
-`call_tools.primary: "gong"`.
-
-**Anything else** (Fathom, Avoma, Chorus): the client-context skill
-web-searches the tool's API docs and generates an adapter against the
-`CallAdapter` interface in `scripts/adapters/calls/base.py`. See
-`docs/adapter-guide.md`.
+Endpoint reference, file-by-file directory tour, step-by-step duplicates of skill instructions — all in `docs/`. If you're reading this five minutes before a demo, you don't need those. If you're debugging a specific issue or extending the system, you do.
 
 ---
 
-## Configuration
+Interested in forward deployment for your team? Reach out:
 
-Two files hold everything client-specific. The onboarding skill writes
-both; you rarely edit them by hand.
-
-**`config/client.yaml`** — how your pipeline is shaped:
-`organization` (name, internal domains), `fiscal` (year start),
-`segmentation` (size bands and cycle lengths), `pipeline` and
-`stage_progression` (your HubSpot stage IDs and order),
-`quality_thresholds`, `deal_health`, `models`, `call_tools`, `etl`.
-
-**`config/context.yaml`** — what your team sells against:
-`competitors`, `objection_categories`, `feature_gaps`, `value_metrics`,
-`industries`, `discovery_signals`, `champion_indicators`, `learning`.
-
-Stage IDs are discovered, not guessed. Run:
-```bash
-python scripts/discover_stages.py
-```
-and the onboarding skill walks you through confirming the output.
-
----
-
-## Files and directories to know
-
-| Path | What it does |
-|---|---|
-| `scripts/run_nightly.py` | Nightly orchestration |
-| `scripts/meddicc_agent.py` | Generator + evaluator + reflection loop |
-| `scripts/etl_deals.py` / `scripts/etl_calls.py` | Build deal index + call cache |
-| `scripts/analytics/` | Weekly waterfall, forecast, win/loss, snapshots |
-| `scripts/enrichment/` | Objections, feature gaps, signals, participants |
-| `api/main.py` | FastAPI server for the Slack agent |
-| `api/router.py` | Intent classification, routing, synthesis, self-assessment |
-| `api/handlers.py` | 16 precomputed query handlers |
-| `api/tools.py` | Typed query primitives for the dynamic path |
-| `api/rubric.py` / `api/stage_requirements.py` | Coaching bands + stage-aware risk |
-| `prompts/CLAUDE.md` | Generator instructions, edit to calibrate |
-| `prompts/evaluator_rubric.md` | Evaluation criteria, auto-improves |
-| `config/client.yaml` / `config/context.yaml` | Your pipeline + market context |
-| `scripts/migrations/` | Supabase schema, 001–027 |
-| `skills/` | Setup + client-context onboarding skills |
-| `docs/` | Adapter guide, data schema |
-| `deliverable/` | Standalone ready-to-deploy prompt package + examples |
-| `memory/` | Call cache, learnings, run metadata (gitignored contents) |
-| `output/` | MEDDICC analysis files |
-
----
-
-## Costs
-
-| Scenario | Cost |
-|---|---|
-| First full pipeline run | ~$3-5 |
-| Nightly steady state | ~$0.10-0.30 |
-| Slack agent per question | ~$0.01-0.05 |
-| Monthly total (nightly + light Slack use) | ~$10-20 |
-
-Haiku handles classification and evaluation; Sonnet handles generation
-and synthesis. Every LLM call is tracked (`scripts/token_tracker.py`).
-
----
-
-## Design rules (house style)
-
-- Haiku for classification and evaluation; Sonnet for generation and
-  synthesis.
-- Cache first, API second.
-- Individual deal failures must never stop a nightly run.
-- Never delete a test to make the suite pass — fix the underlying code.
-- The Slack agent self-assesses answer **tone** as well as correctness
-  (lead with the headline, always give a bottom line). See
-  `api/assessor.py`.
-
----
-
-## What is and isn't in this repo
-
-**In and runnable:** nightly MEDDICC agent, weekly analytics,
-enrichment, the full CRO Slack agent (`api/`), all 27 migrations, both
-onboarding skills. Every `api/*` import resolves and the package boots
-with `uvicorn api.main:app`.
-
-**You provide at deploy time:** your credentials, your Railway
-instance, and your two Zaps. No prior client's data, domains, stage
-IDs, or secrets ship in this template. The generator prompt
-(`prompts/CLAUDE.md`) carries a few illustrative scoring examples with
-placeholder names; the onboarding skill rewrites it for your team.
+- Email: jeff@revopsimpact.us
+- LinkedIn: [linkedin.com/in/jeffbethechange](https://linkedin.com/in/jeffbethechange)
