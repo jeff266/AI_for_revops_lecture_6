@@ -342,9 +342,17 @@ Commit everything:
   git commit -m "Add client context and config from onboarding"
   git push
 
-Tell the student: "Done. Config is live in the repo.
+Seed qualification history:
+  python scripts/analytics/seed_qualification_history.py
+
+Tell the student: "Qualification history seeded. This populates qualified_date
+from HubSpot stage history — the waterfall needs it to determine point-in-time
+qualified-pipeline membership. After this one-time seed, the daily ETL maintains it.
+
+Done. Config is live in the repo.
 Next step: add GitHub Secrets (run revops-agent-setup if you
-haven't already), then run the ETL."
+haven't already), apply migrations (python scripts/setup_supabase.py),
+then run the first nightly."
 
 ### If running in Claude.ai (no file system access):
 
@@ -377,3 +385,5 @@ Then show the deployment checklist:
   to semantic bucket mapping)
 □ git add config/ prompts/ && git commit -m "Add client context and config"
 □ git push
+□ Seed qualification history: python scripts/analytics/seed_qualification_history.py
+  (One-time seed of qualified_date from HubSpot stage history; waterfall needs this)
