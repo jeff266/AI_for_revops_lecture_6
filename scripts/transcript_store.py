@@ -342,16 +342,24 @@ def build_transcript_row(
     return row
 
 
-def _classify_empty_transcript(call_date: Optional[datetime]) -> str:
+def _classify_empty_transcript(call_date: Optional[datetime], as_of: Optional[date] = None) -> str:
     """
     Classify an empty result as TERMINAL (old call — no transcript will ever
     appear) or RETRY (recent call — may still be processing), by call age.
 
     Returns unavailable_reason string with TERMINAL or RETRY prefix.
 
+    Args:
+        call_date: The date/datetime of the call to classify
+        as_of: Reference date for age calculation (default: today's date)
+               Pinning this makes the function testable without patching the clock
+
     Threshold: STILL_PROCESSING_DAYS (default 3 days). Fireflies typically
     processes within hours, but 3 days is a safe cutoff before marking terminal.
     """
+    if as_of is None:
+        as_of = date.today()
+
     try:
         if isinstance(call_date, str):
             call_date_obj = datetime.fromisoformat(call_date[:10])
@@ -363,7 +371,7 @@ def _classify_empty_transcript(call_date: Optional[datetime]) -> str:
             call_date_obj = None
 
         if call_date_obj:
-            age = (date.today() - call_date_obj.date()).days
+            age = (as_of - call_date_obj.date()).days
         else:
             age = None
     except Exception:

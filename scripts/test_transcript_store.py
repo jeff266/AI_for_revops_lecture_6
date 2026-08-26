@@ -10,7 +10,7 @@ Guards against failure modes that cost real time in the reference implementation
 """
 import sys
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 # Add scripts to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -77,34 +77,36 @@ def test_transient_failure_is_retryable_not_terminal():
 
     print(f"\n[TEST] Transient failure is retryable, not terminal (threshold={STILL_PROCESSING_DAYS}d)")
 
-    # Use local time to match _classify_empty_transcript's date.today() logic
-    now = datetime.now()
+    # Pin the reference date for deterministic testing
+    as_of = date(2026, 8, 26)
 
-    # Recent call (within threshold) - should be RETRY
-    recent_call = now - timedelta(days=1)
-    reason = _classify_empty_transcript(recent_call)
+    # Recent call (well within threshold) - should be RETRY
+    # Use 1 day to avoid boundary sensitivity
+    recent_call = datetime(2026, 8, 25, 14, 30)  # 1 day ago
+    reason = _classify_empty_transcript(recent_call, as_of=as_of)
     assert reason.startswith(RETRY), \
-        f"Recent call (<{STILL_PROCESSING_DAYS}d) should start with '{RETRY}', got '{reason}'"
+        f"Recent call (1d old) should start with '{RETRY}', got '{reason}'"
 
-    # Old call (beyond threshold) - should be TERMINAL
-    old_call = now - timedelta(days=STILL_PROCESSING_DAYS + 1)
-    reason = _classify_empty_transcript(old_call)
+    # Old call (well beyond threshold) - should be TERMINAL
+    # Use 10 days to avoid boundary sensitivity
+    old_call = datetime(2026, 8, 16, 14, 30)  # 10 days ago
+    reason = _classify_empty_transcript(old_call, as_of=as_of)
     assert reason.startswith(TERMINAL), \
-        f"Old call (>{STILL_PROCESSING_DAYS}d) should start with '{TERMINAL}', got '{reason}'"
+        f"Old call (10d old) should start with '{TERMINAL}', got '{reason}'"
 
-    # Edge case: exactly at threshold boundary (STILL_PROCESSING_DAYS uses .days which truncates)
-    # To cross the threshold, need full days > threshold
-    edge_call = now - timedelta(days=STILL_PROCESSING_DAYS, hours=12)
-    reason = _classify_empty_transcript(edge_call)
-    # This is still <= threshold in whole days, so should be RETRY
+    # Edge case: exactly at threshold (3 days)
+    at_threshold_call = datetime(2026, 8, 23, 14, 30)  # exactly 3 days ago
+    reason = _classify_empty_transcript(at_threshold_call, as_of=as_of)
+    # 3 days is NOT > 3, so should be RETRY
     assert reason.startswith(RETRY), \
-        f"Call at {STILL_PROCESSING_DAYS}d+12h (still {STILL_PROCESSING_DAYS} whole days) should be '{RETRY}', got '{reason}'"
+        f"Call at threshold (3d old, not >3) should be '{RETRY}', got '{reason}'"
 
-    # Just past threshold
-    past_threshold_call = now - timedelta(days=STILL_PROCESSING_DAYS + 1, hours=0)
-    reason = _classify_empty_transcript(past_threshold_call)
+    # Just past threshold (4 days)
+    past_threshold_call = datetime(2026, 8, 22, 14, 30)  # 4 days ago
+    reason = _classify_empty_transcript(past_threshold_call, as_of=as_of)
+    # 4 > 3, so should be TERMINAL
     assert reason.startswith(TERMINAL), \
-        f"Call at {STILL_PROCESSING_DAYS + 1}d should start with '{TERMINAL}', got '{reason}'"
+        f"Call past threshold (4d old, >3) should be '{TERMINAL}', got '{reason}'"
 
     print(f"  ✓ Recent calls (<{STILL_PROCESSING_DAYS}d) are retryable (retry:)")
     print(f"  ✓ Old calls (>{STILL_PROCESSING_DAYS}d) are terminal (terminal:)")
