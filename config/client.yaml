@@ -146,4 +146,9 @@ proposal_engine:
   min_effect_size_pct: 10
   suppress_duplicate_days: 30
   max_open_proposals: 10
+win_loss:
+  # Minimum evidence (calls + analyses) before a narrative is written.
+  # Below this, the narrative is null with a reason rather than fabricated
+  # from thin material.
+  min_evidence_count: 5
 sales_methodology: MEDDICC

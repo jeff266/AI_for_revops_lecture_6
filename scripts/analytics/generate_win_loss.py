@@ -147,7 +147,7 @@ def main():
     tracker = TokenTracker(REPO_ROOT / 'memory', job='win_loss')
 
     # Load min_evidence_count gate from config
-    min_evidence = config.get('proposal_engine', {}).get('min_evidence_count', 30)
+    min_evidence = config.get('win_loss', {}).get('min_evidence_count', 5)
     print(f"Min evidence threshold: {min_evidence} (deals below this return null with reason)")
 
     # Determine cutoff date
