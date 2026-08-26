@@ -15,6 +15,13 @@ DRY_RUN=1 scores nothing and writes nothing — it reports coverage (deals, call
 transcript vs summary, already-done) and an estimated cost from real transcript
 sizes, so the model/scope decision can be made before spending.
 
+Runtime:
+- Bounded by two LLM calls per call (progressive scorer + evaluator)
+- Estimate: 1,000 calls at generator role (Sonnet) ≈ $30-50 depending on transcript length
+- Estimate: 1,000 calls at assessor role (Haiku) ≈ $8-12 (cheaper, faster, lower quality)
+- Use DRY_RUN=1 for exact cost estimate from your actual transcript sizes
+- Resumable: skips deals already scored at current scorer_version; killed runs continue
+
 Env:
   DRY_RUN=1                 measure only, no model calls, no writes
   SCORING_MODEL_ROLE=...    LLMClient role for scoring (default 'generator'=Sonnet;

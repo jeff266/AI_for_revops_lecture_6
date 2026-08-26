@@ -19,6 +19,12 @@ Discipline (from the spec):
 Needs SUPABASE_URL + SUPABASE_SERVICE_KEY, and the source API keys
 (FIREFLIES_API_KEY / APOLLO_API_KEY). Requires migration 041 applied.
 
+Runtime:
+- Bounded by one transcript fetch per call (API call to Fireflies/Gong/Apollo)
+- Estimate: ~1-3 seconds per call on average (depends on source API latency)
+- No LLM calls (free except source API usage)
+- Resumable: skips call_ids already in call_transcripts; killed runs continue
+
 Usage:
   python scripts/backfill_transcripts.py --dry-run          # report, no writes
   python scripts/backfill_transcripts.py                    # write

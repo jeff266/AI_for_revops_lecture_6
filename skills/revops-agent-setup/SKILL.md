@@ -303,3 +303,46 @@ If you see unexpected FAILs after the first nightly (e.g., 'Qualified deals > to
 
 The verification suite helps you find your own bad numbers rather than inheriting
 the template's default assumptions."
+
+## Step 11 — Historical Backfills (Optional)
+
+Tell the user:
+"Three optional backfills reconstruct historical data. None are required for
+the nightly agent to run, but they power the analytics substrate (waterfall,
+forecast, win/loss narratives).
+
+**Snapshot backfill** (scripts/analytics/backfill_snapshots.py):
+- Reconstructs 52+ weeks of weekly pipeline snapshots from HubSpot property history
+- Runtime: ~2-5 seconds per deal (1 property-history API call per deal, not per week)
+- 1,000 deals takes ~30-80 minutes depending on API latency
+- No LLM calls (free except HubSpot API usage)
+- Resumable: killed runs continue from last completed deal
+- Enables: point-in-time pipeline queries, waterfall, forecast analytics
+
+**Transcript backfill** (scripts/backfill_transcripts.py):
+- Fetches full call transcripts into call_transcripts table
+- Runtime: ~1-3 seconds per call (1 API fetch per call)
+- No LLM calls (free except source API usage)
+- Resumable: skips calls already in call_transcripts
+- Enables: objection vault, feature gap extraction
+
+**Call scoring backfill** (scripts/backfill_call_scores.py):
+- Scores every call with progressive MEDDICC scorer
+- Runtime: 2 LLM calls per call (progressive scorer + evaluator)
+- Cost estimate: 1,000 calls at Sonnet (generator role) ≈ $30-50
+- Cost estimate: 1,000 calls at Haiku (assessor role) ≈ $8-12
+- Run DRY_RUN=1 first for exact cost from your transcript sizes
+- Resumable: skips deals already scored at current scorer_version
+- Enables: progressive scoring (more accurate than cumulative-only)
+
+Run in this order (each depends on the previous):
+  python scripts/analytics/backfill_snapshots.py --dry-run
+  python scripts/analytics/backfill_snapshots.py
+
+  python scripts/backfill_transcripts.py --dry-run
+  python scripts/backfill_transcripts.py
+
+  DRY_RUN=1 python scripts/backfill_call_scores.py  # cost estimate
+  python scripts/backfill_call_scores.py            # real run
+
+All are resumable — you can safely kill and restart any of them."

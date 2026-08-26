@@ -16,6 +16,13 @@ Requires:
 - Property history cache from hubspot_history.py
 - Migration 017 (backfill confidence fields)
 
+Runtime:
+- Bounded by one property-history API call per deal, not by rows written
+- 1,000 deals = ~1,000 fetches whether you backfill one quarter or eight
+- Estimate: ~2-5 seconds per deal on average (depends on HubSpot API latency)
+- No LLM calls (free except HubSpot API usage)
+- Resumable: killed runs continue from last completed deal, not from scratch
+
 Usage:
     python scripts/analytics/backfill_snapshots.py --dry-run  # Validation report only
     python scripts/analytics/backfill_snapshots.py            # Real backfill
