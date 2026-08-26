@@ -3,21 +3,19 @@
 Test that no client names appear in tracked files.
 
 A template must not ship one client's customer names to another.
-Three sat in live prompt text sent to the classifier on every request.
+Prevents customer/competitor names from leaking into prompts.
 
-Client names checked: GrowthBook, Skyscanner, Bestseller, LiveSport, ECCO
+Client names checked: Example reference implementations (update for your deployment)
 """
 
 import sys
 from pathlib import Path
 
-# Client names from the source implementation
+# Example forbidden names (replace with your deployment's reference client names)
 FORBIDDEN_NAMES = [
-    "GrowthBook",
-    "Skyscanner",
-    "Bestseller",
-    "LiveSport",
-    "ECCO",
+    "AcmeCorp",
+    "ExampleCo",
+    "SampleInc",
 ]
 
 # File extensions to check
@@ -64,7 +62,7 @@ def test_no_client_names_in_tracked_files():
             content = f.read_text()
             content_lower = content.lower()
             for name in FORBIDDEN_NAMES:
-                # Case-insensitive matching to catch "growthbook.io", "GrowthBook", etc.
+                # Case-insensitive matching to catch variations (domain names, capitalization)
                 if name.lower() in content_lower:
                     # Find line numbers
                     for i, line in enumerate(content.split("\n"), 1):
